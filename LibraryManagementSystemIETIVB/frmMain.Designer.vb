@@ -25,33 +25,17 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.panel2 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnChevron = New System.Windows.Forms.Button()
+        Me.btnMinimize = New System.Windows.Forms.Button()
         Me.label1 = New System.Windows.Forms.Label()
+        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
         Me.panelBgSearch = New System.Windows.Forms.Panel()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.pbSearch = New System.Windows.Forms.PictureBox()
+        Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.panelLeft = New System.Windows.Forms.Panel()
-        Me.panelSelector = New System.Windows.Forms.Panel()
-        Me.panelRight = New System.Windows.Forms.Panel()
-        Me.panel5 = New System.Windows.Forms.Panel()
-        Me.label9 = New System.Windows.Forms.Label()
-        Me.label10 = New System.Windows.Forms.Label()
-        Me.label11 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.label14 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.label13 = New System.Windows.Forms.Label()
-        Me.label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.divider = New MaterialSkin.Controls.MaterialDivider()
-        Me.panelCenter = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
-        Me.btnRestoreMaximize = New System.Windows.Forms.Button()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnMessages = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
@@ -62,12 +46,25 @@ Partial Class frmMain
         Me.btnBookManagement = New System.Windows.Forms.Button()
         Me.btnBorrowers = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
-        Me.btnClose = New System.Windows.Forms.Button()
-        Me.btnChevron = New System.Windows.Forms.Button()
-        Me.btnMinimize = New System.Windows.Forms.Button()
-        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.pbSearch = New System.Windows.Forms.PictureBox()
-        Me.pbProfile = New System.Windows.Forms.PictureBox()
+        Me.panelSelector = New System.Windows.Forms.Panel()
+        Me.panelRight = New System.Windows.Forms.Panel()
+        Me.panel5 = New System.Windows.Forms.Panel()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.label11 = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.label14 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.label13 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.divider = New MaterialSkin.Controls.MaterialDivider()
+        Me.panelCenter = New System.Windows.Forms.Panel()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -78,21 +75,24 @@ Partial Class frmMain
         Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
         Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnRestoreMaximize = New System.Windows.Forms.Button()
+        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.panel2.SuspendLayout()
+        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBgSearch.SuspendLayout()
+        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelLeft.SuspendLayout()
         Me.panelRight.SuspendLayout()
         Me.panel5.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel2
@@ -111,6 +111,45 @@ Partial Class frmMain
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
         '
+        'btnClose
+        '
+        Me.btnClose.BackgroundImage = CType(resources.GetObject("btnClose.BackgroundImage"), System.Drawing.Image)
+        Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.Location = New System.Drawing.Point(1319, 3)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(23, 23)
+        Me.btnClose.TabIndex = 9
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
+        'btnChevron
+        '
+        Me.btnChevron.BackgroundImage = CType(resources.GetObject("btnChevron.BackgroundImage"), System.Drawing.Image)
+        Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnChevron.FlatAppearance.BorderSize = 0
+        Me.btnChevron.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnChevron.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChevron.Location = New System.Drawing.Point(1328, 46)
+        Me.btnChevron.Name = "btnChevron"
+        Me.btnChevron.Size = New System.Drawing.Size(23, 18)
+        Me.btnChevron.TabIndex = 8
+        Me.btnChevron.UseVisualStyleBackColor = True
+        '
+        'btnMinimize
+        '
+        Me.btnMinimize.BackgroundImage = CType(resources.GetObject("btnMinimize.BackgroundImage"), System.Drawing.Image)
+        Me.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnMinimize.FlatAppearance.BorderSize = 0
+        Me.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimize.Location = New System.Drawing.Point(1290, 3)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(23, 23)
+        Me.btnMinimize.TabIndex = 7
+        Me.btnMinimize.UseVisualStyleBackColor = True
+        '
         'label1
         '
         Me.label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -121,6 +160,16 @@ Partial Class frmMain
         Me.label1.TabIndex = 6
         Me.label1.Text = "Library Management System"
         Me.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pictureBox3
+        '
+        Me.pictureBox3.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
+        Me.pictureBox3.Location = New System.Drawing.Point(22, 21)
+        Me.pictureBox3.Name = "pictureBox3"
+        Me.pictureBox3.Size = New System.Drawing.Size(184, 125)
+        Me.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureBox3.TabIndex = 5
+        Me.pictureBox3.TabStop = False
         '
         'panelBgSearch
         '
@@ -158,6 +207,27 @@ Partial Class frmMain
         Me.txtSearch.TabIndex = 5
         Me.txtSearch.TabStop = False
         '
+        'pbSearch
+        '
+        Me.pbSearch.BackgroundImage = CType(resources.GetObject("pbSearch.BackgroundImage"), System.Drawing.Image)
+        Me.pbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pbSearch.ImageLocation = ""
+        Me.pbSearch.Location = New System.Drawing.Point(12, 10)
+        Me.pbSearch.Name = "pbSearch"
+        Me.pbSearch.Size = New System.Drawing.Size(27, 24)
+        Me.pbSearch.TabIndex = 4
+        Me.pbSearch.TabStop = False
+        '
+        'pbProfile
+        '
+        Me.pbProfile.Image = CType(resources.GetObject("pbProfile.Image"), System.Drawing.Image)
+        Me.pbProfile.Location = New System.Drawing.Point(1282, 38)
+        Me.pbProfile.Name = "pbProfile"
+        Me.pbProfile.Size = New System.Drawing.Size(39, 34)
+        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbProfile.TabIndex = 3
+        Me.pbProfile.TabStop = False
+        '
         'panelLeft
         '
         Me.panelLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
@@ -177,251 +247,6 @@ Partial Class frmMain
         Me.panelLeft.Name = "panelLeft"
         Me.panelLeft.Size = New System.Drawing.Size(234, 548)
         Me.panelLeft.TabIndex = 3
-        '
-        'panelSelector
-        '
-        Me.panelSelector.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.panelSelector.Location = New System.Drawing.Point(0, 59)
-        Me.panelSelector.Name = "panelSelector"
-        Me.panelSelector.Size = New System.Drawing.Size(6, 45)
-        Me.panelSelector.TabIndex = 10
-        '
-        'panelRight
-        '
-        Me.panelRight.Controls.Add(Me.panel5)
-        Me.panelRight.Controls.Add(Me.Panel3)
-        Me.panelRight.Controls.Add(Me.Panel1)
-        Me.panelRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelRight.Location = New System.Drawing.Point(1122, 220)
-        Me.panelRight.Name = "panelRight"
-        Me.panelRight.Size = New System.Drawing.Size(244, 548)
-        Me.panelRight.TabIndex = 4
-        '
-        'panel5
-        '
-        Me.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.panel5.Controls.Add(Me.label9)
-        Me.panel5.Controls.Add(Me.label10)
-        Me.panel5.Controls.Add(Me.label11)
-        Me.panel5.Controls.Add(Me.PictureBox6)
-        Me.panel5.Location = New System.Drawing.Point(8, 329)
-        Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(233, 122)
-        Me.panel5.TabIndex = 15
-        '
-        'label9
-        '
-        Me.label9.AutoSize = True
-        Me.label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label9.ForeColor = System.Drawing.Color.White
-        Me.label9.Location = New System.Drawing.Point(79, 82)
-        Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(147, 30)
-        Me.label9.TabIndex = 8
-        Me.label9.Text = "Total books overdue" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
-        '
-        'label10
-        '
-        Me.label10.AutoSize = True
-        Me.label10.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label10.ForeColor = System.Drawing.Color.White
-        Me.label10.Location = New System.Drawing.Point(79, 48)
-        Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(113, 18)
-        Me.label10.TabIndex = 7
-        Me.label10.Text = "BOOKS OVERDUE"
-        '
-        'label11
-        '
-        Me.label11.AutoSize = True
-        Me.label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label11.ForeColor = System.Drawing.Color.White
-        Me.label11.Location = New System.Drawing.Point(78, 17)
-        Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(41, 29)
-        Me.label11.TabIndex = 6
-        Me.label11.Text = "18"
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.label14)
-        Me.Panel3.Controls.Add(Me.PictureBox5)
-        Me.Panel3.Location = New System.Drawing.Point(8, 185)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(233, 122)
-        Me.Panel3.TabIndex = 12
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(79, 82)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(153, 30)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Total students " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(79, 48)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 18)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "TOTAL STUDENTS"
-        '
-        'label14
-        '
-        Me.label14.AutoSize = True
-        Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.ForeColor = System.Drawing.Color.White
-        Me.label14.Location = New System.Drawing.Point(78, 17)
-        Me.label14.Name = "label14"
-        Me.label14.Size = New System.Drawing.Size(76, 29)
-        Me.label14.TabIndex = 6
-        Me.label14.Text = "2,029"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.label13)
-        Me.Panel1.Controls.Add(Me.label2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Location = New System.Drawing.Point(8, 41)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(233, 122)
-        Me.Panel1.TabIndex = 2
-        '
-        'label13
-        '
-        Me.label13.AutoSize = True
-        Me.label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label13.ForeColor = System.Drawing.Color.White
-        Me.label13.Location = New System.Drawing.Point(74, 79)
-        Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(128, 30)
-        Me.label13.TabIndex = 8
-        Me.label13.Text = "Total books registered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in the database."
-        '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.ForeColor = System.Drawing.Color.White
-        Me.label2.Location = New System.Drawing.Point(74, 45)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(92, 18)
-        Me.label2.TabIndex = 7
-        Me.label2.Text = "TOTAL BOOKS"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(73, 14)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 29)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "6,305"
-        '
-        'divider
-        '
-        Me.divider.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.divider.Depth = 0
-        Me.divider.Location = New System.Drawing.Point(0, 0)
-        Me.divider.MouseState = MaterialSkin.MouseState.HOVER
-        Me.divider.Name = "divider"
-        Me.divider.Size = New System.Drawing.Size(886, 5)
-        Me.divider.TabIndex = 8
-        Me.divider.Text = "MaterialDivider1"
-        '
-        'panelCenter
-        '
-        Me.panelCenter.BackColor = System.Drawing.Color.White
-        Me.panelCenter.Controls.Add(Me.UcUserManagement1)
-        Me.panelCenter.Controls.Add(Me.UcStudentManagement1)
-        Me.panelCenter.Controls.Add(Me.UcSettings1)
-        Me.panelCenter.Controls.Add(Me.UcReports1)
-        Me.panelCenter.Controls.Add(Me.UcMessages1)
-        Me.panelCenter.Controls.Add(Me.UcDashboard1)
-        Me.panelCenter.Controls.Add(Me.UcBorrowers1)
-        Me.panelCenter.Controls.Add(Me.UcBookManagement1)
-        Me.panelCenter.Controls.Add(Me.UcActivityLog1)
-        Me.panelCenter.Controls.Add(Me.UcAboutIETI1)
-        Me.panelCenter.Controls.Add(Me.Panel4)
-        Me.panelCenter.Location = New System.Drawing.Point(240, 135)
-        Me.panelCenter.Name = "panelCenter"
-        Me.panelCenter.Size = New System.Drawing.Size(886, 633)
-        Me.panelCenter.TabIndex = 5
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.divider)
-        Me.Panel4.Controls.Add(Me.btnRestoreMaximize)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(886, 26)
-        Me.Panel4.TabIndex = 10
-        '
-        'MetroToolTip1
-        '
-        Me.MetroToolTip1.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroToolTip1.StyleManager = Nothing
-        Me.MetroToolTip1.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'btnRestoreMaximize
-        '
-        Me.btnRestoreMaximize.BackgroundImage = CType(resources.GetObject("btnRestoreMaximize.BackgroundImage"), System.Drawing.Image)
-        Me.btnRestoreMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnRestoreMaximize.FlatAppearance.BorderSize = 0
-        Me.btnRestoreMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRestoreMaximize.Location = New System.Drawing.Point(857, 4)
-        Me.btnRestoreMaximize.Name = "btnRestoreMaximize"
-        Me.btnRestoreMaximize.Size = New System.Drawing.Size(23, 23)
-        Me.btnRestoreMaximize.TabIndex = 9
-        Me.btnRestoreMaximize.UseVisualStyleBackColor = True
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 0
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
         '
         'btnLogout
         '
@@ -613,75 +438,222 @@ Partial Class frmMain
         Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
-        'btnClose
+        'panelSelector
         '
-        Me.btnClose.BackgroundImage = CType(resources.GetObject("btnClose.BackgroundImage"), System.Drawing.Image)
-        Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Location = New System.Drawing.Point(1319, 3)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(23, 23)
-        Me.btnClose.TabIndex = 9
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.panelSelector.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.panelSelector.Location = New System.Drawing.Point(0, 59)
+        Me.panelSelector.Name = "panelSelector"
+        Me.panelSelector.Size = New System.Drawing.Size(6, 45)
+        Me.panelSelector.TabIndex = 10
         '
-        'btnChevron
+        'panelRight
         '
-        Me.btnChevron.BackgroundImage = CType(resources.GetObject("btnChevron.BackgroundImage"), System.Drawing.Image)
-        Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnChevron.FlatAppearance.BorderSize = 0
-        Me.btnChevron.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnChevron.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChevron.Location = New System.Drawing.Point(1328, 46)
-        Me.btnChevron.Name = "btnChevron"
-        Me.btnChevron.Size = New System.Drawing.Size(23, 18)
-        Me.btnChevron.TabIndex = 8
-        Me.btnChevron.UseVisualStyleBackColor = True
+        Me.panelRight.Controls.Add(Me.panel5)
+        Me.panelRight.Controls.Add(Me.Panel3)
+        Me.panelRight.Controls.Add(Me.Panel1)
+        Me.panelRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.panelRight.Location = New System.Drawing.Point(1122, 220)
+        Me.panelRight.Name = "panelRight"
+        Me.panelRight.Size = New System.Drawing.Size(244, 548)
+        Me.panelRight.TabIndex = 4
         '
-        'btnMinimize
+        'panel5
         '
-        Me.btnMinimize.BackgroundImage = CType(resources.GetObject("btnMinimize.BackgroundImage"), System.Drawing.Image)
-        Me.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnMinimize.FlatAppearance.BorderSize = 0
-        Me.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimize.Location = New System.Drawing.Point(1290, 3)
-        Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(23, 23)
-        Me.btnMinimize.TabIndex = 7
-        Me.btnMinimize.UseVisualStyleBackColor = True
+        Me.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.panel5.Controls.Add(Me.label9)
+        Me.panel5.Controls.Add(Me.label10)
+        Me.panel5.Controls.Add(Me.label11)
+        Me.panel5.Controls.Add(Me.PictureBox6)
+        Me.panel5.Location = New System.Drawing.Point(8, 329)
+        Me.panel5.Name = "panel5"
+        Me.panel5.Size = New System.Drawing.Size(233, 122)
+        Me.panel5.TabIndex = 15
         '
-        'pictureBox3
+        'label9
         '
-        Me.pictureBox3.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
-        Me.pictureBox3.Location = New System.Drawing.Point(22, 21)
-        Me.pictureBox3.Name = "pictureBox3"
-        Me.pictureBox3.Size = New System.Drawing.Size(184, 125)
-        Me.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pictureBox3.TabIndex = 5
-        Me.pictureBox3.TabStop = False
+        Me.label9.AutoSize = True
+        Me.label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label9.ForeColor = System.Drawing.Color.White
+        Me.label9.Location = New System.Drawing.Point(79, 82)
+        Me.label9.Name = "label9"
+        Me.label9.Size = New System.Drawing.Size(147, 30)
+        Me.label9.TabIndex = 8
+        Me.label9.Text = "Total books overdue" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
         '
-        'pbSearch
+        'label10
         '
-        Me.pbSearch.BackgroundImage = CType(resources.GetObject("pbSearch.BackgroundImage"), System.Drawing.Image)
-        Me.pbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbSearch.ImageLocation = ""
-        Me.pbSearch.Location = New System.Drawing.Point(12, 10)
-        Me.pbSearch.Name = "pbSearch"
-        Me.pbSearch.Size = New System.Drawing.Size(27, 24)
-        Me.pbSearch.TabIndex = 4
-        Me.pbSearch.TabStop = False
+        Me.label10.AutoSize = True
+        Me.label10.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label10.ForeColor = System.Drawing.Color.White
+        Me.label10.Location = New System.Drawing.Point(79, 48)
+        Me.label10.Name = "label10"
+        Me.label10.Size = New System.Drawing.Size(113, 18)
+        Me.label10.TabIndex = 7
+        Me.label10.Text = "BOOKS OVERDUE"
         '
-        'pbProfile
+        'label11
         '
-        Me.pbProfile.Image = CType(resources.GetObject("pbProfile.Image"), System.Drawing.Image)
-        Me.pbProfile.Location = New System.Drawing.Point(1282, 38)
-        Me.pbProfile.Name = "pbProfile"
-        Me.pbProfile.Size = New System.Drawing.Size(39, 34)
-        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbProfile.TabIndex = 3
-        Me.pbProfile.TabStop = False
+        Me.label11.AutoSize = True
+        Me.label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label11.ForeColor = System.Drawing.Color.White
+        Me.label11.Location = New System.Drawing.Point(78, 17)
+        Me.label11.Name = "label11"
+        Me.label11.Size = New System.Drawing.Size(41, 29)
+        Me.label11.TabIndex = 6
+        Me.label11.Text = "18"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox6.TabIndex = 0
+        Me.PictureBox6.TabStop = False
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.label14)
+        Me.Panel3.Controls.Add(Me.PictureBox5)
+        Me.Panel3.Location = New System.Drawing.Point(8, 185)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(233, 122)
+        Me.Panel3.TabIndex = 12
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(79, 82)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(153, 30)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Total students " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(79, 48)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 18)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "TOTAL STUDENTS"
+        '
+        'label14
+        '
+        Me.label14.AutoSize = True
+        Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label14.ForeColor = System.Drawing.Color.White
+        Me.label14.Location = New System.Drawing.Point(78, 17)
+        Me.label14.Name = "label14"
+        Me.label14.Size = New System.Drawing.Size(76, 29)
+        Me.label14.TabIndex = 6
+        Me.label14.Text = "2,029"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.label13)
+        Me.Panel1.Controls.Add(Me.label2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PictureBox4)
+        Me.Panel1.Location = New System.Drawing.Point(8, 41)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(233, 122)
+        Me.Panel1.TabIndex = 2
+        '
+        'label13
+        '
+        Me.label13.AutoSize = True
+        Me.label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label13.ForeColor = System.Drawing.Color.White
+        Me.label13.Location = New System.Drawing.Point(74, 79)
+        Me.label13.Name = "label13"
+        Me.label13.Size = New System.Drawing.Size(128, 30)
+        Me.label13.TabIndex = 8
+        Me.label13.Text = "Total books registered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in the database."
+        '
+        'label2
+        '
+        Me.label2.AutoSize = True
+        Me.label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label2.ForeColor = System.Drawing.Color.White
+        Me.label2.Location = New System.Drawing.Point(74, 45)
+        Me.label2.Name = "label2"
+        Me.label2.Size = New System.Drawing.Size(92, 18)
+        Me.label2.TabIndex = 7
+        Me.label2.Text = "TOTAL BOOKS"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(73, 14)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 29)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "6,305"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabStop = False
+        '
+        'divider
+        '
+        Me.divider.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.divider.Depth = 0
+        Me.divider.Location = New System.Drawing.Point(0, 0)
+        Me.divider.MouseState = MaterialSkin.MouseState.HOVER
+        Me.divider.Name = "divider"
+        Me.divider.Size = New System.Drawing.Size(886, 5)
+        Me.divider.TabIndex = 8
+        Me.divider.Text = "MaterialDivider1"
+        '
+        'panelCenter
+        '
+        Me.panelCenter.BackColor = System.Drawing.Color.White
+        Me.panelCenter.Controls.Add(Me.UcUserManagement1)
+        Me.panelCenter.Controls.Add(Me.UcStudentManagement1)
+        Me.panelCenter.Controls.Add(Me.UcSettings1)
+        Me.panelCenter.Controls.Add(Me.UcReports1)
+        Me.panelCenter.Controls.Add(Me.UcMessages1)
+        Me.panelCenter.Controls.Add(Me.UcDashboard1)
+        Me.panelCenter.Controls.Add(Me.UcBorrowers1)
+        Me.panelCenter.Controls.Add(Me.UcBookManagement1)
+        Me.panelCenter.Controls.Add(Me.UcActivityLog1)
+        Me.panelCenter.Controls.Add(Me.UcAboutIETI1)
+        Me.panelCenter.Controls.Add(Me.Panel4)
+        Me.panelCenter.Location = New System.Drawing.Point(240, 135)
+        Me.panelCenter.Name = "panelCenter"
+        Me.panelCenter.Size = New System.Drawing.Size(886, 633)
+        Me.panelCenter.TabIndex = 5
         '
         'UcUserManagement1
         '
@@ -763,6 +735,34 @@ Partial Class frmMain
         Me.UcAboutIETI1.Size = New System.Drawing.Size(886, 607)
         Me.UcAboutIETI1.TabIndex = 10
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.divider)
+        Me.Panel4.Controls.Add(Me.btnRestoreMaximize)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(886, 26)
+        Me.Panel4.TabIndex = 10
+        '
+        'btnRestoreMaximize
+        '
+        Me.btnRestoreMaximize.BackgroundImage = CType(resources.GetObject("btnRestoreMaximize.BackgroundImage"), System.Drawing.Image)
+        Me.btnRestoreMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnRestoreMaximize.FlatAppearance.BorderSize = 0
+        Me.btnRestoreMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRestoreMaximize.Location = New System.Drawing.Point(857, 4)
+        Me.btnRestoreMaximize.Name = "btnRestoreMaximize"
+        Me.btnRestoreMaximize.Size = New System.Drawing.Size(23, 23)
+        Me.btnRestoreMaximize.TabIndex = 9
+        Me.btnRestoreMaximize.UseVisualStyleBackColor = True
+        '
+        'MetroToolTip1
+        '
+        Me.MetroToolTip1.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroToolTip1.StyleManager = Nothing
+        Me.MetroToolTip1.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -780,24 +780,24 @@ Partial Class frmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.panel2.ResumeLayout(False)
+        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBgSearch.ResumeLayout(False)
         Me.panelBgSearch.PerformLayout()
+        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLeft.ResumeLayout(False)
         Me.panelRight.ResumeLayout(False)
         Me.panel5.ResumeLayout(False)
         Me.panel5.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelCenter.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

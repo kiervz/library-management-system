@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports MetroFramework.Forms
+Imports Tulpep.NotificationWindow
 
 Public Class frmMain
 
@@ -159,4 +160,23 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Notifier()
+    End Sub
+    Private Sub login()
+        Dim login As New frmLogin
+        login.ShowDialog()
+    End Sub
+    Private Sub Notifier()
+        Dim notif As New PopupNotifier
+        notif.Image = My.Resources.admin3
+        notif.HeaderHeight = 15
+        notif.HeaderColor = Color.Teal
+        notif.TitleFont = New Font("Century Gothic", 11)
+        notif.ContentFont = New Font("Century Gothic", 10)
+        notif.TitleText = "Library Management System"
+        notif.ContentText = "Welcome back " + userType + " " + fname
+        notif.ShowOptionsButton = True
+        notif.Popup()
+    End Sub
 End Class

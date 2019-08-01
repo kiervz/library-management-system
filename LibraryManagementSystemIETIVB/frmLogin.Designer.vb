@@ -39,7 +39,7 @@ Partial Class frmLogin
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.cbShowPassword = New MetroFramework.Controls.MetroCheckBox()
         CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -188,25 +188,25 @@ Partial Class frmLogin
         Me.timer1.Enabled = True
         Me.timer1.Interval = 2000
         '
-        'MetroCheckBox1
+        'cbShowPassword
         '
-        Me.MetroCheckBox1.AutoSize = True
-        Me.MetroCheckBox1.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold
-        Me.MetroCheckBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.MetroCheckBox1.Location = New System.Drawing.Point(850, 433)
-        Me.MetroCheckBox1.Name = "MetroCheckBox1"
-        Me.MetroCheckBox1.Size = New System.Drawing.Size(109, 15)
-        Me.MetroCheckBox1.TabIndex = 23
-        Me.MetroCheckBox1.Text = "Show Password"
-        Me.MetroCheckBox1.UseCustomForeColor = True
-        Me.MetroCheckBox1.UseSelectable = True
+        Me.cbShowPassword.AutoSize = True
+        Me.cbShowPassword.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold
+        Me.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.cbShowPassword.Location = New System.Drawing.Point(850, 433)
+        Me.cbShowPassword.Name = "cbShowPassword"
+        Me.cbShowPassword.Size = New System.Drawing.Size(109, 15)
+        Me.cbShowPassword.TabIndex = 23
+        Me.cbShowPassword.Text = "Show Password"
+        Me.cbShowPassword.UseCustomForeColor = True
+        Me.cbShowPassword.UseSelectable = True
         '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 564)
-        Me.Controls.Add(Me.MetroCheckBox1)
+        Me.Controls.Add(Me.cbShowPassword)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.chkShowPassword)
         Me.Controls.Add(Me.txtPassword)
@@ -245,6 +245,6 @@ Partial Class frmLogin
     Private WithEvents btnLogin As System.Windows.Forms.Button
     Private WithEvents timer1 As System.Windows.Forms.Timer
     Private WithEvents timer2 As System.Windows.Forms.Timer
-    Friend WithEvents MetroCheckBox1 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents cbShowPassword As MetroFramework.Controls.MetroCheckBox
 
 End Class
