@@ -84,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.vb" />
+    <Compile Include="frmRegisterUser.Designer.vb">
+      <DependentUpon>frmRegisterUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransparent.Designer.vb">
+      <DependentUpon>frmTransparent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransparent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -118,13 +130,73 @@
     <Compile Include="ucAboutIETI.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ucActivityLog.Designer.vb">
+      <DependentUpon>ucActivityLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucActivityLog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBookManagement.Designer.vb">
+      <DependentUpon>ucBookManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucBookManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBorrowers.Designer.vb">
+      <DependentUpon>ucBorrowers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucBorrowers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDashboard.Designer.vb">
+      <DependentUpon>ucDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMessages.Designer.vb">
+      <DependentUpon>ucMessages.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucMessages.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucReports.Designer.vb">
+      <DependentUpon>ucReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucReports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSettings.Designer.vb">
+      <DependentUpon>ucSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentManagement.Designer.vb">
+      <DependentUpon>ucStudentManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUserManagement.Designer.vb">
+      <DependentUpon>ucUserManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucUserManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmRegisterUser.resx">
+      <DependentUpon>frmRegisterUser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransparent.resx">
+      <DependentUpon>frmTransparent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -134,6 +206,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucActivityLog.resx">
+      <DependentUpon>ucActivityLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBookManagement.resx">
+      <DependentUpon>ucBookManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBorrowers.resx">
+      <DependentUpon>ucBorrowers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDashboard.resx">
+      <DependentUpon>ucDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMessages.resx">
+      <DependentUpon>ucMessages.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucReports.resx">
+      <DependentUpon>ucReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSettings.resx">
+      <DependentUpon>ucSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentManagement.resx">
+      <DependentUpon>ucStudentManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUserManagement.resx">
+      <DependentUpon>ucUserManagement.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\restore_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

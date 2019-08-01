@@ -9,40 +9,71 @@ Public Class frmMain
         panelSelector.Height = btn.Height
     End Sub
 
+
+    Private Sub HideAllUserControl()
+        UcAboutIETI1.Visible = False
+        UcActivityLog1.Visible = False
+        UcBookManagement1.Visible = False
+        UcBorrowers1.Visible = False
+        UcDashboard1.Visible = False
+        UcMessages1.Visible = False
+        UcReports1.Visible = False
+        UcSettings1.Visible = False
+        UcStudentManagement1.Visible = False
+        UcUserManagement1.Visible = False
+    End Sub
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
+        HideAllUserControl()
+        UcDashboard1.Visible = True
     End Sub
 
     Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
         movePanelSelector(btnBorrowers)
+        HideAllUserControl()
+        UcBorrowers1.Visible = True
     End Sub
 
     Private Sub btnBookManagement_Click(sender As Object, e As EventArgs) Handles btnBookManagement.Click
         movePanelSelector(btnBookManagement)
+        HideAllUserControl()
+        UcBookManagement1.Visible = True
     End Sub
 
     Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
         movePanelSelector(btnStudentsMangement)
+        HideAllUserControl()
+        UcStudentManagement1.Visible = True
     End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
         movePanelSelector(btnUserManagement)
+        HideAllUserControl()
+        UcUserManagement1.Visible = True
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
         movePanelSelector(btnActivityLog)
+        HideAllUserControl()
+        UcActivityLog1.Visible = True
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         movePanelSelector(btnReports)
+        HideAllUserControl()
+        UcReports1.Visible = True
     End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         movePanelSelector(btnSettings)
+        HideAllUserControl()
+        UcSettings1.Visible = True
     End Sub
 
     Private Sub btnMessages_Click(sender As Object, e As EventArgs) Handles btnMessages.Click
         movePanelSelector(btnMessages)
+        HideAllUserControl()
+        UcMessages1.Visible = True
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
@@ -112,12 +143,11 @@ Public Class frmMain
 
     Private Sub btnRestoreMaximize_MouseEnter(sender As Object, e As EventArgs) Handles btnRestoreMaximize.MouseEnter
         MetroToolTip1.ShowAlways = True
-        If btnRestoreMaximize.Location = New Point(1091, 11) Then
+        If btnRestoreMaximize.Location = New Point(1080, 6) Then
             MetroToolTip1.SetToolTip(btnRestoreMaximize, "Restore Down")
         Else
             MetroToolTip1.SetToolTip(btnRestoreMaximize, "Maximize")
         End If
-
     End Sub
 
     Private Sub btnMinimize_MouseEnter(sender As Object, e As EventArgs) Handles btnMinimize.MouseEnter

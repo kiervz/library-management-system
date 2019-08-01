@@ -66,7 +66,7 @@ Partial Class ucAboutIETI
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
         Me.Label3.Location = New System.Drawing.Point(53, 306)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(769, 1400)
+        Me.Label3.Size = New System.Drawing.Size(786, 1400)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = resources.GetString("Label3.Text")
         '
@@ -91,7 +91,7 @@ Partial Class ucAboutIETI
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
         Me.Label1.Location = New System.Drawing.Point(53, 178)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(769, 72)
+        Me.Label1.Size = New System.Drawing.Size(786, 72)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "We produce graduates, with certifications that are internationally recognized, an" & _
     "d have knowledge, technical skills and attitude to excel in their chosen field."
@@ -117,7 +117,7 @@ Partial Class ucAboutIETI
         Me.label7.ForeColor = System.Drawing.Color.DimGray
         Me.label7.Location = New System.Drawing.Point(53, 59)
         Me.label7.Name = "label7"
-        Me.label7.Size = New System.Drawing.Size(769, 70)
+        Me.label7.Size = New System.Drawing.Size(786, 70)
         Me.label7.TabIndex = 12
         Me.label7.Text = "The best training institution in Asia Pacific known for the knowledge, technical " & _
     "skills and attitude of its faculty, students and graduates."
