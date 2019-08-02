@@ -27,54 +27,63 @@ Public Class frmMain
         movePanelSelector(btnDashboard)
         HideAllUserControl()
         UcDashboard1.Visible = True
+        lblTitle.Text = "Dashboard"
     End Sub
 
     Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
         movePanelSelector(btnBorrowers)
         HideAllUserControl()
         UcBorrowers1.Visible = True
+        lblTitle.Text = "Borrowers"
     End Sub
 
     Private Sub btnBookManagement_Click(sender As Object, e As EventArgs) Handles btnBookManagement.Click
         movePanelSelector(btnBookManagement)
         HideAllUserControl()
         UcBookManagement1.Visible = True
+        lblTitle.Text = "Book Management"
     End Sub
 
     Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
         movePanelSelector(btnStudentsMangement)
         HideAllUserControl()
         UcStudentManagement1.Visible = True
+        lblTitle.Text = "Student Management"
     End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
         movePanelSelector(btnUserManagement)
         HideAllUserControl()
         UcUserManagement1.Visible = True
+        lblTitle.Text = "User Management"
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
         movePanelSelector(btnActivityLog)
         HideAllUserControl()
         UcActivityLog1.Visible = True
+        lblTitle.Text = "Activity Log"
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         movePanelSelector(btnReports)
         HideAllUserControl()
         UcReports1.Visible = True
+        lblTitle.Text = "Reports"
     End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         movePanelSelector(btnSettings)
         HideAllUserControl()
         UcSettings1.Visible = True
+        lblTitle.Text = "Settings"
     End Sub
 
     Private Sub btnMessages_Click(sender As Object, e As EventArgs) Handles btnMessages.Click
         movePanelSelector(btnMessages)
         HideAllUserControl()
         UcMessages1.Visible = True
+        lblTitle.Text = "Messages"
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click

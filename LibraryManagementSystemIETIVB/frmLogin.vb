@@ -45,7 +45,7 @@ Public Class frmLogin
                     GlobalVariables.userid = dr("UserID")
                     GlobalVariables.fname = dr("FirstName")
                     GlobalVariables.lname = dr("LastName")
-                    GlobalVariables.image = dr("Image")
+                    GlobalVariables.userImage = dr("Image")
                     GlobalVariables.userType = dr("UserType")
 
                     txtUsername.Clear()

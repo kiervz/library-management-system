@@ -42,7 +42,7 @@ Partial Class frmRegisterUser
         Me.lblAnswer = New System.Windows.Forms.Label()
         Me.lblQuestion = New System.Windows.Forms.Label()
         Me.cmbQuestion = New MetroFramework.Controls.MetroComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.txtFirstname = New System.Windows.Forms.TextBox()
         Me.txtLastname = New System.Windows.Forms.TextBox()
         Me.txtPhone = New System.Windows.Forms.TextBox()
@@ -50,7 +50,8 @@ Partial Class frmRegisterUser
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtConfirmPass = New System.Windows.Forms.TextBox()
         Me.txtAnswer = New System.Windows.Forms.TextBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'rbFemale
@@ -274,7 +275,7 @@ Partial Class frmRegisterUser
         '
         Me.lblAnswer.AutoSize = True
         Me.lblAnswer.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnswer.Location = New System.Drawing.Point(43, 575)
+        Me.lblAnswer.Location = New System.Drawing.Point(43, 573)
         Me.lblAnswer.Name = "lblAnswer"
         Me.lblAnswer.Size = New System.Drawing.Size(129, 20)
         Me.lblAnswer.TabIndex = 184
@@ -284,7 +285,7 @@ Partial Class frmRegisterUser
         '
         Me.lblQuestion.AutoSize = True
         Me.lblQuestion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQuestion.Location = New System.Drawing.Point(43, 534)
+        Me.lblQuestion.Location = New System.Drawing.Point(43, 532)
         Me.lblQuestion.Name = "lblQuestion"
         Me.lblQuestion.Size = New System.Drawing.Size(139, 20)
         Me.lblQuestion.TabIndex = 182
@@ -294,22 +295,22 @@ Partial Class frmRegisterUser
         '
         Me.cmbQuestion.FormattingEnabled = True
         Me.cmbQuestion.ItemHeight = 23
-        Me.cmbQuestion.Location = New System.Drawing.Point(259, 525)
+        Me.cmbQuestion.Location = New System.Drawing.Point(259, 523)
         Me.cmbQuestion.Name = "cmbQuestion"
         Me.cmbQuestion.Size = New System.Drawing.Size(269, 29)
         Me.cmbQuestion.TabIndex = 181
         Me.cmbQuestion.UseSelectable = True
         '
-        'PictureBox1
+        'pbProfile
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
-        Me.PictureBox1.Location = New System.Drawing.Point(634, 95)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(186, 172)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 186
-        Me.PictureBox1.TabStop = False
+        Me.pbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbProfile.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
+        Me.pbProfile.Location = New System.Drawing.Point(634, 95)
+        Me.pbProfile.Name = "pbProfile"
+        Me.pbProfile.Size = New System.Drawing.Size(186, 172)
+        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbProfile.TabIndex = 186
+        Me.pbProfile.TabStop = False
         '
         'txtFirstname
         '
@@ -334,6 +335,7 @@ Partial Class frmRegisterUser
         Me.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPhone.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(259, 288)
+        Me.txtPhone.MaxLength = 11
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(269, 26)
         Me.txtPhone.TabIndex = 189
@@ -369,10 +371,14 @@ Partial Class frmRegisterUser
         '
         Me.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAnswer.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer.Location = New System.Drawing.Point(259, 573)
+        Me.txtAnswer.Location = New System.Drawing.Point(259, 571)
         Me.txtAnswer.Name = "txtAnswer"
         Me.txtAnswer.Size = New System.Drawing.Size(269, 26)
         Me.txtAnswer.TabIndex = 193
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'frmRegisterUser
         '
@@ -387,7 +393,7 @@ Partial Class frmRegisterUser
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.txtLastname)
         Me.Controls.Add(Me.txtFirstname)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pbProfile)
         Me.Controls.Add(Me.lblAnswer)
         Me.Controls.Add(Me.lblQuestion)
         Me.Controls.Add(Me.cmbQuestion)
@@ -415,7 +421,7 @@ Partial Class frmRegisterUser
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "REGISTER USER"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -440,7 +446,7 @@ Partial Class frmRegisterUser
     Private WithEvents lblAnswer As System.Windows.Forms.Label
     Private WithEvents lblQuestion As System.Windows.Forms.Label
     Private WithEvents cmbQuestion As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbProfile As System.Windows.Forms.PictureBox
     Friend WithEvents txtFirstname As System.Windows.Forms.TextBox
     Friend WithEvents txtLastname As System.Windows.Forms.TextBox
     Friend WithEvents txtPhone As System.Windows.Forms.TextBox
@@ -448,4 +454,5 @@ Partial Class frmRegisterUser
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtConfirmPass As System.Windows.Forms.TextBox
     Friend WithEvents txtAnswer As System.Windows.Forms.TextBox
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

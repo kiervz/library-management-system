@@ -29,7 +29,6 @@ Partial Class ucUserManagement
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucUserManagement))
         Me.dgvUserInfo = New MetroFramework.Controls.MetroGrid()
-        Me.btnAddNewUser = New System.Windows.Forms.Button()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +39,7 @@ Partial Class ucUserManagement
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnAddNewUser = New System.Windows.Forms.Button()
         CType(Me.dgvUserInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -109,26 +109,6 @@ Partial Class ucUserManagement
         Me.dgvUserInfo.Size = New System.Drawing.Size(1090, 462)
         Me.dgvUserInfo.Style = MetroFramework.MetroColorStyle.Teal
         Me.dgvUserInfo.TabIndex = 49
-        '
-        'btnAddNewUser
-        '
-        Me.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddNewUser.FlatAppearance.BorderSize = 0
-        Me.btnAddNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNewUser.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddNewUser.ForeColor = System.Drawing.Color.White
-        Me.btnAddNewUser.Image = CType(resources.GetObject("btnAddNewUser.Image"), System.Drawing.Image)
-        Me.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddNewUser.Location = New System.Drawing.Point(10, 49)
-        Me.btnAddNewUser.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAddNewUser.Name = "btnAddNewUser"
-        Me.btnAddNewUser.Size = New System.Drawing.Size(155, 35)
-        Me.btnAddNewUser.TabIndex = 50
-        Me.btnAddNewUser.Text = "   ADD NEW USER"
-        Me.btnAddNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAddNewUser.UseVisualStyleBackColor = False
         '
         'Column1
         '
@@ -204,6 +184,26 @@ Partial Class ucUserManagement
         Me.Column11.ReadOnly = True
         Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column11.Width = 50
+        '
+        'btnAddNewUser
+        '
+        Me.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddNewUser.FlatAppearance.BorderSize = 0
+        Me.btnAddNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewUser.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNewUser.ForeColor = System.Drawing.Color.White
+        Me.btnAddNewUser.Image = CType(resources.GetObject("btnAddNewUser.Image"), System.Drawing.Image)
+        Me.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddNewUser.Location = New System.Drawing.Point(10, 49)
+        Me.btnAddNewUser.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAddNewUser.Name = "btnAddNewUser"
+        Me.btnAddNewUser.Size = New System.Drawing.Size(155, 35)
+        Me.btnAddNewUser.TabIndex = 50
+        Me.btnAddNewUser.Text = "   ADD NEW USER"
+        Me.btnAddNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddNewUser.UseVisualStyleBackColor = False
         '
         'ucUserManagement
         '
