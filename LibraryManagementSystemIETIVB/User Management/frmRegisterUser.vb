@@ -1,11 +1,12 @@
-﻿Public Class frmRegisterUser
+﻿
+Public Class frmRegisterUser
 
     Private imagePath As String
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
         Me.Hide()
+        a.Close()
     End Sub
 
     Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
@@ -46,6 +47,17 @@
         If Not OpenFileDialog1.FileName = Nothing Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
             imagePath = pbProfile.ImageLocation
+        End If
+    End Sub
+
+    Private Sub frmRegisterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rbMale.Checked = True
+    End Sub
+
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text = "" Then
+            CustomMessageBox.ShowDialog("Please fill up all fields!", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+
         End If
     End Sub
 End Class

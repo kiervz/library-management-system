@@ -26,7 +26,7 @@ Public Class frmMain
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
         HideAllUserControl()
-        UcDashboard1.Visible = True
+        UcAboutIETI1.Visible = True
         lblTitle.Text = "Dashboard"
     End Sub
 
@@ -95,9 +95,9 @@ Public Class frmMain
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim ask As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+        CustomMessageBox.ShowDialog("Are you sure you want to Exit?", MessageBoxButtonn.YesNo, MessageBoxIconn.Success)
 
-        If ask = MsgBoxResult.Yes Then
+        If msgBoxButtonClick = DialogResult.Yes Then
             Application.Exit()
         End If
     End Sub
@@ -113,10 +113,12 @@ Public Class frmMain
 
     Private Sub btnRestoreMaximize_Click(sender As Object, e As EventArgs) Handles btnRestoreMaximize.Click
         If btnRestoreMaximize.Location = New Point(1080, 6) Then
+            isExpandedPanel = True
             panelCenter.Size = New Size(886, 633)
             divider.Size = New Size(886, 5)
             btnRestoreMaximize.Location = New Point(857, 4)
         Else
+            isExpandedPanel = False
             panelCenter.Size = New Size(1126, 633)
             divider.Size = New Size(1126, 5)
             btnRestoreMaximize.Location = New Point(1080, 6)
@@ -152,20 +154,19 @@ Public Class frmMain
 
 
     Private Sub btnRestoreMaximize_MouseEnter(sender As Object, e As EventArgs) Handles btnRestoreMaximize.MouseEnter
-        MetroToolTip1.ShowAlways = True
         If btnRestoreMaximize.Location = New Point(1080, 6) Then
-            MetroToolTip1.SetToolTip(btnRestoreMaximize, "Restore Down")
+            ToolTip1.SetToolTip(btnRestoreMaximize, "Restore Down")
         Else
-            MetroToolTip1.SetToolTip(btnRestoreMaximize, "Maximize")
+            ToolTip1.SetToolTip(btnRestoreMaximize, "Maximize")
         End If
     End Sub
 
     Private Sub btnMinimize_MouseEnter(sender As Object, e As EventArgs) Handles btnMinimize.MouseEnter
-        MetroToolTip1.SetToolTip(btnMinimize, "Minimize")
+        ToolTip1.SetToolTip(btnMinimize, "Minimize")
     End Sub
 
     Private Sub btnClose_MouseEnter(sender As Object, e As EventArgs) Handles btnClose.MouseEnter
-        MetroToolTip1.SetToolTip(btnClose, "Close")
+        ToolTip1.SetToolTip(btnClose, "Close")
     End Sub
 
 
@@ -188,4 +189,5 @@ Public Class frmMain
         notif.ShowOptionsButton = True
         notif.Popup()
     End Sub
+
 End Class

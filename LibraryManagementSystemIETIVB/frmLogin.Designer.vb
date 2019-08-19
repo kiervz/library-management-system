@@ -26,8 +26,6 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        Me.picCarousel = New System.Windows.Forms.PictureBox()
-        Me.pictureBox2 = New System.Windows.Forms.PictureBox()
         Me.label4 = New System.Windows.Forms.Label()
         Me.lblNextAttempt = New System.Windows.Forms.Label()
         Me.lblRemainingTime = New System.Windows.Forms.Label()
@@ -35,34 +33,15 @@ Partial Class frmLogin
         Me.txtUsername = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtPassword = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.chkShowPassword = New MetroFramework.Controls.MetroCheckBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.cbShowPassword = New MetroFramework.Controls.MetroCheckBox()
-        CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.picCarousel = New System.Windows.Forms.PictureBox()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'picCarousel
-        '
-        Me.picCarousel.Image = CType(resources.GetObject("picCarousel.Image"), System.Drawing.Image)
-        Me.picCarousel.Location = New System.Drawing.Point(-2, 5)
-        Me.picCarousel.Name = "picCarousel"
-        Me.picCarousel.Size = New System.Drawing.Size(684, 559)
-        Me.picCarousel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picCarousel.TabIndex = 1
-        Me.picCarousel.TabStop = False
-        '
-        'pictureBox2
-        '
-        Me.pictureBox2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
-        Me.pictureBox2.Location = New System.Drawing.Point(762, 33)
-        Me.pictureBox2.Name = "pictureBox2"
-        Me.pictureBox2.Size = New System.Drawing.Size(163, 143)
-        Me.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pictureBox2.TabIndex = 11
-        Me.pictureBox2.TabStop = False
         '
         'label4
         '
@@ -160,14 +139,6 @@ Partial Class frmLogin
         Me.txtPassword.Text = "password"
         Me.txtPassword.UseSystemPasswordChar = True
         '
-        'chkShowPassword
-        '
-        Me.chkShowPassword.Location = New System.Drawing.Point(0, 0)
-        Me.chkShowPassword.Name = "chkShowPassword"
-        Me.chkShowPassword.Size = New System.Drawing.Size(104, 24)
-        Me.chkShowPassword.TabIndex = 22
-        Me.chkShowPassword.UseSelectable = True
-        '
         'btnLogin
         '
         Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
@@ -188,6 +159,9 @@ Partial Class frmLogin
         Me.timer1.Enabled = True
         Me.timer1.Interval = 2000
         '
+        'timer2
+        '
+        '
         'cbShowPassword
         '
         Me.cbShowPassword.AutoSize = True
@@ -201,6 +175,26 @@ Partial Class frmLogin
         Me.cbShowPassword.UseCustomForeColor = True
         Me.cbShowPassword.UseSelectable = True
         '
+        'pictureBox2
+        '
+        Me.pictureBox2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
+        Me.pictureBox2.Location = New System.Drawing.Point(762, 33)
+        Me.pictureBox2.Name = "pictureBox2"
+        Me.pictureBox2.Size = New System.Drawing.Size(163, 143)
+        Me.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pictureBox2.TabIndex = 11
+        Me.pictureBox2.TabStop = False
+        '
+        'picCarousel
+        '
+        Me.picCarousel.Image = CType(resources.GetObject("picCarousel.Image"), System.Drawing.Image)
+        Me.picCarousel.Location = New System.Drawing.Point(-2, 5)
+        Me.picCarousel.Name = "picCarousel"
+        Me.picCarousel.Size = New System.Drawing.Size(684, 559)
+        Me.picCarousel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCarousel.TabIndex = 1
+        Me.picCarousel.TabStop = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,7 +202,6 @@ Partial Class frmLogin
         Me.ClientSize = New System.Drawing.Size(1006, 564)
         Me.Controls.Add(Me.cbShowPassword)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.chkShowPassword)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.txtUsername)
@@ -219,20 +212,21 @@ Partial Class frmLogin
         Me.Controls.Add(Me.pictureBox2)
         Me.Controls.Add(Me.picCarousel)
         Me.DisplayHeader = False
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
+        Me.Movable = False
         Me.Name = "frmLogin"
         Me.Padding = New System.Windows.Forms.Padding(20, 30, 20, 20)
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "Login"
-        CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Private WithEvents picCarousel As System.Windows.Forms.PictureBox
     Private WithEvents pictureBox2 As System.Windows.Forms.PictureBox
     Private WithEvents label4 As System.Windows.Forms.Label
     Private WithEvents lblNextAttempt As System.Windows.Forms.Label
@@ -241,10 +235,10 @@ Partial Class frmLogin
     Private WithEvents txtUsername As MaterialSkin.Controls.MaterialSingleLineTextField
     Private WithEvents lblPassword As System.Windows.Forms.Label
     Private WithEvents txtPassword As MaterialSkin.Controls.MaterialSingleLineTextField
-    Private WithEvents chkShowPassword As MetroFramework.Controls.MetroCheckBox
     Private WithEvents btnLogin As System.Windows.Forms.Button
     Private WithEvents timer1 As System.Windows.Forms.Timer
     Private WithEvents timer2 As System.Windows.Forms.Timer
     Friend WithEvents cbShowPassword As MetroFramework.Controls.MetroCheckBox
+    Private WithEvents picCarousel As System.Windows.Forms.PictureBox
 
 End Class

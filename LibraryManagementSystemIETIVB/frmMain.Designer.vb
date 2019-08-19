@@ -23,6 +23,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -66,9 +67,9 @@ Partial Class frmMain
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnRestoreMaximize = New System.Windows.Forms.Button()
-        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.btnRestoreMaximize = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -119,7 +120,7 @@ Partial Class frmMain
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Location = New System.Drawing.Point(1319, 3)
+        Me.btnClose.Location = New System.Drawing.Point(1336, 3)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(23, 23)
         Me.btnClose.TabIndex = 9
@@ -145,7 +146,7 @@ Partial Class frmMain
         Me.btnMinimize.FlatAppearance.BorderSize = 0
         Me.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimize.Location = New System.Drawing.Point(1290, 3)
+        Me.btnMinimize.Location = New System.Drawing.Point(1307, 3)
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(23, 23)
         Me.btnMinimize.TabIndex = 7
@@ -667,6 +668,17 @@ Partial Class frmMain
         Me.Panel4.Size = New System.Drawing.Size(886, 33)
         Me.Panel4.TabIndex = 10
         '
+        'lblTitle
+        '
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.Black
+        Me.lblTitle.Location = New System.Drawing.Point(3, 6)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(549, 26)
+        Me.lblTitle.TabIndex = 10
+        Me.lblTitle.Text = "Library Management System"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'btnRestoreMaximize
         '
         Me.btnRestoreMaximize.BackgroundImage = CType(resources.GetObject("btnRestoreMaximize.BackgroundImage"), System.Drawing.Image)
@@ -679,22 +691,10 @@ Partial Class frmMain
         Me.btnRestoreMaximize.TabIndex = 9
         Me.btnRestoreMaximize.UseVisualStyleBackColor = True
         '
-        'MetroToolTip1
+        'ToolTip1
         '
-        Me.MetroToolTip1.Style = MetroFramework.MetroColorStyle.Teal
-        Me.MetroToolTip1.StyleManager = Nothing
-        Me.MetroToolTip1.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'lblTitle
-        '
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.Black
-        Me.lblTitle.Location = New System.Drawing.Point(3, 6)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(549, 26)
-        Me.lblTitle.TabIndex = 10
-        Me.lblTitle.Text = "Library Management System"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolTip1.AutomaticDelay = 1000
+        Me.ToolTip1.BackColor = System.Drawing.Color.White
         '
         'UcUserManagement1
         '
@@ -857,7 +857,6 @@ Partial Class frmMain
     Friend WithEvents btnRestoreMaximize As System.Windows.Forms.Button
     Friend WithEvents panelCenter As System.Windows.Forms.Panel
     Friend WithEvents UcAboutIETI1 As LibraryManagementSystemIETIVB.ucAboutIETI
-    Friend WithEvents MetroToolTip1 As MetroFramework.Components.MetroToolTip
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
     Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookManagement
@@ -869,4 +868,5 @@ Partial Class frmMain
     Friend WithEvents UcStudentManagement1 As LibraryManagementSystemIETIVB.ucStudentManagement
     Friend WithEvents UcUserManagement1 As LibraryManagementSystemIETIVB.ucUserManagement
     Private WithEvents lblTitle As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

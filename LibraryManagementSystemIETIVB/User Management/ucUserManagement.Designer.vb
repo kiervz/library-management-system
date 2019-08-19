@@ -40,7 +40,10 @@ Partial Class ucUserManagement
         Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btnAddNewUser = New System.Windows.Forms.Button()
+        Me.panelNoRecord = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvUserInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelNoRecord.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvUserInfo
@@ -50,8 +53,9 @@ Partial Class ucUserManagement
         Me.dgvUserInfo.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(2)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.dgvUserInfo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvUserInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -67,13 +71,14 @@ Partial Class ucUserManagement
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvUserInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvUserInfo.ColumnHeadersHeight = 25
+        Me.dgvUserInfo.ColumnHeadersHeight = 28
         Me.dgvUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvUserInfo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column6, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -97,11 +102,13 @@ Partial Class ucUserManagement
         Me.dgvUserInfo.RowHeadersWidth = 23
         Me.dgvUserInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(2)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
         Me.dgvUserInfo.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvUserInfo.RowTemplate.Height = 25
+        Me.dgvUserInfo.RowTemplate.Height = 28
         Me.dgvUserInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvUserInfo.ShowCellErrors = False
         Me.dgvUserInfo.ShowEditingIcon = False
@@ -122,7 +129,7 @@ Partial Class ucUserManagement
         Me.Column6.HeaderText = "USER TYPE"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 130
+        Me.Column6.Width = 135
         '
         'Column2
         '
@@ -143,6 +150,7 @@ Partial Class ucUserManagement
         Me.Column4.HeaderText = "GENDER"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
+        Me.Column4.Width = 95
         '
         'Column5
         '
@@ -205,15 +213,38 @@ Partial Class ucUserManagement
         Me.btnAddNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddNewUser.UseVisualStyleBackColor = False
         '
+        'panelNoRecord
+        '
+        Me.panelNoRecord.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.panelNoRecord.Controls.Add(Me.Label1)
+        Me.panelNoRecord.Location = New System.Drawing.Point(261, 241)
+        Me.panelNoRecord.Name = "panelNoRecord"
+        Me.panelNoRecord.Size = New System.Drawing.Size(380, 59)
+        Me.panelNoRecord.TabIndex = 51
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(101, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(178, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "No Records Found"
+        '
         'ucUserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnAddNewUser)
+        Me.Controls.Add(Me.panelNoRecord)
         Me.Controls.Add(Me.dgvUserInfo)
         Me.Name = "ucUserManagement"
         Me.Size = New System.Drawing.Size(1119, 633)
         CType(Me.dgvUserInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelNoRecord.ResumeLayout(False)
+        Me.panelNoRecord.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -229,5 +260,7 @@ Partial Class ucUserManagement
     Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column10 As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents Column11 As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents panelNoRecord As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

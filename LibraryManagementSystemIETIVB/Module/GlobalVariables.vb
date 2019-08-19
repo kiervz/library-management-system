@@ -5,6 +5,8 @@
     Public lname As String
     Public userImage As String
     Public userType As String
+    Public isExpandedPanel As Boolean = False
+    Public msgBoxButtonClick As String
 
 
     Public Sub KeyPressLetterOnly(e As KeyPressEventArgs)

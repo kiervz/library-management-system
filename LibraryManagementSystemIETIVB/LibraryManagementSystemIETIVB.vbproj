@@ -46,6 +46,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
       <Private>True</Private>
@@ -87,11 +96,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionString.vb" />
-    <Compile Include="frmRegisterUser.Designer.vb">
+    <Compile Include="User Management\frmUpdateUser.Designer.vb">
+      <DependentUpon>frmUpdateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Management\frmUpdateUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\ConnectionString.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Management\frmRegisterUser.Designer.vb">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmRegisterUser.vb">
+    <Compile Include="User Management\frmRegisterUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -113,9 +134,10 @@
     <Compile Include="frmTransparent.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlobalVariables.vb" />
-    <Compile Include="CustomMessageBox.vb" />
-    <Compile Include="MD5Hasher.vb" />
+    <Compile Include="Module\GlobalVariables.vb" />
+    <Compile Include="Module\MessageBoxMetro.vb" />
+    <Compile Include="Module\MD5Hasher.vb" />
+    <Compile Include="Module\CustomMessageBox.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -185,15 +207,18 @@
     <Compile Include="ucStudentManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucUserManagement.Designer.vb">
+    <Compile Include="User Management\ucUserManagement.Designer.vb">
       <DependentUpon>ucUserManagement.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucUserManagement.vb">
+    <Compile Include="User Management\ucUserManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmRegisterUser.resx">
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Management\frmRegisterUser.resx">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -204,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransparent.resx">
       <DependentUpon>frmTransparent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Management\frmUpdateUser.resx">
+      <DependentUpon>frmUpdateUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -238,7 +266,7 @@
     <EmbeddedResource Include="ucStudentManagement.resx">
       <DependentUpon>ucStudentManagement.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucUserManagement.resx">
+    <EmbeddedResource Include="User Management\ucUserManagement.resx">
       <DependentUpon>ucUserManagement.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -293,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieti.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
