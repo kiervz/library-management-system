@@ -32,13 +32,12 @@ Public Class frmLogin
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            Msg(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            CustomMessageBox.ShowDialog("Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
-            Msg(Me, "Please enter your username!", "Username Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            CustomMessageBox.ShowDialog("Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
-            Msg(Me, "Please enter your password!", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            CustomMessageBox.ShowDialog("Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
         Else
-
             Try
                 cmd = New SqlCommand("SELECT UserID, FirstName, LastName, UserType, Image FROM tblUserInfo WHERE Username=@1 AND Password=@2", conn)
                 cmd.Parameters.AddWithValue("@1", txtUsername.Text)
@@ -59,7 +58,7 @@ Public Class frmLogin
                     frmMain.Show()
                     Me.Hide()
                 Else
-                    Msg(Me, "Your username and password is incorrect!", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    CustomMessageBox.ShowDialog("Your username and password is incorrect!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
                     Attempt()
                 End If
             Catch ex As Exception
@@ -153,4 +152,8 @@ Public Class frmLogin
     '        System.Drawing.Imaging.ImageFormat.Jpeg)
     'End Sub
 #End Region
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        CustomMessageBox.ShowDialog("wdwd", "wadawd", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+    End Sub
 End Class

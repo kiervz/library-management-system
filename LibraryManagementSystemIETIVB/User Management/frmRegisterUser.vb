@@ -56,7 +56,7 @@ Public Class frmRegisterUser
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text = "" Then
-            CustomMessageBox.ShowDialog("Please fill up all fields!", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            CustomMessageBox.ShowDialog("Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
 
         End If
     End Sub

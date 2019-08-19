@@ -52,7 +52,7 @@ Public Class ucUserManagement
             b.ShowDialog()
 
         ElseIf e.ColumnIndex = 9 Then
-            CustomMessageBox.ShowDialog("Are you sure you want to Delete " + tempUserID + "?", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
+            CustomMessageBox.ShowDialog("Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
 
             If msgBoxButtonClick = DialogResult.Yes Then
                 MsgBox("Yes")

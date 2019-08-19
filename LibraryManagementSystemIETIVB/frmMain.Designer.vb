@@ -674,7 +674,7 @@ Partial Class frmMain
         Me.lblTitle.ForeColor = System.Drawing.Color.Black
         Me.lblTitle.Location = New System.Drawing.Point(3, 6)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(549, 26)
+        Me.lblTitle.Size = New System.Drawing.Size(595, 26)
         Me.lblTitle.TabIndex = 10
         Me.lblTitle.Text = "Library Management System"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
