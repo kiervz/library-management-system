@@ -4,6 +4,13 @@ Imports Tulpep.NotificationWindow
 
 Public Class frmMain
 
+    'Protected Overrides ReadOnly Property CreateParams() As CreateParams
+    '    Get
+    '        Dim cp As CreateParams = MyBase.CreateParams
+    '        cp.ExStyle = cp.ExStyle Or &H2000000
+    '        Return cp
+    '    End Get
+    'End Property
 
     Private Sub movePanelSelector(btn As Control)
         panelSelector.Top = btn.Top
@@ -177,6 +184,7 @@ Public Class frmMain
 
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
         Notifier()
     End Sub
 

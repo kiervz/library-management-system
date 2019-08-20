@@ -180,7 +180,7 @@ Partial Class frmMain
         Me.panelBgSearch.Controls.Add(Me.txtSearch)
         Me.panelBgSearch.Controls.Add(Me.pbSearch)
         Me.panelBgSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.panelBgSearch.Location = New System.Drawing.Point(362, 33)
+        Me.panelBgSearch.Location = New System.Drawing.Point(367, 33)
         Me.panelBgSearch.Name = "panelBgSearch"
         Me.panelBgSearch.Size = New System.Drawing.Size(610, 48)
         Me.panelBgSearch.TabIndex = 4

@@ -5,8 +5,8 @@ Public Class frmRegisterUser
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        Me.Hide()
         a.Close()
+        Me.Hide()
     End Sub
 
     Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged

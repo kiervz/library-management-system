@@ -2,11 +2,12 @@
 
 Public Class ucUserManagement
 
+
     Private Sub btnAddNewUser_Click(sender As Object, e As EventArgs) Handles btnAddNewUser.Click
-        Dim a As New LibraryManagementSystemIETIVB.frmTransparent
-        Dim b As New LibraryManagementSystemIETIVB.frmRegisterUser
-        a.Show()
-        b.ShowDialog()
+        Dim a As New frmTransparent
+        Dim b As New frmRegisterUser
+        a.Show(Me)
+        b.ShowDialog(Me)
     End Sub
 
     Private Sub ucUserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -48,8 +49,8 @@ Public Class ucUserManagement
         If e.ColumnIndex = 8 Then
             Dim a As New frmTransparent
             Dim b As New frmUpdateUser
-            a.Show()
-            b.ShowDialog()
+            a.Show(Me)
+            b.ShowDialog(Me)
 
         ElseIf e.ColumnIndex = 9 Then
             CustomMessageBox.ShowDialog("Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
