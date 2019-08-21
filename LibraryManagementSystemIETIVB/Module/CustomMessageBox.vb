@@ -2,13 +2,12 @@
 Imports System.Runtime.InteropServices
 
 Module CustomMessageBox
+
     <DllImport("user32.dll")> _
     Private Function MessageBeep(ByVal uType As UInt32) As Boolean
     End Function
 
-    Private Declare Auto Function MessageBeep Lib "user32.dll" ( _
-    ByVal wType As Int32 _
-    ) As Int32
+    Private Declare Auto Function MessageBeep Lib "user32.dll" (ByVal wType As Int32) As Int32
 
     Private Const MB_ICONASTERISK As Int32 = &H40 ' Information.
     Private Const MB_ICONEXCLAMATION As Int32 = &H30 ' Ausrufezeichen.
@@ -25,26 +24,25 @@ Module CustomMessageBox
 
     Friend Enum MessageBoxIconn As Integer
         Question = 0
-        Primary = 1
+        Information = 1
         Success = 2
-        Warning = 3
+        Exclamation = 3
         Danger = 4
     End Enum
 
     Public Function ShowDialog(message As String, title As String, msgButton As MessageBoxButtonn, msgIcon As MessageBoxIconn)
-
         Dim color As New Color
 
         If msgIcon = MessageBoxIconn.Question Then
             MessageBeep(MB_ICONASTERISK)
             color = Drawing.Color.Gray
-        ElseIf msgIcon = MessageBoxIconn.Primary Then
+        ElseIf msgIcon = MessageBoxIconn.Information Then
             MessageBeep(MB_OK)
             color = System.Drawing.Color.FromArgb(52, 152, 219)
         ElseIf msgIcon = MessageBoxIconn.Success Then
             MessageBeep(MB_ICONHAND)
             color = System.Drawing.Color.FromArgb(26, 188, 156)
-        ElseIf msgIcon = MessageBoxIconn.Warning Then
+        ElseIf msgIcon = MessageBoxIconn.Exclamation Then
             MessageBeep(MB_ICONASTERISK)
             color = System.Drawing.Color.FromArgb(211, 84, 0)
         ElseIf msgIcon = MessageBoxIconn.Danger Then
@@ -141,11 +139,11 @@ Module CustomMessageBox
                 imageIcon = My.Resources.Resources._error
             ElseIf msgIcon = MessageBoxIconn.Question Then
                 imageIcon = My.Resources.Resources.help
-            ElseIf msgIcon = MessageBoxIconn.Primary Then
+            ElseIf msgIcon = MessageBoxIconn.Information Then
                 imageIcon = My.Resources.Resources.info
             ElseIf msgIcon = MessageBoxIconn.Success Then
                 imageIcon = My.Resources.Resources.success
-            ElseIf msgIcon = MessageBoxIconn.Warning Then
+            ElseIf msgIcon = MessageBoxIconn.Exclamation Then
                 imageIcon = My.Resources.Resources.info
             End If
 

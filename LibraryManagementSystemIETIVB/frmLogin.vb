@@ -32,11 +32,11 @@ Public Class frmLogin
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            CustomMessageBox.ShowDialog("Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
+            CustomMessageBox.ShowDialog("Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog("Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
+            CustomMessageBox.ShowDialog("Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog("Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Warning)
+            CustomMessageBox.ShowDialog("Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Else
             Try
                 cmd = New SqlCommand("SELECT UserID, FirstName, LastName, UserType, Image FROM tblUserInfo WHERE Username=@1 AND Password=@2", conn)
@@ -153,7 +153,6 @@ Public Class frmLogin
     'End Sub
 #End Region
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        CustomMessageBox.ShowDialog("wdwd", "wadawd", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
-    End Sub
+    
+
 End Class
