@@ -3,17 +3,13 @@ Imports System.Runtime.InteropServices
 
 Module CustomMessageBox
 
-    <DllImport("user32.dll")> _
-    Private Function MessageBeep(ByVal uType As UInt32) As Boolean
-    End Function
-
     Private Declare Auto Function MessageBeep Lib "user32.dll" (ByVal wType As Int32) As Int32
 
-    Private Const MB_ICONASTERISK As Int32 = &H40 ' Information.
-    Private Const MB_ICONEXCLAMATION As Int32 = &H30 ' Ausrufezeichen.
-    Private Const MB_ICONHAND As Int32 = &H10 ' Stopschild.
-    Private Const MB_ICONQUESTION As Int32 = &H20 ' Fragezeichen.
-    Private Const MB_OK As Int32 = &H0 ' Standard-OK.
+    Public Const MB_ICONEXCLAMATION = &H30&
+    Public Const MB_ICONHAND = &H10& 'Danger
+    Public Const MB_ICONINFORMATION = &H40&
+    Public Const MB_ICONMASK = &HF0&
+    Public Const MB_ICONQUESTION = &H20&
 
     Friend Enum MessageBoxButtonn As Integer
         Ok = 0
@@ -30,23 +26,23 @@ Module CustomMessageBox
         Danger = 4
     End Enum
 
-    Public Function ShowDialog(message As String, title As String, msgButton As MessageBoxButtonn, msgIcon As MessageBoxIconn)
+    Public Function ShowDialog(owner As System.Windows.Forms.IWin32Window, message As String, title As String, Optional msgButton As MessageBoxButtonn = MessageBoxButtonn.Ok, Optional msgIcon As MessageBoxIconn = MessageBoxIconn.Information)
         Dim color As New Color
 
         If msgIcon = MessageBoxIconn.Question Then
-            MessageBeep(MB_ICONASTERISK)
+            MessageBeep(MB_ICONQUESTION)
             color = Drawing.Color.Gray
         ElseIf msgIcon = MessageBoxIconn.Information Then
-            MessageBeep(MB_OK)
+            MessageBeep(MB_ICONINFORMATION)
             color = System.Drawing.Color.FromArgb(52, 152, 219)
         ElseIf msgIcon = MessageBoxIconn.Success Then
-            MessageBeep(MB_ICONHAND)
+            MessageBeep(MB_ICONINFORMATION)
             color = System.Drawing.Color.FromArgb(26, 188, 156)
         ElseIf msgIcon = MessageBoxIconn.Exclamation Then
-            MessageBeep(MB_ICONASTERISK)
+            MessageBeep(MB_ICONEXCLAMATION)
             color = System.Drawing.Color.FromArgb(211, 84, 0)
         ElseIf msgIcon = MessageBoxIconn.Danger Then
-            MessageBeep(MB_ICONEXCLAMATION)
+            MessageBeep(MB_ICONHAND)
             color = System.Drawing.Color.FromArgb(192, 57, 43)
         End If
 
@@ -64,7 +60,7 @@ Module CustomMessageBox
             .FlatAppearance.BorderSize = 0
             .FlatStyle = System.Windows.Forms.FlatStyle.Flat
             .Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular)
-            .Location = New System.Drawing.Point(290, 122)
+            .Location = New System.Drawing.Point(358, 153)
             .Name = "btnFirst"
             .Size = New System.Drawing.Size(90, 28)
             .UseCompatibleTextRendering = True
@@ -79,7 +75,7 @@ Module CustomMessageBox
             .FlatStyle = System.Windows.Forms.FlatStyle.Flat
             .Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular)
             .ForeColor = System.Drawing.Color.White
-            .Location = New System.Drawing.Point(386, 122)
+            .Location = New System.Drawing.Point(454, 153)
             .Name = "btnSecond"
             .Size = New System.Drawing.Size(90, 28)
             .UseCompatibleTextRendering = True
@@ -91,7 +87,7 @@ Module CustomMessageBox
         With form
             .AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             .AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            .ClientSize = New System.Drawing.Size(550, 160)
+            .ClientSize = New System.Drawing.Size(577, 199)
             .ControlBox = False
             .DisplayHeader = False
             .KeyPreview = True
@@ -103,7 +99,7 @@ Module CustomMessageBox
             .ShowInTaskbar = False
             .Text = "frmMessageBox"
             .StartPosition = FormStartPosition.CenterScreen
-            .TopMost = True
+            .TopLevel = True
         End With
 
 
@@ -112,7 +108,7 @@ Module CustomMessageBox
             .BackColor = color
             .Location = New System.Drawing.Point(0, 0)
             .Name = "panelTop"
-            .Size = New System.Drawing.Size(550, 31)
+            .Size = New System.Drawing.Size(577, 31)
         End With
 
 
@@ -126,7 +122,7 @@ Module CustomMessageBox
             .Location = New System.Drawing.Point(99, 62)
             .Multiline = True
             .Name = "txtMessage"
-            .Size = New System.Drawing.Size(413, 55)
+            .Size = New System.Drawing.Size(445, 85)
             .Text = message
             .TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         End With

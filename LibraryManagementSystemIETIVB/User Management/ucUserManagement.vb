@@ -21,7 +21,7 @@ Public Class ucUserManagement
         End If
     End Sub
 
-    Private Sub FillDGV()
+    Public Sub FillDGV()
         Try
             cmd = New SqlCommand("SELECT * FROM tblUserInfo", conn)
             dr = cmd.ExecuteReader
@@ -29,7 +29,7 @@ Public Class ucUserManagement
             dgvUserInfo.Rows.Clear()
 
             While dr.Read
-                dgvUserInfo.Rows.Add(dr("UserID"), dr("UserType"), dr("FirstName"), dr("LastName"), dr("Gender"), dr("Username"), dr("Image"), CDate(dr("Birthday")).ToShortDateString())
+                dgvUserInfo.Rows.Add(dr("user_id"), dr("user_type"), dr("firstname") + " " + dr("middlename") + " " + dr("lastname"), dr("gender"), dr("username"), CDate(dr("birthday")).ToShortDateString())
             End While
 
             If dgvUserInfo.RowCount = 0 Then
@@ -46,17 +46,21 @@ Public Class ucUserManagement
         Dim i As Integer = dgvUserInfo.CurrentRow.Index
         Dim tempUserID As String = dgvUserInfo.Item(0, i).Value
 
-        If e.ColumnIndex = 8 Then
+        If e.ColumnIndex = 6 Then
             Dim a As New frmTransparent
-            Dim b As New frmUpdateUser
             a.Show(Me)
-            b.ShowDialog(Me)
 
-        ElseIf e.ColumnIndex = 9 Then
-            CustomMessageBox.ShowDialog("Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
+            Dim update_user As New frmUpdateUser
+            update_user.GetUserID(tempUserID)
+            update_user.ShowDialog(Me)
+
+        ElseIf e.ColumnIndex = 7 Then
+            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
 
             If msgBoxButtonClick = DialogResult.Yes Then
-                MsgBox("Yes")
+
+
+
             End If
         End If
     End Sub

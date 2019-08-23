@@ -1,8 +1,64 @@
-﻿
+﻿Imports System.Data.SqlClient
+
 Public Class frmRegisterUser
 
-    Private imagePath As String
+    Private imagePath As String = "My.Resources.ietilogo"
     Private passScore As Integer = 0
+
+    Sub AUTO()
+        Try
+            Dim cmd As New SqlCommand
+            With cmd
+                .Connection = conn
+                .CommandText = "SP_AutoNo_AN"
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.AddWithValue("@pfx", "UID")
+            End With
+            cmd.ExecuteScalar()
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Sub AN()
+        Try
+            Dim number As String
+            str = "SELECT Max(NewNumber) FROM AutoNumber where Pfx = @Pfx"
+            cmd = New SqlCommand(str, conn)
+            With cmd
+                .Parameters.AddWithValue("@Pfx", "UID")
+                If IsDBNull(cmd.ExecuteScalar) Then
+                    AUTO()
+                    Dim number1 As String
+                    str = "SELECT Max(NewNumber) FROM AutoNumber where Pfx = @Pfx"
+                    cmd = New SqlCommand(str, conn)
+                    With cmd
+                        .Parameters.AddWithValue("@Pfx", "UID")
+                        number1 = Convert.ToString(cmd.ExecuteScalar)
+                        txtUserID.Text = number1
+                    End With
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+                Else
+                    number = Convert.ToString(cmd.ExecuteScalar)
+                    txtUserID.Text = number
+                End If
+
+            End With
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+
+    Private Sub frmRegisterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ConnDB()
+        rbMale.Checked = True
+        AN()
+    End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
@@ -57,10 +113,6 @@ Public Class frmRegisterUser
         End If
     End Sub
 
-    Private Sub frmRegisterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rbMale.Checked = True
-    End Sub
-
 
     Private Sub ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
@@ -112,18 +164,70 @@ Public Class frmRegisterUser
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text = "" Then
-            CustomMessageBox.ShowDialog("Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf Val(txtAge.Text) < 18 Then
-            CustomMessageBox.ShowDialog("Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf txtPassword.Text <> txtConfirmPass.Text Then
-            CustomMessageBox.ShowDialog("Your password does not match!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            CustomMessageBox.ShowDialog(Me, "Your password does not match!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf passScore <> 4 Then
-            CustomMessageBox.ShowDialog("Please correct your password!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            CustomMessageBox.ShowDialog(Me, "Please correct your password!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         Else
 
+            Try
 
+                str = "INSERT INTO tblUserInfo (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
+                cmd = New SqlCommand(str, conn)
+                With cmd.Parameters
+                    .AddWithValue("@1", txtUserID.Text)
+                    .AddWithValue("@2", cmbUserType.Text)
+                    .AddWithValue("@3", txtFirstname.Text)
+                    If txtMiddlename.Text.Length > 0 Then
+                        cmd.Parameters.AddWithValue("@4", txtMiddlename.Text)
+                    Else
+                        cmd.Parameters.AddWithValue("@4", "")
+                    End If
+
+                    .AddWithValue("@5", txtLastname.Text)
+                    If rbMale.Checked Then cmd.Parameters.AddWithValue("@6", "Male")
+                    If rbFemale.Checked Then cmd.Parameters.AddWithValue("@6", "Female")
+                    .AddWithValue("@7", txtPhone.Text)
+                    .AddWithValue("@8", dtBday.Value.ToShortDateString())
+                    .AddWithValue("@9", txtUsername.Text)
+                    .AddWithValue("@10", MD5Hasher.GetMd5Hash(txtPassword.Text))
+                    .AddWithValue("@11", cmbQuestion.Text)
+                    .AddWithValue("@12", txtAnswer.Text)
+                    .AddWithValue("@13", "1")
+                    .AddWithValue("@14", imagePath)
+                End With
+
+                cmd.ExecuteNonQuery()
+                ClearAll()
+                AUTO()
+                AN()
+                frmMain.UcUserManagement1.FillDGV()
+                CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
 
         End If
+    End Sub
+
+    Private Sub ClearAll()
+        txtUserID.Text = ""
+        txtAge.Text = ""
+        txtAnswer.Text = ""
+        txtConfirmPass.Text = ""
+        txtFirstname.Text = ""
+        txtLastname.Text = ""
+        txtMiddlename.Text = ""
+        txtPassword.Text = ""
+        txtPhone.Text = ""
+        txtUsername.Text = ""
+        cmbQuestion.Text = ""
+        cmbUserType.Text = ""
+        rbMale.Checked = True
     End Sub
 
     Private Sub ValidatePasswordMatch()

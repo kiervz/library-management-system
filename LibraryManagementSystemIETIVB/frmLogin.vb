@@ -13,12 +13,10 @@ Public Class frmLogin
     Private btmp As Bitmap
 
     Private Sub LoadNextImage()
-        If imageNumber = 5 Then
-            imageNumber = 1
-        End If
+        If imageNumber = 5 Then imageNumber = 1
 
         picCarousel.ImageLocation = String.Format("Images\" + CStr(imageNumber) + ".jpg")
-        imageNumber = imageNumber + 1
+        imageNumber += 1
     End Sub
 
 
@@ -32,25 +30,25 @@ Public Class frmLogin
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            CustomMessageBox.ShowDialog("Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog("Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            CustomMessageBox.ShowDialog(Me, "Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog("Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            CustomMessageBox.ShowDialog(Me, "Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Else
             Try
-                cmd = New SqlCommand("SELECT UserID, FirstName, LastName, UserType, Image FROM tblUserInfo WHERE Username=@1 AND Password=@2", conn)
+                cmd = New SqlCommand("SELECT user_id, firstname, lastname, user_type, image FROM tblUserInfo WHERE username=@1 AND password=@2", conn)
                 cmd.Parameters.AddWithValue("@1", txtUsername.Text)
                 cmd.Parameters.AddWithValue("@2", MD5Hasher.GetMd5Hash(txtPassword.Text))
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
 
-                    GlobalVariables.userid = dr("UserID")
-                    GlobalVariables.fname = dr("FirstName")
-                    GlobalVariables.lname = dr("LastName")
-                    GlobalVariables.userImage = dr("Image")
-                    GlobalVariables.userType = dr("UserType")
+                    GlobalVariables.userid = dr("user_id")
+                    GlobalVariables.fname = dr("firstname")
+                    GlobalVariables.lname = dr("lastname")
+                    GlobalVariables.userImage = dr("image")
+                    GlobalVariables.userType = dr("user_type")
 
                     txtUsername.Clear()
                     txtPassword.Clear()
@@ -58,7 +56,7 @@ Public Class frmLogin
                     frmMain.Show()
                     Me.Hide()
                 Else
-                    CustomMessageBox.ShowDialog("Your username and password is incorrect!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                    CustomMessageBox.ShowDialog(Me, "Your username and password is incorrect!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
                     Attempt()
                 End If
             Catch ex As Exception
@@ -78,6 +76,7 @@ Public Class frmLogin
         cbShowPassword.Enabled = isEnable
         txtUsername.Clear()
         txtPassword.Clear()
+        cbShowPassword.Checked = False
     End Sub
 
 
@@ -85,6 +84,7 @@ Public Class frmLogin
         attempts = attempts + 1
 
         If attempts = 3 Then
+            CustomMessageBox.ShowDialog(Me, "You have reached the maximum attempts. System will be closed!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
             'StartCaptureCamera()
             EnableControl(False)
             lblNextAttempt.Visible = True
@@ -153,6 +153,15 @@ Public Class frmLogin
     'End Sub
 #End Region
 
-    
+    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Login()
+        End If
+    End Sub
 
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Login()
+        End If
+    End Sub
 End Class

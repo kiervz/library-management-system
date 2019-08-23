@@ -94,7 +94,7 @@ Public Class frmMain
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        CustomMessageBox.ShowDialog("Are you sure you want to Logout?", "Logout", MessageBoxButtonn.YesCancel, MessageBoxIconn.Question)
+        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtonn.YesCancel, MessageBoxIconn.Question)
 
         If msgBoxButtonClick = DialogResult.Yes Then
             Me.Close()
@@ -108,7 +108,7 @@ Public Class frmMain
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        CustomMessageBox.ShowDialog("Are you sure you want to Exit?", "Exit", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
         If msgBoxButtonClick = DialogResult.Yes Then
             Application.Exit()
@@ -185,6 +185,15 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
+        If userImage = "My.Resources.ietilogo" Then
+            pbProfile.Image = My.Resources.ietilogo
+        Else
+            pbProfile.Image = Image.FromFile(userImage)
+        End If
+
+        HideAllUserControl()
+        UcAboutIETI1.Visible = True
+
         Notifier()
     End Sub
 
