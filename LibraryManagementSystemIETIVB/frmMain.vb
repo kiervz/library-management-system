@@ -48,21 +48,21 @@ Public Class frmMain
         movePanelSelector(btnBookManagement)
         HideAllUserControl()
         UcBookManagement1.Visible = True
-        lblTitle.Text = "Book Management"
+        lblTitle.Text = "Books Management"
     End Sub
 
     Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
         movePanelSelector(btnStudentsMangement)
         HideAllUserControl()
         UcStudentManagement1.Visible = True
-        lblTitle.Text = "Student Management"
+        lblTitle.Text = "Students Management"
     End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
         movePanelSelector(btnUserManagement)
         HideAllUserControl()
         UcUserManagement1.Visible = True
-        lblTitle.Text = "User Management"
+        lblTitle.Text = "Users Management\Manage User"
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
@@ -160,7 +160,7 @@ Public Class frmMain
             pbProfile.Image = Image.FromFile(userImage)
         End If
 
-        lblFname.Text = fname
+        lblFname.Text = userFname
         lblUserType.Text = userType
 
         HideAllUserControl()
@@ -186,7 +186,7 @@ Public Class frmMain
         notif.TitleFont = New Font("Century Gothic", 11)
         notif.ContentFont = New Font("Century Gothic", 10)
         notif.TitleText = "Library Management System"
-        notif.ContentText = "Welcome back " + userType + " " + fname
+        notif.ContentText = "Welcome back " + userType + " " + userFname
         notif.Popup()
     End Sub
 

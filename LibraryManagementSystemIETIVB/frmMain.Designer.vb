@@ -26,6 +26,8 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.panel2 = New System.Windows.Forms.Panel()
+        Me.lblUserType = New System.Windows.Forms.Label()
+        Me.lblFname = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnChevron = New System.Windows.Forms.Button()
         Me.btnMinimize = New System.Windows.Forms.Button()
@@ -50,16 +52,6 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.lblFname = New System.Windows.Forms.Label()
-        Me.lblUserType = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblDuration = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -70,6 +62,14 @@ Partial Class frmMain
         Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
         Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDuration = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.panel2.SuspendLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBgSearch.SuspendLayout()
@@ -98,6 +98,30 @@ Partial Class frmMain
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
+        '
+        'lblUserType
+        '
+        Me.lblUserType.AutoSize = True
+        Me.lblUserType.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserType.ForeColor = System.Drawing.Color.White
+        Me.lblUserType.Location = New System.Drawing.Point(1178, 56)
+        Me.lblUserType.Name = "lblUserType"
+        Me.lblUserType.Size = New System.Drawing.Size(100, 20)
+        Me.lblUserType.TabIndex = 13
+        Me.lblUserType.Text = "Administrator"
+        '
+        'lblFname
+        '
+        Me.lblFname.AutoSize = True
+        Me.lblFname.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblFname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFname.ForeColor = System.Drawing.Color.White
+        Me.lblFname.Location = New System.Drawing.Point(1178, 36)
+        Me.lblFname.Name = "lblFname"
+        Me.lblFname.Size = New System.Drawing.Size(61, 20)
+        Me.lblFname.TabIndex = 12
+        Me.lblFname.Text = "Kiervey"
         '
         'btnClose
         '
@@ -463,111 +487,6 @@ Partial Class frmMain
         Me.panelCenter.Size = New System.Drawing.Size(1126, 632)
         Me.panelCenter.TabIndex = 5
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.lblTitle)
-        Me.Panel4.Controls.Add(Me.divider)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1126, 33)
-        Me.Panel4.TabIndex = 10
-        '
-        'lblTitle
-        '
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.Black
-        Me.lblTitle.Location = New System.Drawing.Point(3, 6)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(595, 26)
-        Me.lblTitle.TabIndex = 10
-        Me.lblTitle.Text = "Library Management System"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 1000
-        Me.ToolTip1.BackColor = System.Drawing.Color.White
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
-        '
-        'lblFname
-        '
-        Me.lblFname.AutoSize = True
-        Me.lblFname.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblFname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFname.ForeColor = System.Drawing.Color.White
-        Me.lblFname.Location = New System.Drawing.Point(1178, 36)
-        Me.lblFname.Name = "lblFname"
-        Me.lblFname.Size = New System.Drawing.Size(61, 20)
-        Me.lblFname.TabIndex = 12
-        Me.lblFname.Text = "Kiervey"
-        '
-        'lblUserType
-        '
-        Me.lblUserType.AutoSize = True
-        Me.lblUserType.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserType.ForeColor = System.Drawing.Color.White
-        Me.lblUserType.Location = New System.Drawing.Point(1178, 56)
-        Me.lblUserType.Name = "lblUserType"
-        Me.lblUserType.Size = New System.Drawing.Size(100, 20)
-        Me.lblUserType.TabIndex = 13
-        Me.lblUserType.Text = "Administrator"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.lblDuration)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Location = New System.Drawing.Point(240, 748)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1126, 20)
-        Me.Panel1.TabIndex = 22
-        '
-        'lblDuration
-        '
-        Me.lblDuration.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblDuration.AutoSize = True
-        Me.lblDuration.BackColor = System.Drawing.Color.Silver
-        Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDuration.ForeColor = System.Drawing.Color.Black
-        Me.lblDuration.Location = New System.Drawing.Point(258, 3)
-        Me.lblDuration.Name = "lblDuration"
-        Me.lblDuration.Size = New System.Drawing.Size(15, 17)
-        Me.lblDuration.TabIndex = 22
-        Me.lblDuration.Text = "0"
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Silver
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(185, 2)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 17)
-        Me.Label5.TabIndex = 21
-        Me.Label5.Text = "Duration:"
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Silver
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(4, 3)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 17)
-        Me.Label4.TabIndex = 23
-        Me.Label4.Text = "Version: 107.5"
-        '
         'UcUserManagement1
         '
         Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -648,6 +567,87 @@ Partial Class frmMain
         Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 599)
         Me.UcAboutIETI1.TabIndex = 11
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.lblTitle)
+        Me.Panel4.Controls.Add(Me.divider)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1126, 33)
+        Me.Panel4.TabIndex = 10
+        '
+        'lblTitle
+        '
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.Black
+        Me.lblTitle.Location = New System.Drawing.Point(3, 6)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(595, 26)
+        Me.lblTitle.TabIndex = 10
+        Me.lblTitle.Text = "Library Management System"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 1000
+        Me.ToolTip1.BackColor = System.Drawing.Color.White
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.lblDuration)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Location = New System.Drawing.Point(240, 748)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1126, 20)
+        Me.Panel1.TabIndex = 22
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Silver
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(4, 3)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(95, 17)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "Version: 107.5"
+        '
+        'lblDuration
+        '
+        Me.lblDuration.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDuration.AutoSize = True
+        Me.lblDuration.BackColor = System.Drawing.Color.Silver
+        Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDuration.ForeColor = System.Drawing.Color.Black
+        Me.lblDuration.Location = New System.Drawing.Point(258, 3)
+        Me.lblDuration.Name = "lblDuration"
+        Me.lblDuration.Size = New System.Drawing.Size(15, 17)
+        Me.lblDuration.TabIndex = 22
+        Me.lblDuration.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Silver
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(185, 2)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 17)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Duration:"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -707,7 +707,6 @@ Partial Class frmMain
     Friend WithEvents panelCenter As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
 
-    Private WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents lblUserType As System.Windows.Forms.Label
@@ -726,4 +725,5 @@ Partial Class frmMain
     Friend WithEvents lblDuration As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents lblTitle As System.Windows.Forms.Label
 End Class

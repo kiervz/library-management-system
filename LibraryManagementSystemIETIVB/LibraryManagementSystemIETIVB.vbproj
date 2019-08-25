@@ -96,6 +96,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPasswordConfirmation.Designer.vb">
+      <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPasswordConfirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ucAboutIETI.Designer.vb">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </Compile>
@@ -115,12 +121,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\ConnectionString.vb" />
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="User Management\frmRegisterUser.Designer.vb">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </Compile>
@@ -215,8 +215,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="frmPasswordConfirmation.resx">
+      <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>

@@ -9,20 +9,19 @@ Public Class frmUpdateUser
         Me._user_id = user_id
     End Sub
 
-    Private Sub CloseForm()
+    Private Sub CloseTransparentForm()
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
         a.Close()
-        Me.Hide()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        CloseForm()
+        CloseTransparentForm()
+        Me.Hide()
     End Sub
 
     'if the RegisterUser form is closed the transparent form will be closed as well
     Private Sub frmUpdateUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
+        CloseTransparentForm()
     End Sub
 
     Private Sub frmUpdateUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -50,11 +49,13 @@ Public Class frmUpdateUser
                     rbFemale.Checked = True
                 End If
                 dtBday.Value = CDate(dr("birthday"))
-                If dr("image") = "My.Resources.ietilogo" Then
+                _imagePath = dr("image")
+                If _imagePath = "My.Resources.ietilogo" Then
                     pbProfile.Image = My.Resources.ietilogo
                 Else
-                    pbProfile.Image = Image.FromFile(dr("image"))
+                    pbProfile.Image = Image.FromFile(_imagePath)
                 End If
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
@@ -78,39 +79,44 @@ Public Class frmUpdateUser
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Try
+        If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Then
+            CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+        ElseIf Val(txtAge.Text) < 18 Then
+            CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+        Else
+            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-            If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Then
-                CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
-            ElseIf Val(txtAge.Text) < 18 Then
-                CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
-            Else
+            If msgBoxButtonClick = DialogResult.Yes Then
 
-                str = "UPDATE tblUserInfo SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
-                cmd = New SqlCommand(str, conn)
-                cmd.Parameters.AddWithValue("@1", cmbUserType.Text)
-                cmd.Parameters.AddWithValue("@2", txtFirstname.Text)
-                cmd.Parameters.AddWithValue("@3", txtMiddlename.Text)
-                cmd.Parameters.AddWithValue("@4", txtLastname.Text)
-                If rbMale.Checked Then
-                    cmd.Parameters.AddWithValue("@5", "Male")
-                Else
-                    cmd.Parameters.AddWithValue("@5", "Female")
-                End If
-                cmd.Parameters.AddWithValue("@6", txtPhone.Text)
-                cmd.Parameters.AddWithValue("@7", dtBday.Value.ToShortDateString())
-                cmd.Parameters.AddWithValue("@8", _imagePath)
-                cmd.ExecuteNonQuery()
+                Try
+                    str = "UPDATE tblUserInfo SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.Parameters.AddWithValue("@1", cmbUserType.Text)
+                    cmd.Parameters.AddWithValue("@2", txtFirstname.Text)
+                    cmd.Parameters.AddWithValue("@3", txtMiddlename.Text)
+                    cmd.Parameters.AddWithValue("@4", txtLastname.Text)
+                    If rbMale.Checked Then
+                        cmd.Parameters.AddWithValue("@5", "Male")
+                    Else
+                        cmd.Parameters.AddWithValue("@5", "Female")
+                    End If
+                    cmd.Parameters.AddWithValue("@6", txtPhone.Text)
+                    cmd.Parameters.AddWithValue("@7", dtBday.Value.ToShortDateString())
+                    cmd.Parameters.AddWithValue("@8", _imagePath)
+                    cmd.ExecuteNonQuery()
 
-                frmMain.UcUserManagement1.FillDGV()
-                CustomMessageBox.ShowDialog(Me, "Record successfully updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    frmMain.UcUserManagement1.FillDGV()
+                    CustomMessageBox.ShowDialog(Me, "Record successfully updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
 
-                CloseForm()
+                    CloseTransparentForm()
+                    Me.Hide()
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error")
+                End Try
+
             End If
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
-        End Try
+        End If
     End Sub
 
     Private Sub UploadImage()
@@ -125,4 +131,5 @@ Public Class frmUpdateUser
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         UploadImage()
     End Sub
+
 End Class

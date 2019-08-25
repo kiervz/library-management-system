@@ -1,10 +1,12 @@
 ﻿Module GlobalVariables
 
-    Public userid As String
-    Public fname As String
-    Public lname As String
+    Public userID As String
+    Public userFname As String
+    Public userLname As String
     Public userImage As String
+    Public userPassword As String
     Public userType As String
+    Public isPasswordCorrect As Boolean = False
     Public isExpandedPanel As Boolean = False
     Public msgBoxButtonClick As String
     Public UserLogTime As DateTime

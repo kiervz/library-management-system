@@ -178,42 +178,48 @@ Public Class frmRegisterUser
             CustomMessageBox.ShowDialog(Me, "Please correct your password!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         Else
 
-            Try
+            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-                str = "INSERT INTO tblUserInfo (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
-                cmd = New SqlCommand(str, conn)
-                With cmd.Parameters
-                    .AddWithValue("@1", txtUserID.Text)
-                    .AddWithValue("@2", cmbUserType.Text)
-                    .AddWithValue("@3", txtFirstname.Text)
-                    If txtMiddlename.Text.Length > 0 Then
-                        cmd.Parameters.AddWithValue("@4", txtMiddlename.Text)
-                    Else
-                        cmd.Parameters.AddWithValue("@4", "")
-                    End If
-                    .AddWithValue("@5", txtLastname.Text)
-                    If rbMale.Checked Then cmd.Parameters.AddWithValue("@6", "Male")
-                    If rbFemale.Checked Then cmd.Parameters.AddWithValue("@6", "Female")
-                    .AddWithValue("@7", txtPhone.Text)
-                    .AddWithValue("@8", dtBday.Value.ToShortDateString())
-                    .AddWithValue("@9", txtUsername.Text)
-                    .AddWithValue("@10", MD5Hasher.GetMd5Hash(txtPassword.Text))
-                    .AddWithValue("@11", cmbQuestion.Text)
-                    .AddWithValue("@12", txtAnswer.Text)
-                    .AddWithValue("@13", "1")
-                    .AddWithValue("@14", _imagePath)
-                End With
+            If msgBoxButtonClick = DialogResult.Yes Then
 
-                cmd.ExecuteNonQuery()
-                ClearAll()
-                AUTO()
-                AN()
-                frmMain.UcUserManagement1.FillDGV()
-                CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                Try
+                    str = "INSERT INTO tblUserInfo (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
+                    cmd = New SqlCommand(str, conn)
+                    With cmd.Parameters
+                        .AddWithValue("@1", txtUserID.Text)
+                        .AddWithValue("@2", cmbUserType.Text)
+                        .AddWithValue("@3", txtFirstname.Text)
+                        If txtMiddlename.Text.Length > 0 Then
+                            cmd.Parameters.AddWithValue("@4", txtMiddlename.Text)
+                        Else
+                            cmd.Parameters.AddWithValue("@4", "")
+                        End If
+                        .AddWithValue("@5", txtLastname.Text)
+                        If rbMale.Checked Then cmd.Parameters.AddWithValue("@6", "Male")
+                        If rbFemale.Checked Then cmd.Parameters.AddWithValue("@6", "Female")
+                        .AddWithValue("@7", txtPhone.Text)
+                        .AddWithValue("@8", dtBday.Value.ToShortDateString())
+                        .AddWithValue("@9", txtUsername.Text)
+                        .AddWithValue("@10", MD5Hasher.GetMd5Hash(txtPassword.Text))
+                        .AddWithValue("@11", cmbQuestion.Text)
+                        .AddWithValue("@12", txtAnswer.Text)
+                        .AddWithValue("@13", "1")
+                        .AddWithValue("@14", _imagePath)
+                    End With
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
+                    cmd.ExecuteNonQuery()
+                    ClearAll()
+                    AUTO()
+                    AN()
+                    frmMain.UcUserManagement1.FillDGV()
+                    CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+
+            End If
+            
 
         End If
     End Sub

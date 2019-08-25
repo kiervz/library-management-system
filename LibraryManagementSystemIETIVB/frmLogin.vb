@@ -37,7 +37,7 @@ Public Class frmLogin
             CustomMessageBox.ShowDialog(Me, "Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Else
             Try
-                cmd = New SqlCommand("SELECT user_id, firstname, lastname, user_type, image FROM tblUserInfo WHERE username=@1 AND password=@2", conn)
+                cmd = New SqlCommand("SELECT user_id, firstname, lastname, password, user_type, image FROM tblUserInfo WHERE username=@1 AND password=@2", conn)
                 cmd.Parameters.AddWithValue("@1", txtUsername.Text)
                 cmd.Parameters.AddWithValue("@2", MD5Hasher.GetMd5Hash(txtPassword.Text))
                 dr = cmd.ExecuteReader
@@ -45,8 +45,9 @@ Public Class frmLogin
                 If dr.Read Then
 
                     GlobalVariables.userid = dr("user_id")
-                    GlobalVariables.fname = dr("firstname")
-                    GlobalVariables.lname = dr("lastname")
+                    GlobalVariables.userFname = dr("firstname")
+                    GlobalVariables.userLname = dr("lastname")
+                    GlobalVariables.userPassword = dr("password")
                     GlobalVariables.userImage = dr("image")
                     GlobalVariables.userType = dr("user_type")
 

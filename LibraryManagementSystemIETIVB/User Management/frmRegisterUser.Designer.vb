@@ -72,6 +72,7 @@ Partial Class frmRegisterUser
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,7 +249,7 @@ Partial Class frmRegisterUser
         Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(634, 644)
+        Me.btnCancel.Location = New System.Drawing.Point(634, 655)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(186, 33)
@@ -267,7 +268,7 @@ Partial Class frmRegisterUser
         Me.btnRegister.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.White
         Me.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRegister.Location = New System.Drawing.Point(634, 605)
+        Me.btnRegister.Location = New System.Drawing.Point(634, 616)
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(186, 33)
@@ -509,7 +510,7 @@ Partial Class frmRegisterUser
         Me.txtUserID.Location = New System.Drawing.Point(259, 89)
         Me.txtUserID.Name = "txtUserID"
         Me.txtUserID.ReadOnly = True
-        Me.txtUserID.Size = New System.Drawing.Size(162, 26)
+        Me.txtUserID.Size = New System.Drawing.Size(117, 26)
         Me.txtUserID.TabIndex = 209
         '
         'Label8
@@ -622,12 +623,24 @@ Partial Class frmRegisterUser
         Me.Label19.TabIndex = 221
         Me.Label19.Text = "*"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label10.Location = New System.Drawing.Point(44, 675)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(303, 18)
+        Me.Label10.TabIndex = 222
+        Me.Label10.Text = "Note: All fields with asterisk are required"
+        '
         'frmRegisterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(898, 695)
+        Me.ClientSize = New System.Drawing.Size(898, 713)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
@@ -739,4 +752,5 @@ Partial Class frmRegisterUser
     Private WithEvents Label17 As System.Windows.Forms.Label
     Private WithEvents Label18 As System.Windows.Forms.Label
     Private WithEvents Label19 As System.Windows.Forms.Label
+    Private WithEvents Label10 As System.Windows.Forms.Label
 End Class
