@@ -5,18 +5,18 @@ Imports AForge.Video
 
 Public Class frmLogin
 
-    Private imageNumber As Integer = 1
-    Private nextAttempt As Integer = 120
-    Private attempts As Integer = 0
+    Private _imageNumber As Integer = 1
+    Private _nextAttempt As Integer = 120
+    Private _attempts As Integer = 0
 
-    Private CAMERA As VideoCaptureDevice
-    Private btmp As Bitmap
+    'Private _CAMERA As VideoCaptureDevice
+    'Private _btmp As Bitmap
 
     Private Sub LoadNextImage()
-        If imageNumber = 5 Then imageNumber = 1
+        If _imageNumber = 5 Then _imageNumber = 1
 
-        picCarousel.ImageLocation = String.Format("Images\" + CStr(imageNumber) + ".jpg")
-        imageNumber += 1
+        picCarousel.ImageLocation = String.Format("Images\" + CStr(_imageNumber) + ".jpg")
+        _imageNumber += 1
     End Sub
 
 
@@ -60,7 +60,7 @@ Public Class frmLogin
                     Attempt()
                 End If
             Catch ex As Exception
-                Msg(Me, ex.Message, "Error")
+                MessageBox.Show(ex.Message, "Error")
             End Try
 
         End If
@@ -81,9 +81,9 @@ Public Class frmLogin
 
 
     Private Sub Attempt()
-        attempts = attempts + 1
+        _attempts = _attempts + 1
 
-        If attempts = 3 Then
+        If _attempts = 3 Then
             CustomMessageBox.ShowDialog(Me, "You have reached the maximum attempts. System will be closed!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
             'StartCaptureCamera()
             EnableControl(False)
@@ -107,15 +107,15 @@ Public Class frmLogin
     End Sub
 
     Private Sub timer2_Tick(sender As Object, e As EventArgs) Handles timer2.Tick
-        nextAttempt -= 1
+        _nextAttempt -= 1
 
-        lblRemainingTime.Text = nextAttempt
+        lblRemainingTime.Text = _nextAttempt
 
         If Val(lblRemainingTime.Text) = 0 Then
             lblNextAttempt.Visible = False
             lblRemainingTime.Visible = False
-            attempts = 0
-            nextAttempt = 120
+            _attempts = 0
+            _nextAttempt = 120
             EnableControl(True)
             timer2.Stop()
         End If

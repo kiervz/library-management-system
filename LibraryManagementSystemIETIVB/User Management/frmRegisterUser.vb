@@ -2,8 +2,8 @@
 
 Public Class frmRegisterUser
 
-    Private imagePath As String = "My.Resources.ietilogo"
-    Private passScore As Integer = 0
+    Private _imagePath As String
+    Private _passScore As Integer = 0
 
     Sub AUTO()
         Try
@@ -105,11 +105,11 @@ Public Class frmRegisterUser
     End Sub
 
     Private Sub UploadImage()
-        OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.gif;*.jpg;*.png"
+        OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.jpg;*.png"
         OpenFileDialog1.ShowDialog()
         If Not OpenFileDialog1.FileName = Nothing Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
-            imagePath = pbProfile.ImageLocation
+            _imagePath = pbProfile.ImageLocation
         End If
     End Sub
 
@@ -122,21 +122,23 @@ Public Class frmRegisterUser
     Optional ByVal numSpecial As Integer = 1)
 
         Dim passed As Integer = 0
-        ' Replace [A-Z] with \p{Lu}, to allow for Unicode uppercase letters.
+        ' Uppercase letters.
         Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+        ' Lowercase letters.
         Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
+        ' Numbers
         Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
         ' Special is "none of the above".
         Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
 
-        ' Check the length.
+        ' Check if password is greater than or equal to 8
         If Len(pwd) >= minLength Then
             lbl8Characters.Visible = False
             passed += 1
         Else
             lbl8Characters.Visible = True
         End If
-        ' Check for minimum number of occurrences.
+        ' Check if password has a uppercase letter.
         If upper.Matches(pwd).Count >= numUpper Then
             lblUpperCase.Visible = False
             passed += 1
@@ -144,12 +146,15 @@ Public Class frmRegisterUser
             lblUpperCase.Visible = True
         End If
 
+        ' Check if password has a number.
         If number.Matches(pwd).Count >= numNumbers Then
             lblNumber.Visible = False
             passed += 1
         Else
             lblNumber.Visible = True
         End If
+
+        ' Check if password has a special character.
         If special.Matches(pwd).Count >= numSpecial Then
             lblSpecialCharacter.Visible = False
             passed += 1
@@ -158,18 +163,18 @@ Public Class frmRegisterUser
         End If
 
         ' Passed all checks.
-        passScore = passed
+        _passScore = passed
     End Sub
 
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text = "" Then
+        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Then
             CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf Val(txtAge.Text) < 18 Then
             CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf txtPassword.Text <> txtConfirmPass.Text Then
             CustomMessageBox.ShowDialog(Me, "Your password does not match!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-        ElseIf passScore <> 4 Then
+        ElseIf _passScore <> 4 Then
             CustomMessageBox.ShowDialog(Me, "Please correct your password!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         Else
 
@@ -186,7 +191,6 @@ Public Class frmRegisterUser
                     Else
                         cmd.Parameters.AddWithValue("@4", "")
                     End If
-
                     .AddWithValue("@5", txtLastname.Text)
                     If rbMale.Checked Then cmd.Parameters.AddWithValue("@6", "Male")
                     If rbFemale.Checked Then cmd.Parameters.AddWithValue("@6", "Female")
@@ -197,7 +201,7 @@ Public Class frmRegisterUser
                     .AddWithValue("@11", cmbQuestion.Text)
                     .AddWithValue("@12", txtAnswer.Text)
                     .AddWithValue("@13", "1")
-                    .AddWithValue("@14", imagePath)
+                    .AddWithValue("@14", _imagePath)
                 End With
 
                 cmd.ExecuteNonQuery()
@@ -228,6 +232,8 @@ Public Class frmRegisterUser
         cmbQuestion.Text = ""
         cmbUserType.Text = ""
         rbMale.Checked = True
+        pbProfile.Image = My.Resources.no_image
+        _passScore = 0
     End Sub
 
     Private Sub ValidatePasswordMatch()

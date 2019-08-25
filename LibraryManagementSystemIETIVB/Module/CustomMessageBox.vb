@@ -5,11 +5,11 @@ Module CustomMessageBox
 
     Private Declare Auto Function MessageBeep Lib "user32.dll" (ByVal wType As Int32) As Int32
 
-    Public Const MB_ICONEXCLAMATION = &H30&
-    Public Const MB_ICONHAND = &H10& 'Danger
-    Public Const MB_ICONINFORMATION = &H40&
-    Public Const MB_ICONMASK = &HF0&
-    Public Const MB_ICONQUESTION = &H20&
+    Private Const _MB_ICONEXCLAMATION = &H30&
+    Private Const _MB_ICONHAND = &H10& 'Danger
+    Private Const _MB_ICONINFORMATION = &H40&
+    Private Const _MB_ICONMASK = &HF0&
+    Private Const _MB_ICONQUESTION = &H20&
 
     Friend Enum MessageBoxButtonn As Integer
         Ok = 0
@@ -30,19 +30,19 @@ Module CustomMessageBox
         Dim color As New Color
 
         If msgIcon = MessageBoxIconn.Question Then
-            MessageBeep(MB_ICONQUESTION)
+            MessageBeep(_MB_ICONQUESTION)
             color = Drawing.Color.Gray
         ElseIf msgIcon = MessageBoxIconn.Information Then
-            MessageBeep(MB_ICONINFORMATION)
+            MessageBeep(_MB_ICONINFORMATION)
             color = System.Drawing.Color.FromArgb(52, 152, 219)
         ElseIf msgIcon = MessageBoxIconn.Success Then
-            MessageBeep(MB_ICONINFORMATION)
+            MessageBeep(_MB_ICONINFORMATION)
             color = System.Drawing.Color.FromArgb(26, 188, 156)
         ElseIf msgIcon = MessageBoxIconn.Exclamation Then
-            MessageBeep(MB_ICONEXCLAMATION)
+            MessageBeep(_MB_ICONEXCLAMATION)
             color = System.Drawing.Color.FromArgb(211, 84, 0)
         ElseIf msgIcon = MessageBoxIconn.Danger Then
-            MessageBeep(MB_ICONHAND)
+            MessageBeep(_MB_ICONHAND)
             color = System.Drawing.Color.FromArgb(192, 57, 43)
         End If
 
@@ -99,7 +99,6 @@ Module CustomMessageBox
             .ShowInTaskbar = False
             .Text = "frmMessageBox"
             .StartPosition = FormStartPosition.CenterScreen
-            .TopLevel = True
         End With
 
 
@@ -220,7 +219,7 @@ Module CustomMessageBox
         form.Controls.Add(txtMessage)
         form.Controls.Add(pbIcon)
 
-        Return form.ShowDialog()
+        Return form.ShowDialog(owner)
 
     End Function
 

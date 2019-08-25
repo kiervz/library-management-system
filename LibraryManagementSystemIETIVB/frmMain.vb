@@ -33,7 +33,7 @@ Public Class frmMain
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
         HideAllUserControl()
-        UcAboutIETI1.Visible = True
+        UcDashboard1.Visible = True
         lblTitle.Text = "Dashboard"
     End Sub
 
@@ -115,29 +115,6 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub btnRestoreMaximize_LocationChanged(sender As Object, e As EventArgs) Handles btnRestoreMaximize.LocationChanged
-        If btnRestoreMaximize.Location = New Point(1080, 6) Then
-            btnRestoreMaximize.Image = My.Resources.restore_down
-        Else
-            btnRestoreMaximize.Image = My.Resources.maximize
-        End If
-    End Sub
-
-
-    Private Sub btnRestoreMaximize_Click(sender As Object, e As EventArgs) Handles btnRestoreMaximize.Click
-        If btnRestoreMaximize.Location = New Point(1080, 6) Then
-            isExpandedPanel = True
-            panelCenter.Size = New Size(886, 633)
-            divider.Size = New Size(886, 5)
-            btnRestoreMaximize.Location = New Point(857, 4)
-        Else
-            isExpandedPanel = False
-            panelCenter.Size = New Size(1126, 633)
-            divider.Size = New Size(1126, 5)
-            btnRestoreMaximize.Location = New Point(1080, 6)
-        End If
-    End Sub
-
     Private Sub pictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles pbProfile.Paint
         Dim gp As New GraphicsPath
         gp.AddEllipse(0, 0, pbProfile.Width - 2, pbProfile.Height - 2)
@@ -165,15 +142,6 @@ Public Class frmMain
         End If
     End Sub
 
-
-    Private Sub btnRestoreMaximize_MouseEnter(sender As Object, e As EventArgs) Handles btnRestoreMaximize.MouseEnter
-        If btnRestoreMaximize.Location = New Point(1080, 6) Then
-            ToolTip1.SetToolTip(btnRestoreMaximize, "Restore Down")
-        Else
-            ToolTip1.SetToolTip(btnRestoreMaximize, "Maximize")
-        End If
-    End Sub
-
     Private Sub btnMinimize_MouseEnter(sender As Object, e As EventArgs) Handles btnMinimize.MouseEnter
         ToolTip1.SetToolTip(btnMinimize, "Minimize")
     End Sub
@@ -185,14 +153,22 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
+
         If userImage = "My.Resources.ietilogo" Then
             pbProfile.Image = My.Resources.ietilogo
         Else
             pbProfile.Image = Image.FromFile(userImage)
         End If
 
+        lblFname.Text = fname
+        lblUserType.Text = userType
+
         HideAllUserControl()
-        UcAboutIETI1.Visible = True
+        lblTitle.Text = "Dashboard"
+        UcDashboard1.Visible = True
+
+        UserLogTime = DateTime.Now
+        lblDuration.Text = "00:00:00"
 
         Notifier()
     End Sub
@@ -211,8 +187,17 @@ Public Class frmMain
         notif.ContentFont = New Font("Century Gothic", 10)
         notif.TitleText = "Library Management System"
         notif.ContentText = "Welcome back " + userType + " " + fname
-        notif.ShowOptionsButton = True
         notif.Popup()
     End Sub
 
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim currentLogIn = DateTime.Now - UserLogTime
+
+        If currentLogIn.Days.ToString("00") > 0 Then
+            lblDuration.Text = currentLogIn.Days.ToString("00") + ":" + currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")
+        Else
+            lblDuration.Text = currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")
+        End If
+    End Sub
 End Class

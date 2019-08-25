@@ -48,28 +48,18 @@ Partial Class frmMain
         Me.btnBorrowers = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.panelSelector = New System.Windows.Forms.Panel()
-        Me.panelRight = New System.Windows.Forms.Panel()
-        Me.panel5 = New System.Windows.Forms.Panel()
-        Me.label9 = New System.Windows.Forms.Label()
-        Me.label10 = New System.Windows.Forms.Label()
-        Me.label11 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.label14 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.label13 = New System.Windows.Forms.Label()
-        Me.label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.btnRestoreMaximize = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lblFname = New System.Windows.Forms.Label()
+        Me.lblUserType = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblDuration = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -86,20 +76,16 @@ Partial Class frmMain
         CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelLeft.SuspendLayout()
-        Me.panelRight.SuspendLayout()
-        Me.panel5.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panel2
         '
         Me.panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.panel2.Controls.Add(Me.lblUserType)
+        Me.panel2.Controls.Add(Me.lblFname)
         Me.panel2.Controls.Add(Me.btnClose)
         Me.panel2.Controls.Add(Me.btnChevron)
         Me.panel2.Controls.Add(Me.btnMinimize)
@@ -129,13 +115,13 @@ Partial Class frmMain
         'btnChevron
         '
         Me.btnChevron.BackgroundImage = CType(resources.GetObject("btnChevron.BackgroundImage"), System.Drawing.Image)
-        Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnChevron.FlatAppearance.BorderSize = 0
         Me.btnChevron.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnChevron.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChevron.Location = New System.Drawing.Point(1328, 46)
+        Me.btnChevron.Location = New System.Drawing.Point(1328, 48)
         Me.btnChevron.Name = "btnChevron"
-        Me.btnChevron.Size = New System.Drawing.Size(23, 18)
+        Me.btnChevron.Size = New System.Drawing.Size(23, 16)
         Me.btnChevron.TabIndex = 8
         Me.btnChevron.UseVisualStyleBackColor = True
         '
@@ -165,7 +151,7 @@ Partial Class frmMain
         '
         'pictureBox3
         '
-        Me.pictureBox3.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
+        Me.pictureBox3.Image = CType(resources.GetObject("pictureBox3.Image"), System.Drawing.Image)
         Me.pictureBox3.Location = New System.Drawing.Point(22, 21)
         Me.pictureBox3.Name = "pictureBox3"
         Me.pictureBox3.Size = New System.Drawing.Size(184, 125)
@@ -180,7 +166,7 @@ Partial Class frmMain
         Me.panelBgSearch.Controls.Add(Me.txtSearch)
         Me.panelBgSearch.Controls.Add(Me.pbSearch)
         Me.panelBgSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.panelBgSearch.Location = New System.Drawing.Point(367, 33)
+        Me.panelBgSearch.Location = New System.Drawing.Point(447, 35)
         Me.panelBgSearch.Name = "panelBgSearch"
         Me.panelBgSearch.Size = New System.Drawing.Size(610, 48)
         Me.panelBgSearch.TabIndex = 4
@@ -223,9 +209,9 @@ Partial Class frmMain
         'pbProfile
         '
         Me.pbProfile.Image = CType(resources.GetObject("pbProfile.Image"), System.Drawing.Image)
-        Me.pbProfile.Location = New System.Drawing.Point(1282, 38)
+        Me.pbProfile.Location = New System.Drawing.Point(1133, 35)
         Me.pbProfile.Name = "pbProfile"
-        Me.pbProfile.Size = New System.Drawing.Size(39, 34)
+        Me.pbProfile.Size = New System.Drawing.Size(45, 41)
         Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbProfile.TabIndex = 3
         Me.pbProfile.TabStop = False
@@ -244,11 +230,10 @@ Partial Class frmMain
         Me.panelLeft.Controls.Add(Me.btnBorrowers)
         Me.panelLeft.Controls.Add(Me.btnDashboard)
         Me.panelLeft.Controls.Add(Me.panelSelector)
-        Me.panelLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelLeft.Location = New System.Drawing.Point(0, 220)
         Me.panelLeft.Name = "panelLeft"
         Me.panelLeft.Size = New System.Drawing.Size(234, 548)
-        Me.panelLeft.TabIndex = 3
+        Me.panelLeft.TabIndex = 0
         '
         'btnLogout
         '
@@ -264,7 +249,7 @@ Partial Class frmMain
         Me.btnLogout.Location = New System.Drawing.Point(4, 464)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(230, 45)
-        Me.btnLogout.TabIndex = 19
+        Me.btnLogout.TabIndex = 9
         Me.btnLogout.Text = "   LOGOUT"
         Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -283,7 +268,7 @@ Partial Class frmMain
         Me.btnMessages.Location = New System.Drawing.Point(4, 284)
         Me.btnMessages.Name = "btnMessages"
         Me.btnMessages.Size = New System.Drawing.Size(230, 45)
-        Me.btnMessages.TabIndex = 18
+        Me.btnMessages.TabIndex = 5
         Me.btnMessages.Text = "   MESSAGES"
         Me.btnMessages.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnMessages.UseVisualStyleBackColor = False
@@ -302,7 +287,7 @@ Partial Class frmMain
         Me.btnSettings.Location = New System.Drawing.Point(4, 419)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Size = New System.Drawing.Size(230, 45)
-        Me.btnSettings.TabIndex = 17
+        Me.btnSettings.TabIndex = 8
         Me.btnSettings.Text = "   SETTINGS"
         Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSettings.UseVisualStyleBackColor = False
@@ -321,7 +306,7 @@ Partial Class frmMain
         Me.btnReports.Location = New System.Drawing.Point(4, 374)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(230, 45)
-        Me.btnReports.TabIndex = 16
+        Me.btnReports.TabIndex = 7
         Me.btnReports.Text = "   REPORTS"
         Me.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnReports.UseVisualStyleBackColor = False
@@ -340,7 +325,7 @@ Partial Class frmMain
         Me.btnActivityLog.Location = New System.Drawing.Point(4, 329)
         Me.btnActivityLog.Name = "btnActivityLog"
         Me.btnActivityLog.Size = New System.Drawing.Size(230, 45)
-        Me.btnActivityLog.TabIndex = 15
+        Me.btnActivityLog.TabIndex = 6
         Me.btnActivityLog.Text = "   ACTIVITY LOG"
         Me.btnActivityLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActivityLog.UseVisualStyleBackColor = False
@@ -359,7 +344,7 @@ Partial Class frmMain
         Me.btnUserManagement.Location = New System.Drawing.Point(4, 239)
         Me.btnUserManagement.Name = "btnUserManagement"
         Me.btnUserManagement.Size = New System.Drawing.Size(230, 45)
-        Me.btnUserManagement.TabIndex = 14
+        Me.btnUserManagement.TabIndex = 4
         Me.btnUserManagement.Text = "   USERS MANAGEMENT"
         Me.btnUserManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUserManagement.UseVisualStyleBackColor = False
@@ -378,7 +363,7 @@ Partial Class frmMain
         Me.btnStudentsMangement.Location = New System.Drawing.Point(4, 194)
         Me.btnStudentsMangement.Name = "btnStudentsMangement"
         Me.btnStudentsMangement.Size = New System.Drawing.Size(230, 45)
-        Me.btnStudentsMangement.TabIndex = 13
+        Me.btnStudentsMangement.TabIndex = 3
         Me.btnStudentsMangement.Text = "   STUDENTS MANAGEMENT"
         Me.btnStudentsMangement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnStudentsMangement.UseVisualStyleBackColor = False
@@ -397,7 +382,7 @@ Partial Class frmMain
         Me.btnBookManagement.Location = New System.Drawing.Point(4, 149)
         Me.btnBookManagement.Name = "btnBookManagement"
         Me.btnBookManagement.Size = New System.Drawing.Size(230, 45)
-        Me.btnBookManagement.TabIndex = 12
+        Me.btnBookManagement.TabIndex = 2
         Me.btnBookManagement.Text = "   BOOKS MANAGEMENT"
         Me.btnBookManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBookManagement.UseVisualStyleBackColor = False
@@ -416,7 +401,7 @@ Partial Class frmMain
         Me.btnBorrowers.Location = New System.Drawing.Point(4, 104)
         Me.btnBorrowers.Name = "btnBorrowers"
         Me.btnBorrowers.Size = New System.Drawing.Size(230, 45)
-        Me.btnBorrowers.TabIndex = 11
+        Me.btnBorrowers.TabIndex = 1
         Me.btnBorrowers.Text = "   BORROWERS"
         Me.btnBorrowers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBorrowers.UseVisualStyleBackColor = False
@@ -435,7 +420,7 @@ Partial Class frmMain
         Me.btnDashboard.Location = New System.Drawing.Point(4, 59)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(230, 45)
-        Me.btnDashboard.TabIndex = 9
+        Me.btnDashboard.TabIndex = 0
         Me.btnDashboard.Text = "   DASHBOARD"
         Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDashboard.UseVisualStyleBackColor = False
@@ -448,193 +433,14 @@ Partial Class frmMain
         Me.panelSelector.Size = New System.Drawing.Size(6, 45)
         Me.panelSelector.TabIndex = 10
         '
-        'panelRight
-        '
-        Me.panelRight.Controls.Add(Me.panel5)
-        Me.panelRight.Controls.Add(Me.Panel3)
-        Me.panelRight.Controls.Add(Me.Panel1)
-        Me.panelRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelRight.Location = New System.Drawing.Point(1122, 220)
-        Me.panelRight.Name = "panelRight"
-        Me.panelRight.Size = New System.Drawing.Size(244, 548)
-        Me.panelRight.TabIndex = 4
-        '
-        'panel5
-        '
-        Me.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.panel5.Controls.Add(Me.label9)
-        Me.panel5.Controls.Add(Me.label10)
-        Me.panel5.Controls.Add(Me.label11)
-        Me.panel5.Controls.Add(Me.PictureBox6)
-        Me.panel5.Location = New System.Drawing.Point(8, 329)
-        Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(233, 122)
-        Me.panel5.TabIndex = 15
-        '
-        'label9
-        '
-        Me.label9.AutoSize = True
-        Me.label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label9.ForeColor = System.Drawing.Color.White
-        Me.label9.Location = New System.Drawing.Point(79, 82)
-        Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(147, 30)
-        Me.label9.TabIndex = 8
-        Me.label9.Text = "Total books overdue" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
-        '
-        'label10
-        '
-        Me.label10.AutoSize = True
-        Me.label10.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label10.ForeColor = System.Drawing.Color.White
-        Me.label10.Location = New System.Drawing.Point(79, 48)
-        Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(113, 18)
-        Me.label10.TabIndex = 7
-        Me.label10.Text = "BOOKS OVERDUE"
-        '
-        'label11
-        '
-        Me.label11.AutoSize = True
-        Me.label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label11.ForeColor = System.Drawing.Color.White
-        Me.label11.Location = New System.Drawing.Point(78, 17)
-        Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(41, 29)
-        Me.label11.TabIndex = 6
-        Me.label11.Text = "18"
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 0
-        Me.PictureBox6.TabStop = False
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.label14)
-        Me.Panel3.Controls.Add(Me.PictureBox5)
-        Me.Panel3.Location = New System.Drawing.Point(8, 185)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(233, 122)
-        Me.Panel3.TabIndex = 12
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(79, 82)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(153, 30)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Total students " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(79, 48)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 18)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "TOTAL STUDENTS"
-        '
-        'label14
-        '
-        Me.label14.AutoSize = True
-        Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.ForeColor = System.Drawing.Color.White
-        Me.label14.Location = New System.Drawing.Point(78, 17)
-        Me.label14.Name = "label14"
-        Me.label14.Size = New System.Drawing.Size(76, 29)
-        Me.label14.TabIndex = 6
-        Me.label14.Text = "2,029"
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.label13)
-        Me.Panel1.Controls.Add(Me.label2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Location = New System.Drawing.Point(8, 41)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(233, 122)
-        Me.Panel1.TabIndex = 2
-        '
-        'label13
-        '
-        Me.label13.AutoSize = True
-        Me.label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label13.ForeColor = System.Drawing.Color.White
-        Me.label13.Location = New System.Drawing.Point(74, 79)
-        Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(128, 30)
-        Me.label13.TabIndex = 8
-        Me.label13.Text = "Total books registered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in the database."
-        '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.ForeColor = System.Drawing.Color.White
-        Me.label2.Location = New System.Drawing.Point(74, 45)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(92, 18)
-        Me.label2.TabIndex = 7
-        Me.label2.Text = "TOTAL BOOKS"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(73, 14)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 29)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "6,305"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
-        '
         'divider
         '
         Me.divider.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
         Me.divider.Depth = 0
-        Me.divider.Location = New System.Drawing.Point(0, 0)
+        Me.divider.Location = New System.Drawing.Point(0, -5)
         Me.divider.MouseState = MaterialSkin.MouseState.HOVER
         Me.divider.Name = "divider"
-        Me.divider.Size = New System.Drawing.Size(886, 5)
+        Me.divider.Size = New System.Drawing.Size(1126, 10)
         Me.divider.TabIndex = 8
         Me.divider.Text = "MaterialDivider1"
         '
@@ -652,20 +458,19 @@ Partial Class frmMain
         Me.panelCenter.Controls.Add(Me.UcActivityLog1)
         Me.panelCenter.Controls.Add(Me.UcAboutIETI1)
         Me.panelCenter.Controls.Add(Me.Panel4)
-        Me.panelCenter.Location = New System.Drawing.Point(240, 135)
+        Me.panelCenter.Location = New System.Drawing.Point(240, 124)
         Me.panelCenter.Name = "panelCenter"
-        Me.panelCenter.Size = New System.Drawing.Size(886, 633)
+        Me.panelCenter.Size = New System.Drawing.Size(1126, 632)
         Me.panelCenter.TabIndex = 5
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.lblTitle)
         Me.Panel4.Controls.Add(Me.divider)
-        Me.Panel4.Controls.Add(Me.btnRestoreMaximize)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(886, 33)
+        Me.Panel4.Size = New System.Drawing.Size(1126, 33)
         Me.Panel4.TabIndex = 10
         '
         'lblTitle
@@ -679,102 +484,169 @@ Partial Class frmMain
         Me.lblTitle.Text = "Library Management System"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btnRestoreMaximize
-        '
-        Me.btnRestoreMaximize.BackgroundImage = CType(resources.GetObject("btnRestoreMaximize.BackgroundImage"), System.Drawing.Image)
-        Me.btnRestoreMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnRestoreMaximize.FlatAppearance.BorderSize = 0
-        Me.btnRestoreMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRestoreMaximize.Location = New System.Drawing.Point(857, 4)
-        Me.btnRestoreMaximize.Name = "btnRestoreMaximize"
-        Me.btnRestoreMaximize.Size = New System.Drawing.Size(23, 23)
-        Me.btnRestoreMaximize.TabIndex = 9
-        Me.btnRestoreMaximize.UseVisualStyleBackColor = True
-        '
         'ToolTip1
         '
         Me.ToolTip1.AutomaticDelay = 1000
         Me.ToolTip1.BackColor = System.Drawing.Color.White
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'lblFname
+        '
+        Me.lblFname.AutoSize = True
+        Me.lblFname.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblFname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFname.ForeColor = System.Drawing.Color.White
+        Me.lblFname.Location = New System.Drawing.Point(1178, 36)
+        Me.lblFname.Name = "lblFname"
+        Me.lblFname.Size = New System.Drawing.Size(61, 20)
+        Me.lblFname.TabIndex = 12
+        Me.lblFname.Text = "Kiervey"
+        '
+        'lblUserType
+        '
+        Me.lblUserType.AutoSize = True
+        Me.lblUserType.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserType.ForeColor = System.Drawing.Color.White
+        Me.lblUserType.Location = New System.Drawing.Point(1178, 56)
+        Me.lblUserType.Name = "lblUserType"
+        Me.lblUserType.Size = New System.Drawing.Size(100, 20)
+        Me.lblUserType.TabIndex = 13
+        Me.lblUserType.Text = "Administrator"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.lblDuration)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Location = New System.Drawing.Point(240, 748)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1126, 20)
+        Me.Panel1.TabIndex = 22
+        '
+        'lblDuration
+        '
+        Me.lblDuration.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDuration.AutoSize = True
+        Me.lblDuration.BackColor = System.Drawing.Color.Silver
+        Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDuration.ForeColor = System.Drawing.Color.Black
+        Me.lblDuration.Location = New System.Drawing.Point(258, 3)
+        Me.lblDuration.Name = "lblDuration"
+        Me.lblDuration.Size = New System.Drawing.Size(15, 17)
+        Me.lblDuration.TabIndex = 22
+        Me.lblDuration.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Silver
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(185, 2)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 17)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Duration:"
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Silver
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(4, 3)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(95, 17)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "Version: 107.5"
         '
         'UcUserManagement1
         '
         Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
         Me.UcUserManagement1.Name = "UcUserManagement1"
-        Me.UcUserManagement1.Size = New System.Drawing.Size(886, 600)
-        Me.UcUserManagement1.TabIndex = 19
+        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcUserManagement1.TabIndex = 20
         '
         'UcStudentManagement1
         '
         Me.UcStudentManagement1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcStudentManagement1.Location = New System.Drawing.Point(0, 33)
         Me.UcStudentManagement1.Name = "UcStudentManagement1"
-        Me.UcStudentManagement1.Size = New System.Drawing.Size(886, 600)
-        Me.UcStudentManagement1.TabIndex = 18
+        Me.UcStudentManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcStudentManagement1.TabIndex = 19
         '
         'UcSettings1
         '
         Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
         Me.UcSettings1.Name = "UcSettings1"
-        Me.UcSettings1.Size = New System.Drawing.Size(886, 600)
-        Me.UcSettings1.TabIndex = 17
+        Me.UcSettings1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcSettings1.TabIndex = 18
         '
         'UcReports1
         '
         Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcReports1.Location = New System.Drawing.Point(0, 33)
         Me.UcReports1.Name = "UcReports1"
-        Me.UcReports1.Size = New System.Drawing.Size(886, 600)
-        Me.UcReports1.TabIndex = 16
+        Me.UcReports1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcReports1.TabIndex = 17
         '
         'UcMessages1
         '
         Me.UcMessages1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcMessages1.Location = New System.Drawing.Point(0, 33)
         Me.UcMessages1.Name = "UcMessages1"
-        Me.UcMessages1.Size = New System.Drawing.Size(886, 600)
-        Me.UcMessages1.TabIndex = 15
+        Me.UcMessages1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcMessages1.TabIndex = 16
         '
         'UcDashboard1
         '
         Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
         Me.UcDashboard1.Name = "UcDashboard1"
-        Me.UcDashboard1.Size = New System.Drawing.Size(886, 600)
-        Me.UcDashboard1.TabIndex = 14
+        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcDashboard1.TabIndex = 15
         '
         'UcBorrowers1
         '
         Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
         Me.UcBorrowers1.Name = "UcBorrowers1"
-        Me.UcBorrowers1.Size = New System.Drawing.Size(886, 600)
-        Me.UcBorrowers1.TabIndex = 13
+        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcBorrowers1.TabIndex = 14
         '
         'UcBookManagement1
         '
         Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
         Me.UcBookManagement1.Name = "UcBookManagement1"
-        Me.UcBookManagement1.Size = New System.Drawing.Size(886, 600)
-        Me.UcBookManagement1.TabIndex = 12
+        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcBookManagement1.TabIndex = 13
         '
         'UcActivityLog1
         '
         Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
         Me.UcActivityLog1.Name = "UcActivityLog1"
-        Me.UcActivityLog1.Size = New System.Drawing.Size(886, 600)
-        Me.UcActivityLog1.TabIndex = 11
+        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcActivityLog1.TabIndex = 12
         '
         'UcAboutIETI1
         '
         Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
         Me.UcAboutIETI1.Name = "UcAboutIETI1"
-        Me.UcAboutIETI1.Size = New System.Drawing.Size(886, 600)
-        Me.UcAboutIETI1.TabIndex = 10
+        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcAboutIETI1.TabIndex = 11
         '
         'frmMain
         '
@@ -783,8 +655,8 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panelCenter)
-        Me.Controls.Add(Me.panelRight)
         Me.Controls.Add(Me.panelLeft)
         Me.Controls.Add(Me.panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -792,25 +664,19 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.panel2.ResumeLayout(False)
+        Me.panel2.PerformLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBgSearch.ResumeLayout(False)
         Me.panelBgSearch.PerformLayout()
         CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLeft.ResumeLayout(False)
-        Me.panelRight.ResumeLayout(False)
-        Me.panel5.ResumeLayout(False)
-        Me.panel5.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelCenter.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -822,7 +688,6 @@ Partial Class frmMain
     Private WithEvents pbSearch As System.Windows.Forms.PictureBox
     Private WithEvents pbProfile As System.Windows.Forms.PictureBox
     Friend WithEvents panelLeft As System.Windows.Forms.Panel
-    Friend WithEvents panelRight As System.Windows.Forms.Panel
     Private WithEvents btnSettings As System.Windows.Forms.Button
     Private WithEvents btnReports As System.Windows.Forms.Button
     Private WithEvents btnActivityLog As System.Windows.Forms.Button
@@ -835,38 +700,30 @@ Partial Class frmMain
     Private WithEvents btnMessages As System.Windows.Forms.Button
     Private WithEvents btnLogout As System.Windows.Forms.Button
     Friend WithEvents btnMinimize As System.Windows.Forms.Button
-    Private WithEvents Panel1 As System.Windows.Forms.Panel
-    Private WithEvents label13 As System.Windows.Forms.Label
-    Private WithEvents label2 As System.Windows.Forms.Label
-    Private WithEvents Label3 As System.Windows.Forms.Label
-    Private WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Private WithEvents Panel3 As System.Windows.Forms.Panel
-    Private WithEvents Label4 As System.Windows.Forms.Label
-    Private WithEvents Label5 As System.Windows.Forms.Label
-    Private WithEvents label14 As System.Windows.Forms.Label
-    Private WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Private WithEvents panel5 As System.Windows.Forms.Panel
-    Private WithEvents label9 As System.Windows.Forms.Label
-    Private WithEvents label10 As System.Windows.Forms.Label
-    Private WithEvents label11 As System.Windows.Forms.Label
-    Private WithEvents PictureBox6 As System.Windows.Forms.PictureBox
     Friend WithEvents btnChevron As System.Windows.Forms.Button
     Friend WithEvents lblSearch As System.Windows.Forms.Label
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents divider As MaterialSkin.Controls.MaterialDivider
-    Friend WithEvents btnRestoreMaximize As System.Windows.Forms.Button
     Friend WithEvents panelCenter As System.Windows.Forms.Panel
-    Friend WithEvents UcAboutIETI1 As LibraryManagementSystemIETIVB.ucAboutIETI
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
-    Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookManagement
-    Friend WithEvents UcBorrowers1 As LibraryManagementSystemIETIVB.ucBorrowers
-    Friend WithEvents UcDashboard1 As LibraryManagementSystemIETIVB.ucDashboard
-    Friend WithEvents UcMessages1 As LibraryManagementSystemIETIVB.ucMessages
-    Friend WithEvents UcReports1 As LibraryManagementSystemIETIVB.ucReports
-    Friend WithEvents UcSettings1 As LibraryManagementSystemIETIVB.ucSettings
-    Friend WithEvents UcStudentManagement1 As LibraryManagementSystemIETIVB.ucStudentManagement
-    Friend WithEvents UcUserManagement1 As LibraryManagementSystemIETIVB.ucUserManagement
+
     Private WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents lblUserType As System.Windows.Forms.Label
+    Friend WithEvents lblFname As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents UcUserManagement1 As LibraryManagementSystemIETIVB.ucUserManagement
+    Friend WithEvents UcStudentManagement1 As LibraryManagementSystemIETIVB.ucStudentManagement
+    Friend WithEvents UcSettings1 As LibraryManagementSystemIETIVB.ucSettings
+    Friend WithEvents UcReports1 As LibraryManagementSystemIETIVB.ucReports
+    Friend WithEvents UcMessages1 As LibraryManagementSystemIETIVB.ucMessages
+    Friend WithEvents UcDashboard1 As LibraryManagementSystemIETIVB.ucDashboard
+    Friend WithEvents UcBorrowers1 As LibraryManagementSystemIETIVB.ucBorrowers
+    Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookManagement
+    Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
+    Friend WithEvents UcAboutIETI1 As LibraryManagementSystemIETIVB.ucAboutIETI
+    Friend WithEvents lblDuration As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

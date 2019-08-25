@@ -5,7 +5,6 @@ Module ConnString
     Public conn As New SqlConnection
     Public cmd As New SqlCommand
     Public dr As SqlDataReader
-    Public action As String
     Public str As String
 
     Public Sub ConnDB()

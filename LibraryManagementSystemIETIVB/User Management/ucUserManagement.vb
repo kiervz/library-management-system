@@ -38,7 +38,7 @@ Public Class ucUserManagement
                 panelNoRecord.SendToBack()
             End If
         Catch ex As Exception
-            Msg(Me, ex.Message, "Error")
+            MessageBox.Show(ex.Message, "Error")
         End Try
     End Sub
 

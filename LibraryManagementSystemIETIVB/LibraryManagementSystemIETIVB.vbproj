@@ -96,6 +96,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ucAboutIETI.Designer.vb">
+      <DependentUpon>ucAboutIETI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucAboutIETI.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDashboard.Designer.vb">
+      <DependentUpon>ucDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Management\frmUpdateUser.Designer.vb">
       <DependentUpon>frmUpdateUser.vb</DependentUpon>
     </Compile>
@@ -153,12 +165,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ucAboutIETI.Designer.vb">
-      <DependentUpon>ucAboutIETI.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ucAboutIETI.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="ucActivityLog.Designer.vb">
       <DependentUpon>ucActivityLog.vb</DependentUpon>
     </Compile>
@@ -175,12 +181,6 @@
       <DependentUpon>ucBorrowers.vb</DependentUpon>
     </Compile>
     <Compile Include="ucBorrowers.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucDashboard.Designer.vb">
-      <DependentUpon>ucDashboard.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ucDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucMessages.Designer.vb">
@@ -218,6 +218,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucAboutIETI.resx">
+      <DependentUpon>ucAboutIETI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDashboard.resx">
+      <DependentUpon>ucDashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Management\frmRegisterUser.resx">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -239,9 +245,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAboutIETI.resx">
-      <DependentUpon>ucAboutIETI.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucActivityLog.resx">
       <DependentUpon>ucActivityLog.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,9 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucBorrowers.resx">
       <DependentUpon>ucBorrowers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucDashboard.resx">
-      <DependentUpon>ucDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMessages.resx">
       <DependentUpon>ucMessages.vb</DependentUpon>
@@ -342,6 +342,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyFrameworkVB\MyFrameworkVB.vbproj">
+      <Project>{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}</Project>
+      <Name>MyFrameworkVB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

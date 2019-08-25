@@ -62,6 +62,16 @@ Partial Class frmRegisterUser
         Me.lblSpecialCharacter = New System.Windows.Forms.Label()
         Me.txtUserID = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,7 +286,7 @@ Partial Class frmRegisterUser
         Me.btnBrowse.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBrowse.Location = New System.Drawing.Point(634, 324)
+        Me.btnBrowse.Location = New System.Drawing.Point(634, 317)
         Me.btnBrowse.Margin = New System.Windows.Forms.Padding(0)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(186, 33)
@@ -319,8 +329,8 @@ Partial Class frmRegisterUser
         'pbProfile
         '
         Me.pbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbProfile.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.ietilogo
-        Me.pbProfile.Location = New System.Drawing.Point(634, 138)
+        Me.pbProfile.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.no_image
+        Me.pbProfile.Location = New System.Drawing.Point(634, 131)
         Me.pbProfile.Name = "pbProfile"
         Me.pbProfile.Size = New System.Drawing.Size(186, 172)
         Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -442,7 +452,7 @@ Partial Class frmRegisterUser
         Me.FlowLayoutPanel1.Controls.Add(Me.lblUpperCase)
         Me.FlowLayoutPanel1.Controls.Add(Me.lblNumber)
         Me.FlowLayoutPanel1.Controls.Add(Me.lblSpecialCharacter)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(546, 488)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(566, 488)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(311, 74)
         Me.FlowLayoutPanel1.TabIndex = 208
@@ -512,12 +522,122 @@ Partial Class frmRegisterUser
         Me.Label8.TabIndex = 210
         Me.Label8.Text = "User ID:"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(534, 131)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(16, 20)
+        Me.Label9.TabIndex = 211
+        Me.Label9.Text = "*"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(534, 217)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(16, 20)
+        Me.Label11.TabIndex = 213
+        Me.Label11.Text = "*"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(534, 258)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(16, 20)
+        Me.Label12.TabIndex = 214
+        Me.Label12.Text = "*"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(534, 352)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(16, 20)
+        Me.Label13.TabIndex = 215
+        Me.Label13.Text = "*"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(534, 400)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(16, 20)
+        Me.Label14.TabIndex = 216
+        Me.Label14.Text = "*"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(534, 444)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(16, 20)
+        Me.Label15.TabIndex = 217
+        Me.Label15.Text = "*"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(534, 492)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(16, 20)
+        Me.Label16.TabIndex = 218
+        Me.Label16.Text = "*"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(534, 536)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(16, 20)
+        Me.Label17.TabIndex = 219
+        Me.Label17.Text = "*"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(534, 583)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(16, 20)
+        Me.Label18.TabIndex = 220
+        Me.Label18.Text = "*"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(534, 631)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(16, 20)
+        Me.Label19.TabIndex = 221
+        Me.Label19.Text = "*"
+        '
         'frmRegisterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 695)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtUserID)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.FlowLayoutPanel1)
@@ -609,4 +729,14 @@ Partial Class frmRegisterUser
     Private WithEvents lblSpecialCharacter As System.Windows.Forms.Label
     Friend WithEvents txtUserID As System.Windows.Forms.TextBox
     Private WithEvents Label8 As System.Windows.Forms.Label
+    Private WithEvents Label9 As System.Windows.Forms.Label
+    Private WithEvents Label11 As System.Windows.Forms.Label
+    Private WithEvents Label12 As System.Windows.Forms.Label
+    Private WithEvents Label13 As System.Windows.Forms.Label
+    Private WithEvents Label14 As System.Windows.Forms.Label
+    Private WithEvents Label15 As System.Windows.Forms.Label
+    Private WithEvents Label16 As System.Windows.Forms.Label
+    Private WithEvents Label17 As System.Windows.Forms.Label
+    Private WithEvents Label18 As System.Windows.Forms.Label
+    Private WithEvents Label19 As System.Windows.Forms.Label
 End Class

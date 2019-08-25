@@ -2,16 +2,21 @@
 
 Public Class frmUpdateUser
 
-    Private user_id As String
+    Private _user_id As String
+    Private _imagePath As String
 
     Public Sub GetUserID(user_id As String)
-        Me.user_id = user_id
+        Me._user_id = user_id
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub CloseForm()
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
         a.Close()
         Me.Hide()
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        CloseForm()
     End Sub
 
     'if the RegisterUser form is closed the transparent form will be closed as well
@@ -23,10 +28,12 @@ Public Class frmUpdateUser
     Private Sub frmUpdateUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         rbMale.Checked = True
+        SelectUser()
+    End Sub
 
+    Private Sub SelectUser()
         Try
-
-            str = "SELECT firstname,middlename,lastname,user_type,gender,phone,birthday FROM tblUserInfo WHERE user_id = '" + user_id + "'"
+            str = "SELECT firstname,middlename,lastname,user_type,gender,phone,birthday,image FROM tblUserInfo WHERE user_id = '" + _user_id + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -43,9 +50,14 @@ Public Class frmUpdateUser
                     rbFemale.Checked = True
                 End If
                 dtBday.Value = CDate(dr("birthday"))
+                If dr("image") = "My.Resources.ietilogo" Then
+                    pbProfile.Image = My.Resources.ietilogo
+                Else
+                    pbProfile.Image = Image.FromFile(dr("image"))
+                End If
             End If
         Catch ex As Exception
-            CustomMessageBox.ShowDialog(Me, ex.Message, "Exception")
+            MessageBox.Show(ex.Message, "Error")
         End Try
     End Sub
 
@@ -63,5 +75,54 @@ Public Class frmUpdateUser
 
     Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
         GetCurrentAge(dtBday.Value)
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Try
+
+            If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Then
+                CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            ElseIf Val(txtAge.Text) < 18 Then
+                CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Else
+
+                str = "UPDATE tblUserInfo SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@1", cmbUserType.Text)
+                cmd.Parameters.AddWithValue("@2", txtFirstname.Text)
+                cmd.Parameters.AddWithValue("@3", txtMiddlename.Text)
+                cmd.Parameters.AddWithValue("@4", txtLastname.Text)
+                If rbMale.Checked Then
+                    cmd.Parameters.AddWithValue("@5", "Male")
+                Else
+                    cmd.Parameters.AddWithValue("@5", "Female")
+                End If
+                cmd.Parameters.AddWithValue("@6", txtPhone.Text)
+                cmd.Parameters.AddWithValue("@7", dtBday.Value.ToShortDateString())
+                cmd.Parameters.AddWithValue("@8", _imagePath)
+                cmd.ExecuteNonQuery()
+
+                frmMain.UcUserManagement1.FillDGV()
+                CustomMessageBox.ShowDialog(Me, "Record successfully updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+
+                CloseForm()
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+    End Sub
+
+    Private Sub UploadImage()
+        OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.jpg;*.png"
+        OpenFileDialog1.ShowDialog()
+        If Not OpenFileDialog1.FileName = Nothing Then
+            pbProfile.ImageLocation = OpenFileDialog1.FileName
+            _imagePath = pbProfile.ImageLocation
+        End If
+    End Sub
+
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+        UploadImage()
     End Sub
 End Class

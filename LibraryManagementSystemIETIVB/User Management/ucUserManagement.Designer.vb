@@ -29,9 +29,6 @@ Partial Class ucUserManagement
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucUserManagement))
         Me.dgvUserInfo = New MetroFramework.Controls.MetroGrid()
-        Me.btnAddNewUser = New System.Windows.Forms.Button()
-        Me.panelNoRecord = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +37,9 @@ Partial Class ucUserManagement
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnAddNewUser = New System.Windows.Forms.Button()
+        Me.panelNoRecord = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvUserInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelNoRecord.SuspendLayout()
         Me.SuspendLayout()
@@ -111,49 +111,9 @@ Partial Class ucUserManagement
         Me.dgvUserInfo.ShowCellErrors = False
         Me.dgvUserInfo.ShowEditingIcon = False
         Me.dgvUserInfo.ShowRowErrors = False
-        Me.dgvUserInfo.Size = New System.Drawing.Size(1090, 462)
+        Me.dgvUserInfo.Size = New System.Drawing.Size(1106, 462)
         Me.dgvUserInfo.Style = MetroFramework.MetroColorStyle.Teal
         Me.dgvUserInfo.TabIndex = 49
-        '
-        'btnAddNewUser
-        '
-        Me.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddNewUser.FlatAppearance.BorderSize = 0
-        Me.btnAddNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNewUser.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddNewUser.ForeColor = System.Drawing.Color.White
-        Me.btnAddNewUser.Image = CType(resources.GetObject("btnAddNewUser.Image"), System.Drawing.Image)
-        Me.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddNewUser.Location = New System.Drawing.Point(10, 49)
-        Me.btnAddNewUser.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAddNewUser.Name = "btnAddNewUser"
-        Me.btnAddNewUser.Size = New System.Drawing.Size(155, 35)
-        Me.btnAddNewUser.TabIndex = 50
-        Me.btnAddNewUser.Text = "   ADD NEW USER"
-        Me.btnAddNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAddNewUser.UseVisualStyleBackColor = False
-        '
-        'panelNoRecord
-        '
-        Me.panelNoRecord.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.panelNoRecord.Controls.Add(Me.Label1)
-        Me.panelNoRecord.Location = New System.Drawing.Point(261, 241)
-        Me.panelNoRecord.Name = "panelNoRecord"
-        Me.panelNoRecord.Size = New System.Drawing.Size(380, 59)
-        Me.panelNoRecord.TabIndex = 51
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(101, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(178, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "No Records Found"
         '
         'Column1
         '
@@ -217,6 +177,46 @@ Partial Class ucUserManagement
         Me.Column11.ReadOnly = True
         Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column11.Width = 50
+        '
+        'btnAddNewUser
+        '
+        Me.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddNewUser.FlatAppearance.BorderSize = 0
+        Me.btnAddNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewUser.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNewUser.ForeColor = System.Drawing.Color.White
+        Me.btnAddNewUser.Image = CType(resources.GetObject("btnAddNewUser.Image"), System.Drawing.Image)
+        Me.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddNewUser.Location = New System.Drawing.Point(10, 49)
+        Me.btnAddNewUser.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAddNewUser.Name = "btnAddNewUser"
+        Me.btnAddNewUser.Size = New System.Drawing.Size(155, 35)
+        Me.btnAddNewUser.TabIndex = 50
+        Me.btnAddNewUser.Text = "   ADD NEW USER"
+        Me.btnAddNewUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddNewUser.UseVisualStyleBackColor = False
+        '
+        'panelNoRecord
+        '
+        Me.panelNoRecord.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.panelNoRecord.Controls.Add(Me.Label1)
+        Me.panelNoRecord.Location = New System.Drawing.Point(261, 241)
+        Me.panelNoRecord.Name = "panelNoRecord"
+        Me.panelNoRecord.Size = New System.Drawing.Size(380, 59)
+        Me.panelNoRecord.TabIndex = 51
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(101, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(178, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "No Records Found"
         '
         'ucUserManagement
         '

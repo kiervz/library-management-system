@@ -7,6 +7,7 @@
     Public userType As String
     Public isExpandedPanel As Boolean = False
     Public msgBoxButtonClick As String
+    Public UserLogTime As DateTime
 
 
     Public Sub KeyPressLetterOnly(e As KeyPressEventArgs)

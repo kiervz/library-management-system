@@ -29,7 +29,7 @@ Partial Class frmTransparent
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ClientSize = New System.Drawing.Size(94, 63)
+        Me.ClientSize = New System.Drawing.Size(116, 63)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmTransparent"
         Me.Opacity = 0.7R
