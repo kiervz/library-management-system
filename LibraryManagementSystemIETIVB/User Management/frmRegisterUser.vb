@@ -53,6 +53,10 @@ Public Class frmRegisterUser
         End Try
     End Sub
 
+    Private Sub CloseTransparentForm()
+        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
+        a.Close()
+    End Sub
 
     Private Sub frmRegisterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
@@ -61,15 +65,13 @@ Public Class frmRegisterUser
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
+        CloseTransparentForm()
         Me.Hide()
     End Sub
 
     'if the RegisterUser form is closed the transparent form will be closed as well
     Private Sub frmRegisterUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
+        CloseTransparentForm
     End Sub
 
     Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
@@ -88,11 +90,7 @@ Public Class frmRegisterUser
         Return age
     End Function
 
-    Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress
-        KeyPressLetterOnly(e)
-    End Sub
-
-    Private Sub txtLastname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtLastname.KeyPress
+    Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtMiddlename.KeyPress, txtLastname.KeyPress
         KeyPressLetterOnly(e)
     End Sub
 
@@ -105,7 +103,7 @@ Public Class frmRegisterUser
     End Sub
 
     Private Sub UploadImage()
-        OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.jpg;*.png"
+        OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
         OpenFileDialog1.ShowDialog()
         If Not OpenFileDialog1.FileName = Nothing Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
@@ -128,7 +126,7 @@ Public Class frmRegisterUser
         Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
         ' Numbers
         Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
-        ' Special is "none of the above".
+        ' Special character.
         Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
 
         ' Check if password is greater than or equal to 8
@@ -168,7 +166,7 @@ Public Class frmRegisterUser
 
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Then
+        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
             CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
         ElseIf Val(txtAge.Text) < 18 Then
             CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
@@ -197,12 +195,13 @@ Public Class frmRegisterUser
                         .AddWithValue("@5", txtLastname.Text)
                         If rbMale.Checked Then cmd.Parameters.AddWithValue("@6", "Male")
                         If rbFemale.Checked Then cmd.Parameters.AddWithValue("@6", "Female")
+
                         .AddWithValue("@7", txtPhone.Text)
                         .AddWithValue("@8", dtBday.Value.ToShortDateString())
                         .AddWithValue("@9", txtUsername.Text)
-                        .AddWithValue("@10", MD5Hasher.GetMd5Hash(txtPassword.Text))
+                        .AddWithValue("@10", MD5HasherSalt.GetMd5Hash(txtPassword.Text))
                         .AddWithValue("@11", cmbQuestion.Text)
-                        .AddWithValue("@12", txtAnswer.Text)
+                        .AddWithValue("@12", MD5HasherSalt.GetMd5Hash(txtAnswer.Text))
                         .AddWithValue("@13", "1")
                         .AddWithValue("@14", _imagePath)
                     End With
@@ -219,7 +218,6 @@ Public Class frmRegisterUser
                 End Try
 
             End If
-            
 
         End If
     End Sub
@@ -268,4 +266,5 @@ Public Class frmRegisterUser
         ValidatePasswordMatch()
         ValidatePassword(txtConfirmPass.Text)
     End Sub
+
 End Class

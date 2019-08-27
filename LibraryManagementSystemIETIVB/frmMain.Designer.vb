@@ -70,6 +70,8 @@ Partial Class frmMain
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDuration = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
+        Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
         Me.panel2.SuspendLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBgSearch.SuspendLayout()
@@ -105,7 +107,7 @@ Partial Class frmMain
         Me.lblUserType.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUserType.ForeColor = System.Drawing.Color.White
-        Me.lblUserType.Location = New System.Drawing.Point(1178, 56)
+        Me.lblUserType.Location = New System.Drawing.Point(1169, 57)
         Me.lblUserType.Name = "lblUserType"
         Me.lblUserType.Size = New System.Drawing.Size(100, 20)
         Me.lblUserType.TabIndex = 13
@@ -117,7 +119,7 @@ Partial Class frmMain
         Me.lblFname.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblFname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFname.ForeColor = System.Drawing.Color.White
-        Me.lblFname.Location = New System.Drawing.Point(1178, 36)
+        Me.lblFname.Location = New System.Drawing.Point(1169, 37)
         Me.lblFname.Name = "lblFname"
         Me.lblFname.Size = New System.Drawing.Size(61, 20)
         Me.lblFname.TabIndex = 12
@@ -233,7 +235,7 @@ Partial Class frmMain
         'pbProfile
         '
         Me.pbProfile.Image = CType(resources.GetObject("pbProfile.Image"), System.Drawing.Image)
-        Me.pbProfile.Location = New System.Drawing.Point(1133, 35)
+        Me.pbProfile.Location = New System.Drawing.Point(1118, 37)
         Me.pbProfile.Name = "pbProfile"
         Me.pbProfile.Size = New System.Drawing.Size(45, 41)
         Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -618,9 +620,9 @@ Partial Class frmMain
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(4, 3)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 17)
+        Me.Label4.Size = New System.Drawing.Size(198, 17)
         Me.Label4.TabIndex = 23
-        Me.Label4.Text = "Version: 107.5"
+        Me.Label4.Text = "Version: 1.8.9 - Copyright 2019"
         '
         'lblDuration
         '
@@ -629,7 +631,7 @@ Partial Class frmMain
         Me.lblDuration.BackColor = System.Drawing.Color.Silver
         Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDuration.ForeColor = System.Drawing.Color.Black
-        Me.lblDuration.Location = New System.Drawing.Point(258, 3)
+        Me.lblDuration.Location = New System.Drawing.Point(351, 3)
         Me.lblDuration.Name = "lblDuration"
         Me.lblDuration.Size = New System.Drawing.Size(15, 17)
         Me.lblDuration.TabIndex = 22
@@ -642,11 +644,28 @@ Partial Class frmMain
         Me.Label5.BackColor = System.Drawing.Color.Silver
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(185, 2)
+        Me.Label5.Location = New System.Drawing.Point(284, 2)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 17)
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "Duration:"
+        '
+        'PopupNotifier1
+        '
+        Me.PopupNotifier1.ContentFont = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PopupNotifier1.ContentText = Nothing
+        Me.PopupNotifier1.HeaderColor = System.Drawing.Color.Teal
+        Me.PopupNotifier1.HeaderHeight = 15
+        Me.PopupNotifier1.Image = Nothing
+        Me.PopupNotifier1.IsRightToLeft = False
+        Me.PopupNotifier1.OptionsMenu = Nothing
+        Me.PopupNotifier1.Size = New System.Drawing.Size(400, 100)
+        Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PopupNotifier1.TitleText = Nothing
+        '
+        'SystemIdleTimer1
+        '
+        Me.SystemIdleTimer1.MaxIdleTime = CType(300UI, UInteger)
         '
         'frmMain
         '
@@ -660,6 +679,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.panelLeft)
         Me.Controls.Add(Me.panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -692,9 +712,6 @@ Partial Class frmMain
     Private WithEvents btnReports As System.Windows.Forms.Button
     Private WithEvents btnActivityLog As System.Windows.Forms.Button
     Private WithEvents btnUserManagement As System.Windows.Forms.Button
-    Private WithEvents btnStudentsMangement As System.Windows.Forms.Button
-    Private WithEvents btnBookManagement As System.Windows.Forms.Button
-    Private WithEvents btnBorrowers As System.Windows.Forms.Button
     Private WithEvents panelSelector As System.Windows.Forms.Panel
     Private WithEvents btnDashboard As System.Windows.Forms.Button
     Private WithEvents btnMessages As System.Windows.Forms.Button
@@ -726,4 +743,9 @@ Partial Class frmMain
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Public WithEvents lblTitle As System.Windows.Forms.Label
+    Friend WithEvents SystemIdleTimer1 As LibraryManagementSystemIETIVB.SystemIdleTimer
+    Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
+    Friend WithEvents btnBookManagement As System.Windows.Forms.Button
+    Friend WithEvents btnStudentsMangement As System.Windows.Forms.Button
+    Friend WithEvents btnBorrowers As System.Windows.Forms.Button
 End Class

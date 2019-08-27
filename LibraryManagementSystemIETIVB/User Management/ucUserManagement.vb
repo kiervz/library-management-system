@@ -8,6 +8,8 @@ Public Class ucUserManagement
         Dim b As New frmRegisterUser
         a.Show(Me)
         b.ShowDialog(Me)
+        a.Dispose()
+        b.Dispose()
     End Sub
 
     Private Sub ucUserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -18,7 +20,14 @@ Public Class ucUserManagement
 
     Public Sub FillDGV()
         Try
-            cmd = New SqlCommand("SELECT * FROM tblUserInfo WHERE status = '1'", conn)
+
+            If userID = "UID00001" Then
+                str = "SELECT * FROM tblUserInfo WHERE status = '1'"
+            Else
+                str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id <> 'UID00001'"
+            End If
+
+            cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             dgvUserInfo.Rows.Clear()
@@ -26,6 +35,9 @@ Public Class ucUserManagement
             While dr.Read
                 dgvUserInfo.Rows.Add(dr("user_id"), dr("user_type"), dr("firstname") + " " + dr("middlename") + " " + dr("lastname"), dr("gender"), dr("username"), CDate(dr("birthday")).ToShortDateString())
             End While
+
+            dr.Close()
+            cmd.Dispose()
 
             If dgvUserInfo.RowCount = 0 Then
                 panelNoRecord.BringToFront()
@@ -48,17 +60,23 @@ Public Class ucUserManagement
                 dgvArchived.Rows.Add(dr("user_id"), dr("user_type"), dr("firstname") + " " + dr("middlename") + " " + dr("lastname"), dr("gender"), dr("username"), CDate(dr("birthday")).ToShortDateString())
             End While
 
-            If dgvUserInfo.RowCount = 0 Then
-                panelNoRecord.BringToFront()
+            If dgvArchived.RowCount = 0 Then
+                panelNoArchived.BringToFront()
             Else
-                panelNoRecord.SendToBack()
+                panelNoArchived.SendToBack()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         End Try
     End Sub
 
-    Private Sub dgvUserInfo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub DeleteRestoreUser(user_id As String, status As Integer)
+        str = "UPDATE tblUserInfo SET status = '" + CStr(status) + "' WHERE user_id = '" + user_id + "'"
+        cmd = New SqlCommand(str, conn)
+        cmd.ExecuteNonQuery()
+    End Sub
+
+    Private Sub dgvUserInfo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUserInfo.CellContentClick
         Dim i As Integer = dgvUserInfo.CurrentRow.Index
         Dim tempUserID As String = dgvUserInfo.Item(0, i).Value
 
@@ -71,6 +89,11 @@ Public Class ucUserManagement
             update_user.ShowDialog(Me)
 
         ElseIf e.ColumnIndex = 7 Then
+            If tempUserID = userID Then
+                CustomMessageBox.ShowDialog(Me, "You can't delete your account!", "Unable to Delete", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Exit Sub
+            End If
+
             CustomMessageBox.ShowDialog(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
 
             If msgBoxButtonClick = DialogResult.Yes Then
@@ -81,13 +104,13 @@ Public Class ucUserManagement
                 If isPasswordCorrect = True Then
 
                     Try
-                        str = "UPDATE tblUserInfo SET status = '0' WHERE user_id = '" + tempUserID + "'"
-                        cmd = New SqlCommand(str, conn)
-                        cmd.ExecuteNonQuery()
+                        DeleteRestoreUser(tempUserID, 0)
 
                         CustomMessageBox.ShowDialog(Me, "Record successfully deleted!", "Deleted", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                         FillDGV()
+                        FillDGVArchived()
 
+                        isPasswordCorrect = False
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, "Error")
                     End Try
@@ -99,11 +122,38 @@ Public Class ucUserManagement
         End If
     End Sub
 
-    Private Sub MetroTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroTabControl1.SelectedIndexChanged
-        If MetroTabControl1.SelectedIndex = 0 Then
-            frmMain.lblTitle.Text = "Users Management\Manage User"
-        Else
-            frmMain.lblTitle.Text = "Users Management\Archived User"
+    Private Sub dgvArchived_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvArchived.CellContentClick
+        Dim i As Integer = dgvArchived.CurrentRow.Index
+        Dim tempUserID As String = dgvArchived.Item(0, i).Value
+
+        If e.ColumnIndex = 6 Then
+            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+
+            If msgBoxButtonClick = DialogResult.Yes Then
+
+                Dim confirmPass As New frmPasswordConfirmation
+                confirmPass.ShowDialog()
+
+                If isPasswordCorrect = True Then
+                    Try
+                       
+                        DeleteRestoreUser(tempUserID, 1)
+
+                        CustomMessageBox.ShowDialog(Me, "Record successfully restored!", "Restored", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        FillDGVArchived()
+                        FillDGV()
+                        isPasswordCorrect = False
+
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error")
+                    End Try
+                Else
+                    CustomMessageBox.ShowDialog(Me, "Autentication Failed!", "Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                End If
+
+            End If
+
         End If
     End Sub
+
 End Class

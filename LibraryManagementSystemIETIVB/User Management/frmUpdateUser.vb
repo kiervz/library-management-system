@@ -19,7 +19,7 @@ Public Class frmUpdateUser
         Me.Hide()
     End Sub
 
-    'if the RegisterUser form is closed the transparent form will be closed as well
+    'if the RegisterUser form is close the transparent form will be closed as well
     Private Sub frmUpdateUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         CloseTransparentForm()
     End Sub
@@ -50,11 +50,7 @@ Public Class frmUpdateUser
                 End If
                 dtBday.Value = CDate(dr("birthday"))
                 _imagePath = dr("image")
-                If _imagePath = "My.Resources.ietilogo" Then
-                    pbProfile.Image = My.Resources.ietilogo
-                Else
-                    pbProfile.Image = Image.FromFile(_imagePath)
-                End If
+                pbProfile.Image = Image.FromFile(_imagePath)
 
             End If
         Catch ex As Exception
@@ -79,7 +75,7 @@ Public Class frmUpdateUser
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Then
+        If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
             CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf Val(txtAge.Text) < 18 Then
             CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
@@ -120,7 +116,7 @@ Public Class frmUpdateUser
     End Sub
 
     Private Sub UploadImage()
-        OpenFileDialog1.Filter = "Picture Files (*)|*.bmp;*.jpg;*.png"
+        OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
         OpenFileDialog1.ShowDialog()
         If Not OpenFileDialog1.FileName = Nothing Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
@@ -130,6 +126,10 @@ Public Class frmUpdateUser
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         UploadImage()
+    End Sub
+
+    Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtMiddlename.KeyPress, txtLastname.KeyPress
+        KeyPressLetterOnly(e)
     End Sub
 
 End Class

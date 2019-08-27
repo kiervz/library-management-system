@@ -102,6 +102,9 @@
     <Compile Include="frmPasswordConfirmation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SystemIdleTimer.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ucAboutIETI.Designer.vb">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </Compile>
@@ -148,7 +151,7 @@
     </Compile>
     <Compile Include="Module\GlobalVariables.vb" />
     <Compile Include="Module\MessageBoxMetro.vb" />
-    <Compile Include="Module\MD5Hasher.vb" />
+    <Compile Include="Module\MD5HasherSalt.vb" />
     <Compile Include="Module\CustomMessageBox.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

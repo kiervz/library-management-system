@@ -67,6 +67,8 @@ Partial Class frmPasswordConfirmation
         Me.Movable = False
         Me.Name = "frmPasswordConfirmation"
         Me.Resizable = False
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "Password Confirmation"
         Me.ResumeLayout(False)

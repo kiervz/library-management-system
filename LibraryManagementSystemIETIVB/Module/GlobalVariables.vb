@@ -10,6 +10,7 @@
     Public isExpandedPanel As Boolean = False
     Public msgBoxButtonClick As String
     Public UserLogTime As DateTime
+    Public isSystemIDLE As Boolean = False
 
 
     Public Sub KeyPressLetterOnly(e As KeyPressEventArgs)

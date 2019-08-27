@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports MetroFramework.Forms
 Imports Tulpep.NotificationWindow
+Imports System.Text
 
 Public Class frmMain
 
@@ -12,11 +13,42 @@ Public Class frmMain
     '    End Get
     'End Property
 
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
+
+        SystemIdleTimer1.Start()
+
+        pbProfile.Image = Image.FromFile(userImage)
+
+        lblFname.Text = userFname
+        lblUserType.Text = userType
+
+        HideAllUserControl()
+        lblTitle.Text = "Dashboard"
+        UcDashboard1.Visible = True
+
+        If userType = "Student Assistant" Then
+            LoggedInAsStudentAssistant()
+        End If
+
+        UserLogTime = DateTime.Now
+        lblDuration.Text = "00:00:00"
+
+        Notifier() 'Welcome notification will show
+    End Sub
+
     Private Sub movePanelSelector(btn As Control)
         panelSelector.Top = btn.Top
         panelSelector.Height = btn.Height
     End Sub
 
+    Private Sub LoggedInAsStudentAssistant()
+        btnUserManagement.Visible = False
+        btnActivityLog.Visible = False
+        btnReports.Visible = False
+        btnMessages.Location = New Point(4, 239)
+        btnSettings.Location = New Point(4, 284)
+    End Sub
 
     Private Sub HideAllUserControl()
         UcAboutIETI1.Visible = False
@@ -62,7 +94,7 @@ Public Class frmMain
         movePanelSelector(btnUserManagement)
         HideAllUserControl()
         UcUserManagement1.Visible = True
-        lblTitle.Text = "Users Management\Manage User"
+        lblTitle.Text = "Users Management"
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
@@ -110,11 +142,10 @@ Public Class frmMain
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         CustomMessageBox.ShowDialog(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-        If msgBoxButtonClick = DialogResult.Yes Then
-            Application.Exit()
-        End If
+        If msgBoxButtonClick = DialogResult.Yes Then Application.Exit()
     End Sub
 
+    'Circle Picture box
     Private Sub pictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles pbProfile.Paint
         Dim gp As New GraphicsPath
         gp.AddEllipse(0, 0, pbProfile.Width - 2, pbProfile.Height - 2)
@@ -122,15 +153,7 @@ Public Class frmMain
         pbProfile.Region = rg
     End Sub
 
-    Private Sub panelBgSearch_Click(sender As Object, e As EventArgs) Handles panelBgSearch.Click
-        txtSearch.Focus()
-    End Sub
-
-    Private Sub lblSearch_Click(sender As Object, e As EventArgs) Handles lblSearch.Click
-        txtSearch.Focus()
-    End Sub
-
-    Private Sub pbSearch_Click(sender As Object, e As EventArgs) Handles pbSearch.Click
+    Private Sub panelBgSearch_Click(sender As Object, e As EventArgs) Handles panelBgSearch.Click, lblSearch.Click, pbSearch.Click
         txtSearch.Focus()
     End Sub
 
@@ -150,46 +173,13 @@ Public Class frmMain
         ToolTip1.SetToolTip(btnClose, "Close")
     End Sub
 
-
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
-
-        If userImage = "My.Resources.ietilogo" Then
-            pbProfile.Image = My.Resources.ietilogo
-        Else
-            pbProfile.Image = Image.FromFile(userImage)
-        End If
-
-        lblFname.Text = userFname
-        lblUserType.Text = userType
-
-        HideAllUserControl()
-        lblTitle.Text = "Dashboard"
-        UcDashboard1.Visible = True
-
-        UserLogTime = DateTime.Now
-        lblDuration.Text = "00:00:00"
-
-        Notifier()
-    End Sub
-
-    Private Sub login()
-        Dim login As New frmLogin
-        login.ShowDialog()
-    End Sub
-
     Private Sub Notifier()
-        Dim notif As New PopupNotifier
-        notif.Image = My.Resources.admin3
-        notif.HeaderHeight = 15
-        notif.HeaderColor = Color.Teal
-        notif.TitleFont = New Font("Century Gothic", 11)
-        notif.ContentFont = New Font("Century Gothic", 10)
-        notif.TitleText = "Library Management System"
-        notif.ContentText = "Welcome back " + userType + " " + userFname
-        notif.Popup()
-    End Sub
+        PopupNotifier1.Image = My.Resources.admin3
+        PopupNotifier1.TitleText = "Library Management System"
 
+        PopupNotifier1.ContentText = "Welcome back " + userType + " " + userFname
+        PopupNotifier1.Popup()
+    End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim currentLogIn = DateTime.Now - UserLogTime
@@ -199,5 +189,34 @@ Public Class frmMain
         Else
             lblDuration.Text = currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")
         End If
+
+        If isSystemIDLE Then
+            Timer1.Stop()
+            SystemIdleTimer1.Stop()
+
+            Dim confirmPass As New frmPasswordConfirmation
+            confirmPass.ShowDialog()
+
+            If isPasswordCorrect Then
+                Timer1.Start()
+                SystemIdleTimer1.Start()
+                isSystemIDLE = False
+                isPasswordCorrect = False
+            Else
+                CustomMessageBox.ShowDialog(Me, "Authentication Failed! System will be closed.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Application.Exit()
+            End If
+        End If
+
     End Sub
+
+    Private Sub SystemIdleTimer1_OnEnterIdleState(sender As Object, e As IdleEventArgs) Handles SystemIdleTimer1.OnEnterIdleState
+        isSystemIDLE = True
+    End Sub
+
+    Private Sub PopupNotifier1_Click(sender As Object, e As EventArgs) Handles PopupNotifier1.Click
+        btnSettings.PerformClick()
+        btnSettings.Focus()
+    End Sub
+
 End Class

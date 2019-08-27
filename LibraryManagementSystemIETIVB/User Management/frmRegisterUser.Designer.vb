@@ -85,7 +85,7 @@ Partial Class frmRegisterUser
         Me.rbFemale.Depth = 0
         Me.rbFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbFemale.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.rbFemale.Location = New System.Drawing.Point(339, 307)
+        Me.rbFemale.Location = New System.Drawing.Point(339, 301)
         Me.rbFemale.Margin = New System.Windows.Forms.Padding(0)
         Me.rbFemale.MouseLocation = New System.Drawing.Point(-1, -1)
         Me.rbFemale.MouseState = MaterialSkin.MouseState.HOVER
@@ -104,7 +104,7 @@ Partial Class frmRegisterUser
         Me.rbMale.Depth = 0
         Me.rbMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbMale.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.rbMale.Location = New System.Drawing.Point(257, 307)
+        Me.rbMale.Location = New System.Drawing.Point(257, 301)
         Me.rbMale.Margin = New System.Windows.Forms.Padding(0)
         Me.rbMale.MouseLocation = New System.Drawing.Point(-1, -1)
         Me.rbMale.MouseState = MaterialSkin.MouseState.HOVER
@@ -121,7 +121,7 @@ Partial Class frmRegisterUser
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(43, 358)
+        Me.Label4.Location = New System.Drawing.Point(43, 353)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(103, 20)
         Me.Label4.TabIndex = 165
@@ -131,7 +131,7 @@ Partial Class frmRegisterUser
         '
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label3.Location = New System.Drawing.Point(43, 317)
+        Me.label3.Location = New System.Drawing.Point(43, 311)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(70, 20)
         Me.label3.TabIndex = 163
@@ -141,7 +141,7 @@ Partial Class frmRegisterUser
         '
         Me.label5.AutoSize = True
         Me.label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label5.Location = New System.Drawing.Point(43, 267)
+        Me.label5.Location = New System.Drawing.Point(43, 264)
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(82, 20)
         Me.label5.TabIndex = 162
@@ -152,7 +152,7 @@ Partial Class frmRegisterUser
         Me.cmbUserType.FormattingEnabled = True
         Me.cmbUserType.ItemHeight = 23
         Me.cmbUserType.Items.AddRange(New Object() {"Administrator", "Librarian", "Student Assistant"})
-        Me.cmbUserType.Location = New System.Drawing.Point(259, 258)
+        Me.cmbUserType.Location = New System.Drawing.Point(259, 255)
         Me.cmbUserType.Name = "cmbUserType"
         Me.cmbUserType.Size = New System.Drawing.Size(269, 29)
         Me.cmbUserType.TabIndex = 3
@@ -162,7 +162,7 @@ Partial Class frmRegisterUser
         '
         Me.label2.AutoSize = True
         Me.label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.Location = New System.Drawing.Point(43, 223)
+        Me.label2.Location = New System.Drawing.Point(43, 219)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(83, 20)
         Me.label2.TabIndex = 161
@@ -183,7 +183,7 @@ Partial Class frmRegisterUser
         Me.txtAge.BackColor = System.Drawing.Color.White
         Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAge.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAge.Location = New System.Drawing.Point(469, 400)
+        Me.txtAge.Location = New System.Drawing.Point(469, 391)
         Me.txtAge.MaxLength = 3
         Me.txtAge.Name = "txtAge"
         Me.txtAge.ReadOnly = True
@@ -194,7 +194,7 @@ Partial Class frmRegisterUser
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(43, 403)
+        Me.Label6.Location = New System.Drawing.Point(43, 394)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(72, 20)
         Me.Label6.TabIndex = 169
@@ -203,7 +203,7 @@ Partial Class frmRegisterUser
         'dtBday
         '
         Me.dtBday.FontSize = MetroFramework.MetroDateTimeSize.Small
-        Me.dtBday.Location = New System.Drawing.Point(259, 401)
+        Me.dtBday.Location = New System.Drawing.Point(259, 392)
         Me.dtBday.MinimumSize = New System.Drawing.Size(0, 25)
         Me.dtBday.Name = "dtBday"
         Me.dtBday.Size = New System.Drawing.Size(204, 25)
@@ -213,7 +213,7 @@ Partial Class frmRegisterUser
         '
         Me.lblConfirmPass.AutoSize = True
         Me.lblConfirmPass.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConfirmPass.Location = New System.Drawing.Point(43, 542)
+        Me.lblConfirmPass.Location = New System.Drawing.Point(43, 530)
         Me.lblConfirmPass.Name = "lblConfirmPass"
         Me.lblConfirmPass.Size = New System.Drawing.Size(145, 20)
         Me.lblConfirmPass.TabIndex = 176
@@ -223,7 +223,7 @@ Partial Class frmRegisterUser
         '
         Me.lblPassword.AutoSize = True
         Me.lblPassword.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPassword.Location = New System.Drawing.Point(41, 498)
+        Me.lblPassword.Location = New System.Drawing.Point(41, 486)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(83, 20)
         Me.lblPassword.TabIndex = 175
@@ -233,7 +233,7 @@ Partial Class frmRegisterUser
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(41, 450)
+        Me.lblUsername.Location = New System.Drawing.Point(41, 442)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(87, 20)
         Me.lblUsername.TabIndex = 174
@@ -300,7 +300,7 @@ Partial Class frmRegisterUser
         '
         Me.lblAnswer.AutoSize = True
         Me.lblAnswer.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnswer.Location = New System.Drawing.Point(43, 633)
+        Me.lblAnswer.Location = New System.Drawing.Point(43, 618)
         Me.lblAnswer.Name = "lblAnswer"
         Me.lblAnswer.Size = New System.Drawing.Size(129, 20)
         Me.lblAnswer.TabIndex = 184
@@ -310,7 +310,7 @@ Partial Class frmRegisterUser
         '
         Me.lblQuestion.AutoSize = True
         Me.lblQuestion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQuestion.Location = New System.Drawing.Point(43, 592)
+        Me.lblQuestion.Location = New System.Drawing.Point(43, 579)
         Me.lblQuestion.Name = "lblQuestion"
         Me.lblQuestion.Size = New System.Drawing.Size(139, 20)
         Me.lblQuestion.TabIndex = 182
@@ -321,7 +321,7 @@ Partial Class frmRegisterUser
         Me.cmbQuestion.FormattingEnabled = True
         Me.cmbQuestion.ItemHeight = 23
         Me.cmbQuestion.Items.AddRange(New Object() {"What is the name of your favorite teacher?", "What is the name of your first pet?", "What is the name of your first school?", "What is the name of your first gf/bf?", "What is your mother's complete middle name?", "What is your father's complete middle name?", "What city were you born?", "What is yout favorite tourist spot?", "What is your favorite place?", "Who is your favorite teacher?", "Where is your first job?", "Where is your first duty?"})
-        Me.cmbQuestion.Location = New System.Drawing.Point(259, 583)
+        Me.cmbQuestion.Location = New System.Drawing.Point(259, 570)
         Me.cmbQuestion.Name = "cmbQuestion"
         Me.cmbQuestion.Size = New System.Drawing.Size(269, 29)
         Me.cmbQuestion.TabIndex = 11
@@ -343,6 +343,7 @@ Partial Class frmRegisterUser
         Me.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFirstname.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstname.Location = New System.Drawing.Point(259, 131)
+        Me.txtFirstname.MaxLength = 30
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(269, 26)
         Me.txtFirstname.TabIndex = 0
@@ -351,7 +352,8 @@ Partial Class frmRegisterUser
         '
         Me.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLastname.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastname.Location = New System.Drawing.Point(259, 217)
+        Me.txtLastname.Location = New System.Drawing.Point(259, 213)
+        Me.txtLastname.MaxLength = 30
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(269, 26)
         Me.txtLastname.TabIndex = 2
@@ -360,7 +362,7 @@ Partial Class frmRegisterUser
         '
         Me.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPhone.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPhone.Location = New System.Drawing.Point(259, 352)
+        Me.txtPhone.Location = New System.Drawing.Point(259, 347)
         Me.txtPhone.MaxLength = 11
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(269, 26)
@@ -370,7 +372,8 @@ Partial Class frmRegisterUser
         '
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(259, 444)
+        Me.txtUsername.Location = New System.Drawing.Point(259, 436)
+        Me.txtUsername.MaxLength = 16
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(269, 26)
         Me.txtUsername.TabIndex = 8
@@ -379,7 +382,8 @@ Partial Class frmRegisterUser
         '
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(259, 492)
+        Me.txtPassword.Location = New System.Drawing.Point(259, 480)
+        Me.txtPassword.MaxLength = 16
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(269, 26)
         Me.txtPassword.TabIndex = 9
@@ -388,7 +392,8 @@ Partial Class frmRegisterUser
         '
         Me.txtConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtConfirmPass.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmPass.Location = New System.Drawing.Point(259, 536)
+        Me.txtConfirmPass.Location = New System.Drawing.Point(259, 524)
+        Me.txtConfirmPass.MaxLength = 16
         Me.txtConfirmPass.Name = "txtConfirmPass"
         Me.txtConfirmPass.Size = New System.Drawing.Size(269, 26)
         Me.txtConfirmPass.TabIndex = 10
@@ -397,7 +402,7 @@ Partial Class frmRegisterUser
         '
         Me.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAnswer.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer.Location = New System.Drawing.Point(259, 631)
+        Me.txtAnswer.Location = New System.Drawing.Point(259, 616)
         Me.txtAnswer.Name = "txtAnswer"
         Me.txtAnswer.Size = New System.Drawing.Size(269, 26)
         Me.txtAnswer.TabIndex = 12
@@ -410,7 +415,8 @@ Partial Class frmRegisterUser
         '
         Me.txtMiddlename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtMiddlename.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiddlename.Location = New System.Drawing.Point(259, 174)
+        Me.txtMiddlename.Location = New System.Drawing.Point(259, 171)
+        Me.txtMiddlename.MaxLength = 30
         Me.txtMiddlename.Name = "txtMiddlename"
         Me.txtMiddlename.Size = New System.Drawing.Size(269, 26)
         Me.txtMiddlename.TabIndex = 1
@@ -419,7 +425,7 @@ Partial Class frmRegisterUser
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(43, 180)
+        Me.Label7.Location = New System.Drawing.Point(43, 177)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(106, 20)
         Me.Label7.TabIndex = 194
@@ -428,7 +434,7 @@ Partial Class frmRegisterUser
         'pbCheck1
         '
         Me.pbCheck1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.check
-        Me.pbCheck1.Location = New System.Drawing.Point(506, 495)
+        Me.pbCheck1.Location = New System.Drawing.Point(506, 483)
         Me.pbCheck1.Name = "pbCheck1"
         Me.pbCheck1.Size = New System.Drawing.Size(19, 19)
         Me.pbCheck1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -439,7 +445,7 @@ Partial Class frmRegisterUser
         'pbCheck2
         '
         Me.pbCheck2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.x
-        Me.pbCheck2.Location = New System.Drawing.Point(506, 539)
+        Me.pbCheck2.Location = New System.Drawing.Point(506, 527)
         Me.pbCheck2.Name = "pbCheck2"
         Me.pbCheck2.Size = New System.Drawing.Size(19, 19)
         Me.pbCheck2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -453,7 +459,7 @@ Partial Class frmRegisterUser
         Me.FlowLayoutPanel1.Controls.Add(Me.lblUpperCase)
         Me.FlowLayoutPanel1.Controls.Add(Me.lblNumber)
         Me.FlowLayoutPanel1.Controls.Add(Me.lblSpecialCharacter)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(566, 488)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(564, 480)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(311, 74)
         Me.FlowLayoutPanel1.TabIndex = 208
@@ -557,7 +563,7 @@ Partial Class frmRegisterUser
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(534, 352)
+        Me.Label13.Location = New System.Drawing.Point(534, 347)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(16, 20)
         Me.Label13.TabIndex = 215
@@ -567,7 +573,7 @@ Partial Class frmRegisterUser
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(534, 400)
+        Me.Label14.Location = New System.Drawing.Point(534, 391)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(16, 20)
         Me.Label14.TabIndex = 216
@@ -577,7 +583,7 @@ Partial Class frmRegisterUser
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(534, 444)
+        Me.Label15.Location = New System.Drawing.Point(534, 436)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(16, 20)
         Me.Label15.TabIndex = 217
@@ -587,7 +593,7 @@ Partial Class frmRegisterUser
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(534, 492)
+        Me.Label16.Location = New System.Drawing.Point(534, 480)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(16, 20)
         Me.Label16.TabIndex = 218
@@ -597,7 +603,7 @@ Partial Class frmRegisterUser
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(534, 536)
+        Me.Label17.Location = New System.Drawing.Point(534, 524)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(16, 20)
         Me.Label17.TabIndex = 219
@@ -607,7 +613,7 @@ Partial Class frmRegisterUser
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(534, 583)
+        Me.Label18.Location = New System.Drawing.Point(534, 570)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(16, 20)
         Me.Label18.TabIndex = 220
@@ -617,7 +623,7 @@ Partial Class frmRegisterUser
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(534, 631)
+        Me.Label19.Location = New System.Drawing.Point(534, 618)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(16, 20)
         Me.Label19.TabIndex = 221
@@ -628,7 +634,7 @@ Partial Class frmRegisterUser
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label10.Location = New System.Drawing.Point(44, 675)
+        Me.Label10.Location = New System.Drawing.Point(44, 670)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(303, 18)
         Me.Label10.TabIndex = 222
