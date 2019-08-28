@@ -50,7 +50,12 @@ Public Class frmUpdateUser
                 End If
                 dtBday.Value = CDate(dr("birthday"))
                 _imagePath = dr("image")
-                pbProfile.Image = Image.FromFile(_imagePath)
+
+                Try
+                    pbProfile.Image = Image.FromFile(_imagePath)
+                Catch ex As Exception
+                    pbProfile.Image = My.Resources.no_image
+                End Try
 
             End If
         Catch ex As Exception

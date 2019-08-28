@@ -18,10 +18,14 @@ Public Class frmMain
 
         SystemIdleTimer1.Start()
 
-        pbProfile.Image = Image.FromFile(userImage)
-
         lblFname.Text = userFname
         lblUserType.Text = userType
+        Try
+            pbProfile.Image = Image.FromFile(userImage)
+        Catch ex As Exception
+            pbProfile.Image = My.Resources.no_image
+        End Try
+
 
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
@@ -195,7 +199,7 @@ Public Class frmMain
             SystemIdleTimer1.Stop()
 
             Dim confirmPass As New frmPasswordConfirmation
-            confirmPass.ShowDialog()
+            confirmPass.ShowDialog(Me)
 
             If isPasswordCorrect Then
                 Timer1.Start()

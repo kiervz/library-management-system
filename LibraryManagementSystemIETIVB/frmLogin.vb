@@ -32,7 +32,8 @@ Public Class frmLogin
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Dim val As String = CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.YesCancel, MessageBoxIconn.Exclamation)
+            MessageBox.Show(val)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
             CustomMessageBox.ShowDialog(Me, "Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
@@ -48,8 +49,13 @@ Public Class frmLogin
 
                     If dr("status").Equals(0) Then
                         CustomMessageBox.ShowDialog(Me, "Your account has been disabled. Contact your administrator to enable.", "Disabled Account", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+
+                        txtUsername.Clear()
+                        txtPassword.Clear()
+
                         Exit Sub
                     End If
+
                     GlobalVariables.userID = dr("user_id")
                     GlobalVariables.userFname = dr("firstname")
                     GlobalVariables.userLname = dr("lastname")

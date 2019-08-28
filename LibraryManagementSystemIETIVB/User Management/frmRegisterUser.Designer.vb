@@ -387,6 +387,7 @@ Partial Class frmRegisterUser
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(269, 26)
         Me.txtPassword.TabIndex = 9
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtConfirmPass
         '
@@ -397,6 +398,7 @@ Partial Class frmRegisterUser
         Me.txtConfirmPass.Name = "txtConfirmPass"
         Me.txtConfirmPass.Size = New System.Drawing.Size(269, 26)
         Me.txtConfirmPass.TabIndex = 10
+        Me.txtConfirmPass.UseSystemPasswordChar = True
         '
         'txtAnswer
         '
@@ -406,6 +408,7 @@ Partial Class frmRegisterUser
         Me.txtAnswer.Name = "txtAnswer"
         Me.txtAnswer.Size = New System.Drawing.Size(269, 26)
         Me.txtAnswer.TabIndex = 12
+        Me.txtAnswer.UseSystemPasswordChar = True
         '
         'OpenFileDialog1
         '

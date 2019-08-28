@@ -40,10 +40,10 @@ Module CustomMessageBox
             color = System.Drawing.Color.FromArgb(26, 188, 156)
         ElseIf msgIcon = MessageBoxIconn.Exclamation Then
             MessageBeep(_MB_ICONEXCLAMATION)
-            color = System.Drawing.Color.FromArgb(211, 84, 0)
+            color = System.Drawing.Color.FromArgb(211, 84, 0) 'Color Orange
         ElseIf msgIcon = MessageBoxIconn.Danger Then
             MessageBeep(_MB_ICONHAND)
-            color = System.Drawing.Color.FromArgb(192, 57, 43)
+            color = System.Drawing.Color.FromArgb(192, 57, 43) 'Color Red
         End If
 
 
