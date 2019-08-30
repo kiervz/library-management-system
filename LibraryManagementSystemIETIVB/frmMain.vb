@@ -129,16 +129,6 @@ Public Class frmMain
         lblTitle.Text = "Messages"
     End Sub
 
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtonn.YesCancel, MessageBoxIconn.Question)
-
-        If msgBoxButtonClick = DialogResult.Yes Then
-            Me.Close()
-            Dim login As New frmLogin
-            login.ShowDialog()
-        End If
-    End Sub
-
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
@@ -180,7 +170,6 @@ Public Class frmMain
     Private Sub Notifier()
         PopupNotifier1.Image = My.Resources.admin3
         PopupNotifier1.TitleText = "Library Management System"
-
         PopupNotifier1.ContentText = "Welcome back " + userType + " " + userFname
         PopupNotifier1.Popup()
     End Sub
@@ -221,6 +210,20 @@ Public Class frmMain
     Private Sub PopupNotifier1_Click(sender As Object, e As EventArgs) Handles PopupNotifier1.Click
         btnSettings.PerformClick()
         btnSettings.Focus()
+    End Sub
+
+    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click
+        btnChevron.ContextMenuStrip.Show(New Point(1118, 84))
+    End Sub
+
+    Private Sub tsLogout_Click(sender As Object, e As EventArgs) Handles tsLogout.Click
+        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtonn.YesCancel, MessageBoxIconn.Question)
+
+        If msgBoxButtonClick = DialogResult.Yes Then
+            Me.Close()
+            Dim login As New frmLogin
+            login.ShowDialog()
+        End If
     End Sub
 
 End Class

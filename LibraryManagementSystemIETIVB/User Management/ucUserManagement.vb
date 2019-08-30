@@ -8,8 +8,6 @@ Public Class ucUserManagement
         Dim b As New frmRegisterUser
         a.Show(Me)
         b.ShowDialog(Me)
-        a.Dispose()
-        b.Dispose()
     End Sub
 
     Private Sub ucUserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -156,4 +154,35 @@ Public Class ucUserManagement
         End If
     End Sub
 
+    Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If MetroTabControl1.SelectedIndex = 0 Then
+                str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%' OR firstname LIKE '%" + txtSearch.Text + "%' OR middlename LIKE '%" + txtSearch.Text + "%' OR lastname LIKE '%" + txtSearch.Text + "%'"
+            Else
+                str = "SELECT * FROM tblUserInfo WHERE status = '0'"
+            End If
+
+            Try
+                cmd = New SqlCommand(str, conn)
+                dr = cmd.ExecuteReader
+
+                dgvUserInfo.Rows.Clear()
+
+                While dr.Read
+                    dgvUserInfo.Rows.Add(dr("user_id"), dr("user_type"), dr("firstname") + " " + dr("middlename") + " " + dr("lastname"), dr("gender"), dr("username"), CDate(dr("birthday")).ToShortDateString())
+                End While
+
+                dr.Close()
+                cmd.Dispose()
+
+                If dgvUserInfo.RowCount = 0 Then
+                    panelNoRecord.BringToFront()
+                Else
+                    panelNoRecord.SendToBack()
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error")
+            End Try
+        End If
+    End Sub
 End Class
