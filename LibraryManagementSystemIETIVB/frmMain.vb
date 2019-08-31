@@ -212,7 +212,7 @@ Public Class frmMain
         btnSettings.Focus()
     End Sub
 
-    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click
+    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click, panelDropdown.Click
         btnChevron.ContextMenuStrip.Show(New Point(1118, 84))
     End Sub
 

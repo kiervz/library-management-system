@@ -38,6 +38,16 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
+        Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
+        Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
+        Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
+        Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
+        Me.UcMessages1 = New LibraryManagementSystemIETIVB.ucMessages()
+        Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
+        Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
+        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
+        Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
+        Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -63,16 +73,7 @@ Partial Class frmMain
         Me.lblFname = New System.Windows.Forms.Label()
         Me.lblUserType = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
-        Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
-        Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
-        Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
-        Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
-        Me.UcMessages1 = New LibraryManagementSystemIETIVB.ucMessages()
-        Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
-        Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
-        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
-        Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
-        Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
+        Me.panelDropdown = New System.Windows.Forms.Panel()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
@@ -312,6 +313,86 @@ Partial Class frmMain
         Me.panelCenter.Name = "panelCenter"
         Me.panelCenter.Size = New System.Drawing.Size(1126, 632)
         Me.panelCenter.TabIndex = 5
+        '
+        'UcUserManagement1
+        '
+        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcUserManagement1.Name = "UcUserManagement1"
+        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcUserManagement1.TabIndex = 20
+        '
+        'UcStudentManagement1
+        '
+        Me.UcStudentManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcStudentManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcStudentManagement1.Name = "UcStudentManagement1"
+        Me.UcStudentManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcStudentManagement1.TabIndex = 19
+        '
+        'UcSettings1
+        '
+        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
+        Me.UcSettings1.Name = "UcSettings1"
+        Me.UcSettings1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcSettings1.TabIndex = 18
+        '
+        'UcReports1
+        '
+        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
+        Me.UcReports1.Name = "UcReports1"
+        Me.UcReports1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcReports1.TabIndex = 17
+        '
+        'UcMessages1
+        '
+        Me.UcMessages1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcMessages1.Location = New System.Drawing.Point(0, 33)
+        Me.UcMessages1.Name = "UcMessages1"
+        Me.UcMessages1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcMessages1.TabIndex = 16
+        '
+        'UcDashboard1
+        '
+        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
+        Me.UcDashboard1.Name = "UcDashboard1"
+        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcDashboard1.TabIndex = 15
+        '
+        'UcBorrowers1
+        '
+        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBorrowers1.Name = "UcBorrowers1"
+        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcBorrowers1.TabIndex = 14
+        '
+        'UcBookManagement1
+        '
+        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBookManagement1.Name = "UcBookManagement1"
+        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcBookManagement1.TabIndex = 13
+        '
+        'UcActivityLog1
+        '
+        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
+        Me.UcActivityLog1.Name = "UcActivityLog1"
+        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcActivityLog1.TabIndex = 12
+        '
+        'UcAboutIETI1
+        '
+        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
+        Me.UcAboutIETI1.Name = "UcAboutIETI1"
+        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 599)
+        Me.UcAboutIETI1.TabIndex = 11
         '
         'Panel4
         '
@@ -596,91 +677,20 @@ Partial Class frmMain
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.panelBgSearch)
         Me.panel2.Controls.Add(Me.pbProfile)
+        Me.panel2.Controls.Add(Me.panelDropdown)
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
         '
-        'UcUserManagement1
+        'panelDropdown
         '
-        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcUserManagement1.Name = "UcUserManagement1"
-        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcUserManagement1.TabIndex = 20
-        '
-        'UcStudentManagement1
-        '
-        Me.UcStudentManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcStudentManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcStudentManagement1.Name = "UcStudentManagement1"
-        Me.UcStudentManagement1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcStudentManagement1.TabIndex = 19
-        '
-        'UcSettings1
-        '
-        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
-        Me.UcSettings1.Name = "UcSettings1"
-        Me.UcSettings1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcSettings1.TabIndex = 18
-        '
-        'UcReports1
-        '
-        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
-        Me.UcReports1.Name = "UcReports1"
-        Me.UcReports1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcReports1.TabIndex = 17
-        '
-        'UcMessages1
-        '
-        Me.UcMessages1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcMessages1.Location = New System.Drawing.Point(0, 33)
-        Me.UcMessages1.Name = "UcMessages1"
-        Me.UcMessages1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcMessages1.TabIndex = 16
-        '
-        'UcDashboard1
-        '
-        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
-        Me.UcDashboard1.Name = "UcDashboard1"
-        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcDashboard1.TabIndex = 15
-        '
-        'UcBorrowers1
-        '
-        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBorrowers1.Name = "UcBorrowers1"
-        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcBorrowers1.TabIndex = 14
-        '
-        'UcBookManagement1
-        '
-        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBookManagement1.Name = "UcBookManagement1"
-        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcBookManagement1.TabIndex = 13
-        '
-        'UcActivityLog1
-        '
-        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
-        Me.UcActivityLog1.Name = "UcActivityLog1"
-        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcActivityLog1.TabIndex = 12
-        '
-        'UcAboutIETI1
-        '
-        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
-        Me.UcAboutIETI1.Name = "UcAboutIETI1"
-        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcAboutIETI1.TabIndex = 11
+        Me.panelDropdown.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.panelDropdown.Location = New System.Drawing.Point(1118, 37)
+        Me.panelDropdown.Name = "panelDropdown"
+        Me.panelDropdown.Size = New System.Drawing.Size(236, 41)
+        Me.panelDropdown.TabIndex = 21
         '
         'SystemIdleTimer1
         '
@@ -770,4 +780,5 @@ Partial Class frmMain
     Friend WithEvents lblUserType As System.Windows.Forms.Label
     Private WithEvents panel2 As System.Windows.Forms.Panel
     Private WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents panelDropdown As System.Windows.Forms.Panel
 End Class
