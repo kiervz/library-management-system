@@ -102,6 +102,13 @@
     <Compile Include="frmPasswordConfirmation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Book Management\frmRegisterBooks.Designer.vb">
+      <DependentUpon>frmRegisterBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Book Management\frmRegisterBooks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\MD5HasherSalt.vb" />
     <Compile Include="SystemIdleTimer.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -151,7 +158,6 @@
     </Compile>
     <Compile Include="Module\GlobalVariables.vb" />
     <Compile Include="Module\MessageBoxMetro.vb" />
-    <Compile Include="Module\MD5HasherSalt.vb" />
     <Compile Include="Module\CustomMessageBox.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -174,10 +180,10 @@
     <Compile Include="ucActivityLog.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBookManagement.Designer.vb">
+    <Compile Include="Book Management\ucBookManagement.Designer.vb">
       <DependentUpon>ucBookManagement.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucBookManagement.vb">
+    <Compile Include="Book Management\ucBookManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucBorrowers.Designer.vb">
@@ -221,6 +227,9 @@
     <EmbeddedResource Include="frmPasswordConfirmation.resx">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Book Management\frmRegisterBooks.resx">
+      <DependentUpon>frmRegisterBooks.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +260,7 @@
     <EmbeddedResource Include="ucActivityLog.resx">
       <DependentUpon>ucActivityLog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBookManagement.resx">
+    <EmbeddedResource Include="Book Management\ucBookManagement.resx">
       <DependentUpon>ucBookManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucBorrowers.resx">

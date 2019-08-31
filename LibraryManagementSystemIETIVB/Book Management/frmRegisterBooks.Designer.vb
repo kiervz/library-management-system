@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ucBookManagement
-    Inherits System.Windows.Forms.UserControl
+Partial Class frmRegisterBooks
+    Inherits MetroFramework.Forms.MetroForm
 
-    'UserControl overrides dispose to clean up the component list.
+    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -22,29 +22,23 @@ Partial Class ucBookManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(413, 310)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "BOOK MANAGEMENT"
-        '
-        'ucBookManagement
+        'frmRegisterBooks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Label1)
-        Me.Name = "ucBookManagement"
-        Me.Size = New System.Drawing.Size(886, 633)
+        Me.ClientSize = New System.Drawing.Size(832, 630)
+        Me.ControlBox = False
+        Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Movable = False
+        Me.Name = "frmRegisterBooks"
+        Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Teal
+        Me.Text = "BOOK REGISTRATION"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-
 End Class
