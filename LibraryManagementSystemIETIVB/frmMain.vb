@@ -13,6 +13,7 @@ Public Class frmMain
     '    End Get
     'End Property
 
+
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
@@ -71,6 +72,7 @@ Public Class frmMain
         HideAllUserControl()
         UcDashboard1.Visible = True
         lblTitle.Text = "Dashboard"
+        UcDashboard1.TotalUsers()
     End Sub
 
     Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
@@ -174,9 +176,11 @@ Public Class frmMain
         PopupNotifier1.Popup()
     End Sub
 
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim currentLogIn = DateTime.Now - UserLogTime
 
+        'Duration Time
         If currentLogIn.Days.ToString("00") > 0 Then
             lblDuration.Text = currentLogIn.Days.ToString("00") + ":" + currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")
         Else
@@ -186,18 +190,15 @@ Public Class frmMain
         If isSystemIDLE Then
             Timer1.Stop()
             SystemIdleTimer1.Stop()
-
-            Dim confirmPass As New frmPasswordConfirmation
-            confirmPass.ShowDialog(Me)
+            
+            ShowPasswordConfirmation(Me)
 
             If isPasswordCorrect Then
                 Timer1.Start()
                 SystemIdleTimer1.Start()
                 isSystemIDLE = False
                 isPasswordCorrect = False
-            Else
-                CustomMessageBox.ShowDialog(Me, "Authentication Failed! System will be closed.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
-                Application.Exit()
+                idlePasswordAttempts = 0
             End If
         End If
 
@@ -212,8 +213,8 @@ Public Class frmMain
         btnSettings.Focus()
     End Sub
 
-    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click
-        btnChevron.ContextMenuStrip.Show(New Point(1118, 84))
+    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click, panelAccount.Click
+        btnChevron.ContextMenuStrip.Show(New Point(1163, 80))
     End Sub
 
     Private Sub tsLogout_Click(sender As Object, e As EventArgs) Handles tsLogout.Click

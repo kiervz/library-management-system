@@ -60,6 +60,7 @@ Partial Class frmPasswordConfirmation
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(476, 236)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.txtConfirmPassword)
         Me.MaximizeBox = False
@@ -67,6 +68,7 @@ Partial Class frmPasswordConfirmation
         Me.Movable = False
         Me.Name = "frmPasswordConfirmation"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal

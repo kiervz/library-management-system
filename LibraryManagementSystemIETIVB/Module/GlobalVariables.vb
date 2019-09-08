@@ -11,7 +11,24 @@
     Public msgBoxButtonClick As String
     Public UserLogTime As DateTime
     Public isSystemIDLE As Boolean = False
+    Public isIDLEPasswordCorrect As Boolean = False
+    Public idlePasswordAttempts As Integer = 0
 
+    Public Sub ShowPasswordConfirmation(owner As IWin32Window)
+        OpenTransparentForm(owner)
+        Dim confirmPass As New frmPasswordConfirmation
+        confirmPass.ShowDialog(owner)
+    End Sub
+
+    Public Sub OpenTransparentForm(owner As IWin32Window)
+        Dim a As New frmTransparent
+        a.Show(owner)
+    End Sub
+
+    Public Sub CloseTransparentForm()
+        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
+        a.Close()
+    End Sub
 
     Public Sub KeyPressLetterOnly(e As KeyPressEventArgs)
         If e.KeyChar <> ControlChars.Back Then

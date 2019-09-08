@@ -63,6 +63,7 @@ Partial Class frmMain
         Me.lblFname = New System.Windows.Forms.Label()
         Me.lblUserType = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
+        Me.panelAccount = New System.Windows.Forms.Panel()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcStudentManagement1 = New LibraryManagementSystemIETIVB.ucStudentManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -416,7 +417,7 @@ Partial Class frmMain
         Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsSettings, Me.tsLogout})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(233, 70)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(188, 80)
         '
         'tsSettings
         '
@@ -425,7 +426,7 @@ Partial Class frmMain
         Me.tsSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.tsSettings.Name = "tsSettings"
         Me.tsSettings.Padding = New System.Windows.Forms.Padding(20, 1, 0, 1)
-        Me.tsSettings.Size = New System.Drawing.Size(233, 32)
+        Me.tsSettings.Size = New System.Drawing.Size(188, 38)
         Me.tsSettings.Text = "   SETTINGS"
         Me.tsSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -436,7 +437,7 @@ Partial Class frmMain
         Me.tsLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.tsLogout.Name = "tsLogout"
         Me.tsLogout.Padding = New System.Windows.Forms.Padding(20, 1, 0, 1)
-        Me.tsLogout.Size = New System.Drawing.Size(233, 32)
+        Me.tsLogout.Size = New System.Drawing.Size(188, 38)
         Me.tsLogout.Text = "   LOGOUT"
         Me.tsLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -596,11 +597,20 @@ Partial Class frmMain
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.panelBgSearch)
         Me.panel2.Controls.Add(Me.pbProfile)
+        Me.panel2.Controls.Add(Me.panelAccount)
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
+        '
+        'panelAccount
+        '
+        Me.panelAccount.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.panelAccount.Location = New System.Drawing.Point(1117, 37)
+        Me.panelAccount.Name = "panelAccount"
+        Me.panelAccount.Size = New System.Drawing.Size(234, 41)
+        Me.panelAccount.TabIndex = 14
         '
         'UcUserManagement1
         '
@@ -684,7 +694,7 @@ Partial Class frmMain
         '
         'SystemIdleTimer1
         '
-        Me.SystemIdleTimer1.MaxIdleTime = CType(300UI, UInteger)
+        Me.SystemIdleTimer1.MaxIdleTime = CType(5UI, UInteger)
         '
         'frmMain
         '
@@ -724,7 +734,6 @@ Partial Class frmMain
     Private WithEvents btnSettings As System.Windows.Forms.Button
     Private WithEvents btnReports As System.Windows.Forms.Button
     Private WithEvents btnActivityLog As System.Windows.Forms.Button
-    Private WithEvents btnUserManagement As System.Windows.Forms.Button
     Private WithEvents panelSelector As System.Windows.Forms.Panel
     Private WithEvents btnDashboard As System.Windows.Forms.Button
     Private WithEvents btnMessages As System.Windows.Forms.Button
@@ -770,4 +779,6 @@ Partial Class frmMain
     Friend WithEvents lblUserType As System.Windows.Forms.Label
     Private WithEvents panel2 As System.Windows.Forms.Panel
     Private WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents panelAccount As System.Windows.Forms.Panel
+    Friend WithEvents btnUserManagement As System.Windows.Forms.Button
 End Class

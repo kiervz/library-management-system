@@ -9,11 +9,6 @@ Public Class frmUpdateUser
         Me._user_id = user_id
     End Sub
 
-    Private Sub CloseTransparentForm()
-        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
-    End Sub
-
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         CloseTransparentForm()
         Me.Hide()

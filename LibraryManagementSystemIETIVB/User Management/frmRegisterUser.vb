@@ -53,11 +53,6 @@ Public Class frmRegisterUser
         End Try
     End Sub
 
-    Private Sub CloseTransparentForm()
-        Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
-    End Sub
-
     Private Sub frmRegisterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         rbMale.Checked = True

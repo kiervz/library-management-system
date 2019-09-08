@@ -4,9 +4,8 @@ Public Class ucUserManagement
 
 
     Private Sub btnAddNewUser_Click(sender As Object, e As EventArgs) Handles btnAddNewUser.Click
-        Dim a As New frmTransparent
+        OpenTransparentForm(Me)
         Dim b As New frmRegisterUser
-        a.Show(Me)
         b.ShowDialog(Me)
     End Sub
 
@@ -77,18 +76,27 @@ Public Class ucUserManagement
     Private Sub dgvUserInfo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUserInfo.CellContentClick
         Dim i As Integer = dgvUserInfo.CurrentRow.Index
         Dim tempUserID As String = dgvUserInfo.Item(0, i).Value
+        Dim tempUserType As String = dgvUserInfo.Item(1, i).Value
 
+        'When you click update button in datagridview
         If e.ColumnIndex = 6 Then
-            Dim a As New frmTransparent
-            a.Show(Me)
+            OpenTransparentForm(Me)
 
             Dim update_user As New frmUpdateUser
             update_user.GetUserID(tempUserID)
             update_user.ShowDialog(Me)
 
-        ElseIf e.ColumnIndex = 7 Then
+        ElseIf e.ColumnIndex = 7 Then 'When you click delete button in datagridview
+
+            'When you delete your own account
             If tempUserID = userID Then
                 CustomMessageBox.ShowDialog(Me, "You can't delete your account!", "Unable to Delete", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Exit Sub
+            End If
+
+            'When you delete the other librarian
+            If tempUserType = "Librarian" And userID <> "UID00001" Then
+                CustomMessageBox.ShowDialog(Me, "You can't delete other librarian!", "Unable to Delete", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
                 Exit Sub
             End If
 
@@ -124,6 +132,7 @@ Public Class ucUserManagement
         Dim i As Integer = dgvArchived.CurrentRow.Index
         Dim tempUserID As String = dgvArchived.Item(0, i).Value
 
+        'When you click restore button
         If e.ColumnIndex = 6 Then
             CustomMessageBox.ShowDialog(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
@@ -155,9 +164,20 @@ Public Class ucUserManagement
     End Sub
 
     Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+        If txtSearch.Text.Length = 1 Then
+            FillDGV()
+        End If
         If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
             If MetroTabControl1.SelectedIndex = 0 Then
-                str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%' OR firstname LIKE '%" + txtSearch.Text + "%' OR middlename LIKE '%" + txtSearch.Text + "%' OR lastname LIKE '%" + txtSearch.Text + "%'"
+                If cmbSearchBy.SelectedIndex = 0 Then
+                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
+                ElseIf cmbSearchBy.SelectedIndex = 1 Then
+                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND CONCAT(Firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%'"
+                Else
+                    str = "SELECT * FROM tblUserInfo"
+                End If
+
             Else
                 str = "SELECT * FROM tblUserInfo WHERE status = '0'"
             End If
@@ -185,4 +205,5 @@ Public Class ucUserManagement
             End Try
         End If
     End Sub
+
 End Class

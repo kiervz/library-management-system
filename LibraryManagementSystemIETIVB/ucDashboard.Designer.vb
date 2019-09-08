@@ -22,6 +22,7 @@ Partial Class ucDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDashboard))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -54,7 +55,7 @@ Partial Class ucDashboard
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblTotalUser = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
@@ -72,6 +73,7 @@ Partial Class ucDashboard
         Me.label10 = New System.Windows.Forms.Label()
         Me.label11 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         Me.Panel8.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -398,11 +400,11 @@ Partial Class ucDashboard
         'Panel4
         '
         Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Panel11)
         Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label12)
-        Me.Panel4.Controls.Add(Me.Label15)
+        Me.Panel4.Controls.Add(Me.lblTotalUser)
         Me.Panel4.Controls.Add(Me.PictureBox2)
         Me.Panel4.Location = New System.Drawing.Point(369, 184)
         Me.Panel4.Name = "Panel4"
@@ -411,7 +413,7 @@ Partial Class ucDashboard
         '
         'Panel11
         '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(196, Byte), Integer))
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.Panel11.Controls.Add(Me.Label23)
         Me.Panel11.Controls.Add(Me.PictureBox11)
         Me.Panel11.Cursor = System.Windows.Forms.Cursors.Hand
@@ -453,7 +455,7 @@ Partial Class ucDashboard
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(153, 30)
         Me.Label8.TabIndex = 8
-        Me.Label8.Text = "Total students " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
+        Me.Label8.Text = "Total users " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
         '
         'Label12
         '
@@ -462,20 +464,20 @@ Partial Class ucDashboard
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(79, 48)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(112, 18)
+        Me.Label12.Size = New System.Drawing.Size(87, 18)
         Me.Label12.TabIndex = 7
-        Me.Label12.Text = "TOTAL STUDENTS"
+        Me.Label12.Text = "TOTAL USERS"
         '
-        'Label15
+        'lblTotalUser
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(78, 17)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(76, 29)
-        Me.Label15.TabIndex = 6
-        Me.Label15.Text = "2,029"
+        Me.lblTotalUser.AutoSize = True
+        Me.lblTotalUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalUser.ForeColor = System.Drawing.Color.White
+        Me.lblTotalUser.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalUser.Name = "lblTotalUser"
+        Me.lblTotalUser.Size = New System.Drawing.Size(27, 29)
+        Me.lblTotalUser.TabIndex = 6
+        Me.lblTotalUser.Text = "0"
         '
         'PictureBox2
         '
@@ -671,11 +673,16 @@ Partial Class ucDashboard
         Me.PictureBox6.TabIndex = 0
         Me.PictureBox6.TabStop = False
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'ucDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.DoubleBuffered = True
         Me.Name = "ucDashboard"
         Me.Size = New System.Drawing.Size(1119, 633)
         Me.Panel3.ResumeLayout(False)
@@ -742,7 +749,7 @@ Partial Class ucDashboard
     Private WithEvents Panel4 As System.Windows.Forms.Panel
     Private WithEvents Label8 As System.Windows.Forms.Label
     Private WithEvents Label12 As System.Windows.Forms.Label
-    Private WithEvents Label15 As System.Windows.Forms.Label
+    Private WithEvents lblTotalUser As System.Windows.Forms.Label
     Private WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Private WithEvents Panel2 As System.Windows.Forms.Panel
     Private WithEvents Label1 As System.Windows.Forms.Label
@@ -767,5 +774,6 @@ Partial Class ucDashboard
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Private WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

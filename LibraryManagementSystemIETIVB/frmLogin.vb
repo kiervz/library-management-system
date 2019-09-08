@@ -8,7 +8,7 @@ Imports System.Security.Cryptography
 Public Class frmLogin
 
     Private _imageNumber As Integer = 1
-    Private _nextAttempt As Integer = 120
+    Private _nextAttempt As Integer = 60
     Private _attempts As Integer = 0
 
     'Private _CAMERA As VideoCaptureDevice
@@ -127,7 +127,7 @@ Public Class frmLogin
             lblNextAttempt.Visible = False
             lblRemainingTime.Visible = False
             _attempts = 0
-            _nextAttempt = 120
+            _nextAttempt = 60
             EnableControl(True)
             timer2.Stop()
         End If
