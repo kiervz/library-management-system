@@ -5,15 +5,6 @@ Imports System.Text
 
 Public Class frmMain
 
-    'Protected Overrides ReadOnly Property CreateParams() As CreateParams
-    '    Get
-    '        Dim cp As CreateParams = MyBase.CreateParams
-    '        cp.ExStyle = cp.ExStyle Or &H2000000
-    '        Return cp
-    '    End Get
-    'End Property
-
-
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
@@ -21,6 +12,7 @@ Public Class frmMain
 
         lblFname.Text = userFname
         lblUserType.Text = userType
+
         Try
             pbProfile.Image = Image.FromFile(userImage)
         Catch ex As Exception
@@ -36,10 +28,11 @@ Public Class frmMain
             LoggedInAsStudentAssistant()
         End If
 
-        UserLogTime = DateTime.Now
         lblDuration.Text = "00:00:00"
+        UserLogTime = DateTime.Now
 
         Notifier() 'Welcome notification will show
+
     End Sub
 
     Private Sub movePanelSelector(btn As Control)
@@ -190,8 +183,9 @@ Public Class frmMain
         If isSystemIDLE Then
             Timer1.Stop()
             SystemIdleTimer1.Stop()
-            
-            ShowPasswordConfirmation(Me)
+
+            Dim confirmPass As New frmPasswordConfirmIDLE
+            confirmPass.ShowDialog(Me)
 
             If isPasswordCorrect Then
                 Timer1.Start()
@@ -199,6 +193,8 @@ Public Class frmMain
                 isSystemIDLE = False
                 isPasswordCorrect = False
                 idlePasswordAttempts = 0
+            Else
+                Application.Exit()
             End If
         End If
 
@@ -223,7 +219,7 @@ Public Class frmMain
         If msgBoxButtonClick = DialogResult.Yes Then
             Me.Close()
             Dim login As New frmLogin
-            login.ShowDialog()
+            login.Show()
         End If
     End Sub
 

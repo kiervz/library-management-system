@@ -173,9 +173,9 @@ Public Class ucUserManagement
                 If cmbSearchBy.SelectedIndex = 0 Then
                     str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
                 ElseIf cmbSearchBy.SelectedIndex = 1 Then
-                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND CONCAT(Firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%'"
+                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%'"
                 Else
-                    str = "SELECT * FROM tblUserInfo"
+                    str = "SELECT * FROM tblUserInfo WHERE status = '1'"
                 End If
 
             Else

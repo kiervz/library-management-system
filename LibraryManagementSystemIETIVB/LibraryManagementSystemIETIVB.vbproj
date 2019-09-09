@@ -108,6 +108,12 @@
     <Compile Include="Book Management\frmRegisterBooks.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPasswordConfirmIDLE.Designer.vb">
+      <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPasswordConfirmIDLE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module\MD5HasherSalt.vb" />
     <Compile Include="SystemIdleTimer.vb">
       <SubType>Component</SubType>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Book Management\frmRegisterBooks.resx">
       <DependentUpon>frmRegisterBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
+      <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>

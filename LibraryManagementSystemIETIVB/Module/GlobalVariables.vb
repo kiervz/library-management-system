@@ -14,12 +14,6 @@
     Public isIDLEPasswordCorrect As Boolean = False
     Public idlePasswordAttempts As Integer = 0
 
-    Public Sub ShowPasswordConfirmation(owner As IWin32Window)
-        OpenTransparentForm(owner)
-        Dim confirmPass As New frmPasswordConfirmation
-        confirmPass.ShowDialog(owner)
-    End Sub
-
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent
         a.Show(owner)
@@ -27,7 +21,9 @@
 
     Public Sub CloseTransparentForm()
         Dim a As frmTransparent = Application.OpenForms("frmTransparent")
-        a.Close()
+        If a IsNot Nothing Then
+            a.Close()
+        End If
     End Sub
 
     Public Sub KeyPressLetterOnly(e As KeyPressEventArgs)

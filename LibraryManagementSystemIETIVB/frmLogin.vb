@@ -32,7 +32,7 @@ Public Class frmLogin
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.YesCancel, MessageBoxIconn.Exclamation)
+            CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
             CustomMessageBox.ShowDialog(Me, "Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
