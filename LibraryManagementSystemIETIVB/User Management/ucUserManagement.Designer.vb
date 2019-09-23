@@ -471,10 +471,9 @@ Partial Class ucUserManagement
         Me.txtSearch.CustomButton.Visible = False
         Me.txtSearch.Lines = New String(-1) {}
         Me.txtSearch.Location = New System.Drawing.Point(872, 36)
-        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search"
         Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtSearch.SelectedText = ""
         Me.txtSearch.SelectionLength = 0

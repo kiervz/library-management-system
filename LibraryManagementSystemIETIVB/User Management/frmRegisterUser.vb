@@ -182,6 +182,7 @@ Public Class frmRegisterUser
                         .AddWithValue("@1", txtUserID.Text)
                         .AddWithValue("@2", cmbUserType.Text)
                         .AddWithValue("@3", txtFirstname.Text)
+
                         If txtMiddlename.Text.Length > 0 Then
                             cmd.Parameters.AddWithValue("@4", txtMiddlename.Text)
                         Else

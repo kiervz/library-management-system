@@ -171,9 +171,17 @@ Public Class ucUserManagement
             e.SuppressKeyPress = True
             If MetroTabControl1.SelectedIndex = 0 Then
                 If cmbSearchBy.SelectedIndex = 0 Then
-                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
+                    If userID = "UID00001" Then
+                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
+                    Else
+                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%' AND user_id <> 'UID00001'"
+                    End If
                 ElseIf cmbSearchBy.SelectedIndex = 1 Then
-                    str = "SELECT * FROM tblUserInfo WHERE status = '1' AND CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%'"
+                    If userID = "UID00001" Then
+                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')"
+                    Else
+                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')  AND user_id <> 'UID00001'"
+                    End If
                 Else
                     str = "SELECT * FROM tblUserInfo WHERE status = '1'"
                 End If

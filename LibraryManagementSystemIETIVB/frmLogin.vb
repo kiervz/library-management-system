@@ -65,7 +65,9 @@ Public Class frmLogin
                     txtUsername.Clear()
                     txtPassword.Clear()
 
-                    frmMain.Show()
+                    Dim main As New frmMain
+                    main.Show()
+
                     Me.Hide()
                 Else
                     CustomMessageBox.ShowDialog(Me, "Your username and password is incorrect!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)

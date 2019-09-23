@@ -308,7 +308,7 @@ Partial Class ucDashboard
         'Panel6
         '
         Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Panel10)
         Me.Panel6.Controls.Add(Me.Label16)
         Me.Panel6.Controls.Add(Me.Label17)
@@ -321,7 +321,7 @@ Partial Class ucDashboard
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.Panel10.Controls.Add(Me.Label22)
         Me.Panel10.Controls.Add(Me.PictureBox10)
         Me.Panel10.Cursor = System.Windows.Forms.Cursors.Hand
@@ -492,7 +492,7 @@ Partial Class ucDashboard
         'Panel2
         '
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel12)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label6)
@@ -505,7 +505,7 @@ Partial Class ucDashboard
         '
         'Panel12
         '
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(151, Byte), Integer))
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.Panel12.Controls.Add(Me.Label24)
         Me.Panel12.Controls.Add(Me.PictureBox12)
         Me.Panel12.Cursor = System.Windows.Forms.Cursors.Hand
@@ -545,9 +545,9 @@ Partial Class ucDashboard
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(74, 82)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(128, 30)
+        Me.Label1.Size = New System.Drawing.Size(146, 30)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Total books registered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in the database."
+        Me.Label1.Text = "Total books lost recorded" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in the database."
         '
         'Label6
         '
@@ -556,9 +556,9 @@ Partial Class ucDashboard
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(74, 45)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(92, 18)
+        Me.Label6.Size = New System.Drawing.Size(125, 18)
         Me.Label6.TabIndex = 7
-        Me.Label6.Text = "TOTAL BOOKS"
+        Me.Label6.Text = "TOTAL BOOKS LOST"
         '
         'Label7
         '
@@ -567,9 +567,9 @@ Partial Class ucDashboard
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(73, 14)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 29)
+        Me.Label7.Size = New System.Drawing.Size(41, 29)
         Me.Label7.TabIndex = 6
-        Me.Label7.Text = "6,305"
+        Me.Label7.Text = "10"
         '
         'PictureBox1
         '
@@ -584,7 +584,7 @@ Partial Class ucDashboard
         'panel5
         '
         Me.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.panel5.Controls.Add(Me.Panel9)
         Me.panel5.Controls.Add(Me.label9)
         Me.panel5.Controls.Add(Me.label10)
@@ -597,7 +597,7 @@ Partial Class ucDashboard
         '
         'Panel9
         '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Panel9.Controls.Add(Me.Label21)
         Me.Panel9.Controls.Add(Me.PictureBox9)
         Me.Panel9.Cursor = System.Windows.Forms.Cursors.Hand

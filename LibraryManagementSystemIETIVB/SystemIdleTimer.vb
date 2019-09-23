@@ -6,6 +6,7 @@ Imports System.Runtime.InteropServices
 Public Class SystemIdleTimer
     Inherits Component
 
+
     Private Const INTERNAL_TIMER_INTERVAL As Double = 550
 
     <Description("Event that if fired when idle state is entered.")> _
@@ -14,10 +15,9 @@ Public Class SystemIdleTimer
     Public Event OnExitIdleState(ByVal sender As Object, ByVal e As IdleEventArgs)
 
     Private ticker As Timers.Timer
-    Private m_MaxIdleTime As Integer
+    Private m_MaxIdleTime As Integer = My.Settings.IdleTime
     Private m_LockObject As Object
     Private m_IsIdle As Boolean = False
-
 
     <Description("Maximum idle time in seconds.")> _
     Public Property MaxIdleTime() As UInteger
@@ -28,10 +28,11 @@ Public Class SystemIdleTimer
             If value = 0 Then
                 Throw New ArgumentException("MaxIdleTime must be larger then 0.")
             Else
-                m_MaxIdleTime = value
+                m_MaxIdleTime = My.Settings.IdleTime
             End If
         End Set
     End Property
+
     Public Sub New()
         m_LockObject = New Object()
         ticker = New Timers.Timer(INTERNAL_TIMER_INTERVAL)

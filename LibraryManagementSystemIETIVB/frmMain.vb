@@ -4,11 +4,13 @@ Imports Tulpep.NotificationWindow
 Imports System.Text
 
 Public Class frmMain
+    Private idle As New SystemIdleTimer
+
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
-        SystemIdleTimer1.Start()
+        idle.Start()
 
         lblFname.Text = userFname
         lblUserType.Text = userType
@@ -60,6 +62,8 @@ Public Class frmMain
         UcStudentManagement1.Visible = False
         UcUserManagement1.Visible = False
     End Sub
+
+
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
         HideAllUserControl()
@@ -94,6 +98,7 @@ Public Class frmMain
         HideAllUserControl()
         UcUserManagement1.Visible = True
         lblTitle.Text = "Users Management"
+        UcUserManagement1.dgvUserInfo.Focus()
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
@@ -173,6 +178,10 @@ Public Class frmMain
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim currentLogIn = DateTime.Now - UserLogTime
 
+        AddHandler idle.OnEnterIdleState, Sub(sender2, eventargs2)
+                                              isSystemIDLE = True
+                                          End Sub
+        idle.MaxIdleTime = My.Settings.IdleTime
         'Duration Time
         If currentLogIn.Days.ToString("00") > 0 Then
             lblDuration.Text = currentLogIn.Days.ToString("00") + ":" + currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")
@@ -182,14 +191,14 @@ Public Class frmMain
 
         If isSystemIDLE Then
             Timer1.Stop()
-            SystemIdleTimer1.Stop()
+            idle.Stop()
 
             Dim confirmPass As New frmPasswordConfirmIDLE
             confirmPass.ShowDialog(Me)
 
             If isPasswordCorrect Then
                 Timer1.Start()
-                SystemIdleTimer1.Start()
+                idle.Start()
                 isSystemIDLE = False
                 isPasswordCorrect = False
                 idlePasswordAttempts = 0
@@ -198,10 +207,6 @@ Public Class frmMain
             End If
         End If
 
-    End Sub
-
-    Private Sub SystemIdleTimer1_OnEnterIdleState(sender As Object, e As IdleEventArgs) Handles SystemIdleTimer1.OnEnterIdleState
-        isSystemIDLE = True
     End Sub
 
     Private Sub PopupNotifier1_Click(sender As Object, e As EventArgs) Handles PopupNotifier1.Click
@@ -220,6 +225,13 @@ Public Class frmMain
             Me.Close()
             Dim login As New frmLogin
             login.Show()
+        End If
+    End Sub
+
+    Private Sub frmMain_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F12 Then
+            Dim systemIdle As New frmSystemIdle
+            systemIdle.ShowDialog(Me)
         End If
     End Sub
 
