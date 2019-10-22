@@ -114,10 +114,10 @@
     <Compile Include="frmPasswordConfirmIDLE.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSystemIdle.Designer.vb">
-      <DependentUpon>frmSystemIdle.vb</DependentUpon>
+    <Compile Include="frmSetSystemIdle.Designer.vb">
+      <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSystemIdle.vb">
+    <Compile Include="frmSetSystemIdle.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\MD5HasherSalt.vb" />
@@ -245,8 +245,8 @@
     <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSystemIdle.resx">
-      <DependentUpon>frmSystemIdle.vb</DependentUpon>
+    <EmbeddedResource Include="frmSetSystemIdle.resx">
+      <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>

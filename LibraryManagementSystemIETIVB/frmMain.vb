@@ -230,7 +230,7 @@ Public Class frmMain
 
     Private Sub frmMain_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F12 Then
-            Dim systemIdle As New frmSystemIdle
+            Dim systemIdle As New frmSetSystemIdle
             systemIdle.ShowDialog(Me)
         End If
     End Sub
