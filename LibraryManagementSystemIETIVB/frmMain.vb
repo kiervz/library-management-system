@@ -7,7 +7,7 @@ Public Class frmMain
     Private idle As New SystemIdleTimer
 
 
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
         idle.Start()

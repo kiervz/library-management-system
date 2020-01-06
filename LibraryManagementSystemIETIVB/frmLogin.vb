@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports Tulpep.NotificationWindow
-Imports AForge.Video.DirectShow
-Imports AForge.Video
+'Imports AForge.Video.DirectShow
+'Imports AForge.Video
 Imports System.Text
 Imports System.Security.Cryptography
 
@@ -65,8 +65,7 @@ Public Class frmLogin
                     txtUsername.Clear()
                     txtPassword.Clear()
 
-                    Dim main As New frmMain
-                    main.Show()
+                    frmMain.Show()
 
                     Me.Hide()
                 Else

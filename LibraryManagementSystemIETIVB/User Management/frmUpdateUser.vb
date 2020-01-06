@@ -108,9 +108,8 @@ Public Class frmUpdateUser
                     Me.Hide()
 
                 Catch ex As Exception
-                    MessageBox.Show(ex.Message, "Error")
+                    MessageBox.Show(ex.Message)
                 End Try
-
             End If
         End If
     End Sub

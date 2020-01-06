@@ -24,6 +24,7 @@ Partial Class frmSetSystemIdle
     Private Sub InitializeComponent()
         Me.txtIdleTime = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
         Me.SuspendLayout()
         '
         'txtIdleTime
@@ -47,7 +48,18 @@ Partial Class frmSetSystemIdle
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Set maximum idle time in seconds."
         '
-        'frmSystemIdle
+        'PopupNotifier1
+        '
+        Me.PopupNotifier1.ContentFont = New System.Drawing.Font("Tahoma", 8.0!)
+        Me.PopupNotifier1.ContentText = Nothing
+        Me.PopupNotifier1.Image = Nothing
+        Me.PopupNotifier1.IsRightToLeft = False
+        Me.PopupNotifier1.OptionsMenu = Nothing
+        Me.PopupNotifier1.Size = New System.Drawing.Size(400, 100)
+        Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.PopupNotifier1.TitleText = Nothing
+        '
+        'frmSetSystemIdle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -57,7 +69,7 @@ Partial Class frmSetSystemIdle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Movable = False
-        Me.Name = "frmSystemIdle"
+        Me.Name = "frmSetSystemIdle"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "System Idle Timer"
@@ -67,4 +79,5 @@ Partial Class frmSetSystemIdle
     End Sub
     Friend WithEvents txtIdleTime As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
 End Class

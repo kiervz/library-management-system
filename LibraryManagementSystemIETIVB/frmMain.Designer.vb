@@ -445,7 +445,7 @@ Partial Class frmMain
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(4, 3)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(198, 17)
+        Me.Label4.Size = New System.Drawing.Size(197, 17)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "Version: 1.8.9 - Copyright 2019"
         '
@@ -649,7 +649,7 @@ Partial Class frmMain
         Me.lblFname.ForeColor = System.Drawing.Color.White
         Me.lblFname.Location = New System.Drawing.Point(1169, 37)
         Me.lblFname.Name = "lblFname"
-        Me.lblFname.Size = New System.Drawing.Size(61, 20)
+        Me.lblFname.Size = New System.Drawing.Size(62, 20)
         Me.lblFname.TabIndex = 12
         Me.lblFname.Text = "Kiervey"
         '

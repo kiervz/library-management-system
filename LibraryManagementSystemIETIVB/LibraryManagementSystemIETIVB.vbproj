@@ -46,15 +46,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Video">
-      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.Video.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Video.DirectShow">
-      <HintPath>D:\KIERVS\Kiervey\EASWSS-20190221T143028Z-001\EASWSS\WindowsApplication1\bin\Debug\AForge.Video.DirectShow.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
       <Private>True</Private>
