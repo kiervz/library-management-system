@@ -32,7 +32,7 @@ Partial Class frmSetSystemIdle
         Me.txtIdleTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIdleTime.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIdleTime.Location = New System.Drawing.Point(65, 90)
-        Me.txtIdleTime.MaxLength = 30
+        Me.txtIdleTime.MaxLength = 4
         Me.txtIdleTime.Name = "txtIdleTime"
         Me.txtIdleTime.Size = New System.Drawing.Size(62, 27)
         Me.txtIdleTime.TabIndex = 2
@@ -50,13 +50,15 @@ Partial Class frmSetSystemIdle
         '
         'PopupNotifier1
         '
-        Me.PopupNotifier1.ContentFont = New System.Drawing.Font("Tahoma", 8.0!)
+        Me.PopupNotifier1.ContentFont = New System.Drawing.Font("Tahoma", 9.0!)
         Me.PopupNotifier1.ContentText = Nothing
+        Me.PopupNotifier1.HeaderColor = System.Drawing.Color.DeepSkyBlue
+        Me.PopupNotifier1.HeaderHeight = 15
         Me.PopupNotifier1.Image = Nothing
         Me.PopupNotifier1.IsRightToLeft = False
         Me.PopupNotifier1.OptionsMenu = Nothing
         Me.PopupNotifier1.Size = New System.Drawing.Size(400, 100)
-        Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.PopupNotifier1.TitleText = Nothing
         '
         'frmSetSystemIdle

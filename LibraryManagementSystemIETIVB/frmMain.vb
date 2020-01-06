@@ -99,6 +99,8 @@ Public Class frmMain
         UcUserManagement1.Visible = True
         lblTitle.Text = "Users Management"
         UcUserManagement1.dgvUserInfo.Focus()
+        UcUserManagement1.FillDGV()
+        UcUserManagement1.FillDGVArchived()
     End Sub
 
     Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
@@ -182,6 +184,7 @@ Public Class frmMain
                                               isSystemIDLE = True
                                           End Sub
         idle.MaxIdleTime = My.Settings.IdleTime
+
         'Duration Time
         If currentLogIn.Days.ToString("00") > 0 Then
             lblDuration.Text = currentLogIn.Days.ToString("00") + ":" + currentLogIn.Hours.ToString("00") + ":" + currentLogIn.Minutes.ToString("00") + ":" + currentLogIn.Seconds.ToString("00")

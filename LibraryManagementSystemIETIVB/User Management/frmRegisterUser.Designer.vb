@@ -73,6 +73,7 @@ Partial Class frmRegisterUser
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -643,6 +644,17 @@ Partial Class frmRegisterUser
         Me.Label10.TabIndex = 222
         Me.Label10.Text = "Note: All fields with asterisk are required"
         '
+        'PopupNotifier1
+        '
+        Me.PopupNotifier1.ContentFont = New System.Drawing.Font("Tahoma", 8.0!)
+        Me.PopupNotifier1.ContentText = Nothing
+        Me.PopupNotifier1.Image = Nothing
+        Me.PopupNotifier1.IsRightToLeft = False
+        Me.PopupNotifier1.OptionsMenu = Nothing
+        Me.PopupNotifier1.Size = New System.Drawing.Size(400, 100)
+        Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.PopupNotifier1.TitleText = Nothing
+        '
         'frmRegisterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -762,4 +774,5 @@ Partial Class frmRegisterUser
     Private WithEvents Label18 As System.Windows.Forms.Label
     Private WithEvents Label19 As System.Windows.Forms.Label
     Private WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
 End Class

@@ -14,6 +14,7 @@
     Public isIDLEPasswordCorrect As Boolean = False
     Public idlePasswordAttempts As Integer = 0
 
+
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent
         a.Show(owner)

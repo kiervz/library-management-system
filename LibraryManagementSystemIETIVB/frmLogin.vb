@@ -15,9 +15,9 @@ Public Class frmLogin
     'Private _btmp As Bitmap
 
     Private Sub LoadNextImage()
-        If _imageNumber = 5 Then _imageNumber = 1
+        If _imageNumber = 7 Then _imageNumber = 1
 
-        picCarousel.ImageLocation = String.Format("Images\" + CStr(_imageNumber) + ".jpg")
+        picCarousel.ImageLocation = String.Format("images\" + CStr(_imageNumber) + ".jpg")
         _imageNumber += 1
     End Sub
 
@@ -65,6 +65,8 @@ Public Class frmLogin
                     txtUsername.Clear()
                     txtPassword.Clear()
 
+                    GetUpdatedTime()
+
                     frmMain.Show()
 
                     Me.Hide()
@@ -108,9 +110,23 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-
     End Sub
 
+    Private Sub GetUpdatedTime()
+        Try
+            str = "SELECT data_updated_at FROM data_updated"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                My.Settings.data_updated_at = dr("data_updated_at")
+                My.Settings.Save()
+                My.Settings.Reload()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub cbShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPassword.CheckedChanged
         If cbShowPassword.Checked Then
             txtPassword.UseSystemPasswordChar = False
