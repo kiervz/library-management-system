@@ -59,6 +59,11 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -213,10 +218,10 @@
     <Compile Include="ucSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucStudentManagement.Designer.vb">
+    <Compile Include="Student Management\ucStudentManagement.Designer.vb">
       <DependentUpon>ucStudentManagement.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucStudentManagement.vb">
+    <Compile Include="Student Management\ucStudentManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Management\ucUserManagement.Designer.vb">
@@ -284,7 +289,7 @@
     <EmbeddedResource Include="ucSettings.resx">
       <DependentUpon>ucSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucStudentManagement.resx">
+    <EmbeddedResource Include="Student Management\ucStudentManagement.resx">
       <DependentUpon>ucStudentManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Management\ucUserManagement.resx">
@@ -387,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\errorx60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
