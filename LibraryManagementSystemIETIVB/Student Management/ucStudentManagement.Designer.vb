@@ -34,17 +34,17 @@ Partial Class ucStudentManagement
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.dgvStudents = New MetroFramework.Controls.MetroGrid()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +58,7 @@ Partial Class ucStudentManagement
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(435, 228)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(228, 128)
+        Me.Panel1.Size = New System.Drawing.Size(238, 128)
         Me.Panel1.TabIndex = 59
         '
         'txtPleasewait
@@ -70,7 +70,7 @@ Partial Class ucStudentManagement
         Me.txtPleasewait.Location = New System.Drawing.Point(2, 103)
         Me.txtPleasewait.Multiline = True
         Me.txtPleasewait.Name = "txtPleasewait"
-        Me.txtPleasewait.Size = New System.Drawing.Size(223, 22)
+        Me.txtPleasewait.Size = New System.Drawing.Size(235, 22)
         Me.txtPleasewait.TabIndex = 2
         Me.txtPleasewait.Text = "Please wait..."
         Me.txtPleasewait.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -84,7 +84,7 @@ Partial Class ucStudentManagement
         Me.txtImporting.Location = New System.Drawing.Point(3, 79)
         Me.txtImporting.Multiline = True
         Me.txtImporting.Name = "txtImporting"
-        Me.txtImporting.Size = New System.Drawing.Size(223, 22)
+        Me.txtImporting.Size = New System.Drawing.Size(235, 22)
         Me.txtImporting.TabIndex = 1
         Me.txtImporting.Text = "Importing 39 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -92,7 +92,7 @@ Partial Class ucStudentManagement
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(66, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -145,7 +145,7 @@ Partial Class ucStudentManagement
         Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudents.ColumnHeadersHeight = 28
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
+        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -192,6 +192,21 @@ Partial Class ucStudentManagement
         Me.dgvStudents.TabIndex = 57
         Me.dgvStudents.Theme = MetroFramework.MetroThemeStyle.Light
         '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(414, 308)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(139, 13)
+        Me.Label1.TabIndex = 56
+        Me.Label1.Text = "STUDENT MANAGEMENT"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -206,13 +221,6 @@ Partial Class ucStudentManagement
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Surname"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 190
-        '
         'Column4
         '
         Me.Column4.HeaderText = "Firstname"
@@ -226,6 +234,13 @@ Partial Class ucStudentManagement
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 190
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Surname"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 190
         '
         'Column6
         '
@@ -255,21 +270,6 @@ Partial Class ucStudentManagement
         Me.Column9.ReadOnly = True
         Me.Column9.Width = 90
         '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(414, 308)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 13)
-        Me.Label1.TabIndex = 56
-        Me.Label1.Text = "STUDENT MANAGEMENT"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'ucStudentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -295,15 +295,15 @@ Partial Class ucStudentManagement
     Friend WithEvents PictureBox1 As PictureBox
     Private WithEvents btnImportStudent As Button
     Friend WithEvents dgvStudents As MetroFramework.Controls.MetroGrid
+    Friend WithEvents Label1 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Office.Interop
+﻿Imports System.Data.SqlClient
+Imports Microsoft.Office.Interop
 
 Public Class ucStudentManagement
 
@@ -35,26 +36,87 @@ Public Class ucStudentManagement
     End Sub
 
     Private Sub ucStudentManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ConnDB()
+        FillGridView()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
     End Sub
 
     Private Sub LoadData()
         Dim rowcount As Integer = 0
-        For Me.xlRow = 1 To xlRange.Rows.Count
-            'If xlRange.Cells(xlRow, 1).text <> String.Empty And xlRange.Cells(xlRow, 2) <> String.Empty And xlRange.Cells(xlRow, 3) <> String.Empty And xlRange.Cells(xlRow, 4) <> String.Empty And xlRange.Cells(xlRow, 5) <> String.Empty And xlRange.Cells(xlRow, 6) <> String.Empty And xlRange.Cells(xlRow, 7) <> String.Empty And xlRange.Cells(xlRow, 8) <> String.Empty Then
+
+        For xlRow = 1 To xlRange.Rows.Count
             If xlRange.Cells(xlRow, 1).Text <> String.Empty Then
-                rowcount += 1
-                dgvStudents.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-                txtImporting.Text = "Importing " & rowcount & " records"
-                txtPleasewait.Text = "please wait..."
+                'If not already in the database 
+                If Not IfAlreadyExistInDB(xlRange.Cells(xlRow, 1).Text()) = True Then
+                    rowcount += 1
+                    'The student information will add
+                    AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
+
+                    txtImporting.Text = "Importing " & rowcount & " records"
+                    txtPleasewait.Text = "please wait..."
+                End If
             End If
         Next
+
         xlWorkBook.Close()
         xlApp.Quit()
         Panel1.Hide()
-        dgvStudents.Refresh()
+        FillGridView()
+        thread.Abort()
     End Sub
 
+    Friend Sub FillGridView()
+        Try
+            Dim rowcount As Integer = 0
+            str = "SELECT * FROM tblStudentInfo"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            dgvStudents.Rows.Clear()
+
+            While dr.Read
+                rowcount += 1
+                dgvStudents.Rows.Add(rowcount, dr("student_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), dr("course"), dr("year"), dr("section"))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Function IfAlreadyExistInDB(studID As String)
+        Try
+            str = "SELECT student_id FROM tblStudentInfo WHERE student_id = '" + studID + "'"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Private Sub AddToDatabase(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date, course As String, year As String, section As String)
+        Try
+            str = "INSERT INTO tblStudentInfo (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+            cmd = New SqlCommand(str, conn)
+            cmd.Parameters.AddWithValue("@student_id", studID)
+            cmd.Parameters.AddWithValue("@firstname", firstname)
+            cmd.Parameters.AddWithValue("@middlename", middlename)
+            cmd.Parameters.AddWithValue("@lastname", lastname)
+            cmd.Parameters.AddWithValue("@gender", gender)
+            cmd.Parameters.AddWithValue("@birthday", birthday)
+            cmd.Parameters.AddWithValue("@course", course)
+            cmd.Parameters.AddWithValue("@year", year)
+            cmd.Parameters.AddWithValue("@section", section)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 End Class

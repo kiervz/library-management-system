@@ -91,6 +91,7 @@ Public Class frmMain
         HideAllUserControl()
         UcStudentManagement1.Visible = True
         lblTitle.Text = "Students Management"
+        UcStudentManagement1.FillGridView()
     End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
