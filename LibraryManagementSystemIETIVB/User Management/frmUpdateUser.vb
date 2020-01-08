@@ -27,7 +27,7 @@ Public Class frmUpdateUser
 
     Private Sub SelectUser()
         Try
-            str = "SELECT firstname,middlename,lastname,user_type,gender,phone,birthday,image FROM tblUserInfo WHERE user_id = '" + _user_id + "'"
+            str = "SELECT firstname,middlename,lastname,user_type,gender,phone,birthday,image FROM users WHERE user_id = '" + _user_id + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -85,7 +85,7 @@ Public Class frmUpdateUser
             If msgBoxButtonClick = DialogResult.Yes Then
 
                 Try
-                    str = "UPDATE tblUserInfo SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
+                    str = "UPDATE users SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@1", cmbUserType.Text)
                     cmd.Parameters.AddWithValue("@2", txtFirstname.Text)

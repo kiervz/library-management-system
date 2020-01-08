@@ -176,7 +176,7 @@ Public Class frmRegisterUser
             If msgBoxButtonClick = DialogResult.Yes Then
 
                 Try
-                    str = "INSERT INTO tblUserInfo (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
+                    str = "INSERT INTO users (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
                     cmd = New SqlCommand(str, conn)
                     With cmd.Parameters
                         .AddWithValue("@1", txtUserID.Text)

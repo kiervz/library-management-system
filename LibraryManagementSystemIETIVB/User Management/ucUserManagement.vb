@@ -133,9 +133,9 @@ Public Class ucUserManagement
         Try
 
             If userID = "UID00001" Then
-                str = "SELECT * FROM tblUserInfo WHERE status = '1'"
+                str = "SELECT * FROM users WHERE status = '1'"
             Else
-                str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id <> 'UID00001'"
+                str = "SELECT * FROM users WHERE status = '1' AND user_id <> 'UID00001'"
             End If
 
             cmd = New SqlCommand(str, conn)
@@ -162,7 +162,7 @@ Public Class ucUserManagement
 
     Public Sub FillDGVArchived()
         Try
-            cmd = New SqlCommand("SELECT * FROM tblUserInfo WHERE status = '0'", conn)
+            cmd = New SqlCommand("SELECT * FROM users WHERE status = '0'", conn)
             dr = cmd.ExecuteReader
 
             dgvArchived.Rows.Clear()
@@ -182,7 +182,7 @@ Public Class ucUserManagement
     End Sub
 
     Private Sub DeleteRestoreUser(user_id As String, status As Integer)
-        str = "UPDATE tblUserInfo SET status = '" + CStr(status) + "' WHERE user_id = '" + user_id + "'"
+        str = "UPDATE users SET status = '" + CStr(status) + "' WHERE user_id = '" + user_id + "'"
         cmd = New SqlCommand(str, conn)
         cmd.ExecuteNonQuery()
     End Sub
@@ -288,18 +288,18 @@ Public Class ucUserManagement
                 If MetroTabControl1.SelectedIndex = 0 Then
                     If cmbSearchBy.SelectedIndex = 0 Then
                         If userID = "UID00001" Then
-                            str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
+                            str = "SELECT * FROM users WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%'"
                         Else
-                            str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%' AND user_id <> 'UID00001'"
+                            str = "SELECT * FROM users WHERE status = '1' AND user_id LIKE '%" + txtSearch.Text + "%' AND user_id <> 'UID00001'"
                         End If
                     ElseIf cmbSearchBy.SelectedIndex = 1 Then
                         If userID = "UID00001" Then
-                            str = "SELECT * FROM tblUserInfo WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')"
+                            str = "SELECT * FROM users WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')"
                         Else
-                            str = "SELECT * FROM tblUserInfo WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')  AND user_id <> 'UID00001'"
+                            str = "SELECT * FROM users WHERE status = '1' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')  AND user_id <> 'UID00001'"
                         End If
                     Else
-                        str = "SELECT * FROM tblUserInfo WHERE status = '1'"
+                        str = "SELECT * FROM users WHERE status = '1'"
                     End If
 
                     DisplayGridView(str)
@@ -307,11 +307,11 @@ Public Class ucUserManagement
                     'Archived User
                 Else
                     If cmbSearchBy.SelectedIndex = 0 Then
-                        str = "SELECT * FROM tblUserInfo WHERE status = '0' AND user_id LIKE '%" + txtSearch.Text + "%'"
+                        str = "SELECT * FROM users WHERE status = '0' AND user_id LIKE '%" + txtSearch.Text + "%'"
                     ElseIf cmbSearchBy.SelectedIndex = 1 Then
-                        str = "SELECT * FROM tblUserInfo WHERE status = '0' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')"
+                        str = "SELECT * FROM users WHERE status = '0' AND (CONCAT(firstname, ' ', middlename, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', lastname) LIKE '%" + txtSearch.Text + "%' OR  CONCAT(Firstname, ' ', middlename) LIKE '%" + txtSearch.Text + "%')"
                     Else
-                        str = "SELECT * FROM tblUserInfo WHERE status = '0'"
+                        str = "SELECT * FROM users WHERE status = '0'"
                     End If
 
                     DisplayGridView(str)
@@ -340,24 +340,24 @@ Public Class ucUserManagement
             If MetroTabControl1.SelectedIndex = 0 Then
                 If cmbUserType.SelectedIndex = 0 Then
                     If userID = "UID00001" Then
-                        str = "SELECT * FROM tblUserInfo WHERE status = '1'"
+                        str = "SELECT * FROM users WHERE status = '1'"
                     Else
-                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_id <> 'UID00001'"
+                        str = "SELECT * FROM users WHERE status = '1' AND user_id <> 'UID00001'"
                     End If
                 Else
                     If userID = "UID00001" Then
-                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_type = '" + cmbUserType.Text + "'"
+                        str = "SELECT * FROM users WHERE status = '1' AND user_type = '" + cmbUserType.Text + "'"
                     Else
-                        str = "SELECT * FROM tblUserInfo WHERE status = '1' AND user_type = '" + cmbUserType.Text + "' AND user_id <> 'UID00001'"
+                        str = "SELECT * FROM users WHERE status = '1' AND user_type = '" + cmbUserType.Text + "' AND user_id <> 'UID00001'"
                     End If
                 End If
 
                 'Archived User
             Else
                 If cmbUserType.SelectedIndex = 0 Then
-                    str = "SELECT * FROM tblUserInfo WHERE status = '0'"
+                    str = "SELECT * FROM users WHERE status = '0'"
                 Else
-                    str = "SELECT * FROM tblUserInfo WHERE status = '0' AND user_type = '" + cmbUserType.Text + "'"
+                    str = "SELECT * FROM users WHERE status = '0' AND user_type = '" + cmbUserType.Text + "'"
                 End If
             End If
 

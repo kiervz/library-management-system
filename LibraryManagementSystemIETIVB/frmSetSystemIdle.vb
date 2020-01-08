@@ -28,7 +28,7 @@
     Private Sub Notifier()
         PopupNotifier1.Image = My.Resources.infox60
         PopupNotifier1.TitleText = "System Idle"
-        PopupNotifier1.ContentText = "System idle has been set to " + txtIdleTime.Text
+        PopupNotifier1.ContentText = "System idle has been set to " + txtIdleTime.Text + "."
         PopupNotifier1.Popup()
     End Sub
 

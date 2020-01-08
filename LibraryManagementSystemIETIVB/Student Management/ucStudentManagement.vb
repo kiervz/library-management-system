@@ -6,7 +6,7 @@ Public Class ucStudentManagement
     'to install office.interlop
     'Install-Package Microsoft.Office.Interop.Excel
 
-    Dim thread As System.Threading.Thread
+    Dim thread As Threading.Thread
     Dim iCount, i As Integer
 
     Dim xlApp As Excel.Application
@@ -29,7 +29,7 @@ Public Class ucStudentManagement
             xlWorkBook = xlApp.Workbooks.Open(strDestination)
             xlWorkSheet = xlWorkBook.Worksheets("Sheet1")
             xlRange = xlWorkSheet.UsedRange
-            thread = New System.Threading.Thread(AddressOf LoadData)
+            thread = New Threading.Thread(AddressOf LoadData)
             Panel1.Show()
             thread.Start()
         End If
@@ -43,6 +43,7 @@ Public Class ucStudentManagement
     End Sub
 
     Private Sub LoadData()
+        txtImporting.Text = "Importing 0 records"
         Dim rowcount As Integer = 0
 
         For xlRow = 1 To xlRange.Rows.Count
@@ -52,7 +53,8 @@ Public Class ucStudentManagement
                     rowcount += 1
                     'The student information will add
                     AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-
+                    dgvStudents.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
+                    dgvStudents.Refresh()
                     txtImporting.Text = "Importing " & rowcount & " records"
                     txtPleasewait.Text = "please wait..."
                 End If
@@ -69,7 +71,7 @@ Public Class ucStudentManagement
     Friend Sub FillGridView()
         Try
             Dim rowcount As Integer = 0
-            str = "SELECT * FROM tblStudentInfo"
+            str = "SELECT * FROM students"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -86,7 +88,7 @@ Public Class ucStudentManagement
 
     Private Function IfAlreadyExistInDB(studID As String)
         Try
-            str = "SELECT student_id FROM tblStudentInfo WHERE student_id = '" + studID + "'"
+            str = "SELECT student_id FROM students WHERE student_id = '" + studID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -102,7 +104,7 @@ Public Class ucStudentManagement
 
     Private Sub AddToDatabase(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date, course As String, year As String, section As String)
         Try
-            str = "INSERT INTO tblStudentInfo (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+            str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
             cmd = New SqlCommand(str, conn)
             cmd.Parameters.AddWithValue("@student_id", studID)
             cmd.Parameters.AddWithValue("@firstname", firstname)

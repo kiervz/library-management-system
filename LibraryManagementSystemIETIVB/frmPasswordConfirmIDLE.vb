@@ -7,6 +7,7 @@
         Else
             idlePasswordAttempts += 1
             CustomMessageBox.ShowDialog(Me, "Authentication Failed!", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            txtConfirmPassword.Clear()
 
             If idlePasswordAttempts = 3 Then
                 CustomMessageBox.ShowDialog(Me, "Authentication Failed! System will be closed.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
