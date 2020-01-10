@@ -39,7 +39,7 @@ Public Class frmLogin
             CustomMessageBox.ShowDialog(Me, "Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Else
             Try
-                cmd = New SqlCommand("SELECT user_id, firstname, lastname, password, user_type, status, image FROM tblUserInfo WHERE username=@1 AND password=@2", conn)
+                cmd = New SqlCommand("SELECT user_id, firstname, lastname, password, user_type, status, image FROM users WHERE username=@1 AND password=@2", conn)
                 cmd.Parameters.AddWithValue("@1", txtUsername.Text)
                 cmd.Parameters.AddWithValue("@2", MD5HasherSalt.GetMd5Hash(txtPassword.Text))
                 dr = cmd.ExecuteReader
@@ -114,12 +114,12 @@ Public Class frmLogin
 
     Private Sub GetUpdatedTime()
         Try
-            str = "SELECT data_updated_at FROM data_updated"
+            str = "SELECT time_updated_at FROM data_updated"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-                My.Settings.data_updated_at = dr("data_updated_at")
+                My.Settings.data_updated_at = dr("time_updated_at")
                 My.Settings.Save()
                 My.Settings.Reload()
             End If

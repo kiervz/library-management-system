@@ -87,19 +87,21 @@ Public Class ucStudentManagement
     End Sub
 
     Private Function IfAlreadyExistInDB(studID As String)
+        Dim isAlreadyExist As Boolean = False
         Try
             str = "SELECT student_id FROM students WHERE student_id = '" + studID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-                Return True
+                isAlreadyExist = True
             Else
-                Return False
+                isAlreadyExist = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        Return isAlreadyExist
     End Function
 
     Private Sub AddToDatabase(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date, course As String, year As String, section As String)

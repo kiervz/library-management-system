@@ -132,6 +132,12 @@
     <Compile Include="ucDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ucFacultyManagement.Designer.vb">
+      <DependentUpon>ucFacultyManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucFacultyManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Management\frmUpdateUser.Designer.vb">
       <DependentUpon>frmUpdateUser.vb</DependentUpon>
     </Compile>
@@ -194,10 +200,10 @@
     <Compile Include="Book Management\ucBookManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBorrowers.Designer.vb">
-      <DependentUpon>ucBorrowers.vb</DependentUpon>
+    <Compile Include="ucAttendance.Designer.vb">
+      <DependentUpon>ucAttendance.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucBorrowers.vb">
+    <Compile Include="ucAttendance.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucMessages.Designer.vb">
@@ -250,6 +256,9 @@
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucFacultyManagement.resx">
+      <DependentUpon>ucFacultyManagement.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Management\frmRegisterUser.resx">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,8 +286,8 @@
     <EmbeddedResource Include="Book Management\ucBookManagement.resx">
       <DependentUpon>ucBookManagement.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBorrowers.resx">
-      <DependentUpon>ucBorrowers.vb</DependentUpon>
+    <EmbeddedResource Include="ucAttendance.resx">
+      <DependentUpon>ucAttendance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMessages.resx">
       <DependentUpon>ucMessages.vb</DependentUpon>

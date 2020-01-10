@@ -26,6 +26,7 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.panelLeft = New System.Windows.Forms.Panel()
+        Me.btnFacultyManagement = New System.Windows.Forms.Button()
         Me.btnMessages = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
@@ -33,7 +34,7 @@ Partial Class frmMain
         Me.btnUserManagement = New System.Windows.Forms.Button()
         Me.btnStudentsMangement = New System.Windows.Forms.Button()
         Me.btnBookManagement = New System.Windows.Forms.Button()
-        Me.btnBorrowers = New System.Windows.Forms.Button()
+        Me.btnAttendance = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
@@ -44,12 +45,12 @@ Partial Class frmMain
         Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
         Me.UcMessages1 = New LibraryManagementSystemIETIVB.ucMessages()
         Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
-        Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
         Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
         Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -75,6 +76,7 @@ Partial Class frmMain
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panelAccount = New System.Windows.Forms.Panel()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
+        Me.UcFacultyManagement1 = New LibraryManagementSystemIETIVB.ucFacultyManagement()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -90,6 +92,7 @@ Partial Class frmMain
         'panelLeft
         '
         Me.panelLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.panelLeft.Controls.Add(Me.btnFacultyManagement)
         Me.panelLeft.Controls.Add(Me.btnMessages)
         Me.panelLeft.Controls.Add(Me.btnSettings)
         Me.panelLeft.Controls.Add(Me.btnReports)
@@ -97,13 +100,32 @@ Partial Class frmMain
         Me.panelLeft.Controls.Add(Me.btnUserManagement)
         Me.panelLeft.Controls.Add(Me.btnStudentsMangement)
         Me.panelLeft.Controls.Add(Me.btnBookManagement)
-        Me.panelLeft.Controls.Add(Me.btnBorrowers)
+        Me.panelLeft.Controls.Add(Me.btnAttendance)
         Me.panelLeft.Controls.Add(Me.btnDashboard)
         Me.panelLeft.Controls.Add(Me.panelSelector)
         Me.panelLeft.Location = New System.Drawing.Point(0, 220)
         Me.panelLeft.Name = "panelLeft"
         Me.panelLeft.Size = New System.Drawing.Size(234, 548)
         Me.panelLeft.TabIndex = 0
+        '
+        'btnFacultyManagement
+        '
+        Me.btnFacultyManagement.BackColor = System.Drawing.SystemColors.Control
+        Me.btnFacultyManagement.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFacultyManagement.FlatAppearance.BorderSize = 0
+        Me.btnFacultyManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnFacultyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFacultyManagement.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFacultyManagement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btnFacultyManagement.Image = CType(resources.GetObject("btnFacultyManagement.Image"), System.Drawing.Image)
+        Me.btnFacultyManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFacultyManagement.Location = New System.Drawing.Point(4, 239)
+        Me.btnFacultyManagement.Name = "btnFacultyManagement"
+        Me.btnFacultyManagement.Size = New System.Drawing.Size(230, 45)
+        Me.btnFacultyManagement.TabIndex = 11
+        Me.btnFacultyManagement.Text = "   FACULTY MANAGEMENT"
+        Me.btnFacultyManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnFacultyManagement.UseVisualStyleBackColor = False
         '
         'btnMessages
         '
@@ -116,7 +138,7 @@ Partial Class frmMain
         Me.btnMessages.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnMessages.Image = CType(resources.GetObject("btnMessages.Image"), System.Drawing.Image)
         Me.btnMessages.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMessages.Location = New System.Drawing.Point(4, 284)
+        Me.btnMessages.Location = New System.Drawing.Point(4, 329)
         Me.btnMessages.Name = "btnMessages"
         Me.btnMessages.Size = New System.Drawing.Size(230, 45)
         Me.btnMessages.TabIndex = 5
@@ -135,7 +157,7 @@ Partial Class frmMain
         Me.btnSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
         Me.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSettings.Location = New System.Drawing.Point(4, 419)
+        Me.btnSettings.Location = New System.Drawing.Point(4, 464)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Size = New System.Drawing.Size(230, 45)
         Me.btnSettings.TabIndex = 8
@@ -154,7 +176,7 @@ Partial Class frmMain
         Me.btnReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnReports.Image = CType(resources.GetObject("btnReports.Image"), System.Drawing.Image)
         Me.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReports.Location = New System.Drawing.Point(4, 374)
+        Me.btnReports.Location = New System.Drawing.Point(4, 419)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(230, 45)
         Me.btnReports.TabIndex = 7
@@ -173,7 +195,7 @@ Partial Class frmMain
         Me.btnActivityLog.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnActivityLog.Image = CType(resources.GetObject("btnActivityLog.Image"), System.Drawing.Image)
         Me.btnActivityLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnActivityLog.Location = New System.Drawing.Point(4, 329)
+        Me.btnActivityLog.Location = New System.Drawing.Point(4, 374)
         Me.btnActivityLog.Name = "btnActivityLog"
         Me.btnActivityLog.Size = New System.Drawing.Size(230, 45)
         Me.btnActivityLog.TabIndex = 6
@@ -192,7 +214,7 @@ Partial Class frmMain
         Me.btnUserManagement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnUserManagement.Image = CType(resources.GetObject("btnUserManagement.Image"), System.Drawing.Image)
         Me.btnUserManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUserManagement.Location = New System.Drawing.Point(4, 239)
+        Me.btnUserManagement.Location = New System.Drawing.Point(4, 284)
         Me.btnUserManagement.Name = "btnUserManagement"
         Me.btnUserManagement.Size = New System.Drawing.Size(230, 45)
         Me.btnUserManagement.TabIndex = 4
@@ -238,24 +260,24 @@ Partial Class frmMain
         Me.btnBookManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBookManagement.UseVisualStyleBackColor = False
         '
-        'btnBorrowers
+        'btnAttendance
         '
-        Me.btnBorrowers.BackColor = System.Drawing.SystemColors.Control
-        Me.btnBorrowers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBorrowers.FlatAppearance.BorderSize = 0
-        Me.btnBorrowers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnBorrowers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBorrowers.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBorrowers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.btnBorrowers.Image = CType(resources.GetObject("btnBorrowers.Image"), System.Drawing.Image)
-        Me.btnBorrowers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBorrowers.Location = New System.Drawing.Point(4, 104)
-        Me.btnBorrowers.Name = "btnBorrowers"
-        Me.btnBorrowers.Size = New System.Drawing.Size(230, 45)
-        Me.btnBorrowers.TabIndex = 1
-        Me.btnBorrowers.Text = "   BORROWERS"
-        Me.btnBorrowers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBorrowers.UseVisualStyleBackColor = False
+        Me.btnAttendance.BackColor = System.Drawing.SystemColors.Control
+        Me.btnAttendance.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAttendance.FlatAppearance.BorderSize = 0
+        Me.btnAttendance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAttendance.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAttendance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btnAttendance.Image = CType(resources.GetObject("btnAttendance.Image"), System.Drawing.Image)
+        Me.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAttendance.Location = New System.Drawing.Point(4, 104)
+        Me.btnAttendance.Name = "btnAttendance"
+        Me.btnAttendance.Size = New System.Drawing.Size(230, 45)
+        Me.btnAttendance.TabIndex = 1
+        Me.btnAttendance.Text = "   ATTENDANCE"
+        Me.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAttendance.UseVisualStyleBackColor = False
         '
         'btnDashboard
         '
@@ -304,11 +326,12 @@ Partial Class frmMain
         Me.panelCenter.Controls.Add(Me.UcReports1)
         Me.panelCenter.Controls.Add(Me.UcMessages1)
         Me.panelCenter.Controls.Add(Me.UcDashboard1)
-        Me.panelCenter.Controls.Add(Me.UcBorrowers1)
         Me.panelCenter.Controls.Add(Me.UcBookManagement1)
         Me.panelCenter.Controls.Add(Me.UcActivityLog1)
         Me.panelCenter.Controls.Add(Me.UcAboutIETI1)
         Me.panelCenter.Controls.Add(Me.Panel4)
+        Me.panelCenter.Controls.Add(Me.UcAttendance1)
+        Me.panelCenter.Controls.Add(Me.UcFacultyManagement1)
         Me.panelCenter.Location = New System.Drawing.Point(240, 124)
         Me.panelCenter.Name = "panelCenter"
         Me.panelCenter.Size = New System.Drawing.Size(1126, 632)
@@ -362,14 +385,6 @@ Partial Class frmMain
         Me.UcDashboard1.Size = New System.Drawing.Size(1126, 599)
         Me.UcDashboard1.TabIndex = 15
         '
-        'UcBorrowers1
-        '
-        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBorrowers1.Name = "UcBorrowers1"
-        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 599)
-        Me.UcBorrowers1.TabIndex = 14
-        '
         'UcBookManagement1
         '
         Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -414,6 +429,14 @@ Partial Class frmMain
         Me.lblTitle.TabIndex = 10
         Me.lblTitle.Text = "Library Management System"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'UcAttendance1
+        '
+        Me.UcAttendance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAttendance1.Location = New System.Drawing.Point(0, 0)
+        Me.UcAttendance1.Name = "UcAttendance1"
+        Me.UcAttendance1.Size = New System.Drawing.Size(1126, 632)
+        Me.UcAttendance1.TabIndex = 21
         '
         'ToolTip1
         '
@@ -696,6 +719,14 @@ Partial Class frmMain
         '
         Me.SystemIdleTimer1.MaxIdleTime = CType(20UI, UInteger)
         '
+        'UcFacultyManagement1
+        '
+        Me.UcFacultyManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcFacultyManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.UcFacultyManagement1.Name = "UcFacultyManagement1"
+        Me.UcFacultyManagement1.Size = New System.Drawing.Size(1126, 632)
+        Me.UcFacultyManagement1.TabIndex = 22
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -750,7 +781,6 @@ Partial Class frmMain
     Friend WithEvents UcReports1 As LibraryManagementSystemIETIVB.ucReports
     Friend WithEvents UcMessages1 As LibraryManagementSystemIETIVB.ucMessages
     Friend WithEvents UcDashboard1 As LibraryManagementSystemIETIVB.ucDashboard
-    Friend WithEvents UcBorrowers1 As LibraryManagementSystemIETIVB.ucBorrowers
     Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookManagement
     Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
     Friend WithEvents UcAboutIETI1 As LibraryManagementSystemIETIVB.ucAboutIETI
@@ -762,7 +792,7 @@ Partial Class frmMain
     Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
     Friend WithEvents btnBookManagement As System.Windows.Forms.Button
     Friend WithEvents btnStudentsMangement As System.Windows.Forms.Button
-    Friend WithEvents btnBorrowers As System.Windows.Forms.Button
+    Friend WithEvents btnAttendance As System.Windows.Forms.Button
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents tsSettings As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsLogout As System.Windows.Forms.ToolStripMenuItem
@@ -781,4 +811,7 @@ Partial Class frmMain
     Private WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents panelAccount As System.Windows.Forms.Panel
     Friend WithEvents btnUserManagement As System.Windows.Forms.Button
+    Friend WithEvents btnFacultyManagement As Button
+    Friend WithEvents UcAttendance1 As ucAttendance
+    Friend WithEvents UcFacultyManagement1 As ucFacultyManagement
 End Class

@@ -18,115 +18,27 @@ Public Class ucUserManagement
 
     Private Sub CheckDataIfUpdated()
         Try
-            Dim get_updated_date As DateTime
-            str = "SELECT data_updated_at FROM data_updated"
-            cmd = New SqlCommand(str, conn)
-            dr = cmd.ExecuteReader
+            'Dim get_updated_date As DateTime
+            'str = "SELECT time_updated_at FROM data_updated"
+            'cmd = New SqlCommand(str, conn)
+            'dr = cmd.ExecuteReader
 
-            If dr.Read Then
-                get_updated_date = dr("data_updated_at")
-                If get_updated_date > My.Settings.data_updated_at Then
+            'If dr.Read Then
+            '    get_updated_date = dr("time_updated_at")
+            '    If get_updated_date > My.Settings.data_updated_at Then
 
-                    My.Settings.data_updated_at = get_updated_date
-                    My.Settings.Save()
-                    My.Settings.Reload()
+            '        My.Settings.data_updated_at = get_updated_date
+            '        My.Settings.Save()
+            '        My.Settings.Reload()
 
-                    FillDGV()
-                    MessageBox.Show("data is updated!!!!")
+            '        FillDGV()
+            '        MessageBox.Show("data is updated!!!!")
 
-                End If
-            End If
+            '    End If
+            'End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "User Management")
         End Try
-    End Sub
-
-
-
-
-
-    Private Sub Sample()
-
-
-        ''pag may nabasang data
-
-
-        ''wag kalimutan lagyan ng WHERE CLAUSE para may pagbabasehan kung anong data
-        ''yung i-dedelete
-
-        ''yung ID dapat ito yung unique or primary key sa table mo
-        'str = "DELETE FROM TableName WHERE ID = @ID"
-        'cmd = New SqlCommand(str, conn)
-        ''lalagyan ng value yung parameter yung may '@'
-        'cmd.Parameters.AddWithValue("@ID", txtBox3.Text)
-        'cmd.ExecuteNonQuery() 'ito yung nag eexcute ng query
-
-        'MessageBox.Show("Successfully Deleted!")
-
-
-
-
-
-
-        ''wag kalimutan lagyan ng WHERE CLAUSE para may pagbabasehan kung anong data
-        ''yung i-a-update
-
-        ''yung ID dapat ito yung unique or primary key sa table mo
-        'str = "UPDATE TableName SET Column1 = @Column1, Column2 = @Column2 WHERE ID = @ID"
-        'cmd = New SqlCommand(str, conn)
-        ''lalagyan ng value yung mga parameters yung may '@'
-        'cmd.Parameters.AddWithValue("@Column1", txtBox1.Text)
-        'cmd.Parameters.AddWithValue("@Column2", txtBox2.Text)
-        'cmd.Parameters.AddWithValue("@ID", txtBox3.Text)
-        'cmd.ExecuteNonQuery()
-
-        'MessageBox.Show("Successfully Updated!")
-
-
-
-
-
-
-        ''assuming na yung value ng ColumnName3 sa WHERE CLAUSE ay 'Value' magtu-true
-        ''yung WHERE CLAUSE, so may nabasa
-
-        'str = "SELECT ColumnName1 FROM TableName WHERE ColumnName3 = 'Value' "
-        'cmd = New SqlCommand(str, conn)
-        'dr = cmd.ExecuteReader
-
-        'If dr.Read Then 'Pag may nabasang data
-
-        '    Dim variable1 As String = dr("ColumnName1") 'i lalagay yung value ng ColumnName1 sa variable1
-        '    Dim variable2 As String = dr("ColumnName2") 'i lalagay yung value ng ColumnName2 sa variable2
-
-        'End If
-
-
-        'str = "SELECT * FROM TableName"
-        'cmd = New SqlCommand(str, conn)
-        'dr = cmd.ExecuteReader
-
-        'If dr.Read Then 'Pag may nabasang data
-
-        '    Dim variable1 As String = dr("ColumnName1") 'i lalagay yung value ng ColumnName1 sa variable1
-        '    Dim variable2 As String = dr("ColumnName2") 'i lalagay yung value ng ColumnName2 sa variable2
-
-        'End If
-
-
-
-
-        'str = "INSERT INTO TableName (Column1, Column2, Column3) VALUES (@Column1, @Column2, @Column3)"
-        'cmd = New SqlCommand(str, conn)
-        ''lalagyan ng value yung mga parameter yung may '@'
-        'cmd.Parameters.AddWithValue("@Column1", txtBox1.Text)
-        'cmd.Parameters.AddWithValue("@Column2", txtBox2.Text)
-        'cmd.Parameters.AddWithValue("@Column3", txtBox3.Text)
-        'cmd.ExecuteNonQuery() 'ito yung nag eexcute ng query
-
-        'MessageBox.Show("Successfully Updated!")
-
-
     End Sub
 
     Public Sub FillDGV()

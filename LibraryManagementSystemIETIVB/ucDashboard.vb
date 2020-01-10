@@ -14,8 +14,8 @@ Public Class ucDashboard
     End Sub
 
     Private Sub moreInfoTotalBorrowers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox9.DoubleClick, Panel9.DoubleClick, Label21.DoubleClick
-        frmMain.btnBorrowers.PerformClick()
-        frmMain.btnBorrowers.Focus()
+        frmMain.btnAttendance.PerformClick()
+        frmMain.btnAttendance.Focus()
     End Sub
 
     Private Sub moreInfoTotalUsers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox11.DoubleClick, Panel11.DoubleClick, Label23.DoubleClick
@@ -34,7 +34,7 @@ Public Class ucDashboard
 
     Friend Sub TotalUsers()
         Try
-            str = "SELECT COUNT(*) AS TotalUsers FROM tblUserInfo WHERE Status = '1'"
+            str = "SELECT COUNT(*) AS TotalUsers FROM users WHERE Status = '1'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 

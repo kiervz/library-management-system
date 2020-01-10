@@ -1,7 +1,4 @@
 ﻿Imports System.Drawing.Drawing2D
-Imports MetroFramework.Forms
-Imports Tulpep.NotificationWindow
-Imports System.Text
 
 Public Class frmMain
     Private idle As New SystemIdleTimer
@@ -54,7 +51,7 @@ Public Class frmMain
         UcAboutIETI1.Visible = False
         UcActivityLog1.Visible = False
         UcBookManagement1.Visible = False
-        UcBorrowers1.Visible = False
+        UcAttendance1.Visible = False
         UcDashboard1.Visible = False
         UcMessages1.Visible = False
         UcReports1.Visible = False
@@ -72,11 +69,20 @@ Public Class frmMain
         UcDashboard1.TotalUsers()
     End Sub
 
-    Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
-        movePanelSelector(btnBorrowers)
+
+    Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+        movePanelSelector(btnAttendance)
         HideAllUserControl()
-        UcBorrowers1.Visible = True
-        lblTitle.Text = "Borrowers"
+        UcAttendance1.Visible = True
+        lblTitle.Text = "Attendance"
+    End Sub
+
+
+    Private Sub btnFacultyManagement_Click(sender As Object, e As EventArgs) Handles btnFacultyManagement.Click
+        movePanelSelector(btnFacultyManagement)
+        HideAllUserControl()
+        UcFacultyManagement1.Visible = True
+        lblTitle.Text = "Faculty Management"
     End Sub
 
     Private Sub btnBookManagement_Click(sender As Object, e As EventArgs) Handles btnBookManagement.Click
