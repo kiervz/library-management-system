@@ -22,17 +22,15 @@ Partial Class ucStudentManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudentManagement))
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.dgvStudents = New MetroFramework.Controls.MetroGrid()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,12 +43,14 @@ Partial Class ucStudentManagement
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnAddStudent = New System.Windows.Forms.Button()
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
+        Me.btnAddStudent = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -92,72 +92,42 @@ Partial Class ucStudentManagement
         Me.txtImporting.Text = "Importing 0 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'btnImportStudent
-        '
-        Me.btnImportStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnImportStudent.FlatAppearance.BorderSize = 0
-        Me.btnImportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImportStudent.ForeColor = System.Drawing.Color.White
-        Me.btnImportStudent.Image = CType(resources.GetObject("btnImportStudent.Image"), System.Drawing.Image)
-        Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportStudent.Location = New System.Drawing.Point(799, 33)
-        Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnImportStudent.Name = "btnImportStudent"
-        Me.btnImportStudent.Size = New System.Drawing.Size(156, 35)
-        Me.btnImportStudent.TabIndex = 58
-        Me.btnImportStudent.Text = " IMPORT STUDENTS"
-        Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnImportStudent.UseVisualStyleBackColor = False
-        '
         'dgvStudents
         '
         Me.dgvStudents.AllowUserToAddRows = False
         Me.dgvStudents.AllowUserToDeleteRows = False
         Me.dgvStudents.AllowUserToResizeRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvStudents.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.dgvStudents.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvStudents.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvStudents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvStudents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudents.ColumnHeadersHeight = 28
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle13.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvStudents.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvStudents.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvStudents.EnableHeadersVisualStyles = False
         Me.dgvStudents.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvStudents.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -167,30 +137,30 @@ Partial Class ucStudentManagement
         Me.dgvStudents.Name = "dgvStudents"
         Me.dgvStudents.ReadOnly = True
         Me.dgvStudents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvStudents.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvStudents.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvStudents.RowHeadersVisible = False
         Me.dgvStudents.RowHeadersWidth = 23
         Me.dgvStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle15.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvStudents.RowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgvStudents.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvStudents.RowTemplate.Height = 32
         Me.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvStudents.ShowCellErrors = False
         Me.dgvStudents.ShowEditingIcon = False
         Me.dgvStudents.ShowRowErrors = False
-        Me.dgvStudents.Size = New System.Drawing.Size(1116, 443)
+        Me.dgvStudents.Size = New System.Drawing.Size(1116, 483)
         Me.dgvStudents.Style = MetroFramework.MetroColorStyle.Teal
         Me.dgvStudents.TabIndex = 57
         Me.dgvStudents.Theme = MetroFramework.MetroThemeStyle.Light
@@ -273,26 +243,6 @@ Partial Class ucStudentManagement
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'btnAddStudent
-        '
-        Me.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddStudent.FlatAppearance.BorderSize = 0
-        Me.btnAddStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddStudent.ForeColor = System.Drawing.Color.White
-        Me.btnAddStudent.Image = CType(resources.GetObject("btnAddStudent.Image"), System.Drawing.Image)
-        Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddStudent.Location = New System.Drawing.Point(961, 33)
-        Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(130, 35)
-        Me.btnAddStudent.TabIndex = 60
-        Me.btnAddStudent.Text = " ADD STUDENT"
-        Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAddStudent.UseVisualStyleBackColor = False
-        '
         'cmbSearchBy
         '
         Me.cmbSearchBy.FontSize = MetroFramework.MetroComboBoxSize.Small
@@ -326,6 +276,7 @@ Partial Class ucStudentManagement
         Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search"
         Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtSearch.SelectedText = ""
         Me.txtSearch.SelectionLength = 0
@@ -339,6 +290,56 @@ Partial Class ucStudentManagement
         Me.txtSearch.WaterMark = "Search"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'btnAddStudent
+        '
+        Me.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddStudent.FlatAppearance.BorderSize = 0
+        Me.btnAddStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddStudent.ForeColor = System.Drawing.Color.White
+        Me.btnAddStudent.Image = CType(resources.GetObject("btnAddStudent.Image"), System.Drawing.Image)
+        Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddStudent.Location = New System.Drawing.Point(961, 33)
+        Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAddStudent.Name = "btnAddStudent"
+        Me.btnAddStudent.Size = New System.Drawing.Size(130, 35)
+        Me.btnAddStudent.TabIndex = 60
+        Me.btnAddStudent.Text = " ADD STUDENT"
+        Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddStudent.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'btnImportStudent
+        '
+        Me.btnImportStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportStudent.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImportStudent.FlatAppearance.BorderSize = 0
+        Me.btnImportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImportStudent.ForeColor = System.Drawing.Color.White
+        Me.btnImportStudent.Image = CType(resources.GetObject("btnImportStudent.Image"), System.Drawing.Image)
+        Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImportStudent.Location = New System.Drawing.Point(799, 33)
+        Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnImportStudent.Name = "btnImportStudent"
+        Me.btnImportStudent.Size = New System.Drawing.Size(156, 35)
+        Me.btnImportStudent.TabIndex = 58
+        Me.btnImportStudent.Text = " IMPORT STUDENTS"
+        Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnImportStudent.UseVisualStyleBackColor = False
         '
         'ucStudentManagement
         '
@@ -355,8 +356,8 @@ Partial Class ucStudentManagement
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

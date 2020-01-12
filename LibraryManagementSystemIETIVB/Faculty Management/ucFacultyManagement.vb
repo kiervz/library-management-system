@@ -1,10 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Office.Interop
 
-Public Class ucStudentManagement
-
-    'to install office.interlop
-    'Install-Package Microsoft.Office.Interop.Excel
+Public Class ucFacultyManagement
 
     Dim thread As Threading.Thread
     Dim iCount, i As Integer
@@ -16,7 +13,7 @@ Public Class ucStudentManagement
     Dim xlRow As Integer
     Dim strDestination As String
 
-    Private Sub btnImportStudent_Click(sender As Object, e As EventArgs) Handles btnImportStudent.Click
+    Private Sub btnImportFaculties_Click(sender As Object, e As EventArgs) Handles btnImportFaculties.Click
         With OpenFileDialog1
             .Filter = "Excel Office| *.xls;*.xlsx"
             .FileName = String.Empty
@@ -35,7 +32,7 @@ Public Class ucStudentManagement
         End If
     End Sub
 
-    Private Sub ucStudentManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ucFacultyManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         FillGridView()
         CheckForIllegalCrossThreadCalls = False
@@ -51,10 +48,10 @@ Public Class ucStudentManagement
                 'If not already in the database 
                 If Not IfAlreadyExistInDB(xlRange.Cells(xlRow, 1).Text()) = True Then
                     rowcount += 1
-                    'The student information will add
-                    AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-                    dgvStudents.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-                    dgvStudents.Refresh()
+                    'The faculty information will add
+                    AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text())
+                    dgvFaculties.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text())
+                    dgvFaculties.Refresh()
                     txtImporting.Text = "Importing " & rowcount & " records"
                     txtPleasewait.Text = "please wait..."
                 End If
@@ -68,28 +65,10 @@ Public Class ucStudentManagement
         thread.Abort()
     End Sub
 
-    Friend Sub FillGridView()
-        Try
-            Dim rowcount As Integer = 0
-            str = "SELECT * FROM students"
-            cmd = New SqlCommand(str, conn)
-            dr = cmd.ExecuteReader
-
-            dgvStudents.Rows.Clear()
-
-            While dr.Read
-                rowcount += 1
-                dgvStudents.Rows.Add(rowcount, dr("student_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), dr("course"), dr("year"), dr("section"))
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Function IfAlreadyExistInDB(studID As String)
+    Private Function IfAlreadyExistInDB(facultyID As String)
         Dim isAlreadyExist As Boolean = False
         Try
-            str = "SELECT student_id FROM students WHERE student_id = '" + studID + "'"
+            str = "SELECT faculty_id FROM faculties WHERE faculty_id = '" + facultyID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -104,26 +83,41 @@ Public Class ucStudentManagement
         Return isAlreadyExist
     End Function
 
-    Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click
-        OpenTransparentForm(Me)
-        Dim add_student As New frmRegisterStudent
-        add_student.ShowDialog(Me)
-    End Sub
-
-    Private Sub AddToDatabase(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date, course As String, year As String, section As String)
+    Private Sub AddToDatabase(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date)
         Try
-            str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+            str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
             cmd = New SqlCommand(str, conn)
-            cmd.Parameters.AddWithValue("@student_id", studID)
+            cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
             cmd.Parameters.AddWithValue("@firstname", firstname)
             cmd.Parameters.AddWithValue("@middlename", middlename)
             cmd.Parameters.AddWithValue("@lastname", lastname)
             cmd.Parameters.AddWithValue("@gender", gender)
             cmd.Parameters.AddWithValue("@birthday", birthday)
-            cmd.Parameters.AddWithValue("@course", course)
-            cmd.Parameters.AddWithValue("@year", year)
-            cmd.Parameters.AddWithValue("@section", section)
             cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnAddFaculty_Click(sender As Object, e As EventArgs) Handles btnAddFaculty.Click
+        OpenTransparentForm(Me)
+        Dim add_faculty As New frmRegisterFaculty
+        add_faculty.ShowDialog(Me)
+    End Sub
+
+    Friend Sub FillGridView()
+        Try
+            Dim rowcount As Integer = 0
+            str = "SELECT * FROM faculties"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            dgvFaculties.Rows.Clear()
+
+            While dr.Read
+                rowcount += 1
+                dgvFaculties.Rows.Add(rowcount, dr("faculty_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), CDate(dr("birthday")).ToShortDateString)
+            End While
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

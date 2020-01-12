@@ -92,6 +92,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Faculty Management\frmRegisterFaculty.Designer.vb">
+      <DependentUpon>frmRegisterFaculty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty Management\frmRegisterFaculty.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPasswordConfirmation.Designer.vb">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </Compile>
@@ -116,7 +122,13 @@
     <Compile Include="frmSetSystemIdle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module\MD5HasherSalt.vb" />
+    <Compile Include="Modules\MD5HasherSalt.vb" />
+    <Compile Include="Student Management\frmRegisterStudent.Designer.vb">
+      <DependentUpon>frmRegisterStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student Management\frmRegisterStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SystemIdleTimer.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -132,10 +144,10 @@
     <Compile Include="ucDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucFacultyManagement.Designer.vb">
+    <Compile Include="Faculty Management\ucFacultyManagement.Designer.vb">
       <DependentUpon>ucFacultyManagement.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucFacultyManagement.vb">
+    <Compile Include="Faculty Management\ucFacultyManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Management\frmUpdateUser.Designer.vb">
@@ -144,7 +156,7 @@
     <Compile Include="User Management\frmUpdateUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module\ConnectionString.vb" />
+    <Compile Include="Modules\ConnectionString.vb" />
     <Compile Include="User Management\frmRegisterUser.Designer.vb">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </Compile>
@@ -170,9 +182,9 @@
     <Compile Include="frmTransparent.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module\GlobalVariables.vb" />
-    <Compile Include="Module\MessageBoxMetro.vb" />
-    <Compile Include="Module\CustomMessageBox.vb" />
+    <Compile Include="Modules\GlobalVariables.vb" />
+    <Compile Include="Modules\MessageBoxMetro.vb" />
+    <Compile Include="Modules\CustomMessageBox.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -238,6 +250,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Faculty Management\frmRegisterFaculty.resx">
+      <DependentUpon>frmRegisterFaculty.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordConfirmation.resx">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,13 +265,16 @@
     <EmbeddedResource Include="frmSetSystemIdle.resx">
       <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student Management\frmRegisterStudent.resx">
+      <DependentUpon>frmRegisterStudent.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucFacultyManagement.resx">
+    <EmbeddedResource Include="Faculty Management\ucFacultyManagement.resx">
       <DependentUpon>ucFacultyManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Management\frmRegisterUser.resx">

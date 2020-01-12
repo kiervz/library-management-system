@@ -205,7 +205,7 @@ Partial Class frmRegisterUser
         '
         Me.dtBday.FontSize = MetroFramework.MetroDateTimeSize.Small
         Me.dtBday.Location = New System.Drawing.Point(259, 392)
-        Me.dtBday.MinimumSize = New System.Drawing.Size(4, 25)
+        Me.dtBday.MinimumSize = New System.Drawing.Size(0, 25)
         Me.dtBday.Name = "dtBday"
         Me.dtBday.Size = New System.Drawing.Size(204, 25)
         Me.dtBday.TabIndex = 7

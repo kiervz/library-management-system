@@ -24,14 +24,14 @@ Public Class frmRegisterUser
     Sub AN()
         Try
             Dim number As String
-            str = "SELECT Max(NewNumber) FROM AutoNumber where Pfx = @Pfx"
+            str = "SELECT Max(NewNumber) FROM auto_number where Pfx = @Pfx"
             cmd = New SqlCommand(str, conn)
             With cmd
                 .Parameters.AddWithValue("@Pfx", "UID")
                 If IsDBNull(cmd.ExecuteScalar) Then
                     AUTO()
                     Dim number1 As String
-                    str = "SELECT Max(NewNumber) FROM AutoNumber where Pfx = @Pfx"
+                    str = "SELECT Max(NewNumber) FROM auto_number where Pfx = @Pfx"
                     cmd = New SqlCommand(str, conn)
                     With cmd
                         .Parameters.AddWithValue("@Pfx", "UID")

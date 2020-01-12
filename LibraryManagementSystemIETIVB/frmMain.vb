@@ -82,6 +82,7 @@ Public Class frmMain
         movePanelSelector(btnFacultyManagement)
         HideAllUserControl()
         UcFacultyManagement1.Visible = True
+        UcFacultyManagement1.FillGridView()
         lblTitle.Text = "Faculty Management"
     End Sub
 
