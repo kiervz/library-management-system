@@ -122,6 +122,8 @@ Public Class frmLogin
                 My.Settings.data_updated_at = dr("time_updated_at")
                 My.Settings.Save()
                 My.Settings.Reload()
+                dr.Close()
+                cmd.Dispose()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

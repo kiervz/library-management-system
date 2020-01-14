@@ -26,6 +26,7 @@ Public Class frmRegisterFaculty
                         CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                         ClearAll()
 
+
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)
                     End Try

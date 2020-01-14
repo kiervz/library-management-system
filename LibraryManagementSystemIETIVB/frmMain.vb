@@ -41,7 +41,7 @@ Public Class frmMain
 
     Private Sub LoggedInAsStudentAssistant()
         btnUserManagement.Visible = False
-        btnActivityLog.Visible = False
+        btnAuditLog.Visible = False
         btnReports.Visible = False
         btnMessages.Location = New Point(4, 239)
         btnSettings.Location = New Point(4, 284)
@@ -74,6 +74,7 @@ Public Class frmMain
         movePanelSelector(btnAttendance)
         HideAllUserControl()
         UcAttendance1.Visible = True
+        UcAttendance1.GridView()
         lblTitle.Text = "Attendance"
     End Sub
 
@@ -111,11 +112,11 @@ Public Class frmMain
         UcUserManagement1.FillDGVArchived()
     End Sub
 
-    Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnActivityLog.Click
-        movePanelSelector(btnActivityLog)
+    Private Sub btnActivityLog_Click(sender As Object, e As EventArgs) Handles btnAuditLog.Click
+        movePanelSelector(btnAuditLog)
         HideAllUserControl()
         UcActivityLog1.Visible = True
-        lblTitle.Text = "Activity Log"
+        lblTitle.Text = "Audit Log"
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click

@@ -22,15 +22,16 @@ Partial Class ucStudentManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudentManagement))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudentManagement))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvStudents = New MetroFramework.Controls.MetroGrid()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,11 +47,10 @@ Partial Class ucStudentManagement
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.btnAddStudent = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -91,6 +91,16 @@ Partial Class ucStudentManagement
         Me.txtImporting.TabIndex = 1
         Me.txtImporting.Text = "Importing 0 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'dgvStudents
         '
@@ -276,7 +286,6 @@ Partial Class ucStudentManagement
         Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search"
         Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtSearch.SelectedText = ""
         Me.txtSearch.SelectionLength = 0
@@ -287,7 +296,6 @@ Partial Class ucStudentManagement
         Me.txtSearch.TabIndex = 61
         Me.txtSearch.UseSelectable = True
         Me.txtSearch.UseStyleColors = True
-        Me.txtSearch.WaterMark = "Search"
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
@@ -310,16 +318,6 @@ Partial Class ucStudentManagement
         Me.btnAddStudent.Text = " ADD STUDENT"
         Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddStudent.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'btnImportStudent
         '
@@ -356,8 +354,8 @@ Partial Class ucStudentManagement
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

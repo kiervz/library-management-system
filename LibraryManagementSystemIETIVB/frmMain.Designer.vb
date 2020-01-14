@@ -30,7 +30,7 @@ Partial Class frmMain
         Me.btnMessages = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
-        Me.btnActivityLog = New System.Windows.Forms.Button()
+        Me.btnAuditLog = New System.Windows.Forms.Button()
         Me.btnUserManagement = New System.Windows.Forms.Button()
         Me.btnStudentsMangement = New System.Windows.Forms.Button()
         Me.btnBookManagement = New System.Windows.Forms.Button()
@@ -51,6 +51,7 @@ Partial Class frmMain
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
+        Me.UcFacultyManagement1 = New LibraryManagementSystemIETIVB.ucFacultyManagement()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -76,7 +77,6 @@ Partial Class frmMain
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panelAccount = New System.Windows.Forms.Panel()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
-        Me.UcFacultyManagement1 = New LibraryManagementSystemIETIVB.ucFacultyManagement()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class frmMain
         Me.panelLeft.Controls.Add(Me.btnMessages)
         Me.panelLeft.Controls.Add(Me.btnSettings)
         Me.panelLeft.Controls.Add(Me.btnReports)
-        Me.panelLeft.Controls.Add(Me.btnActivityLog)
+        Me.panelLeft.Controls.Add(Me.btnAuditLog)
         Me.panelLeft.Controls.Add(Me.btnUserManagement)
         Me.panelLeft.Controls.Add(Me.btnStudentsMangement)
         Me.panelLeft.Controls.Add(Me.btnBookManagement)
@@ -184,24 +184,24 @@ Partial Class frmMain
         Me.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnReports.UseVisualStyleBackColor = False
         '
-        'btnActivityLog
+        'btnAuditLog
         '
-        Me.btnActivityLog.BackColor = System.Drawing.SystemColors.Control
-        Me.btnActivityLog.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnActivityLog.FlatAppearance.BorderSize = 0
-        Me.btnActivityLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnActivityLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActivityLog.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActivityLog.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.btnActivityLog.Image = CType(resources.GetObject("btnActivityLog.Image"), System.Drawing.Image)
-        Me.btnActivityLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnActivityLog.Location = New System.Drawing.Point(4, 374)
-        Me.btnActivityLog.Name = "btnActivityLog"
-        Me.btnActivityLog.Size = New System.Drawing.Size(230, 45)
-        Me.btnActivityLog.TabIndex = 6
-        Me.btnActivityLog.Text = "   ACTIVITY LOG"
-        Me.btnActivityLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnActivityLog.UseVisualStyleBackColor = False
+        Me.btnAuditLog.BackColor = System.Drawing.SystemColors.Control
+        Me.btnAuditLog.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAuditLog.FlatAppearance.BorderSize = 0
+        Me.btnAuditLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAuditLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAuditLog.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAuditLog.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btnAuditLog.Image = CType(resources.GetObject("btnAuditLog.Image"), System.Drawing.Image)
+        Me.btnAuditLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAuditLog.Location = New System.Drawing.Point(4, 374)
+        Me.btnAuditLog.Name = "btnAuditLog"
+        Me.btnAuditLog.Size = New System.Drawing.Size(230, 45)
+        Me.btnAuditLog.TabIndex = 6
+        Me.btnAuditLog.Text = "   AUDIT LOG"
+        Me.btnAuditLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAuditLog.UseVisualStyleBackColor = False
         '
         'btnUserManagement
         '
@@ -437,6 +437,14 @@ Partial Class frmMain
         Me.UcAttendance1.Name = "UcAttendance1"
         Me.UcAttendance1.Size = New System.Drawing.Size(1126, 632)
         Me.UcAttendance1.TabIndex = 21
+        '
+        'UcFacultyManagement1
+        '
+        Me.UcFacultyManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcFacultyManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.UcFacultyManagement1.Name = "UcFacultyManagement1"
+        Me.UcFacultyManagement1.Size = New System.Drawing.Size(1126, 632)
+        Me.UcFacultyManagement1.TabIndex = 22
         '
         'ToolTip1
         '
@@ -719,14 +727,6 @@ Partial Class frmMain
         '
         Me.SystemIdleTimer1.MaxIdleTime = CType(20UI, UInteger)
         '
-        'UcFacultyManagement1
-        '
-        Me.UcFacultyManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcFacultyManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.UcFacultyManagement1.Name = "UcFacultyManagement1"
-        Me.UcFacultyManagement1.Size = New System.Drawing.Size(1126, 632)
-        Me.UcFacultyManagement1.TabIndex = 22
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -764,7 +764,7 @@ Partial Class frmMain
     Friend WithEvents panelLeft As System.Windows.Forms.Panel
     Private WithEvents btnSettings As System.Windows.Forms.Button
     Private WithEvents btnReports As System.Windows.Forms.Button
-    Private WithEvents btnActivityLog As System.Windows.Forms.Button
+    Private WithEvents btnAuditLog As System.Windows.Forms.Button
     Private WithEvents panelSelector As System.Windows.Forms.Panel
     Private WithEvents btnDashboard As System.Windows.Forms.Button
     Private WithEvents btnMessages As System.Windows.Forms.Button

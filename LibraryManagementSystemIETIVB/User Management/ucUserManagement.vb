@@ -16,31 +16,6 @@ Public Class ucUserManagement
         Timer1.Start()
     End Sub
 
-    Private Sub CheckDataIfUpdated()
-        Try
-            'Dim get_updated_date As DateTime
-            'str = "SELECT time_updated_at FROM data_updated"
-            'cmd = New SqlCommand(str, conn)
-            'dr = cmd.ExecuteReader
-
-            'If dr.Read Then
-            '    get_updated_date = dr("time_updated_at")
-            '    If get_updated_date > My.Settings.data_updated_at Then
-
-            '        My.Settings.data_updated_at = get_updated_date
-            '        My.Settings.Save()
-            '        My.Settings.Reload()
-
-            '        FillDGV()
-            '        MessageBox.Show("data is updated!!!!")
-
-            '    End If
-            'End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "User Management")
-        End Try
-    End Sub
-
     Public Sub FillDGV()
         Try
 
@@ -232,10 +207,6 @@ Public Class ucUserManagement
                 MessageBox.Show(ex.Message, "Error")
             End Try
         End If
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        CheckDataIfUpdated()
     End Sub
 
     Private Sub cmbSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchBy.SelectedIndexChanged
