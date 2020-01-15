@@ -30,7 +30,7 @@ Partial Class ucDashboard
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.label14 = New System.Windows.Forms.Label()
+        Me.lblTotalStudents = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -108,7 +108,7 @@ Partial Class ucDashboard
         Me.Panel3.Controls.Add(Me.Panel8)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.label14)
+        Me.Panel3.Controls.Add(Me.lblTotalStudents)
         Me.Panel3.Controls.Add(Me.PictureBox5)
         Me.Panel3.Location = New System.Drawing.Point(369, 3)
         Me.Panel3.Name = "Panel3"
@@ -172,16 +172,16 @@ Partial Class ucDashboard
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "TOTAL STUDENTS"
         '
-        'label14
+        'lblTotalStudents
         '
-        Me.label14.AutoSize = True
-        Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.ForeColor = System.Drawing.Color.White
-        Me.label14.Location = New System.Drawing.Point(78, 17)
-        Me.label14.Name = "label14"
-        Me.label14.Size = New System.Drawing.Size(76, 29)
-        Me.label14.TabIndex = 6
-        Me.label14.Text = "2,029"
+        Me.lblTotalStudents.AutoSize = True
+        Me.lblTotalStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalStudents.ForeColor = System.Drawing.Color.White
+        Me.lblTotalStudents.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalStudents.Name = "lblTotalStudents"
+        Me.lblTotalStudents.Size = New System.Drawing.Size(76, 29)
+        Me.lblTotalStudents.TabIndex = 6
+        Me.lblTotalStudents.Text = "2,029"
         '
         'PictureBox5
         '
@@ -728,7 +728,7 @@ Partial Class ucDashboard
     Private WithEvents Panel3 As System.Windows.Forms.Panel
     Private WithEvents Label4 As System.Windows.Forms.Label
     Private WithEvents Label5 As System.Windows.Forms.Label
-    Private WithEvents label14 As System.Windows.Forms.Label
+    Private WithEvents lblTotalStudents As System.Windows.Forms.Label
     Private WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Private WithEvents Panel1 As System.Windows.Forms.Panel
     Private WithEvents label13 As System.Windows.Forms.Label

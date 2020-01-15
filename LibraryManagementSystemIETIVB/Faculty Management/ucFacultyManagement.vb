@@ -13,6 +13,14 @@ Public Class ucFacultyManagement
     Dim xlRow As Integer
     Dim strDestination As String
 
+    Dim pagingAdapter As SqlDataAdapter
+    Dim pagingDS As DataSet
+    Dim scrollVal As Integer
+    Dim rowCounnt As Integer
+    Dim totalPages As Integer
+    Dim currentPage As Integer = 1
+
+
     Private Sub btnImportFaculties_Click(sender As Object, e As EventArgs) Handles btnImportFaculties.Click
         With OpenFileDialog1
             .Filter = "Excel Office| *.xls;*.xlsx"
@@ -34,6 +42,7 @@ Public Class ucFacultyManagement
 
     Private Sub ucFacultyManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
+        cmbEntries.SelectedIndex = 0
         FillGridView()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
@@ -50,7 +59,6 @@ Public Class ucFacultyManagement
                     rowcount += 1
                     'The faculty information will add
                     AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text())
-                    dgvFaculties.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text())
                     dgvFaculties.Refresh()
                     txtImporting.Text = "Importing " & rowcount & " records"
                     txtPleasewait.Text = "please wait..."
@@ -105,21 +113,71 @@ Public Class ucFacultyManagement
         add_faculty.ShowDialog(Me)
     End Sub
 
+    Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
+        If rowCounnt > 0 Then
+            scrollVal = scrollVal - Val(cmbEntries.Text)
+            If scrollVal <= 0 Then
+                scrollVal = 0
+            End If
+
+            If currentPage > 1 Then
+                currentPage -= 1
+                txtCurrentPage.Text = "Page " + CStr(currentPage)
+            End If
+            pagingDS.Clear()
+            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+        End If
+    End Sub
+
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        If rowCounnt > 0 Then
+            scrollVal = scrollVal + Val(cmbEntries.Text)
+            If scrollVal >= rowCounnt Then
+                scrollVal = rowCounnt - Val(cmbEntries.Text)
+            End If
+            If currentPage < totalPages Then
+                currentPage += 1
+                txtCurrentPage.Text = "Page " + CStr(currentPage)
+            End If
+            pagingDS.Clear()
+            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+        End If
+    End Sub
+
+    Private Sub cmbEntries_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEntries.SelectedIndexChanged
+        FillGridView()
+    End Sub
+
     Friend Sub FillGridView()
         Try
-            Dim rowcount As Integer = 0
-            str = "SELECT * FROM faculties"
+            str = "SELECT COUNT(*) AS totalrow FROM faculties"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
-            dgvFaculties.Rows.Clear()
+            If dr.Read Then
+                rowCounnt = dr("totalrow")
+                totalPages = Math.Ceiling(rowCounnt / Val(cmbEntries.Text))
+                lblPages.Text = "Total Pages " + CStr(totalPages)
+                lblShowingNentries.Text = "Showing 1 to " + CStr(cmbEntries.Text) + " of " + CStr(rowCounnt) + " entries"
+            End If
+            dr.Close()
+            cmd.Dispose()
 
-            While dr.Read
-                rowcount += 1
-                dgvFaculties.Rows.Add(rowcount, dr("faculty_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), CDate(dr("birthday")).ToShortDateString)
-            End While
+            str = "SELECT * FROM faculties"
+            pagingAdapter = New SqlDataAdapter(str, conn)
+            pagingDS = New DataSet()
+            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+            dgvFaculties.DataSource = pagingDS
+            dgvFaculties.DataMember = "faculties_table"
+            dgvFaculties.Columns(0).Width = 100
+            dgvFaculties.Columns(1).Width = 210
+            dgvFaculties.Columns(2).Width = 210
+            dgvFaculties.Columns(3).Width = 210
+            dgvFaculties.Columns(4).Width = 100
+            dgvFaculties.Columns(5).Width = 115
+            dgvFaculties.Columns(0).HeaderText = "Faculty ID"
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, "POTAAA")
         End Try
     End Sub
 

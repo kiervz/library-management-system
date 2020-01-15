@@ -67,6 +67,7 @@ Public Class frmMain
         UcDashboard1.Visible = True
         lblTitle.Text = "Dashboard"
         UcDashboard1.TotalUsers()
+        UcDashboard1.TotalStudents()
     End Sub
 
 

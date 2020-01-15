@@ -30,6 +30,7 @@ Public Class ucDashboard
     Private Sub ucDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         TotalUsers()
+        TotalStudents()
     End Sub
 
     Friend Sub TotalUsers()
@@ -41,6 +42,23 @@ Public Class ucDashboard
             If dr.Read Then
 
                 lblTotalUser.Text = dr("TotalUsers").ToString()
+
+            End If
+
+        Catch ex As Exception
+            CustomMessageBox.ShowDialog(Me, ex.Message, "Error")
+        End Try
+    End Sub
+
+    Friend Sub TotalStudents()
+        Try
+            str = "SELECT COUNT(*) AS TotalStudents FROM students"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+
+                lblTotalStudents.Text = dr("TotalStudents").ToString()
 
             End If
 

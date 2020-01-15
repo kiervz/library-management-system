@@ -32,7 +32,7 @@ Partial Class frmTransparent
         Me.ClientSize = New System.Drawing.Size(116, 63)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmTransparent"
-        Me.Opacity = 0.7R
+        Me.Opacity = 0.8R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -70,6 +70,9 @@ Public Class ucStudentManagement
 
     Friend Sub FillGridView()
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim rowcount As Integer = 0
             str = "SELECT * FROM students"
             cmd = New SqlCommand(str, conn)
