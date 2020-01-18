@@ -17,22 +17,26 @@ Public Class ucStudentManagement
     Dim strDestination As String
 
     Private Sub btnImportStudent_Click(sender As Object, e As EventArgs) Handles btnImportStudent.Click
-        With OpenFileDialog1
-            .Filter = "Excel Office| *.xls;*.xlsx"
-            .FileName = String.Empty
-            .ShowDialog()
-            strDestination = .FileName
-        End With
+        Try
+            With OpenFileDialog1
+                .Filter = "Excel Office| *.xls;*.xlsx"
+                .FileName = String.Empty
+                .ShowDialog()
+                strDestination = .FileName
+            End With
 
-        If strDestination <> String.Empty Then
-            xlApp = New Excel.Application
-            xlWorkBook = xlApp.Workbooks.Open(strDestination)
-            xlWorkSheet = xlWorkBook.Worksheets("Sheet1")
-            xlRange = xlWorkSheet.UsedRange
-            thread = New Threading.Thread(AddressOf LoadData)
-            Panel1.Show()
-            thread.Start()
-        End If
+            If strDestination <> String.Empty Then
+                xlApp = New Excel.Application
+                xlWorkBook = xlApp.Workbooks.Open(strDestination)
+                xlWorkSheet = xlWorkBook.Worksheets("Sheet1")
+                xlRange = xlWorkSheet.UsedRange
+                thread = New Threading.Thread(AddressOf LoadData)
+                Panel1.Show()
+                thread.Start()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub ucStudentManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load

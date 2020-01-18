@@ -9,10 +9,11 @@ Public Class frmRegisterFaculty
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFacultyID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 Then
             If Val(txtAge.Text) >= 18 Then
-                Dim ask As String = MessageBox.Show("Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If ask = DialogResult.Yes Then
+                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+
+                If msgBoxButtonClick = DialogResult.Yes Then
                     Try
-                        str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday)"
+                        str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@faculty_id", txtFacultyID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -46,4 +47,19 @@ Public Class frmRegisterFaculty
         dtBday.Value = Date.Now
     End Sub
 
+    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
+        GetCurrentAge(dtBday.Value)
+    End Sub
+
+    Private Function GetCurrentAge(ByVal dob As Date) As Integer
+        Dim age As Integer
+        age = Today.Year - dob.Year
+
+        If dob > Today.AddYears(-age) Then
+            age -= 1
+        End If
+
+        txtAge.Text = age
+        Return age
+    End Function
 End Class

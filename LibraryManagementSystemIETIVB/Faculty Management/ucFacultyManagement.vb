@@ -22,27 +22,31 @@ Public Class ucFacultyManagement
 
 
     Private Sub btnImportFaculties_Click(sender As Object, e As EventArgs) Handles btnImportFaculties.Click
-        With OpenFileDialog1
-            .Filter = "Excel Office| *.xls;*.xlsx"
-            .FileName = String.Empty
-            .ShowDialog()
-            strDestination = .FileName
-        End With
+        Try
+            With OpenFileDialog1
+                .Filter = "Excel Office| *.xls;*.xlsx"
+                .FileName = String.Empty
+                .ShowDialog()
+                strDestination = .FileName
+            End With
 
-        If strDestination <> String.Empty Then
-            xlApp = New Excel.Application
-            xlWorkBook = xlApp.Workbooks.Open(strDestination)
-            xlWorkSheet = xlWorkBook.Worksheets("Sheet1")
-            xlRange = xlWorkSheet.UsedRange
-            thread = New Threading.Thread(AddressOf LoadData)
-            Panel1.Show()
-            thread.Start()
-        End If
+            If strDestination <> String.Empty Then
+                xlApp = New Excel.Application
+                xlWorkBook = xlApp.Workbooks.Open(strDestination)
+                xlWorkSheet = xlWorkBook.Worksheets("Sheet1")
+                xlRange = xlWorkSheet.UsedRange
+                thread = New Threading.Thread(AddressOf LoadData)
+                Panel1.Show()
+                thread.Start()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub ucFacultyManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        cmbEntries.SelectedIndex = 0
+        'cmbEntries.SelectedIndex = 0
         FillGridView()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
@@ -115,7 +119,7 @@ Public Class ucFacultyManagement
 
     Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
         If rowCounnt > 0 Then
-            scrollVal = scrollVal - Val(cmbEntries.Text)
+            scrollVal = scrollVal - 50
             If scrollVal <= 0 Then
                 scrollVal = 0
             End If
@@ -124,27 +128,37 @@ Public Class ucFacultyManagement
                 currentPage -= 1
                 txtCurrentPage.Text = "Page " + CStr(currentPage)
             End If
+            If currentPage = totalPages Then
+                btnNext.Enabled = False
+            Else
+                btnNext.Enabled = True
+            End If
             pagingDS.Clear()
-            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
         End If
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         If rowCounnt > 0 Then
-            scrollVal = scrollVal + Val(cmbEntries.Text)
+            scrollVal = scrollVal + 50
             If scrollVal >= rowCounnt Then
-                scrollVal = rowCounnt - Val(cmbEntries.Text)
+                scrollVal = rowCounnt - 50
             End If
             If currentPage < totalPages Then
                 currentPage += 1
                 txtCurrentPage.Text = "Page " + CStr(currentPage)
             End If
+            If currentPage = totalPages Then
+                btnNext.Enabled = False
+            Else
+                btnNext.Enabled = True
+            End If
             pagingDS.Clear()
-            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
         End If
     End Sub
 
-    Private Sub cmbEntries_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEntries.SelectedIndexChanged
+    Private Sub cmbEntries_SelectedIndexChanged(sender As Object, e As EventArgs)
         FillGridView()
     End Sub
 
@@ -156,9 +170,9 @@ Public Class ucFacultyManagement
 
             If dr.Read Then
                 rowCounnt = dr("totalrow")
-                totalPages = Math.Ceiling(rowCounnt / Val(cmbEntries.Text))
+                totalPages = Math.Ceiling(rowCounnt / 50)
                 lblPages.Text = "Total Pages " + CStr(totalPages)
-                lblShowingNentries.Text = "Showing 1 to " + CStr(cmbEntries.Text) + " of " + CStr(rowCounnt) + " entries"
+                lblShowingNentries.Text = "Showing 1 to " + CStr(50) + " of " + CStr(rowCounnt) + " entries"
             End If
             dr.Close()
             cmd.Dispose()
@@ -166,18 +180,19 @@ Public Class ucFacultyManagement
             str = "SELECT * FROM faculties"
             pagingAdapter = New SqlDataAdapter(str, conn)
             pagingDS = New DataSet()
-            pagingAdapter.Fill(pagingDS, scrollVal, Val(cmbEntries.Text), "faculties_table")
+            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
+
             dgvFaculties.DataSource = pagingDS
             dgvFaculties.DataMember = "faculties_table"
-            dgvFaculties.Columns(0).Width = 100
-            dgvFaculties.Columns(1).Width = 210
-            dgvFaculties.Columns(2).Width = 210
-            dgvFaculties.Columns(3).Width = 210
-            dgvFaculties.Columns(4).Width = 100
-            dgvFaculties.Columns(5).Width = 115
+            dgvFaculties.Columns(0).Width = 110
+            dgvFaculties.Columns(1).Width = 230
+            dgvFaculties.Columns(2).Width = 230
+            dgvFaculties.Columns(3).Width = 230
+            dgvFaculties.Columns(4).Width = 110
+            dgvFaculties.Columns(5).Width = 125
             dgvFaculties.Columns(0).HeaderText = "Faculty ID"
         Catch ex As Exception
-            MsgBox(ex.Message, "POTAAA")
+            MessageBox.Show(ex.Message, "POTAAA")
         End Try
     End Sub
 

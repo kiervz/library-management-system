@@ -94,10 +94,6 @@ Public Class frmRegisterUser
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-        UploadImage()
-    End Sub
-
-    Private Sub UploadImage()
         OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
         OpenFileDialog1.ShowDialog()
         If Not OpenFileDialog1.FileName = Nothing Then
@@ -105,7 +101,6 @@ Public Class frmRegisterUser
             _imagePath = pbProfile.ImageLocation
         End If
     End Sub
-
 
     Private Sub ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,

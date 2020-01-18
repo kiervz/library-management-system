@@ -48,4 +48,19 @@ Public Class frmRegisterStudent
         cmbGender.SelectedIndex = 0
         dtBday.Value = Date.Now
     End Sub
+
+    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
+        GetCurrentAge(dtBday.Value)
+    End Sub
+    Private Function GetCurrentAge(ByVal dob As Date) As Integer
+        Dim age As Integer
+        age = Today.Year - dob.Year
+
+        If dob > Today.AddYears(-age) Then
+            age -= 1
+        End If
+
+        txtAge.Text = age
+        Return age
+    End Function
 End Class

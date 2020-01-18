@@ -397,12 +397,6 @@
     <None Include="Resources\x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyFrameworkVB\MyFrameworkVB.vbproj">
-      <Project>{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}</Project>
-      <Name>MyFrameworkVB</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\no_image.png" />
   </ItemGroup>
   <ItemGroup>

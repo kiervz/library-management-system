@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LibraryManagementSystemIETIVB", "LibraryManagementSystemIETIVB\LibraryManagementSystemIETIVB.vbproj", "{B7039D2E-EFF0-4486-ADFD-64C1D8BC3DBE}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MyFrameworkVB", "MyFrameworkVB\MyFrameworkVB.vbproj", "{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{B7039D2E-EFF0-4486-ADFD-64C1D8BC3DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7039D2E-EFF0-4486-ADFD-64C1D8BC3DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7039D2E-EFF0-4486-ADFD-64C1D8BC3DBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6C6C2D2-0BAD-4237-A5C6-EA5D69FD09C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
