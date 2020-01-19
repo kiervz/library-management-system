@@ -129,14 +129,18 @@ Public Class ucFacultyManagement
                 currentPage -= 1
                 txtCurrentPage.Text = "Page " + CStr(currentPage)
             End If
+
+            If Not totalPages = 1 Then
+                pagingDS.Clear()
+                pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
+            End If
+
             If currentPage = totalPages Then
                 btnNext.Enabled = False
                 Exit Sub
             Else
                 btnNext.Enabled = True
             End If
-            pagingDS.Clear()
-            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
         End If
     End Sub
 
@@ -150,14 +154,18 @@ Public Class ucFacultyManagement
                 currentPage += 1
                 txtCurrentPage.Text = "Page " + CStr(currentPage)
             End If
+
+            If Not totalPages = 1 Then
+                pagingDS.Clear()
+                pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
+            End If
+
             If currentPage = totalPages Then
                 btnNext.Enabled = False
                 Exit Sub
             Else
                 btnNext.Enabled = True
             End If
-            pagingDS.Clear()
-            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
         End If
     End Sub
 

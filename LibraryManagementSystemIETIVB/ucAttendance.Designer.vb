@@ -110,7 +110,7 @@ Partial Class ucAttendance
         Me.dgvAttendance.ShowCellErrors = False
         Me.dgvAttendance.ShowEditingIcon = False
         Me.dgvAttendance.ShowRowErrors = False
-        Me.dgvAttendance.Size = New System.Drawing.Size(1044, 427)
+        Me.dgvAttendance.Size = New System.Drawing.Size(1044, 459)
         Me.dgvAttendance.Style = MetroFramework.MetroColorStyle.Teal
         Me.dgvAttendance.TabIndex = 52
         '
@@ -178,7 +178,7 @@ Partial Class ucAttendance
         Me.txtCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCurrentPage.Enabled = False
         Me.txtCurrentPage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentPage.Location = New System.Drawing.Point(567, 526)
+        Me.txtCurrentPage.Location = New System.Drawing.Point(527, 558)
         Me.txtCurrentPage.Name = "txtCurrentPage"
         Me.txtCurrentPage.Size = New System.Drawing.Size(77, 20)
         Me.txtCurrentPage.TabIndex = 83
@@ -189,7 +189,7 @@ Partial Class ucAttendance
         '
         Me.lblShowingNentries.AutoSize = True
         Me.lblShowingNentries.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShowingNentries.Location = New System.Drawing.Point(98, 527)
+        Me.lblShowingNentries.Location = New System.Drawing.Point(58, 559)
         Me.lblShowingNentries.Name = "lblShowingNentries"
         Me.lblShowingNentries.Size = New System.Drawing.Size(193, 17)
         Me.lblShowingNentries.TabIndex = 82
@@ -199,7 +199,7 @@ Partial Class ucAttendance
         '
         Me.lblPages.AutoSize = True
         Me.lblPages.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPages.Location = New System.Drawing.Point(910, 527)
+        Me.lblPages.Location = New System.Drawing.Point(870, 559)
         Me.lblPages.Name = "lblPages"
         Me.lblPages.Size = New System.Drawing.Size(48, 17)
         Me.lblPages.TabIndex = 81
@@ -216,7 +216,7 @@ Partial Class ucAttendance
         Me.btnNext.ForeColor = System.Drawing.Color.White
         Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
         Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(649, 520)
+        Me.btnNext.Location = New System.Drawing.Point(609, 552)
         Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(33, 30)
@@ -234,7 +234,7 @@ Partial Class ucAttendance
         Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrev.ForeColor = System.Drawing.Color.White
         Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
-        Me.btnPrev.Location = New System.Drawing.Point(527, 520)
+        Me.btnPrev.Location = New System.Drawing.Point(487, 552)
         Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
         Me.btnPrev.Name = "btnPrev"
         Me.btnPrev.Size = New System.Drawing.Size(33, 30)
