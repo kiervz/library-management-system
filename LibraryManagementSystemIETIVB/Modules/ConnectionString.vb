@@ -10,7 +10,7 @@ Module ConnString
     Public Sub ConnDB()
         Try
             If conn.State = ConnectionState.Open Then conn.Close()
-            conn.ConnectionString = "Server=KIERVEY-PC\SQLEXPRESS; database=maghanoy_library_lmsieti; Trusted_connection=true; MultipleActiveResultSets=true;"
+            conn.ConnectionString = "Server=DESKTOP-CLAUDE\SQLEXPRESS; database=maghanoy_library_lmsieti; Trusted_connection=true; MultipleActiveResultSets=true;"
             conn.Open()
             'MsgBox("Connected Successful")
         Catch ex As Exception

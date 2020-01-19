@@ -115,6 +115,7 @@ Public Class ucFacultyManagement
         OpenTransparentForm(Me)
         Dim add_faculty As New frmRegisterFaculty
         add_faculty.ShowDialog(Me)
+        FillGridView()
     End Sub
 
     Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
@@ -130,6 +131,7 @@ Public Class ucFacultyManagement
             End If
             If currentPage = totalPages Then
                 btnNext.Enabled = False
+                Exit Sub
             Else
                 btnNext.Enabled = True
             End If
@@ -150,16 +152,13 @@ Public Class ucFacultyManagement
             End If
             If currentPage = totalPages Then
                 btnNext.Enabled = False
+                Exit Sub
             Else
                 btnNext.Enabled = True
             End If
             pagingDS.Clear()
             pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
         End If
-    End Sub
-
-    Private Sub cmbEntries_SelectedIndexChanged(sender As Object, e As EventArgs)
-        FillGridView()
     End Sub
 
     Friend Sub FillGridView()

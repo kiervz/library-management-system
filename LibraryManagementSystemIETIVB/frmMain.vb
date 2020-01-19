@@ -75,7 +75,7 @@ Public Class frmMain
         movePanelSelector(btnAttendance)
         HideAllUserControl()
         UcAttendance1.Visible = True
-        UcAttendance1.GridView()
+        UcAttendance1.FillGridView()
         lblTitle.Text = "Attendance"
     End Sub
 
