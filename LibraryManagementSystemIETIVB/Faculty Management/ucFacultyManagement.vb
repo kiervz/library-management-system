@@ -60,10 +60,10 @@ Public Class ucFacultyManagement
             If xlRange.Cells(xlRow, 1).Text <> String.Empty Then
                 'If not already in the database 
                 If Not IfAlreadyExistInDB(xlRange.Cells(xlRow, 1).Text()) = True Then
+                    isFacultiesImporting = True
                     rowcount += 1
                     'The faculty information will add
                     AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text())
-                    dgvFaculties.Refresh()
                     txtImporting.Text = "Importing " & rowcount & " records"
                     txtPleasewait.Text = "please wait..."
                 End If
@@ -73,13 +73,19 @@ Public Class ucFacultyManagement
         xlWorkBook.Close()
         xlApp.Quit()
         Panel1.Hide()
-        FillGridView()
+        If isFacultiesImporting = True Then
+            FillGridView()
+            isFacultiesImporting = False
+        End If
         thread.Abort()
     End Sub
 
     Private Function IfAlreadyExistInDB(facultyID As String)
         Dim isAlreadyExist As Boolean = False
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "SELECT faculty_id FROM faculties WHERE faculty_id = '" + facultyID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
@@ -97,6 +103,9 @@ Public Class ucFacultyManagement
 
     Private Sub AddToDatabase(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date)
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
             cmd = New SqlCommand(str, conn)
             cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
@@ -171,6 +180,9 @@ Public Class ucFacultyManagement
 
     Friend Sub FillGridView()
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "SELECT COUNT(*) AS totalrow FROM faculties"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
@@ -184,6 +196,9 @@ Public Class ucFacultyManagement
             dr.Close()
             cmd.Dispose()
 
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "SELECT * FROM faculties"
             pagingAdapter = New SqlDataAdapter(str, conn)
             pagingDS = New DataSet()

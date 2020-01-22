@@ -13,7 +13,8 @@
     Public isSystemIDLE As Boolean = False
     Public isIDLEPasswordCorrect As Boolean = False
     Public idlePasswordAttempts As Integer = 0
-
+    Public isFacultiesImporting As Boolean = False
+    Public isStudentsImporting As Boolean = False
 
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent

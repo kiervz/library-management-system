@@ -61,11 +61,10 @@ Public Class ucStudentManagement
             If xlRange.Cells(xlRow, 1).Text <> String.Empty Then
                 'If not already in the database 
                 If Not IfAlreadyExistInDB(xlRange.Cells(xlRow, 1).Text()) = True Then
+                    isStudentsImporting = True
                     rowcount += 1
                     'The student information will add
                     AddToDatabase(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-                    dgvStudents.Rows.Add(rowcount, xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
-                    dgvStudents.Refresh()
                     txtImporting.Text = "Importing " & rowcount & " records"
                     txtPleasewait.Text = "please wait..."
                 End If
@@ -75,12 +74,18 @@ Public Class ucStudentManagement
         xlWorkBook.Close()
         xlApp.Quit()
         Panel1.Hide()
-        FillGridView()
+        If isStudentsImporting = True Then
+            FillGridView()
+            isStudentsImporting = False
+        End If
         thread.Abort()
     End Sub
 
     Friend Sub FillGridView()
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "SELECT COUNT(*) AS totalrow FROM students"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
@@ -93,6 +98,9 @@ Public Class ucStudentManagement
             End If
             dr.Close()
             cmd.Dispose()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
 
             str = "SELECT student_id, firstname, middlename, lastname, gender, birthday, course, year, section FROM students"
             pagingAdapter = New SqlDataAdapter(str, conn)
@@ -119,6 +127,9 @@ Public Class ucStudentManagement
     Private Function IfAlreadyExistInDB(studID As String)
         Dim isAlreadyExist As Boolean = False
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "SELECT student_id FROM students WHERE student_id = '" + studID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
@@ -128,6 +139,8 @@ Public Class ucStudentManagement
             Else
                 isAlreadyExist = False
             End If
+            dr.Close()
+            cmd.Dispose()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -193,6 +206,9 @@ Public Class ucStudentManagement
 
     Private Sub AddToDatabase(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date, course As String, year As String, section As String)
         Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
             cmd = New SqlCommand(str, conn)
             cmd.Parameters.AddWithValue("@student_id", studID)
@@ -205,6 +221,8 @@ Public Class ucStudentManagement
             cmd.Parameters.AddWithValue("@year", year)
             cmd.Parameters.AddWithValue("@section", section)
             cmd.ExecuteNonQuery()
+            cmd.Dispose()
+            dr.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

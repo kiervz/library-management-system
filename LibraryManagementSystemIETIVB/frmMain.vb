@@ -84,7 +84,9 @@ Public Class frmMain
         movePanelSelector(btnFacultyManagement)
         HideAllUserControl()
         UcFacultyManagement1.Visible = True
-        UcFacultyManagement1.FillGridView()
+        If isFacultiesImporting = False Then
+            UcFacultyManagement1.FillGridView()
+        End If
         lblTitle.Text = "Faculty Management"
     End Sub
 
@@ -100,7 +102,9 @@ Public Class frmMain
         HideAllUserControl()
         UcStudentManagement1.Visible = True
         lblTitle.Text = "Students Management"
-        UcStudentManagement1.FillGridView()
+        If isStudentsImporting = False Then
+            UcStudentManagement1.FillGridView()
+        End If
     End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
