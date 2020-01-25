@@ -56,6 +56,7 @@ Public Class frmMain
         UcMessages1.Visible = False
         UcReports1.Visible = False
         UcSettings1.Visible = False
+        UcFacultyManagement1.Visible = False
         UcStudentManagement1.Visible = False
         UcUserManagement1.Visible = False
     End Sub

@@ -36,7 +36,7 @@ Partial Class frmRegisterFaculty
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dtBday = New MetroFramework.Controls.MetroDateTime()
         Me.btnRegister = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFacultyID
@@ -181,33 +181,24 @@ Partial Class frmRegisterFaculty
         Me.btnRegister.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.White
         Me.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRegister.Location = New System.Drawing.Point(394, 420)
+        Me.btnRegister.Location = New System.Drawing.Point(368, 421)
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(113, 33)
+        Me.btnRegister.Size = New System.Drawing.Size(129, 33)
         Me.btnRegister.TabIndex = 6
         Me.btnRegister.Text = "REGISTER"
         Me.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRegister.UseVisualStyleBackColor = False
         '
-        'btnCancel
+        'btnClose
         '
-        Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(53, 420)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(113, 33)
-        Me.btnCancel.TabIndex = 7
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnClose.AutoSize = True
+        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(515, 20)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(62, 17)
+        Me.btnClose.TabIndex = 230
+        Me.btnClose.Text = "[ Close ]"
         '
         'frmRegisterFaculty
         '
@@ -215,7 +206,7 @@ Partial Class frmRegisterFaculty
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(591, 484)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.txtAge)
         Me.Controls.Add(Me.Label10)
@@ -254,5 +245,5 @@ Partial Class frmRegisterFaculty
     Private WithEvents Label10 As Label
     Friend WithEvents dtBday As MetroFramework.Controls.MetroDateTime
     Private WithEvents btnRegister As Button
-    Private WithEvents btnCancel As Button
+    Private WithEvents btnClose As Label
 End Class

@@ -36,7 +36,6 @@ Partial Class frmRegisterUser
         Me.lblConfirmPass = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.lblAnswer = New System.Windows.Forms.Label()
@@ -74,6 +73,7 @@ Partial Class frmRegisterUser
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
+        Me.btnClose = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,25 +240,6 @@ Partial Class frmRegisterUser
         Me.lblUsername.TabIndex = 174
         Me.lblUsername.Text = "Username:"
         '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(634, 655)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(186, 33)
-        Me.btnCancel.TabIndex = 17
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
         'btnRegister
         '
         Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
@@ -269,7 +250,7 @@ Partial Class frmRegisterUser
         Me.btnRegister.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.White
         Me.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRegister.Location = New System.Drawing.Point(634, 616)
+        Me.btnRegister.Location = New System.Drawing.Point(634, 636)
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(186, 33)
@@ -655,12 +636,23 @@ Partial Class frmRegisterUser
         Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.PopupNotifier1.TitleText = Nothing
         '
+        'btnClose
+        '
+        Me.btnClose.AutoSize = True
+        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(822, 20)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(62, 17)
+        Me.btnClose.TabIndex = 238
+        Me.btnClose.Text = "[ Close ]"
+        '
         'frmRegisterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 713)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label18)
@@ -692,7 +684,6 @@ Partial Class frmRegisterUser
         Me.Controls.Add(Me.cmbQuestion)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.btnRegister)
-        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.lblConfirmPass)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
@@ -737,7 +728,6 @@ Partial Class frmRegisterUser
     Private WithEvents lblConfirmPass As System.Windows.Forms.Label
     Private WithEvents lblPassword As System.Windows.Forms.Label
     Private WithEvents lblUsername As System.Windows.Forms.Label
-    Private WithEvents btnCancel As System.Windows.Forms.Button
     Private WithEvents btnRegister As System.Windows.Forms.Button
     Private WithEvents btnBrowse As System.Windows.Forms.Button
     Private WithEvents lblAnswer As System.Windows.Forms.Label
@@ -775,4 +765,5 @@ Partial Class frmRegisterUser
     Private WithEvents Label19 As System.Windows.Forms.Label
     Private WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
+    Private WithEvents btnClose As Label
 End Class

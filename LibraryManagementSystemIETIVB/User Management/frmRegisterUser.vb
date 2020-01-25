@@ -59,11 +59,6 @@ Public Class frmRegisterUser
         AN()
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        CloseTransparentForm()
-        Me.Hide()
-    End Sub
-
     'if the RegisterUser form is closed the transparent form will be closed as well
     Private Sub frmRegisterUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         CloseTransparentForm
@@ -258,4 +253,8 @@ Public Class frmRegisterUser
         ValidatePassword(txtConfirmPass.Text)
     End Sub
 
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        CloseTransparentForm()
+        Me.Hide()
+    End Sub
 End Class

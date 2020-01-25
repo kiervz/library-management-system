@@ -50,6 +50,7 @@ Public Class ucFacultyManagement
         FillGridView()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
+
     End Sub
 
     Private Sub LoadData()
@@ -206,13 +207,14 @@ Public Class ucFacultyManagement
 
             dgvFaculties.DataSource = pagingDS
             dgvFaculties.DataMember = "faculties_table"
+            dgvFaculties.Columns(0).HeaderText = "Faculty ID"
             dgvFaculties.Columns(0).Width = 110
             dgvFaculties.Columns(1).Width = 230
             dgvFaculties.Columns(2).Width = 230
             dgvFaculties.Columns(3).Width = 230
             dgvFaculties.Columns(4).Width = 110
             dgvFaculties.Columns(5).Width = 125
-            dgvFaculties.Columns(0).HeaderText = "Faculty ID"
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "POTAAA")
         End Try

@@ -209,20 +209,23 @@ Public Class ucStudentManagement
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
-            cmd = New SqlCommand(str, conn)
-            cmd.Parameters.AddWithValue("@student_id", studID)
-            cmd.Parameters.AddWithValue("@firstname", firstname)
-            cmd.Parameters.AddWithValue("@middlename", middlename)
-            cmd.Parameters.AddWithValue("@lastname", lastname)
-            cmd.Parameters.AddWithValue("@gender", gender)
-            cmd.Parameters.AddWithValue("@birthday", birthday)
-            cmd.Parameters.AddWithValue("@course", course)
-            cmd.Parameters.AddWithValue("@year", year)
-            cmd.Parameters.AddWithValue("@section", section)
-            cmd.ExecuteNonQuery()
-            cmd.Dispose()
-            dr.Close()
+            If Not studID = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Or course = "" Or year = "" Or year Then
+                str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@student_id", studID)
+                cmd.Parameters.AddWithValue("@firstname", firstname)
+                cmd.Parameters.AddWithValue("@middlename", middlename)
+                cmd.Parameters.AddWithValue("@lastname", lastname)
+                cmd.Parameters.AddWithValue("@gender", gender)
+                cmd.Parameters.AddWithValue("@birthday", birthday)
+                cmd.Parameters.AddWithValue("@course", course)
+                cmd.Parameters.AddWithValue("@year", year)
+                cmd.Parameters.AddWithValue("@section", section)
+                cmd.ExecuteNonQuery()
+                cmd.Dispose()
+                dr.Close()
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

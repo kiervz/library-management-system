@@ -22,30 +22,31 @@ Partial Class ucFacultyManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucFacultyManagement))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucFacultyManagement))
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
-        Me.btnAddFaculty = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnImportFaculties = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnPrev = New System.Windows.Forms.Button()
-        Me.btnNext = New System.Windows.Forms.Button()
         Me.lblPages = New System.Windows.Forms.Label()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
         Me.txtCurrentPage = New System.Windows.Forms.TextBox()
         Me.dgvFaculties = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrev = New System.Windows.Forms.Button()
+        Me.btnAddFaculty = New System.Windows.Forms.Button()
+        Me.btnImportFaculties = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbSearchBy
@@ -54,10 +55,10 @@ Partial Class ucFacultyManagement
         Me.cmbSearchBy.FormattingEnabled = True
         Me.cmbSearchBy.ItemHeight = 19
         Me.cmbSearchBy.Items.AddRange(New Object() {"Student ID", "Surname", "Firstname", "Middlename", "Course", "Year", "Section"})
-        Me.cmbSearchBy.Location = New System.Drawing.Point(38, 56)
+        Me.cmbSearchBy.Location = New System.Drawing.Point(10, 35)
         Me.cmbSearchBy.Name = "cmbSearchBy"
         Me.cmbSearchBy.PromptText = "Search By"
-        Me.cmbSearchBy.Size = New System.Drawing.Size(116, 25)
+        Me.cmbSearchBy.Size = New System.Drawing.Size(132, 25)
         Me.cmbSearchBy.Style = MetroFramework.MetroColorStyle.Teal
         Me.cmbSearchBy.TabIndex = 69
         Me.cmbSearchBy.UseSelectable = True
@@ -77,7 +78,7 @@ Partial Class ucFacultyManagement
         Me.txtSearch.CustomButton.UseSelectable = True
         Me.txtSearch.CustomButton.Visible = False
         Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(160, 56)
+        Me.txtSearch.Location = New System.Drawing.Point(152, 35)
         Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -94,33 +95,13 @@ Partial Class ucFacultyManagement
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'btnAddFaculty
-        '
-        Me.btnAddFaculty.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddFaculty.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddFaculty.FlatAppearance.BorderSize = 0
-        Me.btnAddFaculty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddFaculty.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddFaculty.ForeColor = System.Drawing.Color.White
-        Me.btnAddFaculty.Image = CType(resources.GetObject("btnAddFaculty.Image"), System.Drawing.Image)
-        Me.btnAddFaculty.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddFaculty.Location = New System.Drawing.Point(913, 56)
-        Me.btnAddFaculty.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAddFaculty.Name = "btnAddFaculty"
-        Me.btnAddFaculty.Size = New System.Drawing.Size(130, 35)
-        Me.btnAddFaculty.TabIndex = 67
-        Me.btnAddFaculty.Text = " ADD FACULTY"
-        Me.btnAddFaculty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAddFaculty.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.Panel1.Controls.Add(Me.txtPleasewait)
         Me.Panel1.Controls.Add(Me.txtImporting)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(443, 255)
+        Me.Panel1.Location = New System.Drawing.Point(422, 225)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(238, 128)
         Me.Panel1.TabIndex = 66
@@ -129,11 +110,13 @@ Partial Class ucFacultyManagement
         '
         Me.txtPleasewait.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.txtPleasewait.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPleasewait.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtPleasewait.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtPleasewait.ForeColor = System.Drawing.Color.White
         Me.txtPleasewait.Location = New System.Drawing.Point(2, 103)
         Me.txtPleasewait.Multiline = True
         Me.txtPleasewait.Name = "txtPleasewait"
+        Me.txtPleasewait.ReadOnly = True
         Me.txtPleasewait.Size = New System.Drawing.Size(235, 22)
         Me.txtPleasewait.TabIndex = 2
         Me.txtPleasewait.Text = "Please wait..."
@@ -143,92 +126,27 @@ Partial Class ucFacultyManagement
         '
         Me.txtImporting.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.txtImporting.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtImporting.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtImporting.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtImporting.ForeColor = System.Drawing.Color.White
         Me.txtImporting.Location = New System.Drawing.Point(3, 79)
         Me.txtImporting.Multiline = True
         Me.txtImporting.Name = "txtImporting"
+        Me.txtImporting.ReadOnly = True
         Me.txtImporting.Size = New System.Drawing.Size(235, 22)
         Me.txtImporting.TabIndex = 1
         Me.txtImporting.Text = "Importing 0 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'btnImportFaculties
-        '
-        Me.btnImportFaculties.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportFaculties.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnImportFaculties.FlatAppearance.BorderSize = 0
-        Me.btnImportFaculties.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportFaculties.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportFaculties.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImportFaculties.ForeColor = System.Drawing.Color.White
-        Me.btnImportFaculties.Image = CType(resources.GetObject("btnImportFaculties.Image"), System.Drawing.Image)
-        Me.btnImportFaculties.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportFaculties.Location = New System.Drawing.Point(747, 56)
-        Me.btnImportFaculties.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnImportFaculties.Name = "btnImportFaculties"
-        Me.btnImportFaculties.Size = New System.Drawing.Size(160, 35)
-        Me.btnImportFaculties.TabIndex = 65
-        Me.btnImportFaculties.Text = " IMPORT FACULTIES"
-        Me.btnImportFaculties.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnImportFaculties.UseVisualStyleBackColor = False
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'btnPrev
-        '
-        Me.btnPrev.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrev.FlatAppearance.BorderSize = 0
-        Me.btnPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrev.ForeColor = System.Drawing.Color.White
-        Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
-        Me.btnPrev.Location = New System.Drawing.Point(471, 583)
-        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(33, 30)
-        Me.btnPrev.TabIndex = 70
-        Me.btnPrev.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPrev.UseVisualStyleBackColor = False
-        '
-        'btnNext
-        '
-        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNext.FlatAppearance.BorderSize = 0
-        Me.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
-        Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(593, 583)
-        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(33, 30)
-        Me.btnNext.TabIndex = 71
-        Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNext.UseVisualStyleBackColor = False
         '
         'lblPages
         '
         Me.lblPages.AutoSize = True
         Me.lblPages.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPages.Location = New System.Drawing.Point(854, 590)
+        Me.lblPages.Location = New System.Drawing.Point(854, 556)
         Me.lblPages.Name = "lblPages"
         Me.lblPages.Size = New System.Drawing.Size(48, 17)
         Me.lblPages.TabIndex = 72
@@ -238,7 +156,7 @@ Partial Class ucFacultyManagement
         '
         Me.lblShowingNentries.AutoSize = True
         Me.lblShowingNentries.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShowingNentries.Location = New System.Drawing.Point(44, 590)
+        Me.lblShowingNentries.Location = New System.Drawing.Point(42, 556)
         Me.lblShowingNentries.Name = "lblShowingNentries"
         Me.lblShowingNentries.Size = New System.Drawing.Size(193, 17)
         Me.lblShowingNentries.TabIndex = 77
@@ -250,7 +168,7 @@ Partial Class ucFacultyManagement
         Me.txtCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCurrentPage.Enabled = False
         Me.txtCurrentPage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentPage.Location = New System.Drawing.Point(511, 589)
+        Me.txtCurrentPage.Location = New System.Drawing.Point(511, 555)
         Me.txtCurrentPage.Name = "txtCurrentPage"
         Me.txtCurrentPage.Size = New System.Drawing.Size(77, 20)
         Me.txtCurrentPage.TabIndex = 78
@@ -292,7 +210,7 @@ Partial Class ucFacultyManagement
         Me.dgvFaculties.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFaculties.EnableHeadersVisualStyles = False
         Me.dgvFaculties.GridColor = System.Drawing.Color.White
-        Me.dgvFaculties.Location = New System.Drawing.Point(37, 96)
+        Me.dgvFaculties.Location = New System.Drawing.Point(10, 66)
         Me.dgvFaculties.MultiSelect = False
         Me.dgvFaculties.Name = "dgvFaculties"
         Me.dgvFaculties.ReadOnly = True
@@ -319,8 +237,101 @@ Partial Class ucFacultyManagement
         Me.dgvFaculties.ShowCellErrors = False
         Me.dgvFaculties.ShowEditingIcon = False
         Me.dgvFaculties.ShowRowErrors = False
-        Me.dgvFaculties.Size = New System.Drawing.Size(1066, 483)
+        Me.dgvFaculties.Size = New System.Drawing.Size(1116, 469)
         Me.dgvFaculties.TabIndex = 90
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Column1"
+        Me.DataGridViewImageColumn1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'btnNext
+        '
+        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnNext.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNext.FlatAppearance.BorderSize = 0
+        Me.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNext.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.ForeColor = System.Drawing.Color.White
+        Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
+        Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNext.Location = New System.Drawing.Point(593, 549)
+        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(33, 30)
+        Me.btnNext.TabIndex = 71
+        Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNext.UseVisualStyleBackColor = False
+        '
+        'btnPrev
+        '
+        Me.btnPrev.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrev.FlatAppearance.BorderSize = 0
+        Me.btnPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrev.ForeColor = System.Drawing.Color.White
+        Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
+        Me.btnPrev.Location = New System.Drawing.Point(471, 549)
+        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(33, 30)
+        Me.btnPrev.TabIndex = 70
+        Me.btnPrev.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPrev.UseVisualStyleBackColor = False
+        '
+        'btnAddFaculty
+        '
+        Me.btnAddFaculty.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddFaculty.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddFaculty.FlatAppearance.BorderSize = 0
+        Me.btnAddFaculty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddFaculty.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddFaculty.ForeColor = System.Drawing.Color.White
+        Me.btnAddFaculty.Image = CType(resources.GetObject("btnAddFaculty.Image"), System.Drawing.Image)
+        Me.btnAddFaculty.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddFaculty.Location = New System.Drawing.Point(961, 25)
+        Me.btnAddFaculty.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAddFaculty.Name = "btnAddFaculty"
+        Me.btnAddFaculty.Size = New System.Drawing.Size(130, 35)
+        Me.btnAddFaculty.TabIndex = 67
+        Me.btnAddFaculty.Text = " ADD FACULTY"
+        Me.btnAddFaculty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddFaculty.UseVisualStyleBackColor = False
+        '
+        'btnImportFaculties
+        '
+        Me.btnImportFaculties.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportFaculties.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImportFaculties.FlatAppearance.BorderSize = 0
+        Me.btnImportFaculties.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportFaculties.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImportFaculties.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImportFaculties.ForeColor = System.Drawing.Color.White
+        Me.btnImportFaculties.Image = CType(resources.GetObject("btnImportFaculties.Image"), System.Drawing.Image)
+        Me.btnImportFaculties.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImportFaculties.Location = New System.Drawing.Point(794, 25)
+        Me.btnImportFaculties.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnImportFaculties.Name = "btnImportFaculties"
+        Me.btnImportFaculties.Size = New System.Drawing.Size(160, 35)
+        Me.btnImportFaculties.TabIndex = 65
+        Me.btnImportFaculties.Text = " IMPORT FACULTIES"
+        Me.btnImportFaculties.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnImportFaculties.UseVisualStyleBackColor = False
         '
         'ucFacultyManagement
         '
@@ -338,11 +349,11 @@ Partial Class ucFacultyManagement
         Me.Controls.Add(Me.btnImportFaculties)
         Me.Controls.Add(Me.dgvFaculties)
         Me.Name = "ucFacultyManagement"
-        Me.Size = New System.Drawing.Size(1126, 619)
+        Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -363,4 +374,5 @@ Partial Class ucFacultyManagement
     Friend WithEvents lblShowingNentries As Label
     Friend WithEvents txtCurrentPage As TextBox
     Friend WithEvents dgvFaculties As DataGridView
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
 End Class

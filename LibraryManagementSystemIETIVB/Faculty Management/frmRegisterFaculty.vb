@@ -1,10 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmRegisterFaculty
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        CloseTransparentForm()
-        Me.Hide()
-    End Sub
+
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFacultyID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 Then
@@ -62,4 +59,9 @@ Public Class frmRegisterFaculty
         txtAge.Text = age
         Return age
     End Function
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        CloseTransparentForm()
+        Me.Hide()
+    End Sub
 End Class

@@ -94,7 +94,7 @@ Public Class ucAttendance
 
     Friend Sub FillGridView()
         Try
-            str = "SELECT COUNT(*) AS totalrow FROM attendance"
+            str = "SELECT COUNT(*) AS totalrow FROM attendance WHERE date = '" + dtDate.Value + "' "
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -107,25 +107,25 @@ Public Class ucAttendance
             dr.Close()
             cmd.Dispose()
 
-            str = "SELECT id_no, firstname, middlename, lastname, type, date, time_in, time_out FROM attendance WHERE date = '" + dtBday.Value + "' ORDER BY time_out ASC"
+            str = "SELECT id_no, firstname, middlename, lastname, type, date, time_in, time_out FROM attendance WHERE date = '" + dtDate.Value + "' ORDER BY time_out ASC"
             pagingAdapter = New SqlDataAdapter(str, conn)
             pagingDS = New DataSet
             pagingAdapter.Fill(pagingDS, scrollVal, 50, "attendance_table")
 
             dgvAttendance.DataSource = pagingDS
             dgvAttendance.DataMember = "attendance_table"
-            dgvAttendance.Columns(0).Width = 95
+            dgvAttendance.Columns(0).Width = 110
             dgvAttendance.Columns(1).Width = 180
             dgvAttendance.Columns(2).Width = 180
             dgvAttendance.Columns(3).Width = 180
-            dgvAttendance.Columns(4).Width = 90
+            dgvAttendance.Columns(4).Width = 100
             dgvAttendance.Columns(0).HeaderText = "ID No"
         Catch ex As Exception
             MessageBox.Show(ex.Message, "pagination")
         End Try
     End Sub
 
-    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
+    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtDate.ValueChanged
         FillGridView()
     End Sub
 
