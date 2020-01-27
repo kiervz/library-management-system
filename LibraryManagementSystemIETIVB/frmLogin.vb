@@ -75,7 +75,7 @@ Public Class frmLogin
                     Attempt()
                 End If
             Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error")
+                MessageBox.Show(ex.Message, "Login")
             End Try
 
         End If
@@ -196,4 +196,10 @@ Public Class frmLogin
         End If
     End Sub
 
+    Private Sub frmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F12 Then
+            Dim db_config As New frmDatabaseConfiguration
+            db_config.ShowDialog(Me)
+        End If
+    End Sub
 End Class

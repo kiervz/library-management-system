@@ -22,24 +22,18 @@ Partial Class ucStudentManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudentManagement))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudentManagement))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.panelWaitDGV = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
-        Me.btnAddStudent = New System.Windows.Forms.Button()
-        Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
         Me.dgvStudents = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,19 +44,21 @@ Partial Class ucStudentManagement
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnAddStudent = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
-        Me.panelWaitDGV.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.panelWaitDGV)
         Me.Panel1.Controls.Add(Me.txtPleasewait)
         Me.Panel1.Controls.Add(Me.txtImporting)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -70,40 +66,6 @@ Partial Class ucStudentManagement
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(238, 128)
         Me.Panel1.TabIndex = 59
-        '
-        'panelWaitDGV
-        '
-        Me.panelWaitDGV.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.panelWaitDGV.Controls.Add(Me.TextBox1)
-        Me.panelWaitDGV.Controls.Add(Me.PictureBox2)
-        Me.panelWaitDGV.Location = New System.Drawing.Point(17, 7)
-        Me.panelWaitDGV.Name = "panelWaitDGV"
-        Me.panelWaitDGV.Size = New System.Drawing.Size(205, 115)
-        Me.panelWaitDGV.TabIndex = 60
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(3, 79)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(199, 22)
-        Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Please wait..."
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(54, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
         '
         'txtPleasewait
         '
@@ -132,16 +94,6 @@ Partial Class ucStudentManagement
         Me.txtImporting.TabIndex = 1
         Me.txtImporting.Text = "Importing 0 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'OpenFileDialog1
         '
@@ -192,46 +144,6 @@ Partial Class ucStudentManagement
         Me.txtSearch.UseStyleColors = True
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btnAddStudent
-        '
-        Me.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddStudent.FlatAppearance.BorderSize = 0
-        Me.btnAddStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddStudent.ForeColor = System.Drawing.Color.White
-        Me.btnAddStudent.Image = CType(resources.GetObject("btnAddStudent.Image"), System.Drawing.Image)
-        Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddStudent.Location = New System.Drawing.Point(961, 25)
-        Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(130, 35)
-        Me.btnAddStudent.TabIndex = 60
-        Me.btnAddStudent.Text = " ADD STUDENT"
-        Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAddStudent.UseVisualStyleBackColor = False
-        '
-        'btnImportStudent
-        '
-        Me.btnImportStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnImportStudent.FlatAppearance.BorderSize = 0
-        Me.btnImportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImportStudent.ForeColor = System.Drawing.Color.White
-        Me.btnImportStudent.Image = CType(resources.GetObject("btnImportStudent.Image"), System.Drawing.Image)
-        Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportStudent.Location = New System.Drawing.Point(799, 25)
-        Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnImportStudent.Name = "btnImportStudent"
-        Me.btnImportStudent.Size = New System.Drawing.Size(156, 35)
-        Me.btnImportStudent.TabIndex = 58
-        Me.btnImportStudent.Text = " IMPORT STUDENTS"
-        Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnImportStudent.UseVisualStyleBackColor = False
         '
         'lblShowingNentries
         '
@@ -365,6 +277,74 @@ Partial Class ucStudentManagement
         Me.Column8.ReadOnly = True
         Me.Column8.Width = 90
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Edit"
+        Me.DataGridViewImageColumn1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewImageColumn1.Width = 50
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.HeaderText = "Delete"
+        Me.DataGridViewImageColumn2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.delete
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewImageColumn2.Width = 50
+        '
+        'btnAddStudent
+        '
+        Me.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddStudent.FlatAppearance.BorderSize = 0
+        Me.btnAddStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddStudent.ForeColor = System.Drawing.Color.White
+        Me.btnAddStudent.Image = CType(resources.GetObject("btnAddStudent.Image"), System.Drawing.Image)
+        Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddStudent.Location = New System.Drawing.Point(961, 25)
+        Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAddStudent.Name = "btnAddStudent"
+        Me.btnAddStudent.Size = New System.Drawing.Size(130, 35)
+        Me.btnAddStudent.TabIndex = 60
+        Me.btnAddStudent.Text = " ADD STUDENT"
+        Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddStudent.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'btnImportStudent
+        '
+        Me.btnImportStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportStudent.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImportStudent.FlatAppearance.BorderSize = 0
+        Me.btnImportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnImportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImportStudent.ForeColor = System.Drawing.Color.White
+        Me.btnImportStudent.Image = CType(resources.GetObject("btnImportStudent.Image"), System.Drawing.Image)
+        Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImportStudent.Location = New System.Drawing.Point(799, 25)
+        Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnImportStudent.Name = "btnImportStudent"
+        Me.btnImportStudent.Size = New System.Drawing.Size(156, 35)
+        Me.btnImportStudent.TabIndex = 58
+        Me.btnImportStudent.Text = " IMPORT STUDENTS"
+        Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnImportStudent.UseVisualStyleBackColor = False
+        '
         'Column9
         '
         Me.Column9.HeaderText = "Edit"
@@ -400,11 +380,8 @@ Partial Class ucStudentManagement
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.panelWaitDGV.ResumeLayout(False)
-        Me.panelWaitDGV.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -421,9 +398,6 @@ Partial Class ucStudentManagement
     Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblShowingNentries As Label
     Friend WithEvents dgvStudents As DataGridView
-    Friend WithEvents panelWaitDGV As Panel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -434,4 +408,6 @@ Partial Class ucStudentManagement
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents Column10 As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
 End Class

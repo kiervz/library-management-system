@@ -6,7 +6,6 @@ Public Class ucAttendance
 
     Private Sub ucAttendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        FillGridView()
         Timer1.Start()
     End Sub
 
@@ -44,7 +43,7 @@ Public Class ucAttendance
 
             If dr.Read Then
                 rowCounnt = dr("totalrow")
-                lblShowingNentries.Text = "Showing 1 to " + CStr(50) + " of " + CStr(rowCounnt) + " entries"
+                lblShowingNentries.Text = "Total Attendance Today: " + CStr(rowCounnt)
             End If
             dr.Close()
             cmd.Dispose()

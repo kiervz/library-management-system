@@ -6,7 +6,6 @@ Public Class ucBookManagement
 
     Private Sub ucBookManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        FillGridView()
     End Sub
 
     Private Sub btnAddBook_Click(sender As Object, e As EventArgs) Handles btnAddBook.Click
@@ -28,7 +27,7 @@ Public Class ucBookManagement
 
             If dr.Read Then
                 rowCounnt = dr("totalrow")
-                lblShowingNentries.Text = "Showing 1 to " + CStr(50) + " of " + CStr(rowCounnt) + " entries"
+                lblShowingNentries.Text = "Total Books Registered: " + CStr(rowCounnt)
             End If
             dr.Close()
             cmd.Dispose()
@@ -46,7 +45,7 @@ Public Class ucBookManagement
                 dgvBooks.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("series_date"), dr("rack_no"))
             End While
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "BOOK")
+            MessageBox.Show(ex.Message, "BOOK 1")
         End Try
     End Sub
 

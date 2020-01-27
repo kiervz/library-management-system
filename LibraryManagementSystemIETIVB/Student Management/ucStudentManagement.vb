@@ -44,7 +44,6 @@ Public Class ucStudentManagement
         ConnDB()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
-        panelWaitDGV.Hide()
     End Sub
 
     Private Sub LoadData()

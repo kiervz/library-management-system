@@ -11,12 +11,10 @@ Public Class ucUserManagement
 
     Private Sub ucUserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        FillDGV()
-        FillDGVArchived()
         Timer1.Start()
     End Sub
 
-    Public Sub FillDGV()
+    Friend Sub FillDGV()
         Try
 
             If userID = "UID00001" Then
@@ -47,7 +45,7 @@ Public Class ucUserManagement
         End Try
     End Sub
 
-    Public Sub FillDGVArchived()
+    Friend Sub FillDGVArchived()
         Try
             cmd = New SqlCommand("SELECT * FROM users WHERE status = '0'", conn)
             dr = cmd.ExecuteReader

@@ -9,11 +9,6 @@ Public Class frmUpdateUser
         Me._user_id = user_id
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        CloseTransparentForm()
-        Me.Hide()
-    End Sub
-
     'if the RegisterUser form is close the transparent form will be closed as well
     Private Sub frmUpdateUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         CloseTransparentForm()
@@ -131,4 +126,8 @@ Public Class frmUpdateUser
         KeyPressLetterOnly(e)
     End Sub
 
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        CloseTransparentForm()
+        Me.Hide()
+    End Sub
 End Class

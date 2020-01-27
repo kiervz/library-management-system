@@ -39,7 +39,6 @@ Partial Class frmUpdateUser
         Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtMiddlename = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -49,6 +48,7 @@ Partial Class frmUpdateUser
         Me.Label12 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -254,33 +254,14 @@ Partial Class frmUpdateUser
         Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdate.Location = New System.Drawing.Point(705, 435)
+        Me.btnUpdate.Location = New System.Drawing.Point(634, 426)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(0)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(115, 33)
+        Me.btnUpdate.Size = New System.Drawing.Size(186, 33)
         Me.btnUpdate.TabIndex = 205
         Me.btnUpdate.Text = "UPDATE"
         Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(587, 435)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(109, 33)
-        Me.btnCancel.TabIndex = 204
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'txtMiddlename
         '
@@ -367,12 +348,23 @@ Partial Class frmUpdateUser
         Me.Label13.TabIndex = 213
         Me.Label13.Text = "Note: All fields with asterisk are required"
         '
+        'btnClose
+        '
+        Me.btnClose.AutoSize = True
+        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(824, 17)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(62, 17)
+        Me.btnClose.TabIndex = 239
+        Me.btnClose.Text = "[ Close ]"
+        '
         'frmUpdateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 505)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
@@ -382,7 +374,6 @@ Partial Class frmUpdateUser
         Me.Controls.Add(Me.txtMiddlename)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.pbProfile)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.txtPhone)
@@ -428,7 +419,6 @@ Partial Class frmUpdateUser
     Friend WithEvents pbProfile As System.Windows.Forms.PictureBox
     Private WithEvents btnBrowse As System.Windows.Forms.Button
     Private WithEvents btnUpdate As System.Windows.Forms.Button
-    Private WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents txtMiddlename As System.Windows.Forms.TextBox
     Private WithEvents Label7 As System.Windows.Forms.Label
     Private WithEvents Label8 As System.Windows.Forms.Label
@@ -438,4 +428,5 @@ Partial Class frmUpdateUser
     Private WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Private WithEvents Label13 As System.Windows.Forms.Label
+    Private WithEvents btnClose As Label
 End Class

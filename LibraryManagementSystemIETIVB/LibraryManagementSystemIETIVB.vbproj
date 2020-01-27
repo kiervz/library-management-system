@@ -104,6 +104,12 @@
     <Compile Include="Faculty Management\frmRegisterFaculty.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDatabaseConfiguration.Designer.vb">
+      <DependentUpon>frmDatabaseConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPasswordConfirmation.Designer.vb">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </Compile>
@@ -258,6 +264,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Faculty Management\frmRegisterFaculty.resx">
       <DependentUpon>frmRegisterFaculty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatabaseConfiguration.resx">
+      <DependentUpon>frmDatabaseConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordConfirmation.resx">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>

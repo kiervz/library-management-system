@@ -5,6 +5,9 @@ Public Class frmMain
 
 
     Public Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If conn.State = ConnectionState.Closed Then
+            conn.Open()
+        End If
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
         idle.Start()
@@ -85,9 +88,7 @@ Public Class frmMain
         movePanelSelector(btnFacultyManagement)
         HideAllUserControl()
         UcFacultyManagement1.Visible = True
-        If isFacultiesImporting = False Then
-            UcFacultyManagement1.FillGridView()
-        End If
+        UcFacultyManagement1.FillGridView()
         lblTitle.Text = "Faculty Management"
     End Sub
 
@@ -95,6 +96,7 @@ Public Class frmMain
         movePanelSelector(btnBookManagement)
         HideAllUserControl()
         UcBookManagement1.Visible = True
+        UcBookManagement1.FillGridView()
         lblTitle.Text = "Books Management"
     End Sub
 

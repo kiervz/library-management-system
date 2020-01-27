@@ -130,7 +130,7 @@ Public Class ucFacultyManagement
 
             If dr.Read Then
                 rowCounnt = dr("totalrow")
-                lblShowingNentries.Text = "Showing 1 to " + CStr(50) + " of " + CStr(rowCounnt) + " entries"
+                lblShowingNentries.Text = "Total Faculties Registered: " + CStr(rowCounnt)
             End If
             dr.Close()
             cmd.Dispose()
