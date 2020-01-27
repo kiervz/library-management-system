@@ -13,13 +13,7 @@ Public Class ucFacultyManagement
     Dim xlRow As Integer
     Dim strDestination As String
 
-    Dim pagingAdapter As SqlDataAdapter
-    Dim pagingDS As DataSet
-    Dim scrollVal As Integer
     Dim rowCounnt As Integer
-    Dim totalPages As Integer
-    Dim currentPage As Integer = 1
-
 
     Private Sub btnImportFaculties_Click(sender As Object, e As EventArgs) Handles btnImportFaculties.Click
         Try
@@ -47,10 +41,8 @@ Public Class ucFacultyManagement
     Private Sub ucFacultyManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         'cmbEntries.SelectedIndex = 0
-        FillGridView()
         CheckForIllegalCrossThreadCalls = False
         Panel1.Hide()
-
     End Sub
 
     Private Sub LoadData()
@@ -74,10 +66,7 @@ Public Class ucFacultyManagement
         xlWorkBook.Close()
         xlApp.Quit()
         Panel1.Hide()
-        If isFacultiesImporting = True Then
-            FillGridView()
-            isFacultiesImporting = False
-        End If
+        FillGridView()
         thread.Abort()
     End Sub
 
@@ -102,20 +91,22 @@ Public Class ucFacultyManagement
         Return isAlreadyExist
     End Function
 
-    Private Sub AddToDatabase(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As Date)
+    Private Sub AddToDatabase(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String)
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
-            cmd = New SqlCommand(str, conn)
-            cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
-            cmd.Parameters.AddWithValue("@firstname", firstname)
-            cmd.Parameters.AddWithValue("@middlename", middlename)
-            cmd.Parameters.AddWithValue("@lastname", lastname)
-            cmd.Parameters.AddWithValue("@gender", gender)
-            cmd.Parameters.AddWithValue("@birthday", birthday)
-            cmd.ExecuteNonQuery()
+            If Not faculty_id = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Then
+                str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
+                cmd.Parameters.AddWithValue("@firstname", firstname)
+                cmd.Parameters.AddWithValue("@middlename", middlename)
+                cmd.Parameters.AddWithValue("@lastname", lastname)
+                cmd.Parameters.AddWithValue("@gender", gender)
+                cmd.Parameters.AddWithValue("@birthday", birthday)
+                cmd.ExecuteNonQuery()
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -126,57 +117,6 @@ Public Class ucFacultyManagement
         Dim add_faculty As New frmRegisterFaculty
         add_faculty.ShowDialog(Me)
         FillGridView()
-    End Sub
-
-    Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
-        If rowCounnt > 0 Then
-            scrollVal = scrollVal - 50
-            If scrollVal <= 0 Then
-                scrollVal = 0
-            End If
-
-            If currentPage > 1 Then
-                currentPage -= 1
-                txtCurrentPage.Text = "Page " + CStr(currentPage)
-            End If
-
-            If Not totalPages = 1 Then
-                pagingDS.Clear()
-                pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
-            End If
-
-            If currentPage = totalPages Then
-                btnNext.Enabled = False
-                Exit Sub
-            Else
-                btnNext.Enabled = True
-            End If
-        End If
-    End Sub
-
-    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        If rowCounnt > 0 Then
-            scrollVal = scrollVal + 50
-            If scrollVal >= rowCounnt Then
-                scrollVal = rowCounnt - 50
-            End If
-            If currentPage < totalPages Then
-                currentPage += 1
-                txtCurrentPage.Text = "Page " + CStr(currentPage)
-            End If
-
-            If Not totalPages = 1 Then
-                pagingDS.Clear()
-                pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
-            End If
-
-            If currentPage = totalPages Then
-                btnNext.Enabled = False
-                Exit Sub
-            Else
-                btnNext.Enabled = True
-            End If
-        End If
     End Sub
 
     Friend Sub FillGridView()
@@ -190,8 +130,6 @@ Public Class ucFacultyManagement
 
             If dr.Read Then
                 rowCounnt = dr("totalrow")
-                totalPages = Math.Ceiling(rowCounnt / 50)
-                lblPages.Text = "Total Pages " + CStr(totalPages)
                 lblShowingNentries.Text = "Showing 1 to " + CStr(50) + " of " + CStr(rowCounnt) + " entries"
             End If
             dr.Close()
@@ -200,23 +138,21 @@ Public Class ucFacultyManagement
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
+
             str = "SELECT * FROM faculties"
-            pagingAdapter = New SqlDataAdapter(str, conn)
-            pagingDS = New DataSet()
-            pagingAdapter.Fill(pagingDS, scrollVal, 50, "faculties_table")
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
 
-            dgvFaculties.DataSource = pagingDS
-            dgvFaculties.DataMember = "faculties_table"
-            dgvFaculties.Columns(0).HeaderText = "Faculty ID"
-            dgvFaculties.Columns(0).Width = 110
-            dgvFaculties.Columns(1).Width = 230
-            dgvFaculties.Columns(2).Width = 230
-            dgvFaculties.Columns(3).Width = 230
-            dgvFaculties.Columns(4).Width = 110
-            dgvFaculties.Columns(5).Width = 125
+            dgvFaculties.Rows.Clear()
 
+            While dr.Read
+                dgvFaculties.Rows.Add(dr("faculty_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), CDate(dr("birthday")).ToShortDateString())
+            End While
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "POTAAA")
+            MessageBox.Show(ex.Message, "Faculty Gridview")
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 

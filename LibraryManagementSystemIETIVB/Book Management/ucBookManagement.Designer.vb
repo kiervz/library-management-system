@@ -29,14 +29,20 @@ Partial Class ucBookManagement
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucBookManagement))
         Me.dgvBooks = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
-        Me.txtCurrentPage = New System.Windows.Forms.TextBox()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
-        Me.lblPages = New System.Windows.Forms.Label()
         Me.btnAddBook = New System.Windows.Forms.Button()
-        Me.btnNext = New System.Windows.Forms.Button()
-        Me.btnPrev = New System.Windows.Forms.Button()
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,6 +71,7 @@ Partial Class ucBookManagement
         Me.dgvBooks.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBooks.ColumnHeadersHeight = 28
         Me.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBooks.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!)
@@ -102,8 +109,82 @@ Partial Class ucBookManagement
         Me.dgvBooks.ShowCellErrors = False
         Me.dgvBooks.ShowEditingIcon = False
         Me.dgvBooks.ShowRowErrors = False
-        Me.dgvBooks.Size = New System.Drawing.Size(1106, 469)
+        Me.dgvBooks.Size = New System.Drawing.Size(1113, 469)
         Me.dgvBooks.TabIndex = 90
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 80
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "ISBN"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Title"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 300
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Author"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 150
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Publisher"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 110
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Category"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Series Date"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 80
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Rack No"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 70
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Edit"
+        Me.Column9.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column9.Width = 50
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Delete"
+        Me.Column10.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.delete
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column10.Width = 50
         '
         'cmbSearchBy
         '
@@ -151,19 +232,6 @@ Partial Class ucBookManagement
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'txtCurrentPage
-        '
-        Me.txtCurrentPage.BackColor = System.Drawing.Color.White
-        Me.txtCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCurrentPage.Enabled = False
-        Me.txtCurrentPage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentPage.Location = New System.Drawing.Point(511, 555)
-        Me.txtCurrentPage.Name = "txtCurrentPage"
-        Me.txtCurrentPage.Size = New System.Drawing.Size(77, 20)
-        Me.txtCurrentPage.TabIndex = 97
-        Me.txtCurrentPage.Text = "Page 1"
-        Me.txtCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'lblShowingNentries
         '
         Me.lblShowingNentries.AutoSize = True
@@ -174,16 +242,6 @@ Partial Class ucBookManagement
         Me.lblShowingNentries.TabIndex = 96
         Me.lblShowingNentries.Text = "Showing 1 to 10 of 1000 entries"
         '
-        'lblPages
-        '
-        Me.lblPages.AutoSize = True
-        Me.lblPages.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPages.Location = New System.Drawing.Point(854, 556)
-        Me.lblPages.Name = "lblPages"
-        Me.lblPages.Size = New System.Drawing.Size(48, 17)
-        Me.lblPages.TabIndex = 95
-        Me.lblPages.Text = "Page 1"
-        '
         'btnAddBook
         '
         Me.btnAddBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
@@ -193,6 +251,7 @@ Partial Class ucBookManagement
         Me.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddBook.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddBook.ForeColor = System.Drawing.Color.White
+        Me.btnAddBook.Image = CType(resources.GetObject("btnAddBook.Image"), System.Drawing.Image)
         Me.btnAddBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddBook.Location = New System.Drawing.Point(973, 25)
         Me.btnAddBook.Margin = New System.Windows.Forms.Padding(0)
@@ -203,53 +262,12 @@ Partial Class ucBookManagement
         Me.btnAddBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddBook.UseVisualStyleBackColor = False
         '
-        'btnNext
-        '
-        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNext.FlatAppearance.BorderSize = 0
-        Me.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
-        Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(591, 550)
-        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(33, 30)
-        Me.btnNext.TabIndex = 100
-        Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNext.UseVisualStyleBackColor = False
-        '
-        'btnPrev
-        '
-        Me.btnPrev.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrev.FlatAppearance.BorderSize = 0
-        Me.btnPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrev.ForeColor = System.Drawing.Color.White
-        Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
-        Me.btnPrev.Location = New System.Drawing.Point(469, 550)
-        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(33, 30)
-        Me.btnPrev.TabIndex = 99
-        Me.btnPrev.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPrev.UseVisualStyleBackColor = False
-        '
         'ucBookManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.btnAddBook)
-        Me.Controls.Add(Me.txtCurrentPage)
         Me.Controls.Add(Me.lblShowingNentries)
-        Me.Controls.Add(Me.lblPages)
         Me.Controls.Add(Me.cmbSearchBy)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.dgvBooks)
@@ -263,10 +281,16 @@ Partial Class ucBookManagement
     Friend WithEvents dgvBooks As System.Windows.Forms.DataGridView
     Private WithEvents cmbSearchBy As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtCurrentPage As System.Windows.Forms.TextBox
     Friend WithEvents lblShowingNentries As System.Windows.Forms.Label
-    Friend WithEvents lblPages As System.Windows.Forms.Label
     Private WithEvents btnAddBook As System.Windows.Forms.Button
-    Private WithEvents btnNext As Button
-    Private WithEvents btnPrev As Button
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewImageColumn
+    Friend WithEvents Column10 As DataGridViewImageColumn
 End Class

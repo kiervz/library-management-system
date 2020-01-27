@@ -2,7 +2,6 @@
 
 Public Class frmRegisterFaculty
 
-
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFacultyID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 Then
             If Val(txtAge.Text) >= 18 Then
@@ -20,11 +19,8 @@ Public Class frmRegisterFaculty
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.ExecuteNonQuery()
 
-
                         CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                         ClearAll()
-
-
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)
                     End Try

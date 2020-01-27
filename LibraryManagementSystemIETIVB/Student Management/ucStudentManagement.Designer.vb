@@ -29,6 +29,9 @@ Partial Class ucStudentManagement
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelWaitDGV = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -37,13 +40,21 @@ Partial Class ucStudentManagement
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.btnAddStudent = New System.Windows.Forms.Button()
         Me.btnImportStudent = New System.Windows.Forms.Button()
-        Me.txtCurrentPage = New System.Windows.Forms.TextBox()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
-        Me.lblPages = New System.Windows.Forms.Label()
-        Me.btnNext = New System.Windows.Forms.Button()
-        Me.btnPrev = New System.Windows.Forms.Button()
         Me.dgvStudents = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
+        Me.panelWaitDGV.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +62,7 @@ Partial Class ucStudentManagement
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.panelWaitDGV)
         Me.Panel1.Controls.Add(Me.txtPleasewait)
         Me.Panel1.Controls.Add(Me.txtImporting)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -58,6 +70,40 @@ Partial Class ucStudentManagement
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(238, 128)
         Me.Panel1.TabIndex = 59
+        '
+        'panelWaitDGV
+        '
+        Me.panelWaitDGV.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.panelWaitDGV.Controls.Add(Me.TextBox1)
+        Me.panelWaitDGV.Controls.Add(Me.PictureBox2)
+        Me.panelWaitDGV.Location = New System.Drawing.Point(17, 7)
+        Me.panelWaitDGV.Name = "panelWaitDGV"
+        Me.panelWaitDGV.Size = New System.Drawing.Size(205, 115)
+        Me.panelWaitDGV.TabIndex = 60
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(3, 79)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(199, 22)
+        Me.TextBox1.TabIndex = 2
+        Me.TextBox1.Text = "Please wait..."
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(54, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
         'txtPleasewait
         '
@@ -187,19 +233,6 @@ Partial Class ucStudentManagement
         Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImportStudent.UseVisualStyleBackColor = False
         '
-        'txtCurrentPage
-        '
-        Me.txtCurrentPage.BackColor = System.Drawing.Color.White
-        Me.txtCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCurrentPage.Enabled = False
-        Me.txtCurrentPage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentPage.Location = New System.Drawing.Point(511, 555)
-        Me.txtCurrentPage.Name = "txtCurrentPage"
-        Me.txtCurrentPage.Size = New System.Drawing.Size(77, 20)
-        Me.txtCurrentPage.TabIndex = 88
-        Me.txtCurrentPage.Text = "Page 1"
-        Me.txtCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'lblShowingNentries
         '
         Me.lblShowingNentries.AutoSize = True
@@ -209,53 +242,6 @@ Partial Class ucStudentManagement
         Me.lblShowingNentries.Size = New System.Drawing.Size(193, 17)
         Me.lblShowingNentries.TabIndex = 87
         Me.lblShowingNentries.Text = "Showing 1 to 10 of 1000 entries"
-        '
-        'lblPages
-        '
-        Me.lblPages.AutoSize = True
-        Me.lblPages.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPages.Location = New System.Drawing.Point(854, 556)
-        Me.lblPages.Name = "lblPages"
-        Me.lblPages.Size = New System.Drawing.Size(48, 17)
-        Me.lblPages.TabIndex = 86
-        Me.lblPages.Text = "Page 1"
-        '
-        'btnNext
-        '
-        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNext.FlatAppearance.BorderSize = 0
-        Me.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
-        Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(593, 549)
-        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(33, 30)
-        Me.btnNext.TabIndex = 85
-        Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNext.UseVisualStyleBackColor = False
-        '
-        'btnPrev
-        '
-        Me.btnPrev.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrev.FlatAppearance.BorderSize = 0
-        Me.btnPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrev.ForeColor = System.Drawing.Color.White
-        Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
-        Me.btnPrev.Location = New System.Drawing.Point(471, 549)
-        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(33, 30)
-        Me.btnPrev.TabIndex = 84
-        Me.btnPrev.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPrev.UseVisualStyleBackColor = False
         '
         'dgvStudents
         '
@@ -282,6 +268,7 @@ Partial Class ucStudentManagement
         Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudents.ColumnHeadersHeight = 28
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!)
@@ -319,18 +306,90 @@ Partial Class ucStudentManagement
         Me.dgvStudents.ShowCellErrors = False
         Me.dgvStudents.ShowEditingIcon = False
         Me.dgvStudents.ShowRowErrors = False
-        Me.dgvStudents.Size = New System.Drawing.Size(1116, 469)
+        Me.dgvStudents.Size = New System.Drawing.Size(1113, 469)
         Me.dgvStudents.TabIndex = 89
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Student ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 105
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Firstname"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 170
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Middlename"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 170
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Lastname"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 170
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Gender"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 95
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Course"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 95
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Year"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 95
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Section"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 90
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Edit"
+        Me.Column9.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column9.Width = 50
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Delete"
+        Me.Column10.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.delete
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column10.Width = 50
         '
         'ucStudentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.txtCurrentPage)
         Me.Controls.Add(Me.lblShowingNentries)
-        Me.Controls.Add(Me.lblPages)
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.cmbSearchBy)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnAddStudent)
@@ -341,6 +400,9 @@ Partial Class ucStudentManagement
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.panelWaitDGV.ResumeLayout(False)
+        Me.panelWaitDGV.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -357,10 +419,19 @@ Partial Class ucStudentManagement
     Private WithEvents btnAddStudent As Button
     Private WithEvents cmbSearchBy As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtCurrentPage As TextBox
     Friend WithEvents lblShowingNentries As Label
-    Friend WithEvents lblPages As Label
-    Private WithEvents btnNext As Button
-    Private WithEvents btnPrev As Button
     Friend WithEvents dgvStudents As DataGridView
+    Friend WithEvents panelWaitDGV As Panel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewImageColumn
+    Friend WithEvents Column10 As DataGridViewImageColumn
 End Class

@@ -22,31 +22,35 @@ Partial Class ucFacultyManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucFacultyManagement))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucFacultyManagement))
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtPleasewait = New System.Windows.Forms.TextBox()
         Me.txtImporting = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lblPages = New System.Windows.Forms.Label()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
-        Me.txtCurrentPage = New System.Windows.Forms.TextBox()
         Me.dgvFaculties = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnNext = New System.Windows.Forms.Button()
-        Me.btnPrev = New System.Windows.Forms.Button()
         Me.btnAddFaculty = New System.Windows.Forms.Button()
         Me.btnImportFaculties = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
-        CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbSearchBy
@@ -138,19 +142,19 @@ Partial Class ucFacultyManagement
         Me.txtImporting.Text = "Importing 0 records"
         Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lblPages
-        '
-        Me.lblPages.AutoSize = True
-        Me.lblPages.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPages.Location = New System.Drawing.Point(854, 556)
-        Me.lblPages.Name = "lblPages"
-        Me.lblPages.Size = New System.Drawing.Size(48, 17)
-        Me.lblPages.TabIndex = 72
-        Me.lblPages.Text = "Page 1"
         '
         'lblShowingNentries
         '
@@ -161,19 +165,6 @@ Partial Class ucFacultyManagement
         Me.lblShowingNentries.Size = New System.Drawing.Size(193, 17)
         Me.lblShowingNentries.TabIndex = 77
         Me.lblShowingNentries.Text = "Showing 1 to 10 of 1000 entries"
-        '
-        'txtCurrentPage
-        '
-        Me.txtCurrentPage.BackColor = System.Drawing.Color.White
-        Me.txtCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCurrentPage.Enabled = False
-        Me.txtCurrentPage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentPage.Location = New System.Drawing.Point(511, 555)
-        Me.txtCurrentPage.Name = "txtCurrentPage"
-        Me.txtCurrentPage.Size = New System.Drawing.Size(77, 20)
-        Me.txtCurrentPage.TabIndex = 78
-        Me.txtCurrentPage.Text = "Page 1"
-        Me.txtCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dgvFaculties
         '
@@ -200,6 +191,7 @@ Partial Class ucFacultyManagement
         Me.dgvFaculties.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvFaculties.ColumnHeadersHeight = 28
         Me.dgvFaculties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvFaculties.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!)
@@ -237,7 +229,7 @@ Partial Class ucFacultyManagement
         Me.dgvFaculties.ShowCellErrors = False
         Me.dgvFaculties.ShowEditingIcon = False
         Me.dgvFaculties.ShowRowErrors = False
-        Me.dgvFaculties.Size = New System.Drawing.Size(1116, 469)
+        Me.dgvFaculties.Size = New System.Drawing.Size(1113, 469)
         Me.dgvFaculties.TabIndex = 90
         '
         'DataGridViewImageColumn1
@@ -245,53 +237,6 @@ Partial Class ucFacultyManagement
         Me.DataGridViewImageColumn1.HeaderText = "Column1"
         Me.DataGridViewImageColumn1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'btnNext
-        '
-        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNext.FlatAppearance.BorderSize = 0
-        Me.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Image = CType(resources.GetObject("btnNext.Image"), System.Drawing.Image)
-        Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(593, 549)
-        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(33, 30)
-        Me.btnNext.TabIndex = 71
-        Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNext.UseVisualStyleBackColor = False
-        '
-        'btnPrev
-        '
-        Me.btnPrev.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrev.FlatAppearance.BorderSize = 0
-        Me.btnPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrev.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrev.ForeColor = System.Drawing.Color.White
-        Me.btnPrev.Image = CType(resources.GetObject("btnPrev.Image"), System.Drawing.Image)
-        Me.btnPrev.Location = New System.Drawing.Point(471, 549)
-        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(33, 30)
-        Me.btnPrev.TabIndex = 70
-        Me.btnPrev.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPrev.UseVisualStyleBackColor = False
         '
         'btnAddFaculty
         '
@@ -333,16 +278,71 @@ Partial Class ucFacultyManagement
         Me.btnImportFaculties.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImportFaculties.UseVisualStyleBackColor = False
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Faculty ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Firstname"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 230
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Middlename"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 230
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Lastname"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 230
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Gender"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Birthday"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Edit"
+        Me.Column7.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.edit
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column7.Width = 50
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Delete"
+        Me.Column8.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.delete
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column8.Width = 50
+        '
         'ucFacultyManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.txtCurrentPage)
         Me.Controls.Add(Me.lblShowingNentries)
-        Me.Controls.Add(Me.lblPages)
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.cmbSearchBy)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnAddFaculty)
@@ -352,8 +352,8 @@ Partial Class ucFacultyManagement
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -368,11 +368,15 @@ Partial Class ucFacultyManagement
     Friend WithEvents PictureBox1 As PictureBox
     Private WithEvents btnImportFaculties As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Private WithEvents btnPrev As Button
-    Private WithEvents btnNext As Button
-    Friend WithEvents lblPages As Label
     Friend WithEvents lblShowingNentries As Label
-    Friend WithEvents txtCurrentPage As TextBox
     Friend WithEvents dgvFaculties As DataGridView
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewImageColumn
+    Friend WithEvents Column8 As DataGridViewImageColumn
 End Class
