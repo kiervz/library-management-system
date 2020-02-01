@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
         Public Property IdleTime() As Integer
             Get
                 Return CType(Me("IdleTime"),Integer)
@@ -76,17 +76,6 @@ Namespace My
             Set
                 Me("data_updated_at") = value
             End Set
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CLAUDE\SQLEXPRESS;Initial Catalog=Maghanoy_Library_LMSIETI;In"& _ 
-            "tegrated Security=True")>  _
-        Public ReadOnly Property Maghanoy_Library_LMSIETIConnectionString() As String
-            Get
-                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString"),String)
-            End Get
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -134,6 +123,54 @@ Namespace My
             End Get
             Set
                 Me("Database") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Maghanoy_Library_LMSIETIConnectionString() As String
+            Get
+                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString"),String)
+            End Get
+            Set
+                Me("Maghanoy_Library_LMSIETIConnectionString") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
+        Public Property no_books_allow() As Integer
+            Get
+                Return CType(Me("no_books_allow"),Integer)
+            End Get
+            Set
+                Me("no_books_allow") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
+        Public Property no_days_allow() As Integer
+            Get
+                Return CType(Me("no_days_allow"),Integer)
+            End Get
+            Set
+                Me("no_days_allow") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("25")>  _
+        Public Property penalty_per_day() As Integer
+            Get
+                Return CType(Me("penalty_per_day"),Integer)
+            End Get
+            Set
+                Me("penalty_per_day") = value
             End Set
         End Property
     End Class

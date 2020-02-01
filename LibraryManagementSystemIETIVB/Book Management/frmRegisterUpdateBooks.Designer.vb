@@ -389,6 +389,7 @@ Partial Class frmRegisterUpdateBooks
         Me.Name = "frmRegisterUpdateBooks"
         Me.Resizable = False
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "BOOK REGISTRATION"
         CType(Me.pbBookImage, System.ComponentModel.ISupportInitialize).EndInit()

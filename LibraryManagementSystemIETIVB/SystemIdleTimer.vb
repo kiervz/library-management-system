@@ -26,7 +26,7 @@ Public Class SystemIdleTimer
         End Get
         Set(ByVal value As UInteger)
             If value = 0 Then
-                Throw New ArgumentException("MaxIdleTime must be larger then 0.")
+                'Throw New ArgumentException("MaxIdleTime must be larger then 0.")
             Else
                 m_MaxIdleTime = My.Settings.IdleTime
             End If

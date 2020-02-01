@@ -62,6 +62,7 @@ Public Class frmMain
         UcFacultyManagement1.Visible = False
         UcStudentManagement1.Visible = False
         UcUserManagement1.Visible = False
+        UcIssuedReturn1.Visible = False
     End Sub
 
 
@@ -83,6 +84,12 @@ Public Class frmMain
         lblTitle.Text = "Attendance"
     End Sub
 
+    Private Sub btnIssuedReturn_Click(sender As Object, e As EventArgs) Handles btnIssuedReturn.Click
+        movePanelSelector(btnIssuedReturn)
+        HideAllUserControl()
+        UcIssuedReturn1.Visible = True
+        lblTitle.Text = "Issued && Return"
+    End Sub
 
     Private Sub btnFacultyManagement_Click(sender As Object, e As EventArgs) Handles btnFacultyManagement.Click
         movePanelSelector(btnFacultyManagement)

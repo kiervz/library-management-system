@@ -162,6 +162,12 @@
     <Compile Include="Faculty Management\ucFacultyManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ucIssuedReturn.Designer.vb">
+      <DependentUpon>ucIssuedReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucIssuedReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Management\frmUpdateUser.Designer.vb">
       <DependentUpon>frmUpdateUser.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Faculty Management\ucFacultyManagement.resx">
       <DependentUpon>ucFacultyManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIssuedReturn.resx">
+      <DependentUpon>ucIssuedReturn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Management\frmRegisterUser.resx">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
