@@ -64,7 +64,6 @@ Partial Class frmMain
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.tsSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsLogout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.panelBgSearch = New System.Windows.Forms.Panel()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -79,16 +78,18 @@ Partial Class frmMain
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panelAccount = New System.Windows.Forms.Panel()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
+        Me.pbProfile = New Guna.UI.WinForms.GunaCirclePictureBox()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MaterialContextMenuStrip1.SuspendLayout()
-        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBgSearch.SuspendLayout()
         CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
+        Me.panelAccount.SuspendLayout()
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelLeft
@@ -469,7 +470,7 @@ Partial Class frmMain
         'lblTitle
         '
         Me.lblTitle.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.Black
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.lblTitle.Location = New System.Drawing.Point(3, 6)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(595, 26)
@@ -582,17 +583,6 @@ Partial Class frmMain
         Me.tsLogout.Size = New System.Drawing.Size(188, 38)
         Me.tsLogout.Text = "   LOGOUT"
         Me.tsLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'pbProfile
-        '
-        Me.pbProfile.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbProfile.Image = CType(resources.GetObject("pbProfile.Image"), System.Drawing.Image)
-        Me.pbProfile.Location = New System.Drawing.Point(1118, 37)
-        Me.pbProfile.Name = "pbProfile"
-        Me.pbProfile.Size = New System.Drawing.Size(45, 41)
-        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbProfile.TabIndex = 3
-        Me.pbProfile.TabStop = False
         '
         'panelBgSearch
         '
@@ -738,7 +728,6 @@ Partial Class frmMain
         Me.panel2.Controls.Add(Me.label1)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.panelBgSearch)
-        Me.panel2.Controls.Add(Me.pbProfile)
         Me.panel2.Controls.Add(Me.panelAccount)
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel2.Location = New System.Drawing.Point(0, 0)
@@ -748,6 +737,7 @@ Partial Class frmMain
         '
         'panelAccount
         '
+        Me.panelAccount.Controls.Add(Me.pbProfile)
         Me.panelAccount.Cursor = System.Windows.Forms.Cursors.Hand
         Me.panelAccount.Location = New System.Drawing.Point(1117, 37)
         Me.panelAccount.Name = "panelAccount"
@@ -757,6 +747,17 @@ Partial Class frmMain
         'SystemIdleTimer1
         '
         Me.SystemIdleTimer1.MaxIdleTime = CType(10UI, UInteger)
+        '
+        'pbProfile
+        '
+        Me.pbProfile.BaseColor = System.Drawing.Color.White
+        Me.pbProfile.Location = New System.Drawing.Point(0, 1)
+        Me.pbProfile.Name = "pbProfile"
+        Me.pbProfile.Size = New System.Drawing.Size(45, 39)
+        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbProfile.TabIndex = 15
+        Me.pbProfile.TabStop = False
+        Me.pbProfile.UseTransfarantBackground = False
         '
         'frmMain
         '
@@ -782,13 +783,14 @@ Partial Class frmMain
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MaterialContextMenuStrip1.ResumeLayout(False)
-        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBgSearch.ResumeLayout(False)
         Me.panelBgSearch.PerformLayout()
         CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
+        Me.panelAccount.ResumeLayout(False)
+        CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -827,7 +829,6 @@ Partial Class frmMain
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents tsSettings As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsLogout As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents pbProfile As System.Windows.Forms.PictureBox
     Private WithEvents panelBgSearch As System.Windows.Forms.Panel
     Friend WithEvents lblSearch As System.Windows.Forms.Label
     Private WithEvents pbSearch As System.Windows.Forms.PictureBox
@@ -847,4 +848,5 @@ Partial Class frmMain
     Friend WithEvents UcFacultyManagement1 As ucFacultyManagement
     Friend WithEvents btnIssuedReturn As Button
     Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
+    Friend WithEvents pbProfile As Guna.UI.WinForms.GunaCirclePictureBox
 End Class

@@ -5,7 +5,6 @@
 
         If isDBConnnected = True Then
             CustomMessageBox.ShowDialog(Me, "Successfully Connected!", "Connected", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-            isDBConnnected = False
         End If
     End Sub
 

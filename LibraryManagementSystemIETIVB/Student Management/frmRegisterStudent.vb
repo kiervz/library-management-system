@@ -17,7 +17,7 @@ Public Class frmRegisterStudent
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.Parameters.AddWithValue("@course", txtCourse.Text)
-                        cmd.Parameters.AddWithValue("@year", cmbYear.Text)
+                        cmd.Parameters.AddWithValue("@year", cmbGender.Text)
                         cmd.Parameters.AddWithValue("@section", txtSection.Text)
                         cmd.ExecuteNonQuery()
 
@@ -34,18 +34,18 @@ Public Class frmRegisterStudent
     End Sub
 
     Private Sub ClearAll()
-        txtAge.Clear()
-        txtCourse.Clear()
-        txtFirstname.Clear()
-        txtLastname.Clear()
-        txtMiddlename.Clear()
-        txtSection.Clear()
-        txtStudentID.Clear()
+        txtAge.Text = ""
+        txtCourse.Text = ""
+        txtFirstname.Text = ""
+        txtLastname.Text = ""
+        txtMiddlename.Text = ""
+        txtSection.Text = ""
+        txtStudentID.Text = ""
         cmbGender.SelectedIndex = 0
         dtBday.Value = Date.Now
     End Sub
 
-    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
+    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs)
         GetCurrentAge(dtBday.Value)
     End Sub
     Private Function GetCurrentAge(ByVal dob As Date) As Integer

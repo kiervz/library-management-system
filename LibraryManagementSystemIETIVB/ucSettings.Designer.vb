@@ -34,8 +34,27 @@ Partial Class ucSettings
         Me.txtNoBooksAllowed = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnSubmit = New Guna.UI.WinForms.GunaButton()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lblNumber = New System.Windows.Forms.Label()
+        Me.lblUpperCase = New System.Windows.Forms.Label()
+        Me.lbl8Characters = New System.Windows.Forms.Label()
+        Me.lblSpecialCharacter = New System.Windows.Forms.Label()
+        Me.txtConfirmpass = New Guna.UI.WinForms.GunaTextBox()
+        Me.txtNewpass = New Guna.UI.WinForms.GunaTextBox()
+        Me.txtOldpass = New Guna.UI.WinForms.GunaTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.pbCheck2 = New System.Windows.Forms.PictureBox()
+        Me.pbCheck1 = New System.Windows.Forms.PictureBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
+        Me.MetroTabPage3.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -45,7 +64,7 @@ Partial Class ucSettings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(56, 34)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(1009, 511)
         Me.MetroTabControl1.Style = MetroFramework.MetroColorStyle.Teal
         Me.MetroTabControl1.TabIndex = 53
@@ -180,6 +199,17 @@ Partial Class ucSettings
         'MetroTabPage3
         '
         Me.MetroTabPage3.BackColor = System.Drawing.Color.White
+        Me.MetroTabPage3.Controls.Add(Me.pbCheck2)
+        Me.MetroTabPage3.Controls.Add(Me.pbCheck1)
+        Me.MetroTabPage3.Controls.Add(Me.Label8)
+        Me.MetroTabPage3.Controls.Add(Me.btnSubmit)
+        Me.MetroTabPage3.Controls.Add(Me.FlowLayoutPanel1)
+        Me.MetroTabPage3.Controls.Add(Me.txtConfirmpass)
+        Me.MetroTabPage3.Controls.Add(Me.txtNewpass)
+        Me.MetroTabPage3.Controls.Add(Me.txtOldpass)
+        Me.MetroTabPage3.Controls.Add(Me.Label5)
+        Me.MetroTabPage3.Controls.Add(Me.Label6)
+        Me.MetroTabPage3.Controls.Add(Me.Label7)
         Me.MetroTabPage3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.MetroTabPage3.HorizontalScrollbarBarColor = True
         Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
@@ -193,6 +223,196 @@ Partial Class ucSettings
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(437, 310)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(139, 15)
+        Me.Label8.TabIndex = 228
+        Me.Label8.Text = "* Confirm your password"
+        '
+        'btnSubmit
+        '
+        Me.btnSubmit.AnimationHoverSpeed = 0.07!
+        Me.btnSubmit.AnimationSpeed = 0.03!
+        Me.btnSubmit.BaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnSubmit.BorderColor = System.Drawing.Color.Black
+        Me.btnSubmit.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSubmit.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSubmit.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSubmit.ForeColor = System.Drawing.Color.White
+        Me.btnSubmit.Image = Nothing
+        Me.btnSubmit.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnSubmit.Location = New System.Drawing.Point(434, 344)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSubmit.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSubmit.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSubmit.OnHoverImage = Nothing
+        Me.btnSubmit.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSubmit.Size = New System.Drawing.Size(270, 37)
+        Me.btnSubmit.TabIndex = 227
+        Me.btnSubmit.Text = "SUBMIT"
+        Me.btnSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblNumber)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblUpperCase)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lbl8Characters)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblSpecialCharacter)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(434, 198)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(270, 71)
+        Me.FlowLayoutPanel1.TabIndex = 226
+        '
+        'lblNumber
+        '
+        Me.lblNumber.AutoSize = True
+        Me.lblNumber.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumber.ForeColor = System.Drawing.Color.Black
+        Me.lblNumber.Location = New System.Drawing.Point(3, 0)
+        Me.lblNumber.Name = "lblNumber"
+        Me.lblNumber.Size = New System.Drawing.Size(180, 15)
+        Me.lblNumber.TabIndex = 211
+        Me.lblNumber.Text = "* Password must have a number."
+        '
+        'lblUpperCase
+        '
+        Me.lblUpperCase.AutoSize = True
+        Me.lblUpperCase.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUpperCase.ForeColor = System.Drawing.Color.Black
+        Me.lblUpperCase.Location = New System.Drawing.Point(3, 15)
+        Me.lblUpperCase.Name = "lblUpperCase"
+        Me.lblUpperCase.Size = New System.Drawing.Size(202, 15)
+        Me.lblUpperCase.TabIndex = 210
+        Me.lblUpperCase.Text = "* Password must have an upper case."
+        '
+        'lbl8Characters
+        '
+        Me.lbl8Characters.AutoSize = True
+        Me.lbl8Characters.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl8Characters.ForeColor = System.Drawing.Color.Black
+        Me.lbl8Characters.Location = New System.Drawing.Point(3, 30)
+        Me.lbl8Characters.Name = "lbl8Characters"
+        Me.lbl8Characters.Size = New System.Drawing.Size(259, 15)
+        Me.lbl8Characters.TabIndex = 209
+        Me.lbl8Characters.Text = "* Password must atleast 8 characters and above."
+        '
+        'lblSpecialCharacter
+        '
+        Me.lblSpecialCharacter.AutoSize = True
+        Me.lblSpecialCharacter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSpecialCharacter.ForeColor = System.Drawing.Color.Black
+        Me.lblSpecialCharacter.Location = New System.Drawing.Point(3, 45)
+        Me.lblSpecialCharacter.Name = "lblSpecialCharacter"
+        Me.lblSpecialCharacter.Size = New System.Drawing.Size(226, 15)
+        Me.lblSpecialCharacter.TabIndex = 212
+        Me.lblSpecialCharacter.Text = "* Password must have a special character."
+        '
+        'txtConfirmpass
+        '
+        Me.txtConfirmpass.BaseColor = System.Drawing.Color.White
+        Me.txtConfirmpass.BorderColor = System.Drawing.Color.Silver
+        Me.txtConfirmpass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtConfirmpass.FocusedBaseColor = System.Drawing.Color.White
+        Me.txtConfirmpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.txtConfirmpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtConfirmpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmpass.Location = New System.Drawing.Point(434, 279)
+        Me.txtConfirmpass.Name = "txtConfirmpass"
+        Me.txtConfirmpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtConfirmpass.Size = New System.Drawing.Size(270, 28)
+        Me.txtConfirmpass.TabIndex = 225
+        '
+        'txtNewpass
+        '
+        Me.txtNewpass.BaseColor = System.Drawing.Color.White
+        Me.txtNewpass.BorderColor = System.Drawing.Color.Silver
+        Me.txtNewpass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtNewpass.FocusedBaseColor = System.Drawing.Color.White
+        Me.txtNewpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.txtNewpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtNewpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNewpass.Location = New System.Drawing.Point(434, 164)
+        Me.txtNewpass.Name = "txtNewpass"
+        Me.txtNewpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNewpass.Size = New System.Drawing.Size(270, 28)
+        Me.txtNewpass.TabIndex = 224
+        '
+        'txtOldpass
+        '
+        Me.txtOldpass.BaseColor = System.Drawing.Color.White
+        Me.txtOldpass.BorderColor = System.Drawing.Color.Silver
+        Me.txtOldpass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtOldpass.FocusedBaseColor = System.Drawing.Color.White
+        Me.txtOldpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.txtOldpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtOldpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOldpass.Location = New System.Drawing.Point(434, 102)
+        Me.txtOldpass.Name = "txtOldpass"
+        Me.txtOldpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtOldpass.Size = New System.Drawing.Size(270, 28)
+        Me.txtOldpass.TabIndex = 223
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(282, 109)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(113, 20)
+        Me.Label5.TabIndex = 222
+        Me.Label5.Text = "Old Password:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(282, 169)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(122, 20)
+        Me.Label6.TabIndex = 221
+        Me.Label6.Text = "New Password:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(282, 284)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 20)
+        Me.Label7.TabIndex = 220
+        Me.Label7.Text = "Re type Password:"
+        '
+        'pbCheck2
+        '
+        Me.pbCheck2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.x
+        Me.pbCheck2.Location = New System.Drawing.Point(710, 285)
+        Me.pbCheck2.Name = "pbCheck2"
+        Me.pbCheck2.Size = New System.Drawing.Size(19, 19)
+        Me.pbCheck2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbCheck2.TabIndex = 230
+        Me.pbCheck2.TabStop = False
+        Me.pbCheck2.Visible = False
+        '
+        'pbCheck1
+        '
+        Me.pbCheck1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.check
+        Me.pbCheck1.Location = New System.Drawing.Point(710, 170)
+        Me.pbCheck1.Name = "pbCheck1"
+        Me.pbCheck1.Size = New System.Drawing.Size(19, 19)
+        Me.pbCheck1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbCheck1.TabIndex = 229
+        Me.pbCheck1.TabStop = False
+        Me.pbCheck1.Visible = False
+        '
         'ucSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,6 +423,12 @@ Partial Class ucSettings
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage2.ResumeLayout(False)
         Me.MetroTabPage2.PerformLayout()
+        Me.MetroTabPage3.ResumeLayout(False)
+        Me.MetroTabPage3.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
+        CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -218,4 +444,19 @@ Partial Class ucSettings
     Private WithEvents btnSave As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents txtIdleTime As TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtOldpass As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents txtConfirmpass As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents txtNewpass As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
+    Private WithEvents lblNumber As System.Windows.Forms.Label
+    Private WithEvents lblUpperCase As System.Windows.Forms.Label
+    Private WithEvents lbl8Characters As System.Windows.Forms.Label
+    Private WithEvents lblSpecialCharacter As System.Windows.Forms.Label
+    Friend WithEvents btnSubmit As Guna.UI.WinForms.GunaButton
+    Private WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents pbCheck2 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbCheck1 As System.Windows.Forms.PictureBox
 End Class

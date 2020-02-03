@@ -1,7 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Imports Tulpep.NotificationWindow
-'Imports AForge.Video.DirectShow
-'Imports AForge.Video
 Imports System.Text
 Imports System.Security.Cryptography
 
@@ -10,9 +8,6 @@ Public Class frmLogin
     Private _imageNumber As Integer = 1
     Private _nextAttempt As Integer = 60
     Private _attempts As Integer = 0
-
-    'Private _CAMERA As VideoCaptureDevice
-    'Private _btmp As Bitmap
 
     Private Sub LoadNextImage()
         If _imageNumber = 7 Then _imageNumber = 1
@@ -27,7 +22,11 @@ Public Class frmLogin
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Login()
+        If isDBConnnected = True Then
+            Login()
+        Else
+            CustomMessageBox.ShowDialog(Me, "Connection Failed! Please contact the administrator.", "Connection Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+        End If
     End Sub
 
     Private Sub Login()
@@ -99,7 +98,7 @@ Public Class frmLogin
         _attempts = _attempts + 1
 
         If _attempts = 3 Then
-            CustomMessageBox.ShowDialog(Me, "You have reached the maximum attempts. System will be closed!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            CustomMessageBox.ShowDialog(Me, "You have reached the maximum attempts. System will be locked!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
             'StartCaptureCamera()
             EnableControl(False)
             lblNextAttempt.Visible = True
@@ -152,38 +151,6 @@ Public Class frmLogin
         End If
     End Sub
 
-#Region "Capture Image"
-    'Private Sub StartCaptureCamera()
-    '    'Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
-    '    Dim videoDevices As New FilterInfoCollection(FilterCategory.VideoInputDevice)
-    '    Dim videoSource As New VideoCaptureDevice(videoDevices(0).MonikerString)
-    '    AddHandler videoSource.NewFrame, New NewFrameEventHandler(AddressOf Video_NewFrame)
-    '    videoSource.Start()
-    '    'videoSource.SignalToStop()
-    'End Sub
-
-    'Private Sub Video_NewFrame(sender As Object, e As NewFrameEventArgs)
-    '    btmp = DirectCast(e.Frame.Clone(), Bitmap)
-    '    pbTakePic.Image = DirectCast(e.Frame.Clone(), Bitmap)
-    '    SaveImage()
-    'End Sub
-
-    'Private Sub SaveImage()
-    '    ' Compose the picture's base file name.
-    '    Dim file_name As String = Application.ExecutablePath
-    '    file_name = "C:\Intel."
-
-    '    ' Get a Bitmap.
-
-    '    PictureBox1.Image = pbTakePic.Image
-    '    Dim bmpNew As Bitmap = PictureBox1.Image
-
-    '    ''btmp = bmpNew
-    '    bmpNew.Save(file_name & ".jpg", _
-    '        System.Drawing.Imaging.ImageFormat.Jpeg)
-    'End Sub
-#End Region
-
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
         If e.KeyCode = Keys.Enter Then
             Login()
@@ -202,4 +169,5 @@ Public Class frmLogin
             db_config.ShowDialog(Me)
         End If
     End Sub
+
 End Class

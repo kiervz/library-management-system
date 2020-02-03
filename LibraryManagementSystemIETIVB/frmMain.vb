@@ -163,14 +163,6 @@ Public Class frmMain
         If msgBoxButtonClick = DialogResult.Yes Then Application.Exit()
     End Sub
 
-    'Circle Picture box
-    Private Sub pictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles pbProfile.Paint
-        Dim gp As New GraphicsPath
-        gp.AddEllipse(0, 0, pbProfile.Width - 2, pbProfile.Height - 2)
-        Dim rg As New Region(gp)
-        pbProfile.Region = rg
-    End Sub
-
     Private Sub panelBgSearch_Click(sender As Object, e As EventArgs) Handles panelBgSearch.Click, lblSearch.Click, pbSearch.Click
         txtSearch.Focus()
     End Sub
@@ -239,7 +231,7 @@ Public Class frmMain
         btnSettings.Focus()
     End Sub
 
-    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles pbProfile.Click, lblUserType.Click, lblFname.Click, btnChevron.Click, panelAccount.Click
+    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles lblUserType.Click, lblFname.Click, btnChevron.Click, panelAccount.Click
         btnChevron.ContextMenuStrip.Show(New Point(1163, 80))
     End Sub
 
