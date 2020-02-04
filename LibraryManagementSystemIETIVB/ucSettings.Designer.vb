@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ucSettings
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ucSettings
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
@@ -34,27 +34,27 @@ Partial Class ucSettings
         Me.txtNoBooksAllowed = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.txtConfirmpass = New System.Windows.Forms.TextBox()
+        Me.txtNewpass = New System.Windows.Forms.TextBox()
+        Me.txtOldpass = New System.Windows.Forms.TextBox()
+        Me.pbCheck2 = New System.Windows.Forms.PictureBox()
+        Me.pbCheck1 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.btnSubmit = New Guna.UI.WinForms.GunaButton()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblNumber = New System.Windows.Forms.Label()
         Me.lblUpperCase = New System.Windows.Forms.Label()
         Me.lbl8Characters = New System.Windows.Forms.Label()
         Me.lblSpecialCharacter = New System.Windows.Forms.Label()
-        Me.txtConfirmpass = New Guna.UI.WinForms.GunaTextBox()
-        Me.txtNewpass = New Guna.UI.WinForms.GunaTextBox()
-        Me.txtOldpass = New Guna.UI.WinForms.GunaTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.pbCheck2 = New System.Windows.Forms.PictureBox()
-        Me.pbCheck1 = New System.Windows.Forms.PictureBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -199,14 +199,14 @@ Partial Class ucSettings
         'MetroTabPage3
         '
         Me.MetroTabPage3.BackColor = System.Drawing.Color.White
-        Me.MetroTabPage3.Controls.Add(Me.pbCheck2)
-        Me.MetroTabPage3.Controls.Add(Me.pbCheck1)
-        Me.MetroTabPage3.Controls.Add(Me.Label8)
         Me.MetroTabPage3.Controls.Add(Me.btnSubmit)
-        Me.MetroTabPage3.Controls.Add(Me.FlowLayoutPanel1)
         Me.MetroTabPage3.Controls.Add(Me.txtConfirmpass)
         Me.MetroTabPage3.Controls.Add(Me.txtNewpass)
         Me.MetroTabPage3.Controls.Add(Me.txtOldpass)
+        Me.MetroTabPage3.Controls.Add(Me.pbCheck2)
+        Me.MetroTabPage3.Controls.Add(Me.pbCheck1)
+        Me.MetroTabPage3.Controls.Add(Me.Label8)
+        Me.MetroTabPage3.Controls.Add(Me.FlowLayoutPanel1)
         Me.MetroTabPage3.Controls.Add(Me.Label5)
         Me.MetroTabPage3.Controls.Add(Me.Label6)
         Me.MetroTabPage3.Controls.Add(Me.Label7)
@@ -223,6 +223,77 @@ Partial Class ucSettings
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
+        'btnSubmit
+        '
+        Me.btnSubmit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSubmit.FlatAppearance.BorderSize = 0
+        Me.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSubmit.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSubmit.ForeColor = System.Drawing.Color.White
+        Me.btnSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSubmit.Location = New System.Drawing.Point(434, 359)
+        Me.btnSubmit.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(270, 37)
+        Me.btnSubmit.TabIndex = 234
+        Me.btnSubmit.Text = "SUBMIT"
+        Me.btnSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSubmit.UseVisualStyleBackColor = False
+        '
+        'txtConfirmpass
+        '
+        Me.txtConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtConfirmpass.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmpass.Location = New System.Drawing.Point(434, 278)
+        Me.txtConfirmpass.MaxLength = 30
+        Me.txtConfirmpass.Name = "txtConfirmpass"
+        Me.txtConfirmpass.Size = New System.Drawing.Size(270, 26)
+        Me.txtConfirmpass.TabIndex = 233
+        '
+        'txtNewpass
+        '
+        Me.txtNewpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNewpass.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNewpass.Location = New System.Drawing.Point(434, 163)
+        Me.txtNewpass.MaxLength = 30
+        Me.txtNewpass.Name = "txtNewpass"
+        Me.txtNewpass.Size = New System.Drawing.Size(270, 26)
+        Me.txtNewpass.TabIndex = 232
+        '
+        'txtOldpass
+        '
+        Me.txtOldpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOldpass.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOldpass.Location = New System.Drawing.Point(434, 103)
+        Me.txtOldpass.MaxLength = 30
+        Me.txtOldpass.Name = "txtOldpass"
+        Me.txtOldpass.Size = New System.Drawing.Size(270, 26)
+        Me.txtOldpass.TabIndex = 231
+        '
+        'pbCheck2
+        '
+        Me.pbCheck2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.x
+        Me.pbCheck2.Location = New System.Drawing.Point(710, 285)
+        Me.pbCheck2.Name = "pbCheck2"
+        Me.pbCheck2.Size = New System.Drawing.Size(19, 19)
+        Me.pbCheck2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbCheck2.TabIndex = 230
+        Me.pbCheck2.TabStop = False
+        Me.pbCheck2.Visible = False
+        '
+        'pbCheck1
+        '
+        Me.pbCheck1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.check
+        Me.pbCheck1.Location = New System.Drawing.Point(710, 170)
+        Me.pbCheck1.Name = "pbCheck1"
+        Me.pbCheck1.Size = New System.Drawing.Size(19, 19)
+        Me.pbCheck1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbCheck1.TabIndex = 229
+        Me.pbCheck1.TabStop = False
+        Me.pbCheck1.Visible = False
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -233,30 +304,6 @@ Partial Class ucSettings
         Me.Label8.Size = New System.Drawing.Size(139, 15)
         Me.Label8.TabIndex = 228
         Me.Label8.Text = "* Confirm your password"
-        '
-        'btnSubmit
-        '
-        Me.btnSubmit.AnimationHoverSpeed = 0.07!
-        Me.btnSubmit.AnimationSpeed = 0.03!
-        Me.btnSubmit.BaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnSubmit.BorderColor = System.Drawing.Color.Black
-        Me.btnSubmit.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSubmit.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSubmit.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubmit.ForeColor = System.Drawing.Color.White
-        Me.btnSubmit.Image = Nothing
-        Me.btnSubmit.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSubmit.Location = New System.Drawing.Point(434, 344)
-        Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnSubmit.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSubmit.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSubmit.OnHoverImage = Nothing
-        Me.btnSubmit.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSubmit.Size = New System.Drawing.Size(270, 37)
-        Me.btnSubmit.TabIndex = 227
-        Me.btnSubmit.Text = "SUBMIT"
-        Me.btnSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'FlowLayoutPanel1
         '
@@ -313,51 +360,6 @@ Partial Class ucSettings
         Me.lblSpecialCharacter.TabIndex = 212
         Me.lblSpecialCharacter.Text = "* Password must have a special character."
         '
-        'txtConfirmpass
-        '
-        Me.txtConfirmpass.BaseColor = System.Drawing.Color.White
-        Me.txtConfirmpass.BorderColor = System.Drawing.Color.Silver
-        Me.txtConfirmpass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtConfirmpass.FocusedBaseColor = System.Drawing.Color.White
-        Me.txtConfirmpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtConfirmpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtConfirmpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmpass.Location = New System.Drawing.Point(434, 279)
-        Me.txtConfirmpass.Name = "txtConfirmpass"
-        Me.txtConfirmpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtConfirmpass.Size = New System.Drawing.Size(270, 28)
-        Me.txtConfirmpass.TabIndex = 225
-        '
-        'txtNewpass
-        '
-        Me.txtNewpass.BaseColor = System.Drawing.Color.White
-        Me.txtNewpass.BorderColor = System.Drawing.Color.Silver
-        Me.txtNewpass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtNewpass.FocusedBaseColor = System.Drawing.Color.White
-        Me.txtNewpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtNewpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtNewpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNewpass.Location = New System.Drawing.Point(434, 164)
-        Me.txtNewpass.Name = "txtNewpass"
-        Me.txtNewpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNewpass.Size = New System.Drawing.Size(270, 28)
-        Me.txtNewpass.TabIndex = 224
-        '
-        'txtOldpass
-        '
-        Me.txtOldpass.BaseColor = System.Drawing.Color.White
-        Me.txtOldpass.BorderColor = System.Drawing.Color.Silver
-        Me.txtOldpass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtOldpass.FocusedBaseColor = System.Drawing.Color.White
-        Me.txtOldpass.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtOldpass.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtOldpass.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOldpass.Location = New System.Drawing.Point(434, 102)
-        Me.txtOldpass.Name = "txtOldpass"
-        Me.txtOldpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtOldpass.Size = New System.Drawing.Size(270, 28)
-        Me.txtOldpass.TabIndex = 223
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -391,28 +393,6 @@ Partial Class ucSettings
         Me.Label7.TabIndex = 220
         Me.Label7.Text = "Re type Password:"
         '
-        'pbCheck2
-        '
-        Me.pbCheck2.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.x
-        Me.pbCheck2.Location = New System.Drawing.Point(710, 285)
-        Me.pbCheck2.Name = "pbCheck2"
-        Me.pbCheck2.Size = New System.Drawing.Size(19, 19)
-        Me.pbCheck2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbCheck2.TabIndex = 230
-        Me.pbCheck2.TabStop = False
-        Me.pbCheck2.Visible = False
-        '
-        'pbCheck1
-        '
-        Me.pbCheck1.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.check
-        Me.pbCheck1.Location = New System.Drawing.Point(710, 170)
-        Me.pbCheck1.Name = "pbCheck1"
-        Me.pbCheck1.Size = New System.Drawing.Size(19, 19)
-        Me.pbCheck1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbCheck1.TabIndex = 229
-        Me.pbCheck1.TabStop = False
-        Me.pbCheck1.Visible = False
-        '
         'ucSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -425,10 +405,10 @@ Partial Class ucSettings
         Me.MetroTabPage2.PerformLayout()
         Me.MetroTabPage3.ResumeLayout(False)
         Me.MetroTabPage3.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -447,16 +427,16 @@ Partial Class ucSettings
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents txtOldpass As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents txtConfirmpass As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents txtNewpass As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
     Private WithEvents lblNumber As System.Windows.Forms.Label
     Private WithEvents lblUpperCase As System.Windows.Forms.Label
     Private WithEvents lbl8Characters As System.Windows.Forms.Label
     Private WithEvents lblSpecialCharacter As System.Windows.Forms.Label
-    Friend WithEvents btnSubmit As Guna.UI.WinForms.GunaButton
     Private WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents pbCheck2 As System.Windows.Forms.PictureBox
     Friend WithEvents pbCheck1 As System.Windows.Forms.PictureBox
+    Friend WithEvents txtOldpass As TextBox
+    Friend WithEvents txtNewpass As TextBox
+    Friend WithEvents txtConfirmpass As TextBox
+    Private WithEvents btnSubmit As Button
 End Class

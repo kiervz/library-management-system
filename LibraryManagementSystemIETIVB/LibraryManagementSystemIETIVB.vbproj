@@ -137,6 +137,12 @@
     <Compile Include="frmSetSystemIdle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Issued n Return\frmBorrowers.Designer.vb">
+      <DependentUpon>frmBorrowers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Issued n Return\frmBorrowers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\MD5HasherSalt.vb" />
     <Compile Include="Student Management\frmRegisterStudent.Designer.vb">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetSystemIdle.resx">
       <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Issued n Return\frmBorrowers.resx">
+      <DependentUpon>frmBorrowers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Management\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>

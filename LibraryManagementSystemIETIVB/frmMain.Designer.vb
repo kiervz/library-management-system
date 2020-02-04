@@ -77,8 +77,8 @@ Partial Class frmMain
         Me.lblUserType = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panelAccount = New System.Windows.Forms.Panel()
+        Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
-        Me.pbProfile = New Guna.UI.WinForms.GunaCirclePictureBox()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -744,20 +744,18 @@ Partial Class frmMain
         Me.panelAccount.Size = New System.Drawing.Size(234, 41)
         Me.panelAccount.TabIndex = 14
         '
+        'pbProfile
+        '
+        Me.pbProfile.Location = New System.Drawing.Point(0, 0)
+        Me.pbProfile.Name = "pbProfile"
+        Me.pbProfile.Size = New System.Drawing.Size(46, 40)
+        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbProfile.TabIndex = 0
+        Me.pbProfile.TabStop = False
+        '
         'SystemIdleTimer1
         '
         Me.SystemIdleTimer1.MaxIdleTime = CType(10UI, UInteger)
-        '
-        'pbProfile
-        '
-        Me.pbProfile.BaseColor = System.Drawing.Color.White
-        Me.pbProfile.Location = New System.Drawing.Point(0, 1)
-        Me.pbProfile.Name = "pbProfile"
-        Me.pbProfile.Size = New System.Drawing.Size(45, 39)
-        Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbProfile.TabIndex = 15
-        Me.pbProfile.TabStop = False
-        Me.pbProfile.UseTransfarantBackground = False
         '
         'frmMain
         '
@@ -848,5 +846,5 @@ Partial Class frmMain
     Friend WithEvents UcFacultyManagement1 As ucFacultyManagement
     Friend WithEvents btnIssuedReturn As Button
     Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
-    Friend WithEvents pbProfile As Guna.UI.WinForms.GunaCirclePictureBox
+    Friend WithEvents pbProfile As PictureBox
 End Class

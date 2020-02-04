@@ -252,4 +252,10 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub pbProfile_Paint(sender As Object, e As PaintEventArgs) Handles pbProfile.Paint
+        Dim gp As New GraphicsPath
+        gp.AddEllipse(0, 0, pbProfile.Width - 2, pbProfile.Height - 2)
+        Dim rg As New Region(gp)
+        pbProfile.Region = rg
+    End Sub
 End Class
