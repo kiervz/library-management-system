@@ -7,6 +7,7 @@
         txtNoDaysAllowed.Text = My.Settings.no_days_allow
         txtPenaltyPerDay.Text = My.Settings.penalty_per_day
         'txtIdleTime.Text = My.Settings.IdleTime
+        MetroTabControl1.SelectedIndex = 0
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

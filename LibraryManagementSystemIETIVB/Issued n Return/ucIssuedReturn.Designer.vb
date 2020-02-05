@@ -28,16 +28,7 @@ Partial Class ucIssuedReturn
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucIssuedReturn))
-        Me.dgvBooks = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.dgvBorrows = New System.Windows.Forms.DataGridView()
         Me.label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBorrowerID = New System.Windows.Forms.TextBox()
@@ -61,41 +52,50 @@ Partial Class ucIssuedReturn
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtISBN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtPublisher = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtAuthor = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.txtTitle = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.txtCallNo = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cmbType = New MetroFramework.Controls.MetroComboBox()
         Me.panelNoRecord = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
-        CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
+        CType(Me.dgvBorrows, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbBrowsePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelNoRecord.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgvBooks
+        'dgvBorrows
         '
-        Me.dgvBooks.AllowUserToAddRows = False
-        Me.dgvBooks.AllowUserToDeleteRows = False
-        Me.dgvBooks.AllowUserToResizeRows = False
+        Me.dgvBorrows.AllowUserToAddRows = False
+        Me.dgvBorrows.AllowUserToDeleteRows = False
+        Me.dgvBorrows.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvBooks.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvBooks.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.dgvBooks.BackgroundColor = System.Drawing.Color.White
-        Me.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvBooks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvBooks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBorrows.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBorrows.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.dgvBorrows.BackgroundColor = System.Drawing.Color.White
+        Me.dgvBorrows.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBorrows.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvBorrows.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -103,25 +103,25 @@ Partial Class ucIssuedReturn
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBooks.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvBooks.ColumnHeadersHeight = 28
-        Me.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBooks.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10})
+        Me.dgvBorrows.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBorrows.ColumnHeadersHeight = 28
+        Me.dgvBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBorrows.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBooks.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvBooks.EnableHeadersVisualStyles = False
-        Me.dgvBooks.GridColor = System.Drawing.Color.White
-        Me.dgvBooks.Location = New System.Drawing.Point(7, 311)
-        Me.dgvBooks.MultiSelect = False
-        Me.dgvBooks.Name = "dgvBooks"
-        Me.dgvBooks.ReadOnly = True
-        Me.dgvBooks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBorrows.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvBorrows.EnableHeadersVisualStyles = False
+        Me.dgvBorrows.GridColor = System.Drawing.Color.White
+        Me.dgvBorrows.Location = New System.Drawing.Point(7, 311)
+        Me.dgvBorrows.MultiSelect = False
+        Me.dgvBorrows.Name = "dgvBorrows"
+        Me.dgvBorrows.ReadOnly = True
+        Me.dgvBorrows.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -129,87 +129,23 @@ Partial Class ucIssuedReturn
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(206, Byte), Integer))
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBooks.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvBooks.RowHeadersVisible = False
-        Me.dgvBooks.RowHeadersWidth = 23
-        Me.dgvBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvBorrows.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvBorrows.RowHeadersVisible = False
+        Me.dgvBorrows.RowHeadersWidth = 23
+        Me.dgvBorrows.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(177, Byte), Integer))
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgvBooks.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvBooks.RowTemplate.Height = 32
-        Me.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBooks.ShowCellErrors = False
-        Me.dgvBooks.ShowEditingIcon = False
-        Me.dgvBooks.ShowRowErrors = False
-        Me.dgvBooks.Size = New System.Drawing.Size(1113, 282)
-        Me.dgvBooks.TabIndex = 91
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 80
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "ISBN"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Title"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 300
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Author"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 150
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Date Borrowed"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 110
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Due Date"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 110
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Penalty"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 80
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Issued By"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "Return"
-        Me.Column10.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.delete
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column10.Width = 60
+        Me.dgvBorrows.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvBorrows.RowTemplate.Height = 32
+        Me.dgvBorrows.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBorrows.ShowCellErrors = False
+        Me.dgvBorrows.ShowEditingIcon = False
+        Me.dgvBorrows.ShowRowErrors = False
+        Me.dgvBorrows.Size = New System.Drawing.Size(1113, 282)
+        Me.dgvBorrows.TabIndex = 91
         '
         'label6
         '
@@ -476,15 +412,15 @@ Partial Class ucIssuedReturn
         Me.Label8.TabIndex = 188
         Me.Label8.Text = "Lookup Books"
         '
-        'TextBox5
+        'txtISBN
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(706, 64)
-        Me.TextBox5.MaxLength = 30
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(211, 26)
-        Me.TextBox5.TabIndex = 186
+        Me.txtISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtISBN.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtISBN.Location = New System.Drawing.Point(706, 64)
+        Me.txtISBN.MaxLength = 30
+        Me.txtISBN.Name = "txtISBN"
+        Me.txtISBN.Size = New System.Drawing.Size(211, 26)
+        Me.txtISBN.TabIndex = 186
         '
         'Label9
         '
@@ -496,17 +432,17 @@ Partial Class ucIssuedReturn
         Me.Label9.TabIndex = 187
         Me.Label9.Text = "ISBN"
         '
-        'TextBox6
+        'txtPublisher
         '
-        Me.TextBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(706, 223)
-        Me.TextBox6.MaxLength = 30
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(383, 26)
-        Me.TextBox6.TabIndex = 196
+        Me.txtPublisher.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtPublisher.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPublisher.Enabled = False
+        Me.txtPublisher.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPublisher.Location = New System.Drawing.Point(706, 223)
+        Me.txtPublisher.MaxLength = 30
+        Me.txtPublisher.Name = "txtPublisher"
+        Me.txtPublisher.Size = New System.Drawing.Size(383, 26)
+        Me.txtPublisher.TabIndex = 196
         '
         'Label10
         '
@@ -518,17 +454,17 @@ Partial Class ucIssuedReturn
         Me.Label10.TabIndex = 197
         Me.Label10.Text = "Publisher"
         '
-        'TextBox7
+        'txtAuthor
         '
-        Me.TextBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(706, 184)
-        Me.TextBox7.MaxLength = 30
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(383, 26)
-        Me.TextBox7.TabIndex = 194
+        Me.txtAuthor.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAuthor.Enabled = False
+        Me.txtAuthor.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAuthor.Location = New System.Drawing.Point(706, 184)
+        Me.txtAuthor.MaxLength = 30
+        Me.txtAuthor.Name = "txtAuthor"
+        Me.txtAuthor.Size = New System.Drawing.Size(383, 26)
+        Me.txtAuthor.TabIndex = 194
         '
         'Label11
         '
@@ -540,17 +476,17 @@ Partial Class ucIssuedReturn
         Me.Label11.TabIndex = 195
         Me.Label11.Text = "Author(s)"
         '
-        'TextBox8
+        'txtTitle
         '
-        Me.TextBox8.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(706, 145)
-        Me.TextBox8.MaxLength = 30
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(383, 26)
-        Me.TextBox8.TabIndex = 192
+        Me.txtTitle.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTitle.Enabled = False
+        Me.txtTitle.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTitle.Location = New System.Drawing.Point(706, 145)
+        Me.txtTitle.MaxLength = 30
+        Me.txtTitle.Name = "txtTitle"
+        Me.txtTitle.Size = New System.Drawing.Size(383, 26)
+        Me.txtTitle.TabIndex = 192
         '
         'Label12
         '
@@ -562,17 +498,17 @@ Partial Class ucIssuedReturn
         Me.Label12.TabIndex = 193
         Me.Label12.Text = "Title"
         '
-        'TextBox9
+        'txtCallNo
         '
-        Me.TextBox9.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox9.Enabled = False
-        Me.TextBox9.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(706, 106)
-        Me.TextBox9.MaxLength = 30
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(383, 26)
-        Me.TextBox9.TabIndex = 190
+        Me.txtCallNo.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtCallNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCallNo.Enabled = False
+        Me.txtCallNo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCallNo.Location = New System.Drawing.Point(706, 106)
+        Me.txtCallNo.MaxLength = 30
+        Me.txtCallNo.Name = "txtCallNo"
+        Me.txtCallNo.Size = New System.Drawing.Size(383, 26)
+        Me.txtCallNo.TabIndex = 190
         '
         'Label13
         '
@@ -616,23 +552,88 @@ Partial Class ucIssuedReturn
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "No Records Found"
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 70
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "ISBN"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 90
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Title"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 290
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Author"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 140
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Date Borrowed"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 140
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Due Date"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 140
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Penalty"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 70
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Issued By"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Return"
+        Me.Column10.Image = CType(resources.GetObject("Column10.Image"), System.Drawing.Image)
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column10.Width = 50
+        '
         'ucIssuedReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.panelNoRecord)
         Me.Controls.Add(Me.cmbType)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.txtPublisher)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.txtAuthor)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.txtTitle)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.txtCallNo)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.txtISBN)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pbBrowsePic)
@@ -648,10 +649,10 @@ Partial Class ucIssuedReturn
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.label6)
-        Me.Controls.Add(Me.dgvBooks)
+        Me.Controls.Add(Me.dgvBorrows)
         Me.Name = "ucIssuedReturn"
         Me.Size = New System.Drawing.Size(1126, 599)
-        CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBorrows, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbBrowsePic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -663,7 +664,7 @@ Partial Class ucIssuedReturn
 
     End Sub
 
-    Friend WithEvents dgvBooks As DataGridView
+    Friend WithEvents dgvBorrows As DataGridView
     Friend WithEvents label6 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtBorrowerID As TextBox
@@ -680,15 +681,15 @@ Partial Class ucIssuedReturn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Private WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtISBN As System.Windows.Forms.TextBox
     Private WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPublisher As System.Windows.Forms.TextBox
     Private WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents txtAuthor As System.Windows.Forms.TextBox
     Private WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTitle As System.Windows.Forms.TextBox
     Private WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCallNo As System.Windows.Forms.TextBox
     Private WithEvents Label13 As System.Windows.Forms.Label
     Private WithEvents cmbType As MetroFramework.Controls.MetroComboBox
     Private WithEvents Label14 As Label
@@ -697,6 +698,9 @@ Partial Class ucIssuedReturn
     Private WithEvents Label15 As Label
     Friend WithEvents txtPenaltyDay As TextBox
     Private WithEvents Label16 As Label
+    Private WithEvents btnBorrow As Button
+    Friend WithEvents panelNoRecord As Panel
+    Friend WithEvents Label17 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -706,7 +710,4 @@ Partial Class ucIssuedReturn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewImageColumn
-    Private WithEvents btnBorrow As Button
-    Friend WithEvents panelNoRecord As Panel
-    Friend WithEvents Label17 As Label
 End Class

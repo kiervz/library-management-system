@@ -88,6 +88,7 @@ Public Class frmMain
         movePanelSelector(btnIssuedReturn)
         HideAllUserControl()
         UcIssuedReturn1.Visible = True
+        UcIssuedReturn1.LoadBorrowedBooks()
         lblTitle.Text = "Issued && Return"
     End Sub
 

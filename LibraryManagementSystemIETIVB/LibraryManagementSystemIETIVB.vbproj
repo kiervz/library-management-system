@@ -46,9 +46,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI">
-      <HintPath>C:\Users\KIERVEY\Downloads\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
       <Private>True</Private>
@@ -137,10 +134,16 @@
     <Compile Include="frmSetSystemIdle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Issued n Return\frmBorrowers.Designer.vb">
-      <DependentUpon>frmBorrowers.vb</DependentUpon>
+    <Compile Include="Issued n Return\frmBooksList.Designer.vb">
+      <DependentUpon>frmBooksList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Issued n Return\frmBorrowers.vb">
+    <Compile Include="Issued n Return\frmBooksList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Issued n Return\frmBorrowerList.Designer.vb">
+      <DependentUpon>frmBorrowerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Issued n Return\frmBorrowerList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\MD5HasherSalt.vb" />
@@ -295,8 +298,11 @@
     <EmbeddedResource Include="frmSetSystemIdle.resx">
       <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Issued n Return\frmBorrowers.resx">
-      <DependentUpon>frmBorrowers.vb</DependentUpon>
+    <EmbeddedResource Include="Issued n Return\frmBooksList.resx">
+      <DependentUpon>frmBooksList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Issued n Return\frmBorrowerList.resx">
+      <DependentUpon>frmBorrowerList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Management\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>

@@ -164,11 +164,11 @@ Partial Class ucDashboard
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(79, 48)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 18)
+        Me.Label5.Size = New System.Drawing.Size(113, 18)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "TOTAL STUDENTS"
         '
@@ -256,7 +256,7 @@ Partial Class ucDashboard
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.White
         Me.label2.Location = New System.Drawing.Point(74, 45)
         Me.label2.Name = "label2"
@@ -368,11 +368,11 @@ Partial Class ucDashboard
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
         Me.Label17.Location = New System.Drawing.Point(79, 48)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(113, 18)
+        Me.Label17.Size = New System.Drawing.Size(114, 18)
         Me.Label17.TabIndex = 7
         Me.Label17.Text = "BOOKS OVERDUE"
         '
@@ -460,11 +460,11 @@ Partial Class ucDashboard
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(79, 48)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(87, 18)
+        Me.Label12.Size = New System.Drawing.Size(88, 18)
         Me.Label12.TabIndex = 7
         Me.Label12.Text = "TOTAL USERS"
         '
@@ -552,7 +552,7 @@ Partial Class ucDashboard
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(74, 45)
         Me.Label6.Name = "Label6"
@@ -644,11 +644,11 @@ Partial Class ucDashboard
         'label10
         '
         Me.label10.AutoSize = True
-        Me.label10.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label10.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label10.ForeColor = System.Drawing.Color.White
         Me.label10.Location = New System.Drawing.Point(79, 48)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(128, 18)
+        Me.label10.Size = New System.Drawing.Size(129, 18)
         Me.label10.TabIndex = 7
         Me.label10.Text = "TOTAL BORROWERS"
         '

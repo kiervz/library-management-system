@@ -40,13 +40,12 @@ Public Class ucDashboard
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-
-                lblTotalUser.Text = dr("TotalUsers").ToString()
-
+                Dim totalUser As Decimal = dr("TotalUsers").ToString()
+                lblTotalUser.Text = Format(totalUser, "N0")
             End If
 
         Catch ex As Exception
-            CustomMessageBox.ShowDialog(Me, ex.Message, "Error")
+            MsgBox(ex.Message, "Dashboard")
         End Try
     End Sub
 
@@ -57,13 +56,13 @@ Public Class ucDashboard
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-
-                lblTotalStudents.Text = dr("TotalStudents").ToString()
+                Dim totalStudent As Decimal = dr("TotalStudents").ToString()
+                lblTotalStudents.Text = Format(totalStudent, "N0")
 
             End If
 
         Catch ex As Exception
-            CustomMessageBox.ShowDialog(Me, ex.Message, "Error")
+            MsgBox(ex.Message, "Dashboard")
         End Try
     End Sub
 

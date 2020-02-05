@@ -25,7 +25,7 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@category_id", _category_id)
                     cmd.Parameters.AddWithValue("@series_date", txtSeriesDate.Text)
                     cmd.Parameters.AddWithValue("@rack_no", txtRackNo.Text)
-                    cmd.Parameters.AddWithValue("@status", "1")
+                    cmd.Parameters.AddWithValue("@status", "available")
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
                     BookAutoID()

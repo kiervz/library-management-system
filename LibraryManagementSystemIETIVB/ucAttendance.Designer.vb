@@ -50,10 +50,10 @@ Partial Class ucAttendance
         'dtDate
         '
         Me.dtDate.FontSize = MetroFramework.MetroDateTimeSize.Small
-        Me.dtDate.Location = New System.Drawing.Point(918, 35)
-        Me.dtDate.MinimumSize = New System.Drawing.Size(4, 25)
+        Me.dtDate.Location = New System.Drawing.Point(896, 35)
+        Me.dtDate.MinimumSize = New System.Drawing.Size(0, 25)
         Me.dtDate.Name = "dtDate"
-        Me.dtDate.Size = New System.Drawing.Size(168, 25)
+        Me.dtDate.Size = New System.Drawing.Size(190, 25)
         Me.dtDate.TabIndex = 53
         '
         'cmbSearchBy

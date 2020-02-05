@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmBorrowers
+Partial Class frmBorrowerList
     Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
@@ -191,7 +191,7 @@ Partial Class frmBorrowers
         Me.MetroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
-        Me.MetroTabControl1.Location = New System.Drawing.Point(9, 60)
+        Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(1029, 526)
@@ -434,7 +434,7 @@ Partial Class frmBorrowers
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(960, 15)
+        Me.btnClose.Location = New System.Drawing.Point(990, 16)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
         Me.btnClose.TabIndex = 239
@@ -445,17 +445,17 @@ Partial Class frmBorrowers
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label10.Location = New System.Drawing.Point(16, 601)
+        Me.Label10.Location = New System.Drawing.Point(30, 602)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(285, 18)
         Me.Label10.TabIndex = 240
         Me.Label10.Text = "Note: Double click to select borrower"
         '
-        'frmBorrowers
+        'frmBorrowerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1038, 640)
+        Me.ClientSize = New System.Drawing.Size(1072, 640)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnClose)
@@ -463,11 +463,12 @@ Partial Class frmBorrowers
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Movable = False
-        Me.Name = "frmBorrowers"
+        Me.Name = "frmBorrowerList"
         Me.Resizable = False
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
+        Me.Text = "Borrower List"
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
