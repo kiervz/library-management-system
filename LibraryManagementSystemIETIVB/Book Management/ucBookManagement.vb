@@ -35,14 +35,14 @@ Public Class ucBookManagement
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            str = "SELECT books.id, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.series_date, books.rack_no FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
+            str = "SELECT books.id, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             dgvBooks.Rows.Clear()
 
             While dr.Read
-                dgvBooks.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("series_date"), dr("rack_no"))
+                dgvBooks.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("date_published"), dr("copies"))
             End While
         Catch ex As Exception
             MessageBox.Show(ex.Message, "BOOK 1")

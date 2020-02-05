@@ -139,7 +139,7 @@ Module CustomMessageBox
             ElseIf msgIcon = MessageBoxIconn.Success Then
                 imageIcon = My.Resources.Resources.success
             ElseIf msgIcon = MessageBoxIconn.Exclamation Then
-                imageIcon = My.Resources.Resources.info
+                imageIcon = My.Resources.Resources.exclamationx60
             End If
 
             .Image = imageIcon

@@ -9,28 +9,27 @@ Public Class frmRegisterUpdateBooks
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-        If txtAuthor.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtRackNo.Text.Length > 0 And txtSeriesDate.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
+        If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtCopies.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
             CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
             If msgBoxButtonClick = DialogResult.Yes Then
                 Try
-                    str = "INSERT INTO books (id, isbn, title, author, publisher, description, category_id, series_date, rack_no, status, image) VALUES (@id, @isbn, @title, @author, @publisher, @description, @category_id, @series_date, @rack_no, @status, @image)"
+                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,copies,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@copies,@image)"
                     cmd = New SqlCommand(str, conn)
-                    cmd.Parameters.AddWithValue("@id", _book_id)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
+                    cmd.Parameters.AddWithValue("@call_number", txtCallNumber.Text)
                     cmd.Parameters.AddWithValue("@title", txtTitle.Text)
                     cmd.Parameters.AddWithValue("@author", txtAuthor.Text)
                     cmd.Parameters.AddWithValue("@publisher", txtPublisher.Text)
                     cmd.Parameters.AddWithValue("@description", txtDescription.Text)
                     cmd.Parameters.AddWithValue("@category_id", _category_id)
-                    cmd.Parameters.AddWithValue("@series_date", txtSeriesDate.Text)
-                    cmd.Parameters.AddWithValue("@rack_no", txtRackNo.Text)
-                    cmd.Parameters.AddWithValue("@status", "available")
+                    cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
+                    cmd.Parameters.AddWithValue("@copies", txtCopies.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
-                    BookAutoID()
-                    ClearAll()
+                    CustomMessageBox.ShowDialog(Me, "Book Successfully Added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
 
+                    ClearAll()
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -44,7 +43,6 @@ Public Class frmRegisterUpdateBooks
         ConnDB()
         Me.Text = form_title
         FillCategories()
-        BookAutoID()
     End Sub
 
     Private Sub BrowsePicture(sender As Object, e As EventArgs) Handles pbBrowsePic.Click, lblBrowsePic.Click
@@ -68,26 +66,9 @@ Public Class frmRegisterUpdateBooks
             dr = cmd.ExecuteReader
 
             cmbCategories.Items.Clear()
-
             While dr.Read
                 cmbCategories.Items.Add(dr("category"))
             End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BookAutoID()
-        Try
-            str = "SELECT MAX(id) FROM books"
-            cmd = New SqlCommand(str, conn)
-
-            If IsDBNull(cmd.ExecuteScalar()) Then
-                _book_id += 1
-            Else
-                _book_id = Convert.ToString(cmd.ExecuteScalar())
-                _book_id += 1
-            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -116,14 +97,20 @@ Public Class frmRegisterUpdateBooks
     End Sub
 
     Private Sub ClearAll()
+        txtCallNumber.Clear()
         txtAuthor.Clear()
         txtDescription.Clear()
         txtISBN.Clear()
         txtPrice.Clear()
         txtPublisher.Clear()
-        txtRackNo.Clear()
-        txtSeriesDate.Clear()
+        txtCopies.Clear()
+        txtDatePublished.Clear()
         txtTitle.Clear()
         cmbCategories.SelectedIndex = 0
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
+    End Sub
+
 End Class

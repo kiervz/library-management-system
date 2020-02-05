@@ -13,14 +13,14 @@ Public Class frmBooksList
 
     Private Sub LoadData()
         Try
-            str = "SELECT books.id, books.isbn, books.title, books.author, book_categories.category, books.series_date, books.call_number, books.status FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.status = 'available'"
+            str = "SELECT books.id, books.isbn, books.title, books.author, book_categories.category, books.copies, books.date_published, books.call_number, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.copies > '0'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             dgvBooks.Rows.Clear()
 
             While dr.Read
-                dgvBooks.Rows.Add(dr("id"), dr("call_number"), dr("title"), dr("author"), dr("category"), dr("series_date"), dr("isbn"))
+                dgvBooks.Rows.Add(dr("id"), dr("call_number"), dr("title"), dr("author"), dr("category"), dr("copies"), dr("date_published"), dr("isbn"))
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -32,7 +32,7 @@ Public Class frmBooksList
             Dim i As Integer = dgvBooks.CurrentRow.Index
 
             book_id = dgvBooks.Item(0, i).Value
-            book_isbn = dgvBooks.Item(6, i).Value
+            book_isbn = dgvBooks.Item(7, i).Value
             CloseTransparentForm()
             Me.Hide()
         End If

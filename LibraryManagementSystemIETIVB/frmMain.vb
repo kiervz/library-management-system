@@ -69,8 +69,8 @@ Public Class frmMain
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
         HideAllUserControl()
-        UcDashboard1.Visible = True
         lblTitle.Text = "Dashboard"
+        UcDashboard1.Visible = True
         UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
     End Sub
