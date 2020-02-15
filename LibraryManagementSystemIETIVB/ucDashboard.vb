@@ -31,6 +31,10 @@ Public Class ucDashboard
         ConnDB()
         TotalUsers()
         TotalStudents()
+        TotalOverDue()
+        TotalBorrowers()
+        TotalBookLost()
+        TotalBooks()
     End Sub
 
     Friend Sub TotalUsers()
@@ -45,7 +49,9 @@ Public Class ucDashboard
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, "Dashboard")
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
@@ -62,7 +68,78 @@ Public Class ucDashboard
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, "Dashboard")
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
+
+
+    Private Sub TotalOverDue()
+        Try
+            str = "SELECT COUNT(*) AS total_overdue FROM borrows WHERE (day_penalty > 0)"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Dim totalOverdue As Integer = dr("total_overdue").ToString()
+                lblTotalOverdue.Text = Format(totalOverdue, "N0")
+            End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
+
+    Private Sub TotalBorrowers()
+        Try
+            str = "SELECT COUNT(*) AS total_borrowers FROM borrows WHERE (status = 'Borrowed')"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Dim totalBorrowers As Integer = dr("total_borrowers").ToString()
+                lblTotalBorrowers.Text = Format(totalBorrowers, "N0")
+            End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
+
+    Private Sub TotalBookLost()
+        Try
+            str = "SELECT COUNT(*) AS total_books_lost FROM borrows WHERE (status = 'Lost')"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Dim total_books_lost As Integer = dr("total_books_lost").ToString()
+                lblTotalLostBook.Text = Format(total_books_lost, "N0")
+            End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
+
+    Private Sub TotalBooks()
+        Try
+            str = "SELECT SUM(copies) AS total_books FROM books"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Dim total_books As Integer = dr("total_books").ToString()
+                lblTotalBooks.Text = Format(total_books, "N0")
+            End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 

@@ -2,9 +2,10 @@
 <xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="attendanceTableAdapter" GeneratorDataComponentClassName="attendanceTableAdapter" Name="attendance" UserDataComponentName="attendanceTableAdapter">
@@ -117,6 +118,45 @@ SELECT id, id_no, firstname, middlename, lastname, type, date, time_in, time_out
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        borrows.id, users.username, books.title, books.isbn, borrows.date_borrowed, borrows.date_due, students.firstname, students.middlename, students.lastname, borrows.payment
+FROM            borrows INNER JOIN
+                         users ON borrows.user_id = users.user_id INNER JOIN
+                         books ON borrows.book_id = books.id INNER JOIN
+                         students ON borrows.student_faculty_no = students.student_id
+WHERE        (borrows.id = @id)
+UNION
+SELECT        borrows_1.id, users_1.username, books_1.title, books_1.isbn, borrows_1.date_borrowed, borrows_1.date_due, faculties.firstname, faculties.middlename, faculties.lastname, borrows_1.payment
+FROM            borrows AS borrows_1 INNER JOIN
+                         users AS users_1 ON borrows_1.user_id = users_1.user_id INNER JOIN
+                         books AS books_1 ON borrows_1.book_id = books_1.id INNER JOIN
+                         faculties ON borrows_1.student_faculty_no = faculties.faculty_id
+WHERE        (borrows_1.id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="Maghanoy_Library_LMSIETI.dbo.borrows" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="title" DataSetColumn="title" />
+              <Mapping SourceColumn="isbn" DataSetColumn="isbn" />
+              <Mapping SourceColumn="date_borrowed" DataSetColumn="date_borrowed" />
+              <Mapping SourceColumn="date_due" DataSetColumn="date_due" />
+              <Mapping SourceColumn="firstname" DataSetColumn="firstname" />
+              <Mapping SourceColumn="middlename" DataSetColumn="middlename" />
+              <Mapping SourceColumn="lastname" DataSetColumn="lastname" />
+              <Mapping SourceColumn="payment" DataSetColumn="payment" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -125,7 +165,7 @@ SELECT id, id_no, firstname, middlename, lastname, type, date, time_in, time_out
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="attendance" msprop:Generator_TableClassName="attendanceDataTable" msprop:Generator_TableVarName="tableattendance" msprop:Generator_TablePropName="attendance" msprop:Generator_RowDeletingName="attendanceRowDeleting" msprop:Generator_RowChangingName="attendanceRowChanging" msprop:Generator_RowEvHandlerName="attendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="attendanceRowDeleted" msprop:Generator_UserTableName="attendance" msprop:Generator_RowChangedName="attendanceRowChanged" msprop:Generator_RowEvArgName="attendanceRowChangeEvent" msprop:Generator_RowClassName="attendanceRow">
+        <xs:element name="attendance" msprop:Generator_TableClassName="attendanceDataTable" msprop:Generator_TableVarName="tableattendance" msprop:Generator_RowChangedName="attendanceRowChanged" msprop:Generator_TablePropName="attendance" msprop:Generator_RowDeletingName="attendanceRowDeleting" msprop:Generator_RowChangingName="attendanceRowChanging" msprop:Generator_RowEvHandlerName="attendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="attendanceRowDeleted" msprop:Generator_RowClassName="attendanceRow" msprop:Generator_UserTableName="attendance" msprop:Generator_RowEvArgName="attendanceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -180,6 +220,58 @@ SELECT id, id_no, firstname, middlename, lastname, type, date, time_in, time_out
                 </xs:simpleType>
               </xs:element>
               <xs:element name="is_time_out" msprop:Generator_ColumnVarNameInTable="columnis_time_out" msprop:Generator_ColumnPropNameInRow="is_time_out" msprop:Generator_ColumnPropNameInTable="is_time_outColumn" msprop:Generator_UserColumnName="is_time_out" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="username" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="title" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntitle" msprop:Generator_ColumnPropNameInRow="title" msprop:Generator_ColumnPropNameInTable="titleColumn" msprop:Generator_UserColumnName="title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isbn" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnisbn" msprop:Generator_ColumnPropNameInRow="isbn" msprop:Generator_ColumnPropNameInTable="isbnColumn" msprop:Generator_UserColumnName="isbn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_borrowed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndate_borrowed" msprop:Generator_ColumnPropNameInRow="date_borrowed" msprop:Generator_ColumnPropNameInTable="date_borrowedColumn" msprop:Generator_UserColumnName="date_borrowed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_due" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndate_due" msprop:Generator_ColumnPropNameInRow="date_due" msprop:Generator_ColumnPropNameInTable="date_dueColumn" msprop:Generator_UserColumnName="date_due" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="firstname" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" msprop:Generator_UserColumnName="firstname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="middlename" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmiddlename" msprop:Generator_ColumnPropNameInRow="middlename" msprop:Generator_ColumnPropNameInTable="middlenameColumn" msprop:Generator_UserColumnName="middlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lastname" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnlastname" msprop:Generator_ColumnPropNameInRow="lastname" msprop:Generator_ColumnPropNameInTable="lastnameColumn" msprop:Generator_UserColumnName="lastname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="payment" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpayment" msprop:Generator_ColumnPropNameInRow="payment" msprop:Generator_ColumnPropNameInTable="paymentColumn" msprop:Generator_UserColumnName="payment" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

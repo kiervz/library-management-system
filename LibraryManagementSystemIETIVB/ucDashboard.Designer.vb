@@ -38,7 +38,7 @@ Partial Class ucDashboard
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.label13 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblTotalBooks = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -47,7 +47,7 @@ Partial Class ucDashboard
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lblTotalOverdue = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -63,7 +63,7 @@ Partial Class ucDashboard
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblTotalLostBook = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panel5 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -71,7 +71,7 @@ Partial Class ucDashboard
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.label9 = New System.Windows.Forms.Label()
         Me.label10 = New System.Windows.Forms.Label()
-        Me.label11 = New System.Windows.Forms.Label()
+        Me.lblTotalBorrowers = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
@@ -200,7 +200,7 @@ Partial Class ucDashboard
         Me.Panel1.Controls.Add(Me.Panel7)
         Me.Panel1.Controls.Add(Me.label13)
         Me.Panel1.Controls.Add(Me.label2)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.lblTotalBooks)
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Location = New System.Drawing.Point(40, 3)
         Me.Panel1.Name = "Panel1"
@@ -264,16 +264,16 @@ Partial Class ucDashboard
         Me.label2.TabIndex = 7
         Me.label2.Text = "TOTAL BOOKS"
         '
-        'Label3
+        'lblTotalBooks
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(73, 14)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 29)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "6,305"
+        Me.lblTotalBooks.AutoSize = True
+        Me.lblTotalBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalBooks.ForeColor = System.Drawing.Color.White
+        Me.lblTotalBooks.Location = New System.Drawing.Point(73, 14)
+        Me.lblTotalBooks.Name = "lblTotalBooks"
+        Me.lblTotalBooks.Size = New System.Drawing.Size(76, 29)
+        Me.lblTotalBooks.TabIndex = 6
+        Me.lblTotalBooks.Text = "6,305"
         '
         'PictureBox4
         '
@@ -312,7 +312,7 @@ Partial Class ucDashboard
         Me.Panel6.Controls.Add(Me.Panel10)
         Me.Panel6.Controls.Add(Me.Label16)
         Me.Panel6.Controls.Add(Me.Label17)
-        Me.Panel6.Controls.Add(Me.Label18)
+        Me.Panel6.Controls.Add(Me.lblTotalOverdue)
         Me.Panel6.Controls.Add(Me.PictureBox3)
         Me.Panel6.Location = New System.Drawing.Point(40, 184)
         Me.Panel6.Name = "Panel6"
@@ -376,16 +376,16 @@ Partial Class ucDashboard
         Me.Label17.TabIndex = 7
         Me.Label17.Text = "BOOKS OVERDUE"
         '
-        'Label18
+        'lblTotalOverdue
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(78, 17)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(41, 29)
-        Me.Label18.TabIndex = 6
-        Me.Label18.Text = "18"
+        Me.lblTotalOverdue.AutoSize = True
+        Me.lblTotalOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalOverdue.ForeColor = System.Drawing.Color.White
+        Me.lblTotalOverdue.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalOverdue.Name = "lblTotalOverdue"
+        Me.lblTotalOverdue.Size = New System.Drawing.Size(41, 29)
+        Me.lblTotalOverdue.TabIndex = 6
+        Me.lblTotalOverdue.Text = "18"
         '
         'PictureBox3
         '
@@ -496,7 +496,7 @@ Partial Class ucDashboard
         Me.Panel2.Controls.Add(Me.Panel12)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.lblTotalLostBook)
         Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Location = New System.Drawing.Point(701, 184)
         Me.Panel2.Name = "Panel2"
@@ -560,16 +560,16 @@ Partial Class ucDashboard
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "TOTAL BOOKS LOST"
         '
-        'Label7
+        'lblTotalLostBook
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(73, 14)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 29)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "10"
+        Me.lblTotalLostBook.AutoSize = True
+        Me.lblTotalLostBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalLostBook.ForeColor = System.Drawing.Color.White
+        Me.lblTotalLostBook.Location = New System.Drawing.Point(73, 14)
+        Me.lblTotalLostBook.Name = "lblTotalLostBook"
+        Me.lblTotalLostBook.Size = New System.Drawing.Size(41, 29)
+        Me.lblTotalLostBook.TabIndex = 6
+        Me.lblTotalLostBook.Text = "10"
         '
         'PictureBox1
         '
@@ -588,7 +588,7 @@ Partial Class ucDashboard
         Me.panel5.Controls.Add(Me.Panel9)
         Me.panel5.Controls.Add(Me.label9)
         Me.panel5.Controls.Add(Me.label10)
-        Me.panel5.Controls.Add(Me.label11)
+        Me.panel5.Controls.Add(Me.lblTotalBorrowers)
         Me.panel5.Controls.Add(Me.PictureBox6)
         Me.panel5.Location = New System.Drawing.Point(701, 3)
         Me.panel5.Name = "panel5"
@@ -652,16 +652,16 @@ Partial Class ucDashboard
         Me.label10.TabIndex = 7
         Me.label10.Text = "TOTAL BORROWERS"
         '
-        'label11
+        'lblTotalBorrowers
         '
-        Me.label11.AutoSize = True
-        Me.label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label11.ForeColor = System.Drawing.Color.White
-        Me.label11.Location = New System.Drawing.Point(78, 17)
-        Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(41, 29)
-        Me.label11.TabIndex = 6
-        Me.label11.Text = "32"
+        Me.lblTotalBorrowers.AutoSize = True
+        Me.lblTotalBorrowers.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalBorrowers.ForeColor = System.Drawing.Color.White
+        Me.lblTotalBorrowers.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalBorrowers.Name = "lblTotalBorrowers"
+        Me.lblTotalBorrowers.Size = New System.Drawing.Size(41, 29)
+        Me.lblTotalBorrowers.TabIndex = 6
+        Me.lblTotalBorrowers.Text = "32"
         '
         'PictureBox6
         '
@@ -733,18 +733,18 @@ Partial Class ucDashboard
     Private WithEvents Panel1 As System.Windows.Forms.Panel
     Private WithEvents label13 As System.Windows.Forms.Label
     Private WithEvents label2 As System.Windows.Forms.Label
-    Private WithEvents Label3 As System.Windows.Forms.Label
+    Private WithEvents lblTotalBooks As System.Windows.Forms.Label
     Private WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Private WithEvents panel5 As System.Windows.Forms.Panel
     Private WithEvents label9 As System.Windows.Forms.Label
     Private WithEvents label10 As System.Windows.Forms.Label
-    Private WithEvents label11 As System.Windows.Forms.Label
+    Private WithEvents lblTotalBorrowers As System.Windows.Forms.Label
     Private WithEvents PictureBox6 As System.Windows.Forms.PictureBox
     Private WithEvents Panel6 As System.Windows.Forms.Panel
     Private WithEvents Label16 As System.Windows.Forms.Label
     Private WithEvents Label17 As System.Windows.Forms.Label
-    Private WithEvents Label18 As System.Windows.Forms.Label
+    Private WithEvents lblTotalOverdue As System.Windows.Forms.Label
     Private WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Private WithEvents Panel4 As System.Windows.Forms.Panel
     Private WithEvents Label8 As System.Windows.Forms.Label
@@ -754,7 +754,7 @@ Partial Class ucDashboard
     Private WithEvents Panel2 As System.Windows.Forms.Panel
     Private WithEvents Label1 As System.Windows.Forms.Label
     Private WithEvents Label6 As System.Windows.Forms.Label
-    Private WithEvents Label7 As System.Windows.Forms.Label
+    Private WithEvents lblTotalLostBook As System.Windows.Forms.Label
     Private WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox

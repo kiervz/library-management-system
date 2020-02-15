@@ -18,7 +18,7 @@ Public Class ucIssuedReturn
 
     Friend Sub LoadBorrowedBooks()
         Try
-            str = "SELECT borrows.id, books.isbn, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, borrows.day_penalty, borrows.status, users.username FROM users INNER JOIN borrows ON users.user_id = borrows.user_id INNER JOIN books ON borrows.book_id = books.id WHERE student_faculty_no = @student_faculty_no AND borrows.status = '1'"
+            str = "SELECT borrows.id, books.isbn, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, borrows.day_penalty, borrows.status, users.username FROM users INNER JOIN borrows ON users.user_id = borrows.user_id INNER JOIN books ON borrows.book_id = books.id WHERE student_faculty_no = @student_faculty_no AND borrows.status_id = '1'"
             cmd = New SqlCommand(str, conn)
             cmd.Parameters.AddWithValue("@student_faculty_no", txtBorrowerID.Text)
             dr = cmd.ExecuteReader
@@ -27,20 +27,32 @@ Public Class ucIssuedReturn
 
             While dr.Read
                 Dim due_date As DateTime = dr("date_due")
-                Dim temp_day_penalty As TimeSpan = Date.Now.Subtract(due_date)
+                Dim date_now As DateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm tt")
+                Dim temp_day_penalty As TimeSpan = date_now.Subtract(due_date)
                 Dim day_penalty As Integer = temp_day_penalty.Days
+                Dim hour_penalty As Integer = temp_day_penalty.Hours
+                Dim borrow_id As String = dr("id")
+
 
                 'UPDATE the day_penalty of borrows table
-                str = "UPDATE borrows SET day_penalty = @day_penalty WHERE id = '" + CStr(dr("id")) + "'"
+                str = "UPDATE borrows SET day_penalty = @day_penalty WHERE id = '" + CStr(borrow_id) + "'"
                 cmd = New SqlCommand(str, conn)
 
-                If day_penalty <= 0 Then day_penalty = 0
+                If day_penalty < 0 Then day_penalty = 0
+                If day_penalty = 0 And (hour_penalty < 24 And hour_penalty > 0) Then day_penalty = 1
 
                 cmd.Parameters.AddWithValue("@day_penalty", CStr(day_penalty))
                 cmd.ExecuteNonQuery()
+                cmd.Dispose()
 
                 Dim total_penalty As Decimal = Val(day_penalty) * Val(txtPenaltyDay.Text)
-                dgvBorrows.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), CDate(dr("date_borrowed")).ToString("MM/dd/yyyy h:mm tt"), CDate(dr("date_due")).ToString("MM/dd/yyyy h:mm tt"), Format(total_penalty, "N2"), dr("username"))
+                str = "UPDATE borrows SET payment=@payment WHERE id = '" + CStr(borrow_id) + "'"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@payment", total_penalty)
+                cmd.ExecuteNonQuery()
+                cmd.Dispose()
+
+                dgvBorrows.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), CDate(dr("date_borrowed")).ToString("MM/dd/yyyy h:mm tt"), CDate(dr("date_due")).ToString("MM/dd/yyyy h:mm tt"), total_penalty, dr("username"))
             End While
 
             If dgvBorrows.Rows.Count = 0 Then
@@ -79,10 +91,15 @@ Public Class ucIssuedReturn
                     txtName.Text = dr("firstname") + " " + dr("middlename") + " " + dr("lastname")
                     txtYearSec.Text = "NONE"
                     txtType.Text = "Faculty"
+                Else
+                    ClearBorrowerInformation()
                 End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            cmd.Dispose()
+            dr.Close()
         End Try
     End Sub
 
@@ -118,6 +135,7 @@ Public Class ucIssuedReturn
             dr = cmd.ExecuteReader
 
             If dr.Read Then
+                book_id = dr("id")
                 txtTitle.Text = dr("title")
                 txtCallNo.Text = dr("call_number")
                 txtAuthor.Text = dr("author")
@@ -127,6 +145,9 @@ Public Class ucIssuedReturn
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
@@ -135,19 +156,34 @@ Public Class ucIssuedReturn
             CustomMessageBox.ShowDialog(Me, "Unable to process. " + txtBookAllowed.Text + " maximum book allowed to borrow.", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
             Exit Sub
         End If
+
+        Dim count_penalty As Integer = 0
+        For i = 0 To dgvBorrows.Rows.Count - 1
+            If Val(dgvBorrows.Item(6, i).Value) > 0 Then
+                count_penalty += 1
+            End If
+        Next
+
+        If count_penalty > 0 Then
+            CustomMessageBox.ShowDialog(Me, "Unable to process. You have " + CStr(count_penalty) + " penalty. Please return the book(s) first.", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Exit Sub
+        End If
         CustomMessageBox.ShowDialog(Me, "Are you sure you want to Submit?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
         If msgBoxButtonClick = DialogResult.Yes Then
             Try
-                str = "INSERT INTO borrows (id,user_id,book_id,student_faculty_no,date_borrowed,date_due,day_penalty,status) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM borrows),@user_id,@book_id,@student_faculty_no,@date_borrowed,@date_due,@day_penalty,@status)"
+                str = "INSERT INTO borrows (id,user_id,book_id,student_faculty_no,date_borrowed,date_due,day_penalty,status_id,status) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM borrows),@user_id,@book_id,@student_faculty_no,@date_borrowed,@date_due,@day_penalty,@status_id,@status)"
                 cmd = New SqlCommand(str, conn)
-                cmd.Parameters.AddWithValue("@user_id", userID)
-                cmd.Parameters.AddWithValue("@book_id", book_id)
-                cmd.Parameters.AddWithValue("@student_faculty_no", txtBorrowerID.Text)
-                cmd.Parameters.AddWithValue("@date_borrowed", Date.Now.ToString("MM-dd-yyyy HH:mm:ss"))
-                cmd.Parameters.AddWithValue("@date_due", Date.Now.AddDays(txtDayAllowed.Text).ToString("MM-dd-yyyy HH:mm:ss"))
-                cmd.Parameters.AddWithValue("@day_penalty", "0")
-                cmd.Parameters.AddWithValue("@status", "1")
+                With cmd.Parameters
+                    .AddWithValue("@user_id", userID)
+                    .AddWithValue("@book_id", book_id)
+                    .AddWithValue("@student_faculty_no", txtBorrowerID.Text)
+                    .AddWithValue("@date_borrowed", Date.Now.ToString("MM-dd-yyyy HH:mm:ss"))
+                    .AddWithValue("@date_due", Date.Now.AddDays(txtDayAllowed.Text).ToString("MM-dd-yyyy HH:mm:ss"))
+                    .AddWithValue("@day_penalty", "0")
+                    .AddWithValue("@status_id", "1")
+                    .AddWithValue("@status", "Borrowed")
+                End With
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
 
@@ -162,8 +198,20 @@ Public Class ucIssuedReturn
                 ClearBookInformation()
             Catch ex As Exception
                 MsgBox(ex.Message)
+            Finally
+                dr.Close()
+                cmd.Dispose()
             End Try
         End If
+    End Sub
+
+    Private Sub ClearBorrowerInformation()
+        txtName.Clear()
+        txtType.Clear()
+        txtYearSec.Clear()
+        txtPenalty.Clear()
+        txtBorrowerID.Clear()
+        txtBorrowerID.Focus()
     End Sub
 
     Private Sub ClearBookInformation()
@@ -191,22 +239,33 @@ Public Class ucIssuedReturn
             CustomMessageBox.ShowDialog(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
             If msgBoxButtonClick = DialogResult.Yes Then
-                Try
-                    str = "UPDATE borrows SET status = '0', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
-                    cmd = New SqlCommand(str, conn)
-                    cmd.ExecuteNonQuery()
-                    cmd.Dispose()
 
-                    str = "UPDATE books SET copies = (copies + 1) WHERE isbn = '" + CStr(dgvBorrows.Item(1, i).Value) + "'"
-                    cmd = New SqlCommand(str, conn)
-                    cmd.ExecuteNonQuery()
-                    cmd.Dispose()
+                If Val(dgvBorrows.Item(6, i).Value) > 0 Then
+                    Dim penalty_slip As New frmPenaltySlip
+                    penalty_slip.borrow_id = dgvBorrows.Item(0, i).Value
+                    penalty_slip.ShowDialog(Me)
+                Else
+                    Try
+                        str = "UPDATE borrows SET status_id = '0', status = 'Returned', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
+                        cmd = New SqlCommand(str, conn)
+                        cmd.ExecuteNonQuery()
+                        cmd.Dispose()
 
-                    CustomMessageBox.ShowDialog(Me, "Book Successfully Returned", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-                    LoadBorrowedBooks()
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                        str = "UPDATE books SET copies = (copies + 1) WHERE isbn = '" + CStr(dgvBorrows.Item(1, i).Value) + "'"
+                        cmd = New SqlCommand(str, conn)
+                        cmd.ExecuteNonQuery()
+                        cmd.Dispose()
+
+                        CustomMessageBox.ShowDialog(Me, "Book Successfully Returned", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        LoadBorrowedBooks()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    Finally
+                        dr.Close()
+                        cmd.Dispose()
+                    End Try
+                End If
+
             End If
         End If
     End Sub
@@ -217,4 +276,16 @@ Public Class ucIssuedReturn
         End If
     End Sub
 
+    Private Sub dgvBorrows_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvBorrows.CellFormatting
+        txtPenalty.Text = 0
+        For i As Integer = 0 To dgvBorrows.Rows.Count - 1
+            If dgvBorrows.Item(6, i).Value > 0 Then
+                dgvBorrows.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(231, 76, 60)
+                dgvBorrows.Rows(i).DefaultCellStyle.ForeColor = Color.WhiteSmoke
+                dgvBorrows.Rows(i).DefaultCellStyle.SelectionBackColor = Color.FromArgb(189, 53, 37)
+                dgvBorrows.Rows(i).DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke
+            End If
+            txtPenalty.Text += Val(dgvBorrows.Item(6, i).Value)
+        Next
+    End Sub
 End Class

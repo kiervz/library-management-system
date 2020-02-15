@@ -64,6 +64,8 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -126,6 +128,12 @@
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPasswordConfirmIDLE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPenaltySlip.Designer.vb">
+      <DependentUpon>frmPenaltySlip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPenaltySlip.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSetSystemIdle.Designer.vb">
@@ -295,6 +303,9 @@
     <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPenaltySlip.resx">
+      <DependentUpon>frmPenaltySlip.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSetSystemIdle.resx">
       <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +315,7 @@
     <EmbeddedResource Include="Issued n Return\frmBorrowerList.resx">
       <DependentUpon>frmBorrowerList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPenaltySlip.rdlc" />
     <EmbeddedResource Include="Student Management\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
     </EmbeddedResource>

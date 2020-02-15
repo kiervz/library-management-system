@@ -173,6 +173,17 @@ Namespace My
                 Me("penalty_per_day") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CLAUDE\SQLEXPRESS;Initial Catalog=Maghanoy_Library_LMSIETI;In"& _ 
+            "tegrated Security=True")>  _
+        Public ReadOnly Property Maghanoy_Library_LMSIETIConnectionString1() As String
+            Get
+                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
