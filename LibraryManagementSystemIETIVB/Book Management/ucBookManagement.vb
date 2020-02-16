@@ -11,7 +11,7 @@ Public Class ucBookManagement
     Private Sub btnAddBook_Click(sender As Object, e As EventArgs) Handles btnAddBook.Click
         OpenTransparentForm(Me)
         Dim register_book As New frmRegisterUpdateBooks
-        register_book.form_title = "REGISTER BOOK"
+        register_book._form_title = "REGISTER BOOK"
         register_book.ShowDialog(Me)
         FillGridView()
     End Sub
@@ -35,18 +35,39 @@ Public Class ucBookManagement
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            str = "SELECT books.id, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
+            str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             dgvBooks.Rows.Clear()
 
             While dr.Read
-                dgvBooks.Rows.Add(dr("id"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("date_published"), dr("copies"))
+                dgvBooks.Rows.Add(dr("id"), dr("call_number"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("date_published"), dr("copies"))
             End While
         Catch ex As Exception
             MessageBox.Show(ex.Message, "BOOK 1")
         End Try
     End Sub
 
+    Private Sub dgvBooks_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBooks.CellContentClick
+        Dim i As Integer = dgvBooks.CurrentRow.Index
+
+        If Not dgvBooks.Rows.Count = 0 Then
+
+            If e.ColumnIndex = 9 Then
+                Dim borrow_history As New frmBorrrowHistory
+                borrow_history.book_id = dgvBooks.Item(0, i).Value
+                OpenTransparentForm(Me)
+                borrow_history.ShowDialog(Me)
+
+            ElseIf e.ColumnIndex = 10 Then
+                OpenTransparentForm(Me)
+                Dim update_book As New frmRegisterUpdateBooks
+                update_book._form_title = "UPDATE BOOK"
+                update_book._selected_book_id = dgvBooks.Item(0, i).Value
+                update_book.ShowDialog(Me)
+                FillGridView()
+            End If
+        End If
+    End Sub
 End Class

@@ -5,7 +5,8 @@ Public Class frmRegisterUpdateBooks
     Private _imagePath As String = "none"
     Private _book_id As Integer
     Private _category_id As Integer
-    Friend form_title As String
+    Friend _form_title As String
+    Friend _selected_book_id As String
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
@@ -41,7 +42,7 @@ Public Class frmRegisterUpdateBooks
 
     Private Sub frmRegisterUpdateBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        Me.Text = form_title
+        Me.Text = _form_title
         FillCategories()
     End Sub
 

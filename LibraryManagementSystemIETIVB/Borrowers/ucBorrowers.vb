@@ -421,6 +421,10 @@ Public Class ucBorrowers
         End Try
     End Sub
 
+    Private Sub btnLoanHistoryStudent_Click(sender As Object, e As EventArgs) Handles btnLoanHistoryStudent.Click
+
+    End Sub
+
     Private Sub releaseObject(ByVal obj As Object)
         Try
             System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
