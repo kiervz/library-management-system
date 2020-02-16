@@ -183,4 +183,8 @@ Public Class frmRegisterUpdateBooks
         End Try
     End Sub
 
+    Private Sub btnCategory_Click(sender As Object, e As EventArgs) Handles btnCategory.Click
+        Dim category As New frmBookCategories
+        category.ShowDialog(Me)
+    End Sub
 End Class

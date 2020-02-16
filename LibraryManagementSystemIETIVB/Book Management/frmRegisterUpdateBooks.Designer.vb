@@ -240,7 +240,7 @@ Partial Class frmRegisterUpdateBooks
         'pbBookImage
         '
         Me.pbBookImage.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.no_image1
-        Me.pbBookImage.Location = New System.Drawing.Point(705, 113)
+        Me.pbBookImage.Location = New System.Drawing.Point(682, 109)
         Me.pbBookImage.Name = "pbBookImage"
         Me.pbBookImage.Size = New System.Drawing.Size(243, 247)
         Me.pbBookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -253,7 +253,7 @@ Partial Class frmRegisterUpdateBooks
         Me.lblBrowsePic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblBrowsePic.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBrowsePic.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblBrowsePic.Location = New System.Drawing.Point(776, 372)
+        Me.lblBrowsePic.Location = New System.Drawing.Point(753, 368)
         Me.lblBrowsePic.Name = "lblBrowsePic"
         Me.lblBrowsePic.Size = New System.Drawing.Size(118, 20)
         Me.lblBrowsePic.TabIndex = 13
@@ -263,7 +263,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.pbBrowsePic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbBrowsePic.Image = CType(resources.GetObject("pbBrowsePic.Image"), System.Drawing.Image)
-        Me.pbBrowsePic.Location = New System.Drawing.Point(751, 370)
+        Me.pbBrowsePic.Location = New System.Drawing.Point(728, 366)
         Me.pbBrowsePic.Name = "pbBrowsePic"
         Me.pbBrowsePic.Size = New System.Drawing.Size(24, 24)
         Me.pbBrowsePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -295,7 +295,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(705, 476)
+        Me.btnSave.Location = New System.Drawing.Point(682, 472)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(73, 35)
@@ -314,7 +314,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdate.Location = New System.Drawing.Point(790, 476)
+        Me.btnUpdate.Location = New System.Drawing.Point(767, 472)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(0)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(73, 35)
@@ -333,7 +333,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnClear.Location = New System.Drawing.Point(875, 476)
+        Me.btnClear.Location = New System.Drawing.Point(852, 472)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(73, 35)
@@ -346,7 +346,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(982, 15)
+        Me.btnClose.Location = New System.Drawing.Point(952, 15)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
         Me.btnClose.TabIndex = 187
@@ -376,7 +376,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1053, 550)
+        Me.ClientSize = New System.Drawing.Size(1026, 550)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtCallNumber)
         Me.Controls.Add(Me.Label10)
