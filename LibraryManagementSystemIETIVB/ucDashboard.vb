@@ -9,8 +9,8 @@ Public Class ucDashboard
     End Sub
 
     Private Sub moreInfoTotalStudents_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox8.DoubleClick, Panel8.DoubleClick, Label20.DoubleClick
-        frmMain.btnStudentsMangement.PerformClick()
-        frmMain.btnStudentsMangement.Focus()
+        'frmMain.btnStudentsMangement.PerformClick()
+        'frmMain.btnStudentsMangement.Focus()
     End Sub
 
     Private Sub moreInfoTotalBorrowers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox9.DoubleClick, Panel9.DoubleClick, Label21.DoubleClick
@@ -75,7 +75,7 @@ Public Class ucDashboard
     End Sub
 
 
-    Private Sub TotalOverDue()
+    Friend Sub TotalOverDue()
         Try
             str = "SELECT COUNT(*) AS total_overdue FROM borrows WHERE (day_penalty > 0)"
             cmd = New SqlCommand(str, conn)
@@ -92,7 +92,7 @@ Public Class ucDashboard
         End Try
     End Sub
 
-    Private Sub TotalBorrowers()
+    Friend Sub TotalBorrowers()
         Try
             str = "SELECT COUNT(*) AS total_borrowers FROM borrows WHERE (status = 'Borrowed')"
             cmd = New SqlCommand(str, conn)
@@ -109,7 +109,7 @@ Public Class ucDashboard
         End Try
     End Sub
 
-    Private Sub TotalBookLost()
+    Friend Sub TotalBookLost()
         Try
             str = "SELECT COUNT(*) AS total_books_lost FROM borrows WHERE (status = 'Lost')"
             cmd = New SqlCommand(str, conn)
@@ -126,7 +126,7 @@ Public Class ucDashboard
         End Try
     End Sub
 
-    Private Sub TotalBooks()
+    Friend Sub TotalBooks()
         Try
             str = "SELECT SUM(copies) AS total_books FROM books"
             cmd = New SqlCommand(str, conn)

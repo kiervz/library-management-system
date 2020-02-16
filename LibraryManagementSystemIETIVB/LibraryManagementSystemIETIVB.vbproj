@@ -100,10 +100,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Faculty Management\frmRegisterFaculty.Designer.vb">
+    <Compile Include="New Borrowers\frmRegisterFaculty.Designer.vb">
       <DependentUpon>frmRegisterFaculty.vb</DependentUpon>
     </Compile>
-    <Compile Include="Faculty Management\frmRegisterFaculty.vb">
+    <Compile Include="New Borrowers\frmRegisterFaculty.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDatabaseConfiguration.Designer.vb">
@@ -155,10 +155,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\MD5HasherSalt.vb" />
-    <Compile Include="Student Management\frmRegisterStudent.Designer.vb">
+    <Compile Include="New Borrowers\frmRegisterStudent.Designer.vb">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
     </Compile>
-    <Compile Include="Student Management\frmRegisterStudent.vb">
+    <Compile Include="New Borrowers\frmRegisterStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SystemIdleTimer.vb">
@@ -168,6 +168,12 @@
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </Compile>
     <Compile Include="ucAboutIETI.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New Borrowers\ucBorrowers.Designer.vb">
+      <DependentUpon>ucBorrowers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Borrowers\ucBorrowers.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucDashboard.Designer.vb">
@@ -288,7 +294,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Faculty Management\frmRegisterFaculty.resx">
+    <EmbeddedResource Include="New Borrowers\frmRegisterFaculty.resx">
       <DependentUpon>frmRegisterFaculty.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatabaseConfiguration.resx">
@@ -316,11 +322,14 @@
       <DependentUpon>frmBorrowerList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportPenaltySlip.rdlc" />
-    <EmbeddedResource Include="Student Management\frmRegisterStudent.resx">
+    <EmbeddedResource Include="New Borrowers\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Borrowers\ucBorrowers.resx">
+      <DependentUpon>ucBorrowers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.vb</DependentUpon>

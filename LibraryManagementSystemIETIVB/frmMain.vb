@@ -59,8 +59,7 @@ Public Class frmMain
         UcMessages1.Visible = False
         UcReports1.Visible = False
         UcSettings1.Visible = False
-        UcFacultyManagement1.Visible = False
-        UcStudentManagement1.Visible = False
+        UcBorrowers1.Visible = False
         UcUserManagement1.Visible = False
         UcIssuedReturn1.Visible = False
     End Sub
@@ -73,6 +72,10 @@ Public Class frmMain
         UcDashboard1.Visible = True
         UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
+        UcDashboard1.TotalBookLost()
+        UcDashboard1.TotalBooks()
+        UcDashboard1.TotalBorrowers()
+        UcDashboard1.TotalOverDue()
     End Sub
 
 
@@ -92,13 +95,13 @@ Public Class frmMain
         lblTitle.Text = "Issued && Return"
     End Sub
 
-    Private Sub btnFacultyManagement_Click(sender As Object, e As EventArgs) Handles btnFacultyManagement.Click
-        movePanelSelector(btnFacultyManagement)
-        HideAllUserControl()
-        UcFacultyManagement1.Visible = True
-        UcFacultyManagement1.FillGridView()
-        lblTitle.Text = "Faculty Management"
-    End Sub
+    'Private Sub btnFacultyManagement_Click(sender As Object, e As EventArgs) Handles btnFacultyManagement.Click
+    '    'movePanelSelector(btnFacultyManagement)
+    '    'HideAllUserControl()
+    '    'UcFacultyManagement1.Visible = True
+    '    'UcFacultyManagement1.FillGridView()
+    '    'lblTitle.Text = "Faculty Management"
+    'End Sub
 
     Private Sub btnBookManagement_Click(sender As Object, e As EventArgs) Handles btnBookManagement.Click
         movePanelSelector(btnBookManagement)
@@ -108,13 +111,13 @@ Public Class frmMain
         lblTitle.Text = "Books Management"
     End Sub
 
-    Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
-        movePanelSelector(btnStudentsMangement)
-        HideAllUserControl()
-        UcStudentManagement1.Visible = True
-        UcStudentManagement1.FillGridView()
-        lblTitle.Text = "Students Management"
-    End Sub
+    'Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
+    '    movePanelSelector(btnStudentsMangement)
+    '    HideAllUserControl()
+    '    UcStudentManagement1.Visible = True
+    '    UcStudentManagement1.FillGridView()
+    '    lblTitle.Text = "Students Management"
+    'End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
         movePanelSelector(btnUserManagement)
@@ -258,5 +261,16 @@ Public Class frmMain
         gp.AddEllipse(0, 0, pbProfile.Width - 2, pbProfile.Height - 2)
         Dim rg As New Region(gp)
         pbProfile.Region = rg
+    End Sub
+
+    Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
+        movePanelSelector(btnBorrowers)
+        HideAllUserControl()
+        If Not isFacultiesImporting = True Or Not isStudentsImporting = True Then
+            UcBorrowers1.FillGridViewStudent()
+            UcBorrowers1.FillGridViewFaculty()
+        End If
+        UcBorrowers1.Visible = True
+        lblTitle.Text = "Borrowers"
     End Sub
 End Class
