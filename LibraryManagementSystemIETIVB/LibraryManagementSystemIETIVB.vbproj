@@ -118,6 +118,7 @@
     <Compile Include="Borrowers\frmRegisterFaculty.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ErrorLogger.vb" />
     <Compile Include="frmDatabaseConfiguration.Designer.vb">
       <DependentUpon>frmDatabaseConfiguration.vb</DependentUpon>
     </Compile>
@@ -148,10 +149,10 @@
     <Compile Include="frmPenaltySlip.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportBookMasterList.Designer.vb">
+    <Compile Include="Reports\Books Master List\frmReportBookMasterList.Designer.vb">
       <DependentUpon>frmReportBookMasterList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReportBookMasterList.vb">
+    <Compile Include="Reports\Books Master List\frmReportBookMasterList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSetSystemIdle.Designer.vb">
@@ -324,7 +325,7 @@
     <EmbeddedResource Include="frmPenaltySlip.resx">
       <DependentUpon>frmPenaltySlip.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportBookMasterList.resx">
+    <EmbeddedResource Include="Reports\Books Master List\frmReportBookMasterList.resx">
       <DependentUpon>frmReportBookMasterList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetSystemIdle.resx">
@@ -336,7 +337,7 @@
     <EmbeddedResource Include="Issued n Return\frmBorrowerList.resx">
       <DependentUpon>frmBorrowerList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportBooksMasterList.rdlc" />
+    <EmbeddedResource Include="Reports\Books Master List\ReportBooksMasterList.rdlc" />
     <EmbeddedResource Include="ReportPenaltySlip.rdlc" />
     <EmbeddedResource Include="Borrowers\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>

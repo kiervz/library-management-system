@@ -24,14 +24,24 @@ Partial Class frmReportBookMasterList
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.dtBooksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New LibraryManagementSystemIETIVB.DataSet1()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DataSet1 = New LibraryManagementSystemIETIVB.DataSet1()
-        Me.dtBooksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dtBooksTableAdapter = New LibraryManagementSystemIETIVB.DataSet1TableAdapters.dtBooksTableAdapter()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtBooksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'dtBooksBindingSource
+        '
+        Me.dtBooksBindingSource.DataMember = "dtBooks"
+        Me.dtBooksBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -53,16 +63,6 @@ Partial Class frmReportBookMasterList
         Me.Panel1.Size = New System.Drawing.Size(983, 32)
         Me.Panel1.TabIndex = 1
         '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'dtBooksBindingSource
-        '
-        Me.dtBooksBindingSource.DataMember = "dtBooks"
-        Me.dtBooksBindingSource.DataSource = Me.DataSet1
-        '
         'dtBooksTableAdapter
         '
         Me.dtBooksTableAdapter.ClearBeforeFill = True
@@ -75,10 +75,12 @@ Partial Class frmReportBookMasterList
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmReportBookMasterList"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "Report Book Master List"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtBooksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

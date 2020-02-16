@@ -74,7 +74,12 @@ Public Class frmLogin
                     Attempt()
                 End If
             Catch ex As Exception
-                MessageBox.Show(ex.Message, "Login")
+                Dim el As New ErrorLogger
+                el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+                CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Finally
+                dr.Close()
+                cmd.Dispose()
             End Try
 
         End If
@@ -125,7 +130,12 @@ Public Class frmLogin
                 cmd.Dispose()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Dim el As New ErrorLogger
+            el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+            CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
     Private Sub cbShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPassword.CheckedChanged

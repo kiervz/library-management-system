@@ -595,7 +595,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>0.5in</Height>
-        <Width>10.02083in</Width>
+        <Width>10.02082in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -664,7 +664,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Kiervey Maghanoy</Value>
+                  <Value>=Parameters!username.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1033,6 +1033,12 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="username">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="ieti">
       <MIMEType>image/jpeg</MIMEType>
