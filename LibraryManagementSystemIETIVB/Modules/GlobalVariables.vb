@@ -18,6 +18,7 @@
     Public borrower_id As String
     Public book_id As String
     Public book_isbn As String
+    Public is_book_updated As Boolean = False
 
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent

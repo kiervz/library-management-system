@@ -3,12 +3,12 @@
 Public Class frmRegisterStudent
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If txtStudentID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 And txtSection.Text.Length > 0 And txtCourse.Text.Length > 0 Then
+        If txtStudentID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 And txtMajor.Text.Length > 0 Then
             If Val(txtAge.Text) >= 10 Then
                 Dim ask As String = MessageBox.Show("Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If ask = DialogResult.Yes Then
                     Try
-                        str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+                        str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@student_id", txtStudentID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -16,9 +16,7 @@ Public Class frmRegisterStudent
                         cmd.Parameters.AddWithValue("@lastname", txtLastname.Text)
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
-                        cmd.Parameters.AddWithValue("@course", txtCourse.Text)
-                        cmd.Parameters.AddWithValue("@year", cmbGender.Text)
-                        cmd.Parameters.AddWithValue("@section", txtSection.Text)
+                        cmd.Parameters.AddWithValue("@major", txtMajor.Text)
                         cmd.ExecuteNonQuery()
 
                         CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
@@ -35,19 +33,16 @@ Public Class frmRegisterStudent
 
     Private Sub ClearAll()
         txtAge.Text = ""
-        txtCourse.Text = ""
+        txtMajor.Text = ""
         txtFirstname.Text = ""
         txtLastname.Text = ""
         txtMiddlename.Text = ""
-        txtSection.Text = ""
+        txtMajor.Text = ""
         txtStudentID.Text = ""
         cmbGender.SelectedIndex = 0
         dtBday.Value = Date.Now
     End Sub
 
-    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs)
-        GetCurrentAge(dtBday.Value)
-    End Sub
     Private Function GetCurrentAge(ByVal dob As Date) As Integer
         Dim age As Integer
         age = Today.Year - dob.Year
@@ -63,5 +58,13 @@ Public Class frmRegisterStudent
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         CloseTransparentForm()
         Me.Hide()
+    End Sub
+
+    Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
+        GetCurrentAge(dtBday.Value)
+    End Sub
+
+    Private Sub frmRegisterStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ConnDB()
     End Sub
 End Class

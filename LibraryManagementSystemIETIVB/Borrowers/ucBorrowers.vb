@@ -97,9 +97,10 @@ Public Class ucBorrowers
 
             For xlRow = 1 To xlRange.Rows.Count
                 isStudentsImporting = True
-
+                btnImportStudent.Enabled = False
+                btnImportFaculties.Enabled = False
                 If xlRow = 1 Then
-                    If xlRange.Cells(xlRow, 1).Text = "Student ID" And xlRange.Cells(xlRow, 2).Text = "Firstname" And xlRange.Cells(xlRow, 3).Text = "Middlename" And xlRange.Cells(xlRow, 4).Text = "Lastname" And xlRange.Cells(xlRow, 5).Text = "Gender" And xlRange.Cells(xlRow, 6).Text = "Birthday" And xlRange.Cells(xlRow, 7).Text = "Section" And xlRange.Cells(xlRow, 8).Text = "Year" And xlRange.Cells(xlRow, 9).Text = "Course" Then
+                    If xlRange.Cells(xlRow, 1).Text = "Student ID" And xlRange.Cells(xlRow, 2).Text = "Firstname" And xlRange.Cells(xlRow, 3).Text = "Middlename" And xlRange.Cells(xlRow, 4).Text = "Lastname" And xlRange.Cells(xlRow, 5).Text = "Gender" And xlRange.Cells(xlRow, 6).Text = "Birthday" And xlRange.Cells(xlRow, 7).Text = "Major" Then
                         If xlRow = 1 Then xlRow += 1
                     Else
                         MessageBox.Show("Please arrange excel file in order. " +
@@ -109,9 +110,7 @@ Public Class ucBorrowers
                                       Environment.NewLine + "Lastname" +
                                       Environment.NewLine + "Gender" +
                                       Environment.NewLine + "Birthday" +
-                                      Environment.NewLine + "Section" +
-                                      Environment.NewLine + "Year" +
-                                      Environment.NewLine + "Section")
+                                      Environment.NewLine + "Major")
 
                         xlWorkBook.Close()
                         xlApp.Quit()
@@ -133,7 +132,7 @@ Public Class ucBorrowers
                 If Not IfAlreadyExistInDBStudent(xlRange.Cells(xlRow, 1).Text()) = True Then
                     rowcount += 1
                     'The student information will add
-                    AddToDatabaseStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text(), xlRange.Cells(xlRow, 9).Text())
+                    AddToDatabaseStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text())
                     txtImportingS.Text = "Importing " & rowcount & " records"
                     txtPleasewaitS.Text = "please wait..."
                 End If
@@ -147,6 +146,9 @@ Public Class ucBorrowers
             releaseObject(xlWorkSheet)
 
             TerminateProcess("excel.exe")
+
+            btnImportStudent.Enabled = True
+            btnImportFaculties.Enabled = True
 
             PanelStudentImport.Hide()
             isStudentsImporting = False
@@ -163,6 +165,8 @@ Public Class ucBorrowers
 
         For xlRowF = 1 To xlRangeF.Rows.Count
             isFacultiesImporting = True
+            btnImportStudent.Enabled = False
+            btnImportFaculties.Enabled = False
             If xlRowF = 1 Then
                 If xlRangeF.Cells(xlRowF, 1).Text = "Faculty ID" And xlRangeF.Cells(xlRowF, 2).Text = "Firstname" And xlRangeF.Cells(xlRowF, 3).Text = "Middlename" And xlRangeF.Cells(xlRowF, 4).Text = "Lastname" And xlRangeF.Cells(xlRowF, 5).Text = "Gender" And xlRangeF.Cells(xlRowF, 6).Text = "Birthday" Then
                     If xlRowF = 1 Then xlRowF += 1
@@ -210,6 +214,9 @@ Public Class ucBorrowers
 
         TerminateProcess("excel.exe")
 
+        btnImportStudent.Enabled = True
+        btnImportFaculties.Enabled = True
+
         PanelFacultyImport.Hide()
         isFacultiesImporting = False
         FillGridViewFaculty()
@@ -235,13 +242,13 @@ Public Class ucBorrowers
 
             dgvStudents.Rows.Clear()
 
-            Dim str1 = "SELECT student_id, firstname, middlename, lastname, gender, course, year, section FROM students"
+            Dim str1 = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students"
             cmd = New SqlCommand(str1, conn)
             Dim dr1 As SqlDataReader = cmd.ExecuteReader
 
             If dr1.HasRows Then
                 While dr1.Read
-                    dgvStudents.Rows.Add(dr1("student_id"), dr1("firstname"), dr1("middlename"), dr1("lastname"), dr1("gender"), dr1("course"), dr1("year"), dr1("section"))
+                    dgvStudents.Rows.Add(dr1("student_id"), dr1("firstname"), dr1("middlename"), dr1("lastname"), dr1("gender"), dr1("major"))
                 End While
             End If
 
@@ -306,28 +313,14 @@ Public Class ucBorrowers
             btnAddStudent.BringToFront()
             btnImportStudent.BringToFront()
 
-            If isFacultiesImporting = True Then
-                btnImportStudent.Enabled = False
-            Else
-                btnImportStudent.Enabled = True
-            End If
-
             'Show Student Search Box
-            cmbSearchStudent.SelectedIndex = 0
             cmbSearchStudent.BringToFront()
             txtSearchStudent.BringToFront()
         Else
             btnAddFaculty.BringToFront()
             btnImportFaculties.BringToFront()
 
-            If isStudentsImporting = True Then
-                btnImportFaculties.Enabled = False
-            Else
-                btnImportFaculties.Enabled = True
-            End If
-
             'Show Faculty Search Box
-            cmbSearchFaculty.SelectedIndex = 0
             cmbSearchFaculty.BringToFront()
             txtSearchFaculty.BringToFront()
         End If
@@ -379,10 +372,10 @@ Public Class ucBorrowers
         Return isAlreadyExist
     End Function
 
-    Private Sub AddToDatabaseStudent(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, course As String, year As String, section As String)
+    Private Sub AddToDatabaseStudent(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, major As String)
         Try
-            If Not studID = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Or course = "" Or year = "" Or year Then
-                Dim str As String = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,course,year,section) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@course,@year,@section)"
+            If Not studID = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Or major = "" Then
+                Dim str As String = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@student_id", studID)
                 cmd.Parameters.AddWithValue("@firstname", firstname)
@@ -390,9 +383,7 @@ Public Class ucBorrowers
                 cmd.Parameters.AddWithValue("@lastname", lastname)
                 cmd.Parameters.AddWithValue("@gender", gender)
                 cmd.Parameters.AddWithValue("@birthday", CDate(birthday).ToShortDateString())
-                cmd.Parameters.AddWithValue("@course", course)
-                cmd.Parameters.AddWithValue("@year", year)
-                cmd.Parameters.AddWithValue("@section", section)
+                cmd.Parameters.AddWithValue("@major", major)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
             End If
@@ -422,7 +413,23 @@ Public Class ucBorrowers
     End Sub
 
     Private Sub btnLoanHistoryStudent_Click(sender As Object, e As EventArgs) Handles btnLoanHistoryStudent.Click
+        Dim i As Integer = dgvStudents.CurrentRow.Index
 
+        OpenTransparentForm(Me)
+        Dim loan_history As New frmLoanHistory
+        loan_history.borrower_name = dgvStudents.Item(1, i).Value + " " + dgvStudents.Item(2, i).Value + " " + dgvStudents.Item(3, i).Value
+        loan_history.id_no = dgvStudents.Item(0, i).Value
+        loan_history.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnLoanHistoryFaculty_Click(sender As Object, e As EventArgs) Handles btnLoanHistoryFaculty.Click
+        Dim i As Integer = dgvFaculties.CurrentRow.Index
+
+        OpenTransparentForm(Me)
+        Dim loan_history As New frmLoanHistory
+        loan_history.borrower_name = dgvFaculties.Item(1, i).Value + " " + dgvFaculties.Item(2, i).Value + " " + dgvFaculties.Item(3, i).Value
+        loan_history.id_no = dgvFaculties.Item(0, i).Value
+        loan_history.ShowDialog(Me)
     End Sub
 
     Private Sub releaseObject(ByVal obj As Object)

@@ -13,7 +13,11 @@ Public Class ucBookManagement
         Dim register_book As New frmRegisterUpdateBooks
         register_book._form_title = "REGISTER BOOK"
         register_book.ShowDialog(Me)
-        FillGridView()
+
+        If is_book_updated = True Then
+            FillGridView()
+            is_book_updated = False
+        End If
     End Sub
 
     Friend Sub FillGridView()
@@ -66,7 +70,11 @@ Public Class ucBookManagement
                 update_book._form_title = "UPDATE BOOK"
                 update_book._selected_book_id = dgvBooks.Item(0, i).Value
                 update_book.ShowDialog(Me)
-                FillGridView()
+
+                If is_book_updated = True Then
+                    FillGridView()
+                    is_book_updated = False
+                End If
             End If
         End If
     End Sub
