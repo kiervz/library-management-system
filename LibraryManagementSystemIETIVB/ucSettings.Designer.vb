@@ -64,7 +64,7 @@ Partial Class ucSettings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(56, 34)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(1009, 511)
         Me.MetroTabControl1.Style = MetroFramework.MetroColorStyle.Teal
         Me.MetroTabControl1.TabIndex = 53
@@ -192,9 +192,9 @@ Partial Class ucSettings
         Me.label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.Location = New System.Drawing.Point(177, 71)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(248, 20)
+        Me.label1.Size = New System.Drawing.Size(251, 20)
         Me.label1.TabIndex = 164
-        Me.label1.Text = "No. of Book/s allowed to borrow"
+        Me.label1.Text = "No. of Book(s) allowed to borrow"
         '
         'MetroTabPage3
         '

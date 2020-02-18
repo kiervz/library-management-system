@@ -98,28 +98,28 @@ Public Class frmBookCategories
             txtCategory.Text = dgvBookCategories.Item(1, i).Value
             btnUpdate.Enabled = True
             btnSave.Enabled = False
-        ElseIf e.ColumnIndex = 3 Then
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Delete?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+            'ElseIf e.ColumnIndex = 3 Then
+            '    CustomMessageBox.ShowDialog(Me, "Are you sure you want to Delete?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
-                Try
-                    str = "DELETE book_categories WHERE category_id = '" + CStr(category_id) + "'"
-                    cmd = New SqlCommand(str, conn)
-                    cmd.ExecuteNonQuery()
-                    MessageBox.Show("Category has been deleted!")
-                    LoadCategories()
-                    txtCategory.Clear()
-                    btnSave.Enabled = True
-                    btnUpdate.Enabled = False
-                Catch ex As Exception
-                    Dim el As New ErrorLogger
-                    el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
-                    CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
-                Finally
-                    dr.Close()
-                    cmd.Dispose()
-                End Try
-            End If
+            '    If msgBoxButtonClick = DialogResult.Yes Then
+            '        Try
+            '            str = "DELETE book_categories WHERE category_id = '" + CStr(category_id) + "'"
+            '            cmd = New SqlCommand(str, conn)
+            '            cmd.ExecuteNonQuery()
+            '            MessageBox.Show("Category has been deleted!")
+            '            LoadCategories()
+            '            txtCategory.Clear()
+            '            btnSave.Enabled = True
+            '            btnUpdate.Enabled = False
+            '        Catch ex As Exception
+            '            Dim el As New ErrorLogger
+            '            el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+            '            CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            '        Finally
+            '            dr.Close()
+            '            cmd.Dispose()
+            '        End Try
+            '    End If
         End If
     End Sub
 

@@ -122,7 +122,8 @@ Public Class ucBorrowers
                         TerminateProcess("excel.exe")
 
                         PanelStudentImport.Hide()
-                        isStudentsImporting = False
+                        btnImportStudent.Enabled = True
+                        btnImportFaculties.Enabled = True
                         thread.Abort()
                         Exit Sub
                     End If
@@ -189,7 +190,8 @@ Public Class ucBorrowers
                     TerminateProcess("excel.exe")
 
                     PanelFacultyImport.Hide()
-                    isFacultiesImporting = False
+                    btnImportStudent.Enabled = True
+                    btnImportFaculties.Enabled = True
                     threadF.Abort()
                     Exit Sub
                 End If
@@ -299,13 +301,23 @@ Public Class ucBorrowers
         OpenTransparentForm(Me)
         Dim add_faculty As New frmRegisterFaculty
         add_faculty.ShowDialog(Me)
-        FillGridViewFaculty()
+
+        If is_reload = True Then
+            FillGridViewFaculty()
+            is_reload = False
+        End If
+
     End Sub
 
     Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click
         OpenTransparentForm(Me)
         Dim add_student As New frmRegisterStudent
         add_student.ShowDialog(Me)
+
+        If is_reload = True Then
+            FillGridViewStudent()
+            is_reload = False
+        End If
     End Sub
 
     Private Sub MetroTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroTabControl1.SelectedIndexChanged

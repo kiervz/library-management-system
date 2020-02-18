@@ -12,7 +12,7 @@ Public Class ucAttendance
     Private Sub CheckDataIfUpdated()
         Try
             Dim get_updated_date As DateTime
-            str = "SELECT time_updated_at FROM data_updated WHERE id = '1'"
+            str = "SELECT time_updated_at FROM options WHERE id = '1'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 

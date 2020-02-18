@@ -15,7 +15,7 @@ Public Class frmRegisterUpdateBooks
 
             If msgBoxButtonClick = DialogResult.Yes Then
                 Try
-                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,copies,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@copies,@image)"
+                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,copies,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@copies,@image)"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
                     cmd.Parameters.AddWithValue("@call_number", txtCallNumber.Text)
@@ -25,6 +25,7 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@description", txtDescription.Text)
                     cmd.Parameters.AddWithValue("@category_id", _category_id)
                     cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
+                    cmd.Parameters.AddWithValue("@series", txtSeries.Text)
                     cmd.Parameters.AddWithValue("@copies", txtCopies.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
@@ -48,7 +49,7 @@ Public Class frmRegisterUpdateBooks
 
         If _form_title = "UPDATE BOOK" Then
             Try
-                str = "SELECT books.id, books.isbn, books.call_number, books.title, books.author, books.publisher, books.description, book_categories.category_id, book_categories.category, books.date_published, books.copies, books.price, books.image FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.id = '" + CStr(_selected_book_id) + "'"
+                str = "SELECT books.id, books.isbn, books.call_number, books.title, books.author, books.publisher, books.description, book_categories.category_id, book_categories.category, books.date_published, books.series, books.copies, books.price, books.image FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.id = '" + CStr(_selected_book_id) + "'"
                 cmd = New SqlCommand(str, conn)
                 dr = cmd.ExecuteReader
 
@@ -62,7 +63,9 @@ Public Class frmRegisterUpdateBooks
                     txtPrice.Text = dr("price")
                     txtPublisher.Text = dr("publisher")
                     txtTitle.Text = dr("title")
+                    txtSeries.Text = dr("series")
                     cmbCategories.Text = dr("category")
+
                     Try
                         pbBookImage.Image = dr("image")
                     Catch ex As Exception
@@ -151,7 +154,7 @@ Public Class frmRegisterUpdateBooks
                 CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
                 If msgBoxButtonClick = DialogResult.Yes Then
-                    str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, copies=@copies, price=@price, image=@image WHERE id = @id"
+                    str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, copies=@copies, price=@price, series=@series, image=@image WHERE id = @id"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@id", _selected_book_id)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
@@ -162,6 +165,7 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@description", txtDescription.Text)
                     cmd.Parameters.AddWithValue("@category_id", cmbCategories.SelectedIndex + 1)
                     cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
+                    cmd.Parameters.AddWithValue("@series", txtSeries.Text)
                     cmd.Parameters.AddWithValue("@price", txtPrice.Text)
                     cmd.Parameters.AddWithValue("@copies", txtCopies.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
@@ -169,7 +173,7 @@ Public Class frmRegisterUpdateBooks
                     cmd.Dispose()
 
                     CustomMessageBox.ShowDialog(Me, "Book Successfully Updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-                    is_book_updated = True
+                    is_reload = True
                     CloseTransparentForm()
                     Me.Hide()
                 End If

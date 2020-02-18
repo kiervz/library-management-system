@@ -77,7 +77,7 @@ Public Class ucIssuedReturn
 
             If dr.Read Then
                 txtName.Text = dr("firstname") + " " + dr("middlename") + " " + dr("lastname")
-                txtYearSec.Text = dr("year") + " " + dr("section")
+                txtYearSec.Text = dr("major")
                 txtType.Text = "Student"
             Else
                 cmd.Dispose()

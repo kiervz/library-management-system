@@ -5,8 +5,9 @@ Public Class frmRegisterStudent
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtStudentID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 And txtMajor.Text.Length > 0 Then
             If Val(txtAge.Text) >= 10 Then
-                Dim ask As String = MessageBox.Show("Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If ask = DialogResult.Yes Then
+                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+
+                If msgBoxButtonClick = DialogResult.Yes Then
                     Try
                         str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
                         cmd = New SqlCommand(str, conn)

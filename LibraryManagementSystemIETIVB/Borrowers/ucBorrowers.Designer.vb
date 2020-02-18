@@ -566,12 +566,12 @@ Partial Class ucBorrowers
         Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddStudent.ForeColor = System.Drawing.Color.White
         Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddStudent.Location = New System.Drawing.Point(968, 25)
+        Me.btnAddStudent.Location = New System.Drawing.Point(985, 25)
         Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(130, 35)
+        Me.btnAddStudent.Size = New System.Drawing.Size(113, 35)
         Me.btnAddStudent.TabIndex = 62
-        Me.btnAddStudent.Text = " ADD STUDENT"
+        Me.btnAddStudent.Text = "ADD STUDENT"
         Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddStudent.UseVisualStyleBackColor = False
         '
@@ -585,12 +585,12 @@ Partial Class ucBorrowers
         Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImportStudent.ForeColor = System.Drawing.Color.White
         Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportStudent.Location = New System.Drawing.Point(806, 25)
+        Me.btnImportStudent.Location = New System.Drawing.Point(835, 25)
         Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
         Me.btnImportStudent.Name = "btnImportStudent"
-        Me.btnImportStudent.Size = New System.Drawing.Size(160, 35)
+        Me.btnImportStudent.Size = New System.Drawing.Size(143, 35)
         Me.btnImportStudent.TabIndex = 61
-        Me.btnImportStudent.Text = " IMPORT STUDENTS"
+        Me.btnImportStudent.Text = "IMPORT STUDENTS"
         Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImportStudent.UseVisualStyleBackColor = False
         '
@@ -653,12 +653,12 @@ Partial Class ucBorrowers
         Me.btnAddFaculty.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddFaculty.ForeColor = System.Drawing.Color.White
         Me.btnAddFaculty.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddFaculty.Location = New System.Drawing.Point(968, 25)
+        Me.btnAddFaculty.Location = New System.Drawing.Point(985, 25)
         Me.btnAddFaculty.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAddFaculty.Name = "btnAddFaculty"
-        Me.btnAddFaculty.Size = New System.Drawing.Size(130, 35)
+        Me.btnAddFaculty.Size = New System.Drawing.Size(113, 35)
         Me.btnAddFaculty.TabIndex = 69
-        Me.btnAddFaculty.Text = " ADD FACULTY"
+        Me.btnAddFaculty.Text = "ADD FACULTY"
         Me.btnAddFaculty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddFaculty.UseVisualStyleBackColor = False
         '
@@ -672,12 +672,12 @@ Partial Class ucBorrowers
         Me.btnImportFaculties.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImportFaculties.ForeColor = System.Drawing.Color.White
         Me.btnImportFaculties.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportFaculties.Location = New System.Drawing.Point(806, 25)
+        Me.btnImportFaculties.Location = New System.Drawing.Point(835, 25)
         Me.btnImportFaculties.Margin = New System.Windows.Forms.Padding(0)
         Me.btnImportFaculties.Name = "btnImportFaculties"
-        Me.btnImportFaculties.Size = New System.Drawing.Size(160, 35)
+        Me.btnImportFaculties.Size = New System.Drawing.Size(143, 35)
         Me.btnImportFaculties.TabIndex = 68
-        Me.btnImportFaculties.Text = " IMPORT FACULTIES"
+        Me.btnImportFaculties.Text = "IMPORT FACULTIES"
         Me.btnImportFaculties.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImportFaculties.UseVisualStyleBackColor = False
         '

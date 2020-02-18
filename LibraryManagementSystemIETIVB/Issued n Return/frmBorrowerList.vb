@@ -9,14 +9,14 @@ Public Class frmBorrowerList
 
     Private Sub LoadStudents()
         Try
-            str = "SELECT student_id, firstname, middlename, lastname, gender, course, year, section FROM students"
+            str = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             dgvStudents.Rows.Clear()
 
             While dr.Read
-                dgvStudents.Rows.Add(dr("student_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), dr("course"), dr("year"), dr("section"))
+                dgvStudents.Rows.Add(dr("student_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), dr("major"))
             End While
         Catch ex As Exception
             MsgBox(ex.Message)

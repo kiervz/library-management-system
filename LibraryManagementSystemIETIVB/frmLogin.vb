@@ -118,7 +118,7 @@ Public Class frmLogin
 
     Private Sub GetUpdatedTime()
         Try
-            str = "SELECT time_updated_at FROM data_updated"
+            str = "SELECT time_updated_at FROM options"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 

@@ -14,9 +14,9 @@ Public Class ucBookManagement
         register_book._form_title = "REGISTER BOOK"
         register_book.ShowDialog(Me)
 
-        If is_book_updated = True Then
+        If is_reload = True Then
             FillGridView()
-            is_book_updated = False
+            is_reload = False
         End If
     End Sub
 
@@ -71,9 +71,9 @@ Public Class ucBookManagement
                 update_book._selected_book_id = dgvBooks.Item(0, i).Value
                 update_book.ShowDialog(Me)
 
-                If is_book_updated = True Then
+                If is_reload = True Then
                     FillGridView()
-                    is_book_updated = False
+                    is_reload = False
                 End If
             End If
         End If
