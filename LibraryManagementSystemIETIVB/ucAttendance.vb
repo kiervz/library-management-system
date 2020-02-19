@@ -55,7 +55,11 @@ Public Class ucAttendance
             dgvAttendance.Rows.Clear()
 
             While dr.Read
-                dgvAttendance.Rows.Add(dr("id_no"), dr("firstname"), dr("middlename"), dr("lastname"), dr("type"), dr("date"), dr("time_in"), dr("time_out"))
+                If IsDBNull(dr("time_out")) Then
+                    dgvAttendance.Rows.Add(dr("id_no"), dr("firstname"), dr("middlename"), dr("lastname"), dr("type"), CDate(dr("date")).ToShortDateString(), CDate(dr("time_in")).ToString("hh:mm tt"), "-")
+                Else
+                    dgvAttendance.Rows.Add(dr("id_no"), dr("firstname"), dr("middlename"), dr("lastname"), dr("type"), CDate(dr("date")).ToShortDateString(), CDate(dr("time_in")).ToString("hh:mm tt"), CDate(dr("time_out")).ToString("hh:mm tt"))
+                End If
             End While
 
         Catch ex As Exception

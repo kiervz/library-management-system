@@ -42,8 +42,6 @@ Partial Class ucAttendance
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgvAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -140,7 +138,7 @@ Partial Class ucAttendance
         Me.dgvAttendance.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvAttendance.ColumnHeadersHeight = 28
         Me.dgvAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
+        Me.dgvAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!)
@@ -193,7 +191,7 @@ Partial Class ucAttendance
         Me.Column2.HeaderText = "Firstname"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 180
+        Me.Column2.Width = 200
         '
         'Column3
         '
@@ -207,21 +205,19 @@ Partial Class ucAttendance
         Me.Column4.HeaderText = "Lastname"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 180
+        Me.Column4.Width = 200
         '
         'Column5
         '
         Me.Column5.HeaderText = "Type"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 70
         '
         'Column6
         '
         Me.Column6.HeaderText = "Date"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 70
         '
         'Column7
         '
@@ -234,24 +230,6 @@ Partial Class ucAttendance
         Me.Column8.HeaderText = "Time Out"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Edit"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column9.Width = 50
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "Delete"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column10.Width = 50
         '
         'ucAttendance
         '
@@ -284,6 +262,4 @@ Partial Class ucAttendance
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewImageColumn
-    Friend WithEvents Column10 As DataGridViewImageColumn
 End Class
