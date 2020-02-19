@@ -52,7 +52,7 @@ Partial Class frmReportBookMasterList
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "LibraryManagementSystemIETIVB.ReportBooksMasterList.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(20, 92)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(983, 531)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1070, 551)
         Me.ReportViewer1.TabIndex = 0
         '
         'Panel1
@@ -60,7 +60,7 @@ Partial Class frmReportBookMasterList
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(20, 60)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(983, 32)
+        Me.Panel1.Size = New System.Drawing.Size(1070, 32)
         Me.Panel1.TabIndex = 1
         '
         'dtBooksTableAdapter
@@ -71,7 +71,7 @@ Partial Class frmReportBookMasterList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1023, 643)
+        Me.ClientSize = New System.Drawing.Size(1110, 663)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmReportBookMasterList"

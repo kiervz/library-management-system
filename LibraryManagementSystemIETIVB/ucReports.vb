@@ -7,4 +7,10 @@
         CloseTransparentForm()
     End Sub
 
+    Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+        OpenTransparentForm(Me)
+        Dim attendance As New frmReportsAttendance
+        attendance.ShowDialog(Me)
+        CloseTransparentForm()
+    End Sub
 End Class

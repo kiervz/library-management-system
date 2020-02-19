@@ -8,7 +8,7 @@ Public Class frmReportBookMasterList
         Dim ps = New Printing.PageSettings()
         ps.Landscape = True
         ps.Margins.Right = 0
-        ps.PaperSize = New Printing.PaperSize("Letter Extra", 900, 1200)
+        ps.PaperSize = New Printing.PaperSize("Letter Extra", 900, 1300)
         ps.PaperSize.RawKind = Printing.PaperKind.LetterExtra
         ReportViewer1.SetPageSettings(ps)
 

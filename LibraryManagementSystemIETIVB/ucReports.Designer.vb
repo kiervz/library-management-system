@@ -29,6 +29,7 @@ Partial Class ucReports
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnAttendance = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -61,7 +62,7 @@ Partial Class ucReports
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(432, 159)
+        Me.Button1.Location = New System.Drawing.Point(432, 435)
         Me.Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(198, 60)
@@ -165,6 +166,25 @@ Partial Class ucReports
         Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button6.UseVisualStyleBackColor = False
         '
+        'btnAttendance
+        '
+        Me.btnAttendance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAttendance.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAttendance.FlatAppearance.BorderSize = 0
+        Me.btnAttendance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAttendance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAttendance.ForeColor = System.Drawing.Color.White
+        Me.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAttendance.Location = New System.Drawing.Point(432, 159)
+        Me.btnAttendance.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAttendance.Name = "btnAttendance"
+        Me.btnAttendance.Size = New System.Drawing.Size(198, 60)
+        Me.btnAttendance.TabIndex = 70
+        Me.btnAttendance.Text = "ATTENDANCE"
+        Me.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAttendance.UseVisualStyleBackColor = False
+        '
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
@@ -175,11 +195,11 @@ Partial Class ucReports
         Me.Button7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(432, 435)
+        Me.Button7.Location = New System.Drawing.Point(694, 435)
         Me.Button7.Margin = New System.Windows.Forms.Padding(0)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(198, 60)
-        Me.Button7.TabIndex = 70
+        Me.Button7.TabIndex = 71
         Me.Button7.Text = " PAYMENT"
         Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button7.UseVisualStyleBackColor = False
@@ -189,6 +209,7 @@ Partial Class ucReports
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.btnAttendance)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -209,5 +230,6 @@ Partial Class ucReports
     Private WithEvents Button4 As Button
     Private WithEvents Button5 As Button
     Private WithEvents Button6 As Button
+    Private WithEvents btnAttendance As Button
     Private WithEvents Button7 As Button
 End Class
