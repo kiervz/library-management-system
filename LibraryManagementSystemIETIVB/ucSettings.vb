@@ -1,4 +1,6 @@
-﻿Public Class ucSettings
+﻿Imports System.Data.SqlClient
+
+Public Class ucSettings
 
     Private _passScore As Integer = 0
 
@@ -15,6 +17,14 @@
         My.Settings.no_days_allow = txtNoDaysAllowed.Text
         My.Settings.penalty_per_day = txtPenaltyPerDay.Text
         'My.Settings.IdleTime = txtIdleTime.Text
+
+        Try
+            str = "UPDATE options SET grace_perion = @gp WHERE id = 1"
+            cmd = New SqlCommand(str, conn)
+            cmd.Parameters.AddWithValue("@gp", txtGracePeriod.Text)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+        End Try
         My.Settings.Save()
         My.Settings.Reload()
     End Sub

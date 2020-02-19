@@ -49,6 +49,8 @@ Partial Class ucSettings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtGracePeriod = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
@@ -74,6 +76,8 @@ Partial Class ucSettings
         'MetroTabPage2
         '
         Me.MetroTabPage2.BackColor = System.Drawing.Color.White
+        Me.MetroTabPage2.Controls.Add(Me.txtGracePeriod)
+        Me.MetroTabPage2.Controls.Add(Me.Label9)
         Me.MetroTabPage2.Controls.Add(Me.txtIdleTime)
         Me.MetroTabPage2.Controls.Add(Me.Label4)
         Me.MetroTabPage2.Controls.Add(Me.btnSave)
@@ -100,22 +104,23 @@ Partial Class ucSettings
         '
         Me.txtIdleTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIdleTime.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdleTime.Location = New System.Drawing.Point(640, 233)
+        Me.txtIdleTime.Location = New System.Drawing.Point(640, 273)
         Me.txtIdleTime.MaxLength = 30
         Me.txtIdleTime.Name = "txtIdleTime"
         Me.txtIdleTime.Size = New System.Drawing.Size(207, 26)
         Me.txtIdleTime.TabIndex = 187
-        Me.txtIdleTime.Text = "300"
+        Me.txtIdleTime.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(177, 239)
+        Me.Label4.Location = New System.Drawing.Point(177, 279)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(225, 20)
         Me.Label4.TabIndex = 186
         Me.Label4.Text = "Maximum idle time in seconds"
+        Me.Label4.Visible = False
         '
         'btnSave
         '
@@ -127,7 +132,7 @@ Partial Class ucSettings
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(761, 309)
+        Me.btnSave.Location = New System.Drawing.Point(761, 368)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 35)
@@ -140,7 +145,7 @@ Partial Class ucSettings
         '
         Me.txtPenaltyPerDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPenaltyPerDay.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPenaltyPerDay.Location = New System.Drawing.Point(640, 177)
+        Me.txtPenaltyPerDay.Location = New System.Drawing.Point(640, 169)
         Me.txtPenaltyPerDay.MaxLength = 30
         Me.txtPenaltyPerDay.Name = "txtPenaltyPerDay"
         Me.txtPenaltyPerDay.Size = New System.Drawing.Size(207, 26)
@@ -150,7 +155,7 @@ Partial Class ucSettings
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(177, 183)
+        Me.Label3.Location = New System.Drawing.Point(177, 175)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 20)
         Me.Label3.TabIndex = 168
@@ -160,7 +165,7 @@ Partial Class ucSettings
         '
         Me.txtNoDaysAllowed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNoDaysAllowed.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNoDaysAllowed.Location = New System.Drawing.Point(640, 121)
+        Me.txtNoDaysAllowed.Location = New System.Drawing.Point(640, 117)
         Me.txtNoDaysAllowed.MaxLength = 30
         Me.txtNoDaysAllowed.Name = "txtNoDaysAllowed"
         Me.txtNoDaysAllowed.Size = New System.Drawing.Size(207, 26)
@@ -170,11 +175,11 @@ Partial Class ucSettings
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(177, 127)
+        Me.Label2.Location = New System.Drawing.Point(177, 123)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(159, 20)
+        Me.Label2.Size = New System.Drawing.Size(169, 20)
         Me.Label2.TabIndex = 166
-        Me.Label2.Text = "No. of days allowed "
+        Me.Label2.Text = "No. of day(s) allowed "
         '
         'txtNoBooksAllowed
         '
@@ -393,6 +398,26 @@ Partial Class ucSettings
         Me.Label7.TabIndex = 220
         Me.Label7.Text = "Re type Password:"
         '
+        'txtGracePeriod
+        '
+        Me.txtGracePeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtGracePeriod.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGracePeriod.Location = New System.Drawing.Point(640, 221)
+        Me.txtGracePeriod.MaxLength = 30
+        Me.txtGracePeriod.Name = "txtGracePeriod"
+        Me.txtGracePeriod.Size = New System.Drawing.Size(207, 26)
+        Me.txtGracePeriod.TabIndex = 188
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(177, 227)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(295, 20)
+        Me.Label9.TabIndex = 189
+        Me.Label9.Text = "Grace period after time in and time out"
+        '
         'ucSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -439,4 +464,6 @@ Partial Class ucSettings
     Friend WithEvents txtNewpass As TextBox
     Friend WithEvents txtConfirmpass As TextBox
     Private WithEvents btnSubmit As Button
+    Friend WithEvents txtGracePeriod As TextBox
+    Private WithEvents Label9 As Label
 End Class
