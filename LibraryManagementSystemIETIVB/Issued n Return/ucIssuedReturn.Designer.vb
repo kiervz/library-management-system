@@ -74,11 +74,14 @@ Partial Class ucIssuedReturn
         Me.panelNoRecord = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtType = New System.Windows.Forms.TextBox()
+        Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
+        Me.ConfirmReturnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvBorrows, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbBrowsePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelNoRecord.SuspendLayout()
+        Me.MaterialContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvBorrows
@@ -621,10 +624,26 @@ Partial Class ucIssuedReturn
         Me.txtType.Size = New System.Drawing.Size(383, 26)
         Me.txtType.TabIndex = 200
         '
+        'MaterialContextMenuStrip1
+        '
+        Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MaterialContextMenuStrip1.Depth = 0
+        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfirmReturnToolStripMenuItem1})
+        Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(157, 48)
+        '
+        'ConfirmReturnToolStripMenuItem1
+        '
+        Me.ConfirmReturnToolStripMenuItem1.Name = "ConfirmReturnToolStripMenuItem1"
+        Me.ConfirmReturnToolStripMenuItem1.Size = New System.Drawing.Size(156, 22)
+        Me.ConfirmReturnToolStripMenuItem1.Text = "Confirm Return"
+        '
         'ucIssuedReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.Controls.Add(Me.txtType)
         Me.Controls.Add(Me.panelNoRecord)
         Me.Controls.Add(Me.txtPublisher)
@@ -663,6 +682,7 @@ Partial Class ucIssuedReturn
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelNoRecord.ResumeLayout(False)
         Me.panelNoRecord.PerformLayout()
+        Me.MaterialContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -714,4 +734,6 @@ Partial Class ucIssuedReturn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewImageColumn
     Friend WithEvents txtType As TextBox
+    Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
+    Friend WithEvents ConfirmReturnToolStripMenuItem1 As ToolStripMenuItem
 End Class

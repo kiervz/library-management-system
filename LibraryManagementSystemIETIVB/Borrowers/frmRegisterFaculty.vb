@@ -19,6 +19,8 @@ Public Class frmRegisterFaculty
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.ExecuteNonQuery()
 
+                        is_reload = True
+
                         CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                         ClearAll()
                     Catch ex As Exception

@@ -95,14 +95,6 @@ Public Class frmMain
         lblTitle.Text = "Issued && Return"
     End Sub
 
-    'Private Sub btnFacultyManagement_Click(sender As Object, e As EventArgs) Handles btnFacultyManagement.Click
-    '    'movePanelSelector(btnFacultyManagement)
-    '    'HideAllUserControl()
-    '    'UcFacultyManagement1.Visible = True
-    '    'UcFacultyManagement1.FillGridView()
-    '    'lblTitle.Text = "Faculty Management"
-    'End Sub
-
     Private Sub btnBookManagement_Click(sender As Object, e As EventArgs) Handles btnBookManagement.Click
         movePanelSelector(btnBookManagement)
         HideAllUserControl()
@@ -111,13 +103,16 @@ Public Class frmMain
         lblTitle.Text = "Books Management"
     End Sub
 
-    'Private Sub btnStudentsMangement_Click(sender As Object, e As EventArgs) Handles btnStudentsMangement.Click
-    '    movePanelSelector(btnStudentsMangement)
-    '    HideAllUserControl()
-    '    UcStudentManagement1.Visible = True
-    '    UcStudentManagement1.FillGridView()
-    '    lblTitle.Text = "Students Management"
-    'End Sub
+    Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
+        movePanelSelector(btnBorrowers)
+        HideAllUserControl()
+        If Not isFacultiesImporting = True Or Not isStudentsImporting = True Then
+            UcBorrowers1.FillGridViewStudent()
+            UcBorrowers1.FillGridViewFaculty()
+        End If
+        UcBorrowers1.Visible = True
+        lblTitle.Text = "Borrowers"
+    End Sub
 
     Private Sub btnUserManagement_Click(sender As Object, e As EventArgs) Handles btnUserManagement.Click
         movePanelSelector(btnUserManagement)
@@ -146,6 +141,7 @@ Public Class frmMain
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         movePanelSelector(btnSettings)
         HideAllUserControl()
+        UcSettings1.LoadGracePeriod()
         UcSettings1.Visible = True
         lblTitle.Text = "Settings"
     End Sub
@@ -263,14 +259,4 @@ Public Class frmMain
         pbProfile.Region = rg
     End Sub
 
-    Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click
-        movePanelSelector(btnBorrowers)
-        HideAllUserControl()
-        If Not isFacultiesImporting = True Or Not isStudentsImporting = True Then
-            UcBorrowers1.FillGridViewStudent()
-            UcBorrowers1.FillGridViewFaculty()
-        End If
-        UcBorrowers1.Visible = True
-        lblTitle.Text = "Borrowers"
-    End Sub
 End Class

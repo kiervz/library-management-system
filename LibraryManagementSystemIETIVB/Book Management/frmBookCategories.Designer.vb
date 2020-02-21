@@ -28,15 +28,15 @@ Partial Class frmBookCategories
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvBookCategories = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtCategory = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgvBookCategories, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -77,7 +77,7 @@ Partial Class frmBookCategories
         Me.dgvBookCategories.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBookCategories.EnableHeadersVisualStyles = False
         Me.dgvBookCategories.GridColor = System.Drawing.Color.White
-        Me.dgvBookCategories.Location = New System.Drawing.Point(40, 103)
+        Me.dgvBookCategories.Location = New System.Drawing.Point(40, 120)
         Me.dgvBookCategories.MultiSelect = False
         Me.dgvBookCategories.Name = "dgvBookCategories"
         Me.dgvBookCategories.ReadOnly = True
@@ -104,96 +104,8 @@ Partial Class frmBookCategories
         Me.dgvBookCategories.ShowCellErrors = False
         Me.dgvBookCategories.ShowEditingIcon = False
         Me.dgvBookCategories.ShowRowErrors = False
-        Me.dgvBookCategories.Size = New System.Drawing.Size(668, 326)
+        Me.dgvBookCategories.Size = New System.Drawing.Size(668, 348)
         Me.dgvBookCategories.TabIndex = 95
-        '
-        'txtCategory
-        '
-        Me.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCategory.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCategory.Location = New System.Drawing.Point(740, 209)
-        Me.txtCategory.MaxLength = 30
-        Me.txtCategory.Name = "txtCategory"
-        Me.txtCategory.Size = New System.Drawing.Size(252, 26)
-        Me.txtCategory.TabIndex = 163
-        '
-        'label1
-        '
-        Me.label1.AutoSize = True
-        Me.label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(736, 174)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(72, 20)
-        Me.label1.TabIndex = 164
-        Me.label1.Text = "Category:"
-        Me.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClear.FlatAppearance.BorderSize = 0
-        Me.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnClear.Location = New System.Drawing.Point(918, 260)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(73, 35)
-        Me.btnClear.TabIndex = 167
-        Me.btnClear.Text = "CLEAR"
-        Me.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClear.UseVisualStyleBackColor = False
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdate.FlatAppearance.BorderSize = 0
-        Me.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdate.Location = New System.Drawing.Point(829, 260)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(73, 35)
-        Me.btnUpdate.TabIndex = 166
-        Me.btnUpdate.Text = "UPDATE"
-        Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'btnSave
-        '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.FlatAppearance.BorderSize = 0
-        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(740, 260)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(73, 35)
-        Me.btnSave.TabIndex = 165
-        Me.btnSave.Text = "SAVE"
-        Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSave.UseVisualStyleBackColor = False
-        '
-        'btnClose
-        '
-        Me.btnClose.AutoSize = True
-        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(952, 15)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(62, 17)
-        Me.btnClose.TabIndex = 188
-        Me.btnClose.Text = "[ Close ]"
         '
         'Column1
         '
@@ -219,11 +131,99 @@ Partial Class frmBookCategories
         Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Column3.Width = 50
         '
+        'txtCategory
+        '
+        Me.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCategory.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCategory.Location = New System.Drawing.Point(740, 226)
+        Me.txtCategory.MaxLength = 30
+        Me.txtCategory.Name = "txtCategory"
+        Me.txtCategory.Size = New System.Drawing.Size(252, 26)
+        Me.txtCategory.TabIndex = 163
+        '
+        'label1
+        '
+        Me.label1.AutoSize = True
+        Me.label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label1.Location = New System.Drawing.Point(736, 191)
+        Me.label1.Name = "label1"
+        Me.label1.Size = New System.Drawing.Size(72, 20)
+        Me.label1.TabIndex = 164
+        Me.label1.Text = "Category:"
+        Me.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClear.Location = New System.Drawing.Point(918, 277)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(73, 35)
+        Me.btnClear.TabIndex = 167
+        Me.btnClear.Text = "CLEAR"
+        Me.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdate.FlatAppearance.BorderSize = 0
+        Me.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUpdate.Location = New System.Drawing.Point(829, 277)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(73, 35)
+        Me.btnUpdate.TabIndex = 166
+        Me.btnUpdate.Text = "UPDATE"
+        Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSave.Location = New System.Drawing.Point(740, 277)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(73, 35)
+        Me.btnSave.TabIndex = 165
+        Me.btnSave.Text = "SAVE"
+        Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'btnClose
+        '
+        Me.btnClose.AutoSize = True
+        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(952, 15)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(62, 17)
+        Me.btnClose.TabIndex = 188
+        Me.btnClose.Text = "[ Close ]"
+        '
         'frmBookCategories
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1026, 550)
+        Me.ClientSize = New System.Drawing.Size(1026, 563)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnClear)

@@ -1,6 +1,4 @@
 ﻿Imports System.IO
-Imports System.Text
-Imports System.Windows.Forms
 
 <CLSCompliant(True)>
 Public Class ErrorLogger
@@ -18,7 +16,6 @@ Public Class ErrorLogger
     'RETURNS:       Nothing
     '*************************************************************
     Public Sub WriteToErrorLog(ByVal msg As String, ByVal stkTrace As String, ByVal title As String)
-
         'check and make the directory if necessary; this is set to look in the application
         'folder, you may wish to place the error log in another location depending upon the
         'the user's role and write access to different areas of the file system

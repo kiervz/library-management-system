@@ -125,7 +125,7 @@ Partial Class frmRegisterStudent
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(113, 33)
-        Me.btnRegister.TabIndex = 9
+        Me.btnRegister.TabIndex = 7
         Me.btnRegister.Text = "REGISTER"
         Me.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRegister.UseVisualStyleBackColor = False
@@ -137,7 +137,7 @@ Partial Class frmRegisterStudent
         Me.btnClose.Location = New System.Drawing.Point(516, 20)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
-        Me.btnClose.TabIndex = 237
+        Me.btnClose.TabIndex = 8
         Me.btnClose.Text = "[ Close ]"
         '
         'txtStudentID
@@ -148,7 +148,7 @@ Partial Class frmRegisterStudent
         Me.txtStudentID.MaxLength = 30
         Me.txtStudentID.Name = "txtStudentID"
         Me.txtStudentID.Size = New System.Drawing.Size(269, 26)
-        Me.txtStudentID.TabIndex = 248
+        Me.txtStudentID.TabIndex = 0
         '
         'txtFirstname
         '
@@ -158,7 +158,7 @@ Partial Class frmRegisterStudent
         Me.txtFirstname.MaxLength = 30
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(269, 26)
-        Me.txtFirstname.TabIndex = 249
+        Me.txtFirstname.TabIndex = 1
         '
         'txtMiddlename
         '
@@ -168,7 +168,7 @@ Partial Class frmRegisterStudent
         Me.txtMiddlename.MaxLength = 30
         Me.txtMiddlename.Name = "txtMiddlename"
         Me.txtMiddlename.Size = New System.Drawing.Size(269, 26)
-        Me.txtMiddlename.TabIndex = 250
+        Me.txtMiddlename.TabIndex = 2
         '
         'txtLastname
         '
@@ -178,7 +178,7 @@ Partial Class frmRegisterStudent
         Me.txtLastname.MaxLength = 30
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(269, 26)
-        Me.txtLastname.TabIndex = 251
+        Me.txtLastname.TabIndex = 3
         '
         'txtMajor
         '
@@ -188,7 +188,7 @@ Partial Class frmRegisterStudent
         Me.txtMajor.MaxLength = 30
         Me.txtMajor.Name = "txtMajor"
         Me.txtMajor.Size = New System.Drawing.Size(269, 26)
-        Me.txtMajor.TabIndex = 253
+        Me.txtMajor.TabIndex = 6
         '
         'dtBday
         '
@@ -198,7 +198,7 @@ Partial Class frmRegisterStudent
         Me.dtBday.MinimumSize = New System.Drawing.Size(0, 25)
         Me.dtBday.Name = "dtBday"
         Me.dtBday.Size = New System.Drawing.Size(204, 25)
-        Me.dtBday.TabIndex = 254
+        Me.dtBday.TabIndex = 5
         '
         'txtAge
         '
@@ -219,7 +219,7 @@ Partial Class frmRegisterStudent
         Me.cmbGender.Location = New System.Drawing.Point(228, 289)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(269, 25)
-        Me.cmbGender.TabIndex = 256
+        Me.cmbGender.TabIndex = 4
         Me.cmbGender.UseSelectable = True
         '
         'frmRegisterStudent

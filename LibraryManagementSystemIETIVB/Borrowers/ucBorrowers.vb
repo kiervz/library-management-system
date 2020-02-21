@@ -306,7 +306,6 @@ Public Class ucBorrowers
             FillGridViewFaculty()
             is_reload = False
         End If
-
     End Sub
 
     Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click
@@ -399,7 +398,6 @@ Public Class ucBorrowers
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

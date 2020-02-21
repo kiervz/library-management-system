@@ -33,7 +33,7 @@ Public Class frmBookCategories
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-                MessageBox.Show("Category you have entered is already exist!")
+                CustomMessageBox.ShowDialog(Me, "Category you have entered is already exist!", "Already Exist", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
                 Exit Sub
             End If
             CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
@@ -43,7 +43,7 @@ Public Class frmBookCategories
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@category", txtCategory.Text)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Category has been added!")
+                CustomMessageBox.ShowDialog(Me, "Category has been added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                 LoadCategories()
                 txtCategory.Clear()
             End If
@@ -66,15 +66,15 @@ Public Class frmBookCategories
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@category", txtCategory.Text)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Category has been updated!")
+                CustomMessageBox.ShowDialog(Me, "Category has been updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                 LoadCategories()
                 txtCategory.Clear()
                 btnSave.Enabled = True
                 btnUpdate.Enabled = False
             End If
         Catch ex As Exception
-            Dim el As New ErrorLogger
-            el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+            'Dim el As New ErrorLogger
+            'el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
             CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Finally
             dr.Close()

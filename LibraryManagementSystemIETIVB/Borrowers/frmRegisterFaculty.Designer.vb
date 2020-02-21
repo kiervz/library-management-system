@@ -197,7 +197,7 @@ Partial Class frmRegisterFaculty
         Me.btnClose.Location = New System.Drawing.Point(515, 20)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
-        Me.btnClose.TabIndex = 230
+        Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "[ Close ]"
         '
         'frmRegisterFaculty

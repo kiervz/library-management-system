@@ -10,6 +10,7 @@ Public Class ucSettings
         txtPenaltyPerDay.Text = My.Settings.penalty_per_day
         'txtIdleTime.Text = My.Settings.IdleTime
         MetroTabControl1.SelectedIndex = 0
+        LoadGracePeriod()
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -19,7 +20,7 @@ Public Class ucSettings
         'My.Settings.IdleTime = txtIdleTime.Text
 
         Try
-            str = "UPDATE options SET grace_perion = @gp WHERE id = 1"
+            str = "UPDATE options SET grace_period = @gp WHERE id = 1"
             cmd = New SqlCommand(str, conn)
             cmd.Parameters.AddWithValue("@gp", txtGracePeriod.Text)
             cmd.ExecuteNonQuery()
@@ -29,6 +30,18 @@ Public Class ucSettings
         My.Settings.Reload()
     End Sub
 
+    Friend Sub LoadGracePeriod()
+        Try
+            str = "SELECT grace_period FROM options WHERE id = 1"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                txtGracePeriod.Text = dr("grace_period")
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         If txtConfirmpass.Text = "" Or txtNewpass.Text = "" Or txtOldpass.Text = "" Then
             MessageBox.Show("Please complete all fields.", "NOTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

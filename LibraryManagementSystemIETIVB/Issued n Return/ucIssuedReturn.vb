@@ -288,4 +288,45 @@ Public Class ucIssuedReturn
             txtPenalty.Text += Val(dgvBorrows.Item(6, i).Value)
         Next
     End Sub
+
+    Private Sub dgvBorrows_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBorrows.CellMouseClick
+
+        Dim i As Integer = dgvBorrows.CurrentRow.Index
+        If dgvBorrows.Item(6, i).Value > 0 Then
+            If e.Button = MouseButtons.Right Then
+                MaterialContextMenuStrip1.Show(Cursor.Position)
+            End If
+        End If
+    End Sub
+
+    Private Sub ConfirmReturnToolStripMenuItem1_MouseDown(sender As Object, e As MouseEventArgs) Handles ConfirmReturnToolStripMenuItem1.MouseDown
+        If e.Button = MouseButtons.Left Then
+            Dim i As Integer = dgvBorrows.CurrentRow.Index
+            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+
+            If msgBoxButtonClick = DialogResult.Yes Then
+                Try
+                    str = "UPDATE borrows SET status_id = '0', status = 'Returned', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+
+                    str = "UPDATE books SET copies = (copies + 1) WHERE isbn = '" + CStr(dgvBorrows.Item(1, i).Value) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+
+                    CustomMessageBox.ShowDialog(Me, "Book Successfully Returned", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    LoadBorrowedBooks()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                Finally
+                    dr.Close()
+                    cmd.Dispose()
+                End Try
+            End If
+
+            MaterialContextMenuStrip1.Hide()
+        End If
+    End Sub
 End Class

@@ -42,14 +42,6 @@ Partial Class ucUserManagement
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.dgvUserInfo = New MetroFramework.Controls.MetroGrid()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.panelNoArchived = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -65,6 +57,14 @@ Partial Class ucUserManagement
         Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.cmbUserType = New MetroFramework.Controls.MetroComboBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.panelNoRecord.SuspendLayout()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
@@ -124,7 +124,7 @@ Partial Class ucUserManagement
         Me.btnAddNewUser.ForeColor = System.Drawing.Color.White
         Me.btnAddNewUser.Image = CType(resources.GetObject("btnAddNewUser.Image"), System.Drawing.Image)
         Me.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddNewUser.Location = New System.Drawing.Point(10, 26)
+        Me.btnAddNewUser.Location = New System.Drawing.Point(928, 25)
         Me.btnAddNewUser.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAddNewUser.Name = "btnAddNewUser"
         Me.btnAddNewUser.Size = New System.Drawing.Size(155, 35)
@@ -234,69 +234,6 @@ Partial Class ucUserManagement
         Me.dgvUserInfo.Size = New System.Drawing.Size(1097, 401)
         Me.dgvUserInfo.Style = MetroFramework.MetroColorStyle.Teal
         Me.dgvUserInfo.TabIndex = 50
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "USER ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 110
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "USER TYPE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 140
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 380
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "GENDER"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 95
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "USERNAME"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 125
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "BIRTHDAY"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 110
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "EDIT"
-        Me.Column10.Image = CType(resources.GetObject("Column10.Image"), System.Drawing.Image)
-        Me.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column10.Width = 50
-        '
-        'Column11
-        '
-        Me.Column11.HeaderText = "DELETE"
-        Me.Column11.Image = CType(resources.GetObject("Column11.Image"), System.Drawing.Image)
-        Me.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column11.Width = 55
         '
         'MetroTabPage2
         '
@@ -473,7 +410,7 @@ Partial Class ucUserManagement
         Me.txtSearch.CustomButton.UseSelectable = True
         Me.txtSearch.CustomButton.Visible = False
         Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(872, 36)
+        Me.txtSearch.Location = New System.Drawing.Point(151, 35)
         Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -496,7 +433,7 @@ Partial Class ucUserManagement
         Me.cmbSearchBy.FormattingEnabled = True
         Me.cmbSearchBy.ItemHeight = 19
         Me.cmbSearchBy.Items.AddRange(New Object() {"USER ID", "NAME", "USER TYPE"})
-        Me.cmbSearchBy.Location = New System.Drawing.Point(734, 36)
+        Me.cmbSearchBy.Location = New System.Drawing.Point(9, 35)
         Me.cmbSearchBy.Name = "cmbSearchBy"
         Me.cmbSearchBy.PromptText = "Search By"
         Me.cmbSearchBy.Size = New System.Drawing.Size(132, 25)
@@ -514,12 +451,74 @@ Partial Class ucUserManagement
         Me.cmbUserType.FormattingEnabled = True
         Me.cmbUserType.ItemHeight = 19
         Me.cmbUserType.Items.AddRange(New Object() {"All", "Administrator", "Librarian", "Student Assistant"})
-        Me.cmbUserType.Location = New System.Drawing.Point(872, 36)
+        Me.cmbUserType.Location = New System.Drawing.Point(151, 35)
         Me.cmbUserType.Name = "cmbUserType"
         Me.cmbUserType.Size = New System.Drawing.Size(240, 25)
         Me.cmbUserType.Style = MetroFramework.MetroColorStyle.Teal
         Me.cmbUserType.TabIndex = 55
         Me.cmbUserType.UseSelectable = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "USER ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 110
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "USER TYPE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 140
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 380
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "GENDER"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "USERNAME"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 125
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "BIRTHDAY"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 110
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "EDIT"
+        Me.Column10.Image = CType(resources.GetObject("Column10.Image"), System.Drawing.Image)
+        Me.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column10.Width = 50
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "DELETE"
+        Me.Column11.Image = CType(resources.GetObject("Column11.Image"), System.Drawing.Image)
+        Me.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column11.Width = 55
         '
         'ucUserManagement
         '
@@ -563,16 +562,16 @@ Partial Class ucUserManagement
     Friend WithEvents DataGridViewImageColumn4 As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents panelNoArchived As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Column11 As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
     Private WithEvents cmbSearchBy As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Timer1 As Timer
     Private WithEvents cmbUserType As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewImageColumn
+    Friend WithEvents Column11 As DataGridViewImageColumn
 End Class

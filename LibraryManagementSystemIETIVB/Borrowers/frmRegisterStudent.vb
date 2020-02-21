@@ -20,6 +20,8 @@ Public Class frmRegisterStudent
                         cmd.Parameters.AddWithValue("@major", txtMajor.Text)
                         cmd.ExecuteNonQuery()
 
+                        is_reload = True
+
                         CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                         ClearAll()
                     Catch ex As Exception

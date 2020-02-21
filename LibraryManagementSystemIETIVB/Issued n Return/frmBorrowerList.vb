@@ -3,14 +3,16 @@
 Public Class frmBorrowerList
     Private Sub frmBorrowers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MetroTabControl1.SelectedIndex = 0
+        cmbSearchFaculty.SelectedIndex = 0
+        cmbSearchStudent.SelectedIndex = 0
         LoadStudents()
         LoadFaculties()
     End Sub
 
-    Private Sub LoadStudents()
+    Private Sub LoadStudents(Optional ByVal str As String = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students", Optional ByVal search As String = "")
         Try
-            str = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students"
             cmd = New SqlCommand(str, conn)
+            If Not search = "" Then cmd.Parameters.AddWithValue("@search", txtSearchStudent.Text)
             dr = cmd.ExecuteReader
 
             dgvStudents.Rows.Clear()
@@ -23,10 +25,10 @@ Public Class frmBorrowerList
         End Try
     End Sub
 
-    Private Sub LoadFaculties()
+    Private Sub LoadFaculties(Optional ByVal str As String = "SELECT faculty_id, firstname, middlename, lastname, gender, birthday FROM faculties", Optional ByVal search As String = "")
         Try
-            str = "SELECT * FROM faculties"
             cmd = New SqlCommand(str, conn)
+            If Not search = "" Then cmd.Parameters.AddWithValue("@search", txtSearchFaculty.Text)
             dr = cmd.ExecuteReader
 
             dgvFaculties.Rows.Clear()
@@ -60,4 +62,45 @@ Public Class frmBorrowerList
         Me.Hide()
     End Sub
 
+    Private Sub txtSearchStudent_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchStudent.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If cmbSearchStudent.SelectedIndex = 0 Then
+                str = "SELECT * FROM students WHERE student_id = @search"
+            ElseIf cmbSearchStudent.SelectedIndex = 1 Then
+                str = "SELECT * FROM students WHERE lastname = @search"
+            ElseIf cmbSearchStudent.SelectedIndex = 2 Then
+                str = "SELECT * FROM students WHERE firstname = @search"
+            ElseIf cmbSearchStudent.SelectedIndex = 3 Then
+                str = "SELECT * FROM students WHERE middlename = @search"
+            ElseIf cmbSearchStudent.SelectedIndex = 4 Then
+                str = "SELECT * FROM students WHERE major = @search"
+            End If
+
+            If Not txtSearchStudent.Text = "" Then
+                LoadStudents(str, txtSearchStudent.Text)
+            Else
+                LoadStudents()
+            End If
+        End If
+    End Sub
+
+    Private Sub txtSearchFaculty_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchFaculty.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If cmbSearchFaculty.SelectedIndex = 0 Then
+                str = "SELECT * FROM faculties WHERE faculty_id = @search"
+            ElseIf cmbSearchFaculty.SelectedIndex = 1 Then
+                str = "SELECT * FROM faculties WHERE lastname = @search"
+            ElseIf cmbSearchFaculty.SelectedIndex = 2 Then
+                str = "SELECT * FROM faculties WHERE firstname = @search"
+            ElseIf cmbSearchFaculty.SelectedIndex = 3 Then
+                str = "SELECT * FROM faculties WHERE middlename = @search"
+            End If
+
+            If Not txtSearchFaculty.Text = "" Then
+                LoadFaculties(str, txtSearchFaculty.Text)
+            Else
+                LoadFaculties()
+            End If
+        End If
+    End Sub
 End Class
