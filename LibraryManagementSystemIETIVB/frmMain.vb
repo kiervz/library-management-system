@@ -100,7 +100,7 @@ Public Class frmMain
         HideAllUserControl()
         UcBookManagement1.Visible = True
         UcBookManagement1.FillGridView()
-        lblTitle.Text = "Books Management"
+        lblTitle.Text = "Books Entry"
     End Sub
 
     Private Sub btnBorrowers_Click(sender As Object, e As EventArgs) Handles btnBorrowers.Click

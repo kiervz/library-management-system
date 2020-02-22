@@ -1,5 +1,4 @@
 ﻿Imports MetroFramework.Forms
-Imports System.Runtime.InteropServices
 
 Module CustomMessageBox
 
@@ -26,43 +25,43 @@ Module CustomMessageBox
         Danger = 4
     End Enum
 
-    Public Function ShowDialog(owner As System.Windows.Forms.IWin32Window, message As String, title As String, Optional msgButton As MessageBoxButtonn = MessageBoxButtonn.Ok, Optional msgIcon As MessageBoxIconn = MessageBoxIconn.Information)
+    Public Function ShowDialog(owner As IWin32Window, message As String, title As String, Optional msgButton As MessageBoxButtonn = MessageBoxButtonn.Ok, Optional msgIcon As MessageBoxIconn = MessageBoxIconn.Information)
         Dim color As New Color
 
         If msgIcon = MessageBoxIconn.Question Then
             MessageBeep(_MB_ICONQUESTION)
-            color = Drawing.Color.Gray
+            color = Color.Gray
         ElseIf msgIcon = MessageBoxIconn.Information Then
             MessageBeep(_MB_ICONINFORMATION)
-            color = System.Drawing.Color.FromArgb(52, 152, 219)
+            color = Color.FromArgb(52, 152, 219)
         ElseIf msgIcon = MessageBoxIconn.Success Then
             MessageBeep(_MB_ICONINFORMATION)
-            color = System.Drawing.Color.FromArgb(26, 188, 156)
+            color = Color.FromArgb(26, 188, 156)
         ElseIf msgIcon = MessageBoxIconn.Exclamation Then
             MessageBeep(_MB_ICONEXCLAMATION)
-            color = System.Drawing.Color.FromArgb(211, 84, 0) 'Color Orange
+            color = Color.FromArgb(211, 84, 0) 'Color Orange
         ElseIf msgIcon = MessageBoxIconn.Danger Then
             MessageBeep(_MB_ICONHAND)
-            color = System.Drawing.Color.FromArgb(192, 57, 43) 'Color Red
+            color = Color.FromArgb(192, 57, 43) 'Color Red
         End If
 
 
         Dim btnFirst As New Button
         With btnFirst
             If msgIcon = MessageBoxIconn.Danger Then
-                .BackColor = Drawing.Color.FromArgb(240, 240, 240)
-                .ForeColor = System.Drawing.Color.FromArgb(64, 64, 64)
+                .BackColor = Color.FromArgb(240, 240, 240)
+                .ForeColor = Color.FromArgb(64, 64, 64)
             Else
                 .BackColor = color
-                .ForeColor = Drawing.Color.White
+                .ForeColor = Color.White
             End If
-            .Cursor = System.Windows.Forms.Cursors.Hand
+            .Cursor = Cursors.Hand
             .FlatAppearance.BorderSize = 0
-            .FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            .Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular)
-            .Location = New System.Drawing.Point(358, 153)
+            .FlatStyle = FlatStyle.Flat
+            .Font = New Font("Segoe UI", 9.0!, FontStyle.Regular)
+            .Location = New Point(358, 153)
             .Name = "btnFirst"
-            .Size = New System.Drawing.Size(90, 28)
+            .Size = New Size(90, 28)
             .UseCompatibleTextRendering = True
             .UseVisualStyleBackColor = True
         End With
@@ -220,7 +219,6 @@ Module CustomMessageBox
         form.Controls.Add(pbIcon)
 
         Return form.ShowDialog(owner)
-
     End Function
 
 End Module

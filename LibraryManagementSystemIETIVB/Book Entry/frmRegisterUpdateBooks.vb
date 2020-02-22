@@ -9,13 +9,22 @@ Public Class frmRegisterUpdateBooks
     Friend _selected_book_id As String
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Try
+            If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
 
-        If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtCopies.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+                str = "SELECT isbn FROM books WHERE isbn = '" + txtISBN.Text + "'"
+                cmd = New SqlCommand(str, conn)
+                dr = cmd.ExecuteReader
 
-            If msgBoxButtonClick = DialogResult.Yes Then
-                Try
-                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,copies,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@copies,@image)"
+                If dr.Read Then
+                    CustomMessageBox.ShowDialog(Me, "Book Already Exist", "Note", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Exit Sub
+                End If
+
+                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+
+                If msgBoxButtonClick = DialogResult.Yes Then
+                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@image)"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
                     cmd.Parameters.AddWithValue("@call_number", txtCallNumber.Text)
@@ -26,19 +35,18 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@category_id", _category_id)
                     cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
                     cmd.Parameters.AddWithValue("@series", txtSeries.Text)
-                    cmd.Parameters.AddWithValue("@copies", txtCopies.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
                     CustomMessageBox.ShowDialog(Me, "Book Successfully Added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
 
                     ClearAll()
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                End If
+            Else
+                CustomMessageBox.ShowDialog(Me, "Please fill all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
             End If
-        Else
-            CustomMessageBox.ShowDialog(Me, "Please fill all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub frmRegisterUpdateBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -49,14 +57,13 @@ Public Class frmRegisterUpdateBooks
 
         If _form_title = "UPDATE BOOK" Then
             Try
-                str = "SELECT books.id, books.isbn, books.call_number, books.title, books.author, books.publisher, books.description, book_categories.category_id, book_categories.category, books.date_published, books.series, books.copies, books.price, books.image FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.id = '" + CStr(_selected_book_id) + "'"
+                str = "SELECT books.id, books.isbn, books.call_number, books.title, books.author, books.publisher, books.description, book_categories.category_id, book_categories.category, books.date_published, books.series, books.price, books.image FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.id = '" + CStr(_selected_book_id) + "'"
                 cmd = New SqlCommand(str, conn)
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
                     txtAuthor.Text = dr("author")
                     txtCallNumber.Text = dr("call_number")
-                    txtCopies.Text = dr("copies")
                     txtDatePublished.Text = dr("date_published")
                     txtDescription.Text = dr("description")
                     txtISBN.Text = dr("isbn")
@@ -86,8 +93,7 @@ Public Class frmRegisterUpdateBooks
 
     Private Sub BrowsePicture(sender As Object, e As EventArgs) Handles pbBrowsePic.Click, lblBrowsePic.Click
         OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
-        OpenFileDialog1.ShowDialog()
-        If Not OpenFileDialog1.FileName = Nothing Then
+        If OpenFileDialog1.ShowDialog(Me) = DialogResult.OK Then
             pbBookImage.ImageLocation = OpenFileDialog1.FileName
             _imagePath = pbBookImage.ImageLocation
         End If
@@ -142,7 +148,6 @@ Public Class frmRegisterUpdateBooks
         txtISBN.Clear()
         txtPrice.Clear()
         txtPublisher.Clear()
-        txtCopies.Clear()
         txtDatePublished.Clear()
         txtTitle.Clear()
         cmbCategories.SelectedIndex = 0
@@ -150,7 +155,7 @@ Public Class frmRegisterUpdateBooks
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtCopies.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
+            If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
                 CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
                 If msgBoxButtonClick = DialogResult.Yes Then
@@ -167,7 +172,6 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
                     cmd.Parameters.AddWithValue("@series", txtSeries.Text)
                     cmd.Parameters.AddWithValue("@price", txtPrice.Text)
-                    cmd.Parameters.AddWithValue("@copies", txtCopies.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
@@ -179,7 +183,6 @@ Public Class frmRegisterUpdateBooks
                 End If
 
             End If
-
         Catch ex As Exception
         Finally
             dr.Close()
@@ -191,4 +194,5 @@ Public Class frmRegisterUpdateBooks
         Dim category As New frmBookCategories
         category.ShowDialog(Me)
     End Sub
+
 End Class

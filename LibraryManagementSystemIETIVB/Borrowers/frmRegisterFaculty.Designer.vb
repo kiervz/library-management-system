@@ -225,6 +225,8 @@ Partial Class frmRegisterFaculty
         Me.Movable = False
         Me.Name = "frmRegisterFaculty"
         Me.Resizable = False
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "FACULTY REGISTRATION"
         Me.ResumeLayout(False)

@@ -47,7 +47,7 @@ Partial Class frmMain
         Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
         Me.UcMessages1 = New LibraryManagementSystemIETIVB.ucMessages()
         Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
-        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookManagement()
+        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookEntry()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
         Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -265,7 +265,7 @@ Partial Class frmMain
         Me.btnBookManagement.Name = "btnBookManagement"
         Me.btnBookManagement.Size = New System.Drawing.Size(230, 45)
         Me.btnBookManagement.TabIndex = 2
-        Me.btnBookManagement.Text = "   BOOKS MANAGEMENT"
+        Me.btnBookManagement.Text = "   BOOKS ENTRY"
         Me.btnBookManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBookManagement.UseVisualStyleBackColor = False
         '
@@ -791,7 +791,7 @@ Partial Class frmMain
     Friend WithEvents UcReports1 As LibraryManagementSystemIETIVB.ucReports
     Friend WithEvents UcMessages1 As LibraryManagementSystemIETIVB.ucMessages
     Friend WithEvents UcDashboard1 As LibraryManagementSystemIETIVB.ucDashboard
-    Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookManagement
+    Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookEntry
     Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
     Friend WithEvents UcAboutIETI1 As LibraryManagementSystemIETIVB.ucAboutIETI
     Friend WithEvents lblDuration As System.Windows.Forms.Label

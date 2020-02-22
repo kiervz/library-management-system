@@ -130,7 +130,7 @@ Partial Class frmBorrrowHistory
         Me.Column2.HeaderText = "Borrower Name"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 150
+        Me.Column2.Width = 200
         '
         'Column3
         '
@@ -156,13 +156,13 @@ Partial Class frmBorrrowHistory
         Me.Column6.HeaderText = "Author"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 120
         '
         'Column7
         '
         Me.Column7.HeaderText = "Date Borrowed"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
+        Me.Column7.Width = 80
         '
         'Column8
         '
@@ -213,6 +213,8 @@ Partial Class frmBorrrowHistory
         Me.Movable = False
         Me.Name = "frmBorrrowHistory"
         Me.Resizable = False
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "Borrow History"
         CType(Me.dgvBorrowHistory, System.ComponentModel.ISupportInitialize).EndInit()
@@ -224,6 +226,9 @@ Partial Class frmBorrrowHistory
     End Sub
 
     Friend WithEvents dgvBorrowHistory As DataGridView
+    Private WithEvents btnClose As Label
+    Friend WithEvents panelNoRecord As Panel
+    Friend WithEvents Label1 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -233,7 +238,4 @@ Partial Class frmBorrrowHistory
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Private WithEvents btnClose As Label
-    Friend WithEvents panelNoRecord As Panel
-    Friend WithEvents Label1 As Label
 End Class

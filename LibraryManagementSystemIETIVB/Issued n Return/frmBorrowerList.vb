@@ -9,10 +9,9 @@ Public Class frmBorrowerList
         LoadFaculties()
     End Sub
 
-    Private Sub LoadStudents(Optional ByVal str As String = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students", Optional ByVal search As String = "")
+    Private Sub LoadStudents(Optional ByVal str As String = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students")
         Try
             cmd = New SqlCommand(str, conn)
-            If Not search = "" Then cmd.Parameters.AddWithValue("@search", txtSearchStudent.Text)
             dr = cmd.ExecuteReader
 
             dgvStudents.Rows.Clear()
@@ -65,21 +64,21 @@ Public Class frmBorrowerList
     Private Sub txtSearchStudent_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchStudent.KeyDown
         If e.KeyCode = Keys.Enter Then
             If cmbSearchStudent.SelectedIndex = 0 Then
-                str = "SELECT * FROM students WHERE student_id = @search"
+                str = "SELECT * FROM students WHERE student_id = '" + txtSearchStudent.Text + "'"
             ElseIf cmbSearchStudent.SelectedIndex = 1 Then
-                str = "SELECT * FROM students WHERE lastname = @search"
+                str = "SELECT * FROM students WHERE lastname LIKE '%" + txtSearchStudent.Text + "%'"
             ElseIf cmbSearchStudent.SelectedIndex = 2 Then
-                str = "SELECT * FROM students WHERE firstname = @search"
+                str = "SELECT * FROM students WHERE firstname LIKE '%" + txtSearchStudent.Text + "%'"
             ElseIf cmbSearchStudent.SelectedIndex = 3 Then
-                str = "SELECT * FROM students WHERE middlename = @search"
+                str = "SELECT * FROM students WHERE middlename LIKE '%" + txtSearchStudent.Text + "%'"
             ElseIf cmbSearchStudent.SelectedIndex = 4 Then
-                str = "SELECT * FROM students WHERE major = @search"
+                str = "SELECT * FROM students WHERE major = '" + txtSearchStudent.Text + "'"
             End If
 
-            If Not txtSearchStudent.Text = "" Then
-                LoadStudents(str, txtSearchStudent.Text)
-            Else
+            If txtSearchStudent.Text = "" Then
                 LoadStudents()
+            Else
+                LoadStudents(str)
             End If
         End If
     End Sub
@@ -87,19 +86,19 @@ Public Class frmBorrowerList
     Private Sub txtSearchFaculty_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchFaculty.KeyDown
         If e.KeyCode = Keys.Enter Then
             If cmbSearchFaculty.SelectedIndex = 0 Then
-                str = "SELECT * FROM faculties WHERE faculty_id = @search"
+                str = "SELECT * FROM faculties WHERE faculty_id = '" + txtSearchFaculty.Text + "'"
             ElseIf cmbSearchFaculty.SelectedIndex = 1 Then
-                str = "SELECT * FROM faculties WHERE lastname = @search"
+                str = "SELECT * FROM faculties WHERE lastname LIKE '%" + txtSearchFaculty.Text + "%'"
             ElseIf cmbSearchFaculty.SelectedIndex = 2 Then
-                str = "SELECT * FROM faculties WHERE firstname = @search"
+                str = "SELECT * FROM faculties WHERE firstname LIKE '%" + txtSearchFaculty.Text + "%'"
             ElseIf cmbSearchFaculty.SelectedIndex = 3 Then
-                str = "SELECT * FROM faculties WHERE middlename = @search"
+                str = "SELECT * FROM faculties WHERE middlenameLIKE '%" + txtSearchFaculty.Text + "%'"
             End If
 
-            If Not txtSearchFaculty.Text = "" Then
-                LoadFaculties(str, txtSearchFaculty.Text)
-            Else
+            If txtSearchFaculty.Text = "" Then
                 LoadFaculties()
+            Else
+                LoadFaculties(str)
             End If
         End If
     End Sub

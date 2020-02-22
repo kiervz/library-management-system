@@ -9,11 +9,6 @@ Public Class frmUpdateUser
         Me._user_id = user_id
     End Sub
 
-    'if the RegisterUser form is close the transparent form will be closed as well
-    Private Sub frmUpdateUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        CloseTransparentForm()
-    End Sub
-
     Private Sub frmUpdateUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         rbMale.Checked = True
@@ -109,17 +104,12 @@ Public Class frmUpdateUser
         End If
     End Sub
 
-    Private Sub UploadImage()
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
-        OpenFileDialog1.ShowDialog()
-        If Not OpenFileDialog1.FileName = Nothing Then
+        If OpenFileDialog1.ShowDialog(Me) = DialogResult.OK Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
             _imagePath = pbProfile.ImageLocation
         End If
-    End Sub
-
-    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-        UploadImage()
     End Sub
 
     Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtMiddlename.KeyPress, txtLastname.KeyPress

@@ -90,8 +90,7 @@ Public Class frmRegisterUser
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         OpenFileDialog1.Filter = "Picture Files (*)|*.jpg;*.png"
-        OpenFileDialog1.ShowDialog()
-        If Not OpenFileDialog1.FileName = Nothing Then
+        If OpenFileDialog1.ShowDialog(Me) = DialogResult.OK Then
             pbProfile.ImageLocation = OpenFileDialog1.FileName
             _imagePath = pbProfile.ImageLocation
         End If

@@ -95,16 +95,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book Management\frmBookCategories.Designer.vb">
-      <DependentUpon>frmBookCategories.vb</DependentUpon>
+    <Compile Include="Book Entry\frmBookAcquired.Designer.vb">
+      <DependentUpon>frmBookAcquired.vb</DependentUpon>
     </Compile>
-    <Compile Include="Book Management\frmBookCategories.vb">
+    <Compile Include="Book Entry\frmBookAcquired.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Book Management\frmBorrrowHistory.Designer.vb">
+    <Compile Include="Book Entry\frmBookCategories.Designer.vb">
+      <DependentUpon>frmBookCategories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Book Entry\frmBookCategories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book Entry\frmBorrrowHistory.Designer.vb">
       <DependentUpon>frmBorrrowHistory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Book Management\frmBorrrowHistory.vb">
+    <Compile Include="Book Entry\frmBorrrowHistory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Borrowers\frmLoanHistory.Designer.vb">
@@ -137,10 +143,10 @@
     <Compile Include="frmPasswordConfirmation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Book Management\frmRegisterUpdateBooks.Designer.vb">
+    <Compile Include="Book Entry\frmRegisterUpdateBooks.Designer.vb">
       <DependentUpon>frmRegisterUpdateBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="Book Management\frmRegisterUpdateBooks.vb">
+    <Compile Include="Book Entry\frmRegisterUpdateBooks.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPasswordConfirmIDLE.Designer.vb">
@@ -275,10 +281,10 @@
     <Compile Include="ucActivityLog.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Book Management\ucBookManagement.Designer.vb">
-      <DependentUpon>ucBookManagement.vb</DependentUpon>
+    <Compile Include="Book Entry\ucBookEntry.Designer.vb">
+      <DependentUpon>ucBookEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="Book Management\ucBookManagement.vb">
+    <Compile Include="Book Entry\ucBookEntry.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucAttendance.Designer.vb">
@@ -313,10 +319,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Book Management\frmBookCategories.resx">
+    <EmbeddedResource Include="Book Entry\frmBookAcquired.resx">
+      <DependentUpon>frmBookAcquired.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book Entry\frmBookCategories.resx">
       <DependentUpon>frmBookCategories.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Book Management\frmBorrrowHistory.resx">
+    <EmbeddedResource Include="Book Entry\frmBorrrowHistory.resx">
       <DependentUpon>frmBorrrowHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Borrowers\frmLoanHistory.resx">
@@ -331,7 +340,7 @@
     <EmbeddedResource Include="frmPasswordConfirmation.resx">
       <DependentUpon>frmPasswordConfirmation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Book Management\frmRegisterUpdateBooks.resx">
+    <EmbeddedResource Include="Book Entry\frmRegisterUpdateBooks.resx">
       <DependentUpon>frmRegisterUpdateBooks.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
@@ -397,8 +406,8 @@
     <EmbeddedResource Include="ucActivityLog.resx">
       <DependentUpon>ucActivityLog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Book Management\ucBookManagement.resx">
-      <DependentUpon>ucBookManagement.vb</DependentUpon>
+    <EmbeddedResource Include="Book Entry\ucBookEntry.resx">
+      <DependentUpon>ucBookEntry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAttendance.resx">
       <DependentUpon>ucAttendance.vb</DependentUpon>

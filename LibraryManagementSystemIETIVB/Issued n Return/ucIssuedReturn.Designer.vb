@@ -631,7 +631,7 @@ Partial Class ucIssuedReturn
         Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfirmReturnToolStripMenuItem1})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(157, 48)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(157, 26)
         '
         'ConfirmReturnToolStripMenuItem1
         '
@@ -643,7 +643,7 @@ Partial Class ucIssuedReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.txtType)
         Me.Controls.Add(Me.panelNoRecord)
         Me.Controls.Add(Me.txtPublisher)

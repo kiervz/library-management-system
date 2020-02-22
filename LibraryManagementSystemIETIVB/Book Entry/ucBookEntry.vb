@@ -1,14 +1,15 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ucBookManagement
+Public Class ucBookEntry
 
     Dim rowCounnt As Integer
 
     Private Sub ucBookManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
+        cmbSearchBy.SelectedIndex = 0
     End Sub
 
-    Private Sub btnAddBook_Click(sender As Object, e As EventArgs) Handles btnAddBook.Click
+    Private Sub btnAddBook_Click(sender As Object, e As EventArgs) Handles btnRegisterBook.Click
         OpenTransparentForm(Me)
         Dim register_book As New frmRegisterUpdateBooks
         register_book._form_title = "REGISTER BOOK"
@@ -77,5 +78,11 @@ Public Class ucBookManagement
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub btnBookAcquired_Click(sender As Object, e As EventArgs) Handles btnBookAcquired.Click
+        OpenTransparentForm(Me)
+        Dim book_acquired As New frmBookAcquired
+        book_acquired.ShowDialog(Me)
     End Sub
 End Class

@@ -35,8 +35,6 @@ Partial Class frmRegisterUpdateBooks
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtDatePublished = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtCopies = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -63,7 +61,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtISBN.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtISBN.Location = New System.Drawing.Point(226, 82)
+        Me.txtISBN.Location = New System.Drawing.Point(226, 98)
         Me.txtISBN.MaxLength = 30
         Me.txtISBN.Name = "txtISBN"
         Me.txtISBN.Size = New System.Drawing.Size(356, 26)
@@ -73,7 +71,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(88, 88)
+        Me.label1.Location = New System.Drawing.Point(88, 104)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(45, 20)
         Me.label1.TabIndex = 162
@@ -83,17 +81,19 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTitle.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTitle.Location = New System.Drawing.Point(226, 124)
+        Me.txtTitle.Location = New System.Drawing.Point(226, 139)
         Me.txtTitle.MaxLength = 30
+        Me.txtTitle.Multiline = True
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(356, 26)
+        Me.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtTitle.Size = New System.Drawing.Size(356, 40)
         Me.txtTitle.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(88, 130)
+        Me.Label2.Location = New System.Drawing.Point(88, 159)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 20)
         Me.Label2.TabIndex = 164
@@ -103,27 +103,29 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAuthor.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAuthor.Location = New System.Drawing.Point(226, 166)
+        Me.txtAuthor.Location = New System.Drawing.Point(226, 194)
         Me.txtAuthor.MaxLength = 30
+        Me.txtAuthor.Multiline = True
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(356, 26)
+        Me.txtAuthor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAuthor.Size = New System.Drawing.Size(356, 40)
         Me.txtAuthor.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(88, 172)
+        Me.Label3.Location = New System.Drawing.Point(88, 214)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 20)
+        Me.Label3.Size = New System.Drawing.Size(78, 20)
         Me.Label3.TabIndex = 166
-        Me.Label3.Text = "Author:"
+        Me.Label3.Text = "Author(s):"
         '
         'txtPublisher
         '
         Me.txtPublisher.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPublisher.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPublisher.Location = New System.Drawing.Point(226, 208)
+        Me.txtPublisher.Location = New System.Drawing.Point(226, 249)
         Me.txtPublisher.MaxLength = 30
         Me.txtPublisher.Name = "txtPublisher"
         Me.txtPublisher.Size = New System.Drawing.Size(356, 26)
@@ -133,7 +135,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(88, 214)
+        Me.Label4.Location = New System.Drawing.Point(88, 255)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 168
@@ -143,7 +145,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescription.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescription.Location = New System.Drawing.Point(226, 250)
+        Me.txtDescription.Location = New System.Drawing.Point(226, 290)
         Me.txtDescription.MaxLength = 30
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(356, 26)
@@ -153,7 +155,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(88, 256)
+        Me.Label5.Location = New System.Drawing.Point(88, 296)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(95, 20)
         Me.Label5.TabIndex = 170
@@ -163,7 +165,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtDatePublished.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDatePublished.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDatePublished.Location = New System.Drawing.Point(226, 337)
+        Me.txtDatePublished.Location = New System.Drawing.Point(226, 375)
         Me.txtDatePublished.MaxLength = 30
         Me.txtDatePublished.Name = "txtDatePublished"
         Me.txtDatePublished.Size = New System.Drawing.Size(356, 26)
@@ -173,37 +175,17 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(88, 340)
+        Me.Label6.Location = New System.Drawing.Point(88, 381)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(122, 20)
         Me.Label6.TabIndex = 172
         Me.Label6.Text = "Date Published:"
         '
-        'txtCopies
-        '
-        Me.txtCopies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCopies.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCopies.Location = New System.Drawing.Point(226, 463)
-        Me.txtCopies.MaxLength = 30
-        Me.txtCopies.Name = "txtCopies"
-        Me.txtCopies.Size = New System.Drawing.Size(356, 26)
-        Me.txtCopies.TabIndex = 8
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(88, 466)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 20)
-        Me.Label7.TabIndex = 174
-        Me.Label7.Text = "Copies:"
-        '
         'txtPrice
         '
         Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPrice.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrice.Location = New System.Drawing.Point(226, 505)
+        Me.txtPrice.Location = New System.Drawing.Point(226, 498)
         Me.txtPrice.MaxLength = 30
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(356, 26)
@@ -213,7 +195,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(88, 508)
+        Me.Label8.Location = New System.Drawing.Point(88, 504)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(50, 20)
         Me.Label8.TabIndex = 176
@@ -223,7 +205,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(88, 298)
+        Me.Label9.Location = New System.Drawing.Point(88, 340)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(83, 20)
         Me.Label9.TabIndex = 178
@@ -233,7 +215,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.cmbCategories.FormattingEnabled = True
         Me.cmbCategories.ItemHeight = 23
-        Me.cmbCategories.Location = New System.Drawing.Point(226, 292)
+        Me.cmbCategories.Location = New System.Drawing.Point(226, 331)
         Me.cmbCategories.Name = "cmbCategories"
         Me.cmbCategories.Size = New System.Drawing.Size(317, 29)
         Me.cmbCategories.TabIndex = 6
@@ -280,7 +262,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCategory.Image = CType(resources.GetObject("btnCategory.Image"), System.Drawing.Image)
-        Me.btnCategory.Location = New System.Drawing.Point(549, 294)
+        Me.btnCategory.Location = New System.Drawing.Point(549, 333)
         Me.btnCategory.Name = "btnCategory"
         Me.btnCategory.Size = New System.Drawing.Size(24, 24)
         Me.btnCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -358,7 +340,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtCallNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCallNumber.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCallNumber.Location = New System.Drawing.Point(226, 421)
+        Me.txtCallNumber.Location = New System.Drawing.Point(226, 457)
         Me.txtCallNumber.MaxLength = 30
         Me.txtCallNumber.Name = "txtCallNumber"
         Me.txtCallNumber.Size = New System.Drawing.Size(356, 26)
@@ -368,7 +350,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(88, 424)
+        Me.Label10.Location = New System.Drawing.Point(88, 463)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(103, 20)
         Me.Label10.TabIndex = 189
@@ -378,7 +360,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.txtSeries.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSeries.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSeries.Location = New System.Drawing.Point(226, 379)
+        Me.txtSeries.Location = New System.Drawing.Point(226, 416)
         Me.txtSeries.MaxLength = 30
         Me.txtSeries.Name = "txtSeries"
         Me.txtSeries.Size = New System.Drawing.Size(356, 26)
@@ -388,7 +370,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(88, 382)
+        Me.Label11.Location = New System.Drawing.Point(88, 422)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(54, 20)
         Me.Label11.TabIndex = 191
@@ -416,8 +398,6 @@ Partial Class frmRegisterUpdateBooks
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtPrice)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtCopies)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtDatePublished)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtDescription)
@@ -459,8 +439,6 @@ Partial Class frmRegisterUpdateBooks
     Private WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtDatePublished As System.Windows.Forms.TextBox
     Private WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txtCopies As System.Windows.Forms.TextBox
-    Private WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtPrice As System.Windows.Forms.TextBox
     Private WithEvents Label8 As System.Windows.Forms.Label
     Private WithEvents Label9 As System.Windows.Forms.Label
