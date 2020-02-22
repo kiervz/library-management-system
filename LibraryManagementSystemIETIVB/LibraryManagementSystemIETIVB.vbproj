@@ -225,6 +225,12 @@
     <Compile Include="Issued n Return\ucIssuedReturn.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ucRecords.Designer.vb">
+      <DependentUpon>ucRecords.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucRecords.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Management\frmUpdateUser.Designer.vb">
       <DependentUpon>frmUpdateUser.vb</DependentUpon>
     </Compile>
@@ -291,12 +297,6 @@
       <DependentUpon>ucAttendance.vb</DependentUpon>
     </Compile>
     <Compile Include="ucAttendance.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucMessages.Designer.vb">
-      <DependentUpon>ucMessages.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ucMessages.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucReports.Designer.vb">
@@ -382,6 +382,9 @@
     <EmbeddedResource Include="Issued n Return\ucIssuedReturn.resx">
       <DependentUpon>ucIssuedReturn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucRecords.resx">
+      <DependentUpon>ucRecords.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Management\frmRegisterUser.resx">
       <DependentUpon>frmRegisterUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -411,9 +414,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucAttendance.resx">
       <DependentUpon>ucAttendance.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucMessages.resx">
-      <DependentUpon>ucMessages.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucReports.resx">
       <DependentUpon>ucReports.vb</DependentUpon>
@@ -547,6 +547,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\monitor-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

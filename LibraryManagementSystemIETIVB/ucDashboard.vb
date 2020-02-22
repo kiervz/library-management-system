@@ -15,8 +15,9 @@ Public Class ucDashboard
     End Sub
 
     Private Sub moreInfoTotalBorrowers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox9.DoubleClick, Panel9.DoubleClick, Label21.DoubleClick
-        frmMain.btnAttendance.PerformClick()
-        frmMain.btnAttendance.Focus()
+        frmMain.btnRecords.PerformClick()
+        frmMain.UcRecords1.MetroTabControl1.SelectedIndex = 1
+        frmMain.btnRecords.Focus()
     End Sub
 
     Private Sub moreInfoTotalUsers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox11.DoubleClick, Panel11.DoubleClick, Label23.DoubleClick

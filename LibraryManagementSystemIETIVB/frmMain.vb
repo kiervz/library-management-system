@@ -46,7 +46,7 @@ Public Class frmMain
         btnUserManagement.Visible = False
         btnAuditLog.Visible = False
         btnReports.Visible = False
-        btnMessages.Location = New Point(4, 239)
+        btnRecords.Location = New Point(4, 239)
         btnSettings.Location = New Point(4, 284)
     End Sub
 
@@ -56,7 +56,7 @@ Public Class frmMain
         UcBookManagement1.Visible = False
         UcAttendance1.Visible = False
         UcDashboard1.Visible = False
-        UcMessages1.Visible = False
+        UcRecords1.Visible = False
         UcReports1.Visible = False
         UcSettings1.Visible = False
         UcBorrowers1.Visible = False
@@ -146,11 +146,15 @@ Public Class frmMain
         lblTitle.Text = "Settings"
     End Sub
 
-    Private Sub btnMessages_Click(sender As Object, e As EventArgs) Handles btnMessages.Click
-        movePanelSelector(btnMessages)
+    Private Sub btnMessages_Click(sender As Object, e As EventArgs) Handles btnRecords.Click
+        movePanelSelector(btnRecords)
         HideAllUserControl()
-        UcMessages1.Visible = True
-        lblTitle.Text = "Messages"
+        UcRecords1.Visible = True
+        UcRecords1.LoadBookOverdue()
+        UcRecords1.LoadBookReturned()
+        UcRecords1.LoadBookUnreturned()
+        UcRecords1.LoadBookInventory()
+        lblTitle.Text = "Records"
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click

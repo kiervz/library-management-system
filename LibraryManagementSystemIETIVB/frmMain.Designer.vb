@@ -28,7 +28,7 @@ Partial Class frmMain
         Me.panelLeft = New System.Windows.Forms.Panel()
         Me.btnBorrowers = New System.Windows.Forms.Button()
         Me.btnIssuedReturn = New System.Windows.Forms.Button()
-        Me.btnMessages = New System.Windows.Forms.Button()
+        Me.btnRecords = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
         Me.btnAuditLog = New System.Windows.Forms.Button()
@@ -39,13 +39,13 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
+        Me.UcRecords1 = New LibraryManagementSystemIETIVB.ucRecords()
         Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
         Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
         Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
         Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
-        Me.UcMessages1 = New LibraryManagementSystemIETIVB.ucMessages()
         Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
         Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookEntry()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
@@ -95,7 +95,7 @@ Partial Class frmMain
         Me.panelLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.panelLeft.Controls.Add(Me.btnBorrowers)
         Me.panelLeft.Controls.Add(Me.btnIssuedReturn)
-        Me.panelLeft.Controls.Add(Me.btnMessages)
+        Me.panelLeft.Controls.Add(Me.btnRecords)
         Me.panelLeft.Controls.Add(Me.btnSettings)
         Me.panelLeft.Controls.Add(Me.btnReports)
         Me.panelLeft.Controls.Add(Me.btnAuditLog)
@@ -149,25 +149,25 @@ Partial Class frmMain
         Me.btnIssuedReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnIssuedReturn.UseVisualStyleBackColor = False
         '
-        'btnMessages
+        'btnRecords
         '
-        Me.btnMessages.BackColor = System.Drawing.SystemColors.Control
-        Me.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMessages.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnMessages.FlatAppearance.BorderSize = 0
-        Me.btnMessages.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnMessages.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMessages.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMessages.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.btnMessages.Image = CType(resources.GetObject("btnMessages.Image"), System.Drawing.Image)
-        Me.btnMessages.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMessages.Location = New System.Drawing.Point(4, 271)
-        Me.btnMessages.Name = "btnMessages"
-        Me.btnMessages.Size = New System.Drawing.Size(230, 45)
-        Me.btnMessages.TabIndex = 5
-        Me.btnMessages.Text = "   MESSAGES"
-        Me.btnMessages.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnMessages.UseVisualStyleBackColor = False
+        Me.btnRecords.BackColor = System.Drawing.SystemColors.Control
+        Me.btnRecords.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRecords.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnRecords.FlatAppearance.BorderSize = 0
+        Me.btnRecords.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecords.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecords.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btnRecords.Image = CType(resources.GetObject("btnRecords.Image"), System.Drawing.Image)
+        Me.btnRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRecords.Location = New System.Drawing.Point(4, 271)
+        Me.btnRecords.Name = "btnRecords"
+        Me.btnRecords.Size = New System.Drawing.Size(230, 45)
+        Me.btnRecords.TabIndex = 5
+        Me.btnRecords.Text = "   RECORDS"
+        Me.btnRecords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRecords.UseVisualStyleBackColor = False
         '
         'btnSettings
         '
@@ -331,13 +331,13 @@ Partial Class frmMain
         'panelCenter
         '
         Me.panelCenter.BackColor = System.Drawing.Color.White
+        Me.panelCenter.Controls.Add(Me.UcRecords1)
         Me.panelCenter.Controls.Add(Me.UcBorrowers1)
         Me.panelCenter.Controls.Add(Me.UcIssuedReturn1)
         Me.panelCenter.Controls.Add(Me.UcAttendance1)
         Me.panelCenter.Controls.Add(Me.UcUserManagement1)
         Me.panelCenter.Controls.Add(Me.UcSettings1)
         Me.panelCenter.Controls.Add(Me.UcReports1)
-        Me.panelCenter.Controls.Add(Me.UcMessages1)
         Me.panelCenter.Controls.Add(Me.UcDashboard1)
         Me.panelCenter.Controls.Add(Me.UcBookManagement1)
         Me.panelCenter.Controls.Add(Me.UcActivityLog1)
@@ -347,6 +347,14 @@ Partial Class frmMain
         Me.panelCenter.Name = "panelCenter"
         Me.panelCenter.Size = New System.Drawing.Size(1126, 645)
         Me.panelCenter.TabIndex = 5
+        '
+        'UcRecords1
+        '
+        Me.UcRecords1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcRecords1.Location = New System.Drawing.Point(0, 33)
+        Me.UcRecords1.Name = "UcRecords1"
+        Me.UcRecords1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcRecords1.TabIndex = 25
         '
         'UcBorrowers1
         '
@@ -397,14 +405,6 @@ Partial Class frmMain
         Me.UcReports1.Size = New System.Drawing.Size(1126, 612)
         Me.UcReports1.TabIndex = 17
         '
-        'UcMessages1
-        '
-        Me.UcMessages1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcMessages1.Location = New System.Drawing.Point(0, 33)
-        Me.UcMessages1.Name = "UcMessages1"
-        Me.UcMessages1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcMessages1.TabIndex = 16
-        '
         'UcDashboard1
         '
         Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -439,6 +439,7 @@ Partial Class frmMain
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.lblTitle)
         Me.Panel4.Controls.Add(Me.divider)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
@@ -778,7 +779,6 @@ Partial Class frmMain
     Private WithEvents btnAuditLog As System.Windows.Forms.Button
     Private WithEvents panelSelector As System.Windows.Forms.Panel
     Private WithEvents btnDashboard As System.Windows.Forms.Button
-    Private WithEvents btnMessages As System.Windows.Forms.Button
     Friend WithEvents divider As MaterialSkin.Controls.MaterialDivider
     Friend WithEvents panelCenter As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
@@ -789,7 +789,6 @@ Partial Class frmMain
     Friend WithEvents UcUserManagement1 As LibraryManagementSystemIETIVB.ucUserManagement
     Friend WithEvents UcSettings1 As LibraryManagementSystemIETIVB.ucSettings
     Friend WithEvents UcReports1 As LibraryManagementSystemIETIVB.ucReports
-    Friend WithEvents UcMessages1 As LibraryManagementSystemIETIVB.ucMessages
     Friend WithEvents UcDashboard1 As LibraryManagementSystemIETIVB.ucDashboard
     Friend WithEvents UcBookManagement1 As LibraryManagementSystemIETIVB.ucBookEntry
     Friend WithEvents UcActivityLog1 As LibraryManagementSystemIETIVB.ucActivityLog
@@ -825,4 +824,6 @@ Partial Class frmMain
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents btnBorrowers As Button
     Friend WithEvents UcBorrowers1 As ucBorrowers
+    Friend WithEvents UcRecords1 As ucRecords
+    Friend WithEvents btnRecords As Button
 End Class

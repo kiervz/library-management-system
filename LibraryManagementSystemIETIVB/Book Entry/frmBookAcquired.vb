@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmBookAcquired
+
     Private Sub frmBookAcquired_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         LoadBooks()
@@ -39,7 +40,6 @@ Public Class frmBookAcquired
             If txtAddCopies.Text = "0" Then
                 CustomMessageBox.ShowDialog(Me, "Please enter greater than zero (0)", "Unable to update", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
             Else
-
                 CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
                 If msgBoxButtonClick = DialogResult.Yes Then
@@ -62,7 +62,6 @@ Public Class frmBookAcquired
                         MsgBox(ex.Message)
                     End Try
                 End If
-
             End If
         End If
     End Sub
@@ -83,7 +82,7 @@ Public Class frmBookAcquired
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Hide()
+        Hide()
         CloseTransparentForm()
     End Sub
 End Class

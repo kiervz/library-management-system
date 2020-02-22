@@ -42,13 +42,14 @@ Public Class ucSettings
         Catch ex As Exception
         End Try
     End Sub
+
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         If txtConfirmpass.Text = "" Or txtNewpass.Text = "" Or txtOldpass.Text = "" Then
-            MessageBox.Show("Please complete all fields.", "NOTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            CustomMessageBox.ShowDialog(Me, "Please complete all fields.", "NOTE", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
         Else
             Try
                 str = "SELECT password FROM users WHERE user_id=@user_id"
-                cmd = New SqlClient.SqlCommand(str, conn)
+                cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@user_id", userID)
                 dr = cmd.ExecuteReader
 
@@ -56,7 +57,6 @@ Public Class ucSettings
                     Dim userpass As String = dr("password")
                     If userpass <> MD5HasherSalt.GetMd5Hash(txtOldpass.Text) Then
                         CustomMessageBox.ShowDialog(Me, "Your old password is incorrect.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
-                        MessageBox.Show("Your old password does not match.", "Does Not Match", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         If txtNewpass.Text <> txtConfirmpass.Text Then
                             CustomMessageBox.ShowDialog(Me, "Your new password does not match.", "Password Requirements", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
@@ -67,11 +67,11 @@ Public Class ucSettings
                             cmd.Dispose()
 
                             str = "UPDATE users SET password = @password WHERE user_id = '" + userID + "'"
-                            cmd = New SqlClient.SqlCommand(str, conn)
+                            cmd = New SqlCommand(str, conn)
                             cmd.Parameters.AddWithValue("@password", MD5HasherSalt.GetMd5Hash(txtNewpass.Text))
                             cmd.ExecuteNonQuery()
 
-                            MessageBox.Show("Password has been changed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            CustomMessageBox.ShowDialog(Me, "Password has been changed!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
                             txtConfirmpass.Text = ""
                             txtNewpass.Text = ""
                             txtOldpass.Text = ""
