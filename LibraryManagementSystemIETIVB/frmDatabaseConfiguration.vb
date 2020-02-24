@@ -1,4 +1,7 @@
-﻿Public Class frmDatabaseConfiguration
+﻿Imports System.Configuration
+
+
+Public Class frmDatabaseConfiguration
 
     Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
         ConnDB()
@@ -23,14 +26,4 @@
         Me.Hide()
     End Sub
 
-    Private Sub LoadSetting()
-        txtServerHost.Text = My.Settings.Server
-        txtDatabase.Text = My.Settings.Database
-        txtUserName.Text = My.Settings.Username
-        txtPassword.Text = My.Settings.Password
-    End Sub
-
-    Private Sub frmDatabaseConfiguration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadSetting()
-    End Sub
 End Class

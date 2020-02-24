@@ -128,18 +128,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property Maghanoy_Library_LMSIETIConnectionString() As String
-            Get
-                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString"),String)
-            End Get
-            Set
-                Me("Maghanoy_Library_LMSIETIConnectionString") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
         Public Property no_books_allow() As Integer
             Get
@@ -177,8 +165,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CLAUDE\SQLEXPRESS;Initial Catalog=Maghanoy_Library_LMSIETI;In"& _ 
-            "tegrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CLAUDE\SQLEXPRESS123;Initial Catalog=Maghanoy_Library_LMSIETI"& _ 
+            ";Integrated Security=True")>  _
         Public ReadOnly Property Maghanoy_Library_LMSIETIConnectionString1() As String
             Get
                 Return CType(Me("Maghanoy_Library_LMSIETIConnectionString1"),String)

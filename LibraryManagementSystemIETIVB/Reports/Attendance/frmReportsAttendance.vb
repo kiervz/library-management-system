@@ -3,7 +3,8 @@
 Public Class frmReportsAttendance
     Private Sub frmReportsAttendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet1.dtAttendance' table. You can move, or remove it, as needed.
-        Me.dtAttendanceTableAdapter.Fill(Me.DataSet1.dtAttendance)
+        Me.dtAttendanceTableAdapter.Connection.ConnectionString = "Data Source= " + My.Settings.Server + ";Initial Catalog= " + My.Settings.Database + ";Integrated Security=True"
+        Me.dtAttendanceTableAdapter.FillByDate(Me.DataSet1.dtAttendance, dtFrom.Value, dtTo.Value)
         PageSettings()
         Parameters()
         Me.ReportViewer1.RefreshReport()

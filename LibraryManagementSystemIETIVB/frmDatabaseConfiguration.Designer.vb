@@ -37,6 +37,7 @@ Partial Class frmDatabaseConfiguration
         '
         'txtDatabase
         '
+        Me.txtDatabase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.LibraryManagementSystemIETIVB.My.MySettings.Default, "Database", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtDatabase.Depth = 0
         Me.txtDatabase.Hint = ""
         Me.txtDatabase.Location = New System.Drawing.Point(158, 227)
@@ -48,6 +49,7 @@ Partial Class frmDatabaseConfiguration
         Me.txtDatabase.SelectionStart = 0
         Me.txtDatabase.Size = New System.Drawing.Size(202, 23)
         Me.txtDatabase.TabIndex = 57
+        Me.txtDatabase.Text = Global.LibraryManagementSystemIETIVB.My.MySettings.Default.Database
         Me.txtDatabase.UseSystemPasswordChar = False
         '
         'label10
@@ -63,6 +65,7 @@ Partial Class frmDatabaseConfiguration
         '
         'txtPassword
         '
+        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.LibraryManagementSystemIETIVB.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtPassword.Depth = 0
         Me.txtPassword.Hint = ""
         Me.txtPassword.Location = New System.Drawing.Point(158, 188)
@@ -74,6 +77,7 @@ Partial Class frmDatabaseConfiguration
         Me.txtPassword.SelectionStart = 0
         Me.txtPassword.Size = New System.Drawing.Size(202, 23)
         Me.txtPassword.TabIndex = 55
+        Me.txtPassword.Text = Global.LibraryManagementSystemIETIVB.My.MySettings.Default.Password
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'label9
@@ -89,6 +93,7 @@ Partial Class frmDatabaseConfiguration
         '
         'txtUserName
         '
+        Me.txtUserName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.LibraryManagementSystemIETIVB.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtUserName.Depth = 0
         Me.txtUserName.Hint = ""
         Me.txtUserName.Location = New System.Drawing.Point(158, 149)
@@ -100,6 +105,7 @@ Partial Class frmDatabaseConfiguration
         Me.txtUserName.SelectionStart = 0
         Me.txtUserName.Size = New System.Drawing.Size(202, 23)
         Me.txtUserName.TabIndex = 53
+        Me.txtUserName.Text = Global.LibraryManagementSystemIETIVB.My.MySettings.Default.Username
         Me.txtUserName.UseSystemPasswordChar = False
         '
         'label8
@@ -115,6 +121,7 @@ Partial Class frmDatabaseConfiguration
         '
         'txtServerHost
         '
+        Me.txtServerHost.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.LibraryManagementSystemIETIVB.My.MySettings.Default, "Server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtServerHost.Depth = 0
         Me.txtServerHost.Hint = ""
         Me.txtServerHost.Location = New System.Drawing.Point(158, 111)
@@ -126,6 +133,7 @@ Partial Class frmDatabaseConfiguration
         Me.txtServerHost.SelectionStart = 0
         Me.txtServerHost.Size = New System.Drawing.Size(202, 23)
         Me.txtServerHost.TabIndex = 51
+        Me.txtServerHost.Text = Global.LibraryManagementSystemIETIVB.My.MySettings.Default.Server
         Me.txtServerHost.UseSystemPasswordChar = False
         '
         'label6

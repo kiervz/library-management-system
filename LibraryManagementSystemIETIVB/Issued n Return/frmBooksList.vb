@@ -13,7 +13,7 @@ Public Class frmBooksList
 
     Private Sub LoadData()
         Try
-            str = "SELECT books.id, books.isbn, books.title, books.author, book_categories.category, books.copies, books.date_published, books.call_number, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.copies > '0'"
+            str = "SELECT books.id, books.isbn, books.title, books.author, book_categories.category, books.copies, books.date_published, books.call_number, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -30,6 +30,11 @@ Public Class frmBooksList
     Private Sub dgvBooks_DoubleClick(sender As Object, e As EventArgs) Handles dgvBooks.DoubleClick
         If dgvBooks.Rows.Count > 0 Then
             Dim i As Integer = dgvBooks.CurrentRow.Index
+
+            If Not dgvBooks.Item(5, i).Value > 0 Then
+                CustomMessageBox.ShowDialog(Me, "Book you have selected is out of stock!", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                Exit Sub
+            End If
 
             book_id = dgvBooks.Item(0, i).Value
             book_isbn = dgvBooks.Item(7, i).Value
