@@ -89,8 +89,6 @@ Public Class frmRegisterUpdateBooks
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        Else
-            cmbCategories.SelectedIndex = 0
         End If
     End Sub
 
@@ -117,6 +115,7 @@ Public Class frmRegisterUpdateBooks
             While dr.Read
                 cmbCategories.Items.Add(dr("category"))
             End While
+            cmbCategories.SelectedIndex = 0
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -196,6 +195,11 @@ Public Class frmRegisterUpdateBooks
     Private Sub btnCategory_Click(sender As Object, e As EventArgs) Handles btnCategory.Click
         Dim category As New frmBookCategories
         category.ShowDialog(Me)
+
+        If is_reload = True Then
+            FillCategories()
+            is_reload = False
+        End If
     End Sub
 
 End Class

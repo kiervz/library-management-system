@@ -90,4 +90,29 @@ Public Class ucBookEntry
             is_reload = False
         End If
     End Sub
+
+    Private Sub cmbSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchBy.SelectedIndexChanged
+        If cmbSearchBy.SelectedIndex = 5 Then
+            cmbCategories.BringToFront()
+            FillCategories()
+        Else
+            txtSearch.BringToFront()
+        End If
+    End Sub
+
+    Private Sub FillCategories()
+        Try
+            str = "SELECT category FROM book_categories"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            cmbCategories.Items.Clear()
+            While dr.Read
+                cmbCategories.Items.Add(dr("category"))
+            End While
+            cmbCategories.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

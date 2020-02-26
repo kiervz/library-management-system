@@ -39,9 +39,9 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
+        Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
         Me.UcRecords1 = New LibraryManagementSystemIETIVB.ucRecords()
         Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
-        Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
         Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
         Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
         Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
@@ -55,6 +55,8 @@ Partial Class frmMain
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDuration = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -331,9 +333,9 @@ Partial Class frmMain
         'panelCenter
         '
         Me.panelCenter.BackColor = System.Drawing.Color.White
+        Me.panelCenter.Controls.Add(Me.UcIssuedReturn1)
         Me.panelCenter.Controls.Add(Me.UcRecords1)
         Me.panelCenter.Controls.Add(Me.UcBorrowers1)
-        Me.panelCenter.Controls.Add(Me.UcIssuedReturn1)
         Me.panelCenter.Controls.Add(Me.UcAttendance1)
         Me.panelCenter.Controls.Add(Me.UcUserManagement1)
         Me.panelCenter.Controls.Add(Me.UcSettings1)
@@ -347,6 +349,15 @@ Partial Class frmMain
         Me.panelCenter.Name = "panelCenter"
         Me.panelCenter.Size = New System.Drawing.Size(1126, 645)
         Me.panelCenter.TabIndex = 5
+        '
+        'UcIssuedReturn1
+        '
+        Me.UcIssuedReturn1.BackColor = System.Drawing.Color.White
+        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
+        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
+        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcIssuedReturn1.TabIndex = 26
         '
         'UcRecords1
         '
@@ -363,15 +374,6 @@ Partial Class frmMain
         Me.UcBorrowers1.Name = "UcBorrowers1"
         Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 612)
         Me.UcBorrowers1.TabIndex = 24
-        '
-        'UcIssuedReturn1
-        '
-        Me.UcIssuedReturn1.BackColor = System.Drawing.SystemColors.Control
-        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
-        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
-        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcIssuedReturn1.TabIndex = 23
         '
         'UcAttendance1
         '
@@ -472,6 +474,8 @@ Partial Class frmMain
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.Controls.Add(Me.lblDate)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.lblDuration)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -479,6 +483,32 @@ Partial Class frmMain
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1126, 20)
         Me.Panel1.TabIndex = 22
+        '
+        'lblDate
+        '
+        Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDate.AutoSize = True
+        Me.lblDate.BackColor = System.Drawing.Color.Silver
+        Me.lblDate.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.ForeColor = System.Drawing.Color.Black
+        Me.lblDate.Location = New System.Drawing.Point(559, 2)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(15, 17)
+        Me.lblDate.TabIndex = 25
+        Me.lblDate.Text = "0"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Silver
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(522, 1)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(41, 17)
+        Me.Label3.TabIndex = 24
+        Me.Label3.Text = "Date:"
         '
         'Label4
         '
@@ -820,10 +850,12 @@ Partial Class frmMain
     Friend WithEvents btnUserManagement As System.Windows.Forms.Button
     Friend WithEvents UcAttendance1 As ucAttendance
     Friend WithEvents btnIssuedReturn As Button
-    Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents btnBorrowers As Button
     Friend WithEvents UcBorrowers1 As ucBorrowers
     Friend WithEvents UcRecords1 As ucRecords
     Friend WithEvents btnRecords As Button
+    Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
+    Friend WithEvents lblDate As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

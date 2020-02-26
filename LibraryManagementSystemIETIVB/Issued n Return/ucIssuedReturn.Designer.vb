@@ -325,7 +325,6 @@ Partial Class ucIssuedReturn
         Me.txtPenalty.Name = "txtPenalty"
         Me.txtPenalty.Size = New System.Drawing.Size(383, 26)
         Me.txtPenalty.TabIndex = 169
-        Me.txtPenalty.Text = "0"
         '
         'Label7
         '

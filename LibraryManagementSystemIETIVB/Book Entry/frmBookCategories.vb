@@ -46,6 +46,7 @@ Public Class frmBookCategories
                 CustomMessageBox.ShowDialog(Me, "Category has been added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                 LoadCategories()
                 txtCategory.Clear()
+                is_reload = True
             End If
         Catch ex As Exception
             Dim el As New ErrorLogger
@@ -71,6 +72,7 @@ Public Class frmBookCategories
                 txtCategory.Clear()
                 btnSave.Enabled = True
                 btnUpdate.Enabled = False
+                is_reload = True
             End If
         Catch ex As Exception
             'Dim el As New ErrorLogger

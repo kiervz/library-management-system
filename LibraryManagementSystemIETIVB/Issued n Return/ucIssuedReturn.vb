@@ -79,6 +79,7 @@ Public Class ucIssuedReturn
                 txtName.Text = dr("firstname") + " " + dr("middlename") + " " + dr("lastname")
                 txtYearSec.Text = dr("major")
                 txtType.Text = "Student"
+                If txtPenalty.Text = "" Then txtPenalty.Text = "0"
             Else
                 cmd.Dispose()
                 dr.Close()
@@ -91,6 +92,7 @@ Public Class ucIssuedReturn
                     txtName.Text = dr("firstname") + " " + dr("middlename") + " " + dr("lastname")
                     txtYearSec.Text = "NONE"
                     txtType.Text = "Faculty"
+                    If txtPenalty.Text = "" Then txtPenalty.Text = "0"
                 Else
                     ClearBorrowerInformation()
                 End If
@@ -291,7 +293,6 @@ Public Class ucIssuedReturn
     End Sub
 
     Private Sub dgvBorrows_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBorrows.CellMouseClick
-
         Dim i As Integer = dgvBorrows.CurrentRow.Index
         If dgvBorrows.Item(6, i).Value > 0 Then
             If e.Button = MouseButtons.Right Then
