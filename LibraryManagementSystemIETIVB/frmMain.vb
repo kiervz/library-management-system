@@ -70,6 +70,7 @@ Public Class frmMain
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
         UcDashboard1.Visible = True
+        UcRecords1.ThreadUpdateBookBorrowers()
         UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
         UcDashboard1.TotalBookLost()
@@ -146,13 +147,14 @@ Public Class frmMain
         lblTitle.Text = "Settings"
     End Sub
 
-    Private Sub btnMessages_Click(sender As Object, e As EventArgs) Handles btnRecords.Click
+    Private Sub btnRecords_Click(sender As Object, e As EventArgs) Handles btnRecords.Click
         movePanelSelector(btnRecords)
         HideAllUserControl()
         UcRecords1.Visible = True
+        UcRecords1.MetroTabControl1.SelectedIndex = 0
         UcRecords1.LoadBookOverdue()
         UcRecords1.LoadBookReturned()
-        UcRecords1.LoadBookUnreturned()
+        UcRecords1.LoadBookBorrowed()
         UcRecords1.LoadBookInventory()
         lblTitle.Text = "Records"
     End Sub

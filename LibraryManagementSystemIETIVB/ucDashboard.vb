@@ -31,12 +31,6 @@ Public Class ucDashboard
 
     Private Sub ucDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        TotalUsers()
-        TotalStudents()
-        TotalOverDue()
-        TotalBorrowers()
-        TotalBookLost()
-        TotalBooks()
     End Sub
 
     Friend Sub TotalUsers()
@@ -79,7 +73,7 @@ Public Class ucDashboard
 
     Friend Sub TotalOverDue()
         Try
-            str = "SELECT COUNT(*) AS total_overdue FROM borrows WHERE (day_penalty > 0)"
+            str = "SELECT COUNT(*) AS total_overdue FROM borrows WHERE (day_penalty > 0) AND (status_id = 1)"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 

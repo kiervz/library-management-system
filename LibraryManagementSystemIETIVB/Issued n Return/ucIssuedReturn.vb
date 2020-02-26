@@ -104,6 +104,7 @@ Public Class ucIssuedReturn
     End Sub
 
     Private Sub ucIssuedReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ConnDB()
         txtBookAllowed.Text = My.Settings.no_books_allow
         txtDayAllowed.Text = My.Settings.no_days_allow
         txtPenaltyDay.Text = My.Settings.penalty_per_day

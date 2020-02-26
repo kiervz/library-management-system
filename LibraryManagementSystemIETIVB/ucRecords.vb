@@ -1,10 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ucRecords
+
+    Dim thread As System.Threading.Thread
+
     Private Sub ucRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         LoadBookOverdue()
-        LoadBookUnreturned()
+        LoadBookBorrowed()
         LoadBookReturned()
         LoadBookInventory()
     End Sub
@@ -26,34 +29,92 @@ Public Class ucRecords
                     dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"))
                 End If
             End While
+            If dgvBooksOverdue.RowCount = 0 Then
+                panelBookOverdue.BringToFront()
+            Else
+                panelBookOverdue.SendToBack()
+            End If
         Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
         End Try
     End Sub
 
-    Friend Sub LoadBookUnreturned()
+    Friend Sub LoadBookBorrowed()
         Try
             Dim row_count As Integer = 0
             str = "SELECT books.call_number, books.title, books.author, borrows.status_id, users.username, borrows.student_faculty_no, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed FROM books INNER JOIN borrows ON books.id = borrows.book_id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.status_id = '1')"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
-            dgvBooksUnreturned.Rows.Clear()
+            dgvBooksBorrowed.Rows.Clear()
 
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBooksUnreturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
                 Else
-                    dgvBooksUnreturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
                 End If
             End While
+
+            If dgvBooksBorrowed.RowCount = 0 Then
+                panelBookBorrowed.BringToFront()
+            Else
+                panelBookBorrowed.SendToBack()
+            End If
+
+            ThreadUpdateBookBorrowers()
         Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
+        End Try
+    End Sub
+
+    Friend Sub ThreadUpdateBookBorrowers()
+
+        thread = New System.Threading.Thread(AddressOf UpdateBookBorrowers)
+
+        If Not thread.IsAlive Then
+            thread = New System.Threading.Thread(AddressOf UpdateBookBorrowers)
+            thread.IsBackground = False
+            thread.SetApartmentState(Threading.ApartmentState.MTA)
+            thread.Start()
+        End If
+    End Sub
+
+    Private Sub UpdateBookBorrowers()
+        Try
+            For i = 0 To dgvBooksBorrowed.Rows.Count - 1
+                str = "SELECT b.id, c.isbn, c.title, c.author, b.student_faculty_no, b.date_borrowed, b.date_due, b.day_penalty, b.status, a.username FROM users AS a INNER JOIN borrows AS b ON a.user_id = b.user_id INNER JOIN books AS c ON b.book_id = c.id WHERE (b.student_faculty_no = @student_faculty_no) AND (b.status_id = '1')"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@student_faculty_no", dgvBooksBorrowed.Item(7, i).Value)
+                dr = cmd.ExecuteReader
+
+                While dr.Read
+                    Dim due_date As DateTime = dr("date_due")
+                    Dim date_now As DateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm tt")
+                    Dim temp_day_penalty As TimeSpan = date_now.Subtract(due_date)
+                    Dim day_penalty As Integer = temp_day_penalty.Days
+                    Dim hour_penalty As Integer = temp_day_penalty.Hours
+                    Dim borrow_id As String = dr("id")
+
+                    'UPDATE the day_penalty of borrows table
+                    str = "UPDATE borrows SET day_penalty = @day_penalty WHERE id = '" + CStr(borrow_id) + "'"
+                    cmd = New SqlCommand(str, conn)
+
+                    If day_penalty < 0 Then day_penalty = 0
+                    If day_penalty = 0 And (hour_penalty < 24 And hour_penalty > 0) Then day_penalty = 1
+
+                    cmd.Parameters.AddWithValue("@day_penalty", CStr(day_penalty))
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+
+                    Dim total_penalty As Decimal = Val(day_penalty) * Val(My.Settings.penalty_per_day)
+                    str = "UPDATE borrows SET payment=@payment WHERE id = '" + CStr(borrow_id) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.Parameters.AddWithValue("@payment", total_penalty)
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+                End While
+            Next
+        Catch ex As Exception
         End Try
     End Sub
 
@@ -74,10 +135,13 @@ Public Class ucRecords
                     dgvBooksReturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
                 End If
             End While
+
+            If dgvBooksReturned.RowCount = 0 Then
+                panelBookReturned.BringToFront()
+            Else
+                panelBookReturned.SendToBack()
+            End If
         Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
         End Try
     End Sub
 
@@ -94,10 +158,13 @@ Public Class ucRecords
                 row_count += 1
                 dgvBooksInventory.Rows.Add(row_count, dr("call_number"), dr("isbn"), dr("title"), dr("author"), dr("category"), dr("date_published"), dr("publisher"), dr("total_copies"), dr("total_borrowers"), dr("total_lost"), dr("available_copies"))
             End While
+
+            If dgvBooksInventory.RowCount = 0 Then
+                panelBookInventory.BringToFront()
+            Else
+                panelBookInventory.SendToBack()
+            End If
         Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
         End Try
     End Sub
 
