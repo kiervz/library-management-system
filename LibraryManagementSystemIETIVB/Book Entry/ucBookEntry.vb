@@ -84,5 +84,10 @@ Public Class ucBookEntry
         OpenTransparentForm(Me)
         Dim book_acquired As New frmBookAcquired
         book_acquired.ShowDialog(Me)
+
+        If is_reload = True Then
+            FillGridView()
+            is_reload = False
+        End If
     End Sub
 End Class

@@ -55,7 +55,7 @@ Public Class frmBookAcquired
                         cmd.ExecuteNonQuery()
 
                         CustomMessageBox.ShowDialog(Me, "Book copies is already updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-
+                        is_reload = True
                         LoadBooks()
                         ClearAll()
                     Catch ex As Exception

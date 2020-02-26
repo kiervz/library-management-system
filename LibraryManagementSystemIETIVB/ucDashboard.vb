@@ -26,7 +26,9 @@ Public Class ucDashboard
     End Sub
 
     Private Sub moreInfoBooksOverdue_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox10.DoubleClick, Panel10.DoubleClick, Label22.DoubleClick
-
+        frmMain.btnRecords.PerformClick()
+        frmMain.UcRecords1.MetroTabControl1.SelectedIndex = 4
+        frmMain.btnRecords.Focus()
     End Sub
 
     Private Sub ucDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load

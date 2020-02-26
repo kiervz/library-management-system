@@ -24,7 +24,7 @@ Public Class frmRegisterUpdateBooks
                 CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
                 If msgBoxButtonClick = DialogResult.Yes Then
-                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,image) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@image)"
+                    str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,image,price,copies,total_copies) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@image,@price,@copies,@total_copies)"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
                     cmd.Parameters.AddWithValue("@call_number", txtCallNumber.Text)
@@ -36,9 +36,12 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@date_published", txtDatePublished.Text)
                     cmd.Parameters.AddWithValue("@series", txtSeries.Text)
                     cmd.Parameters.AddWithValue("@image", _imagePath)
+                    cmd.Parameters.AddWithValue("@price", txtPrice.Text)
+                    cmd.Parameters.AddWithValue("@copies", "0")
+                    cmd.Parameters.AddWithValue("@total_copies", "0")
                     cmd.ExecuteNonQuery()
                     CustomMessageBox.ShowDialog(Me, "Book Successfully Added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
-
+                    is_reload = True
                     ClearAll()
                 End If
             Else

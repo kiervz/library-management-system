@@ -69,17 +69,17 @@ Public Class ucRecords
 
     Friend Sub ThreadUpdateBookBorrowers()
 
-        thread = New System.Threading.Thread(AddressOf UpdateBookBorrowers)
+        thread = New System.Threading.Thread(AddressOf UpdateBorrowersPenalty)
 
         If Not thread.IsAlive Then
-            thread = New System.Threading.Thread(AddressOf UpdateBookBorrowers)
+            thread = New System.Threading.Thread(AddressOf UpdateBorrowersPenalty)
             thread.IsBackground = False
             thread.SetApartmentState(Threading.ApartmentState.MTA)
             thread.Start()
         End If
     End Sub
 
-    Private Sub UpdateBookBorrowers()
+    Private Sub UpdateBorrowersPenalty()
         Try
             For i = 0 To dgvBooksBorrowed.Rows.Count - 1
                 str = "SELECT b.id, c.isbn, c.title, c.author, b.student_faculty_no, b.date_borrowed, b.date_due, b.day_penalty, b.status, a.username FROM users AS a INNER JOIN borrows AS b ON a.user_id = b.user_id INNER JOIN books AS c ON b.book_id = c.id WHERE (b.student_faculty_no = @student_faculty_no) AND (b.status_id = '1')"
@@ -89,7 +89,7 @@ Public Class ucRecords
 
                 While dr.Read
                     Dim due_date As DateTime = dr("date_due")
-                    Dim date_now As DateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm tt")
+                    Dim date_now As DateTime = Now.ToString("MM/dd/yyyy HH:mm tt")
                     Dim temp_day_penalty As TimeSpan = date_now.Subtract(due_date)
                     Dim day_penalty As Integer = temp_day_penalty.Days
                     Dim hour_penalty As Integer = temp_day_penalty.Hours
@@ -180,4 +180,5 @@ Public Class ucRecords
             dgvBooksInventory.Rows(i).Cells(11).Style.SelectionForeColor = Color.Green
         Next
     End Sub
+
 End Class
