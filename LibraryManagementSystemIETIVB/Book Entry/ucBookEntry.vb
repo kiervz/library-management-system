@@ -92,7 +92,11 @@ Public Class ucBookEntry
     End Sub
 
     Private Sub cmbSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchBy.SelectedIndexChanged
-        If cmbSearchBy.SelectedIndex = 5 Then
+        If cmbSearchBy.SelectedIndex = 0 Then
+            FillGridView()
+            txtSearch.Clear()
+            txtSearch.BringToFront()
+        ElseIf cmbSearchBy.SelectedIndex = 5 Then
             cmbCategories.BringToFront()
             FillCategories()
         Else
@@ -108,11 +112,62 @@ Public Class ucBookEntry
 
             cmbCategories.Items.Clear()
             While dr.Read
+                If cmbCategories.Items.Count = 0 Then
+                    cmbCategories.Items.Add("All Categories")
+                End If
                 cmbCategories.Items.Add(dr("category"))
             End While
             cmbCategories.SelectedIndex = 0
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Try
+                If cmbSearchBy.SelectedIndex = 0 Then
+                    str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
+                ElseIf cmbSearchBy.SelectedIndex = 1 Then
+                    str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.isbn = '" + txtSearch.Text + "'"
+                ElseIf cmbSearchBy.SelectedIndex = 2 Then
+                    str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.title LIKE '%" + txtSearch.Text + "%'"
+                ElseIf cmbSearchBy.SelectedIndex = 3 Then
+                    str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.author LIKE '%" + txtSearch.Text + "%'"
+                ElseIf cmbSearchBy.SelectedIndex = 4 Then
+                    str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE books.publisher LIKE '%" + txtSearch.Text + "%'"
+                End If
+
+                cmd = New SqlCommand(str, conn)
+                dr = cmd.ExecuteReader
+
+                dgvBooks.Rows.Clear()
+
+                While dr.Read
+                    dgvBooks.Rows.Add(dr("id"), dr("call_number"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("date_published"), dr("copies"))
+                End While
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
+
+    Private Sub cmbCategories_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCategories.SelectedIndexChanged
+        Try
+            If cmbCategories.SelectedIndex = 0 Then
+                str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
+            Else
+                str = "SELECT books.id, books.call_number, books.isbn, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id WHERE book_categories.category = '" + cmbCategories.Text + "'"
+            End If
+
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            dgvBooks.Rows.Clear()
+
+            While dr.Read
+                dgvBooks.Rows.Add(dr("id"), dr("call_number"), dr("isbn"), dr("title"), dr("author"), dr("publisher"), dr("category"), dr("date_published"), dr("copies"))
+            End While
+        Catch ex As Exception
         End Try
     End Sub
 End Class

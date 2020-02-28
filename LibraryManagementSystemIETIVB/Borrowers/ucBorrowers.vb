@@ -39,6 +39,8 @@ Public Class ucBorrowers
         ConnDB()
         CheckForIllegalCrossThreadCalls = False
         MetroTabControl1.SelectedIndex = 0
+        cmbSearchStudent.SelectedIndex = 0
+        cmbSearchFaculty.SelectedIndex = 0
         PanelStudentImport.Hide()
         PanelFacultyImport.Hide()
     End Sub
@@ -342,6 +344,7 @@ Public Class ucBorrowers
 
             'Show Student Search Box
             cmbSearchStudent.BringToFront()
+            cmbSearchStudent.SelectedIndex = 0
             txtSearchStudent.BringToFront()
         Else
             btnAddFaculty.BringToFront()
@@ -349,6 +352,7 @@ Public Class ucBorrowers
 
             'Show Faculty Search Box
             cmbSearchFaculty.BringToFront()
+            cmbSearchFaculty.SelectedIndex = 0
             txtSearchFaculty.BringToFront()
         End If
     End Sub
@@ -506,6 +510,73 @@ Public Class ucBorrowers
         loan_history.borrower_name = dgvFaculties.Item(1, i).Value + " " + dgvFaculties.Item(2, i).Value + " " + dgvFaculties.Item(3, i).Value
         loan_history.id_no = dgvFaculties.Item(0, i).Value
         loan_history.ShowDialog(Me)
+    End Sub
+
+    Private Sub txtSearchStudent_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchStudent.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Try
+                If cmbSearchStudent.SelectedIndex = 0 Then
+                    str = "SELECT * FROM students"
+                ElseIf cmbSearchStudent.SelectedIndex = 1 Then
+                    str = "SELECT * FROM students WHERE student_id = '" + txtSearchStudent.Text + "'"
+                ElseIf cmbSearchStudent.SelectedIndex = 2 Then
+                    str = "SELECT * FROM students WHERE lastname LIKE '%" + txtSearchStudent.Text + "%'"
+                ElseIf cmbSearchStudent.SelectedIndex = 3 Then
+                    str = "SELECT * FROM students WHERE firstname LIKE '%" + txtSearchStudent.Text + "%'"
+                ElseIf cmbSearchStudent.SelectedIndex = 4 Then
+                    str = "SELECT * WHERE middlename LIKE '%" + txtSearchStudent.Text + "%'"
+                ElseIf cmbSearchStudent.SelectedIndex = 5 Then
+                    str = "SELECT * FROM students WHERE major LIKE '%" + txtSearchStudent.Text + "%'"
+                End If
+                cmd = New SqlCommand(str, conn)
+                dr = cmd.ExecuteReader
+
+                dgvStudents.Rows.Clear()
+                While dr.Read
+                    dgvStudents.Rows.Add(dr("student_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), dr("major"))
+                End While
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub cmbSearchStudent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchStudent.SelectedIndexChanged
+        If cmbSearchStudent.SelectedIndex = 0 Then
+            FillGridViewStudent()
+            txtSearchStudent.Clear()
+        End If
+    End Sub
+
+    Private Sub txtSearchFaculty_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchFaculty.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If cmbSearchFaculty.SelectedIndex = 0 Then
+                str = "SELECT * FROM faculties"
+            ElseIf cmbSearchFaculty.SelectedIndex = 1 Then
+                str = "SELECT * FROM faculties WHERE faculty_id = '" + txtSearchFaculty.Text + "'"
+            ElseIf cmbSearchFaculty.SelectedIndex = 2 Then
+                str = "SELECT * FROM faculties WHERE lastname LIKE '%" + txtSearchFaculty.Text + "%'"
+            ElseIf cmbSearchFaculty.SelectedIndex = 3 Then
+                str = "SELECT * FROM faculties WHERE firstname LIKE '%" + txtSearchFaculty.Text + "%'"
+            ElseIf cmbSearchFaculty.SelectedIndex = 4 Then
+                str = "SELECT * FROM faculties WHERE middlename LIKE '%" + txtSearchFaculty.Text + "%'"
+            End If
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            dgvFaculties.Rows.Clear()
+
+            While dr.Read
+                dgvFaculties.Rows.Add(dr("faculty_id"), dr("firstname"), dr("middlename"), dr("lastname"), dr("gender"), CDate(dr("birthday")).ToShortDateString())
+            End While
+        End If
+    End Sub
+
+    Private Sub cmbSearchFaculty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchFaculty.SelectedIndexChanged
+        If cmbSearchFaculty.SelectedIndex = 0 Then
+            FillGridViewFaculty()
+            txtSearchFaculty.Clear()
+        End If
     End Sub
 
     Private Sub releaseObject(ByVal obj As Object)
