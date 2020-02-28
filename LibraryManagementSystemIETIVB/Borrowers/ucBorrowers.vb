@@ -33,6 +33,8 @@ Public Class ucBorrowers
     Dim rowCount As Integer
     Dim rowCountF As Integer
 
+    Dim is_added As Boolean = False
+
     Private Sub ucBorrowers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         CheckForIllegalCrossThreadCalls = False
@@ -95,6 +97,8 @@ Public Class ucBorrowers
             txtImportingS.Text = "Importing 0 records"
             Dim rowcount As Integer = 0
 
+            xlRange = xlWorkSheet.UsedRange
+
             For xlRow = 1 To xlRange.Rows.Count
                 isStudentsImporting = True
                 btnImportStudent.Enabled = False
@@ -130,12 +134,16 @@ Public Class ucBorrowers
                 End If
 
                 'If not already in the database 
-                If Not IfAlreadyExistInDBStudent(xlRange.Cells(xlRow, 1).Text()) = True Then
-                    rowcount += 1
+                If Not IfAlreadyExistInDBStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 6).Text()) = True Then 'The student information will add
                     'The student information will add
                     AddToDatabaseStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text())
-                    txtImportingS.Text = "Importing " & rowcount & " records"
-                    txtPleasewaitS.Text = "please wait..."
+                    If is_added = True Then
+                        rowcount += 1
+
+                        txtImportingS.Text = "Importing " & rowcount & " records"
+                        txtPleasewaitS.Text = "please wait..."
+                        is_added = False
+                    End If
                 End If
             Next
 
@@ -161,18 +169,21 @@ Public Class ucBorrowers
 
     'IMPORT FACULTY DATA FROM EXCEL TO DATABASE THEN DISPLAY IN DATAGRIDVIEW
     Private Sub LoadDataFaculty()
-        txtImporting.Text = "Importing 0 records"
-        Dim rowcount As Integer = 0
+        Try
+            txtImporting.Text = "Importing 0 records"
+            Dim rowcount As Integer = 0
 
-        For xlRowF = 1 To xlRangeF.Rows.Count
-            isFacultiesImporting = True
-            btnImportStudent.Enabled = False
-            btnImportFaculties.Enabled = False
-            If xlRowF = 1 Then
-                If xlRangeF.Cells(xlRowF, 1).Text = "Faculty ID" And xlRangeF.Cells(xlRowF, 2).Text = "Firstname" And xlRangeF.Cells(xlRowF, 3).Text = "Middlename" And xlRangeF.Cells(xlRowF, 4).Text = "Lastname" And xlRangeF.Cells(xlRowF, 5).Text = "Gender" And xlRangeF.Cells(xlRowF, 6).Text = "Birthday" Then
-                    If xlRowF = 1 Then xlRowF += 1
-                Else
-                    MessageBox.Show("Please arrange excel file in order. " +
+            xlRangeF = xlWorkSheetF.UsedRange
+
+            For xlRowF = 1 To xlRangeF.Rows.Count
+                isFacultiesImporting = True
+                btnImportStudent.Enabled = False
+                btnImportFaculties.Enabled = False
+                If xlRowF = 1 Then
+                    If xlRangeF.Cells(xlRowF, 1).Text = "Faculty ID" And xlRangeF.Cells(xlRowF, 2).Text = "Firstname" And xlRangeF.Cells(xlRowF, 3).Text = "Middlename" And xlRangeF.Cells(xlRowF, 4).Text = "Lastname" And xlRangeF.Cells(xlRowF, 5).Text = "Gender" And xlRangeF.Cells(xlRowF, 6).Text = "Birthday" Then
+                        If xlRowF = 1 Then xlRowF += 1
+                    Else
+                        MessageBox.Show("Please arrange excel file in order. " +
                                   Environment.NewLine + "Faculty ID" +
                                   Environment.NewLine + "Firstname" +
                                   Environment.NewLine + "Middlename" +
@@ -180,50 +191,55 @@ Public Class ucBorrowers
                                   Environment.NewLine + "Gender" +
                                   Environment.NewLine + "Birthday")
 
-                    xlWorkBookF.Close()
-                    xlAppF.Quit()
+                        xlWorkBookF.Close()
+                        xlAppF.Quit()
 
-                    releaseObject(xlAppF)
-                    releaseObject(xlWorkBookF)
-                    releaseObject(xlWorkSheetF)
+                        releaseObject(xlAppF)
+                        releaseObject(xlWorkBookF)
+                        releaseObject(xlWorkSheetF)
 
-                    TerminateProcess("excel.exe")
+                        TerminateProcess("excel.exe")
 
-                    PanelFacultyImport.Hide()
-                    btnImportStudent.Enabled = True
-                    btnImportFaculties.Enabled = True
-                    threadF.Abort()
-                    Exit Sub
+                        PanelFacultyImport.Hide()
+                        btnImportStudent.Enabled = True
+                        btnImportFaculties.Enabled = True
+                        threadF.Abort()
+                        Exit Sub
+                    End If
                 End If
-            End If
 
-            'If not already in the database 
-            If Not IfAlreadyExistInDBFaculty(xlRangeF.Cells(xlRowF, 1).Text()) = True Then
-                rowcount += 1
-                'The faculty information will add
-                AddToDatabaseFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 5).Text(), xlRangeF.Cells(xlRowF, 6).Text())
-                txtImporting.Text = "Importing " & rowcount & " records"
-                txtPleasewait.Text = "please wait..."
-            End If
-        Next
+                'If not already in the database 
+                If Not IfAlreadyExistInDBFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 6).Text()) = True Then
+                    'The faculty information will add
+                    AddToDatabaseFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 5).Text(), xlRangeF.Cells(xlRowF, 6).Text())
+                    If is_added = True Then
+                        rowcount += 1
 
-        xlWorkBookF.Close()
-        xlAppF.Quit()
+                        txtImporting.Text = "Importing " & rowcount & " records"
+                        txtPleasewait.Text = "please wait..."
+                        is_added = False
+                    End If
+                End If
+            Next
 
-        releaseObject(xlAppF)
-        releaseObject(xlWorkBookF)
-        releaseObject(xlWorkSheetF)
+            xlWorkBookF.Close()
+            xlAppF.Quit()
 
-        TerminateProcess("excel.exe")
+            releaseObject(xlAppF)
+            releaseObject(xlWorkBookF)
+            releaseObject(xlWorkSheetF)
 
-        btnImportStudent.Enabled = True
-        btnImportFaculties.Enabled = True
+            TerminateProcess("excel.exe")
 
-        PanelFacultyImport.Hide()
-        isFacultiesImporting = False
-        FillGridViewFaculty()
-        threadF.Abort()
+            btnImportStudent.Enabled = True
+            btnImportFaculties.Enabled = True
 
+            PanelFacultyImport.Hide()
+            isFacultiesImporting = False
+            FillGridViewFaculty()
+            threadF.Abort()
+        Catch ex As Exception
+        End Try
     End Sub
 
     Friend Sub FillGridViewStudent()
@@ -337,55 +353,103 @@ Public Class ucBorrowers
         End If
     End Sub
 
-    Private Function IfAlreadyExistInDBFaculty(facultyID As String)
+    Private Function IfAlreadyExistInDBFaculty(facultyID As String, fname As String, mname As String, lname As String, bday As String)
         Dim isAlreadyExist As Boolean = False
         Try
+            If facultyID = "" Then
+                isAlreadyExist = True
+                Exit Function
+            End If
             str = "SELECT faculty_id FROM faculties WHERE faculty_id = '" + facultyID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
-            If dr.HasRows Then
+            If dr.Read Then
+                isAlreadyExist = True
+            Else
+                isAlreadyExist = False
+            End If
+
+            cmd.Dispose()
+            dr.Close()
+
+            If isAlreadyExist = False Then
+                str = "SELECT * FROM students WHERE firstname = @fn AND middlename = @mn AND lastname = @ln AND birthday = @bday"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@fn", fname)
+                cmd.Parameters.AddWithValue("@mn", mname)
+                cmd.Parameters.AddWithValue("@ln", lname)
+                cmd.Parameters.AddWithValue("@bday", CDate(bday).ToShortDateString())
+                dr = cmd.ExecuteReader
+
                 If dr.Read Then
                     isAlreadyExist = True
                 Else
                     isAlreadyExist = False
                 End If
+
+                cmd.Dispose()
+                dr.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            dr.Close()
             cmd.Dispose()
+            dr.Close()
         End Try
         Return isAlreadyExist
     End Function
 
-    Private Function IfAlreadyExistInDBStudent(studID As String)
+    Private Function IfAlreadyExistInDBStudent(studID As String, fname As String, mname As String, lname As String, bday As String)
         Dim isAlreadyExist As Boolean = False
         Try
+            If studID = "" Then
+                isAlreadyExist = True
+                Exit Function
+            End If
             str = "SELECT student_id FROM students WHERE student_id = '" + studID + "'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
-            If dr.HasRows Then
+            If dr.Read Then
+                isAlreadyExist = True
+            Else
+                isAlreadyExist = False
+            End If
+
+            cmd.Dispose()
+            dr.Close()
+
+            If isAlreadyExist = False Then
+                str = "SELECT * FROM students WHERE firstname = @fn AND middlename = @mn AND lastname = @ln AND birthday = @bday"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@fn", fname)
+                cmd.Parameters.AddWithValue("@mn", mname)
+                cmd.Parameters.AddWithValue("@ln", lname)
+                cmd.Parameters.AddWithValue("@bday", CDate(bday).ToShortDateString())
+                dr = cmd.ExecuteReader
+
                 If dr.Read Then
                     isAlreadyExist = True
                 Else
                     isAlreadyExist = False
                 End If
+
+                cmd.Dispose()
+                dr.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            dr.Close()
             cmd.Dispose()
+            dr.Close()
         End Try
         Return isAlreadyExist
     End Function
 
     Private Sub AddToDatabaseStudent(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, major As String)
         Try
-            If Not studID = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Or major = "" Then
+            If studID.Length > 0 And firstname.Length > 0 And lastname.Length > 0 And gender.Length > 0 And birthday.Length > 0 And major.Length > 0 Then
                 Dim str As String = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@student_id", studID)
@@ -397,6 +461,7 @@ Public Class ucBorrowers
                 cmd.Parameters.AddWithValue("@major", major)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
+                is_added = True
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -405,7 +470,7 @@ Public Class ucBorrowers
 
     Private Sub AddToDatabaseFaculty(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String)
         Try
-            If Not faculty_id = "" Or firstname = "" Or lastname = "" Or gender = "" Or birthday = "" Then
+            If faculty_id.Length > 0 And firstname.Length > 0 And lastname.Length > 0 And gender.Length > 0 And birthday.Length > 0 Then
                 Dim str As String = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
@@ -416,6 +481,7 @@ Public Class ucBorrowers
                 cmd.Parameters.AddWithValue("@birthday", birthday)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
+                is_added = True
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

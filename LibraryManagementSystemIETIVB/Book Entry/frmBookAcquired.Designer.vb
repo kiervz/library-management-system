@@ -28,6 +28,12 @@ Partial Class frmBookAcquired
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvBooks = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtAuthor = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTitle = New System.Windows.Forms.TextBox()
@@ -43,12 +49,6 @@ Partial Class frmBookAcquired
         Me.txtTotalCopies = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtAvailableCopies = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,6 +120,45 @@ Partial Class frmBookAcquired
         Me.dgvBooks.ShowRowErrors = False
         Me.dgvBooks.Size = New System.Drawing.Size(575, 403)
         Me.dgvBooks.TabIndex = 91
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Call No"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "ISBN"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Title"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 350
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Author"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Total Copies"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Copies"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
         '
         'txtAuthor
         '
@@ -292,50 +331,11 @@ Partial Class frmBookAcquired
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(844, 17)
+        Me.btnClose.Location = New System.Drawing.Point(852, 17)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
         Me.btnClose.TabIndex = 198
         Me.btnClose.Text = "[ Close ]"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Call No"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "ISBN"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Title"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 350
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Author"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Total Copies"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Visible = False
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Copies"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Visible = False
         '
         'txtAvailableCopies
         '

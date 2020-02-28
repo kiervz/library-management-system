@@ -74,6 +74,7 @@ Partial Class frmRegisterUser
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
         Me.btnClose = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbCheck2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -518,7 +519,7 @@ Partial Class frmRegisterUser
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(534, 131)
+        Me.Label9.Location = New System.Drawing.Point(27, 137)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 20)
         Me.Label9.TabIndex = 211
@@ -528,7 +529,7 @@ Partial Class frmRegisterUser
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(534, 217)
+        Me.Label11.Location = New System.Drawing.Point(27, 219)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(16, 20)
         Me.Label11.TabIndex = 213
@@ -538,7 +539,7 @@ Partial Class frmRegisterUser
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(534, 258)
+        Me.Label12.Location = New System.Drawing.Point(27, 264)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(16, 20)
         Me.Label12.TabIndex = 214
@@ -548,7 +549,7 @@ Partial Class frmRegisterUser
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(534, 347)
+        Me.Label13.Location = New System.Drawing.Point(27, 311)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(16, 20)
         Me.Label13.TabIndex = 215
@@ -558,7 +559,7 @@ Partial Class frmRegisterUser
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(534, 391)
+        Me.Label14.Location = New System.Drawing.Point(27, 353)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(16, 20)
         Me.Label14.TabIndex = 216
@@ -568,7 +569,7 @@ Partial Class frmRegisterUser
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(534, 436)
+        Me.Label15.Location = New System.Drawing.Point(27, 397)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(16, 20)
         Me.Label15.TabIndex = 217
@@ -578,7 +579,7 @@ Partial Class frmRegisterUser
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(534, 480)
+        Me.Label16.Location = New System.Drawing.Point(27, 442)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(16, 20)
         Me.Label16.TabIndex = 218
@@ -588,7 +589,7 @@ Partial Class frmRegisterUser
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(534, 524)
+        Me.Label17.Location = New System.Drawing.Point(27, 486)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(16, 20)
         Me.Label17.TabIndex = 219
@@ -598,7 +599,7 @@ Partial Class frmRegisterUser
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(534, 570)
+        Me.Label18.Location = New System.Drawing.Point(27, 528)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(16, 20)
         Me.Label18.TabIndex = 220
@@ -608,7 +609,7 @@ Partial Class frmRegisterUser
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(534, 618)
+        Me.Label19.Location = New System.Drawing.Point(27, 579)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(16, 20)
         Me.Label19.TabIndex = 221
@@ -640,11 +641,21 @@ Partial Class frmRegisterUser
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(822, 20)
+        Me.btnClose.Location = New System.Drawing.Point(823, 17)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
         Me.btnClose.TabIndex = 238
         Me.btnClose.Text = "[ Close ]"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(27, 618)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(16, 20)
+        Me.Label20.TabIndex = 239
+        Me.Label20.Text = "*"
         '
         'frmRegisterUser
         '
@@ -652,6 +663,7 @@ Partial Class frmRegisterUser
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 713)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label19)
@@ -766,4 +778,5 @@ Partial Class frmRegisterUser
     Private WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
     Private WithEvents btnClose As Label
+    Private WithEvents Label20 As Label
 End Class

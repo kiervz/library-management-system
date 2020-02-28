@@ -48,7 +48,7 @@ Partial Class frmBooksList
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(947, 16)
+        Me.btnClose.Location = New System.Drawing.Point(988, 16)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(62, 17)
         Me.btnClose.TabIndex = 239

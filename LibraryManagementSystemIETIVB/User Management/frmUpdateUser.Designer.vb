@@ -49,6 +49,7 @@ Partial Class frmUpdateUser
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -287,7 +288,7 @@ Partial Class frmUpdateUser
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(534, 105)
+        Me.Label8.Location = New System.Drawing.Point(28, 111)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(16, 20)
         Me.Label8.TabIndex = 208
@@ -297,7 +298,7 @@ Partial Class frmUpdateUser
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(534, 196)
+        Me.Label9.Location = New System.Drawing.Point(28, 202)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 20)
         Me.Label9.TabIndex = 209
@@ -307,7 +308,7 @@ Partial Class frmUpdateUser
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(534, 241)
+        Me.Label10.Location = New System.Drawing.Point(28, 250)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(16, 20)
         Me.Label10.TabIndex = 210
@@ -317,7 +318,7 @@ Partial Class frmUpdateUser
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(534, 335)
+        Me.Label11.Location = New System.Drawing.Point(28, 341)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(16, 20)
         Me.Label11.TabIndex = 211
@@ -327,7 +328,7 @@ Partial Class frmUpdateUser
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(534, 383)
+        Me.Label12.Location = New System.Drawing.Point(28, 386)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(16, 20)
         Me.Label12.TabIndex = 212
@@ -358,12 +359,23 @@ Partial Class frmUpdateUser
         Me.btnClose.TabIndex = 239
         Me.btnClose.Text = "[ Close ]"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(28, 300)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(16, 20)
+        Me.Label14.TabIndex = 240
+        Me.Label14.Text = "*"
+        '
         'frmUpdateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 505)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
@@ -429,4 +441,5 @@ Partial Class frmUpdateUser
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Private WithEvents Label13 As System.Windows.Forms.Label
     Private WithEvents btnClose As Label
+    Private WithEvents Label14 As Label
 End Class

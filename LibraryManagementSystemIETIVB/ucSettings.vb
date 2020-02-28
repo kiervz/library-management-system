@@ -28,6 +28,8 @@ Public Class ucSettings
         End Try
         My.Settings.Save()
         My.Settings.Reload()
+
+        CustomMessageBox.ShowDialog(Me, "Settings has been saved!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
     End Sub
 
     Friend Sub LoadGracePeriod()
@@ -71,7 +73,7 @@ Public Class ucSettings
                             cmd.Parameters.AddWithValue("@password", MD5HasherSalt.GetMd5Hash(txtNewpass.Text))
                             cmd.ExecuteNonQuery()
 
-                            CustomMessageBox.ShowDialog(Me, "Password has been changed!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                            CustomMessageBox.ShowDialog(Me, "Password has been changed!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
                             txtConfirmpass.Text = ""
                             txtNewpass.Text = ""
                             txtOldpass.Text = ""
