@@ -5,7 +5,7 @@ Public Class frmRegisterFaculty
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFacultyID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 Then
             If Val(txtAge.Text) >= 18 Then
-                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                 If mes = DialogResult.Yes Then
                     Try

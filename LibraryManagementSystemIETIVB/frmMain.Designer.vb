@@ -56,7 +56,6 @@ Partial Class frmMain
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblDate = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDuration = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -475,7 +474,6 @@ Partial Class frmMain
         '
         Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Controls.Add(Me.lblDate)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.lblDuration)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -491,24 +489,11 @@ Partial Class frmMain
         Me.lblDate.BackColor = System.Drawing.Color.Silver
         Me.lblDate.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.Black
-        Me.lblDate.Location = New System.Drawing.Point(559, 2)
+        Me.lblDate.Location = New System.Drawing.Point(821, 1)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(15, 17)
         Me.lblDate.TabIndex = 25
         Me.lblDate.Text = "0"
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Silver
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(522, 1)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 17)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Date:"
         '
         'Label4
         '
@@ -521,7 +506,7 @@ Partial Class frmMain
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(197, 17)
         Me.Label4.TabIndex = 23
-        Me.Label4.Text = "Version: 1.8.9 - Copyright 2019"
+        Me.Label4.Text = "Version: 1.8.9 - Copyright 2020"
         '
         'lblDuration
         '
@@ -530,7 +515,7 @@ Partial Class frmMain
         Me.lblDuration.BackColor = System.Drawing.Color.Silver
         Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDuration.ForeColor = System.Drawing.Color.Black
-        Me.lblDuration.Location = New System.Drawing.Point(351, 3)
+        Me.lblDuration.Location = New System.Drawing.Point(613, 2)
         Me.lblDuration.Name = "lblDuration"
         Me.lblDuration.Size = New System.Drawing.Size(15, 17)
         Me.lblDuration.TabIndex = 22
@@ -543,7 +528,7 @@ Partial Class frmMain
         Me.Label5.BackColor = System.Drawing.Color.Silver
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(284, 2)
+        Me.Label5.Location = New System.Drawing.Point(546, 2)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 17)
         Me.Label5.TabIndex = 21
@@ -766,7 +751,7 @@ Partial Class frmMain
         '
         'SystemIdleTimer1
         '
-        Me.SystemIdleTimer1.MaxIdleTime = CType(10UI, UInteger)
+        Me.SystemIdleTimer1.MaxIdleTime = CType(300UI, UInteger)
         '
         'frmMain
         '
@@ -857,5 +842,4 @@ Partial Class frmMain
     Friend WithEvents btnRecords As Button
     Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
     Friend WithEvents lblDate As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

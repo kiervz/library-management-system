@@ -31,6 +31,7 @@ Public Class frmMain
         End If
 
         lblDuration.Text = "00:00:00"
+        lblDate.Text = Date.Now.ToString("MMMM dd, yyyy") + Space(3) + "Time: " + DateTime.Now.ToString("hh:mm:ss tt")
         UserLogTime = DateTime.Now
 
         Notifier() 'Welcome notification will show
@@ -70,7 +71,7 @@ Public Class frmMain
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
         UcDashboard1.Visible = True
-        UcRecords1.ThreadUpdateBookBorrowers()
+        'UcRecords1.ThreadUpdateBookBorrowers()
         UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
         UcDashboard1.TotalBookLost()
@@ -164,7 +165,7 @@ Public Class frmMain
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
         If mes = DialogResult.Yes Then Application.Exit()
     End Sub
 
@@ -197,6 +198,7 @@ Public Class frmMain
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lblDate.Text = Date.Now.ToString("MMMM dd, yyyy") + Space(3) + "Time: " + DateTime.Now.ToString("hh:mm:ss tt")
         Dim currentLogIn = DateTime.Now - UserLogTime
 
         AddHandler idle.OnEnterIdleState, Sub(sender2, eventargs2)
@@ -242,7 +244,7 @@ Public Class frmMain
 
     Private Sub tsLogout_Click(sender As Object, e As EventArgs) Handles tsLogout.Click
 
-        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
         If mes = DialogResult.Yes Then
             Me.Close()

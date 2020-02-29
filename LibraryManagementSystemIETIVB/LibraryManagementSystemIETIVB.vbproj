@@ -156,6 +156,12 @@
     <Compile Include="frmPasswordConfirmIDLE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\Faculties Master List\frmReportFacultyMasterList.Designer.vb">
+      <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Faculties Master List\frmReportFacultyMasterList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\Penalty Slip\frmPenaltySlip.Designer.vb">
       <DependentUpon>frmPenaltySlip.vb</DependentUpon>
     </Compile>
@@ -197,6 +203,12 @@
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
     </Compile>
     <Compile Include="Borrowers\frmRegisterStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Students Master List\frmReportStudentMasterList.Designer.vb">
+      <DependentUpon>frmReportStudentMasterList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Students Master List\frmReportStudentMasterList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SystemIdleTimer.vb">
@@ -346,6 +358,10 @@
     <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Faculties Master List\frmReportFacultyMasterList.resx">
+      <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Faculties Master List\ReportFacultyMasterList.rdlc" />
     <EmbeddedResource Include="Reports\Penalty Slip\frmPenaltySlip.resx">
       <DependentUpon>frmPenaltySlip.vb</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +386,10 @@
     <EmbeddedResource Include="Borrowers\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Students Master List\frmReportStudentMasterList.resx">
+      <DependentUpon>frmReportStudentMasterList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Students Master List\ReportStudentMasterList.rdlc" />
     <EmbeddedResource Include="ucAboutIETI.resx">
       <DependentUpon>ucAboutIETI.vb</DependentUpon>
     </EmbeddedResource>
@@ -551,6 +571,7 @@
   <ItemGroup>
     <None Include="Resources\documents.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

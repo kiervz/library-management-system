@@ -29,7 +29,7 @@ Public Class frmRegisterStudent
                 End If
 
                 If Val(txtAge.Text) >= 10 Then
-                    Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                     If mes = DialogResult.Yes Then
                         str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major,phone) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major,@phone)"

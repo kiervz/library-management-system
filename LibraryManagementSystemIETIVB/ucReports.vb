@@ -13,4 +13,18 @@
         attendance.ShowDialog(Me)
         CloseTransparentForm()
     End Sub
+
+    Private Sub btnFacultyMasterList_Click(sender As Object, e As EventArgs) Handles btnFacultyMasterList.Click
+        OpenTransparentForm(Me)
+        Dim faculty As New frmReportFacultyMasterList
+        faculty.ShowDialog(Me)
+        CloseTransparentForm()
+    End Sub
+
+    Private Sub btnStudentMasterList_Click(sender As Object, e As EventArgs) Handles btnStudentMasterList.Click
+        OpenTransparentForm(Me)
+        Dim student As New frmReportStudentMasterList
+        student.ShowDialog(Me)
+        CloseTransparentForm()
+    End Sub
 End Class

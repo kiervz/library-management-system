@@ -159,7 +159,7 @@ Public Class frmRegisterUser
         ElseIf _passScore <> 4 Then
             Msg(Me, "Please correct your password!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
 

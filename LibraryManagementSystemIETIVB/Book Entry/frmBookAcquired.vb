@@ -40,7 +40,7 @@ Public Class frmBookAcquired
             If txtAddCopies.Text = "0" Then
                 Msg(Me, "Please enter greater than zero (0)", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                 If mes = DialogResult.Yes Then
                     Try

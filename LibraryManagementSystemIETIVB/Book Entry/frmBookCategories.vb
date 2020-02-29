@@ -37,7 +37,7 @@ Public Class frmBookCategories
                 Exit Sub
             End If
 
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
             If mes = DialogResult.Yes Then
                 str = "INSERT INTO book_categories (category_id, category) VALUES ((SELECT ISNULL(MAX(category_id) + 1, 0) FROM book_categories), @category)"
                 cmd = New SqlCommand(str, conn)
@@ -60,7 +60,7 @@ Public Class frmBookCategories
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
             If mes = DialogResult.Yes Then
                 str = "UPDATE book_categories SET category =@category WHERE category_id = '" + CStr(category_id) + "'"
                 cmd = New SqlCommand(str, conn)

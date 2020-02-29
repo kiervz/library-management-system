@@ -20,7 +20,7 @@ Public Class frmRegisterUpdateBooks
                     Msg(Me, "Book Already Exist", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 End If
-                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                 If mes = DialogResult.Yes Then
                     str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,image,price,copies,total_copies) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@image,@price,@copies,@total_copies)"
@@ -157,7 +157,7 @@ Public Class frmRegisterUpdateBooks
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
             If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
-                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                 If mes = DialogResult.Yes Then
                     str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, copies=@copies, price=@price, series=@series, image=@image WHERE id = @id"

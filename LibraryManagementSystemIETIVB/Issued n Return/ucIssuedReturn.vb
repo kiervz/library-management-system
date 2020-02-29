@@ -171,7 +171,7 @@ Public Class ucIssuedReturn
             Msg(Me, "Unable to process. You have " + CStr(count_penalty) + " penalty. Please return the book(s) first.", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Submit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Submit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
         If mes = DialogResult.Yes Then
             Try
@@ -239,7 +239,7 @@ Public Class ucIssuedReturn
         Dim i As Integer = dgvBorrows.CurrentRow.Index
 
         If e.ColumnIndex = 8 Then
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
 
@@ -304,7 +304,7 @@ Public Class ucIssuedReturn
     Private Sub ConfirmReturnToolStripMenuItem1_MouseDown(sender As Object, e As MouseEventArgs) Handles ConfirmReturnToolStripMenuItem1.MouseDown
         If e.Button = MouseButtons.Left Then
             Dim i As Integer = dgvBorrows.CurrentRow.Index
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
                 Try

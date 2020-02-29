@@ -74,6 +74,7 @@ Partial Class frmReportBookMasterList
         Me.ClientSize = New System.Drawing.Size(1110, 663)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Panel1)
+        Me.MinimizeBox = False
         Me.Name = "frmReportBookMasterList"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False

@@ -391,9 +391,6 @@ Public Class ucBorrowers
                 Else
                     isAlreadyExist = False
                 End If
-
-                cmd.Dispose()
-                dr.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -438,12 +435,10 @@ Public Class ucBorrowers
                 Else
                     isAlreadyExist = False
                 End If
-
-                cmd.Dispose()
-                dr.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+            isAlreadyExist = False
         Finally
             cmd.Dispose()
             dr.Close()

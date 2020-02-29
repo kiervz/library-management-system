@@ -99,7 +99,7 @@ Public Class ucUserManagement
                 Exit Sub
             End If
 
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
 
@@ -134,7 +134,7 @@ Public Class ucUserManagement
         'When you click restore button
         If e.ColumnIndex = 6 Then
 
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
 

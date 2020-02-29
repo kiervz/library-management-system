@@ -70,7 +70,7 @@ Public Class frmUpdateUser
         ElseIf Val(txtAge.Text) < 18 Then
             Msg(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
 
