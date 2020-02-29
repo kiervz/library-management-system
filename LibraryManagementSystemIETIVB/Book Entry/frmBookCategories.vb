@@ -33,25 +33,25 @@ Public Class frmBookCategories
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-                CustomMessageBox.ShowDialog(Me, "Category you have entered is already exist!", "Already Exist", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                Msg(Me, "Category you have entered is already exist!", "Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If mes = DialogResult.Yes Then
                 str = "INSERT INTO book_categories (category_id, category) VALUES ((SELECT ISNULL(MAX(category_id) + 1, 0) FROM book_categories), @category)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@category", txtCategory.Text)
                 cmd.ExecuteNonQuery()
-                CustomMessageBox.ShowDialog(Me, "Category has been added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                Msg(Me, "Category has been added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 LoadCategories()
                 txtCategory.Clear()
                 is_reload = True
             End If
         Catch ex As Exception
-            Dim el As New ErrorLogger
-            el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
-            CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            'Dim el As New ErrorLogger
+            'el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+            Msg(Me, "Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Finally
             dr.Close()
             cmd.Dispose()
@@ -60,14 +60,15 @@ Public Class frmBookCategories
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
-
-            If msgBoxButtonClick = DialogResult.Yes Then
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If mes = DialogResult.Yes Then
                 str = "UPDATE book_categories SET category =@category WHERE category_id = '" + CStr(category_id) + "'"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@category", txtCategory.Text)
                 cmd.ExecuteNonQuery()
-                CustomMessageBox.ShowDialog(Me, "Category has been updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+
+                Msg(Me, "Category has been updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 LoadCategories()
                 txtCategory.Clear()
                 btnSave.Enabled = True
@@ -77,7 +78,7 @@ Public Class frmBookCategories
         Catch ex As Exception
             'Dim el As New ErrorLogger
             'el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
-            CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Finally
             dr.Close()
             cmd.Dispose()

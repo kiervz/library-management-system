@@ -11,7 +11,7 @@ Public Class frmRegisterStudent
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-                    CustomMessageBox.ShowDialog(Me, "Student is already exist", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Student is already exist", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 End If
 
@@ -24,15 +24,15 @@ Public Class frmRegisterStudent
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-                    CustomMessageBox.ShowDialog(Me, "Student is already exist", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Student is already exist", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 End If
 
                 If Val(txtAge.Text) >= 10 Then
-                    CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+                    Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                    If msgBoxButtonClick = DialogResult.Yes Then
-                        str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
+                    If mes = DialogResult.Yes Then
+                        str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major,phone) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major,@phone)"
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@student_id", txtStudentID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -41,15 +41,16 @@ Public Class frmRegisterStudent
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.Parameters.AddWithValue("@major", txtMajor.Text)
+                        cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
                         cmd.ExecuteNonQuery()
 
                         is_reload = True
 
-                        CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Record successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         ClearAll()
                     End If
                 Else
-                    MessageBox.Show("You age must be atleast 10 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Msg(Me, "You age must be atleast 10 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
 
@@ -58,13 +59,14 @@ Public Class frmRegisterStudent
     End Sub
 
     Private Sub ClearAll()
-        txtAge.Text = ""
-        txtMajor.Text = ""
-        txtFirstname.Text = ""
-        txtLastname.Text = ""
-        txtMiddlename.Text = ""
-        txtMajor.Text = ""
-        txtStudentID.Text = ""
+        txtAge.Clear()
+        txtMajor.Clear()
+        txtFirstname.Clear()
+        txtLastname.Clear()
+        txtMiddlename.Clear()
+        txtMajor.Clear()
+        txtStudentID.Clear()
+        txtPhone.Clear()
         cmbGender.SelectedIndex = 0
         dtBday.Value = Date.Now
     End Sub

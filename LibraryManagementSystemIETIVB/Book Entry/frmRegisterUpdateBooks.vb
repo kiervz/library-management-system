@@ -17,13 +17,12 @@ Public Class frmRegisterUpdateBooks
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-                    CustomMessageBox.ShowDialog(Me, "Book Already Exist", "Note", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Book Already Exist", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 End If
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
-
-                If msgBoxButtonClick = DialogResult.Yes Then
+                If mes = DialogResult.Yes Then
                     str = "INSERT INTO books (id,isbn,call_number,title,author,publisher,description,category_id,date_published,series,image,price,copies,total_copies) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM books),@isbn,@call_number,@title,@author,@publisher,@description,@category_id,@date_published,@series,@image,@price,@copies,@total_copies)"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
@@ -40,12 +39,12 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@copies", "0")
                     cmd.Parameters.AddWithValue("@total_copies", "0")
                     cmd.ExecuteNonQuery()
-                    CustomMessageBox.ShowDialog(Me, "Book Successfully Added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Book Successfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     is_reload = True
                     ClearAll()
                 End If
             Else
-                CustomMessageBox.ShowDialog(Me, "Please fill all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                Msg(Me, "Please fill all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -158,9 +157,9 @@ Public Class frmRegisterUpdateBooks
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
             If txtAuthor.Text.Length > 0 And txtCallNumber.Text.Length > 0 And txtDescription.Text.Length > 0 And txtISBN.Text.Length > 0 And txtPrice.Text.Length > 0 And txtPublisher.Text.Length > 0 And txtDatePublished.Text.Length > 0 And txtTitle.Text.Length > 0 And cmbCategories.SelectedIndex > -1 Then
-                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                If msgBoxButtonClick = DialogResult.Yes Then
+                If mes = DialogResult.Yes Then
                     str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, copies=@copies, price=@price, series=@series, image=@image WHERE id = @id"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@id", _selected_book_id)
@@ -178,7 +177,7 @@ Public Class frmRegisterUpdateBooks
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
 
-                    CustomMessageBox.ShowDialog(Me, "Book Successfully Updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Book Successfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     is_reload = True
                     CloseTransparentForm()
                     Me.Hide()

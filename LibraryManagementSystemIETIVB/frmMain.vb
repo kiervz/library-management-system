@@ -34,7 +34,7 @@ Public Class frmMain
         UserLogTime = DateTime.Now
 
         Notifier() 'Welcome notification will show
-
+        btnDashboard.PerformClick()
     End Sub
 
     Private Sub movePanelSelector(btn As Control)
@@ -164,9 +164,8 @@ Public Class frmMain
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
-
-        If msgBoxButtonClick = DialogResult.Yes Then Application.Exit()
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If mes = DialogResult.Yes Then Application.Exit()
     End Sub
 
     Private Sub panelBgSearch_Click(sender As Object, e As EventArgs) Handles panelBgSearch.Click, lblSearch.Click, pbSearch.Click
@@ -242,9 +241,10 @@ Public Class frmMain
     End Sub
 
     Private Sub tsLogout_Click(sender As Object, e As EventArgs) Handles tsLogout.Click
-        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtonn.YesCancel, MessageBoxIconn.Question)
 
-        If msgBoxButtonClick = DialogResult.Yes Then
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If mes = DialogResult.Yes Then
             Me.Close()
             Dim login As New frmLogin
             login.Show()

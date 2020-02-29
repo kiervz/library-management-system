@@ -38,11 +38,11 @@ Public Class frmBookAcquired
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtCallNumber.Text.Length > 0 And txtAddCopies.Text.Length > 0 Then
             If txtAddCopies.Text = "0" Then
-                CustomMessageBox.ShowDialog(Me, "Please enter greater than zero (0)", "Unable to update", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Msg(Me, "Please enter greater than zero (0)", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                If msgBoxButtonClick = DialogResult.Yes Then
+                If mes = DialogResult.Yes Then
                     Try
                         Dim sum_of_totalcopies As Integer = Val(txtTotalCopies.Text) + Val(txtAddCopies.Text)
                         Dim sum_of_copies As Integer = Val(txtAvailableCopies.Text) + Val(txtAddCopies.Text)
@@ -54,7 +54,7 @@ Public Class frmBookAcquired
                         cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
                         cmd.ExecuteNonQuery()
 
-                        CustomMessageBox.ShowDialog(Me, "Book copies is already updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Book copies is already updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         is_reload = True
                         LoadBooks()
                         ClearAll()

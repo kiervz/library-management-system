@@ -8,7 +8,6 @@
     Public userType As String
     Public isPasswordCorrect As Boolean = False
     Public isExpandedPanel As Boolean = False
-    Public msgBoxButtonClick As String
     Public UserLogTime As DateTime
     Public isSystemIDLE As Boolean = False
     Public isIDLEPasswordCorrect As Boolean = False

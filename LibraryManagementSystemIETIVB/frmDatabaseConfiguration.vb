@@ -7,7 +7,7 @@ Public Class frmDatabaseConfiguration
         ConnDB()
 
         If isDBConnnected = True Then
-            CustomMessageBox.ShowDialog(Me, "Successfully Connected!", "Connected", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            Msg(Me, "Successfully Connected!", "Connected", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -19,7 +19,7 @@ Public Class frmDatabaseConfiguration
         My.Settings.Save()
         My.Settings.Reload()
 
-        CustomMessageBox.ShowDialog(Me, "Successfully Saved!", "Saved", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+        Msg(Me, "Successfully Saved!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

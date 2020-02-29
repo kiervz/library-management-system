@@ -66,13 +66,13 @@ Public Class frmUpdateUser
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         ElseIf Val(txtAge.Text) < 18 Then
-            CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            If mes = DialogResult.Yes Then
 
                 Try
                     str = "UPDATE users SET user_type=@1, firstname=@2, middlename=@3, lastname=@4, gender=@5, phone=@6, birthday=@7, image=@8 WHERE user_id = '" + _user_id + "'"
@@ -92,7 +92,7 @@ Public Class frmUpdateUser
                     cmd.ExecuteNonQuery()
 
                     frmMain.UcUserManagement1.FillDGV()
-                    CustomMessageBox.ShowDialog(Me, "Record successfully updated!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Record successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     CloseTransparentForm()
                     Me.Hide()

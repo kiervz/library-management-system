@@ -89,19 +89,19 @@ Public Class ucUserManagement
 
             'When you delete your own account
             If tempUserID = userID Then
-                CustomMessageBox.ShowDialog(Me, "You can't delete your account!", "Unable to Delete", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Msg(Me, "You can't delete your account!", "Unable to Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
 
             'When you delete the other librarian
             If tempUserType = "Librarian" And userID <> "UID00001" Then
-                CustomMessageBox.ShowDialog(Me, "You can't delete other librarian!", "Unable to Delete", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Msg(Me, "You can't delete other librarian!", "Unable to Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
 
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Danger)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Delete " + tempUserID + "?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            If mes = DialogResult.Yes Then
 
                 Dim confirmPass As New frmPasswordConfirmation
                 confirmPass.ShowDialog()
@@ -111,7 +111,7 @@ Public Class ucUserManagement
                     Try
                         DeleteRestoreUser(tempUserID, 0)
 
-                        CustomMessageBox.ShowDialog(Me, "Record successfully deleted!", "Deleted", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Record successfully deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         FillDGV()
                         FillDGVArchived()
 
@@ -120,7 +120,7 @@ Public Class ucUserManagement
                         MessageBox.Show(ex.Message, "Error")
                     End Try
                 Else
-                    CustomMessageBox.ShowDialog(Me, "Autentication Failed!", "Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                    Msg(Me, "Autentication Failed!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
 
             End If
@@ -133,19 +133,20 @@ Public Class ucUserManagement
 
         'When you click restore button
         If e.ColumnIndex = 6 Then
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Restore " + tempUserID + "?", "Restore Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If mes = DialogResult.Yes Then
 
                 Dim confirmPass As New frmPasswordConfirmation
                 confirmPass.ShowDialog()
 
                 If isPasswordCorrect = True Then
                     Try
-                       
+
                         DeleteRestoreUser(tempUserID, 1)
 
-                        CustomMessageBox.ShowDialog(Me, "Record successfully restored!", "Restored", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Record successfully restored!", "Restored", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         FillDGVArchived()
                         FillDGV()
                         isPasswordCorrect = False
@@ -154,7 +155,7 @@ Public Class ucUserManagement
                         MessageBox.Show(ex.Message, "Error")
                     End Try
                 Else
-                    CustomMessageBox.ShowDialog(Me, "Autentication Failed!", "Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                    Msg(Me, "Autentication Failed!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
 
             End If

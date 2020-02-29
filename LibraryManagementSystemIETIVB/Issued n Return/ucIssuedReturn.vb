@@ -156,7 +156,7 @@ Public Class ucIssuedReturn
 
     Private Sub btnBorrow_Click(sender As Object, e As EventArgs) Handles btnBorrow.Click
         If dgvBorrows.Rows.Count = Val(txtBookAllowed.Text) Then
-            CustomMessageBox.ShowDialog(Me, "Unable to process. " + txtBookAllowed.Text + " maximum book allowed to borrow.", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Unable to process. " + txtBookAllowed.Text + " maximum book allowed to borrow.", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -168,12 +168,12 @@ Public Class ucIssuedReturn
         Next
 
         If count_penalty > 0 Then
-            CustomMessageBox.ShowDialog(Me, "Unable to process. You have " + CStr(count_penalty) + " penalty. Please return the book(s) first.", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Unable to process. You have " + CStr(count_penalty) + " penalty. Please return the book(s) first.", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-        CustomMessageBox.ShowDialog(Me, "Are you sure you want to Submit?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Submit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If msgBoxButtonClick = DialogResult.Yes Then
+        If mes = DialogResult.Yes Then
             Try
                 str = "INSERT INTO borrows (id,user_id,book_id,student_faculty_no,date_borrowed,date_due,day_penalty,status_id,status) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM borrows),@user_id,@book_id,@student_faculty_no,@date_borrowed,@date_due,@day_penalty,@status_id,@status)"
                 cmd = New SqlCommand(str, conn)
@@ -197,7 +197,7 @@ Public Class ucIssuedReturn
                 cmd.Dispose()
 
                 LoadBorrowedBooks()
-                CustomMessageBox.ShowDialog(Me, "Book succesfully borrowed!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                Msg(Me, "Book succesfully borrowed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ClearBookInformation()
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -239,9 +239,9 @@ Public Class ucIssuedReturn
         Dim i As Integer = dgvBorrows.CurrentRow.Index
 
         If e.ColumnIndex = 8 Then
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            If mes = DialogResult.Yes Then
 
                 If Val(dgvBorrows.Item(6, i).Value) > 0 Then
                     Dim penalty_slip As New frmPenaltySlip
@@ -259,7 +259,7 @@ Public Class ucIssuedReturn
                         cmd.ExecuteNonQuery()
                         cmd.Dispose()
 
-                        CustomMessageBox.ShowDialog(Me, "Book Successfully Returned", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         LoadBorrowedBooks()
                     Catch ex As Exception
                         MsgBox(ex.Message)
@@ -304,9 +304,9 @@ Public Class ucIssuedReturn
     Private Sub ConfirmReturnToolStripMenuItem1_MouseDown(sender As Object, e As MouseEventArgs) Handles ConfirmReturnToolStripMenuItem1.MouseDown
         If e.Button = MouseButtons.Left Then
             Dim i As Integer = dgvBorrows.CurrentRow.Index
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If msgBoxButtonClick = DialogResult.Yes Then
+            If mes = DialogResult.Yes Then
                 Try
                     str = "UPDATE borrows SET status_id = '0', status = 'Returned', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
                     cmd = New SqlCommand(str, conn)
@@ -318,7 +318,7 @@ Public Class ucIssuedReturn
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
 
-                    CustomMessageBox.ShowDialog(Me, "Book Successfully Returned", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     LoadBorrowedBooks()
                 Catch ex As Exception
                     MsgBox(ex.Message)

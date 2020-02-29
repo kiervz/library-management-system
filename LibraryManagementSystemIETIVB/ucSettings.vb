@@ -29,7 +29,7 @@ Public Class ucSettings
         My.Settings.Save()
         My.Settings.Reload()
 
-        CustomMessageBox.ShowDialog(Me, "Settings has been saved!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+        Msg(Me, "Settings has been saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Friend Sub LoadGracePeriod()
@@ -47,7 +47,7 @@ Public Class ucSettings
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         If txtConfirmpass.Text = "" Or txtNewpass.Text = "" Or txtOldpass.Text = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please complete all fields.", "NOTE", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Please complete all fields.", "NOTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             Try
                 str = "SELECT password FROM users WHERE user_id=@user_id"
@@ -58,12 +58,12 @@ Public Class ucSettings
                 If dr.Read Then
                     Dim userpass As String = dr("password")
                     If userpass <> MD5HasherSalt.GetMd5Hash(txtOldpass.Text) Then
-                        CustomMessageBox.ShowDialog(Me, "Your old password is incorrect.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                        Msg(Me, "Your old password is incorrect.", "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     Else
                         If txtNewpass.Text <> txtConfirmpass.Text Then
-                            CustomMessageBox.ShowDialog(Me, "Your new password does not match.", "Password Requirements", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                            Msg(Me, "Your new password does not match.", "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         ElseIf _passScore < 4 Then
-                            CustomMessageBox.ShowDialog(Me, "Password you have entered did not meet the minimum requirements", "Password Requirements", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                            Msg(Me, "Password you have entered did not meet the minimum requirements", "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         Else
                             dr.Close()
                             cmd.Dispose()
@@ -73,7 +73,7 @@ Public Class ucSettings
                             cmd.Parameters.AddWithValue("@password", MD5HasherSalt.GetMd5Hash(txtNewpass.Text))
                             cmd.ExecuteNonQuery()
 
-                            CustomMessageBox.ShowDialog(Me, "Password has been changed!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                            Msg(Me, "Password has been changed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             txtConfirmpass.Text = ""
                             txtNewpass.Text = ""
                             txtOldpass.Text = ""

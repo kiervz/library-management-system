@@ -4,13 +4,13 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Maghanoy_Library_LMSIETIConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystemIETIVB.My.MySettings.GlobalReference.Default.Maghanoy_Library_LMSIETIConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        borrows.id, users.username, books.title, books.isbn, borrows.date_borrowed, borrows.date_due, students.firstname, students.middlename, students.lastname, borrows.payment
@@ -49,7 +49,7 @@ WHERE        (borrows_1.id = @id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtBooksTableAdapter" GeneratorDataComponentClassName="dtBooksTableAdapter" Name="dtBooks" UserDataComponentName="dtBooksTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        books.id, books.isbn, books.call_number, books.title, books.author, books.publisher, book_categories.category, books.date_published, books.copies, books.price, books.series
@@ -77,7 +77,7 @@ FROM            books INNER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtAttendanceTableAdapter" GeneratorDataComponentClassName="dtAttendanceTableAdapter" Name="dtAttendance" UserDataComponentName="dtAttendanceTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [attendance] WHERE (([id] = @Original_id) AND ((@IsNull_id_no = 1 AND [id_no] IS NULL) OR ([id_no] = @Original_id_no)) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_type = 1 AND [type] IS NULL) OR ([type] = @Original_type)) AND ((@IsNull_date = 1 AND [date] IS NULL) OR ([date] = @Original_date)) AND ((@IsNull_time_in = 1 AND [time_in] IS NULL) OR ([time_in] = @Original_time_in)) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Original_time_out)))</CommandText>
@@ -174,7 +174,7 @@ SELECT id, id_no, firstname, middlename, lastname, type, date, time_in, time_out
               <Mapping SourceColumn="time_out" DataSetColumn="time_out" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString1 (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByDate" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByDate">
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByDate" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByDate">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id, id_no, firstname, middlename, lastname, type, date, time_in, time_out
@@ -183,6 +183,281 @@ WHERE        (date BETWEEN @from AND @to)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="from" ColumnName="date" DataSourceName="Maghanoy_Library_LMSIETI.dbo.attendance" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@from" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="date" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="to" ColumnName="date" DataSourceName="Maghanoy_Library_LMSIETI.dbo.attendance" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@to" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="studentsTableAdapter" GeneratorDataComponentClassName="studentsTableAdapter" Name="students" UserDataComponentName="studentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [students] WHERE (([student_id] = @Original_student_id) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR ([birthday] = @Original_birthday)) AND ((@IsNull_major = 1 AND [major] IS NULL) OR ([major] = @Original_major)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_student_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="student_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_middlename" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_birthday" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_major" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_major" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [students] ([student_id], [firstname], [middlename], [lastname], [gender], [birthday], [major]) VALUES (@student_id, @firstname, @middlename, @lastname, @gender, @birthday, @major);
+SELECT student_id, firstname, middlename, lastname, gender, birthday, major FROM students WHERE (student_id = @student_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@student_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="student_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@major" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [students] SET [student_id] = @student_id, [firstname] = @firstname, [middlename] = @middlename, [lastname] = @lastname, [gender] = @gender, [birthday] = @birthday, [major] = @major WHERE (([student_id] = @Original_student_id) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR ([birthday] = @Original_birthday)) AND ((@IsNull_major = 1 AND [major] IS NULL) OR ([major] = @Original_major)));
+SELECT student_id, firstname, middlename, lastname, gender, birthday, major FROM students WHERE (student_id = @student_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@student_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="student_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@major" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_student_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="student_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_middlename" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_birthday" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_major" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_major" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="major" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="student_id" DataSetColumn="student_id" />
+              <Mapping SourceColumn="firstname" DataSetColumn="firstname" />
+              <Mapping SourceColumn="middlename" DataSetColumn="middlename" />
+              <Mapping SourceColumn="lastname" DataSetColumn="lastname" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="birthday" DataSetColumn="birthday" />
+              <Mapping SourceColumn="major" DataSetColumn="major" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFirstname" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByFirstname" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByFirstname">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students
+WHERE        (firstname LIKE '%' + @fname + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fname" ColumnName="firstname" DataSourceName="Maghanoy_Library_LMSIETI.dbo.students" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@fname" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByLastname" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillByLastname" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByLastname">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students
+WHERE        (lastname LIKE '%' + @lname + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="lname" ColumnName="lastname" DataSourceName="Maghanoy_Library_LMSIETI.dbo.students" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@lname" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByMajor" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy4" GeneratorSourceName="FillByMajor" GetMethodModifier="Public" GetMethodName="GetDataBy4" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByMajor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students
+WHERE        (major LIKE '%' + @major + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="major" ColumnName="major" DataSourceName="Maghanoy_Library_LMSIETI.dbo.students" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@major" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="major" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByMiddlename" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillByMiddlename" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByMiddlename">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students
+WHERE        (middlename LIKE '%' + @mname + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="mname" ColumnName="middlename" DataSourceName="Maghanoy_Library_LMSIETI.dbo.students" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@mname" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByStudentID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByStudentID" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByStudentID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        student_id, firstname, middlename, lastname, gender, birthday, major
+FROM            students
+WHERE student_id = @id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="student_id" DataSourceName="Maghanoy_Library_LMSIETI.dbo.students" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@id" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="student_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="facultiesTableAdapter" GeneratorDataComponentClassName="facultiesTableAdapter" Name="faculties" UserDataComponentName="facultiesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.faculties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [faculties] WHERE (([faculty_id] = @Original_faculty_id) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR ([birthday] = @Original_birthday)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_faculty_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="faculty_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_middlename" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_birthday" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [faculties] ([faculty_id], [firstname], [middlename], [lastname], [gender], [birthday]) VALUES (@faculty_id, @firstname, @middlename, @lastname, @gender, @birthday);
+SELECT faculty_id, firstname, middlename, lastname, gender, birthday FROM faculties WHERE (faculty_id = @faculty_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@faculty_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="faculty_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        faculty_id, firstname, middlename, lastname, gender, birthday
+FROM            faculties</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [faculties] SET [faculty_id] = @faculty_id, [firstname] = @firstname, [middlename] = @middlename, [lastname] = @lastname, [gender] = @gender, [birthday] = @birthday WHERE (([faculty_id] = @Original_faculty_id) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR ([birthday] = @Original_birthday)));
+SELECT faculty_id, firstname, middlename, lastname, gender, birthday FROM faculties WHERE (faculty_id = @faculty_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@faculty_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="faculty_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_faculty_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="faculty_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_firstname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_middlename" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_middlename" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastname" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lastname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_birthday" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_birthday" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="birthday" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="faculty_id" DataSetColumn="faculty_id" />
+              <Mapping SourceColumn="firstname" DataSetColumn="firstname" />
+              <Mapping SourceColumn="middlename" DataSetColumn="middlename" />
+              <Mapping SourceColumn="lastname" DataSetColumn="lastname" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="birthday" DataSetColumn="birthday" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.faculties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFacultyID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByFacultyID" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByFacultyID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        faculty_id, firstname, middlename, lastname, gender, birthday
+FROM            faculties
+WHERE faculty_id = @id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="faculty_id" DataSourceName="Maghanoy_Library_LMSIETI.dbo.faculties" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@id" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="faculty_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.faculties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFirstname" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByFirstname" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByFirstname">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        faculty_id, firstname, middlename, lastname, gender, birthday
+FROM            faculties
+WHERE firstname LIKE '%'+@fname+'%'</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fname" ColumnName="firstname" DataSourceName="Maghanoy_Library_LMSIETI.dbo.faculties" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@fname" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.faculties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByLastname" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillByLastname" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByLastname">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        faculty_id, firstname, middlename, lastname, gender, birthday
+FROM            faculties
+WHERE lastname LIKE '%'+@lname+'%'</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="lname" ColumnName="lastname" DataSourceName="Maghanoy_Library_LMSIETI.dbo.faculties" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@lname" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectName="Maghanoy_Library_LMSIETI.dbo.faculties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByMiddlename" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillByMiddlename" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByMiddlename">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        faculty_id, firstname, middlename, lastname, gender, birthday
+FROM            faculties
+WHERE middlename LIKE '%'+@mname+'%'</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="mname" ColumnName="middlename" DataSourceName="Maghanoy_Library_LMSIETI.dbo.faculties" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@mname" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -359,6 +634,97 @@ WHERE        (date BETWEEN @from AND @to)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="students" msprop:Generator_TableClassName="studentsDataTable" msprop:Generator_TableVarName="tablestudents" msprop:Generator_TablePropName="students" msprop:Generator_RowDeletingName="studentsRowDeleting" msprop:Generator_RowChangingName="studentsRowChanging" msprop:Generator_RowEvHandlerName="studentsRowChangeEventHandler" msprop:Generator_RowDeletedName="studentsRowDeleted" msprop:Generator_UserTableName="students" msprop:Generator_RowChangedName="studentsRowChanged" msprop:Generator_RowEvArgName="studentsRowChangeEvent" msprop:Generator_RowClassName="studentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="student_id" msprop:Generator_ColumnVarNameInTable="columnstudent_id" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_UserColumnName="student_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="firstname" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" msprop:Generator_UserColumnName="firstname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="middlename" msprop:Generator_ColumnVarNameInTable="columnmiddlename" msprop:Generator_ColumnPropNameInRow="middlename" msprop:Generator_ColumnPropNameInTable="middlenameColumn" msprop:Generator_UserColumnName="middlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lastname" msprop:Generator_ColumnVarNameInTable="columnlastname" msprop:Generator_ColumnPropNameInRow="lastname" msprop:Generator_ColumnPropNameInTable="lastnameColumn" msprop:Generator_UserColumnName="lastname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="birthday" msprop:Generator_ColumnVarNameInTable="columnbirthday" msprop:Generator_ColumnPropNameInRow="birthday" msprop:Generator_ColumnPropNameInTable="birthdayColumn" msprop:Generator_UserColumnName="birthday" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="major" msprop:Generator_ColumnVarNameInTable="columnmajor" msprop:Generator_ColumnPropNameInRow="major" msprop:Generator_ColumnPropNameInTable="majorColumn" msprop:Generator_UserColumnName="major" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="faculties" msprop:Generator_TableClassName="facultiesDataTable" msprop:Generator_TableVarName="tablefaculties" msprop:Generator_TablePropName="faculties" msprop:Generator_RowDeletingName="facultiesRowDeleting" msprop:Generator_RowChangingName="facultiesRowChanging" msprop:Generator_RowEvHandlerName="facultiesRowChangeEventHandler" msprop:Generator_RowDeletedName="facultiesRowDeleted" msprop:Generator_UserTableName="faculties" msprop:Generator_RowChangedName="facultiesRowChanged" msprop:Generator_RowEvArgName="facultiesRowChangeEvent" msprop:Generator_RowClassName="facultiesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="faculty_id" msprop:Generator_ColumnVarNameInTable="columnfaculty_id" msprop:Generator_ColumnPropNameInRow="faculty_id" msprop:Generator_ColumnPropNameInTable="faculty_idColumn" msprop:Generator_UserColumnName="faculty_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="firstname" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" msprop:Generator_UserColumnName="firstname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="middlename" msprop:Generator_ColumnVarNameInTable="columnmiddlename" msprop:Generator_ColumnPropNameInRow="middlename" msprop:Generator_ColumnPropNameInTable="middlenameColumn" msprop:Generator_UserColumnName="middlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lastname" msprop:Generator_ColumnVarNameInTable="columnlastname" msprop:Generator_ColumnPropNameInRow="lastname" msprop:Generator_ColumnPropNameInTable="lastnameColumn" msprop:Generator_UserColumnName="lastname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="birthday" msprop:Generator_ColumnVarNameInTable="columnbirthday" msprop:Generator_ColumnPropNameInRow="birthday" msprop:Generator_ColumnPropNameInTable="birthdayColumn" msprop:Generator_UserColumnName="birthday" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -368,6 +734,14 @@ WHERE        (date BETWEEN @from AND @to)</CommandText>
     <xs:unique name="dtAttendance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:dtAttendance" />
       <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="students_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:students" />
+      <xs:field xpath="mstns:student_id" />
+    </xs:unique>
+    <xs:unique name="faculties_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:faculties" />
+      <xs:field xpath="mstns:faculty_id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

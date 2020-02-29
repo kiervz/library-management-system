@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("300")>  _
         Public Property IdleTime() As Integer
             Get
                 Return CType(Me("IdleTime"),Integer)
@@ -165,11 +165,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=KIERVEY-PC\SQLEXPRESS;Initial Catalog=Maghanoy_Library_LMSIETI;Integr"& _ 
-            "ated Security=True")>  _
-        Public ReadOnly Property Maghanoy_Library_LMSIETIConnectionString1() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CLAUDE\SQLEXPRESS;Initial Catalog=Maghanoy_Library_LMSIETI;In"& _ 
+            "tegrated Security=True")>  _
+        Public ReadOnly Property Maghanoy_Library_LMSIETIConnectionString() As String
             Get
-                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString1"),String)
+                Return CType(Me("Maghanoy_Library_LMSIETIConnectionString"),String)
             End Get
         End Property
     End Class

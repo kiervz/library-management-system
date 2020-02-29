@@ -25,17 +25,17 @@ Public Class frmLogin
         If isDBConnnected = True Then
             Login()
         Else
-            CustomMessageBox.ShowDialog(Me, "Connection Failed! Please contact the administrator.", "Connection Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            Msg(Me, "Connection Failed! Please contact the administrator.", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf txtUsername.Text = "" And txtPassword.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog(Me, "Please enter your username!", "Username Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Please enter your username!", "Username Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf txtPassword.Text = "" And txtUsername.Text.Length > 0 Then
-            CustomMessageBox.ShowDialog(Me, "Please enter your password!", "Password Required", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            Msg(Me, "Please enter your password!", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
                 cmd = New SqlCommand("SELECT user_id, firstname, lastname, password, user_type, status, image FROM users WHERE username=@1 AND password=@2", conn)
@@ -46,8 +46,7 @@ Public Class frmLogin
                 If dr.Read Then
 
                     If dr("status").Equals(0) Then
-                        CustomMessageBox.ShowDialog(Me, "Your account has been disabled. Contact your administrator to enable.", "Disabled Account", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
-
+                        Msg(Me, "Your account has been disabled. Contact your administrator to enable.", "Disabled Account", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         txtUsername.Clear()
                         txtPassword.Clear()
 
@@ -70,13 +69,13 @@ Public Class frmLogin
 
                     Me.Hide()
                 Else
-                    CustomMessageBox.ShowDialog(Me, "Your username and password is incorrect!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                    Msg(Me, "Your username and password is incorrect!", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Attempt()
                 End If
             Catch ex As Exception
-                Dim el As New ErrorLogger
-                el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
-                CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                'Dim el As New ErrorLogger
+                'el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+                Msg(Me, "Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Finally
                 dr.Close()
                 cmd.Dispose()
@@ -103,7 +102,7 @@ Public Class frmLogin
         _attempts = _attempts + 1
 
         If _attempts = 3 Then
-            CustomMessageBox.ShowDialog(Me, "You have reached the maximum attempts. System will be locked!", "Authentication Failed", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            Msg(Me, "You have reached the maximum attempts. System will be locked!", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'StartCaptureCamera()
             EnableControl(False)
             lblNextAttempt.Visible = True
@@ -130,9 +129,9 @@ Public Class frmLogin
                 cmd.Dispose()
             End If
         Catch ex As Exception
-            Dim el As New ErrorLogger
-            el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
-            CustomMessageBox.ShowDialog(Me, "Something Went Wrong!", "Error", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+            'Dim el As New ErrorLogger
+            'el.WriteToErrorLog(ex.Message, ex.StackTrace, "Error")
+            Msg(Me, "Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Finally
             dr.Close()
             cmd.Dispose()

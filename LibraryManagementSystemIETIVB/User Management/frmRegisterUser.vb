@@ -151,18 +151,17 @@ Public Class frmRegisterUser
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
-            CustomMessageBox.ShowDialog(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            Msg(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf Val(txtAge.Text) < 18 Then
-            CustomMessageBox.ShowDialog(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            Msg(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf txtPassword.Text <> txtConfirmPass.Text Then
-            CustomMessageBox.ShowDialog(Me, "Your password does not match!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            Msg(Me, "Your password does not match!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf _passScore <> 4 Then
-            CustomMessageBox.ShowDialog(Me, "Please correct your password!", "Library Management System", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+            Msg(Me, "Please correct your password!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
-
-            If msgBoxButtonClick = DialogResult.Yes Then
+            If mes = DialogResult.Yes Then
 
                 Try
                     str = "INSERT INTO users (user_id,user_type,firstname,middlename,lastname,gender,phone,birthday,username,password,security_question,security_answer,status,image) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)"
@@ -196,7 +195,7 @@ Public Class frmRegisterUser
                     AUTO()
                     AN()
                     frmMain.UcUserManagement1.FillDGV()
-                    CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                    Msg(Me, "Record successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)

@@ -32,7 +32,7 @@ Public Class frmBooksList
             Dim i As Integer = dgvBooks.CurrentRow.Index
 
             If Not dgvBooks.Item(5, i).Value > 0 Then
-                CustomMessageBox.ShowDialog(Me, "Book you have selected is out of stock!", "Library System", MessageBoxButtonn.Ok, MessageBoxIconn.Exclamation)
+                Msg(Me, "Book you have selected is out of stock!", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
 

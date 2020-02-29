@@ -5,11 +5,11 @@ Public Class frmRegisterFaculty
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtFacultyID.Text.Length > 0 And txtFirstname.Text.Length > 0 And txtLastname.Text.Length > 0 Then
             If Val(txtAge.Text) >= 18 Then
-                CustomMessageBox.ShowDialog(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtonn.YesNo, MessageBoxIconn.Question)
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                If msgBoxButtonClick = DialogResult.Yes Then
+                If mes = DialogResult.Yes Then
                     Try
-                        str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
+                        str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday,phone) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday,@phone)"
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@faculty_id", txtFacultyID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -17,18 +17,20 @@ Public Class frmRegisterFaculty
                         cmd.Parameters.AddWithValue("@lastname", txtLastname.Text)
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
+                        cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
                         cmd.ExecuteNonQuery()
 
                         is_reload = True
 
-                        CustomMessageBox.ShowDialog(Me, "Record successfully added!", "Success", MessageBoxButtonn.Ok, MessageBoxIconn.Information)
+                        Msg(Me, "Record successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                         ClearAll()
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)
                     End Try
                 End If
             Else
-                MessageBox.Show("You age must be atleast 18 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Msg(Me, "You age must be atleast 18 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         End If
     End Sub
@@ -39,6 +41,7 @@ Public Class frmRegisterFaculty
         txtLastname.Clear()
         txtMiddlename.Clear()
         cmbGender.SelectedIndex = 0
+        txtPhone.Clear()
         dtBday.Value = Date.Now
     End Sub
 

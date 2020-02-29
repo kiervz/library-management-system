@@ -6,11 +6,11 @@
             Me.Hide()
         Else
             idlePasswordAttempts += 1
-            CustomMessageBox.ShowDialog(Me, "Authentication Failed!", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+            Msg(Me, "Authentication Failed!", "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtConfirmPassword.Clear()
 
             If idlePasswordAttempts = 3 Then
-                CustomMessageBox.ShowDialog(Me, "Authentication Failed! System will be closed.", "Incorrect Password", MessageBoxButtonn.Ok, MessageBoxIconn.Danger)
+                Msg(Me, "Authentication Failed! System will be closed.", "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Application.Exit()
             End If
         End If

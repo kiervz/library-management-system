@@ -37,6 +37,8 @@ Partial Class frmRegisterFaculty
         Me.dtBday = New MetroFramework.Controls.MetroDateTime()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Label()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFacultyID
@@ -63,7 +65,7 @@ Partial Class frmRegisterFaculty
         '
         Me.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFirstname.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstname.Location = New System.Drawing.Point(228, 146)
+        Me.txtFirstname.Location = New System.Drawing.Point(228, 143)
         Me.txtFirstname.MaxLength = 30
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(269, 26)
@@ -73,7 +75,7 @@ Partial Class frmRegisterFaculty
         '
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(63, 152)
+        Me.label1.Location = New System.Drawing.Point(63, 149)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(81, 20)
         Me.label1.TabIndex = 213
@@ -103,7 +105,7 @@ Partial Class frmRegisterFaculty
         '
         Me.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLastname.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastname.Location = New System.Drawing.Point(228, 224)
+        Me.txtLastname.Location = New System.Drawing.Point(228, 227)
         Me.txtLastname.MaxLength = 30
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(269, 26)
@@ -113,7 +115,7 @@ Partial Class frmRegisterFaculty
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(63, 230)
+        Me.Label4.Location = New System.Drawing.Point(63, 233)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 20)
         Me.Label4.TabIndex = 221
@@ -123,7 +125,7 @@ Partial Class frmRegisterFaculty
         '
         Me.label5.AutoSize = True
         Me.label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label5.Location = New System.Drawing.Point(63, 272)
+        Me.label5.Location = New System.Drawing.Point(63, 278)
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(70, 20)
         Me.label5.TabIndex = 223
@@ -134,7 +136,7 @@ Partial Class frmRegisterFaculty
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.ItemHeight = 23
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.Location = New System.Drawing.Point(228, 263)
+        Me.cmbGender.Location = New System.Drawing.Point(228, 269)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(269, 29)
         Me.cmbGender.TabIndex = 4
@@ -146,7 +148,7 @@ Partial Class frmRegisterFaculty
         Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAge.Enabled = False
         Me.txtAge.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAge.Location = New System.Drawing.Point(438, 304)
+        Me.txtAge.Location = New System.Drawing.Point(438, 314)
         Me.txtAge.MaxLength = 3
         Me.txtAge.Name = "txtAge"
         Me.txtAge.ReadOnly = True
@@ -157,7 +159,7 @@ Partial Class frmRegisterFaculty
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(63, 310)
+        Me.Label10.Location = New System.Drawing.Point(63, 320)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(72, 20)
         Me.Label10.TabIndex = 228
@@ -166,7 +168,7 @@ Partial Class frmRegisterFaculty
         'dtBday
         '
         Me.dtBday.FontSize = MetroFramework.MetroDateTimeSize.Small
-        Me.dtBday.Location = New System.Drawing.Point(228, 305)
+        Me.dtBday.Location = New System.Drawing.Point(228, 314)
         Me.dtBday.MinimumSize = New System.Drawing.Size(0, 25)
         Me.dtBday.Name = "dtBday"
         Me.dtBday.Size = New System.Drawing.Size(204, 25)
@@ -201,12 +203,34 @@ Partial Class frmRegisterFaculty
         Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "[ Close ]"
         '
+        'txtPhone
+        '
+        Me.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPhone.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPhone.Location = New System.Drawing.Point(228, 355)
+        Me.txtPhone.MaxLength = 30
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(269, 26)
+        Me.txtPhone.TabIndex = 230
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(63, 361)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(60, 20)
+        Me.Label2.TabIndex = 231
+        Me.Label2.Text = "Phone:"
+        '
         'frmRegisterFaculty
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(591, 484)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtPhone)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.txtAge)
@@ -249,4 +273,6 @@ Partial Class frmRegisterFaculty
     Friend WithEvents dtBday As MetroFramework.Controls.MetroDateTime
     Private WithEvents btnRegister As Button
     Private WithEvents btnClose As Label
+    Friend WithEvents txtPhone As TextBox
+    Private WithEvents Label2 As Label
 End Class
