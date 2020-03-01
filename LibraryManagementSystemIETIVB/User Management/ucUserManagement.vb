@@ -94,8 +94,14 @@ Public Class ucUserManagement
             End If
 
             'When you delete the other librarian
-            If tempUserType = "Librarian" And userID <> "UID00001" Then
+            If tempUserType = "Librarian" And userID <> "UID00001" And userType = "Librarian" Then
                 Msg(Me, "You can't delete other librarian!", "Unable to Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+            'When you delete the other admin
+            If tempUserType = "Administrator" And userID <> "UID00001" And (userType = "Librarian" Or userType = "Administrator") Then
+                Msg(Me, "You can't delete other Admin!", "Unable to Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
 

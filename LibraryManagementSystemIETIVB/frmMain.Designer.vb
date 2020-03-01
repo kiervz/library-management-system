@@ -122,7 +122,7 @@ Partial Class frmMain
         Me.btnBorrowers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnBorrowers.Image = CType(resources.GetObject("btnBorrowers.Image"), System.Drawing.Image)
         Me.btnBorrowers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBorrowers.Location = New System.Drawing.Point(4, 181)
+        Me.btnBorrowers.Location = New System.Drawing.Point(4, 226)
         Me.btnBorrowers.Name = "btnBorrowers"
         Me.btnBorrowers.Size = New System.Drawing.Size(230, 45)
         Me.btnBorrowers.TabIndex = 13
@@ -142,7 +142,7 @@ Partial Class frmMain
         Me.btnIssuedReturn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnIssuedReturn.Image = CType(resources.GetObject("btnIssuedReturn.Image"), System.Drawing.Image)
         Me.btnIssuedReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnIssuedReturn.Location = New System.Drawing.Point(4, 136)
+        Me.btnIssuedReturn.Location = New System.Drawing.Point(4, 181)
         Me.btnIssuedReturn.Name = "btnIssuedReturn"
         Me.btnIssuedReturn.Size = New System.Drawing.Size(230, 45)
         Me.btnIssuedReturn.TabIndex = 12
@@ -162,11 +162,11 @@ Partial Class frmMain
         Me.btnRecords.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnRecords.Image = CType(resources.GetObject("btnRecords.Image"), System.Drawing.Image)
         Me.btnRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecords.Location = New System.Drawing.Point(4, 271)
+        Me.btnRecords.Location = New System.Drawing.Point(4, 136)
         Me.btnRecords.Name = "btnRecords"
         Me.btnRecords.Size = New System.Drawing.Size(230, 45)
         Me.btnRecords.TabIndex = 5
-        Me.btnRecords.Text = "   RECORDS"
+        Me.btnRecords.Text = "   BOOK RECORDS"
         Me.btnRecords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRecords.UseVisualStyleBackColor = False
         '
@@ -242,7 +242,7 @@ Partial Class frmMain
         Me.btnUserManagement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnUserManagement.Image = CType(resources.GetObject("btnUserManagement.Image"), System.Drawing.Image)
         Me.btnUserManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUserManagement.Location = New System.Drawing.Point(4, 226)
+        Me.btnUserManagement.Location = New System.Drawing.Point(4, 271)
         Me.btnUserManagement.Name = "btnUserManagement"
         Me.btnUserManagement.Size = New System.Drawing.Size(230, 45)
         Me.btnUserManagement.TabIndex = 4
@@ -266,7 +266,7 @@ Partial Class frmMain
         Me.btnBookManagement.Name = "btnBookManagement"
         Me.btnBookManagement.Size = New System.Drawing.Size(230, 45)
         Me.btnBookManagement.TabIndex = 2
-        Me.btnBookManagement.Text = "   BOOKS ENTRY"
+        Me.btnBookManagement.Text = "   BOOK ENTRY"
         Me.btnBookManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBookManagement.UseVisualStyleBackColor = False
         '

@@ -648,9 +648,9 @@ Partial Class ucDashboard
         Me.label10.ForeColor = System.Drawing.Color.White
         Me.label10.Location = New System.Drawing.Point(79, 48)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(129, 18)
+        Me.label10.Size = New System.Drawing.Size(88, 18)
         Me.label10.TabIndex = 7
-        Me.label10.Text = "TOTAL BORROWERS"
+        Me.label10.Text = "BORROWERS"
         '
         'lblTotalBorrowers
         '

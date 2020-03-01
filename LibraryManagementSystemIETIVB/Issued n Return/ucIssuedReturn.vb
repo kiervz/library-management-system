@@ -66,6 +66,9 @@ Public Class ucIssuedReturn
             txtPenaltyDay.Text = My.Settings.penalty_per_day
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            cmd.Dispose()
+            dr.Close()
         End Try
     End Sub
 

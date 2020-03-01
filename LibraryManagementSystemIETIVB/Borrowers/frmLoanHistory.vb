@@ -39,11 +39,11 @@ Public Class frmLoanHistory
     End Sub
 
     Private Sub dgvLoanHistory_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvLoanHistory.CellFormatting
-        For i = 0 To dgvLoanHistory.Rows.Count - 1
-            If dgvLoanHistory.Item(5, i).Value = "Borrowed" Then
-                dgvLoanHistory.Rows(i).DefaultCellStyle.ForeColor = Color.Red
-                dgvLoanHistory.Rows(i).DefaultCellStyle.SelectionForeColor = Color.Red
-            End If
-        Next
+        'For i = 0 To dgvLoanHistory.Rows.Count - 1
+        '    If dgvLoanHistory.Item(5, i).Value = "Borrowed" Then
+        '        dgvLoanHistory.Rows(i).DefaultCellStyle.ForeColor = Color.Red
+        '        dgvLoanHistory.Rows(i).DefaultCellStyle.SelectionForeColor = Color.Red
+        '    End If
+        'Next
     End Sub
 End Class

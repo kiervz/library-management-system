@@ -106,7 +106,7 @@ Public Class ucBorrowers
                 btnImportStudent.Enabled = False
                 btnImportFaculties.Enabled = False
                 If xlRow = 1 Then
-                    If xlRange.Cells(xlRow, 1).Text = "Student ID" And xlRange.Cells(xlRow, 2).Text = "Firstname" And xlRange.Cells(xlRow, 3).Text = "Middlename" And xlRange.Cells(xlRow, 4).Text = "Lastname" And xlRange.Cells(xlRow, 5).Text = "Gender" And xlRange.Cells(xlRow, 6).Text = "Birthday" And xlRange.Cells(xlRow, 7).Text = "Major" Then
+                    If xlRange.Cells(xlRow, 1).Text = "Student ID" And xlRange.Cells(xlRow, 2).Text = "Firstname" And xlRange.Cells(xlRow, 3).Text = "Middlename" And xlRange.Cells(xlRow, 4).Text = "Lastname" And xlRange.Cells(xlRow, 5).Text = "Gender" And xlRange.Cells(xlRow, 6).Text = "Birthday" And xlRange.Cells(xlRow, 7).Text = "Major" And xlRange.Cells(xlRow, 8).Text = "Phone Number" Then
                         If xlRow = 1 Then xlRow += 1
                     Else
                         MessageBox.Show("Please arrange excel file in order. " +
@@ -116,7 +116,8 @@ Public Class ucBorrowers
                                       Environment.NewLine + "Lastname" +
                                       Environment.NewLine + "Gender" +
                                       Environment.NewLine + "Birthday" +
-                                      Environment.NewLine + "Major")
+                                      Environment.NewLine + "Major" +
+                                      Environment.NewLine + "Phone Number")
 
                         xlWorkBook.Close()
                         xlApp.Quit()
@@ -138,7 +139,7 @@ Public Class ucBorrowers
                 'If not already in the database 
                 If Not IfAlreadyExistInDBStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 6).Text()) = True Then 'The student information will add
                     'The student information will add
-                    AddToDatabaseStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text())
+                    AddToDatabaseStudent(xlRange.Cells(xlRow, 1).Text(), xlRange.Cells(xlRow, 2).Text(), xlRange.Cells(xlRow, 3).Text(), xlRange.Cells(xlRow, 4).Text(), xlRange.Cells(xlRow, 5).Text(), xlRange.Cells(xlRow, 6).Text(), xlRange.Cells(xlRow, 7).Text(), xlRange.Cells(xlRow, 8).Text())
                     If is_added = True Then
                         rowcount += 1
 
@@ -182,7 +183,7 @@ Public Class ucBorrowers
                 btnImportStudent.Enabled = False
                 btnImportFaculties.Enabled = False
                 If xlRowF = 1 Then
-                    If xlRangeF.Cells(xlRowF, 1).Text = "Faculty ID" And xlRangeF.Cells(xlRowF, 2).Text = "Firstname" And xlRangeF.Cells(xlRowF, 3).Text = "Middlename" And xlRangeF.Cells(xlRowF, 4).Text = "Lastname" And xlRangeF.Cells(xlRowF, 5).Text = "Gender" And xlRangeF.Cells(xlRowF, 6).Text = "Birthday" Then
+                    If xlRangeF.Cells(xlRowF, 1).Text = "Faculty ID" And xlRangeF.Cells(xlRowF, 2).Text = "Firstname" And xlRangeF.Cells(xlRowF, 3).Text = "Middlename" And xlRangeF.Cells(xlRowF, 4).Text = "Lastname" And xlRangeF.Cells(xlRowF, 5).Text = "Gender" And xlRangeF.Cells(xlRowF, 6).Text = "Birthday" And xlRangeF.Cells(xlRowF, 7).Text = "Phone Number" Then
                         If xlRowF = 1 Then xlRowF += 1
                     Else
                         MessageBox.Show("Please arrange excel file in order. " +
@@ -191,7 +192,8 @@ Public Class ucBorrowers
                                   Environment.NewLine + "Middlename" +
                                   Environment.NewLine + "Lastname" +
                                   Environment.NewLine + "Gender" +
-                                  Environment.NewLine + "Birthday")
+                                  Environment.NewLine + "Birthday" +
+                                  Environment.NewLine + "Phone Number")
 
                         xlWorkBookF.Close()
                         xlAppF.Quit()
@@ -213,7 +215,7 @@ Public Class ucBorrowers
                 'If not already in the database 
                 If Not IfAlreadyExistInDBFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 6).Text()) = True Then
                     'The faculty information will add
-                    AddToDatabaseFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 5).Text(), xlRangeF.Cells(xlRowF, 6).Text())
+                    AddToDatabaseFaculty(xlRangeF.Cells(xlRowF, 1).Text(), xlRangeF.Cells(xlRowF, 2).Text(), xlRangeF.Cells(xlRowF, 3).Text(), xlRangeF.Cells(xlRowF, 4).Text(), xlRangeF.Cells(xlRowF, 5).Text(), xlRangeF.Cells(xlRowF, 6).Text(), xlRangeF.Cells(xlRowF, 7).Text())
                     If is_added = True Then
                         rowcount += 1
 
@@ -446,10 +448,10 @@ Public Class ucBorrowers
         Return isAlreadyExist
     End Function
 
-    Private Sub AddToDatabaseStudent(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, major As String)
+    Private Sub AddToDatabaseStudent(studID As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, major As String, phone As String)
         Try
             If studID.Length > 0 And firstname.Length > 0 And lastname.Length > 0 And gender.Length > 0 And birthday.Length > 0 And major.Length > 0 Then
-                Dim str As String = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major)"
+                Dim str As String = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major,phone) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major,@phone)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@student_id", studID)
                 cmd.Parameters.AddWithValue("@firstname", firstname)
@@ -458,6 +460,7 @@ Public Class ucBorrowers
                 cmd.Parameters.AddWithValue("@gender", gender)
                 cmd.Parameters.AddWithValue("@birthday", CDate(birthday).ToShortDateString())
                 cmd.Parameters.AddWithValue("@major", major)
+                cmd.Parameters.AddWithValue("@phone", phone)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
                 is_added = True
@@ -467,10 +470,10 @@ Public Class ucBorrowers
         End Try
     End Sub
 
-    Private Sub AddToDatabaseFaculty(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String)
+    Private Sub AddToDatabaseFaculty(faculty_id As String, firstname As String, middlename As String, lastname As String, gender As String, birthday As String, phone As String)
         Try
             If faculty_id.Length > 0 And firstname.Length > 0 And lastname.Length > 0 And gender.Length > 0 And birthday.Length > 0 Then
-                Dim str As String = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday)"
+                Dim str As String = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday,phone) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday,@phone)"
                 cmd = New SqlCommand(str, conn)
                 cmd.Parameters.AddWithValue("@faculty_id", faculty_id)
                 cmd.Parameters.AddWithValue("@firstname", firstname)
@@ -478,6 +481,7 @@ Public Class ucBorrowers
                 cmd.Parameters.AddWithValue("@lastname", lastname)
                 cmd.Parameters.AddWithValue("@gender", gender)
                 cmd.Parameters.AddWithValue("@birthday", birthday)
+                cmd.Parameters.AddWithValue("@phone", phone)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
                 is_added = True

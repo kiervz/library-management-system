@@ -6,25 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.14583in</Width>
+              <Width>0.9375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04452in</Width>
+              <Width>1.94035in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04452in</Width>
+              <Width>1.94035in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04452in</Width>
+              <Width>1.94035in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.97867in</Width>
+              <Width>0.74951in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.0625in</Width>
+              <Width>0.88542in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.05208in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.94792in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -269,6 +272,40 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>phone</Value>
+                              <Style>
+                                <FontWeight>SemiBold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#00c9ce</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -498,12 +535,45 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="phone">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!phone.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>phone</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -525,7 +595,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>0.5in</Height>
-        <Width>10.37264in</Width>
+        <Width>10.39347in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -536,7 +606,7 @@
     <Height>0.5in</Height>
     <Style />
   </Body>
-  <Width>10.37265in</Width>
+  <Width>10.39347in</Width>
   <Page>
     <PageHeader>
       <Height>1.6007in</Height>
@@ -860,7 +930,7 @@
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Left</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
@@ -935,6 +1005,10 @@
         </Field>
         <Field Name="major">
           <DataField>major</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="phone">
+          <DataField>phone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

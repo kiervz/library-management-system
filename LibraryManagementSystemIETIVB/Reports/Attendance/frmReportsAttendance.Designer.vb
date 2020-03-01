@@ -23,7 +23,7 @@ Partial Class frmReportsAttendance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.dtAttendanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1 = New LibraryManagementSystemIETIVB.DataSet1()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -66,6 +66,7 @@ Partial Class frmReportsAttendance
         '
         'btnLoad
         '
+        Me.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLoad.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLoad.FlatAppearance.BorderSize = 0
@@ -85,6 +86,7 @@ Partial Class frmReportsAttendance
         '
         'dtTo
         '
+        Me.dtTo.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.dtTo.CustomFormat = "MMMM dd, yyyy"
         Me.dtTo.FontSize = MetroFramework.MetroDateTimeSize.Small
         Me.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
@@ -96,6 +98,7 @@ Partial Class frmReportsAttendance
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(670, 6)
@@ -106,6 +109,7 @@ Partial Class frmReportsAttendance
         '
         'dtFrom
         '
+        Me.dtFrom.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.dtFrom.CustomFormat = "MMMM dd, yyyy"
         Me.dtFrom.FontSize = MetroFramework.MetroDateTimeSize.Small
         Me.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
@@ -117,6 +121,7 @@ Partial Class frmReportsAttendance
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(442, 6)
@@ -138,9 +143,9 @@ Partial Class frmReportsAttendance
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.dtAttendanceBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.dtAttendanceBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "LibraryManagementSystemIETIVB.ReportAttendance.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(20, 92)
         Me.ReportViewer1.Name = "ReportViewer1"

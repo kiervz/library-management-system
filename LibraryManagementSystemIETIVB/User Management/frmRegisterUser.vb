@@ -150,7 +150,7 @@ Public Class frmRegisterUser
 
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
+        If txtFirstname.TextLength = 0 Or txtLastname.TextLength = 0 Or txtUsername.TextLength = 0 Or txtPassword.TextLength = 0 Or cmbQuestion.Text = "" Or txtAnswer.TextLength = 0 Or txtConfirmPass.TextLength = 0 Or cmbUserType.Text.Length = 0 Then
             Msg(Me, "Please fill up all fields!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf Val(txtAge.Text) < 18 Then
             Msg(Me, "Your age must be atleast 18 and above!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -159,6 +159,29 @@ Public Class frmRegisterUser
         ElseIf _passScore <> 4 Then
             Msg(Me, "Please correct your password!", "Library Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
+            str = "SELECT username FROM users WHERE username = @username"
+            cmd = New SqlCommand(str, conn)
+            cmd.Parameters.AddWithValue("@username", txtUsername.Text)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Msg(Me, "Username is already exist!", "Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+
+            str = "SELECT firstname, middlename, lastname, birthday FROM users WHERE firstname=@fn AND middlename=@mn AND lastname=@ln AND birthday=@bd"
+            cmd = New SqlCommand(str, conn)
+            cmd.Parameters.AddWithValue("@fn", txtFirstname.Text)
+            cmd.Parameters.AddWithValue("@mn", txtMiddlename.Text)
+            cmd.Parameters.AddWithValue("@ln", txtLastname.Text)
+            cmd.Parameters.AddWithValue("@bd", CDate(dtBday.Value).ToShortDateString())
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Msg(Me, "Account is already exist!", "Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+
             Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
             If mes = DialogResult.Yes Then
@@ -187,7 +210,11 @@ Public Class frmRegisterUser
                         .AddWithValue("@11", cmbQuestion.Text)
                         .AddWithValue("@12", MD5HasherSalt.GetMd5Hash(txtAnswer.Text))
                         .AddWithValue("@13", "1")
-                        .AddWithValue("@14", _imagePath)
+                        If _imagePath = "" Then
+                            .AddWithValue("@14", "")
+                        Else
+                            .AddWithValue("@14", _imagePath)
+                        End If
                     End With
 
                     cmd.ExecuteNonQuery()

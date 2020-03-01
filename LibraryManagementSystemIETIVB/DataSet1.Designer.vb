@@ -1596,6 +1596,8 @@ Partial Public Class DataSet1
         
         Private columnmajor As Global.System.Data.DataColumn
         
+        Private columnphone As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1688,6 +1690,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property phoneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnphone
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1724,9 +1734,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddstudentsRow(ByVal student_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Date, ByVal major As String) As studentsRow
+        Public Overloads Function AddstudentsRow(ByVal student_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Date, ByVal major As String, ByVal phone As String) As studentsRow
             Dim rowstudentsRow As studentsRow = CType(Me.NewRow,studentsRow)
-            Dim columnValuesArray() As Object = New Object() {student_id, firstname, middlename, lastname, gender, birthday, major}
+            Dim columnValuesArray() As Object = New Object() {student_id, firstname, middlename, lastname, gender, birthday, major, phone}
             rowstudentsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowstudentsRow)
             Return rowstudentsRow
@@ -1762,6 +1772,7 @@ Partial Public Class DataSet1
             Me.columngender = MyBase.Columns("gender")
             Me.columnbirthday = MyBase.Columns("birthday")
             Me.columnmajor = MyBase.Columns("major")
+            Me.columnphone = MyBase.Columns("phone")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1781,6 +1792,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnbirthday)
             Me.columnmajor = New Global.System.Data.DataColumn("major", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmajor)
+            Me.columnphone = New Global.System.Data.DataColumn("phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnphone)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnstudent_id}, true))
             Me.columnstudent_id.AllowDBNull = false
             Me.columnstudent_id.Unique = true
@@ -1790,6 +1803,7 @@ Partial Public Class DataSet1
             Me.columnlastname.MaxLength = 100
             Me.columngender.MaxLength = 10
             Me.columnmajor.MaxLength = 20
+            Me.columnphone.MaxLength = 11
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1939,6 +1953,8 @@ Partial Public Class DataSet1
         
         Private columnbirthday As Global.System.Data.DataColumn
         
+        Private columnphone As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2023,6 +2039,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property phoneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnphone
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2059,9 +2083,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddfacultiesRow(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Date) As facultiesRow
+        Public Overloads Function AddfacultiesRow(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Date, ByVal phone As String) As facultiesRow
             Dim rowfacultiesRow As facultiesRow = CType(Me.NewRow,facultiesRow)
-            Dim columnValuesArray() As Object = New Object() {faculty_id, firstname, middlename, lastname, gender, birthday}
+            Dim columnValuesArray() As Object = New Object() {faculty_id, firstname, middlename, lastname, gender, birthday, phone}
             rowfacultiesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowfacultiesRow)
             Return rowfacultiesRow
@@ -2096,6 +2120,7 @@ Partial Public Class DataSet1
             Me.columnlastname = MyBase.Columns("lastname")
             Me.columngender = MyBase.Columns("gender")
             Me.columnbirthday = MyBase.Columns("birthday")
+            Me.columnphone = MyBase.Columns("phone")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2113,6 +2138,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columngender)
             Me.columnbirthday = New Global.System.Data.DataColumn("birthday", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbirthday)
+            Me.columnphone = New Global.System.Data.DataColumn("phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnphone)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnfaculty_id}, true))
             Me.columnfaculty_id.AllowDBNull = false
             Me.columnfaculty_id.Unique = true
@@ -2121,6 +2148,7 @@ Partial Public Class DataSet1
             Me.columnmiddlename.MaxLength = 50
             Me.columnlastname.MaxLength = 50
             Me.columngender.MaxLength = 10
+            Me.columnphone.MaxLength = 11
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3162,6 +3190,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property phone() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablestudents.phoneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'phone' in table 'students' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablestudents.phoneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsfirstnameNull() As Boolean
             Return Me.IsNull(Me.tablestudents.firstnameColumn)
         End Function
@@ -3230,6 +3273,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetmajorNull()
             Me(Me.tablestudents.majorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsphoneNull() As Boolean
+            Return Me.IsNull(Me.tablestudents.phoneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetphoneNull()
+            Me(Me.tablestudents.phoneColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3336,6 +3391,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property phone() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablefaculties.phoneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'phone' in table 'faculties' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablefaculties.phoneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsfirstnameNull() As Boolean
             Return Me.IsNull(Me.tablefaculties.firstnameColumn)
         End Function
@@ -3392,6 +3462,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetbirthdayNull()
             Me(Me.tablefaculties.birthdayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsphoneNull() As Boolean
+            Return Me.IsNull(Me.tablefaculties.phoneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetphoneNull()
+            Me(Me.tablefaculties.phoneColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4446,6 +4528,7 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("gender", "gender")
             tableMapping.ColumnMappings.Add("birthday", "birthday")
             tableMapping.ColumnMappings.Add("major", "major")
+            tableMapping.ColumnMappings.Add("phone", "phone")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -4456,7 +4539,8 @@ Namespace DataSet1TableAdapters
                 "e] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([ge"& _ 
                 "nder] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR"& _ 
                 " ([birthday] = @Original_birthday)) AND ((@IsNull_major = 1 AND [major] IS NULL)"& _ 
-                " OR ([major] = @Original_major)))"
+                " OR ([major] = @Original_major)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR"& _ 
+                " ([phone] = @Original_phone)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_student_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "student_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -4471,12 +4555,15 @@ Namespace DataSet1TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_major", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_major", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [students] ([student_id], [firstname], [middlename], [lastname], [gen"& _ 
-                "der], [birthday], [major]) VALUES (@student_id, @firstname, @middlename, @lastna"& _ 
-                "me, @gender, @birthday, @major);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT student_id, firstname, middlename, last"& _ 
-                "name, gender, birthday, major FROM students WHERE (student_id = @student_id)"
+                "der], [birthday], [major], [phone]) VALUES (@student_id, @firstname, @middlename"& _ 
+                ", @lastname, @gender, @birthday, @major, @phone);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT student_id, firstname,"& _ 
+                " middlename, lastname, gender, birthday, major, phone FROM students WHERE (stude"& _ 
+                "nt_id = @student_id)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@student_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "student_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4485,20 +4572,22 @@ Namespace DataSet1TableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@major", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [students] SET [student_id] = @student_id, [firstname] = @firstname, [midd"& _ 
                 "lename] = @middlename, [lastname] = @lastname, [gender] = @gender, [birthday] = "& _ 
-                "@birthday, [major] = @major WHERE (([student_id] = @Original_student_id) AND ((@"& _ 
-                "IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstn"& _ 
-                "ame)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = "& _ 
-                "@Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([l"& _ 
-                "astname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) O"& _ 
-                "R ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NU"& _ 
-                "LL) OR ([birthday] = @Original_birthday)) AND ((@IsNull_major = 1 AND [major] IS"& _ 
-                " NULL) OR ([major] = @Original_major)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT student_id, firstname, middlena"& _ 
-                "me, lastname, gender, birthday, major FROM students WHERE (student_id = @student"& _ 
-                "_id)"
+                "@birthday, [major] = @major, [phone] = @phone WHERE (([student_id] = @Original_s"& _ 
+                "tudent_id) AND ((@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] "& _ 
+                "= @Original_firstname)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) O"& _ 
+                "R ([middlename] = @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastnam"& _ 
+                "e] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND ["& _ 
+                "gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AN"& _ 
+                "D [birthday] IS NULL) OR ([birthday] = @Original_birthday)) AND ((@IsNull_major "& _ 
+                "= 1 AND [major] IS NULL) OR ([major] = @Original_major)) AND ((@IsNull_phone = 1"& _ 
+                " AND [phone] IS NULL) OR ([phone] = @Original_phone)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT student_id, firs"& _ 
+                "tname, middlename, lastname, gender, birthday, major, phone FROM students WHERE "& _ 
+                "(student_id = @student_id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@student_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "student_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4507,6 +4596,7 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@major", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_student_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "student_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4520,6 +4610,8 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_major", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_major", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4536,36 +4628,36 @@ Namespace DataSet1TableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (firstname LIKE '%' + @fname + '%')"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students WHERE (firstname LIKE '%' + @fname + '%')"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (lastname LIKE '%' + @lname + '%')"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students WHERE (lastname LIKE '%' + @lname + '%')"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (major LIKE '%' + @major + '%')"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students WHERE (major LIKE '%' + @major + '%')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@major", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (middlename LIKE '%' + @mname + '%')"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students WHERE (middlename LIKE '%' + @mname + '%')"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT        student_id, firstname, middlename, lastname, gender, birthday, majo"& _ 
-                "r"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE student_id = @id"
+                "r, phone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            students WHERE (student_id = @id)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "student_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -4796,7 +4888,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_student_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_major As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_student_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_major As String, ByVal Original_phone As String) As Integer
             If (Original_student_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_student_id")
             Else
@@ -4844,6 +4936,13 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_major,String)
             End If
+            If (Original_phone Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_phone,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4863,7 +4962,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal student_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal major As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal student_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal major As String, ByVal phone As String) As Integer
             If (student_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("student_id")
             Else
@@ -4899,6 +4998,11 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(major,String)
             End If
+            If (phone Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(phone,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4918,7 +5022,23 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal student_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal major As String, ByVal Original_student_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_major As String) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal student_id As String,  _
+                    ByVal firstname As String,  _
+                    ByVal middlename As String,  _
+                    ByVal lastname As String,  _
+                    ByVal gender As String,  _
+                    ByVal birthday As Global.System.Nullable(Of Date),  _
+                    ByVal major As String,  _
+                    ByVal phone As String,  _
+                    ByVal Original_student_id As String,  _
+                    ByVal Original_firstname As String,  _
+                    ByVal Original_middlename As String,  _
+                    ByVal Original_lastname As String,  _
+                    ByVal Original_gender As String,  _
+                    ByVal Original_birthday As Global.System.Nullable(Of Date),  _
+                    ByVal Original_major As String,  _
+                    ByVal Original_phone As String) As Integer
             If (student_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("student_id")
             Else
@@ -4954,52 +5074,64 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(major,String)
             End If
+            If (phone Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(phone,String)
+            End If
             If (Original_student_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_student_id")
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_student_id,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_student_id,String)
             End If
             If (Original_firstname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_firstname,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_firstname,String)
             End If
             If (Original_middlename Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_middlename,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_middlename,String)
             End If
             If (Original_lastname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_lastname,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_lastname,String)
             End If
             If (Original_gender Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_gender,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_gender,String)
             End If
             If (Original_birthday.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_birthday.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_birthday.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_major Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_major,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_major,String)
+            End If
+            If (Original_phone Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_phone,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -5020,8 +5152,8 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal major As String, ByVal Original_student_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_major As String) As Integer
-            Return Me.Update(Original_student_id, firstname, middlename, lastname, gender, birthday, major, Original_student_id, Original_firstname, Original_middlename, Original_lastname, Original_gender, Original_birthday, Original_major)
+        Public Overloads Overridable Function Update(ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal major As String, ByVal phone As String, ByVal Original_student_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_major As String, ByVal Original_phone As String) As Integer
+            Return Me.Update(Original_student_id, firstname, middlename, lastname, gender, birthday, major, phone, Original_student_id, Original_firstname, Original_middlename, Original_lastname, Original_gender, Original_birthday, Original_major, Original_phone)
         End Function
     End Class
     
@@ -5158,6 +5290,7 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("lastname", "lastname")
             tableMapping.ColumnMappings.Add("gender", "gender")
             tableMapping.ColumnMappings.Add("birthday", "birthday")
+            tableMapping.ColumnMappings.Add("phone", "phone")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5167,7 +5300,8 @@ Namespace DataSet1TableAdapters
                 "inal_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastna"& _ 
                 "me] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([g"& _ 
                 "ender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) O"& _ 
-                "R ([birthday] = @Original_birthday)))"
+                "R ([birthday] = @Original_birthday)) AND ((@IsNull_phone = 1 AND [phone] IS NULL"& _ 
+                ") OR ([phone] = @Original_phone)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_faculty_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "faculty_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5180,12 +5314,14 @@ Namespace DataSet1TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_birthday", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [faculties] ([faculty_id], [firstname], [middlename], [lastname], [ge"& _ 
-                "nder], [birthday]) VALUES (@faculty_id, @firstname, @middlename, @lastname, @gen"& _ 
-                "der, @birthday);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT faculty_id, firstname, middlename, lastname, gender, bi"& _ 
-                "rthday FROM faculties WHERE (faculty_id = @faculty_id)"
+                "nder], [birthday], [phone]) VALUES (@faculty_id, @firstname, @middlename, @lastn"& _ 
+                "ame, @gender, @birthday, @phone);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT faculty_id, firstname, middlename, las"& _ 
+                "tname, gender, birthday, phone FROM faculties WHERE (faculty_id = @faculty_id)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@faculty_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "faculty_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5193,18 +5329,21 @@ Namespace DataSet1TableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [faculties] SET [faculty_id] = @faculty_id, [firstname] = @firstname, [mid"& _ 
                 "dlename] = @middlename, [lastname] = @lastname, [gender] = @gender, [birthday] ="& _ 
-                " @birthday WHERE (([faculty_id] = @Original_faculty_id) AND ((@IsNull_firstname "& _ 
-                "= 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNu"& _ 
-                "ll_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_middlen"& _ 
-                "ame)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Origi"& _ 
-                "nal_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Or"& _ 
-                "iginal_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS NULL) OR ([birthday"& _ 
-                "] = @Original_birthday)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT faculty_id, firstname, middlename, lastname, "& _ 
-                "gender, birthday FROM faculties WHERE (faculty_id = @faculty_id)"
+                " @birthday, [phone] = @phone WHERE (([faculty_id] = @Original_faculty_id) AND (("& _ 
+                "@IsNull_firstname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_first"& _ 
+                "name)) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] ="& _ 
+                " @Original_middlename)) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR (["& _ 
+                "lastname] = @Original_lastname)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) "& _ 
+                "OR ([gender] = @Original_gender)) AND ((@IsNull_birthday = 1 AND [birthday] IS N"& _ 
+                "ULL) OR ([birthday] = @Original_birthday)) AND ((@IsNull_phone = 1 AND [phone] I"& _ 
+                "S NULL) OR ([phone] = @Original_phone)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT faculty_id, firstname, middlen"& _ 
+                "ame, lastname, gender, birthday, phone FROM faculties WHERE (faculty_id = @facul"& _ 
+                "ty_id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@faculty_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "faculty_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5212,6 +5351,7 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_faculty_id", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "faculty_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_firstname", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -5223,6 +5363,8 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gender", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gender", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_birthday", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_birthday", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "birthday", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5238,31 +5380,31 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            faculties"
+            Me._commandCollection(0).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday, phon"& _ 
+                "e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            faculties"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            faculties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE faculty_id = @id"
+            Me._commandCollection(1).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday, phon"& _ 
+                "e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            faculties WHERE (faculty_id = @id)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "faculty_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            faculties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE firstname LIKE '%'+@fname+'%'"
+            Me._commandCollection(2).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday, phon"& _ 
+                "e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            faculties WHERE (firstname LIKE '%' + @fname + '%')"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            faculties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE lastname LIKE '%'+@lname+'%'"
+            Me._commandCollection(3).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday, phon"& _ 
+                "e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            faculties WHERE (lastname LIKE '%' + @lname + '%')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            faculties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE middlename LIKE '%'+@mname+'%'"
+            Me._commandCollection(4).CommandText = "SELECT        faculty_id, firstname, middlename, lastname, gender, birthday, phon"& _ 
+                "e"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            faculties WHERE (middlename LIKE '%' + @mname + '%')"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -5459,7 +5601,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_phone As String) As Integer
             If (Original_faculty_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_faculty_id")
             Else
@@ -5500,6 +5642,13 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_phone Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_phone,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5519,7 +5668,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal phone As String) As Integer
             If (faculty_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("faculty_id")
             Else
@@ -5550,6 +5699,11 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (phone Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(phone,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5569,7 +5723,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Update(ByVal faculty_id As String, ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal phone As String, ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_phone As String) As Integer
             If (faculty_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("faculty_id")
             Else
@@ -5600,45 +5754,57 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (phone Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(phone,String)
+            End If
             If (Original_faculty_id Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_faculty_id")
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_faculty_id,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_faculty_id,String)
             End If
             If (Original_firstname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_firstname,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_firstname,String)
             End If
             If (Original_middlename Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_middlename,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_middlename,String)
             End If
             If (Original_lastname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_lastname,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_lastname,String)
             End If
             If (Original_gender Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_gender,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_gender,String)
             End If
             If (Original_birthday.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_birthday.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_birthday.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (Original_phone Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_phone,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -5659,8 +5825,8 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_faculty_id, firstname, middlename, lastname, gender, birthday, Original_faculty_id, Original_firstname, Original_middlename, Original_lastname, Original_gender, Original_birthday)
+        Public Overloads Overridable Function Update(ByVal firstname As String, ByVal middlename As String, ByVal lastname As String, ByVal gender As String, ByVal birthday As Global.System.Nullable(Of Date), ByVal phone As String, ByVal Original_faculty_id As String, ByVal Original_firstname As String, ByVal Original_middlename As String, ByVal Original_lastname As String, ByVal Original_gender As String, ByVal Original_birthday As Global.System.Nullable(Of Date), ByVal Original_phone As String) As Integer
+            Return Me.Update(Original_faculty_id, firstname, middlename, lastname, gender, birthday, phone, Original_faculty_id, Original_firstname, Original_middlename, Original_lastname, Original_gender, Original_birthday, Original_phone)
         End Function
     End Class
     

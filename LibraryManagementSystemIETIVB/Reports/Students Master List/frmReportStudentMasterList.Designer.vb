@@ -64,6 +64,7 @@ Partial Class frmReportStudentMasterList
         '
         'btnLoad
         '
+        Me.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLoad.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLoad.FlatAppearance.BorderSize = 0
@@ -83,6 +84,7 @@ Partial Class frmReportStudentMasterList
         '
         'txtSearch
         '
+        Me.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
         '
         '
         '
@@ -115,6 +117,7 @@ Partial Class frmReportStudentMasterList
         '
         'cmbSearchBy
         '
+        Me.cmbSearchBy.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cmbSearchBy.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.cmbSearchBy.FormattingEnabled = True
         Me.cmbSearchBy.ItemHeight = 19
@@ -128,6 +131,7 @@ Partial Class frmReportStudentMasterList
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(464, 6)

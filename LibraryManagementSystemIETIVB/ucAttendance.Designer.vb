@@ -29,8 +29,6 @@ Partial Class ucAttendance
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtDate = New MetroFramework.Controls.MetroDateTime()
-        Me.cmbSearchBy = New MetroFramework.Controls.MetroComboBox()
-        Me.txtSearch = New MetroFramework.Controls.MetroTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblShowingNentries = New System.Windows.Forms.Label()
         Me.dgvAttendance = New System.Windows.Forms.DataGridView()
@@ -53,52 +51,6 @@ Partial Class ucAttendance
         Me.dtDate.Name = "dtDate"
         Me.dtDate.Size = New System.Drawing.Size(190, 25)
         Me.dtDate.TabIndex = 53
-        '
-        'cmbSearchBy
-        '
-        Me.cmbSearchBy.FontSize = MetroFramework.MetroComboBoxSize.Small
-        Me.cmbSearchBy.FormattingEnabled = True
-        Me.cmbSearchBy.ItemHeight = 19
-        Me.cmbSearchBy.Items.AddRange(New Object() {"Student ID", "Surname", "Firstname", "Middlename", "Course", "Year", "Section"})
-        Me.cmbSearchBy.Location = New System.Drawing.Point(10, 35)
-        Me.cmbSearchBy.Name = "cmbSearchBy"
-        Me.cmbSearchBy.PromptText = "Search By"
-        Me.cmbSearchBy.Size = New System.Drawing.Size(132, 25)
-        Me.cmbSearchBy.Style = MetroFramework.MetroColorStyle.Teal
-        Me.cmbSearchBy.TabIndex = 64
-        Me.cmbSearchBy.UseSelectable = True
-        '
-        'txtSearch
-        '
-        '
-        '
-        '
-        Me.txtSearch.CustomButton.Image = Nothing
-        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(216, 1)
-        Me.txtSearch.CustomButton.Name = ""
-        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(23, 23)
-        Me.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtSearch.CustomButton.TabIndex = 1
-        Me.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtSearch.CustomButton.UseSelectable = True
-        Me.txtSearch.CustomButton.Visible = False
-        Me.txtSearch.Lines = New String(-1) {}
-        Me.txtSearch.Location = New System.Drawing.Point(152, 35)
-        Me.txtSearch.MaxLength = 50
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.SelectionLength = 0
-        Me.txtSearch.SelectionStart = 0
-        Me.txtSearch.ShortcutsEnabled = True
-        Me.txtSearch.Size = New System.Drawing.Size(240, 25)
-        Me.txtSearch.Style = MetroFramework.MetroColorStyle.Teal
-        Me.txtSearch.TabIndex = 63
-        Me.txtSearch.UseSelectable = True
-        Me.txtSearch.UseStyleColors = True
-        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Timer1
         '
@@ -236,8 +188,6 @@ Partial Class ucAttendance
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.lblShowingNentries)
-        Me.Controls.Add(Me.cmbSearchBy)
-        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.dtDate)
         Me.Controls.Add(Me.dgvAttendance)
         Me.Name = "ucAttendance"
@@ -249,8 +199,6 @@ Partial Class ucAttendance
     End Sub
 
     Friend WithEvents dtDate As MetroFramework.Controls.MetroDateTime
-    Private WithEvents cmbSearchBy As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents txtSearch As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblShowingNentries As Label
     Friend WithEvents dgvAttendance As System.Windows.Forms.DataGridView
