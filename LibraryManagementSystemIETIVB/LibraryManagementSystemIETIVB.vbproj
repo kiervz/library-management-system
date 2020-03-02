@@ -71,6 +71,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -154,6 +155,12 @@
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPasswordConfirmIDLE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSendSMS.Designer.vb">
+      <DependentUpon>frmSendSMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSendSMS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Faculties Master List\frmReportFacultyMasterList.Designer.vb">
@@ -357,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordConfirmIDLE.resx">
       <DependentUpon>frmPasswordConfirmIDLE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSendSMS.resx">
+      <DependentUpon>frmSendSMS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Faculties Master List\frmReportFacultyMasterList.resx">
       <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>

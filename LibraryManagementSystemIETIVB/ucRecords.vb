@@ -6,17 +6,17 @@ Public Class ucRecords
 
     Private Sub ucRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        'LoadBookOverdue()
-        'LoadBookBorrowed()
-        'LoadBookReturned()
-        'LoadBookInventory()
-        'LoadBookLost()
+        LoadBookOverdue()
+        LoadBookBorrowed()
+        LoadBookReturned()
+        LoadBookInventory()
+        LoadBookLost()
     End Sub
 
     Friend Sub LoadBookOverdue()
         Try
             Dim row_count As Integer = 0
-            str = "SELECT books.id, books.call_number, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, users.username, borrows.day_penalty, borrows.status_id, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName FROM borrows INNER JOIN books ON borrows.book_id = books.id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.day_penalty > 0) AND (borrows.status_id = 1)"
+            str = "SELECT books.id, books.call_number, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, users.username, borrows.day_penalty, borrows.status_id, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName,  (SELECT phone FROM students AS students_1 WHERE (student_id = borrows.student_faculty_no)) AS student_phone, (SELECT phone FROM faculties AS faculties_1 WHERE (faculty_id = borrows.student_faculty_no)) AS faculty_phone FROM borrows INNER JOIN books ON borrows.book_id = books.id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.day_penalty > 0) AND (borrows.status_id = 1)"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -25,15 +25,19 @@ Public Class ucRecords
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"))
+                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("student_phone"))
                 Else
-                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"))
+                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("faculty_phone"))
                 End If
             End While
             If dgvBooksOverdue.RowCount = 0 Then
                 panelBookOverdue.BringToFront()
+                btnMarkLost.Enabled = False
+                btnSendSMS.Enabled = False
             Else
                 panelBookOverdue.SendToBack()
+                btnMarkLost.Enabled = True
+                btnSendSMS.Enabled = True
             End If
         Catch ex As Exception
         End Try
@@ -58,8 +62,10 @@ Public Class ucRecords
             End While
             If dgvBookLost.RowCount = 0 Then
                 panelBookLost.BringToFront()
+                btnReturn.Enabled = False
             Else
                 panelBookLost.SendToBack()
+                btnReturn.Enabled = True
             End If
         Catch ex As Exception
         End Try
@@ -253,4 +259,16 @@ Public Class ucRecords
             End If
         End If
     End Sub
+
+    Private Sub btnSendSMS_Click(sender As Object, e As EventArgs) Handles btnSendSMS.Click
+        If dgvBooksOverdue.Rows.Count > 0 Then
+            Dim i As Integer = dgvBooksOverdue.CurrentRow.Index
+
+            Dim sms As New frmSendSMS
+            sms.borrower_phone = dgvBooksOverdue.Item(9, i).Value
+            sms.txtBorrowersName.Text = dgvBooksOverdue.Item(4, i).Value
+            sms.ShowDialog(Me)
+        End If
+    End Sub
+
 End Class
