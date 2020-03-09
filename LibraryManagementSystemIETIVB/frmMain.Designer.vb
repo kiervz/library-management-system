@@ -39,17 +39,6 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
-        Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
-        Me.UcRecords1 = New LibraryManagementSystemIETIVB.ucRecords()
-        Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
-        Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
-        Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
-        Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
-        Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
-        Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
-        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookEntry()
-        Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
-        Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -77,6 +66,17 @@ Partial Class frmMain
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panelAccount = New System.Windows.Forms.Panel()
         Me.pbProfile = New System.Windows.Forms.PictureBox()
+        Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
+        Me.UcRecords1 = New LibraryManagementSystemIETIVB.ucRecords()
+        Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
+        Me.UcAttendance1 = New LibraryManagementSystemIETIVB.ucAttendance()
+        Me.UcUserManagement1 = New LibraryManagementSystemIETIVB.ucUserManagement()
+        Me.UcSettings1 = New LibraryManagementSystemIETIVB.ucSettings()
+        Me.UcReports1 = New LibraryManagementSystemIETIVB.ucReports()
+        Me.UcDashboard1 = New LibraryManagementSystemIETIVB.ucDashboard()
+        Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookEntry()
+        Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
+        Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
@@ -349,95 +349,6 @@ Partial Class frmMain
         Me.panelCenter.Size = New System.Drawing.Size(1126, 645)
         Me.panelCenter.TabIndex = 5
         '
-        'UcIssuedReturn1
-        '
-        Me.UcIssuedReturn1.BackColor = System.Drawing.Color.White
-        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
-        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
-        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcIssuedReturn1.TabIndex = 26
-        '
-        'UcRecords1
-        '
-        Me.UcRecords1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcRecords1.Location = New System.Drawing.Point(0, 33)
-        Me.UcRecords1.Name = "UcRecords1"
-        Me.UcRecords1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcRecords1.TabIndex = 25
-        '
-        'UcBorrowers1
-        '
-        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBorrowers1.Name = "UcBorrowers1"
-        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcBorrowers1.TabIndex = 24
-        '
-        'UcAttendance1
-        '
-        Me.UcAttendance1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcAttendance1.Location = New System.Drawing.Point(0, 33)
-        Me.UcAttendance1.Name = "UcAttendance1"
-        Me.UcAttendance1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcAttendance1.TabIndex = 21
-        '
-        'UcUserManagement1
-        '
-        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcUserManagement1.Name = "UcUserManagement1"
-        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcUserManagement1.TabIndex = 20
-        '
-        'UcSettings1
-        '
-        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
-        Me.UcSettings1.Name = "UcSettings1"
-        Me.UcSettings1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcSettings1.TabIndex = 18
-        '
-        'UcReports1
-        '
-        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
-        Me.UcReports1.Name = "UcReports1"
-        Me.UcReports1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcReports1.TabIndex = 17
-        '
-        'UcDashboard1
-        '
-        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
-        Me.UcDashboard1.Name = "UcDashboard1"
-        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcDashboard1.TabIndex = 15
-        '
-        'UcBookManagement1
-        '
-        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBookManagement1.Name = "UcBookManagement1"
-        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcBookManagement1.TabIndex = 13
-        '
-        'UcActivityLog1
-        '
-        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
-        Me.UcActivityLog1.Name = "UcActivityLog1"
-        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcActivityLog1.TabIndex = 12
-        '
-        'UcAboutIETI1
-        '
-        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
-        Me.UcAboutIETI1.Name = "UcAboutIETI1"
-        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcAboutIETI1.TabIndex = 11
-        '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
@@ -472,7 +383,7 @@ Partial Class frmMain
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.lblDuration)
@@ -486,7 +397,7 @@ Partial Class frmMain
         '
         Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblDate.AutoSize = True
-        Me.lblDate.BackColor = System.Drawing.Color.Silver
+        Me.lblDate.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.lblDate.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.Black
         Me.lblDate.Location = New System.Drawing.Point(821, 1)
@@ -499,7 +410,7 @@ Partial Class frmMain
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Silver
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(4, 3)
@@ -512,7 +423,7 @@ Partial Class frmMain
         '
         Me.lblDuration.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblDuration.AutoSize = True
-        Me.lblDuration.BackColor = System.Drawing.Color.Silver
+        Me.lblDuration.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.lblDuration.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDuration.ForeColor = System.Drawing.Color.Black
         Me.lblDuration.Location = New System.Drawing.Point(613, 2)
@@ -525,7 +436,7 @@ Partial Class frmMain
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Silver
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(546, 2)
@@ -748,6 +659,95 @@ Partial Class frmMain
         Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbProfile.TabIndex = 0
         Me.pbProfile.TabStop = False
+        '
+        'UcIssuedReturn1
+        '
+        Me.UcIssuedReturn1.BackColor = System.Drawing.Color.White
+        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
+        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
+        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcIssuedReturn1.TabIndex = 26
+        '
+        'UcRecords1
+        '
+        Me.UcRecords1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcRecords1.Location = New System.Drawing.Point(0, 33)
+        Me.UcRecords1.Name = "UcRecords1"
+        Me.UcRecords1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcRecords1.TabIndex = 25
+        '
+        'UcBorrowers1
+        '
+        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBorrowers1.Name = "UcBorrowers1"
+        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcBorrowers1.TabIndex = 24
+        '
+        'UcAttendance1
+        '
+        Me.UcAttendance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAttendance1.Location = New System.Drawing.Point(0, 33)
+        Me.UcAttendance1.Name = "UcAttendance1"
+        Me.UcAttendance1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcAttendance1.TabIndex = 21
+        '
+        'UcUserManagement1
+        '
+        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcUserManagement1.Name = "UcUserManagement1"
+        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcUserManagement1.TabIndex = 20
+        '
+        'UcSettings1
+        '
+        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
+        Me.UcSettings1.Name = "UcSettings1"
+        Me.UcSettings1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcSettings1.TabIndex = 18
+        '
+        'UcReports1
+        '
+        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
+        Me.UcReports1.Name = "UcReports1"
+        Me.UcReports1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcReports1.TabIndex = 17
+        '
+        'UcDashboard1
+        '
+        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
+        Me.UcDashboard1.Name = "UcDashboard1"
+        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcDashboard1.TabIndex = 15
+        '
+        'UcBookManagement1
+        '
+        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBookManagement1.Name = "UcBookManagement1"
+        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcBookManagement1.TabIndex = 13
+        '
+        'UcActivityLog1
+        '
+        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
+        Me.UcActivityLog1.Name = "UcActivityLog1"
+        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcActivityLog1.TabIndex = 12
+        '
+        'UcAboutIETI1
+        '
+        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
+        Me.UcAboutIETI1.Name = "UcAboutIETI1"
+        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 612)
+        Me.UcAboutIETI1.TabIndex = 11
         '
         'SystemIdleTimer1
         '

@@ -17,7 +17,7 @@ Public Class frmRegisterUpdateBooks
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-                    Msg(Me, "Book Already Exist", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Msg(Me, "Book is already exist", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     Exit Sub
                 End If
                 Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Add?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
@@ -44,7 +44,7 @@ Public Class frmRegisterUpdateBooks
                     ClearAll()
                 End If
             Else
-                Msg(Me, "Please fill all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Msg(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -182,7 +182,8 @@ Public Class frmRegisterUpdateBooks
                     CloseTransparentForm()
                     Me.Hide()
                 End If
-
+            Else
+                Msg(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         Catch ex As Exception
         Finally

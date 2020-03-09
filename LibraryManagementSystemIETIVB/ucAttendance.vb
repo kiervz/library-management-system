@@ -63,7 +63,6 @@ Public Class ucAttendance
             End While
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Attendance")
         End Try
     End Sub
 

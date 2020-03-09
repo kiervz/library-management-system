@@ -24,6 +24,8 @@ Partial Class ucSettings
     Private Sub InitializeComponent()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.txtGracePeriod = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtIdleTime = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -49,8 +51,6 @@ Partial Class ucSettings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtGracePeriod = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
@@ -99,6 +99,26 @@ Partial Class ucSettings
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'txtGracePeriod
+        '
+        Me.txtGracePeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtGracePeriod.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGracePeriod.Location = New System.Drawing.Point(640, 221)
+        Me.txtGracePeriod.MaxLength = 30
+        Me.txtGracePeriod.Name = "txtGracePeriod"
+        Me.txtGracePeriod.Size = New System.Drawing.Size(207, 26)
+        Me.txtGracePeriod.TabIndex = 188
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(177, 227)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(295, 20)
+        Me.Label9.TabIndex = 189
+        Me.Label9.Text = "Grace period after time in and time out"
         '
         'txtIdleTime
         '
@@ -397,26 +417,6 @@ Partial Class ucSettings
         Me.Label7.Size = New System.Drawing.Size(143, 20)
         Me.Label7.TabIndex = 220
         Me.Label7.Text = "Re type Password:"
-        '
-        'txtGracePeriod
-        '
-        Me.txtGracePeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtGracePeriod.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtGracePeriod.Location = New System.Drawing.Point(640, 221)
-        Me.txtGracePeriod.MaxLength = 30
-        Me.txtGracePeriod.Name = "txtGracePeriod"
-        Me.txtGracePeriod.Size = New System.Drawing.Size(207, 26)
-        Me.txtGracePeriod.TabIndex = 188
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(177, 227)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(295, 20)
-        Me.Label9.TabIndex = 189
-        Me.Label9.Text = "Grace period after time in and time out"
         '
         'ucSettings
         '

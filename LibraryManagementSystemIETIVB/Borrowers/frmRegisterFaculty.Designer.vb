@@ -144,7 +144,7 @@ Partial Class frmRegisterFaculty
         '
         'txtAge
         '
-        Me.txtAge.BackColor = System.Drawing.Color.White
+        Me.txtAge.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAge.Enabled = False
         Me.txtAge.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -208,7 +208,7 @@ Partial Class frmRegisterFaculty
         Me.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPhone.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(228, 355)
-        Me.txtPhone.MaxLength = 30
+        Me.txtPhone.MaxLength = 11
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(269, 26)
         Me.txtPhone.TabIndex = 230

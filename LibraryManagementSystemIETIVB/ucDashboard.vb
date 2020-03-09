@@ -31,6 +31,12 @@ Public Class ucDashboard
         frmMain.btnRecords.Focus()
     End Sub
 
+    Private Sub moreInfo_totalFaculties(sender As Object, e As EventArgs) Handles PictureBox13.DoubleClick, Label3.DoubleClick
+        frmMain.btnBorrowers.PerformClick()
+        frmMain.UcBorrowers1.MetroTabControl1.SelectedIndex = 1
+        frmMain.btnBorrowers.Focus()
+    End Sub
+
     Private Sub ucDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
     End Sub
@@ -45,7 +51,6 @@ Public Class ucDashboard
                 Dim totalUser As Decimal = dr("TotalUsers").ToString()
                 lblTotalUser.Text = Format(totalUser, "N0")
             End If
-
         Catch ex As Exception
         Finally
             dr.Close()
@@ -62,9 +67,24 @@ Public Class ucDashboard
             If dr.Read Then
                 Dim totalStudent As Decimal = dr("TotalStudents").ToString()
                 lblTotalStudents.Text = Format(totalStudent, "N0")
-
             End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
 
+    Friend Sub TotalFaculties()
+        Try
+            str = "SELECT COUNT(*) AS TotalFaculties FROM faculties"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Dim totalFaculties As Decimal = dr("TotalFaculties").ToString()
+                lblTotalFaculties.Text = Format(totalFaculties, "N0")
+            End If
         Catch ex As Exception
         Finally
             dr.Close()
@@ -99,6 +119,22 @@ Public Class ucDashboard
             If dr.Read Then
                 Dim totalBorrowers As Integer = dr("total_borrowers").ToString()
                 lblTotalBorrowers.Text = Format(totalBorrowers, "N0")
+            End If
+        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
+        End Try
+    End Sub
+
+    Friend Sub TotalAttendance()
+        Try
+            str = "SELECT COUNT(*) AS totalAttendance FROM attendance WHERE date = '" + Date.Now.ToShortDateString() + "' "
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                lblTotalAttendance.Text = dr("totalAttendance").ToString()
             End If
         Catch ex As Exception
         Finally

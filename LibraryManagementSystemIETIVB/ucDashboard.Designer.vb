@@ -22,7 +22,6 @@ Partial Class ucDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDashboard))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -41,22 +40,22 @@ Partial Class ucDashboard
         Me.lblTotalBooks = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblTotalOverdue = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblTotalUser = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblTotalFaculties = New System.Windows.Forms.Label()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.lblTotalAttendance = New System.Windows.Forms.Label()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -73,7 +72,30 @@ Partial Class ucDashboard
         Me.label10 = New System.Windows.Forms.Label()
         Me.lblTotalBorrowers = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lblTotalOverdue = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblTotalUser = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
         Me.Panel8.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,14 +105,14 @@ Partial Class ucDashboard
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel10.SuspendLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        Me.Panel11.SuspendLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel13.SuspendLayout()
+        Me.Panel14.SuspendLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel15.SuspendLayout()
+        Me.Panel16.SuspendLayout()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel12.SuspendLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +121,18 @@ Partial Class ucDashboard
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel17.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -110,7 +144,7 @@ Partial Class ucDashboard
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.lblTotalStudents)
         Me.Panel3.Controls.Add(Me.PictureBox5)
-        Me.Panel3.Location = New System.Drawing.Point(369, 3)
+        Me.Panel3.Location = New System.Drawing.Point(40, 350)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(256, 148)
         Me.Panel3.TabIndex = 17
@@ -287,207 +321,212 @@ Partial Class ucDashboard
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel6, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel4, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.panel5, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 0)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel13, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel15, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(57, 74)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.panel5, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel6, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel17, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel4, 2, 2)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(58, 39)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.75!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.25!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1002, 364)
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.14409!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.85591!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 181.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1002, 529)
         Me.TableLayoutPanel1.TabIndex = 9
         '
-        'Panel6
+        'Panel13
         '
-        Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Panel10)
-        Me.Panel6.Controls.Add(Me.Label16)
-        Me.Panel6.Controls.Add(Me.Label17)
-        Me.Panel6.Controls.Add(Me.lblTotalOverdue)
-        Me.Panel6.Controls.Add(Me.PictureBox3)
-        Me.Panel6.Location = New System.Drawing.Point(40, 184)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(256, 148)
-        Me.Panel6.TabIndex = 21
+        Me.Panel13.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.Panel13.Controls.Add(Me.Panel14)
+        Me.Panel13.Controls.Add(Me.Label7)
+        Me.Panel13.Controls.Add(Me.Label11)
+        Me.Panel13.Controls.Add(Me.lblTotalFaculties)
+        Me.Panel13.Controls.Add(Me.PictureBox14)
+        Me.Panel13.Location = New System.Drawing.Point(369, 350)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(256, 148)
+        Me.Panel13.TabIndex = 22
         '
-        'Panel10
+        'Panel14
         '
-        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.Panel10.Controls.Add(Me.Label22)
-        Me.Panel10.Controls.Add(Me.PictureBox10)
-        Me.Panel10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(0, 124)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(256, 24)
-        Me.Panel10.TabIndex = 10
+        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(198, Byte), Integer))
+        Me.Panel14.Controls.Add(Me.Label3)
+        Me.Panel14.Controls.Add(Me.PictureBox13)
+        Me.Panel14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel14.Location = New System.Drawing.Point(0, 124)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(256, 24)
+        Me.Panel14.TabIndex = 10
         '
-        'Label22
+        'Label3
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(94, 5)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(59, 15)
-        Me.Label22.TabIndex = 11
-        Me.Label22.Text = "More info"
+        Me.Label3.AutoSize = True
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(94, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 15)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "More info"
         '
-        'PictureBox10
+        'PictureBox13
         '
-        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(149, 3)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(30, 20)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox10.TabIndex = 10
-        Me.PictureBox10.TabStop = False
+        Me.PictureBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
+        Me.PictureBox13.Location = New System.Drawing.Point(149, 2)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(30, 20)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox13.TabIndex = 10
+        Me.PictureBox13.TabStop = False
         '
-        'Label16
+        'Label7
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(79, 82)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(147, 30)
-        Me.Label16.TabIndex = 8
-        Me.Label16.Text = "Total books overdue" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(79, 82)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(153, 30)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Total faculties " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
         '
-        'Label17
+        'Label11
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(79, 48)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(114, 18)
-        Me.Label17.TabIndex = 7
-        Me.Label17.Text = "BOOKS OVERDUE"
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(79, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(112, 18)
+        Me.Label11.TabIndex = 7
+        Me.Label11.Text = "TOTAL FACULTIES"
         '
-        'lblTotalOverdue
+        'lblTotalFaculties
         '
-        Me.lblTotalOverdue.AutoSize = True
-        Me.lblTotalOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalOverdue.ForeColor = System.Drawing.Color.White
-        Me.lblTotalOverdue.Location = New System.Drawing.Point(78, 17)
-        Me.lblTotalOverdue.Name = "lblTotalOverdue"
-        Me.lblTotalOverdue.Size = New System.Drawing.Size(41, 29)
-        Me.lblTotalOverdue.TabIndex = 6
-        Me.lblTotalOverdue.Text = "18"
+        Me.lblTotalFaculties.AutoSize = True
+        Me.lblTotalFaculties.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalFaculties.ForeColor = System.Drawing.Color.White
+        Me.lblTotalFaculties.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalFaculties.Name = "lblTotalFaculties"
+        Me.lblTotalFaculties.Size = New System.Drawing.Size(27, 29)
+        Me.lblTotalFaculties.TabIndex = 6
+        Me.lblTotalFaculties.Text = "3"
         '
-        'PictureBox3
+        'PictureBox14
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
+        Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
+        Me.PictureBox14.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox14.TabIndex = 0
+        Me.PictureBox14.TabStop = False
         '
-        'Panel4
+        'Panel15
         '
-        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.Panel11)
-        Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Controls.Add(Me.Label12)
-        Me.Panel4.Controls.Add(Me.lblTotalUser)
-        Me.Panel4.Controls.Add(Me.PictureBox2)
-        Me.Panel4.Location = New System.Drawing.Point(369, 184)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(256, 148)
-        Me.Panel4.TabIndex = 20
+        Me.Panel15.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Panel15.Controls.Add(Me.Panel16)
+        Me.Panel15.Controls.Add(Me.Label18)
+        Me.Panel15.Controls.Add(Me.Label25)
+        Me.Panel15.Controls.Add(Me.lblTotalAttendance)
+        Me.Panel15.Controls.Add(Me.PictureBox16)
+        Me.Panel15.Location = New System.Drawing.Point(369, 177)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(256, 148)
+        Me.Panel15.TabIndex = 23
         '
-        'Panel11
+        'Panel16
         '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Panel11.Controls.Add(Me.Label23)
-        Me.Panel11.Controls.Add(Me.PictureBox11)
-        Me.Panel11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel11.Location = New System.Drawing.Point(0, 124)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(256, 24)
-        Me.Panel11.TabIndex = 11
+        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Panel16.Controls.Add(Me.Label15)
+        Me.Panel16.Controls.Add(Me.PictureBox15)
+        Me.Panel16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel16.Location = New System.Drawing.Point(0, 124)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(256, 24)
+        Me.Panel16.TabIndex = 10
         '
-        'Label23
+        'Label15
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(94, 5)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(59, 15)
-        Me.Label23.TabIndex = 11
-        Me.Label23.Text = "More info"
+        Me.Label15.AutoSize = True
+        Me.Label15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(94, 5)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(59, 15)
+        Me.Label15.TabIndex = 11
+        Me.Label15.Text = "More info"
         '
-        'PictureBox11
+        'PictureBox15
         '
-        Me.PictureBox11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(149, 3)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(30, 20)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox11.TabIndex = 10
-        Me.PictureBox11.TabStop = False
+        Me.PictureBox15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
+        Me.PictureBox15.Location = New System.Drawing.Point(149, 2)
+        Me.PictureBox15.Name = "PictureBox15"
+        Me.PictureBox15.Size = New System.Drawing.Size(30, 20)
+        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox15.TabIndex = 10
+        Me.PictureBox15.TabStop = False
         '
-        'Label8
+        'Label18
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(79, 82)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(153, 30)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "Total users " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.Location = New System.Drawing.Point(79, 82)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(147, 30)
+        Me.Label18.TabIndex = 8
+        Me.Label18.Text = "Total attendance today" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
         '
-        'Label12
+        'Label25
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(79, 48)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(88, 18)
-        Me.Label12.TabIndex = 7
-        Me.Label12.Text = "TOTAL USERS"
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.White
+        Me.Label25.Location = New System.Drawing.Point(79, 48)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(135, 18)
+        Me.Label25.TabIndex = 7
+        Me.Label25.Text = "ATTENDANCE TODAY"
         '
-        'lblTotalUser
+        'lblTotalAttendance
         '
-        Me.lblTotalUser.AutoSize = True
-        Me.lblTotalUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalUser.ForeColor = System.Drawing.Color.White
-        Me.lblTotalUser.Location = New System.Drawing.Point(78, 17)
-        Me.lblTotalUser.Name = "lblTotalUser"
-        Me.lblTotalUser.Size = New System.Drawing.Size(27, 29)
-        Me.lblTotalUser.TabIndex = 6
-        Me.lblTotalUser.Text = "0"
+        Me.lblTotalAttendance.AutoSize = True
+        Me.lblTotalAttendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalAttendance.ForeColor = System.Drawing.Color.White
+        Me.lblTotalAttendance.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalAttendance.Name = "lblTotalAttendance"
+        Me.lblTotalAttendance.Size = New System.Drawing.Size(27, 29)
+        Me.lblTotalAttendance.TabIndex = 6
+        Me.lblTotalAttendance.Text = "0"
         '
-        'PictureBox2
+        'PictureBox16
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(9, 30)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), System.Drawing.Image)
+        Me.PictureBox16.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox16.Name = "PictureBox16"
+        Me.PictureBox16.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox16.TabIndex = 0
+        Me.PictureBox16.TabStop = False
         '
         'Panel2
         '
@@ -498,7 +537,7 @@ Partial Class ucDashboard
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.lblTotalLostBook)
         Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Location = New System.Drawing.Point(701, 184)
+        Me.Panel2.Location = New System.Drawing.Point(701, 177)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(256, 148)
         Me.Panel2.TabIndex = 19
@@ -590,7 +629,7 @@ Partial Class ucDashboard
         Me.panel5.Controls.Add(Me.label10)
         Me.panel5.Controls.Add(Me.lblTotalBorrowers)
         Me.panel5.Controls.Add(Me.PictureBox6)
-        Me.panel5.Location = New System.Drawing.Point(701, 3)
+        Me.panel5.Location = New System.Drawing.Point(369, 3)
         Me.panel5.Name = "panel5"
         Me.panel5.Size = New System.Drawing.Size(256, 148)
         Me.panel5.TabIndex = 18
@@ -673,9 +712,281 @@ Partial Class ucDashboard
         Me.PictureBox6.TabIndex = 0
         Me.PictureBox6.TabStop = False
         '
-        'Timer1
+        'Panel6
         '
-        Me.Timer1.Interval = 1000
+        Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Panel10)
+        Me.Panel6.Controls.Add(Me.Label16)
+        Me.Panel6.Controls.Add(Me.Label17)
+        Me.Panel6.Controls.Add(Me.lblTotalOverdue)
+        Me.Panel6.Controls.Add(Me.PictureBox3)
+        Me.Panel6.Location = New System.Drawing.Point(701, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(256, 148)
+        Me.Panel6.TabIndex = 21
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Panel10.Controls.Add(Me.Label22)
+        Me.Panel10.Controls.Add(Me.PictureBox10)
+        Me.Panel10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel10.Location = New System.Drawing.Point(0, 124)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(256, 24)
+        Me.Panel10.TabIndex = 10
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.White
+        Me.Label22.Location = New System.Drawing.Point(94, 5)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(59, 15)
+        Me.Label22.TabIndex = 11
+        Me.Label22.Text = "More info"
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
+        Me.PictureBox10.Location = New System.Drawing.Point(149, 3)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(30, 20)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox10.TabIndex = 10
+        Me.PictureBox10.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Location = New System.Drawing.Point(79, 82)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(147, 30)
+        Me.Label16.TabIndex = 8
+        Me.Label16.Text = "Total books overdue" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recorded in the database."
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(79, 48)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(114, 18)
+        Me.Label17.TabIndex = 7
+        Me.Label17.Text = "BOOKS OVERDUE"
+        '
+        'lblTotalOverdue
+        '
+        Me.lblTotalOverdue.AutoSize = True
+        Me.lblTotalOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalOverdue.ForeColor = System.Drawing.Color.White
+        Me.lblTotalOverdue.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalOverdue.Name = "lblTotalOverdue"
+        Me.lblTotalOverdue.Size = New System.Drawing.Size(41, 29)
+        Me.lblTotalOverdue.TabIndex = 6
+        Me.lblTotalOverdue.Text = "18"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'Panel17
+        '
+        Me.Panel17.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(118, Byte), Integer))
+        Me.Panel17.Controls.Add(Me.Panel18)
+        Me.Panel17.Controls.Add(Me.Label28)
+        Me.Panel17.Controls.Add(Me.Label29)
+        Me.Panel17.Controls.Add(Me.Label30)
+        Me.Panel17.Controls.Add(Me.PictureBox18)
+        Me.Panel17.Location = New System.Drawing.Point(40, 177)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(256, 148)
+        Me.Panel17.TabIndex = 24
+        '
+        'Panel18
+        '
+        Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.Panel18.Controls.Add(Me.Label27)
+        Me.Panel18.Controls.Add(Me.PictureBox17)
+        Me.Panel18.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel18.Location = New System.Drawing.Point(0, 124)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(256, 24)
+        Me.Panel18.TabIndex = 10
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label27.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.White
+        Me.Label27.Location = New System.Drawing.Point(94, 5)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(59, 15)
+        Me.Label27.TabIndex = 11
+        Me.Label27.Text = "More info"
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
+        Me.PictureBox17.Location = New System.Drawing.Point(149, 2)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(30, 20)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox17.TabIndex = 10
+        Me.PictureBox17.TabStop = False
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.White
+        Me.Label28.Location = New System.Drawing.Point(79, 82)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(153, 30)
+        Me.Label28.TabIndex = 8
+        Me.Label28.Text = "Total students " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(79, 48)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(113, 18)
+        Me.Label29.TabIndex = 7
+        Me.Label29.Text = "TOTAL STUDENTS"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.White
+        Me.Label30.Location = New System.Drawing.Point(78, 17)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(27, 29)
+        Me.Label30.TabIndex = 6
+        Me.Label30.Text = "0"
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.Image = CType(resources.GetObject("PictureBox18.Image"), System.Drawing.Image)
+        Me.PictureBox18.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox18.TabIndex = 0
+        Me.PictureBox18.TabStop = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.Panel11)
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.Label12)
+        Me.Panel4.Controls.Add(Me.lblTotalUser)
+        Me.Panel4.Controls.Add(Me.PictureBox2)
+        Me.Panel4.Location = New System.Drawing.Point(701, 350)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(256, 148)
+        Me.Panel4.TabIndex = 20
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.Panel11.Controls.Add(Me.Label23)
+        Me.Panel11.Controls.Add(Me.PictureBox11)
+        Me.Panel11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel11.Location = New System.Drawing.Point(0, 124)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(256, 24)
+        Me.Panel11.TabIndex = 11
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Location = New System.Drawing.Point(94, 5)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(59, 15)
+        Me.Label23.TabIndex = 11
+        Me.Label23.Text = "More info"
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(149, 3)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(30, 20)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox11.TabIndex = 10
+        Me.PictureBox11.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(79, 82)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(153, 30)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Total users " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "registered in the database."
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(79, 48)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(88, 18)
+        Me.Label12.TabIndex = 7
+        Me.Label12.Text = "TOTAL USERS"
+        '
+        'lblTotalUser
+        '
+        Me.lblTotalUser.AutoSize = True
+        Me.lblTotalUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalUser.ForeColor = System.Drawing.Color.White
+        Me.lblTotalUser.Location = New System.Drawing.Point(78, 17)
+        Me.lblTotalUser.Name = "lblTotalUser"
+        Me.lblTotalUser.Size = New System.Drawing.Size(27, 29)
+        Me.lblTotalUser.TabIndex = 6
+        Me.lblTotalUser.Text = "0"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(9, 30)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(56, 58)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
         'ucDashboard
         '
@@ -698,18 +1009,18 @@ Partial Class ucDashboard
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel12.ResumeLayout(False)
@@ -722,6 +1033,24 @@ Partial Class ucDashboard
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel17.PerformLayout()
+        Me.Panel18.ResumeLayout(False)
+        Me.Panel18.PerformLayout()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -774,6 +1103,28 @@ Partial Class ucDashboard
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Private WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
-
+    Private WithEvents Panel17 As Panel
+    Friend WithEvents Panel18 As Panel
+    Private WithEvents Label27 As Label
+    Friend WithEvents PictureBox17 As PictureBox
+    Private WithEvents Label28 As Label
+    Private WithEvents Label29 As Label
+    Private WithEvents Label30 As Label
+    Private WithEvents PictureBox18 As PictureBox
+    Private WithEvents Panel15 As Panel
+    Friend WithEvents Panel16 As Panel
+    Private WithEvents Label15 As Label
+    Friend WithEvents PictureBox15 As PictureBox
+    Private WithEvents Label18 As Label
+    Private WithEvents Label25 As Label
+    Private WithEvents lblTotalAttendance As Label
+    Private WithEvents PictureBox16 As PictureBox
+    Private WithEvents Panel13 As Panel
+    Friend WithEvents Panel14 As Panel
+    Private WithEvents Label3 As Label
+    Friend WithEvents PictureBox13 As PictureBox
+    Private WithEvents Label7 As Label
+    Private WithEvents Label11 As Label
+    Private WithEvents lblTotalFaculties As Label
+    Private WithEvents PictureBox14 As PictureBox
 End Class

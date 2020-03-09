@@ -1,8 +1,8 @@
 ﻿Imports System.Drawing.Drawing2D
 
 Public Class frmMain
-    Private idle As New SystemIdleTimer
 
+    Private idle As New SystemIdleTimer
 
     Public Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If conn.State = ConnectionState.Closed Then
@@ -21,13 +21,14 @@ Public Class frmMain
             pbProfile.Image = My.Resources.no_image
         End Try
 
-
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
         UcDashboard1.Visible = True
 
         If userType = "Student Assistant" Then
             LoggedInAsStudentAssistant()
+        ElseIf userType = "Librarian" Then
+            LoggedInAsLibrarian
         End If
 
         lblDuration.Text = "00:00:00"
@@ -38,20 +39,27 @@ Public Class frmMain
         btnDashboard.PerformClick()
     End Sub
 
-    Private Sub movePanelSelector(btn As Control)
+    Friend Sub movePanelSelector(btn As Control)
         panelSelector.Top = btn.Top
         panelSelector.Height = btn.Height
     End Sub
 
     Private Sub LoggedInAsStudentAssistant()
+        UcSettings1.MetroTabControl1.HideTab(UcSettings1.MetroTabPage2)
         btnUserManagement.Visible = False
         btnAuditLog.Visible = False
         btnReports.Visible = False
-        btnRecords.Location = New Point(4, 239)
-        btnSettings.Location = New Point(4, 284)
+        btnSettings.Location = New Point(4, 271)
     End Sub
 
-    Private Sub HideAllUserControl()
+    Private Sub LoggedInAsLibrarian()
+        UcSettings1.MetroTabControl1.HideTab(UcSettings1.MetroTabPage2)
+        btnAuditLog.Visible = False
+        btnReports.Location = New Point(4, 316)
+        btnSettings.Location = New Point(4, 361)
+    End Sub
+
+    Friend Sub HideAllUserControl()
         UcAboutIETI1.Visible = False
         UcActivityLog1.Visible = False
         UcBookManagement1.Visible = False
@@ -65,21 +73,20 @@ Public Class frmMain
         UcIssuedReturn1.Visible = False
     End Sub
 
-
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         movePanelSelector(btnDashboard)
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
         UcDashboard1.Visible = True
-        UcRecords1.ThreadUpdateBookBorrowers()
         UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
         UcDashboard1.TotalBookLost()
         UcDashboard1.TotalBooks()
         UcDashboard1.TotalBorrowers()
         UcDashboard1.TotalOverDue()
+        UcDashboard1.TotalFaculties()
+        UcDashboard1.TotalAttendance()
     End Sub
-
 
     Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
         movePanelSelector(btnAttendance)

@@ -83,20 +83,24 @@ Public Class frmSendSMS
     End Sub
 
     Private Sub btnSendSMS_Click(sender As Object, e As EventArgs) Handles btnSendSMS.Click
-        With SerialPort1
-            .Write("AT" & vbCrLf)
-            Threading.Thread.Sleep(1000)
-            .Write("AT+CMGF=1" & vbCrLf)
-            .Write("AT+CMGS=" & Chr(34) & txtPhone.Text & Chr(34) & vbCrLf)
-            Threading.Thread.Sleep(1000)
-            .Write(txtMessage.Text & Chr(26))
-            Threading.Thread.Sleep(1000)
-        End With
+        If txtMessage.Text.Length > 0 And txtPhone.Text.Length > 0 Then
+            If lblStatus.Text = "(Connected)" Then
+                With SerialPort1
+                    .Write("AT" & vbCrLf)
+                    Threading.Thread.Sleep(1000)
+                    .Write("AT+CMGF=1" & vbCrLf)
+                    .Write("AT+CMGS=" & Chr(34) & txtPhone.Text & Chr(34) & vbCrLf)
+                    Threading.Thread.Sleep(1000)
+                    .Write(txtMessage.Text & Chr(26))
+                    Threading.Thread.Sleep(1000)
+                End With
 
-        If rcv_data.ToString.Contains(">") Then
-            MessageBox.Show("Message Sent!")
-        Else
-            MessageBox.Show("Message Not Sent!")
+                If rcv_data.ToString.Contains(">") Then
+                    MessageBox.Show("Message Sent!")
+                Else
+                    MessageBox.Show("Message Not Sent!")
+                End If
+            End If
         End If
     End Sub
 

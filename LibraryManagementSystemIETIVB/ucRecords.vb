@@ -6,11 +6,7 @@ Public Class ucRecords
 
     Private Sub ucRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-        LoadBookOverdue()
-        LoadBookBorrowed()
-        LoadBookReturned()
-        LoadBookInventory()
-        LoadBookLost()
+        Timer1.Start()
     End Sub
 
     Friend Sub LoadBookOverdue()
@@ -40,13 +36,16 @@ Public Class ucRecords
                 btnSendSMS.Enabled = True
             End If
         Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
     Friend Sub LoadBookLost()
         Try
             Dim row_count As Integer = 0
-            str = "SELECT books.id, books.call_number, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, users.username, borrows.day_penalty, borrows.status_id, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName FROM borrows INNER JOIN books ON borrows.book_id = books.id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.day_penalty > 0) AND (borrows.status_id = 1)"
+            str = "SELECT books.id, borrows.id AS borrow_id,  books.call_number, books.title, books.author, borrows.student_faculty_no, borrows.date_borrowed, borrows.date_due, users.username, borrows.day_penalty, borrows.status_id, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName FROM borrows INNER JOIN books ON borrows.book_id = books.id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.day_penalty > 0) AND (borrows.status_id = 3)"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -55,9 +54,9 @@ Public Class ucRecords
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBookLost.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"))
+                    dgvBookLost.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("borrow_id"))
                 Else
-                    dgvBookLost.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"))
+                    dgvBookLost.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("borrow_id"))
                 End If
             End While
             If dgvBookLost.RowCount = 0 Then
@@ -68,13 +67,16 @@ Public Class ucRecords
                 btnReturn.Enabled = True
             End If
         Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
     Friend Sub LoadBookBorrowed()
         Try
             Dim row_count As Integer = 0
-            str = "SELECT books.id, books.call_number, books.title, books.author, borrows.status_id, users.username, borrows.student_faculty_no, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed FROM books INNER JOIN borrows ON books.id = borrows.book_id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.status_id = '1')"
+            str = "SELECT books.id, borrows.id as borrow_id, books.call_number, books.title, books.author, borrows.status_id, users.username, borrows.student_faculty_no, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed, borrows.date_due FROM books INNER JOIN borrows ON books.id = borrows.book_id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.status_id = '1')"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -83,9 +85,9 @@ Public Class ucRecords
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("student_faculty_no"), dr("borrow_id"), CDate(dr("date_due")).ToString("MM/dd/yyyy HH:mm tt"))
                 Else
-                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksBorrowed.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("student_faculty_no"), dr("borrow_id"), CDate(dr("date_due")).ToString("MM/dd/yyyy HH:mm tt"))
                 End If
             End While
 
@@ -94,67 +96,17 @@ Public Class ucRecords
             Else
                 panelBookBorrowed.SendToBack()
             End If
-
-            ThreadUpdateBookBorrowers()
         Catch ex As Exception
-        End Try
-    End Sub
-
-    Friend Sub ThreadUpdateBookBorrowers()
-
-        thread = New System.Threading.Thread(AddressOf UpdateBorrowersPenalty)
-
-        If Not thread.IsAlive Then
-            thread = New System.Threading.Thread(AddressOf UpdateBorrowersPenalty)
-            thread.IsBackground = False
-            thread.SetApartmentState(Threading.ApartmentState.MTA)
-            thread.Start()
-        End If
-    End Sub
-
-    Private Sub UpdateBorrowersPenalty()
-        Try
-            For i = 0 To dgvBooksBorrowed.Rows.Count - 1
-                str = "SELECT b.id, c.isbn, c.title, c.author, b.student_faculty_no, b.date_borrowed, b.date_due, b.day_penalty, b.status, a.username FROM users AS a INNER JOIN borrows AS b ON a.user_id = b.user_id INNER JOIN books AS c ON b.book_id = c.id WHERE (b.student_faculty_no = @student_faculty_no) AND (b.status_id = '1')"
-                cmd = New SqlCommand(str, conn)
-                cmd.Parameters.AddWithValue("@student_faculty_no", dgvBooksBorrowed.Item(7, i).Value)
-                dr = cmd.ExecuteReader
-
-                While dr.Read
-                    Dim due_date As DateTime = dr("date_due")
-                    Dim date_now As DateTime = Now.ToString("MM/dd/yyyy HH:mm tt")
-                    Dim temp_day_penalty As TimeSpan = date_now.Subtract(due_date)
-                    Dim day_penalty As Integer = temp_day_penalty.Days
-                    Dim hour_penalty As Integer = temp_day_penalty.Hours
-                    Dim borrow_id As String = dr("id")
-
-                    'UPDATE the day_penalty of borrows table
-                    str = "UPDATE borrows SET day_penalty = @day_penalty WHERE id = '" + CStr(borrow_id) + "'"
-                    cmd = New SqlCommand(str, conn)
-
-                    If day_penalty < 0 Then day_penalty = 0
-                    If day_penalty = 0 And (hour_penalty < 24 And hour_penalty > 0) Then day_penalty = 1
-
-                    cmd.Parameters.AddWithValue("@day_penalty", CStr(day_penalty))
-                    cmd.ExecuteNonQuery()
-                    cmd.Dispose()
-
-                    Dim total_penalty As Decimal = Val(day_penalty) * Val(My.Settings.penalty_per_day)
-                    str = "UPDATE borrows SET payment=@payment WHERE id = '" + CStr(borrow_id) + "'"
-                    cmd = New SqlCommand(str, conn)
-                    cmd.Parameters.AddWithValue("@payment", total_penalty)
-                    cmd.ExecuteNonQuery()
-                    cmd.Dispose()
-                End While
-            Next
-        Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
     Friend Sub LoadBookReturned()
         Try
             Dim row_count As Integer = 0
-            str = "SELECT books.call_number, books.title, books.author, borrows.status_id, users.username, borrows.student_faculty_no, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed FROM books INNER JOIN borrows ON books.id = borrows.book_id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.status_id = '0')"
+            str = "SELECT books.call_number, books.title, books.author, borrows.status_id, users.username, borrows.student_faculty_no, (SELECT firstname + ' ' + lastname AS Name FROM students WHERE (student_id = borrows.student_faculty_no)) AS StudentName, (SELECT firstname + ' ' + lastname AS Name FROM faculties WHERE (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed, borrows.date_return FROM books INNER JOIN borrows ON books.id = borrows.book_id INNER JOIN users ON borrows.user_id = users.user_id WHERE (borrows.status_id = '0')"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -163,9 +115,9 @@ Public Class ucRecords
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBooksReturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksReturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_return")).ToShortDateString(), dr("username"))
                 Else
-                    dgvBooksReturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), dr("username"))
+                    dgvBooksReturned.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_return")).ToShortDateString(), dr("username"))
                 End If
             End While
 
@@ -175,6 +127,9 @@ Public Class ucRecords
                 panelBookReturned.SendToBack()
             End If
         Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
@@ -198,6 +153,9 @@ Public Class ucRecords
                 panelBookInventory.SendToBack()
             End If
         Catch ex As Exception
+        Finally
+            dr.Close()
+            cmd.Dispose()
         End Try
     End Sub
 
@@ -227,10 +185,12 @@ Public Class ucRecords
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
+
+                    Msg(Me, "The book " + CStr(book_title) + " successfully mark as lost!", "Mark as lost", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                     LoadBookLost()
                     LoadBookOverdue()
 
-                    Msg(Me, "The book " + CStr(book_title) + " successfully mark as lost!", "Mark as lost", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
                 End Try
             End If
@@ -246,14 +206,15 @@ Public Class ucRecords
 
             If mes = DialogResult.Yes Then
                 Try
-                    str = "UPDATE borrows SET status_id = '0', status = 'Returned' WHERE id = '" + CStr(borrow_id) + "'"
+                    str = "UPDATE borrows SET status_id = '1', status = 'Borrowed' WHERE id = '" + CStr(borrow_id) + "'"
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
-                    LoadBookLost()
-                    LoadBookOverdue()
 
                     Msg(Me, "The book " + CStr(book_title) + " successfully returned!", "Return", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    LoadBookLost()
+                    LoadBookOverdue()
                 Catch ex As Exception
                 End Try
             End If
@@ -271,4 +232,36 @@ Public Class ucRecords
         End If
     End Sub
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        For i = 0 To dgvBooksBorrowed.Rows.Count - 1
+            If CDate(dgvBooksBorrowed.Item(6, i).Value) <= Date.Now Then
+
+                Dim due_date As DateTime = CDate(dgvBooksBorrowed.Item(10, i).Value).ToString("MM/dd/yyyy HH:mm tt")
+                Dim date_now As DateTime = Now.ToString("MM/dd/yyyy HH:mm tt")
+                Dim temp_day_penalty As TimeSpan = date_now.Subtract(due_date)
+                Dim day_penalty As Integer = temp_day_penalty.Days
+                Dim hour_penalty As Integer = temp_day_penalty.Hours
+                Dim borrow_id As String = dgvBooksBorrowed.Item(9, i).Value
+
+                'UPDATE the day_penalty of borrows table
+                str = "UPDATE borrows SET day_penalty = @day_penalty WHERE id = '" + CStr(borrow_id) + "'"
+                cmd = New SqlCommand(str, conn)
+
+                If day_penalty < 0 Then day_penalty = 0
+                If day_penalty = 0 And (hour_penalty < 24 And hour_penalty > 0) Then day_penalty = 1
+
+                cmd.Parameters.AddWithValue("@day_penalty", CStr(day_penalty))
+                cmd.ExecuteNonQuery()
+                cmd.Dispose()
+
+                Dim total_penalty As Decimal = Val(day_penalty) * Val(My.Settings.penalty_per_day)
+                str = "UPDATE borrows SET payment=@payment WHERE id = '" + CStr(borrow_id) + "'"
+                cmd = New SqlCommand(str, conn)
+                cmd.Parameters.AddWithValue("@payment", total_penalty)
+                cmd.ExecuteNonQuery()
+                cmd.Dispose()
+
+            End If
+        Next
+    End Sub
 End Class

@@ -182,7 +182,7 @@ Partial Class frmRegisterUser
         '
         'txtAge
         '
-        Me.txtAge.BackColor = System.Drawing.Color.White
+        Me.txtAge.BackColor = System.Drawing.Color.Gainsboro
         Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAge.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAge.Location = New System.Drawing.Point(469, 391)

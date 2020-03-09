@@ -11,6 +11,13 @@ Public Class frmReportsAttendance
     End Sub
 
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
+        If dtTo.Value < dtFrom.Value Then
+            Msg(Me, "Please provide valid date!", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            dtFrom.Value = Date.Now
+            dtTo.Value = Date.Now
+            Exit Sub
+        End If
+
         'TODO: This line of code loads data into the 'DataSet1.dtAttendance' table. You can move, or remove it, as needed.
         Me.dtAttendanceTableAdapter.FillByDate(Me.DataSet1.dtAttendance, dtFrom.Value, dtTo.Value)
         PageSettings()
