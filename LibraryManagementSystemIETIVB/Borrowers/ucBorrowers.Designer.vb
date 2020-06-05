@@ -22,7 +22,6 @@ Partial Class ucBorrowers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucBorrowers))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,10 +34,6 @@ Partial Class ucBorrowers
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
-        Me.PanelStudentImport = New System.Windows.Forms.Panel()
-        Me.txtPleasewaitS = New System.Windows.Forms.TextBox()
-        Me.txtImportingS = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnLoanHistoryStudent = New System.Windows.Forms.Button()
         Me.lblTotalStudents = New System.Windows.Forms.Label()
         Me.dgvStudents = New System.Windows.Forms.DataGridView()
@@ -51,10 +46,6 @@ Partial Class ucBorrowers
         Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
-        Me.PanelFacultyImport = New System.Windows.Forms.Panel()
-        Me.txtPleasewait = New System.Windows.Forms.TextBox()
-        Me.txtImporting = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnLoanHistoryFaculty = New System.Windows.Forms.Button()
         Me.lblShowingNentries = New System.Windows.Forms.Label()
         Me.dgvFaculties = New System.Windows.Forms.DataGridView()
@@ -79,12 +70,8 @@ Partial Class ucBorrowers
         Me.DataGridViewImageColumn4 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
-        Me.PanelStudentImport.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabPage2.SuspendLayout()
-        Me.PanelFacultyImport.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -103,7 +90,6 @@ Partial Class ucBorrowers
         '
         'MetroTabPage1
         '
-        Me.MetroTabPage1.Controls.Add(Me.PanelStudentImport)
         Me.MetroTabPage1.Controls.Add(Me.btnLoanHistoryStudent)
         Me.MetroTabPage1.Controls.Add(Me.lblTotalStudents)
         Me.MetroTabPage1.Controls.Add(Me.dgvStudents)
@@ -118,57 +104,6 @@ Partial Class ucBorrowers
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
-        '
-        'PanelStudentImport
-        '
-        Me.PanelStudentImport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.PanelStudentImport.Controls.Add(Me.txtPleasewaitS)
-        Me.PanelStudentImport.Controls.Add(Me.txtImportingS)
-        Me.PanelStudentImport.Controls.Add(Me.PictureBox1)
-        Me.PanelStudentImport.Location = New System.Drawing.Point(408, 152)
-        Me.PanelStudentImport.Name = "PanelStudentImport"
-        Me.PanelStudentImport.Size = New System.Drawing.Size(238, 128)
-        Me.PanelStudentImport.TabIndex = 90
-        '
-        'txtPleasewaitS
-        '
-        Me.txtPleasewaitS.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtPleasewaitS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPleasewaitS.Cursor = System.Windows.Forms.Cursors.Default
-        Me.txtPleasewaitS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtPleasewaitS.ForeColor = System.Drawing.Color.White
-        Me.txtPleasewaitS.Location = New System.Drawing.Point(2, 103)
-        Me.txtPleasewaitS.Multiline = True
-        Me.txtPleasewaitS.Name = "txtPleasewaitS"
-        Me.txtPleasewaitS.Size = New System.Drawing.Size(235, 22)
-        Me.txtPleasewaitS.TabIndex = 2
-        Me.txtPleasewaitS.Text = "Please wait..."
-        Me.txtPleasewaitS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtImportingS
-        '
-        Me.txtImportingS.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtImportingS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtImportingS.Cursor = System.Windows.Forms.Cursors.Default
-        Me.txtImportingS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtImportingS.ForeColor = System.Drawing.Color.White
-        Me.txtImportingS.Location = New System.Drawing.Point(3, 79)
-        Me.txtImportingS.Multiline = True
-        Me.txtImportingS.Name = "txtImportingS"
-        Me.txtImportingS.Size = New System.Drawing.Size(235, 22)
-        Me.txtImportingS.TabIndex = 1
-        Me.txtImportingS.Text = "Importing 0 records"
-        Me.txtImportingS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'btnLoanHistoryStudent
         '
@@ -330,7 +265,6 @@ Partial Class ucBorrowers
         '
         'MetroTabPage2
         '
-        Me.MetroTabPage2.Controls.Add(Me.PanelFacultyImport)
         Me.MetroTabPage2.Controls.Add(Me.btnLoanHistoryFaculty)
         Me.MetroTabPage2.Controls.Add(Me.lblShowingNentries)
         Me.MetroTabPage2.Controls.Add(Me.dgvFaculties)
@@ -345,59 +279,6 @@ Partial Class ucBorrowers
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
-        '
-        'PanelFacultyImport
-        '
-        Me.PanelFacultyImport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.PanelFacultyImport.Controls.Add(Me.txtPleasewait)
-        Me.PanelFacultyImport.Controls.Add(Me.txtImporting)
-        Me.PanelFacultyImport.Controls.Add(Me.PictureBox2)
-        Me.PanelFacultyImport.Location = New System.Drawing.Point(408, 152)
-        Me.PanelFacultyImport.Name = "PanelFacultyImport"
-        Me.PanelFacultyImport.Size = New System.Drawing.Size(238, 128)
-        Me.PanelFacultyImport.TabIndex = 91
-        '
-        'txtPleasewait
-        '
-        Me.txtPleasewait.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtPleasewait.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPleasewait.Cursor = System.Windows.Forms.Cursors.Default
-        Me.txtPleasewait.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtPleasewait.ForeColor = System.Drawing.Color.White
-        Me.txtPleasewait.Location = New System.Drawing.Point(2, 103)
-        Me.txtPleasewait.Multiline = True
-        Me.txtPleasewait.Name = "txtPleasewait"
-        Me.txtPleasewait.ReadOnly = True
-        Me.txtPleasewait.Size = New System.Drawing.Size(235, 22)
-        Me.txtPleasewait.TabIndex = 2
-        Me.txtPleasewait.Text = "Please wait..."
-        Me.txtPleasewait.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtImporting
-        '
-        Me.txtImporting.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.txtImporting.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtImporting.Cursor = System.Windows.Forms.Cursors.Default
-        Me.txtImporting.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtImporting.ForeColor = System.Drawing.Color.White
-        Me.txtImporting.Location = New System.Drawing.Point(3, 79)
-        Me.txtImporting.Multiline = True
-        Me.txtImporting.Name = "txtImporting"
-        Me.txtImporting.ReadOnly = True
-        Me.txtImporting.Size = New System.Drawing.Size(235, 22)
-        Me.txtImporting.TabIndex = 1
-        Me.txtImporting.Text = "Importing 0 records"
-        Me.txtImporting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(71, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 97)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
         '
         'btnLoanHistoryFaculty
         '
@@ -760,15 +641,9 @@ Partial Class ucBorrowers
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
         Me.MetroTabPage1.PerformLayout()
-        Me.PanelStudentImport.ResumeLayout(False)
-        Me.PanelStudentImport.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroTabPage2.ResumeLayout(False)
         Me.MetroTabPage2.PerformLayout()
-        Me.PanelFacultyImport.ResumeLayout(False)
-        Me.PanelFacultyImport.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvFaculties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -777,14 +652,8 @@ Partial Class ucBorrowers
     Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
     Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents PanelStudentImport As Panel
-    Friend WithEvents txtPleasewaitS As TextBox
-    Friend WithEvents txtImportingS As TextBox
     Friend WithEvents dgvStudents As DataGridView
     Friend WithEvents lblTotalStudents As Label
-    Friend WithEvents PanelFacultyImport As Panel
-    Friend WithEvents txtPleasewait As TextBox
-    Friend WithEvents txtImporting As TextBox
     Friend WithEvents dgvFaculties As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -816,6 +685,4 @@ Partial Class ucBorrowers
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents Column10 As DataGridViewImageColumn
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
 End Class
