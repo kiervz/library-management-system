@@ -78,14 +78,12 @@ Public Class frmMain
         HideAllUserControl()
         lblTitle.Text = "Dashboard"
         UcDashboard1.Visible = True
-        UcDashboard1.TotalUsers()
         UcDashboard1.TotalStudents()
         UcDashboard1.TotalBookLost()
         UcDashboard1.TotalBooks()
         UcDashboard1.TotalBorrowers()
         UcDashboard1.TotalOverDue()
         UcDashboard1.TotalFaculties()
-        UcDashboard1.TotalAttendance()
     End Sub
 
     Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click

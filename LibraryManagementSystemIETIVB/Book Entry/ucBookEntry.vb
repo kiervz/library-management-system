@@ -66,12 +66,11 @@ Public Class ucBookEntry
                 borrow_history.ShowDialog(Me)
 
             ElseIf e.ColumnIndex = 10 Then
-                OpenTransparentForm(Me)
                 Dim update_book As New frmRegisterUpdateBooks
                 update_book._form_title = "UPDATE BOOK"
                 update_book._selected_book_id = dgvBooks.Item(0, i).Value
+                OpenTransparentForm(Me)
                 update_book.ShowDialog(Me)
-
                 If is_reload = True Then
                     FillGridView()
                     is_reload = False

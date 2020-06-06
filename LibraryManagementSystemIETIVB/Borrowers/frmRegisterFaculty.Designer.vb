@@ -31,7 +31,6 @@ Partial Class frmRegisterFaculty
         Me.txtLastname = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
-        Me.cmbGender = New MetroFramework.Controls.MetroComboBox()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dtBday = New MetroFramework.Controls.MetroDateTime()
@@ -39,6 +38,8 @@ Partial Class frmRegisterFaculty
         Me.btnClose = New System.Windows.Forms.Label()
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.rbFemale = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.rbMale = New MaterialSkin.Controls.MaterialRadioButton()
         Me.SuspendLayout()
         '
         'txtFacultyID
@@ -57,9 +58,9 @@ Partial Class frmRegisterFaculty
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(63, 107)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(85, 20)
+        Me.Label8.Size = New System.Drawing.Size(95, 20)
         Me.Label8.TabIndex = 215
-        Me.Label8.Text = "Faculty ID:"
+        Me.Label8.Text = "* Faculty ID:"
         '
         'txtFirstname
         '
@@ -77,9 +78,9 @@ Partial Class frmRegisterFaculty
         Me.label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.Location = New System.Drawing.Point(63, 149)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(81, 20)
+        Me.label1.Size = New System.Drawing.Size(91, 20)
         Me.label1.TabIndex = 213
-        Me.label1.Text = "Firstname:"
+        Me.label1.Text = "* Firstname:"
         '
         'txtMiddlename
         '
@@ -95,7 +96,7 @@ Partial Class frmRegisterFaculty
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(63, 191)
+        Me.Label3.Location = New System.Drawing.Point(73, 191)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 20)
         Me.Label3.TabIndex = 219
@@ -117,9 +118,9 @@ Partial Class frmRegisterFaculty
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(63, 233)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 20)
+        Me.Label4.Size = New System.Drawing.Size(93, 20)
         Me.Label4.TabIndex = 221
-        Me.Label4.Text = "Lastname:"
+        Me.Label4.Text = "* Lastname:"
         '
         'label5
         '
@@ -127,20 +128,9 @@ Partial Class frmRegisterFaculty
         Me.label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label5.Location = New System.Drawing.Point(63, 278)
         Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(70, 20)
+        Me.label5.Size = New System.Drawing.Size(80, 20)
         Me.label5.TabIndex = 223
-        Me.label5.Text = "Gender:"
-        '
-        'cmbGender
-        '
-        Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.ItemHeight = 23
-        Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.Location = New System.Drawing.Point(228, 269)
-        Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.Size = New System.Drawing.Size(269, 29)
-        Me.cmbGender.TabIndex = 4
-        Me.cmbGender.UseSelectable = True
+        Me.label5.Text = "* Gender:"
         '
         'txtAge
         '
@@ -161,9 +151,9 @@ Partial Class frmRegisterFaculty
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(63, 320)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(72, 20)
+        Me.Label10.Size = New System.Drawing.Size(82, 20)
         Me.Label10.TabIndex = 228
-        Me.Label10.Text = "Birthday:"
+        Me.Label10.Text = "* Birthday:"
         '
         'dtBday
         '
@@ -217,11 +207,49 @@ Partial Class frmRegisterFaculty
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(63, 361)
+        Me.Label2.Location = New System.Drawing.Point(73, 361)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 20)
         Me.Label2.TabIndex = 231
         Me.Label2.Text = "Phone:"
+        '
+        'rbFemale
+        '
+        Me.rbFemale.AutoSize = True
+        Me.rbFemale.Depth = 0
+        Me.rbFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.rbFemale.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.rbFemale.Location = New System.Drawing.Point(310, 268)
+        Me.rbFemale.Margin = New System.Windows.Forms.Padding(0)
+        Me.rbFemale.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.rbFemale.MouseState = MaterialSkin.MouseState.HOVER
+        Me.rbFemale.Name = "rbFemale"
+        Me.rbFemale.Ripple = True
+        Me.rbFemale.Size = New System.Drawing.Size(74, 30)
+        Me.rbFemale.TabIndex = 233
+        Me.rbFemale.TabStop = True
+        Me.rbFemale.Text = "Female"
+        Me.rbFemale.UseCompatibleTextRendering = True
+        Me.rbFemale.UseVisualStyleBackColor = False
+        '
+        'rbMale
+        '
+        Me.rbMale.AutoSize = True
+        Me.rbMale.Depth = 0
+        Me.rbMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.rbMale.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.rbMale.Location = New System.Drawing.Point(228, 268)
+        Me.rbMale.Margin = New System.Windows.Forms.Padding(0)
+        Me.rbMale.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.rbMale.MouseState = MaterialSkin.MouseState.HOVER
+        Me.rbMale.Name = "rbMale"
+        Me.rbMale.Ripple = True
+        Me.rbMale.Size = New System.Drawing.Size(59, 30)
+        Me.rbMale.TabIndex = 232
+        Me.rbMale.TabStop = True
+        Me.rbMale.Text = "Male"
+        Me.rbMale.UseCompatibleTextRendering = True
+        Me.rbMale.UseVisualStyleBackColor = False
         '
         'frmRegisterFaculty
         '
@@ -229,6 +257,8 @@ Partial Class frmRegisterFaculty
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(591, 484)
         Me.ControlBox = False
+        Me.Controls.Add(Me.rbFemale)
+        Me.Controls.Add(Me.rbMale)
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
@@ -237,7 +267,6 @@ Partial Class frmRegisterFaculty
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.dtBday)
         Me.Controls.Add(Me.label5)
-        Me.Controls.Add(Me.cmbGender)
         Me.Controls.Add(Me.txtLastname)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtMiddlename)
@@ -267,7 +296,6 @@ Partial Class frmRegisterFaculty
     Friend WithEvents txtLastname As TextBox
     Private WithEvents Label4 As Label
     Private WithEvents label5 As Label
-    Private WithEvents cmbGender As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtAge As TextBox
     Private WithEvents Label10 As Label
     Friend WithEvents dtBday As MetroFramework.Controls.MetroDateTime
@@ -275,4 +303,6 @@ Partial Class frmRegisterFaculty
     Private WithEvents btnClose As Label
     Friend WithEvents txtPhone As TextBox
     Private WithEvents Label2 As Label
+    Friend WithEvents rbFemale As MaterialSkin.Controls.MaterialRadioButton
+    Friend WithEvents rbMale As MaterialSkin.Controls.MaterialRadioButton
 End Class

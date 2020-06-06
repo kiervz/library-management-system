@@ -11,7 +11,7 @@ Public Class frmRegisterStudent
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-                    Msg(Me, "Student is already exist", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Msg(Me, "Student ID is already exist", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 End If
 
@@ -36,9 +36,17 @@ Public Class frmRegisterStudent
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@student_id", txtStudentID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
-                        cmd.Parameters.AddWithValue("@middlename", txtMiddlename.Text)
+
+                        If txtMiddlename.Text.Length > 0 Then
+                            cmd.Parameters.AddWithValue("@middlename", txtMiddlename.Text)
+                        Else
+                            cmd.Parameters.AddWithValue("@middlename", "")
+                        End If
+
                         cmd.Parameters.AddWithValue("@lastname", txtLastname.Text)
-                        cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
+                        If rbMale.Checked Then cmd.Parameters.AddWithValue("@gender", "Male")
+                        If rbFemale.Checked Then cmd.Parameters.AddWithValue("@gender", "Female")
+
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.Parameters.AddWithValue("@major", txtMajor.Text)
                         cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
@@ -53,8 +61,10 @@ Public Class frmRegisterStudent
                     Msg(Me, "You age must be atleast 10 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
-
+                MsgBox(ex.Message)
             End Try
+        Else
+            Msg(Me, "Please fill up all fields!", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
@@ -67,7 +77,7 @@ Public Class frmRegisterStudent
         txtMajor.Clear()
         txtStudentID.Clear()
         txtPhone.Clear()
-        cmbGender.SelectedIndex = 0
+        rbMale.Checked = True
         dtBday.Value = Date.Now
     End Sub
 
@@ -94,6 +104,7 @@ Public Class frmRegisterStudent
 
     Private Sub frmRegisterStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
+        rbMale.Checked = True
     End Sub
 
     Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMiddlename.KeyPress, txtLastname.KeyPress, txtFirstname.KeyPress

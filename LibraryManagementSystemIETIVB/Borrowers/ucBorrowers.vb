@@ -214,21 +214,4 @@ Public Class ucBorrowers
         End If
     End Sub
 
-    Private Sub releaseObject(ByVal obj As Object)
-        Try
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
-            obj = Nothing
-        Catch ex As Exception
-            obj = Nothing
-        Finally
-            GC.Collect()
-        End Try
-    End Sub
-
-    Private Sub TerminateProcess(app_exe As String)
-        Dim Process As Object
-        For Each Process In GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_Process WHERE Name = '" & app_exe & "'")
-            Process.Terminate
-        Next
-    End Sub
 End Class

@@ -65,7 +65,7 @@ Public Class frmUpdateUser
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Or _imagePath = "" Then
+        If txtFirstname.Text.Length = 0 Or txtLastname.Text.Length = 0 Or txtPhone.Text.Length = 0 Or cmbUserType.Text.Length = 0 Then
             Msg(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         ElseIf Val(txtAge.Text) < 18 Then
             Msg(Me, "Your age must be atleast 18 years old and above!", "18 and Above", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

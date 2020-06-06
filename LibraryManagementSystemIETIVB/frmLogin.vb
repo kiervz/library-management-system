@@ -29,6 +29,11 @@ Public Class frmLogin
         End If
     End Sub
 
+    Private Sub ErrorPanel(isVisible As Boolean)
+        PictureBox1.Visible = isVisible
+        PictureBox3.Visible = isVisible
+    End Sub
+
     Private Sub Login()
         If txtUsername.Text = "" And txtPassword.Text = "" Then
             Msg(Me, "Please enter your username and password!", "Username and Password Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -104,6 +109,7 @@ Public Class frmLogin
         If _attempts = 3 Then
             Msg(Me, "You have reached the maximum attempts. System will be locked!", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'StartCaptureCamera()
+            ErrorPanel(True)
             EnableControl(False)
             lblNextAttempt.Visible = True
             lblRemainingTime.Visible = True
@@ -113,6 +119,7 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
+        ErrorPanel(False)
     End Sub
 
     Private Sub GetUpdatedTime()
@@ -156,6 +163,7 @@ Public Class frmLogin
             _attempts = 0
             _nextAttempt = 60
             EnableControl(True)
+            ErrorPanel(False)
             timer2.Stop()
         End If
     End Sub

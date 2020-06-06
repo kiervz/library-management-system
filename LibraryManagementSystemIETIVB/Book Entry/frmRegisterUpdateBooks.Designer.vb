@@ -82,7 +82,7 @@ Partial Class frmRegisterUpdateBooks
         Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTitle.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitle.Location = New System.Drawing.Point(226, 134)
-        Me.txtTitle.MaxLength = 30
+        Me.txtTitle.MaxLength = 150
         Me.txtTitle.Multiline = True
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -104,7 +104,7 @@ Partial Class frmRegisterUpdateBooks
         Me.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAuthor.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAuthor.Location = New System.Drawing.Point(226, 189)
-        Me.txtAuthor.MaxLength = 30
+        Me.txtAuthor.MaxLength = 150
         Me.txtAuthor.Multiline = True
         Me.txtAuthor.Name = "txtAuthor"
         Me.txtAuthor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -126,7 +126,7 @@ Partial Class frmRegisterUpdateBooks
         Me.txtPublisher.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPublisher.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPublisher.Location = New System.Drawing.Point(226, 244)
-        Me.txtPublisher.MaxLength = 30
+        Me.txtPublisher.MaxLength = 100
         Me.txtPublisher.Name = "txtPublisher"
         Me.txtPublisher.Size = New System.Drawing.Size(356, 26)
         Me.txtPublisher.TabIndex = 4
@@ -168,7 +168,7 @@ Partial Class frmRegisterUpdateBooks
         Me.txtDatePublished.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDatePublished.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDatePublished.Location = New System.Drawing.Point(226, 384)
-        Me.txtDatePublished.MaxLength = 30
+        Me.txtDatePublished.MaxLength = 4
         Me.txtDatePublished.Name = "txtDatePublished"
         Me.txtDatePublished.Size = New System.Drawing.Size(356, 26)
         Me.txtDatePublished.TabIndex = 7
@@ -179,16 +179,16 @@ Partial Class frmRegisterUpdateBooks
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(88, 390)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(122, 20)
+        Me.Label6.Size = New System.Drawing.Size(118, 20)
         Me.Label6.TabIndex = 172
-        Me.Label6.Text = "Date Published:"
+        Me.Label6.Text = "Year Published:"
         '
         'txtPrice
         '
         Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPrice.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrice.Location = New System.Drawing.Point(226, 507)
-        Me.txtPrice.MaxLength = 30
+        Me.txtPrice.MaxLength = 7
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(356, 26)
         Me.txtPrice.TabIndex = 9
@@ -226,9 +226,9 @@ Partial Class frmRegisterUpdateBooks
         'pbBookImage
         '
         Me.pbBookImage.Image = Global.LibraryManagementSystemIETIVB.My.Resources.Resources.no_image1
-        Me.pbBookImage.Location = New System.Drawing.Point(682, 109)
+        Me.pbBookImage.Location = New System.Drawing.Point(701, 109)
         Me.pbBookImage.Name = "pbBookImage"
-        Me.pbBookImage.Size = New System.Drawing.Size(243, 247)
+        Me.pbBookImage.Size = New System.Drawing.Size(224, 233)
         Me.pbBookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbBookImage.TabIndex = 180
         Me.pbBookImage.TabStop = False
@@ -239,7 +239,7 @@ Partial Class frmRegisterUpdateBooks
         Me.lblBrowsePic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblBrowsePic.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBrowsePic.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblBrowsePic.Location = New System.Drawing.Point(753, 368)
+        Me.lblBrowsePic.Location = New System.Drawing.Point(763, 349)
         Me.lblBrowsePic.Name = "lblBrowsePic"
         Me.lblBrowsePic.Size = New System.Drawing.Size(118, 20)
         Me.lblBrowsePic.TabIndex = 13
@@ -249,7 +249,7 @@ Partial Class frmRegisterUpdateBooks
         '
         Me.pbBrowsePic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbBrowsePic.Image = CType(resources.GetObject("pbBrowsePic.Image"), System.Drawing.Image)
-        Me.pbBrowsePic.Location = New System.Drawing.Point(728, 366)
+        Me.pbBrowsePic.Location = New System.Drawing.Point(738, 347)
         Me.pbBrowsePic.Name = "pbBrowsePic"
         Me.pbBrowsePic.Size = New System.Drawing.Size(24, 24)
         Me.pbBrowsePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -281,7 +281,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(682, 472)
+        Me.btnSave.Location = New System.Drawing.Point(692, 487)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(73, 35)
@@ -300,7 +300,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdate.Location = New System.Drawing.Point(767, 472)
+        Me.btnUpdate.Location = New System.Drawing.Point(777, 487)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(0)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(73, 35)
@@ -319,7 +319,7 @@ Partial Class frmRegisterUpdateBooks
         Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnClear.Location = New System.Drawing.Point(852, 472)
+        Me.btnClear.Location = New System.Drawing.Point(862, 487)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(73, 35)
@@ -363,7 +363,7 @@ Partial Class frmRegisterUpdateBooks
         Me.txtSeries.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSeries.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSeries.Location = New System.Drawing.Point(226, 425)
-        Me.txtSeries.MaxLength = 30
+        Me.txtSeries.MaxLength = 15
         Me.txtSeries.Name = "txtSeries"
         Me.txtSeries.Size = New System.Drawing.Size(356, 26)
         Me.txtSeries.TabIndex = 190
@@ -418,6 +418,7 @@ Partial Class frmRegisterUpdateBooks
         Me.Movable = False
         Me.Name = "frmRegisterUpdateBooks"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal

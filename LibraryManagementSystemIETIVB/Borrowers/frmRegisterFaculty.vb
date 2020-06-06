@@ -13,9 +13,18 @@ Public Class frmRegisterFaculty
                         cmd = New SqlCommand(str, conn)
                         cmd.Parameters.AddWithValue("@faculty_id", txtFacultyID.Text)
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
-                        cmd.Parameters.AddWithValue("@middlename", txtMiddlename.Text)
+
+                        If txtMiddlename.Text.Length > 0 Then
+                            cmd.Parameters.AddWithValue("@middlename", txtMiddlename.Text)
+                        Else
+                            cmd.Parameters.AddWithValue("@middlename", "")
+                        End If
+
                         cmd.Parameters.AddWithValue("@lastname", txtLastname.Text)
-                        cmd.Parameters.AddWithValue("@gender", cmbGender.Text)
+
+                        If rbMale.Checked Then cmd.Parameters.AddWithValue("@gender", "Male")
+                        If rbFemale.Checked Then cmd.Parameters.AddWithValue("@gender", "Female")
+
                         cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                         cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
                         cmd.ExecuteNonQuery()
@@ -30,19 +39,23 @@ Public Class frmRegisterFaculty
                     End Try
                 End If
             Else
-                Msg(Me, "You age must be atleast 18 and above", "Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Msg(Me, "You age must be atleast 18 and above", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
+        Else
+            Msg(Me, "Please fill up all fields!", "Library System", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
     Private Sub ClearAll()
+        txtFacultyID.Clear()
         txtAge.Clear()
         txtFirstname.Clear()
         txtLastname.Clear()
         txtMiddlename.Clear()
-        cmbGender.SelectedIndex = 0
+        rbMale.Checked = True
         txtPhone.Clear()
         dtBday.Value = Date.Now
+        txtAge.Clear()
     End Sub
 
     Private Sub dtBday_ValueChanged(sender As Object, e As EventArgs) Handles dtBday.ValueChanged
@@ -68,5 +81,10 @@ Public Class frmRegisterFaculty
 
     Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMiddlename.KeyPress, txtLastname.KeyPress, txtFirstname.KeyPress
         KeyPressLetterOnly(e)
+    End Sub
+
+    Private Sub frmRegisterFaculty_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ConnDB()
+        rbMale.Checked = True
     End Sub
 End Class

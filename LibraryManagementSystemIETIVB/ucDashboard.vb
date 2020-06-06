@@ -20,9 +20,15 @@ Public Class ucDashboard
         frmMain.btnRecords.Focus()
     End Sub
 
-    Private Sub moreInfoTotalUsers_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox11.DoubleClick, Panel11.DoubleClick, Label23.DoubleClick
+    Private Sub moreInfoTotalUsers_DoubleClick(sender As Object, e As EventArgs)
         frmMain.btnUserManagement.PerformClick()
         frmMain.btnUserManagement.Focus()
+    End Sub
+
+    Private Sub Label24_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox12.DoubleClick, Label24.DoubleClick
+        frmMain.btnRecords.PerformClick()
+        frmMain.UcRecords1.MetroTabControl1.SelectedIndex = 3
+        frmMain.btnRecords.Focus()
     End Sub
 
     Private Sub moreInfoBooksOverdue_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox10.DoubleClick, Panel10.DoubleClick, Label22.DoubleClick
@@ -39,23 +45,6 @@ Public Class ucDashboard
 
     Private Sub ucDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
-    End Sub
-
-    Friend Sub TotalUsers()
-        Try
-            str = "SELECT COUNT(*) AS TotalUsers FROM users WHERE Status = '1'"
-            cmd = New SqlCommand(str, conn)
-            dr = cmd.ExecuteReader
-
-            If dr.Read Then
-                Dim totalUser As Decimal = dr("TotalUsers").ToString()
-                lblTotalUser.Text = Format(totalUser, "N0")
-            End If
-        Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
-        End Try
     End Sub
 
     Friend Sub TotalStudents()
@@ -119,22 +108,6 @@ Public Class ucDashboard
             If dr.Read Then
                 Dim totalBorrowers As Integer = dr("total_borrowers").ToString()
                 lblTotalBorrowers.Text = Format(totalBorrowers, "N0")
-            End If
-        Catch ex As Exception
-        Finally
-            dr.Close()
-            cmd.Dispose()
-        End Try
-    End Sub
-
-    Friend Sub TotalAttendance()
-        Try
-            str = "SELECT COUNT(*) AS totalAttendance FROM attendance WHERE date = '" + Date.Now.ToShortDateString() + "' "
-            cmd = New SqlCommand(str, conn)
-            dr = cmd.ExecuteReader
-
-            If dr.Read Then
-                lblTotalAttendance.Text = dr("totalAttendance").ToString()
             End If
         Catch ex As Exception
         Finally

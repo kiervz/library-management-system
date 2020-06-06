@@ -32,6 +32,7 @@ Partial Class ucBorrowers
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucBorrowers))
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.btnLoanHistoryStudent = New System.Windows.Forms.Button()
@@ -58,12 +59,10 @@ Partial Class ucBorrowers
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btnAddStudent = New System.Windows.Forms.Button()
-        Me.btnImportStudent = New System.Windows.Forms.Button()
         Me.cmbSearchStudent = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearchStudent = New MetroFramework.Controls.MetroTextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnAddFaculty = New System.Windows.Forms.Button()
-        Me.btnImportFaculties = New System.Windows.Forms.Button()
         Me.cmbSearchFaculty = New MetroFramework.Controls.MetroComboBox()
         Me.txtSearchFaculty = New MetroFramework.Controls.MetroTextBox()
         Me.DataGridViewImageColumn3 = New System.Windows.Forms.DataGridViewImageColumn()
@@ -446,34 +445,16 @@ Partial Class ucBorrowers
         Me.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddStudent.ForeColor = System.Drawing.Color.White
+        Me.btnAddStudent.Image = CType(resources.GetObject("btnAddStudent.Image"), System.Drawing.Image)
         Me.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddStudent.Location = New System.Drawing.Point(985, 25)
+        Me.btnAddStudent.Location = New System.Drawing.Point(964, 25)
         Me.btnAddStudent.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(113, 35)
+        Me.btnAddStudent.Size = New System.Drawing.Size(134, 35)
         Me.btnAddStudent.TabIndex = 62
-        Me.btnAddStudent.Text = "ADD STUDENT"
+        Me.btnAddStudent.Text = " ADD STUDENT"
         Me.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddStudent.UseVisualStyleBackColor = False
-        '
-        'btnImportStudent
-        '
-        Me.btnImportStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnImportStudent.FlatAppearance.BorderSize = 0
-        Me.btnImportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportStudent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImportStudent.ForeColor = System.Drawing.Color.White
-        Me.btnImportStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportStudent.Location = New System.Drawing.Point(835, 25)
-        Me.btnImportStudent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnImportStudent.Name = "btnImportStudent"
-        Me.btnImportStudent.Size = New System.Drawing.Size(143, 35)
-        Me.btnImportStudent.TabIndex = 61
-        Me.btnImportStudent.Text = "IMPORT STUDENTS"
-        Me.btnImportStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnImportStudent.UseVisualStyleBackColor = False
         '
         'cmbSearchStudent
         '
@@ -532,34 +513,16 @@ Partial Class ucBorrowers
         Me.btnAddFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddFaculty.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddFaculty.ForeColor = System.Drawing.Color.White
+        Me.btnAddFaculty.Image = CType(resources.GetObject("btnAddFaculty.Image"), System.Drawing.Image)
         Me.btnAddFaculty.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddFaculty.Location = New System.Drawing.Point(985, 25)
+        Me.btnAddFaculty.Location = New System.Drawing.Point(964, 25)
         Me.btnAddFaculty.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAddFaculty.Name = "btnAddFaculty"
-        Me.btnAddFaculty.Size = New System.Drawing.Size(113, 35)
+        Me.btnAddFaculty.Size = New System.Drawing.Size(134, 35)
         Me.btnAddFaculty.TabIndex = 69
-        Me.btnAddFaculty.Text = "ADD FACULTY"
+        Me.btnAddFaculty.Text = " ADD FACULTY"
         Me.btnAddFaculty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddFaculty.UseVisualStyleBackColor = False
-        '
-        'btnImportFaculties
-        '
-        Me.btnImportFaculties.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportFaculties.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnImportFaculties.FlatAppearance.BorderSize = 0
-        Me.btnImportFaculties.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnImportFaculties.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportFaculties.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImportFaculties.ForeColor = System.Drawing.Color.White
-        Me.btnImportFaculties.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImportFaculties.Location = New System.Drawing.Point(835, 25)
-        Me.btnImportFaculties.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnImportFaculties.Name = "btnImportFaculties"
-        Me.btnImportFaculties.Size = New System.Drawing.Size(143, 35)
-        Me.btnImportFaculties.TabIndex = 68
-        Me.btnImportFaculties.Text = "IMPORT FACULTIES"
-        Me.btnImportFaculties.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnImportFaculties.UseVisualStyleBackColor = False
         '
         'cmbSearchFaculty
         '
@@ -634,8 +597,6 @@ Partial Class ucBorrowers
         Me.Controls.Add(Me.txtSearchFaculty)
         Me.Controls.Add(Me.cmbSearchStudent)
         Me.Controls.Add(Me.cmbSearchFaculty)
-        Me.Controls.Add(Me.btnImportStudent)
-        Me.Controls.Add(Me.btnImportFaculties)
         Me.Name = "ucBorrowers"
         Me.Size = New System.Drawing.Size(1126, 599)
         Me.MetroTabControl1.ResumeLayout(False)
@@ -664,12 +625,10 @@ Partial Class ucBorrowers
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Private WithEvents btnAddStudent As Button
-    Private WithEvents btnImportStudent As Button
     Private WithEvents cmbSearchStudent As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtSearchStudent As MetroFramework.Controls.MetroTextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Private WithEvents btnAddFaculty As Button
-    Private WithEvents btnImportFaculties As Button
     Friend WithEvents lblShowingNentries As Label
     Private WithEvents btnLoanHistoryFaculty As Button
     Private WithEvents btnLoanHistoryStudent As Button

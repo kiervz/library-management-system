@@ -160,7 +160,7 @@ Public Class frmRegisterUpdateBooks
                 Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                 If mes = DialogResult.Yes Then
-                    str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, copies=@copies, price=@price, series=@series, image=@image WHERE id = @id"
+                    str = "UPDATE books SET isbn=@isbn, call_number=@call_number, title=@title, author=@author, publisher=@publisher, description=@description, category_id=@category_id, date_published=@date_published, price=@price, series=@series, image=@image WHERE id = @id"
                     cmd = New SqlCommand(str, conn)
                     cmd.Parameters.AddWithValue("@id", _selected_book_id)
                     cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
@@ -186,6 +186,7 @@ Public Class frmRegisterUpdateBooks
                 Msg(Me, "Please fill up all fields!", "Fields Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         Catch ex As Exception
+            MsgBox(ex.Message)
         Finally
             dr.Close()
             cmd.Dispose()
