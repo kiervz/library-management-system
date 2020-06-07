@@ -12,8 +12,8 @@ Public Class frmMain
 
         idle.Start()
 
-        lblFname.Text = userFname
-        lblUserType.Text = userType
+        txtName.Text = userFname + " " + userLname
+        txtUserType.Text = userType
 
         Try
             pbProfile.Image = Image.FromFile(userImage)
@@ -175,18 +175,6 @@ Public Class frmMain
         If mes = DialogResult.Yes Then Application.Exit()
     End Sub
 
-    Private Sub panelBgSearch_Click(sender As Object, e As EventArgs) Handles panelBgSearch.Click, lblSearch.Click, pbSearch.Click
-        txtSearch.Focus()
-    End Sub
-
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        If txtSearch.Text.Length > 0 Then
-            lblSearch.Visible = False
-        Else
-            lblSearch.Visible = True
-        End If
-    End Sub
-
     Private Sub btnMinimize_MouseEnter(sender As Object, e As EventArgs) Handles btnMinimize.MouseEnter
         ToolTip1.SetToolTip(btnMinimize, "Minimize")
     End Sub
@@ -244,21 +232,6 @@ Public Class frmMain
         btnSettings.Focus()
     End Sub
 
-    Private Sub pbProfile_Click(sender As Object, e As EventArgs) Handles lblUserType.Click, lblFname.Click, btnChevron.Click, panelAccount.Click
-        btnChevron.ContextMenuStrip.Show(New Point(1163, 80))
-    End Sub
-
-    Private Sub tsLogout_Click(sender As Object, e As EventArgs) Handles tsLogout.Click
-
-        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
-
-        If mes = DialogResult.Yes Then
-            Me.Close()
-            Dim login As New frmLogin
-            login.Show()
-        End If
-    End Sub
-
     Private Sub frmMain_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F12 Then
             Dim systemIdle As New frmSetSystemIdle
@@ -273,4 +246,13 @@ Public Class frmMain
         pbProfile.Region = rg
     End Sub
 
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+
+        If mes = DialogResult.Yes Then
+            Me.Close()
+            Dim login As New frmLogin
+            login.Show()
+        End If
+    End Sub
 End Class

@@ -144,13 +144,6 @@ Public Class frmLogin
             cmd.Dispose()
         End Try
     End Sub
-    Private Sub cbShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPassword.CheckedChanged
-        If cbShowPassword.Checked Then
-            txtPassword.UseSystemPasswordChar = False
-        Else
-            txtPassword.UseSystemPasswordChar = True
-        End If
-    End Sub
 
     Private Sub timer2_Tick(sender As Object, e As EventArgs) Handles timer2.Tick
         _nextAttempt -= 1
@@ -168,18 +161,6 @@ Public Class frmLogin
         End If
     End Sub
 
-    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Login()
-        End If
-    End Sub
-
-    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Login()
-        End If
-    End Sub
-
     Private Sub frmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F12 Then
             Dim db_config As New frmDatabaseConfiguration
@@ -187,4 +168,17 @@ Public Class frmLogin
         End If
     End Sub
 
+    Private Sub cbShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPassword.CheckedChanged
+        If cbShowPassword.Checked Then
+            txtPassword.UseSystemPasswordChar = False
+        Else
+            txtPassword.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub username_password_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown, txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Login()
+        End If
+    End Sub
 End Class

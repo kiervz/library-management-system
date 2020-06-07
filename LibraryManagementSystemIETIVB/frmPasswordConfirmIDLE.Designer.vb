@@ -74,7 +74,7 @@ Partial Class frmPasswordConfirmIDLE
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(392, 63)
         Me.Label1.TabIndex = 53
-        Me.Label1.Text = "AFK:  System Detected that you are Away From Keyboard. Please confirm your passwo" & _
+        Me.Label1.Text = "AFK:  System Detected that you are Away From Keyboard. Please confirm your passwo" &
     "rd to retrieve your session."
         '
         'PictureBox1

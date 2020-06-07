@@ -37,10 +37,10 @@ Partial Class frmLogin
         Me.cbShowPassword = New MetroFramework.Controls.MetroCheckBox()
         Me.pictureBox2 = New System.Windows.Forms.PictureBox()
         Me.picCarousel = New System.Windows.Forms.PictureBox()
-        Me.txtUsername = New MetroFramework.Controls.MetroTextBox()
-        Me.txtPassword = New MetroFramework.Controls.MetroTextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCarousel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,71 +165,6 @@ Partial Class frmLogin
         Me.picCarousel.TabIndex = 1
         Me.picCarousel.TabStop = False
         '
-        'txtUsername
-        '
-        '
-        '
-        '
-        Me.txtUsername.CustomButton.Image = Nothing
-        Me.txtUsername.CustomButton.Location = New System.Drawing.Point(224, 2)
-        Me.txtUsername.CustomButton.Name = ""
-        Me.txtUsername.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtUsername.CustomButton.TabIndex = 1
-        Me.txtUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtUsername.CustomButton.UseSelectable = True
-        Me.txtUsername.CustomButton.Visible = False
-        Me.txtUsername.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.txtUsername.Lines = New String() {"kiervs"}
-        Me.txtUsername.Location = New System.Drawing.Point(707, 305)
-        Me.txtUsername.MaxLength = 32767
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtUsername.SelectedText = ""
-        Me.txtUsername.SelectionLength = 0
-        Me.txtUsername.SelectionStart = 0
-        Me.txtUsername.ShortcutsEnabled = True
-        Me.txtUsername.Size = New System.Drawing.Size(248, 26)
-        Me.txtUsername.TabIndex = 24
-        Me.txtUsername.Text = "kiervs"
-        Me.txtUsername.UseSelectable = True
-        Me.txtUsername.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtUsername.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'txtPassword
-        '
-        '
-        '
-        '
-        Me.txtPassword.CustomButton.Image = Nothing
-        Me.txtPassword.CustomButton.Location = New System.Drawing.Point(224, 2)
-        Me.txtPassword.CustomButton.Name = ""
-        Me.txtPassword.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtPassword.CustomButton.TabIndex = 1
-        Me.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtPassword.CustomButton.UseSelectable = True
-        Me.txtPassword.CustomButton.Visible = False
-        Me.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.txtPassword.Lines = New String() {"Password@1123"}
-        Me.txtPassword.Location = New System.Drawing.Point(708, 378)
-        Me.txtPassword.MaxLength = 32767
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtPassword.SelectedText = ""
-        Me.txtPassword.SelectionLength = 0
-        Me.txtPassword.SelectionStart = 0
-        Me.txtPassword.ShortcutsEnabled = True
-        Me.txtPassword.Size = New System.Drawing.Size(248, 26)
-        Me.txtPassword.TabIndex = 25
-        Me.txtPassword.Text = "Password@1123"
-        Me.txtPassword.UseSelectable = True
-        Me.txtPassword.UseSystemPasswordChar = True
-        Me.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtPassword.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(197, Byte), Integer))
@@ -251,6 +186,29 @@ Partial Class frmLogin
         Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
         '
+        'txtUsername
+        '
+        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsername.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(707, 305)
+        Me.txtUsername.MaxLength = 100
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(248, 26)
+        Me.txtUsername.TabIndex = 28
+        Me.txtUsername.Text = "kiervs"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPassword.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(707, 378)
+        Me.txtPassword.MaxLength = 100
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(248, 26)
+        Me.txtPassword.TabIndex = 29
+        Me.txtPassword.Text = "Password@1123"
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -260,8 +218,6 @@ Partial Class frmLogin
         Me.Controls.Add(Me.lblNextAttempt)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.cbShowPassword)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.lblPassword)
@@ -269,6 +225,8 @@ Partial Class frmLogin
         Me.Controls.Add(Me.label4)
         Me.Controls.Add(Me.pictureBox2)
         Me.Controls.Add(Me.picCarousel)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtUsername)
         Me.DisplayHeader = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -298,8 +256,8 @@ Partial Class frmLogin
     Private WithEvents timer2 As System.Windows.Forms.Timer
     Friend WithEvents cbShowPassword As MetroFramework.Controls.MetroCheckBox
     Private WithEvents picCarousel As System.Windows.Forms.PictureBox
-    Friend WithEvents txtUsername As Controls.MetroTextBox
-    Friend WithEvents txtPassword As Controls.MetroTextBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents txtPassword As TextBox
 End Class

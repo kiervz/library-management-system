@@ -296,7 +296,7 @@ Partial Class ucDashboard
         Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel13, 2, 1)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(58, 39)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(58, 56)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.14409!))

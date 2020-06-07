@@ -213,6 +213,7 @@ Partial Class frmBorrrowHistory
         Me.Movable = False
         Me.Name = "frmBorrrowHistory"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal

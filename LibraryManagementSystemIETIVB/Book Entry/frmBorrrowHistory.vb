@@ -41,4 +41,5 @@ Public Class frmBorrrowHistory
         CloseTransparentForm()
         Me.Hide()
     End Sub
+
 End Class

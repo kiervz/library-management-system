@@ -110,21 +110,21 @@ Public Class ucBorrowers
     End Sub
 
     Private Sub MetroTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroTabControl1.SelectedIndexChanged
-        If MetroTabControl1.SelectedIndex = 0 Then
-            btnAddStudent.BringToFront()
+        'If MetroTabControl1.SelectedIndex = 0 Then
+        '    btnAddStudent.BringToFront()
 
-            'Show Student Search Box
-            cmbSearchStudent.BringToFront()
-            cmbSearchStudent.SelectedIndex = 0
-            txtSearchStudent.BringToFront()
-        Else
-            btnAddFaculty.BringToFront()
+        '    'Show Student Search Box
+        '    cmbSearchStudent.BringToFront()
+        '    cmbSearchStudent.SelectedIndex = 0
+        '    txtSearchStudent.BringToFront()
+        'Else
+        '    btnAddFaculty.BringToFront()
 
-            'Show Faculty Search Box
-            cmbSearchFaculty.BringToFront()
-            cmbSearchFaculty.SelectedIndex = 0
-            txtSearchFaculty.BringToFront()
-        End If
+        '    'Show Faculty Search Box
+        '    cmbSearchFaculty.BringToFront()
+        '    cmbSearchFaculty.SelectedIndex = 0
+        '    txtSearchFaculty.BringToFront()
+        'End If
     End Sub
 
     Private Sub btnLoanHistoryStudent_Click(sender As Object, e As EventArgs) Handles btnLoanHistoryStudent.Click
@@ -178,7 +178,7 @@ Public Class ucBorrowers
 
     Private Sub cmbSearchStudent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchStudent.SelectedIndexChanged
         If cmbSearchStudent.SelectedIndex = 0 Then
-            FillGridViewStudent()
+            'FillGridViewStudent()
             txtSearchStudent.Clear()
         End If
     End Sub
@@ -209,7 +209,7 @@ Public Class ucBorrowers
 
     Private Sub cmbSearchFaculty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchFaculty.SelectedIndexChanged
         If cmbSearchFaculty.SelectedIndex = 0 Then
-            FillGridViewFaculty()
+            'FillGridViewFaculty()
             txtSearchFaculty.Clear()
         End If
     End Sub

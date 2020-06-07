@@ -26,6 +26,7 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.panelLeft = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnBorrowers = New System.Windows.Forms.Button()
         Me.btnIssuedReturn = New System.Windows.Forms.Button()
         Me.btnRecords = New System.Windows.Forms.Button()
@@ -39,33 +40,6 @@ Partial Class frmMain
         Me.panelSelector = New System.Windows.Forms.Panel()
         Me.divider = New MaterialSkin.Controls.MaterialDivider()
         Me.panelCenter = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblDate = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblDuration = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
-        Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
-        Me.tsSettings = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsLogout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.panelBgSearch = New System.Windows.Forms.Panel()
-        Me.lblSearch = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.pbSearch = New System.Windows.Forms.PictureBox()
-        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.label1 = New System.Windows.Forms.Label()
-        Me.btnMinimize = New System.Windows.Forms.Button()
-        Me.btnChevron = New System.Windows.Forms.Button()
-        Me.btnClose = New System.Windows.Forms.Button()
-        Me.lblFname = New System.Windows.Forms.Label()
-        Me.lblUserType = New System.Windows.Forms.Label()
-        Me.panel2 = New System.Windows.Forms.Panel()
-        Me.panelAccount = New System.Windows.Forms.Panel()
-        Me.pbProfile = New System.Windows.Forms.PictureBox()
         Me.UcIssuedReturn1 = New LibraryManagementSystemIETIVB.ucIssuedReturn()
         Me.UcRecords1 = New LibraryManagementSystemIETIVB.ucRecords()
         Me.UcBorrowers1 = New LibraryManagementSystemIETIVB.ucBorrowers()
@@ -77,23 +51,39 @@ Partial Class frmMain
         Me.UcBookManagement1 = New LibraryManagementSystemIETIVB.ucBookEntry()
         Me.UcActivityLog1 = New LibraryManagementSystemIETIVB.ucActivityLog()
         Me.UcAboutIETI1 = New LibraryManagementSystemIETIVB.ucAboutIETI()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDuration = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
+        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.btnMinimize = New System.Windows.Forms.Button()
+        Me.btnChevron = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.panel2 = New System.Windows.Forms.Panel()
+        Me.txtUserType = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.pbProfile = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SystemIdleTimer1 = New LibraryManagementSystemIETIVB.SystemIdleTimer()
         Me.panelLeft.SuspendLayout()
         Me.panelCenter.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.MaterialContextMenuStrip1.SuspendLayout()
-        Me.panelBgSearch.SuspendLayout()
-        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
-        Me.panelAccount.SuspendLayout()
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelLeft
         '
         Me.panelLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.panelLeft.Controls.Add(Me.btnLogout)
         Me.panelLeft.Controls.Add(Me.btnBorrowers)
         Me.panelLeft.Controls.Add(Me.btnIssuedReturn)
         Me.panelLeft.Controls.Add(Me.btnRecords)
@@ -109,6 +99,26 @@ Partial Class frmMain
         Me.panelLeft.Name = "panelLeft"
         Me.panelLeft.Size = New System.Drawing.Size(234, 548)
         Me.panelLeft.TabIndex = 0
+        '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.SystemColors.Control
+        Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
+        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogout.Location = New System.Drawing.Point(4, 501)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(230, 45)
+        Me.btnLogout.TabIndex = 14
+        Me.btnLogout.Text = "   LOGOUT"
+        Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogout.UseVisualStyleBackColor = False
         '
         'btnBorrowers
         '
@@ -344,10 +354,99 @@ Partial Class frmMain
         Me.panelCenter.Controls.Add(Me.UcActivityLog1)
         Me.panelCenter.Controls.Add(Me.UcAboutIETI1)
         Me.panelCenter.Controls.Add(Me.Panel4)
-        Me.panelCenter.Location = New System.Drawing.Point(240, 111)
+        Me.panelCenter.Location = New System.Drawing.Point(240, 89)
         Me.panelCenter.Name = "panelCenter"
-        Me.panelCenter.Size = New System.Drawing.Size(1126, 645)
+        Me.panelCenter.Size = New System.Drawing.Size(1126, 659)
         Me.panelCenter.TabIndex = 5
+        '
+        'UcIssuedReturn1
+        '
+        Me.UcIssuedReturn1.BackColor = System.Drawing.Color.White
+        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
+        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
+        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcIssuedReturn1.TabIndex = 26
+        '
+        'UcRecords1
+        '
+        Me.UcRecords1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcRecords1.Location = New System.Drawing.Point(0, 33)
+        Me.UcRecords1.Name = "UcRecords1"
+        Me.UcRecords1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcRecords1.TabIndex = 25
+        '
+        'UcBorrowers1
+        '
+        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBorrowers1.Name = "UcBorrowers1"
+        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcBorrowers1.TabIndex = 24
+        '
+        'UcAttendance1
+        '
+        Me.UcAttendance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAttendance1.Location = New System.Drawing.Point(0, 33)
+        Me.UcAttendance1.Name = "UcAttendance1"
+        Me.UcAttendance1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcAttendance1.TabIndex = 21
+        '
+        'UcUserManagement1
+        '
+        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcUserManagement1.Name = "UcUserManagement1"
+        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcUserManagement1.TabIndex = 20
+        '
+        'UcSettings1
+        '
+        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
+        Me.UcSettings1.Name = "UcSettings1"
+        Me.UcSettings1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcSettings1.TabIndex = 18
+        '
+        'UcReports1
+        '
+        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
+        Me.UcReports1.Name = "UcReports1"
+        Me.UcReports1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcReports1.TabIndex = 17
+        '
+        'UcDashboard1
+        '
+        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
+        Me.UcDashboard1.Name = "UcDashboard1"
+        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcDashboard1.TabIndex = 15
+        '
+        'UcBookManagement1
+        '
+        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
+        Me.UcBookManagement1.Name = "UcBookManagement1"
+        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcBookManagement1.TabIndex = 13
+        '
+        'UcActivityLog1
+        '
+        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
+        Me.UcActivityLog1.Name = "UcActivityLog1"
+        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcActivityLog1.TabIndex = 12
+        '
+        'UcAboutIETI1
+        '
+        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
+        Me.UcAboutIETI1.Name = "UcAboutIETI1"
+        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 626)
+        Me.UcAboutIETI1.TabIndex = 11
         '
         'Panel4
         '
@@ -458,106 +557,15 @@ Partial Class frmMain
         Me.PopupNotifier1.TitleFont = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PopupNotifier1.TitleText = Nothing
         '
-        'MaterialContextMenuStrip1
-        '
-        Me.MaterialContextMenuStrip1.AutoSize = False
-        Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MaterialContextMenuStrip1.Depth = 0
-        Me.MaterialContextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsSettings, Me.tsLogout})
-        Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(188, 80)
-        '
-        'tsSettings
-        '
-        Me.tsSettings.AutoSize = False
-        Me.tsSettings.Image = CType(resources.GetObject("tsSettings.Image"), System.Drawing.Image)
-        Me.tsSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.tsSettings.Name = "tsSettings"
-        Me.tsSettings.Padding = New System.Windows.Forms.Padding(20, 1, 0, 1)
-        Me.tsSettings.Size = New System.Drawing.Size(188, 38)
-        Me.tsSettings.Text = "   SETTINGS"
-        Me.tsSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'tsLogout
-        '
-        Me.tsLogout.AutoSize = False
-        Me.tsLogout.Image = CType(resources.GetObject("tsLogout.Image"), System.Drawing.Image)
-        Me.tsLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.tsLogout.Name = "tsLogout"
-        Me.tsLogout.Padding = New System.Windows.Forms.Padding(20, 1, 0, 1)
-        Me.tsLogout.Size = New System.Drawing.Size(188, 38)
-        Me.tsLogout.Text = "   LOGOUT"
-        Me.tsLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'panelBgSearch
-        '
-        Me.panelBgSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.panelBgSearch.Controls.Add(Me.lblSearch)
-        Me.panelBgSearch.Controls.Add(Me.txtSearch)
-        Me.panelBgSearch.Controls.Add(Me.pbSearch)
-        Me.panelBgSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.panelBgSearch.Location = New System.Drawing.Point(423, 35)
-        Me.panelBgSearch.Name = "panelBgSearch"
-        Me.panelBgSearch.Size = New System.Drawing.Size(610, 48)
-        Me.panelBgSearch.TabIndex = 4
-        '
-        'lblSearch
-        '
-        Me.lblSearch.AutoSize = True
-        Me.lblSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblSearch.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.lblSearch.ForeColor = System.Drawing.Color.White
-        Me.lblSearch.Location = New System.Drawing.Point(68, 13)
-        Me.lblSearch.Name = "lblSearch"
-        Me.lblSearch.Size = New System.Drawing.Size(161, 20)
-        Me.lblSearch.TabIndex = 11
-        Me.lblSearch.Text = "type words to search for"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.txtSearch.Location = New System.Drawing.Point(52, 13)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(541, 20)
-        Me.txtSearch.TabIndex = 5
-        Me.txtSearch.TabStop = False
-        '
-        'pbSearch
-        '
-        Me.pbSearch.BackgroundImage = CType(resources.GetObject("pbSearch.BackgroundImage"), System.Drawing.Image)
-        Me.pbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbSearch.ImageLocation = ""
-        Me.pbSearch.Location = New System.Drawing.Point(12, 10)
-        Me.pbSearch.Name = "pbSearch"
-        Me.pbSearch.Size = New System.Drawing.Size(27, 24)
-        Me.pbSearch.TabIndex = 4
-        Me.pbSearch.TabStop = False
-        '
         'pictureBox3
         '
         Me.pictureBox3.Image = CType(resources.GetObject("pictureBox3.Image"), System.Drawing.Image)
-        Me.pictureBox3.Location = New System.Drawing.Point(22, 21)
+        Me.pictureBox3.Location = New System.Drawing.Point(368, 2)
         Me.pictureBox3.Name = "pictureBox3"
-        Me.pictureBox3.Size = New System.Drawing.Size(184, 125)
+        Me.pictureBox3.Size = New System.Drawing.Size(135, 86)
         Me.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureBox3.TabIndex = 5
         Me.pictureBox3.TabStop = False
-        '
-        'label1
-        '
-        Me.label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.label1.Location = New System.Drawing.Point(10, 155)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(215, 60)
-        Me.label1.TabIndex = 6
-        Me.label1.Text = "Library Management System"
-        Me.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnMinimize
         '
@@ -576,7 +584,6 @@ Partial Class frmMain
         '
         Me.btnChevron.BackgroundImage = CType(resources.GetObject("btnChevron.BackgroundImage"), System.Drawing.Image)
         Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnChevron.ContextMenuStrip = Me.MaterialContextMenuStrip1
         Me.btnChevron.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnChevron.FlatAppearance.BorderSize = 0
         Me.btnChevron.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
@@ -600,154 +607,70 @@ Partial Class frmMain
         Me.btnClose.TabIndex = 9
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'lblFname
-        '
-        Me.lblFname.AutoSize = True
-        Me.lblFname.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblFname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFname.ForeColor = System.Drawing.Color.White
-        Me.lblFname.Location = New System.Drawing.Point(1169, 37)
-        Me.lblFname.Name = "lblFname"
-        Me.lblFname.Size = New System.Drawing.Size(62, 20)
-        Me.lblFname.TabIndex = 12
-        Me.lblFname.Text = "Kiervey"
-        '
-        'lblUserType
-        '
-        Me.lblUserType.AutoSize = True
-        Me.lblUserType.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserType.ForeColor = System.Drawing.Color.White
-        Me.lblUserType.Location = New System.Drawing.Point(1169, 57)
-        Me.lblUserType.Name = "lblUserType"
-        Me.lblUserType.Size = New System.Drawing.Size(100, 20)
-        Me.lblUserType.TabIndex = 13
-        Me.lblUserType.Text = "Administrator"
-        '
         'panel2
         '
         Me.panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.panel2.Controls.Add(Me.lblUserType)
-        Me.panel2.Controls.Add(Me.lblFname)
+        Me.panel2.Controls.Add(Me.txtUserType)
+        Me.panel2.Controls.Add(Me.txtName)
+        Me.panel2.Controls.Add(Me.pbProfile)
+        Me.panel2.Controls.Add(Me.Label2)
         Me.panel2.Controls.Add(Me.btnClose)
         Me.panel2.Controls.Add(Me.btnChevron)
         Me.panel2.Controls.Add(Me.btnMinimize)
-        Me.panel2.Controls.Add(Me.label1)
         Me.panel2.Controls.Add(Me.pictureBox3)
-        Me.panel2.Controls.Add(Me.panelBgSearch)
-        Me.panel2.Controls.Add(Me.panelAccount)
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
         '
-        'panelAccount
+        'txtUserType
         '
-        Me.panelAccount.Controls.Add(Me.pbProfile)
-        Me.panelAccount.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelAccount.Location = New System.Drawing.Point(1117, 37)
-        Me.panelAccount.Name = "panelAccount"
-        Me.panelAccount.Size = New System.Drawing.Size(234, 41)
-        Me.panelAccount.TabIndex = 14
+        Me.txtUserType.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.txtUserType.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtUserType.Cursor = System.Windows.Forms.Cursors.Default
+        Me.txtUserType.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUserType.ForeColor = System.Drawing.Color.White
+        Me.txtUserType.Location = New System.Drawing.Point(11, 171)
+        Me.txtUserType.Name = "txtUserType"
+        Me.txtUserType.ReadOnly = True
+        Me.txtUserType.Size = New System.Drawing.Size(222, 20)
+        Me.txtUserType.TabIndex = 27
+        Me.txtUserType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtName
+        '
+        Me.txtName.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtName.Cursor = System.Windows.Forms.Cursors.Default
+        Me.txtName.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.txtName.ForeColor = System.Drawing.Color.White
+        Me.txtName.Location = New System.Drawing.Point(11, 145)
+        Me.txtName.Name = "txtName"
+        Me.txtName.ReadOnly = True
+        Me.txtName.Size = New System.Drawing.Size(222, 20)
+        Me.txtName.TabIndex = 16
+        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'pbProfile
         '
-        Me.pbProfile.Location = New System.Drawing.Point(0, 0)
+        Me.pbProfile.Location = New System.Drawing.Point(83, 69)
         Me.pbProfile.Name = "pbProfile"
-        Me.pbProfile.Size = New System.Drawing.Size(46, 40)
+        Me.pbProfile.Size = New System.Drawing.Size(81, 70)
         Me.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbProfile.TabIndex = 0
         Me.pbProfile.TabStop = False
         '
-        'UcIssuedReturn1
+        'Label2
         '
-        Me.UcIssuedReturn1.BackColor = System.Drawing.Color.White
-        Me.UcIssuedReturn1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcIssuedReturn1.Location = New System.Drawing.Point(0, 33)
-        Me.UcIssuedReturn1.Name = "UcIssuedReturn1"
-        Me.UcIssuedReturn1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcIssuedReturn1.TabIndex = 26
-        '
-        'UcRecords1
-        '
-        Me.UcRecords1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcRecords1.Location = New System.Drawing.Point(0, 33)
-        Me.UcRecords1.Name = "UcRecords1"
-        Me.UcRecords1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcRecords1.TabIndex = 25
-        '
-        'UcBorrowers1
-        '
-        Me.UcBorrowers1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBorrowers1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBorrowers1.Name = "UcBorrowers1"
-        Me.UcBorrowers1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcBorrowers1.TabIndex = 24
-        '
-        'UcAttendance1
-        '
-        Me.UcAttendance1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcAttendance1.Location = New System.Drawing.Point(0, 33)
-        Me.UcAttendance1.Name = "UcAttendance1"
-        Me.UcAttendance1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcAttendance1.TabIndex = 21
-        '
-        'UcUserManagement1
-        '
-        Me.UcUserManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcUserManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcUserManagement1.Name = "UcUserManagement1"
-        Me.UcUserManagement1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcUserManagement1.TabIndex = 20
-        '
-        'UcSettings1
-        '
-        Me.UcSettings1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcSettings1.Location = New System.Drawing.Point(0, 33)
-        Me.UcSettings1.Name = "UcSettings1"
-        Me.UcSettings1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcSettings1.TabIndex = 18
-        '
-        'UcReports1
-        '
-        Me.UcReports1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcReports1.Location = New System.Drawing.Point(0, 33)
-        Me.UcReports1.Name = "UcReports1"
-        Me.UcReports1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcReports1.TabIndex = 17
-        '
-        'UcDashboard1
-        '
-        Me.UcDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcDashboard1.Location = New System.Drawing.Point(0, 33)
-        Me.UcDashboard1.Name = "UcDashboard1"
-        Me.UcDashboard1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcDashboard1.TabIndex = 15
-        '
-        'UcBookManagement1
-        '
-        Me.UcBookManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcBookManagement1.Location = New System.Drawing.Point(0, 33)
-        Me.UcBookManagement1.Name = "UcBookManagement1"
-        Me.UcBookManagement1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcBookManagement1.TabIndex = 13
-        '
-        'UcActivityLog1
-        '
-        Me.UcActivityLog1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcActivityLog1.Location = New System.Drawing.Point(0, 33)
-        Me.UcActivityLog1.Name = "UcActivityLog1"
-        Me.UcActivityLog1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcActivityLog1.TabIndex = 12
-        '
-        'UcAboutIETI1
-        '
-        Me.UcAboutIETI1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UcAboutIETI1.Location = New System.Drawing.Point(0, 33)
-        Me.UcAboutIETI1.Name = "UcAboutIETI1"
-        Me.UcAboutIETI1.Size = New System.Drawing.Size(1126, 612)
-        Me.UcAboutIETI1.TabIndex = 11
+        Me.Label2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(482, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(516, 60)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Internation Electronics && Technical Institute Inc.,"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SystemIdleTimer1
         '
@@ -776,14 +699,9 @@ Partial Class frmMain
         Me.Panel4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.MaterialContextMenuStrip1.ResumeLayout(False)
-        Me.panelBgSearch.ResumeLayout(False)
-        Me.panelBgSearch.PerformLayout()
-        CType(Me.pbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
-        Me.panelAccount.ResumeLayout(False)
         CType(Me.pbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -816,22 +734,11 @@ Partial Class frmMain
     Friend WithEvents PopupNotifier1 As Tulpep.NotificationWindow.PopupNotifier
     Friend WithEvents btnBookManagement As System.Windows.Forms.Button
     Friend WithEvents btnAttendance As System.Windows.Forms.Button
-    Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
-    Friend WithEvents tsSettings As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsLogout As System.Windows.Forms.ToolStripMenuItem
-    Private WithEvents panelBgSearch As System.Windows.Forms.Panel
-    Friend WithEvents lblSearch As System.Windows.Forms.Label
-    Private WithEvents pbSearch As System.Windows.Forms.PictureBox
     Private WithEvents pictureBox3 As System.Windows.Forms.PictureBox
-    Private WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents btnMinimize As System.Windows.Forms.Button
     Friend WithEvents btnChevron As System.Windows.Forms.Button
     Friend WithEvents btnClose As System.Windows.Forms.Button
-    Friend WithEvents lblFname As System.Windows.Forms.Label
-    Friend WithEvents lblUserType As System.Windows.Forms.Label
     Private WithEvents panel2 As System.Windows.Forms.Panel
-    Private WithEvents txtSearch As System.Windows.Forms.TextBox
-    Friend WithEvents panelAccount As System.Windows.Forms.Panel
     Friend WithEvents btnUserManagement As System.Windows.Forms.Button
     Friend WithEvents UcAttendance1 As ucAttendance
     Friend WithEvents btnIssuedReturn As Button
@@ -842,4 +749,8 @@ Partial Class frmMain
     Friend WithEvents btnRecords As Button
     Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
     Friend WithEvents lblDate As System.Windows.Forms.Label
+    Private WithEvents Label2 As Label
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtUserType As TextBox
+    Private WithEvents btnLogout As Button
 End Class
