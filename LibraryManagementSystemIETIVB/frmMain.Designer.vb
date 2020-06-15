@@ -560,9 +560,9 @@ Partial Class frmMain
         'pictureBox3
         '
         Me.pictureBox3.Image = CType(resources.GetObject("pictureBox3.Image"), System.Drawing.Image)
-        Me.pictureBox3.Location = New System.Drawing.Point(368, 2)
+        Me.pictureBox3.Location = New System.Drawing.Point(419, 3)
         Me.pictureBox3.Name = "pictureBox3"
-        Me.pictureBox3.Size = New System.Drawing.Size(135, 86)
+        Me.pictureBox3.Size = New System.Drawing.Size(135, 81)
         Me.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureBox3.TabIndex = 5
         Me.pictureBox3.TabStop = False
@@ -665,11 +665,11 @@ Partial Class frmMain
         '
         Me.Label2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(482, 14)
+        Me.Label2.Location = New System.Drawing.Point(532, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(516, 60)
+        Me.Label2.Size = New System.Drawing.Size(384, 60)
         Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Internation Electronics && Technical Institute Inc.,"
+        Me.Label2.Text = "International Electronics && Technical Institute Inc.,"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SystemIdleTimer1

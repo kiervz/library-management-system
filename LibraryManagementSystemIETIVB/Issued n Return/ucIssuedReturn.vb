@@ -189,6 +189,7 @@ Public Class ucIssuedReturn
                     .AddWithValue("@day_penalty", "0")
                     .AddWithValue("@status_id", "1")
                     .AddWithValue("@status", "Borrowed")
+                    .AddWithValue("@is_generate_slip", "0")
                 End With
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
@@ -238,44 +239,6 @@ Public Class ucIssuedReturn
         End If
     End Sub
 
-    Private Sub dgvBorrows_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBorrows.CellContentClick
-        Dim i As Integer = dgvBorrows.CurrentRow.Index
-
-        If e.ColumnIndex = 8 Then
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
-
-            If mes = DialogResult.Yes Then
-
-                If Val(dgvBorrows.Item(6, i).Value) > 0 Then
-                    Dim penalty_slip As New frmPenaltySlip
-                    penalty_slip.borrow_id = dgvBorrows.Item(0, i).Value
-                    penalty_slip.ShowDialog(Me)
-                Else
-                    Try
-                        str = "UPDATE borrows SET status_id = '0', status = 'Returned', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
-                        cmd = New SqlCommand(str, conn)
-                        cmd.ExecuteNonQuery()
-                        cmd.Dispose()
-
-                        str = "UPDATE books SET copies = (copies + 1) WHERE isbn = '" + CStr(dgvBorrows.Item(1, i).Value) + "'"
-                        cmd = New SqlCommand(str, conn)
-                        cmd.ExecuteNonQuery()
-                        cmd.Dispose()
-
-                        Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        LoadBorrowedBooks()
-                    Catch ex As Exception
-                        MsgBox(ex.Message)
-                    Finally
-                        dr.Close()
-                        cmd.Dispose()
-                    End Try
-                End If
-
-            End If
-        End If
-    End Sub
-
     Private Sub txtISBN_KeyDown(sender As Object, e As KeyEventArgs) Handles txtISBN.KeyDown
         If e.KeyCode = Keys.Enter Then
             SelectBook()
@@ -297,18 +260,27 @@ Public Class ucIssuedReturn
 
     Private Sub dgvBorrows_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBorrows.CellMouseClick
         Dim i As Integer = dgvBorrows.CurrentRow.Index
-        If dgvBorrows.Item(6, i).Value > 0 Then
-            If e.Button = MouseButtons.Right Then
-                MaterialContextMenuStrip1.Show(Cursor.Position)
-            End If
+        If e.Button = MouseButtons.Right Then
+            MaterialContextMenuStrip1.Show(Cursor.Position)
         End If
     End Sub
 
-    Private Sub ConfirmReturnToolStripMenuItem1_MouseDown(sender As Object, e As MouseEventArgs) Handles ConfirmReturnToolStripMenuItem1.MouseDown
+    'Return book
+    Private Sub ReturnBookToolStripMenuItem_MouseDown(sender As Object, e As MouseEventArgs) Handles ReturnBookToolStripMenuItem.MouseDown
         If e.Button = MouseButtons.Left Then
             Dim i As Integer = dgvBorrows.CurrentRow.Index
-            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+            Dim borrow_id As Integer = dgvBorrows.Item(0, i).Value
 
+            str = "SELECT is_generate_slip FROM borrows WHERE is_generate_slip = '0' AND id = '" + CStr(borrow_id) + "' AND payment > '0'"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Msg(Me, "Please issued a receipt before returning the book", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Return?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
             If mes = DialogResult.Yes Then
                 Try
                     str = "UPDATE borrows SET status_id = '0', status = 'Returned', date_return = '" + Date.Now.ToString("MM-dd-yyyy HH:mm:ss") + "' WHERE id = '" + CStr(dgvBorrows.Item(0, i).Value) + "'"
@@ -323,6 +295,7 @@ Public Class ucIssuedReturn
 
                     Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     LoadBorrowedBooks()
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 Finally
@@ -334,4 +307,66 @@ Public Class ucIssuedReturn
             MaterialContextMenuStrip1.Hide()
         End If
     End Sub
+
+    'Generate penalty slip
+    Private Sub IssuePenaltyToolStripMenuItem1_MouseDown(sender As Object, e As MouseEventArgs) Handles IssuePenaltyToolStripMenuItem1.MouseDown
+        If e.Button = MouseButtons.Left Then
+            Dim i As Integer = dgvBorrows.CurrentRow.Index
+            Dim borrow_id As Integer = dgvBorrows.Item(0, i).Value
+
+            str = "SELECT id FROM borrows WHERE id = '" + CStr(borrow_id) + "' AND payment = '0'"
+            cmd = New SqlCommand(str, conn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read Then
+                Msg(Me, "You can't generate penalty slip.", "No Penalties", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
+
+            If Val(dgvBorrows.Item(6, i).Value) > 0 Then
+                Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Generate Penalty Slip?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+
+                If mes = DialogResult.Yes Then
+
+                    Dim penalty_slip As New frmPenaltySlip
+                    penalty_slip.borrow_id = dgvBorrows.Item(0, i).Value
+                    penalty_slip.ShowDialog(Me)
+
+                    str = "UPDATE borrows SET is_generate_slip = '1' WHERE id = '" + CStr(borrow_id) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+                End If
+            Else
+                Msg(Me, "Can't issue penalty slip", "Unable to process", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    'Mark as lost 
+    Private Sub MarkAsLostToolStripMenuItem_MouseDown(sender As Object, e As MouseEventArgs) Handles MarkAsLostToolStripMenuItem.MouseDown
+        If e.Button = MouseButtons.Left Then
+            Dim i As Integer = dgvBorrows.CurrentRow.Index
+            Dim borrow_id As Integer = dgvBorrows.Item(0, i).Value
+            Dim book_title As String = dgvBorrows.Item(2, i).Value
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Mark as Lost  " + CStr(book_title) + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+
+            If mes = DialogResult.Yes Then
+                Try
+                    str = "UPDATE borrows SET status_id = '3', status = 'Lost' WHERE id = '" + CStr(borrow_id) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+                    cmd.Dispose()
+
+                    Msg(Me, "The book " + CStr(book_title) + " successfully mark as lost!", "Mark as lost", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                Finally
+                    dr.Close()
+                    cmd.Dispose()
+                End Try
+            End If
+        End If
+    End Sub
+
 End Class
