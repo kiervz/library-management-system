@@ -67,7 +67,7 @@ Partial Class frmReportBooksInventory
         '
         Me.dtBooksTableAdapter.ClearBeforeFill = True
         '
-        'frmReportBookMasterList
+        'frmReportBooksInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -75,11 +75,11 @@ Partial Class frmReportBooksInventory
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Panel1)
         Me.MinimizeBox = False
-        Me.Name = "frmReportBookMasterList"
+        Me.Name = "frmReportBooksInventory"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
-        Me.Text = "Report Book Master List"
+        Me.Text = "Report Books Inventory"
         CType(Me.dtBooksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

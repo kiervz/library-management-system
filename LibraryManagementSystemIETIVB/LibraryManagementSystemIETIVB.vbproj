@@ -163,6 +163,12 @@
     <Compile Include="frmSendSMS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\Books Borrowed\frmReportBooksBorrowed.Designer.vb">
+      <DependentUpon>frmReportBooksBorrowed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Books Borrowed\frmReportBooksBorrowed.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\Faculties Master List\frmReportFacultyMasterList.Designer.vb">
       <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
     </Compile>
@@ -368,6 +374,10 @@
     <EmbeddedResource Include="frmSendSMS.resx">
       <DependentUpon>frmSendSMS.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Books Borrowed\frmReportBooksBorrowed.resx">
+      <DependentUpon>frmReportBooksBorrowed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Books Borrowed\ReportBooksBorrowed.rdlc" />
     <EmbeddedResource Include="Reports\Faculties Master List\frmReportFacultyMasterList.resx">
       <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
     </EmbeddedResource>

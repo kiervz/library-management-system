@@ -27,4 +27,11 @@
         student.ShowDialog(Me)
         CloseTransparentForm()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        OpenTransparentForm(Me)
+        Dim book_borrowed As New frmReportBooksBorrowed
+        book_borrowed.ShowDialog(Me)
+        CloseTransparentForm()
+    End Sub
 End Class
