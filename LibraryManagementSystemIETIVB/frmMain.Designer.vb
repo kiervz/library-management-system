@@ -56,16 +56,15 @@ Partial Class frmMain
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblDate = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDuration = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PopupNotifier1 = New Tulpep.NotificationWindow.PopupNotifier()
         Me.pictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnMinimize = New System.Windows.Forms.Button()
-        Me.btnChevron = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.panel2 = New System.Windows.Forms.Panel()
+        Me.lblDateTime = New System.Windows.Forms.Label()
         Me.txtUserType = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.pbProfile = New System.Windows.Forms.PictureBox()
@@ -483,7 +482,6 @@ Partial Class frmMain
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.lblDuration)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -491,19 +489,6 @@ Partial Class frmMain
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1126, 20)
         Me.Panel1.TabIndex = 22
-        '
-        'lblDate
-        '
-        Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblDate.AutoSize = True
-        Me.lblDate.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.lblDate.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.ForeColor = System.Drawing.Color.Black
-        Me.lblDate.Location = New System.Drawing.Point(821, 1)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(15, 17)
-        Me.lblDate.TabIndex = 25
-        Me.lblDate.Text = "0"
         '
         'Label4
         '
@@ -580,20 +565,6 @@ Partial Class frmMain
         Me.btnMinimize.TabIndex = 7
         Me.btnMinimize.UseVisualStyleBackColor = True
         '
-        'btnChevron
-        '
-        Me.btnChevron.BackgroundImage = CType(resources.GetObject("btnChevron.BackgroundImage"), System.Drawing.Image)
-        Me.btnChevron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnChevron.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnChevron.FlatAppearance.BorderSize = 0
-        Me.btnChevron.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnChevron.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChevron.Location = New System.Drawing.Point(1327, 51)
-        Me.btnChevron.Name = "btnChevron"
-        Me.btnChevron.Size = New System.Drawing.Size(24, 16)
-        Me.btnChevron.TabIndex = 8
-        Me.btnChevron.UseVisualStyleBackColor = True
-        '
         'btnClose
         '
         Me.btnClose.BackgroundImage = CType(resources.GetObject("btnClose.BackgroundImage"), System.Drawing.Image)
@@ -610,12 +581,12 @@ Partial Class frmMain
         'panel2
         '
         Me.panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.panel2.Controls.Add(Me.lblDateTime)
         Me.panel2.Controls.Add(Me.txtUserType)
         Me.panel2.Controls.Add(Me.txtName)
         Me.panel2.Controls.Add(Me.pbProfile)
         Me.panel2.Controls.Add(Me.Label2)
         Me.panel2.Controls.Add(Me.btnClose)
-        Me.panel2.Controls.Add(Me.btnChevron)
         Me.panel2.Controls.Add(Me.btnMinimize)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -623,6 +594,17 @@ Partial Class frmMain
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(1366, 220)
         Me.panel2.TabIndex = 2
+        '
+        'lblDateTime
+        '
+        Me.lblDateTime.AutoSize = True
+        Me.lblDateTime.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDateTime.ForeColor = System.Drawing.Color.White
+        Me.lblDateTime.Location = New System.Drawing.Point(1048, 48)
+        Me.lblDateTime.Name = "lblDateTime"
+        Me.lblDateTime.Size = New System.Drawing.Size(264, 18)
+        Me.lblDateTime.TabIndex = 28
+        Me.lblDateTime.Text = "Monday, 22 June 2020  │  6:12:03 AM "
         '
         'txtUserType
         '
@@ -736,7 +718,6 @@ Partial Class frmMain
     Friend WithEvents btnAttendance As System.Windows.Forms.Button
     Private WithEvents pictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents btnMinimize As System.Windows.Forms.Button
-    Friend WithEvents btnChevron As System.Windows.Forms.Button
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Private WithEvents panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnUserManagement As System.Windows.Forms.Button
@@ -748,9 +729,9 @@ Partial Class frmMain
     Friend WithEvents UcRecords1 As ucRecords
     Friend WithEvents btnRecords As Button
     Friend WithEvents UcIssuedReturn1 As ucIssuedReturn
-    Friend WithEvents lblDate As System.Windows.Forms.Label
     Private WithEvents Label2 As Label
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtUserType As TextBox
     Private WithEvents btnLogout As Button
+    Friend WithEvents lblDateTime As Label
 End Class

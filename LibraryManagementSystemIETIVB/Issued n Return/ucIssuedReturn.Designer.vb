@@ -29,6 +29,14 @@ Partial Class ucIssuedReturn
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucIssuedReturn))
         Me.dgvBorrows = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBorrowerID = New System.Windows.Forms.TextBox()
@@ -67,17 +75,8 @@ Partial Class ucIssuedReturn
         Me.txtType = New System.Windows.Forms.TextBox()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.ReturnBookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IssueDamageSlipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IssuePenaltyToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MarkAsLostToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvBorrows, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbBrowsePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -151,6 +150,60 @@ Partial Class ucIssuedReturn
         Me.dgvBorrows.ShowRowErrors = False
         Me.dgvBorrows.Size = New System.Drawing.Size(1113, 282)
         Me.dgvBorrows.TabIndex = 91
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 70
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "ISBN"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Title"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 300
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Author"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 140
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Date Borrowed"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 150
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Due Date"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 150
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Penalty"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 70
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Issued By"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
         'label6
         '
@@ -564,92 +617,31 @@ Partial Class ucIssuedReturn
         '
         Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MaterialContextMenuStrip1.Depth = 0
-        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReturnBookToolStripMenuItem, Me.IssueDamageSlipToolStripMenuItem, Me.IssuePenaltyToolStripMenuItem1, Me.MarkAsLostToolStripMenuItem})
+        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReturnBookToolStripMenuItem, Me.IssuePenaltyToolStripMenuItem1, Me.MarkAsLostToolStripMenuItem})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(170, 100)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(165, 96)
         '
         'ReturnBookToolStripMenuItem
         '
         Me.ReturnBookToolStripMenuItem.Name = "ReturnBookToolStripMenuItem"
         Me.ReturnBookToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
-        Me.ReturnBookToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
+        Me.ReturnBookToolStripMenuItem.Size = New System.Drawing.Size(164, 24)
         Me.ReturnBookToolStripMenuItem.Text = "Return Book"
-        '
-        'IssueDamageSlipToolStripMenuItem
-        '
-        Me.IssueDamageSlipToolStripMenuItem.Name = "IssueDamageSlipToolStripMenuItem"
-        Me.IssueDamageSlipToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
-        Me.IssueDamageSlipToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
-        Me.IssueDamageSlipToolStripMenuItem.Text = "Issue Damage Slip"
         '
         'IssuePenaltyToolStripMenuItem1
         '
         Me.IssuePenaltyToolStripMenuItem1.Name = "IssuePenaltyToolStripMenuItem1"
         Me.IssuePenaltyToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
-        Me.IssuePenaltyToolStripMenuItem1.Size = New System.Drawing.Size(169, 24)
+        Me.IssuePenaltyToolStripMenuItem1.Size = New System.Drawing.Size(164, 24)
         Me.IssuePenaltyToolStripMenuItem1.Text = "Issue Penalty Slip"
         '
         'MarkAsLostToolStripMenuItem
         '
         Me.MarkAsLostToolStripMenuItem.Name = "MarkAsLostToolStripMenuItem"
         Me.MarkAsLostToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
-        Me.MarkAsLostToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
+        Me.MarkAsLostToolStripMenuItem.Size = New System.Drawing.Size(164, 24)
         Me.MarkAsLostToolStripMenuItem.Text = "Mark as Lost"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 70
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "ISBN"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Title"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 300
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Author"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 140
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Date Borrowed"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 150
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Due Date"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 150
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Penalty"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 70
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Issued By"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
         '
         'ucIssuedReturn
         '
@@ -740,7 +732,6 @@ Partial Class ucIssuedReturn
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents IssuePenaltyToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReturnBookToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IssueDamageSlipToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MarkAsLostToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn

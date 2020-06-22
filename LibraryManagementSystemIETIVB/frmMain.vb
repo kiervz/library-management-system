@@ -8,6 +8,11 @@ Public Class frmMain
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
+
+        lblDuration.Text = "00:00:00"
+        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + " │ " + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
+        UserLogTime = DateTime.Now
+
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
         idle.Start()
@@ -30,10 +35,6 @@ Public Class frmMain
         ElseIf userType = "Librarian" Then
             LoggedInAsLibrarian
         End If
-
-        lblDuration.Text = "00:00:00"
-        lblDate.Text = Date.Now.ToString("MMMM dd, yyyy") + Space(3) + DateTime.Now.ToString("hh:mm:ss tt")
-        UserLogTime = DateTime.Now
 
         Notifier() 'Welcome notification will show
         btnDashboard.PerformClick()
@@ -192,7 +193,7 @@ Public Class frmMain
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        lblDate.Text = Date.Now.ToString("MMMM dd, yyyy") + Space(3) + DateTime.Now.ToString("hh:mm:ss tt")
+        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + " │ " + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
         Dim currentLogIn = DateTime.Now - UserLogTime
 
         AddHandler idle.OnEnterIdleState, Sub(sender2, eventargs2)

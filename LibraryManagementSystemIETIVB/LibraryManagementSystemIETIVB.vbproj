@@ -181,10 +181,10 @@
     <Compile Include="Reports\Attendance\frmReportsAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Books Master List\frmReportBookMasterList.Designer.vb">
-      <DependentUpon>frmReportBookMasterList.vb</DependentUpon>
+    <Compile Include="Reports\Books Inventory\frmReportBooksInventory.Designer.vb">
+      <DependentUpon>frmReportBooksInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Books Master List\frmReportBookMasterList.vb">
+    <Compile Include="Reports\Books Inventory\frmReportBooksInventory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSetSystemIdle.Designer.vb">
@@ -379,8 +379,8 @@
       <DependentUpon>frmReportsAttendance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Attendance\ReportAttendance.rdlc" />
-    <EmbeddedResource Include="Reports\Books Master List\frmReportBookMasterList.resx">
-      <DependentUpon>frmReportBookMasterList.vb</DependentUpon>
+    <EmbeddedResource Include="Reports\Books Inventory\frmReportBooksInventory.resx">
+      <DependentUpon>frmReportBooksInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetSystemIdle.resx">
       <DependentUpon>frmSetSystemIdle.vb</DependentUpon>
@@ -391,7 +391,7 @@
     <EmbeddedResource Include="Issued n Return\frmBorrowerList.resx">
       <DependentUpon>frmBorrowerList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Books Master List\ReportBooksMasterList.rdlc" />
+    <EmbeddedResource Include="Reports\Books Inventory\ReportBooksMasterList.rdlc" />
     <EmbeddedResource Include="Reports\Penalty Slip\ReportPenaltySlip.rdlc" />
     <EmbeddedResource Include="Borrowers\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.vb</DependentUpon>

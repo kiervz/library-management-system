@@ -81,7 +81,7 @@ Partial Class ucBorrowers
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
         Me.MetroTabControl1.Location = New System.Drawing.Point(4, 67)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(1120, 529)
         Me.MetroTabControl1.Style = MetroFramework.MetroColorStyle.Teal
         Me.MetroTabControl1.TabIndex = 53

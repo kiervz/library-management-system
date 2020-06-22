@@ -49,7 +49,6 @@ Public Class frmLogin
                 dr = cmd.ExecuteReader
 
                 If dr.Read Then
-
                     If dr("status").Equals(0) Then
                         Msg(Me, "Your account has been disabled. Contact your administrator to enable.", "Disabled Account", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         txtUsername.Clear()
@@ -120,6 +119,7 @@ Public Class frmLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         ErrorPanel(False)
+        txtUsername.Focus()
     End Sub
 
     Private Sub GetUpdatedTime()
@@ -181,4 +181,5 @@ Public Class frmLogin
             Login()
         End If
     End Sub
+
 End Class

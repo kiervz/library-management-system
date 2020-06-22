@@ -1,8 +1,8 @@
 ﻿Public Class ucReports
 
-    Private Sub btnBooksMasterList_Click(sender As Object, e As EventArgs) Handles btnBooksMasterList.Click
+    Private Sub btnBooksMasterList_Click(sender As Object, e As EventArgs) Handles btnBooksInventory.Click
         OpenTransparentForm(Me)
-        Dim books_master_list As New frmReportBookMasterList
+        Dim books_master_list As New frmReportBooksInventory
         books_master_list.ShowDialog(Me)
         CloseTransparentForm()
     End Sub

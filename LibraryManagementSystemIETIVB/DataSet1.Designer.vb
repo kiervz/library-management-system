@@ -824,11 +824,13 @@ Partial Public Class DataSet1
         
         Private columndate_published As Global.System.Data.DataColumn
         
-        Private columncopies As Global.System.Data.DataColumn
+        Private columntotal_copies As Global.System.Data.DataColumn
         
-        Private columnprice As Global.System.Data.DataColumn
+        Private columnavailable_copies As Global.System.Data.DataColumn
         
-        Private columnseries As Global.System.Data.DataColumn
+        Private columntotal_borrowers As Global.System.Data.DataColumn
+        
+        Private columntotal_lost As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -931,25 +933,33 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property copiesColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property total_copiesColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columncopies
+                Return Me.columntotal_copies
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property priceColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property available_copiesColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnprice
+                Return Me.columnavailable_copies
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property seriesColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property total_borrowersColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnseries
+                Return Me.columntotal_borrowers
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property total_lostColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal_lost
             End Get
         End Property
         
@@ -990,9 +1000,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AdddtBooksRow(ByVal id As Integer, ByVal isbn As String, ByVal call_number As String, ByVal title As String, ByVal author As String, ByVal publisher As String, ByVal category As String, ByVal date_published As String, ByVal copies As Integer, ByVal price As Decimal, ByVal series As String) As dtBooksRow
+        Public Overloads Function AdddtBooksRow(ByVal id As Integer, ByVal isbn As String, ByVal call_number As String, ByVal title As String, ByVal author As String, ByVal publisher As String, ByVal category As String, ByVal date_published As String, ByVal total_copies As Integer, ByVal available_copies As Integer, ByVal total_borrowers As Integer, ByVal total_lost As Integer) As dtBooksRow
             Dim rowdtBooksRow As dtBooksRow = CType(Me.NewRow,dtBooksRow)
-            Dim columnValuesArray() As Object = New Object() {id, isbn, call_number, title, author, publisher, category, date_published, copies, price, series}
+            Dim columnValuesArray() As Object = New Object() {id, isbn, call_number, title, author, publisher, category, date_published, total_copies, available_copies, total_borrowers, total_lost}
             rowdtBooksRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtBooksRow)
             Return rowdtBooksRow
@@ -1029,9 +1039,10 @@ Partial Public Class DataSet1
             Me.columnpublisher = MyBase.Columns("publisher")
             Me.columncategory = MyBase.Columns("category")
             Me.columndate_published = MyBase.Columns("date_published")
-            Me.columncopies = MyBase.Columns("copies")
-            Me.columnprice = MyBase.Columns("price")
-            Me.columnseries = MyBase.Columns("series")
+            Me.columntotal_copies = MyBase.Columns("total_copies")
+            Me.columnavailable_copies = MyBase.Columns("available_copies")
+            Me.columntotal_borrowers = MyBase.Columns("total_borrowers")
+            Me.columntotal_lost = MyBase.Columns("total_lost")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1053,12 +1064,14 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columncategory)
             Me.columndate_published = New Global.System.Data.DataColumn("date_published", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_published)
-            Me.columncopies = New Global.System.Data.DataColumn("copies", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncopies)
-            Me.columnprice = New Global.System.Data.DataColumn("price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnprice)
-            Me.columnseries = New Global.System.Data.DataColumn("series", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnseries)
+            Me.columntotal_copies = New Global.System.Data.DataColumn("total_copies", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_copies)
+            Me.columnavailable_copies = New Global.System.Data.DataColumn("available_copies", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnavailable_copies)
+            Me.columntotal_borrowers = New Global.System.Data.DataColumn("total_borrowers", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_borrowers)
+            Me.columntotal_lost = New Global.System.Data.DataColumn("total_lost", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_lost)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -1070,8 +1083,8 @@ Partial Public Class DataSet1
             Me.columnpublisher.MaxLength = 250
             Me.columncategory.MaxLength = 100
             Me.columndate_published.MaxLength = 10
-            Me.columncopies.AllowDBNull = false
-            Me.columnseries.MaxLength = 50
+            Me.columntotal_borrowers.ReadOnly = true
+            Me.columntotal_lost.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2693,42 +2706,61 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property copies() As Integer
+        Public Property total_copies() As Integer
             Get
-                Return CType(Me(Me.tabledtBooks.copiesColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tabledtBooks.total_copiesColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_copies' in table 'dtBooks' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tabledtBooks.copiesColumn) = value
+                Me(Me.tabledtBooks.total_copiesColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property price() As Decimal
+        Public Property available_copies() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabledtBooks.priceColumn),Decimal)
+                    Return CType(Me(Me.tabledtBooks.available_copiesColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'price' in table 'dtBooks' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'available_copies' in table 'dtBooks' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledtBooks.priceColumn) = value
+                Me(Me.tabledtBooks.available_copiesColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property series() As String
+        Public Property total_borrowers() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabledtBooks.seriesColumn),String)
+                    Return CType(Me(Me.tabledtBooks.total_borrowersColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'series' in table 'dtBooks' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_borrowers' in table 'dtBooks' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledtBooks.seriesColumn) = value
+                Me(Me.tabledtBooks.total_borrowersColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property total_lost() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtBooks.total_lostColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_lost' in table 'dtBooks' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtBooks.total_lostColumn) = value
             End Set
         End Property
         
@@ -2806,26 +2838,50 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IspriceNull() As Boolean
-            Return Me.IsNull(Me.tabledtBooks.priceColumn)
+        Public Function Istotal_copiesNull() As Boolean
+            Return Me.IsNull(Me.tabledtBooks.total_copiesColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetpriceNull()
-            Me(Me.tabledtBooks.priceColumn) = Global.System.Convert.DBNull
+        Public Sub Settotal_copiesNull()
+            Me(Me.tabledtBooks.total_copiesColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsseriesNull() As Boolean
-            Return Me.IsNull(Me.tabledtBooks.seriesColumn)
+        Public Function Isavailable_copiesNull() As Boolean
+            Return Me.IsNull(Me.tabledtBooks.available_copiesColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetseriesNull()
-            Me(Me.tabledtBooks.seriesColumn) = Global.System.Convert.DBNull
+        Public Sub Setavailable_copiesNull()
+            Me(Me.tabledtBooks.available_copiesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Istotal_borrowersNull() As Boolean
+            Return Me.IsNull(Me.tabledtBooks.total_borrowersColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Settotal_borrowersNull()
+            Me(Me.tabledtBooks.total_borrowersColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Istotal_lostNull() As Boolean
+            Return Me.IsNull(Me.tabledtBooks.total_lostColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Settotal_lostNull()
+            Me(Me.tabledtBooks.total_lostColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3993,9 +4049,10 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("publisher", "publisher")
             tableMapping.ColumnMappings.Add("category", "category")
             tableMapping.ColumnMappings.Add("date_published", "date_published")
-            tableMapping.ColumnMappings.Add("copies", "copies")
-            tableMapping.ColumnMappings.Add("price", "price")
-            tableMapping.ColumnMappings.Add("series", "series")
+            tableMapping.ColumnMappings.Add("total_copies", "total_copies")
+            tableMapping.ColumnMappings.Add("available_copies", "available_copies")
+            tableMapping.ColumnMappings.Add("total_borrowers", "total_borrowers")
+            tableMapping.ColumnMappings.Add("total_lost", "total_lost")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -4012,10 +4069,14 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        books.id, books.isbn, books.call_number, books.title, books.author,"& _ 
-                " books.publisher, book_categories.category, books.date_published, books.copies, "& _ 
-                "books.price, books.series"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            books INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
-                "      book_categories ON books.category_id = book_categories.category_id"
+            Me._commandCollection(0).CommandText = "SELECT        books.call_number, books.title, books.author, books.publisher, book"& _ 
+                "s.isbn, books.date_published, book_categories.category, books.total_copies, book"& _ 
+                "s.copies AS available_copies, books.id,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT   "& _ 
+                "     COUNT(id) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            borrows"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               WHERE        (books.id = book_id) AND (status_id"& _ 
+                " = 1)) AS total_borrowers,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT        COUNT(id"& _ 
+                ") AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            borrows AS borrows_1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               WHERE        (books.id = book_id) AND (status_id"& _ 
+                " = 3)) AS total_lost"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            books INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                        "& _ 
+                " book_categories ON books.category_id = book_categories.category_id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

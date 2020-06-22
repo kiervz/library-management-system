@@ -22,7 +22,7 @@ Partial Class ucReports
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnBooksMasterList = New System.Windows.Forms.Button()
+        Me.btnBooksInventory = New System.Windows.Forms.Button()
         Me.btnStudentMasterList = New System.Windows.Forms.Button()
         Me.btnFacultyMasterList = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -31,24 +31,24 @@ Partial Class ucReports
         Me.btnAttendance = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnBooksMasterList
+        'btnBooksInventory
         '
-        Me.btnBooksMasterList.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnBooksMasterList.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBooksMasterList.FlatAppearance.BorderSize = 0
-        Me.btnBooksMasterList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnBooksMasterList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBooksMasterList.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBooksMasterList.ForeColor = System.Drawing.Color.White
-        Me.btnBooksMasterList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBooksMasterList.Location = New System.Drawing.Point(181, 120)
-        Me.btnBooksMasterList.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnBooksMasterList.Name = "btnBooksMasterList"
-        Me.btnBooksMasterList.Size = New System.Drawing.Size(198, 60)
-        Me.btnBooksMasterList.TabIndex = 63
-        Me.btnBooksMasterList.Text = " BOOK MASTER LIST"
-        Me.btnBooksMasterList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBooksMasterList.UseVisualStyleBackColor = False
+        Me.btnBooksInventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnBooksInventory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBooksInventory.FlatAppearance.BorderSize = 0
+        Me.btnBooksInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnBooksInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBooksInventory.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBooksInventory.ForeColor = System.Drawing.Color.White
+        Me.btnBooksInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBooksInventory.Location = New System.Drawing.Point(181, 120)
+        Me.btnBooksInventory.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnBooksInventory.Name = "btnBooksInventory"
+        Me.btnBooksInventory.Size = New System.Drawing.Size(198, 60)
+        Me.btnBooksInventory.TabIndex = 63
+        Me.btnBooksInventory.Text = " BOOKS INVENTORY"
+        Me.btnBooksInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBooksInventory.UseVisualStyleBackColor = False
         '
         'btnStudentMasterList
         '
@@ -174,14 +174,14 @@ Partial Class ucReports
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnFacultyMasterList)
         Me.Controls.Add(Me.btnStudentMasterList)
-        Me.Controls.Add(Me.btnBooksMasterList)
+        Me.Controls.Add(Me.btnBooksInventory)
         Me.Name = "ucReports"
         Me.Size = New System.Drawing.Size(1119, 633)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Private WithEvents btnBooksMasterList As Button
+    Private WithEvents btnBooksInventory As Button
     Private WithEvents btnStudentMasterList As Button
     Private WithEvents btnFacultyMasterList As Button
     Private WithEvents Button3 As Button

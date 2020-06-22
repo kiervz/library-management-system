@@ -589,15 +589,6 @@
         1udU1H4YAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnChevron.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAANNJREFUSEu1
-        kbENwkAQBN0CgRMaIjGhWyCmHVogpScCAlp49i2/tX9eP0ZaVhrJHt8dd6I7XYe/IqUTKZ1I6URKJ1I6
-        kdKJlE6ql5TSAxzZ/QJ6e3BnFwty3uDCfg/oGcErD2Afizi7rkHNtHVuKOHvsTimeQ2+LVtzuCY2nMFz
-        qqpTXYPn1dZz8o+NPHN5KKCg2Tyz2hrJPX2cV70wKN66Jma1NSNlAY0HcMtTNiK3ZqSMYEi8prk1I6UC
-        A8t/83VrRkonUjqR0omUTqR0IqWPofsAWMVMgQBVf30AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALlJREFUSEvt

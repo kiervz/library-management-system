@@ -1,7 +1,7 @@
 ﻿
 Imports Microsoft.Reporting.WinForms
 
-Public Class frmReportBookMasterList
+Public Class frmReportBooksInventory
     Private Sub frmReportBookMasterList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''TODO: This line of code loads data into the 'DataSet1.dtBooks' table. You can move, or remove it, as needed.
         Me.dtBooksTableAdapter.Connection.ConnectionString = "Data Source= " + My.Settings.Server + ";Initial Catalog= " + My.Settings.Database + ";Integrated Security=True"
@@ -15,6 +15,7 @@ Public Class frmReportBookMasterList
         Dim ps = New Printing.PageSettings()
         ps.Landscape = True
         ps.Margins.Right = 0
+        ps.Margins.Left = 20
         ps.PaperSize = New Printing.PaperSize("Letter Extra", 900, 1300)
         ps.PaperSize.RawKind = Printing.PaperKind.LetterExtra
         ReportViewer1.SetPageSettings(ps)

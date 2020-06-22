@@ -121,12 +121,13 @@ Public Class ucRecords
                 End If
             End While
 
-            If dgvBooksReturned.RowCount = 0 Then
+            If dgvBooksReturned.Rows.Count = 0 Then
                 panelBookReturned.BringToFront()
             Else
                 panelBookReturned.SendToBack()
             End If
         Catch ex As Exception
+            MsgBox(ex.Message)
         Finally
             dr.Close()
             cmd.Dispose()
@@ -136,7 +137,7 @@ Public Class ucRecords
     Friend Sub LoadBookInventory()
         Try
             Dim row_count As Integer = 0
-            str = "SELECT books.call_number, books.title, books.author, books.publisher, books.isbn, books.date_published, book_categories.category, books.total_copies, books.copies AS available_copies, books.id, (SELECT COUNT(id) AS Expr1 FROM borrows WHERE (books.id = book_id) AND (status_id = 1)) AS total_borrowers, (SELECT COUNT(id) AS Expr1 FROM borrows AS borrows_1 WHERE (books.id = book_id) AND (status_id = 2)) AS total_lost FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
+            str = "SELECT books.call_number, books.title, books.author, books.publisher, books.isbn, books.date_published, book_categories.category, books.total_copies, books.copies AS available_copies, books.id, (SELECT COUNT(id) AS Expr1 FROM borrows WHERE (books.id = book_id) AND (status_id = 1)) AS total_borrowers, (SELECT COUNT(id) AS Expr1 FROM borrows AS borrows_1 WHERE (books.id = book_id) AND (status_id = 3)) AS total_lost FROM books INNER JOIN book_categories ON books.category_id = book_categories.category_id"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
