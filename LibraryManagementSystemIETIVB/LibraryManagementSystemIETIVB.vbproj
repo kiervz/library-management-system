@@ -169,6 +169,12 @@
     <Compile Include="Reports\Books Borrowed\frmReportBooksBorrowed.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\Penalty List\frmReportPenaltyList.Designer.vb">
+      <DependentUpon>frmReportPenaltyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Penalty List\frmReportPenaltyList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\Faculties Master List\frmReportFacultyMasterList.Designer.vb">
       <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
     </Compile>
@@ -378,10 +384,14 @@
       <DependentUpon>frmReportBooksBorrowed.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Books Borrowed\ReportBooksBorrowed.rdlc" />
+    <EmbeddedResource Include="Reports\Penalty List\frmReportPenaltyList.resx">
+      <DependentUpon>frmReportPenaltyList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Faculties Master List\frmReportFacultyMasterList.resx">
       <DependentUpon>frmReportFacultyMasterList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Faculties Master List\ReportFacultyMasterList.rdlc" />
+    <EmbeddedResource Include="Reports\Penalty List\ReportPenaltyList.rdlc" />
     <EmbeddedResource Include="Reports\Penalty Slip\frmPenaltySlip.resx">
       <DependentUpon>frmPenaltySlip.vb</DependentUpon>
     </EmbeddedResource>

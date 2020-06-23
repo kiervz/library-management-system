@@ -26,8 +26,7 @@ Partial Class ucReports
         Me.btnStudentMasterList = New System.Windows.Forms.Button()
         Me.btnFacultyMasterList = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnPenaltyList = New System.Windows.Forms.Button()
         Me.btnAttendance = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -41,7 +40,7 @@ Partial Class ucReports
         Me.btnBooksInventory.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBooksInventory.ForeColor = System.Drawing.Color.White
         Me.btnBooksInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBooksInventory.Location = New System.Drawing.Point(181, 120)
+        Me.btnBooksInventory.Location = New System.Drawing.Point(185, 157)
         Me.btnBooksInventory.Margin = New System.Windows.Forms.Padding(0)
         Me.btnBooksInventory.Name = "btnBooksInventory"
         Me.btnBooksInventory.Size = New System.Drawing.Size(198, 60)
@@ -60,7 +59,7 @@ Partial Class ucReports
         Me.btnStudentMasterList.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudentMasterList.ForeColor = System.Drawing.Color.White
         Me.btnStudentMasterList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStudentMasterList.Location = New System.Drawing.Point(448, 120)
+        Me.btnStudentMasterList.Location = New System.Drawing.Point(452, 157)
         Me.btnStudentMasterList.Margin = New System.Windows.Forms.Padding(0)
         Me.btnStudentMasterList.Name = "btnStudentMasterList"
         Me.btnStudentMasterList.Size = New System.Drawing.Size(198, 60)
@@ -79,7 +78,7 @@ Partial Class ucReports
         Me.btnFacultyMasterList.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFacultyMasterList.ForeColor = System.Drawing.Color.White
         Me.btnFacultyMasterList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnFacultyMasterList.Location = New System.Drawing.Point(710, 120)
+        Me.btnFacultyMasterList.Location = New System.Drawing.Point(714, 157)
         Me.btnFacultyMasterList.Margin = New System.Windows.Forms.Padding(0)
         Me.btnFacultyMasterList.Name = "btnFacultyMasterList"
         Me.btnFacultyMasterList.Size = New System.Drawing.Size(198, 60)
@@ -98,7 +97,7 @@ Partial Class ucReports
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(448, 258)
+        Me.Button3.Location = New System.Drawing.Point(452, 295)
         Me.Button3.Margin = New System.Windows.Forms.Padding(0)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(198, 60)
@@ -107,43 +106,24 @@ Partial Class ucReports
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Button5
+        'btnPenaltyList
         '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(710, 258)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(198, 60)
-        Me.Button5.TabIndex = 68
-        Me.Button5.Text = " BOOK OVERDUE"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(448, 396)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(198, 60)
-        Me.Button6.TabIndex = 69
-        Me.Button6.Text = " PENALTY LIST"
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.btnPenaltyList.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnPenaltyList.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPenaltyList.FlatAppearance.BorderSize = 0
+        Me.btnPenaltyList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnPenaltyList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPenaltyList.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPenaltyList.ForeColor = System.Drawing.Color.White
+        Me.btnPenaltyList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPenaltyList.Location = New System.Drawing.Point(714, 295)
+        Me.btnPenaltyList.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnPenaltyList.Name = "btnPenaltyList"
+        Me.btnPenaltyList.Size = New System.Drawing.Size(198, 60)
+        Me.btnPenaltyList.TabIndex = 69
+        Me.btnPenaltyList.Text = " PENALTY LIST"
+        Me.btnPenaltyList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPenaltyList.UseVisualStyleBackColor = False
         '
         'btnAttendance
         '
@@ -155,7 +135,7 @@ Partial Class ucReports
         Me.btnAttendance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAttendance.ForeColor = System.Drawing.Color.White
         Me.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAttendance.Location = New System.Drawing.Point(181, 258)
+        Me.btnAttendance.Location = New System.Drawing.Point(185, 295)
         Me.btnAttendance.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAttendance.Name = "btnAttendance"
         Me.btnAttendance.Size = New System.Drawing.Size(198, 60)
@@ -169,8 +149,7 @@ Partial Class ucReports
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnAttendance)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btnPenaltyList)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnFacultyMasterList)
         Me.Controls.Add(Me.btnStudentMasterList)
@@ -185,7 +164,6 @@ Partial Class ucReports
     Private WithEvents btnStudentMasterList As Button
     Private WithEvents btnFacultyMasterList As Button
     Private WithEvents Button3 As Button
-    Private WithEvents Button5 As Button
-    Private WithEvents Button6 As Button
+    Private WithEvents btnPenaltyList As Button
     Private WithEvents btnAttendance As Button
 End Class

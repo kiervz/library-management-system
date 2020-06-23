@@ -34,4 +34,11 @@
         book_borrowed.ShowDialog(Me)
         CloseTransparentForm()
     End Sub
+
+    Private Sub btnPenaltyList_Click(sender As Object, e As EventArgs) Handles btnPenaltyList.Click
+        OpenTransparentForm(Me)
+        Dim penalty_list As New frmReportPenaltyList
+        penalty_list.ShowDialog(Me)
+        CloseTransparentForm()
+    End Sub
 End Class

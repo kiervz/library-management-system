@@ -513,6 +513,44 @@ WHERE        (borrows.status_id = '1')</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPenaltyListTableAdapter" GeneratorDataComponentClassName="dtPenaltyListTableAdapter" Name="dtPenaltyList" UserDataComponentName="dtPenaltyListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Maghanoy_Library_LMSIETIConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        borrows.id, users.username, books.isbn, books.title, borrows.student_faculty_no,
+                             (SELECT        firstname + ' ' + lastname AS Name
+                               FROM            students
+                               WHERE        (student_id = borrows.student_faculty_no)) AS StudentName,
+                             (SELECT        firstname + ' ' + lastname AS Name
+                               FROM            faculties
+                               WHERE        (faculty_id = borrows.student_faculty_no)) AS FacultyName, borrows.date_borrowed, borrows.date_due, borrows.date_return, borrows.day_penalty, borrows.payment, borrows.status
+FROM            borrows INNER JOIN
+                         books ON borrows.book_id = books.id INNER JOIN
+                         users ON borrows.user_id = users.user_id
+WHERE        (borrows.day_penalty &gt; 0) AND (borrows.status &lt;&gt; 'Lost')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="isbn" DataSetColumn="isbn" />
+              <Mapping SourceColumn="title" DataSetColumn="title" />
+              <Mapping SourceColumn="student_faculty_no" DataSetColumn="student_faculty_no" />
+              <Mapping SourceColumn="StudentName" DataSetColumn="StudentName" />
+              <Mapping SourceColumn="FacultyName" DataSetColumn="FacultyName" />
+              <Mapping SourceColumn="date_borrowed" DataSetColumn="date_borrowed" />
+              <Mapping SourceColumn="date_due" DataSetColumn="date_due" />
+              <Mapping SourceColumn="date_return" DataSetColumn="date_return" />
+              <Mapping SourceColumn="day_penalty" DataSetColumn="day_penalty" />
+              <Mapping SourceColumn="payment" DataSetColumn="payment" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -843,6 +881,67 @@ WHERE        (borrows.status_id = '1')</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtPenaltyList" msprop:Generator_TableClassName="dtPenaltyListDataTable" msprop:Generator_TableVarName="tabledtPenaltyList" msprop:Generator_RowChangedName="dtPenaltyListRowChanged" msprop:Generator_TablePropName="dtPenaltyList" msprop:Generator_RowDeletingName="dtPenaltyListRowDeleting" msprop:Generator_RowChangingName="dtPenaltyListRowChanging" msprop:Generator_RowEvHandlerName="dtPenaltyListRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPenaltyListRowDeleted" msprop:Generator_RowClassName="dtPenaltyListRow" msprop:Generator_UserTableName="dtPenaltyList" msprop:Generator_RowEvArgName="dtPenaltyListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isbn" msprop:Generator_ColumnVarNameInTable="columnisbn" msprop:Generator_ColumnPropNameInRow="isbn" msprop:Generator_ColumnPropNameInTable="isbnColumn" msprop:Generator_UserColumnName="isbn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="title" msprop:Generator_ColumnVarNameInTable="columntitle" msprop:Generator_ColumnPropNameInRow="title" msprop:Generator_ColumnPropNameInTable="titleColumn" msprop:Generator_UserColumnName="title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="student_faculty_no" msprop:Generator_ColumnVarNameInTable="columnstudent_faculty_no" msprop:Generator_ColumnPropNameInRow="student_faculty_no" msprop:Generator_ColumnPropNameInTable="student_faculty_noColumn" msprop:Generator_UserColumnName="student_faculty_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudentName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStudentName" msprop:Generator_ColumnPropNameInRow="StudentName" msprop:Generator_ColumnPropNameInTable="StudentNameColumn" msprop:Generator_UserColumnName="StudentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FacultyName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFacultyName" msprop:Generator_ColumnPropNameInRow="FacultyName" msprop:Generator_ColumnPropNameInTable="FacultyNameColumn" msprop:Generator_UserColumnName="FacultyName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_borrowed" msprop:Generator_ColumnVarNameInTable="columndate_borrowed" msprop:Generator_ColumnPropNameInRow="date_borrowed" msprop:Generator_ColumnPropNameInTable="date_borrowedColumn" msprop:Generator_UserColumnName="date_borrowed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_due" msprop:Generator_ColumnVarNameInTable="columndate_due" msprop:Generator_ColumnPropNameInRow="date_due" msprop:Generator_ColumnPropNameInTable="date_dueColumn" msprop:Generator_UserColumnName="date_due" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_return" msprop:Generator_ColumnVarNameInTable="columndate_return" msprop:Generator_ColumnPropNameInRow="date_return" msprop:Generator_ColumnPropNameInTable="date_returnColumn" msprop:Generator_UserColumnName="date_return" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="day_penalty" msprop:Generator_ColumnVarNameInTable="columnday_penalty" msprop:Generator_ColumnPropNameInRow="day_penalty" msprop:Generator_ColumnPropNameInTable="day_penaltyColumn" msprop:Generator_UserColumnName="day_penalty" type="xs:int" minOccurs="0" />
+              <xs:element name="payment" msprop:Generator_ColumnVarNameInTable="columnpayment" msprop:Generator_ColumnPropNameInRow="payment" msprop:Generator_ColumnPropNameInTable="paymentColumn" msprop:Generator_UserColumnName="payment" type="xs:decimal" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -860,6 +959,10 @@ WHERE        (borrows.status_id = '1')</CommandText>
     <xs:unique name="faculties_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:faculties" />
       <xs:field xpath="mstns:faculty_id" />
+    </xs:unique>
+    <xs:unique name="dtPenaltyList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtPenaltyList" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

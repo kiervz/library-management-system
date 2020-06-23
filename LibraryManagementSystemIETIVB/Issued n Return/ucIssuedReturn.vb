@@ -178,7 +178,7 @@ Public Class ucIssuedReturn
 
         If mes = DialogResult.Yes Then
             Try
-                str = "INSERT INTO borrows (id,user_id,book_id,student_faculty_no,date_borrowed,date_due,day_penalty,status_id,status) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM borrows),@user_id,@book_id,@student_faculty_no,@date_borrowed,@date_due,@day_penalty,@status_id,@status)"
+                str = "INSERT INTO borrows (id,user_id,book_id,student_faculty_no,date_borrowed,date_due,day_penalty,status_id,status,is_generate_slip) VALUES ((SELECT ISNULL(MAX(id) + 1, 0) FROM borrows),@user_id,@book_id,@student_faculty_no,@date_borrowed,@date_due,@day_penalty,@status_id,@status,@is_generate_slip)"
                 cmd = New SqlCommand(str, conn)
                 With cmd.Parameters
                     .AddWithValue("@user_id", userID)
@@ -295,7 +295,7 @@ Public Class ucIssuedReturn
 
                     Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     LoadBorrowedBooks()
-
+ 
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 Finally
