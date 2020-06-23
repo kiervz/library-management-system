@@ -195,4 +195,8 @@ Public Class frmRegisterStudent
     Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMiddlename.KeyPress, txtLastname.KeyPress, txtFirstname.KeyPress
         KeyPressLetterOnly(e)
     End Sub
+
+    Private Sub txtStudentID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudentID.KeyPress
+        KeyPressLetterNumberOnly(e)
+    End Sub
 End Class

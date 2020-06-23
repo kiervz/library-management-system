@@ -34,7 +34,7 @@ Partial Class frmRegisterFaculty
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dtBday = New MetroFramework.Controls.MetroDateTime()
-        Me.btnRegister = New System.Windows.Forms.Button()
+        Me.btnRegisterSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Label()
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -164,24 +164,24 @@ Partial Class frmRegisterFaculty
         Me.dtBday.Size = New System.Drawing.Size(204, 25)
         Me.dtBday.TabIndex = 5
         '
-        'btnRegister
+        'btnRegisterSave
         '
-        Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRegister.FlatAppearance.BorderSize = 0
-        Me.btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegister.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegister.ForeColor = System.Drawing.Color.White
-        Me.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRegister.Location = New System.Drawing.Point(368, 421)
-        Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(129, 33)
-        Me.btnRegister.TabIndex = 6
-        Me.btnRegister.Text = "REGISTER"
-        Me.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnRegister.UseVisualStyleBackColor = False
+        Me.btnRegisterSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnRegisterSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegisterSave.FlatAppearance.BorderSize = 0
+        Me.btnRegisterSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnRegisterSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegisterSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegisterSave.ForeColor = System.Drawing.Color.White
+        Me.btnRegisterSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegisterSave.Location = New System.Drawing.Point(368, 421)
+        Me.btnRegisterSave.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnRegisterSave.Name = "btnRegisterSave"
+        Me.btnRegisterSave.Size = New System.Drawing.Size(129, 33)
+        Me.btnRegisterSave.TabIndex = 6
+        Me.btnRegisterSave.Text = "REGISTER"
+        Me.btnRegisterSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRegisterSave.UseVisualStyleBackColor = False
         '
         'btnClose
         '
@@ -262,7 +262,7 @@ Partial Class frmRegisterFaculty
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnRegister)
+        Me.Controls.Add(Me.btnRegisterSave)
         Me.Controls.Add(Me.txtAge)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.dtBday)
@@ -279,6 +279,7 @@ Partial Class frmRegisterFaculty
         Me.Movable = False
         Me.Name = "frmRegisterFaculty"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
@@ -299,7 +300,7 @@ Partial Class frmRegisterFaculty
     Friend WithEvents txtAge As TextBox
     Private WithEvents Label10 As Label
     Friend WithEvents dtBday As MetroFramework.Controls.MetroDateTime
-    Private WithEvents btnRegister As Button
+    Private WithEvents btnRegisterSave As Button
     Private WithEvents btnClose As Label
     Friend WithEvents txtPhone As TextBox
     Private WithEvents Label2 As Label

@@ -43,5 +43,10 @@
         End If
     End Sub
 
+    Public Sub KeyPressLetterNumberOnly(e As KeyPressEventArgs)
+        If e.KeyChar <> ControlChars.Back Then
+            e.Handled = Not (Char.IsLetterOrDigit(e.KeyChar) Or e.KeyChar = " ")
+        End If
+    End Sub
 
 End Module

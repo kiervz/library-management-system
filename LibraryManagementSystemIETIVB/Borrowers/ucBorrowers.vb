@@ -18,7 +18,7 @@ Public Class ucBorrowers
 
     Friend Sub FillGridViewStudent()
         Try
-            str = "SELECT COUNT(*) AS totalrow FROM students"
+            str = "SELECT COUNT(*) AS totalrow FROM students WHERE status_id = 1"
             cmd = New SqlCommand(str, conn)
             Dim dr As SqlDataReader = cmd.ExecuteReader
 
@@ -54,7 +54,7 @@ Public Class ucBorrowers
 
     Friend Sub FillGridViewFaculty()
         Try
-            str = "SELECT COUNT(*) AS totalrow FROM faculties"
+            str = "SELECT COUNT(*) AS totalrow FROM faculties WHERE status_id = 1"
             cmd = New SqlCommand(str, conn)
             Dim dr As SqlDataReader = cmd.ExecuteReader
 
@@ -70,7 +70,7 @@ Public Class ucBorrowers
 
             dgvFaculties.Rows.Clear()
 
-            Dim str1 As String = "SELECT * FROM faculties"
+            Dim str1 As String = "SELECT * FROM faculties WHERE status_id = 1"
             cmd = New SqlCommand(str1, conn)
             Dim dr1 As SqlDataReader = cmd.ExecuteReader
 
@@ -246,5 +246,40 @@ Public Class ucBorrowers
                 End Try
             End If
         End If
+    End Sub
+
+    Private Sub dgvFaculties_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFaculties.CellContentClick
+        Dim i As Integer = dgvFaculties.CurrentRow.Index
+        Dim tempFacultyID As String = dgvFaculties.Item(0, i).Value
+
+        If e.ColumnIndex = 6 Then
+            OpenTransparentForm(Me)
+
+            Dim update_faculty As New frmRegisterFaculty
+            update_faculty.faculty_id = tempFacultyID
+            update_faculty.is_update = True
+            update_faculty.ShowDialog(Me)
+
+            If is_reload Then
+                FillGridViewFaculty()
+                is_reload = False
+            End If
+        ElseIf e.ColumnIndex = 7 Then
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+
+            If mes = DialogResult.Yes Then
+                Try
+                    str = "UPDATE faculties SET status_id = 0 WHERE faculty_id = '" + CStr(tempFacultyID) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+
+                    Msg(Me, "Record successfully deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    FillGridViewFaculty()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            End If
+        End If
+
     End Sub
 End Class
