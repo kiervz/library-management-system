@@ -34,7 +34,7 @@ Public Class ucBorrowers
 
             dgvStudents.Rows.Clear()
 
-            Dim str1 = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students"
+            Dim str1 = "SELECT student_id, firstname, middlename, lastname, gender, major FROM students WHERE status_id = 1"
             cmd = New SqlCommand(str1, conn)
             Dim dr1 As SqlDataReader = cmd.ExecuteReader
 
@@ -151,17 +151,17 @@ Public Class ucBorrowers
         If e.KeyCode = Keys.Enter Then
             Try
                 If cmbSearchStudent.SelectedIndex = 0 Then
-                    str = "SELECT * FROM students"
+                    str = "SELECT * FROM students WHERE status_id = 1"
                 ElseIf cmbSearchStudent.SelectedIndex = 1 Then
-                    str = "SELECT * FROM students WHERE student_id = '" + txtSearchStudent.Text + "'"
+                    str = "SELECT * FROM students WHERE student_id = '" + txtSearchStudent.Text + "' AND status_id = 1"
                 ElseIf cmbSearchStudent.SelectedIndex = 2 Then
-                    str = "SELECT * FROM students WHERE lastname LIKE '%" + txtSearchStudent.Text + "%'"
+                    str = "SELECT * FROM students WHERE lastname LIKE '%" + txtSearchStudent.Text + "%' AND status_id = 1"
                 ElseIf cmbSearchStudent.SelectedIndex = 3 Then
-                    str = "SELECT * FROM students WHERE firstname LIKE '%" + txtSearchStudent.Text + "%'"
+                    str = "SELECT * FROM students WHERE firstname LIKE '%" + txtSearchStudent.Text + "%' AND status_id = 1"
                 ElseIf cmbSearchStudent.SelectedIndex = 4 Then
-                    str = "SELECT * WHERE middlename LIKE '%" + txtSearchStudent.Text + "%'"
+                    str = "SELECT * WHERE middlename LIKE '%" + txtSearchStudent.Text + "%' AND status_id = 1"
                 ElseIf cmbSearchStudent.SelectedIndex = 5 Then
-                    str = "SELECT * FROM students WHERE major LIKE '%" + txtSearchStudent.Text + "%'"
+                    str = "SELECT * FROM students WHERE major LIKE '%" + txtSearchStudent.Text + "%' AND status_id = 1"
                 End If
                 cmd = New SqlCommand(str, conn)
                 dr = cmd.ExecuteReader
@@ -186,15 +186,15 @@ Public Class ucBorrowers
     Private Sub txtSearchFaculty_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchFaculty.KeyDown
         If e.KeyCode = Keys.Enter Then
             If cmbSearchFaculty.SelectedIndex = 0 Then
-                str = "SELECT * FROM faculties"
+                str = "SELECT * FROM faculties WHERE status_id = 1"
             ElseIf cmbSearchFaculty.SelectedIndex = 1 Then
-                str = "SELECT * FROM faculties WHERE faculty_id = '" + txtSearchFaculty.Text + "'"
+                str = "SELECT * FROM faculties WHERE faculty_id = '" + txtSearchFaculty.Text + "' AND status_id = 1"
             ElseIf cmbSearchFaculty.SelectedIndex = 2 Then
-                str = "SELECT * FROM faculties WHERE lastname LIKE '%" + txtSearchFaculty.Text + "%'"
+                str = "SELECT * FROM faculties WHERE lastname LIKE '%" + txtSearchFaculty.Text + "%' AND status_id = 1"
             ElseIf cmbSearchFaculty.SelectedIndex = 3 Then
-                str = "SELECT * FROM faculties WHERE firstname LIKE '%" + txtSearchFaculty.Text + "%'"
+                str = "SELECT * FROM faculties WHERE firstname LIKE '%" + txtSearchFaculty.Text + "%' AND status_id = 1"
             ElseIf cmbSearchFaculty.SelectedIndex = 4 Then
-                str = "SELECT * FROM faculties WHERE middlename LIKE '%" + txtSearchFaculty.Text + "%'"
+                str = "SELECT * FROM faculties WHERE middlename LIKE '%" + txtSearchFaculty.Text + "%' AND status_id = 1"
             End If
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
@@ -214,4 +214,37 @@ Public Class ucBorrowers
         End If
     End Sub
 
+    Private Sub dgvStudents_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudents.CellContentClick
+        Dim i As Integer = dgvStudents.CurrentRow.Index
+        Dim tempStudentID As String = dgvStudents.Item(0, i).Value
+
+        If e.ColumnIndex = 6 Then
+            OpenTransparentForm(Me)
+
+            Dim update_student As New frmRegisterStudent
+            update_student.student_id = tempStudentID
+            update_student.is_update = True
+            update_student.ShowDialog(Me)
+
+            If is_reload Then
+                FillGridViewStudent()
+                is_reload = False
+            End If
+        ElseIf e.ColumnIndex = 7 Then
+            Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
+
+            If mes = DialogResult.Yes Then
+                Try
+                    str = "UPDATE students SET status_id = 0 WHERE student_id = '" + CStr(tempStudentID) + "'"
+                    cmd = New SqlCommand(str, conn)
+                    cmd.ExecuteNonQuery()
+
+                    Msg(Me, "Record successfully deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    FillGridViewStudent()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            End If
+        End If
+    End Sub
 End Class
