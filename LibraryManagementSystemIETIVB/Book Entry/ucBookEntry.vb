@@ -26,13 +26,13 @@ Public Class ucBookEntry
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            str = "SELECT COUNT(*) AS totalrow FROM books"
+            str = "SELECT SUM(copies) AS total_books FROM books"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
             If dr.Read Then
-                rowCounnt = dr("totalrow")
-                lblShowingNentries.Text = "Total Books Registered: " + CStr(rowCounnt)
+                Dim total_books As Integer = dr("total_books").ToString()
+                lblShowingNentries.Text = "Total Books Registered: " + CStr(total_books)
             End If
             dr.Close()
             cmd.Dispose()

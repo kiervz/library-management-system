@@ -85,7 +85,7 @@ Public Class frmRegisterStudent
                         Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
                         If mes = DialogResult.Yes Then
-                            str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major,phone) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major,@phone)"
+                            str = "INSERT INTO students (student_id,firstname,middlename,lastname,gender,birthday,major,phone,status_id) VALUES (@student_id,@firstname,@middlename,@lastname,@gender,@birthday,@major,@phone,@status_id)"
                             cmd = New SqlCommand(str, conn)
                             cmd.Parameters.AddWithValue("@student_id", txtStudentID.Text)
                             cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -103,6 +103,7 @@ Public Class frmRegisterStudent
                             cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                             cmd.Parameters.AddWithValue("@major", txtMajor.Text)
                             cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
+                            cmd.Parameters.AddWithValue("@status_id", "1")
                             cmd.ExecuteNonQuery()
 
                             is_reload = True

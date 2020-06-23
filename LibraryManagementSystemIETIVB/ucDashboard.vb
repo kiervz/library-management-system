@@ -49,7 +49,7 @@ Public Class ucDashboard
 
     Friend Sub TotalStudents()
         Try
-            str = "SELECT COUNT(*) AS TotalStudents FROM students"
+            str = "SELECT COUNT(*) AS TotalStudents FROM students WHERE status_id = '1'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 
@@ -66,7 +66,7 @@ Public Class ucDashboard
 
     Friend Sub TotalFaculties()
         Try
-            str = "SELECT COUNT(*) AS TotalFaculties FROM faculties"
+            str = "SELECT COUNT(*) AS TotalFaculties FROM faculties WHERE status_id = '1'"
             cmd = New SqlCommand(str, conn)
             dr = cmd.ExecuteReader
 

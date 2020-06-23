@@ -71,7 +71,7 @@ Public Class frmRegisterFaculty
 
                     If mes = DialogResult.Yes Then
                         Try
-                            str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday,phone) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday,@phone)"
+                            str = "INSERT INTO faculties (faculty_id,firstname,middlename,lastname,gender,birthday,phone,status_id) VALUES (@faculty_id,@firstname,@middlename,@lastname,@gender,@birthday,@phone,@status_id)"
                             cmd = New SqlCommand(str, conn)
                             cmd.Parameters.AddWithValue("@faculty_id", txtFacultyID.Text)
                             cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text)
@@ -89,6 +89,7 @@ Public Class frmRegisterFaculty
 
                             cmd.Parameters.AddWithValue("@birthday", dtBday.Value)
                             cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
+                            cmd.Parameters.AddWithValue("@status_id", "1")
                             cmd.ExecuteNonQuery()
 
                             is_reload = True
