@@ -19,6 +19,10 @@
     Public book_isbn As String
     Public is_reload As Boolean = False
 
+    Public loginout_id As Integer
+    Public dateTimeLogin As DateTime
+    Public dateTimeLogout As DateTime
+
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent
         a.Show(owner)

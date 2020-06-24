@@ -5,6 +5,7 @@ Imports System.Security.Cryptography
 
 Public Class frmLogin
 
+    Private _id_no As Integer
     Private _imageNumber As Integer = 1
     Private _nextAttempt As Integer = 60
     Private _attempts As Integer = 0
@@ -64,6 +65,9 @@ Public Class frmLogin
                     GlobalVariables.userImage = dr("image")
                     GlobalVariables.userType = dr("user_type")
 
+                    dateTimeLogin = DateTime.Now
+                    logHistory()
+
                     txtUsername.Clear()
                     txtPassword.Clear()
 
@@ -87,6 +91,40 @@ Public Class frmLogin
 
         End If
 
+    End Sub
+
+
+    Private Sub LogInOutHistoryAN()
+        Try
+            str = "SELECT MAX(id) FROM log_in_out"
+            cmd = New SqlCommand(str, conn)
+
+            If IsDBNull(cmd.ExecuteScalar()) Then
+                loginout_id += 1
+            Else
+                loginout_id = CStr(cmd.ExecuteScalar())
+                loginout_id += 1
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub logHistory()
+        Try
+            cmd = New SqlCommand("INSERT INTO log_in_out (id,user_id, datee, login) VALUES(@id, @user_id, @datee, @login)", conn)
+            With cmd
+                .Parameters.AddWithValue("@id", loginout_id)
+                .Parameters.AddWithValue("@user_id", userID)
+                .Parameters.AddWithValue("@login", CDate(dateTimeLogin))
+                .Parameters.AddWithValue("@datee", Date.Now.ToShortDateString())
+            End With
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub EnableControl(isEnable As Boolean)
@@ -119,6 +157,7 @@ Public Class frmLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnDB()
         ErrorPanel(False)
+        LogInOutHistoryAN()
         txtUsername.Focus()
     End Sub
 

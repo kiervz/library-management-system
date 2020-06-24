@@ -1,4 +1,5 @@
-﻿Imports System.Drawing.Drawing2D
+﻿Imports System.Data.SqlClient
+Imports System.Drawing.Drawing2D
 
 Public Class frmMain
 
@@ -10,7 +11,7 @@ Public Class frmMain
         End If
 
         lblDuration.Text = "00:00:00"
-        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + " │ " + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
+        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + "│" + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
         UserLogTime = DateTime.Now
 
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
@@ -173,7 +174,7 @@ Public Class frmMain
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
-        If mes = DialogResult.Yes Then Application.Exit()
+        If mes = DialogResult.Yes Then Application.Exit() LogOutHistory()
     End Sub
 
     Private Sub btnMinimize_MouseEnter(sender As Object, e As EventArgs) Handles btnMinimize.MouseEnter
@@ -193,7 +194,7 @@ Public Class frmMain
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + " │ " + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
+        lblDateTime.Text = Date.Now.ToString("dddd, dd MMMM yyyy") + Space(2) + "│" + Space(2) + DateTime.Now.ToString("hh:mm:ss tt")
         Dim currentLogIn = DateTime.Now - UserLogTime
 
         AddHandler idle.OnEnterIdleState, Sub(sender2, eventargs2)
@@ -222,6 +223,7 @@ Public Class frmMain
                 isPasswordCorrect = False
                 idlePasswordAttempts = 0
             Else
+                LogOutHistory()
                 Application.Exit()
             End If
         End If
@@ -251,9 +253,22 @@ Public Class frmMain
         Dim mes As String = MetroFramework.MetroMessageBox.Show(Me, "Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 130)
 
         If mes = DialogResult.Yes Then
+            LogOutHistory()
             Me.Close()
             Dim login As New frmLogin
             login.Show()
         End If
     End Sub
+
+    Private Sub LogOutHistory()
+        Try
+            dateTimeLogout = DateTime.Now
+            str = "UPDATE log_in_out SET logout = '" + CDate(dateTimeLogout) + "' WHERE id ='" + CStr(loginout_id) + "'"
+            cmd = New SqlCommand(str, conn)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class

@@ -600,11 +600,11 @@ Partial Class frmMain
         Me.lblDateTime.AutoSize = True
         Me.lblDateTime.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDateTime.ForeColor = System.Drawing.Color.White
-        Me.lblDateTime.Location = New System.Drawing.Point(1048, 48)
+        Me.lblDateTime.Location = New System.Drawing.Point(1036, 48)
         Me.lblDateTime.Name = "lblDateTime"
-        Me.lblDateTime.Size = New System.Drawing.Size(264, 18)
+        Me.lblDateTime.Size = New System.Drawing.Size(284, 18)
         Me.lblDateTime.TabIndex = 28
-        Me.lblDateTime.Text = "Monday, 22 June 2020  │  6:12:03 AM "
+        Me.lblDateTime.Text = "Monday, 22 January 2020  │  6:12:03 AM "
         '
         'txtUserType
         '

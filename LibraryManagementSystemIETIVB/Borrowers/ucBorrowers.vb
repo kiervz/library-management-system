@@ -177,10 +177,10 @@ Public Class ucBorrowers
     End Sub
 
     Private Sub cmbSearchStudent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchStudent.SelectedIndexChanged
-        If cmbSearchStudent.SelectedIndex = 0 Then
-            FillGridViewStudent()
-            txtSearchStudent.Clear()
-        End If
+        'If cmbSearchStudent.SelectedIndex = 0 Then
+        '    FillGridViewStudent()
+        '    txtSearchStudent.Clear()
+        'End If
     End Sub
 
     Private Sub txtSearchFaculty_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchFaculty.KeyDown
@@ -208,10 +208,10 @@ Public Class ucBorrowers
     End Sub
 
     Private Sub cmbSearchFaculty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchFaculty.SelectedIndexChanged
-        If cmbSearchFaculty.SelectedIndex = 0 Then
-            FillGridViewFaculty()
-            txtSearchFaculty.Clear()
-        End If
+        'If cmbSearchFaculty.SelectedIndex = 0 Then
+        '    FillGridViewFaculty()
+        '    txtSearchFaculty.Clear()
+        'End If
     End Sub
 
     Private Sub dgvStudents_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudents.CellContentClick
