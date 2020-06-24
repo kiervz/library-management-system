@@ -92,6 +92,10 @@ Public Class frmUpdateUser
                     cmd.ExecuteNonQuery()
 
                     frmMain.UcUserManagement1.FillDGV()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Update user account. Updated: " + CStr(_user_id), "User Management") 'Activity
+
                     Msg(Me, "Record successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     CloseTransparentForm()

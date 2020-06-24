@@ -1,4 +1,6 @@
-﻿Module GlobalVariables
+﻿Imports System.Data.SqlClient
+
+Module GlobalVariables
 
     Public userID As String
     Public userFname As String
@@ -22,6 +24,8 @@
     Public loginout_id As Integer
     Public dateTimeLogin As DateTime
     Public dateTimeLogout As DateTime
+
+    Friend activityIDNo As Integer = 0
 
     Public Sub OpenTransparentForm(owner As IWin32Window)
         Dim a As New frmTransparent
@@ -51,6 +55,39 @@
         If e.KeyChar <> ControlChars.Back Then
             e.Handled = Not (Char.IsLetterOrDigit(e.KeyChar) Or e.KeyChar = " ")
         End If
+    End Sub
+
+    Public Sub AN_ActivityLog()
+        Try
+            str = "SELECT MAX(id) FROM activity_log"
+            cmd = New SqlCommand(str, conn)
+
+            If IsDBNull(cmd.ExecuteScalar()) Then
+                activityIDNo += 1
+            Else
+                activityIDNo = CStr(cmd.ExecuteScalar())
+                activityIDNo += 1
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub RecordActivities(ByVal userID As String, ByVal activities As String, ByVal filter As String)
+        Try
+            str = "INSERT INTO activity_log (id, user_id, activities, datee, time, filter) VALUES(@id, @user_id, @activities, @datee, @time, @filter)"
+            cmd = New SqlCommand(str, conn)
+            cmd.Parameters.AddWithValue("@id", activityIDNo)
+            cmd.Parameters.AddWithValue("@user_id", userID)
+            cmd.Parameters.AddWithValue("@activities", activities)
+            cmd.Parameters.AddWithValue("@datee", Date.Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@time", DateTime.Now.ToString("hh:mm tt"))
+            cmd.Parameters.AddWithValue("@filter", filter)
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 End Module

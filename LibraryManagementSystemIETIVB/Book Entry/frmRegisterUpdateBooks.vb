@@ -39,6 +39,10 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@copies", "0")
                     cmd.Parameters.AddWithValue("@total_copies", "0")
                     cmd.ExecuteNonQuery()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Add new book. Added: " + txtISBN.Text, "Book Entry") 'Activity
+
                     Msg(Me, "Book Successfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     is_reload = True
                     ClearAll()
@@ -176,6 +180,9 @@ Public Class frmRegisterUpdateBooks
                     cmd.Parameters.AddWithValue("@image", _imagePath)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Update book. Updated: " + txtISBN.Text, "Book Entry") 'Activity
 
                     Msg(Me, "Book Successfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     is_reload = True

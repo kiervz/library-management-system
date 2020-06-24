@@ -239,6 +239,9 @@ Public Class ucBorrowers
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
 
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Delete student account. Deleted: " + CStr(tempStudentID), "Borrower Management") 'Activity
+
                     Msg(Me, "Record successfully deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     FillGridViewStudent()
                 Catch ex As Exception
@@ -272,6 +275,9 @@ Public Class ucBorrowers
                     str = "UPDATE faculties SET status_id = 0 WHERE faculty_id = '" + CStr(tempFacultyID) + "'"
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Delete faculty account. Deleted: " + CStr(tempFacultyID), "Borrower Management") 'Activity
 
                     Msg(Me, "Record successfully deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     FillGridViewFaculty()

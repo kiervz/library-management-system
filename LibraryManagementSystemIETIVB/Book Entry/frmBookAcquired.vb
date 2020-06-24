@@ -54,6 +54,9 @@ Public Class frmBookAcquired
                         cmd.Parameters.AddWithValue("@isbn", txtISBN.Text)
                         cmd.ExecuteNonQuery()
 
+                        AN_ActivityLog() 'Auto Number for activity log
+                        RecordActivities(userID, "Acquired new book copies. Acquired: " + txtISBN.Text, "Book Entry") 'Activity
+
                         Msg(Me, "Book copies is already updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         is_reload = True
                         LoadBooks()

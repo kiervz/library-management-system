@@ -45,6 +45,9 @@ Public Class frmRegisterFaculty
 
                             is_reload = True
 
+                            AN_ActivityLog() 'Auto Number for activity log
+                            RecordActivities(userID, "Update faculty account. Updated: " + txtFacultyID.Text, "Borrower Management") 'Activity
+
                             Msg(Me, "Record successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Me.Hide()
                             CloseTransparentForm()
@@ -93,6 +96,9 @@ Public Class frmRegisterFaculty
                             cmd.ExecuteNonQuery()
 
                             is_reload = True
+
+                            AN_ActivityLog() 'Auto Number for activity log
+                            RecordActivities(userID, "Add new faculty account. Added: " + txtFacultyID.Text, "Borrower Management") 'Activity
 
                             Msg(Me, "Record successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

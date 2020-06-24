@@ -201,6 +201,10 @@ Public Class ucIssuedReturn
                 cmd.Dispose()
 
                 LoadBorrowedBooks()
+
+                AN_ActivityLog() 'Auto Number for activity log
+                RecordActivities(userID, "Borrower " + txtBorrowerID.Text + " borrowed a book. Book ISBN: " + txtISBN.Text, "Issued & Return") 'Activity
+
                 Msg(Me, "Book succesfully borrowed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ClearBookInformation()
             Catch ex As Exception
@@ -293,6 +297,9 @@ Public Class ucIssuedReturn
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
 
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Borrower " + txtBorrowerID.Text + " returned a book. Book ISBN: " + CStr(dgvBorrows.Item(1, i).Value), "Issued & Return") 'Activity
+
                     Msg(Me, "Book Successfully Returned", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     LoadBorrowedBooks()
  
@@ -336,6 +343,9 @@ Public Class ucIssuedReturn
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Issued a penalty slip for borrower: " + txtBorrowerID.Text, "Issued & Return") 'Activity
                 End If
             Else
                 Msg(Me, "Can't issue penalty slip", "Unable to process", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -357,6 +367,9 @@ Public Class ucIssuedReturn
                     cmd = New SqlCommand(str, conn)
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "The book " + CStr(dgvBorrows.Item(1, i).Value) + "has been marked as lost", "Issued & Return") 'Activity
 
                     Msg(Me, "The book " + CStr(book_title) + " successfully mark as lost!", "Mark as lost", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception

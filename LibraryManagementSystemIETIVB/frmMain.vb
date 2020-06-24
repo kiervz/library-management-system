@@ -137,6 +137,8 @@ Public Class frmMain
         movePanelSelector(btnAuditLog)
         HideAllUserControl()
         UcActivityLog1.Visible = True
+        UcActivityLog1.ActivityLog()
+        UcActivityLog1.LogInOutHistory()
         lblTitle.Text = "Audit Log"
     End Sub
 

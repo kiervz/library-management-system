@@ -222,6 +222,10 @@ Public Class frmRegisterUser
                     AUTO()
                     AN()
                     frmMain.UcUserManagement1.FillDGV()
+
+                    AN_ActivityLog() 'Auto Number for activity log
+                    RecordActivities(userID, "Add new user account. Added: " + txtUserID.Text, "User Management") 'Activity
+
                     Msg(Me, "Record successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Catch ex As Exception
