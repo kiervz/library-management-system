@@ -226,10 +226,12 @@ Public Class ucRecords
         If dgvBooksOverdue.Rows.Count > 0 Then
             Dim i As Integer = dgvBooksOverdue.CurrentRow.Index
 
-            Dim sms As New frmSendSMS
-            sms.borrower_phone = dgvBooksOverdue.Item(9, i).Value
-            sms.txtBorrowersName.Text = dgvBooksOverdue.Item(4, i).Value
-            sms.ShowDialog(Me)
+            frmSendSMS.book_name = dgvBooksOverdue.Item(2, i).Value
+            frmSendSMS.date_borrowed = CDate(dgvBooksOverdue.Item(5, i).Value).ToShortDateString()
+            frmSendSMS.due_date = CDate(dgvBooksOverdue.Item(6, i).Value).ToShortDateString()
+            frmSendSMS.borrower_phone = dgvBooksOverdue.Item(9, i).Value
+            frmSendSMS.txtBorrowersName.Text = dgvBooksOverdue.Item(4, i).Value
+            frmSendSMS.ShowDialog(Me)
         End If
     End Sub
 

@@ -4,9 +4,19 @@ Imports System.Management
 Public Class frmSendSMS
 
     Friend borrower_phone As String
+    Friend book_name As String
+    Friend date_borrowed As Date
+    Friend due_date As Date
     Private rcv_data As String = ""
+    Private msg As String = ""
 
     Private Sub frmSendSMS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtPhone.Text = ""
+        txtPhone.Text = borrower_phone
+
+        msg = "Good Day!" + Environment.NewLine + "Your borrowed book '" + book_name + "' is already overdue." + Environment.NewLine &
+                            "Date Borrowed: " + CDate(date_borrowed).ToShortDateString() + Environment.NewLine + "Due Date: " + CDate(due_date).ToShortDateString()
+        txtMessage.Text = msg
         Dim ports() As String
         ports = Split(ModemsConnected(), "***")
 
@@ -65,6 +75,7 @@ Public Class frmSendSMS
                 lblStatus.Text = "(Not Connected)"
             End If
         Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -83,25 +94,40 @@ Public Class frmSendSMS
     End Sub
 
     Private Sub btnSendSMS_Click(sender As Object, e As EventArgs) Handles btnSendSMS.Click
-        If txtMessage.Text.Length > 0 And txtPhone.Text.Length > 0 Then
-            If lblStatus.Text = "(Connected)" Then
-                With SerialPort1
-                    .Write("AT" & vbCrLf)
-                    Threading.Thread.Sleep(1000)
-                    .Write("AT+CMGF=1" & vbCrLf)
-                    .Write("AT+CMGS=" & Chr(34) & txtPhone.Text & Chr(34) & vbCrLf)
-                    Threading.Thread.Sleep(1000)
-                    .Write(txtMessage.Text & Chr(26))
-                    Threading.Thread.Sleep(1000)
-                End With
+        Try
+            If txtMessage.Text.Length > 0 And txtPhone.Text.Length > 0 Then
 
-                If rcv_data.ToString.Contains(">") Then
-                    MessageBox.Show("Message Sent!")
-                Else
-                    MessageBox.Show("Message Not Sent!")
+                If txtPhone.Text.Length > 0 Then
+                    Dim phone As String
+                    Dim temp_phone As String = txtPhone.Text
+                    phone = txtPhone.Text.Substring(0, 1)
+                    If Not phone = "0" Then
+                        txtPhone.Clear()
+                        txtPhone.Text = "0" + temp_phone
+                    End If
+                End If
+
+                If lblStatus.Text = "(Connected)" Then
+                    With SerialPort1
+                        .Write("AT" & vbCrLf)
+                        Threading.Thread.Sleep(1000)
+                        .Write("AT+CMGF=1" & vbCrLf)
+                        .Write("AT+CMGS=" & Chr(34) & txtPhone.Text & Chr(34) & vbCrLf)
+                        Threading.Thread.Sleep(1000)
+                        .Write(txtMessage.Text & Chr(26))
+                        Threading.Thread.Sleep(1000)
+                    End With
+
+                    If rcv_data.ToString.Contains(">") Then
+                        MessageBox.Show("Message Sent!")
+                    Else
+                        MessageBox.Show("Message Not Sent!")
+                    End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox("Something went wrong. Please try again!")
+        End Try
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
