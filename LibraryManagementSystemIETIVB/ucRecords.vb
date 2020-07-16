@@ -21,9 +21,9 @@ Public Class ucRecords
             While dr.Read
                 row_count += 1
                 If IsDBNull(dr("FacultyName")) Then
-                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("student_phone"))
+                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("StudentName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("student_phone"), dr("student_faculty_no"))
                 Else
-                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("faculty_phone"))
+                    dgvBooksOverdue.Rows.Add(row_count, dr("call_number"), dr("title"), dr("author"), dr("FacultyName"), CDate(dr("date_borrowed")).ToShortDateString(), CDate(dr("date_due")).ToShortDateString(), dr("username"), dr("id"), dr("faculty_phone"), dr("student_faculty_no"))
                 End If
             End While
             If dgvBooksOverdue.RowCount = 0 Then
@@ -266,5 +266,14 @@ Public Class ucRecords
 
             End If
         Next
+    End Sub
+
+    Private Sub btnGotoReturn_Click(sender As Object, e As EventArgs) Handles btnGotoReturn.Click
+        Dim i As Integer = dgvBooksOverdue.CurrentRow.Index
+        frmMain.btnIssuedReturn.PerformClick()
+        frmMain.UcIssuedReturn1.txtBorrowerID.Clear()
+        frmMain.UcIssuedReturn1.txtBorrowerID.Text = dgvBooksOverdue.Item(10, i).Value
+        frmMain.UcIssuedReturn1.txtBorrowerID.Focus()
+        frmMain.UcIssuedReturn1.Perform_Keydown()
     End Sub
 End Class

@@ -116,6 +116,8 @@ Partial Class ucRecords
         Me.panelBookOverdue = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvBooksOverdue = New System.Windows.Forms.DataGridView()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnGotoReturn = New System.Windows.Forms.Button()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -126,7 +128,7 @@ Partial Class ucRecords
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Column34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.panelBookInventory.SuspendLayout()
@@ -870,6 +872,7 @@ Partial Class ucRecords
         '
         'MetroTabPage5
         '
+        Me.MetroTabPage5.Controls.Add(Me.btnGotoReturn)
         Me.MetroTabPage5.Controls.Add(Me.btnSendSMS)
         Me.MetroTabPage5.Controls.Add(Me.btnMarkLost)
         Me.MetroTabPage5.Controls.Add(Me.panelBookOverdue)
@@ -895,7 +898,7 @@ Partial Class ucRecords
         Me.btnSendSMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSendSMS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSendSMS.ForeColor = System.Drawing.Color.White
-        Me.btnSendSMS.Location = New System.Drawing.Point(964, 504)
+        Me.btnSendSMS.Location = New System.Drawing.Point(856, 504)
         Me.btnSendSMS.Name = "btnSendSMS"
         Me.btnSendSMS.Size = New System.Drawing.Size(103, 26)
         Me.btnSendSMS.TabIndex = 201
@@ -911,7 +914,7 @@ Partial Class ucRecords
         Me.btnMarkLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMarkLost.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMarkLost.ForeColor = System.Drawing.Color.White
-        Me.btnMarkLost.Location = New System.Drawing.Point(846, 504)
+        Me.btnMarkLost.Location = New System.Drawing.Point(738, 504)
         Me.btnMarkLost.Name = "btnMarkLost"
         Me.btnMarkLost.Size = New System.Drawing.Size(103, 26)
         Me.btnMarkLost.TabIndex = 200
@@ -963,7 +966,7 @@ Partial Class ucRecords
         Me.dgvBooksOverdue.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.dgvBooksOverdue.ColumnHeadersHeight = 35
         Me.dgvBooksOverdue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBooksOverdue.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column27, Me.Column28})
+        Me.dgvBooksOverdue.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column27, Me.Column28, Me.Column34})
         DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1003,6 +1006,26 @@ Partial Class ucRecords
         Me.dgvBooksOverdue.ShowRowErrors = False
         Me.dgvBooksOverdue.Size = New System.Drawing.Size(1084, 493)
         Me.dgvBooksOverdue.TabIndex = 91
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'btnGotoReturn
+        '
+        Me.btnGotoReturn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnGotoReturn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGotoReturn.FlatAppearance.BorderSize = 0
+        Me.btnGotoReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnGotoReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGotoReturn.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGotoReturn.ForeColor = System.Drawing.Color.White
+        Me.btnGotoReturn.Location = New System.Drawing.Point(973, 504)
+        Me.btnGotoReturn.Name = "btnGotoReturn"
+        Me.btnGotoReturn.Size = New System.Drawing.Size(103, 26)
+        Me.btnGotoReturn.TabIndex = 202
+        Me.btnGotoReturn.Text = "Return"
+        Me.btnGotoReturn.UseVisualStyleBackColor = False
         '
         'Column1
         '
@@ -1071,9 +1094,12 @@ Partial Class ucRecords
         Me.Column28.ReadOnly = True
         Me.Column28.Visible = False
         '
-        'Timer1
+        'Column34
         '
-        Me.Timer1.Interval = 1000
+        Me.Column34.HeaderText = "borrower_id"
+        Me.Column34.Name = "Column34"
+        Me.Column34.ReadOnly = True
+        Me.Column34.Visible = False
         '
         'ucRecords
         '
@@ -1152,16 +1178,6 @@ Partial Class ucRecords
     Friend WithEvents Label5 As Label
     Private WithEvents btnReturn As Button
     Private WithEvents btnSendSMS As Button
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column27 As DataGridViewTextBoxColumn
-    Friend WithEvents Column28 As DataGridViewTextBoxColumn
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
@@ -1182,4 +1198,16 @@ Partial Class ucRecords
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents Column33 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Private WithEvents btnGotoReturn As Button
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column27 As DataGridViewTextBoxColumn
+    Friend WithEvents Column28 As DataGridViewTextBoxColumn
+    Friend WithEvents Column34 As DataGridViewTextBoxColumn
 End Class

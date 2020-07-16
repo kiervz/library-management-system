@@ -116,7 +116,12 @@ Public Class ucIssuedReturn
         btnBorrow.Enabled = False
     End Sub
 
-    Private Sub txtBorrowerID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBorrowerID.KeyDown
+    Friend Sub Perform_Keydown()
+        SelectBorrower()
+        LoadBorrowedBooks()
+    End Sub
+
+    Friend Sub txtBorrowerID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBorrowerID.KeyDown
         If e.KeyCode = Keys.Enter Then
             SelectBorrower()
             LoadBorrowedBooks()

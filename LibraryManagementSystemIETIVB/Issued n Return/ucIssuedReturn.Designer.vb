@@ -620,7 +620,7 @@ Partial Class ucIssuedReturn
         Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReturnBookToolStripMenuItem, Me.IssuePenaltyToolStripMenuItem1, Me.MarkAsLostToolStripMenuItem})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(165, 96)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(165, 76)
         '
         'ReturnBookToolStripMenuItem
         '

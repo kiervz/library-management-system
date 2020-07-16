@@ -359,14 +359,14 @@ Partial Class ucActivityLog
         '
         'Column4
         '
-        Me.Column4.HeaderText = "Time In"
+        Me.Column4.HeaderText = "Log In"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         Me.Column4.Width = 150
         '
         'Column5
         '
-        Me.Column5.HeaderText = "Time Out"
+        Me.Column5.HeaderText = "Log Out"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 150

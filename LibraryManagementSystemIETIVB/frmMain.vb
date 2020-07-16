@@ -229,7 +229,6 @@ Public Class frmMain
                 Application.Exit()
             End If
         End If
-
     End Sub
 
     Private Sub PopupNotifier1_Click(sender As Object, e As EventArgs) Handles PopupNotifier1.Click
